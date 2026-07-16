@@ -1,3 +1,6 @@
+Current version: v0.1
+Last updated: 2026-07-16
+
 # Edge
 
 Edge is a data-driven esports betting research project.
