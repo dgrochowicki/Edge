@@ -1,0 +1,267 @@
+/* Dark Mode Dashboard */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0d1117;
+    color: #c9d1d9;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 40px;
+    border-bottom: 1px solid #30363d;
+    padding-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: #58a6ff;
+    margin-bottom: 10px;
+}
+
+header p {
+    color: #8b949e;
+    font-size: 1.1em;
+}
+
+/* Summary Cards */
+.summary {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.card {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #58a6ff;
+    box-shadow: 0 0 10px rgba(88, 166, 255, 0.1);
+}
+
+.card h3 {
+    color: #8b949e;
+    font-size: 0.9em;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+}
+
+.card .value {
+    font-size: 2em;
+    font-weight: bold;
+    color: #58a6ff;
+}
+
+.card .value.negative {
+    color: #f85149;
+}
+
+.card .value.positive {
+    color: #3fb950;
+}
+
+/* Charts */
+.charts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    margin-bottom: 40px;
+}
+
+.chart-container {
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    padding: 20px;
+    position: relative;
+    height: 400px;
+}
+
+/* Table */
+.section {
+    margin-bottom: 40px;
+}
+
+.section h2 {
+    color: #58a6ff;
+    margin-bottom: 20px;
+    font-size: 1.5em;
+}
+
+.table-wrapper {
+    overflow-x: auto;
+    background-color: #161b22;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background-color: #0d1117;
+    border-bottom: 2px solid #30363d;
+}
+
+th {
+    padding: 12px;
+    text-align: left;
+    color: #58a6ff;
+    font-weight: 600;
+    font-size: 0.9em;
+}
+
+td {
+    padding: 12px;
+    border-bottom: 1px solid #30363d;
+}
+
+tbody tr:hover {
+    background-color: #0d1117;
+}
+
+.status-won {
+    color: #3fb950;
+    font-weight: bold;
+}
+
+.status-lost {
+    color: #f85149;
+    font-weight: bold;
+}
+
+.status-void {
+    color: #d29922;
+    font-weight: bold;
+}
+
+.btn {
+    background-color: #238636;
+    color: #fff;
+    border: none;
+    padding: 6px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.85em;
+    transition: background-color 0.2s;
+}
+
+.btn:hover {
+    background-color: #2ea043;
+}
+
+/* Modal */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    animation: fadeIn 0.2s;
+}
+
+.modal-content {
+    background-color: #161b22;
+    margin: 50px auto;
+    padding: 30px;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    width: 90%;
+    max-width: 600px;
+    max-height: 80vh;
+    overflow-y: auto;
+    animation: slideIn 0.2s;
+}
+
+.close {
+    color: #8b949e;
+    float: right;
+    font-size: 2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: color 0.2s;
+}
+
+.close:hover {
+    color: #58a6ff;
+}
+
+.modal h2 {
+    color: #58a6ff;
+    margin-bottom: 20px;
+}
+
+.modal-body {
+    color: #c9d1d9;
+}
+
+.selection {
+    background-color: #0d1117;
+    padding: 10px;
+    margin: 10px 0;
+    border-left: 3px solid #58a6ff;
+    border-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 1.8em;
+    }
+
+    .summary {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts {
+        grid-template-columns: 1fr;
+    }
+
+    table {
+        font-size: 0.9em;
+    }
+
+    th, td {
+        padding: 8px;
+    }
+}
