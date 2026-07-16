@@ -1,8 +1,7 @@
 // Fetch and parse bets data from GitHub
-const GITHUB_API_URL = 'https://api.github.com/repos/dgrochowicki/Edge/contents/data/bets.json';
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/dgrochowicki/Edge/main/data/bets.json';
 
-let allBets = [];
+let betsData = null;
 let roiChart = null;
 let winLossChart = null;
 
@@ -15,8 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
 async function loadBets() {
     try {
         const response = await fetch(GITHUB_RAW_URL);
-        const data = await response.json();
-        allBets = data.bets || [];
+        betsData = await response.json();
         renderDashboard();
     } catch (error) {
         console.error('Error loading bets:', error);
@@ -31,36 +29,20 @@ function renderDashboard() {
 }
 
 function updateSummary() {
-    const totals = calculateTotals();
+    const summary = betsData.summary;
     
-    document.getElementById('netResult').textContent = `${totals.netResult.toFixed(3)} PLN`;
-    document.getElementById('netResult').className = totals.netResult < 0 ? 'value negative' : 'value positive';
+    const netResult = summary.net_result_pln;
+    const roi = (summary.roi * 100).toFixed(1);
+    const hitRate = summary.coupons > 0 ? (summary.won / summary.coupons * 100).toFixed(1) : 0;
     
-    document.getElementById('roi').textContent = `${totals.roi.toFixed(1)}%`;
-    document.getElementById('roi').className = totals.roi < 0 ? 'value negative' : 'value positive';
+    document.getElementById('netResult').textContent = `${netResult.toFixed(3)} PLN`;
+    document.getElementById('netResult').className = netResult < 0 ? 'value negative' : 'value positive';
     
-    document.getElementById('hitRate').textContent = `${totals.hitRate.toFixed(1)}%`;
-    document.getElementById('totalStaked').textContent = `${totals.totalStaked.toFixed(2)} PLN`;
-}
-
-function calculateTotals() {
-    let totalStaked = 0;
-    let totalReturn = 0;
-    let won = 0;
-    let total = 0;
-
-    allBets.forEach(bet => {
-        totalStaked += bet.stake || 0;
-        totalReturn += bet.return || 0;
-        if (bet.result === 'won') won++;
-        total++;
-    });
-
-    const netResult = totalReturn - totalStaked;
-    const roi = totalStaked > 0 ? (netResult / totalStaked) * 100 : 0;
-    const hitRate = total > 0 ? (won / total) * 100 : 0;
-
-    return { totalStaked, netResult, roi, hitRate };
+    document.getElementById('roi').textContent = `${roi}%`;
+    document.getElementById('roi').className = roi < 0 ? 'value negative' : 'value positive';
+    
+    document.getElementById('hitRate').textContent = `${hitRate}%`;
+    document.getElementById('totalStaked').textContent = `${summary.total_staked_pln.toFixed(2)} PLN`;
 }
 
 function renderCharts() {
@@ -68,14 +50,11 @@ function renderCharts() {
     const winLossCtx = document.getElementById('winLossChart').getContext('2d');
 
     // ROI Trend Chart
-    const roiData = allBets.map(bet => {
-        return (bet.return - bet.stake);
-    });
-
     const cumulativeROI = [];
     let cumulative = 0;
-    roiData.forEach(value => {
-        cumulative += value;
+    
+    betsData.coupons.forEach(coupon => {
+        cumulative += coupon.net_result_pln;
         cumulativeROI.push(cumulative);
     });
 
@@ -83,7 +62,7 @@ function renderCharts() {
     roiChart = new Chart(roiCtx, {
         type: 'line',
         data: {
-            labels: allBets.map((_, i) => `EDGE-${String(i + 1).padStart(3, '0')}`),
+            labels: betsData.coupons.map(c => c.id),
             datasets: [{
                 label: 'Cumulative Net Result (PLN)',
                 data: cumulativeROI,
@@ -118,9 +97,7 @@ function renderCharts() {
     });
 
     // Win/Loss Pie Chart
-    const won = allBets.filter(b => b.result === 'won').length;
-    const lost = allBets.filter(b => b.result === 'lost').length;
-    const voided = allBets.filter(b => b.result === 'void').length;
+    const summary = betsData.summary;
 
     if (winLossChart) winLossChart.destroy();
     winLossChart = new Chart(winLossCtx, {
@@ -128,7 +105,7 @@ function renderCharts() {
         data: {
             labels: ['Won', 'Lost', 'Voided'],
             datasets: [{
-                data: [won, lost, voided],
+                data: [summary.won, summary.lost, summary.voided],
                 backgroundColor: [
                     '#3fb950',
                     '#f85149',
@@ -154,53 +131,70 @@ function renderTable() {
     const tbody = document.getElementById('tableBody');
     tbody.innerHTML = '';
 
-    allBets.forEach((bet, index) => {
+    betsData.coupons.forEach((coupon, index) => {
         const row = document.createElement('tr');
-        const roi = bet.stake > 0 ? (((bet.return - bet.stake) / bet.stake) * 100).toFixed(1) : '0.0';
-        const statusClass = `status-${bet.result}`;
+        const roi = coupon.stake_pln > 0 ? ((coupon.net_result_pln / coupon.stake_pln) * 100).toFixed(1) : '0.0';
+        const statusClass = `status-${coupon.status}`;
 
         row.innerHTML = `
-            <td>EDGE-${String(index + 1).padStart(3, '0')}</td>
-            <td>${bet.date || 'N/A'}</td>
-            <td>${bet.stake.toFixed(2)} PLN</td>
-            <td>${bet.return.toFixed(3)} PLN</td>
-            <td class="${statusClass}">${bet.result.toUpperCase()}</td>
+            <td>${coupon.id}</td>
+            <td>${coupon.date}</td>
+            <td>${coupon.stake_pln.toFixed(2)} PLN</td>
+            <td>${coupon.gross_return_pln.toFixed(3)} PLN</td>
+            <td class="${statusClass}">${coupon.status.toUpperCase()}</td>
             <td>${roi}%</td>
-            <td><button class="btn" onclick="showDetails(${index})">View</button></td>
+            <td><button class="btn" onclick="showDetails('${coupon.id}')">View</button></td>
         `;
 
         tbody.appendChild(row);
     });
 }
 
-function showDetails(index) {
-    const bet = allBets[index];
+function showDetails(couponId) {
+    const coupon = betsData.coupons.find(c => c.id === couponId);
+    if (!coupon) return;
+
     const modal = document.getElementById('modal');
     
-    document.getElementById('modalTitle').textContent = `EDGE-${String(index + 1).padStart(3, '0')} Details`;
+    document.getElementById('modalTitle').textContent = `${coupon.id} - ${coupon.date}`;
     
     let selectionsHTML = '';
-    if (bet.selections && Array.isArray(bet.selections)) {
-        selectionsHTML = bet.selections.map(sel => `
-            <div class="selection">
-                <strong>${sel.match || 'N/A'}</strong><br>
-                Pick: ${sel.pick || 'N/A'} @ ${sel.odds || 'N/A'}<br>
-                Result: ${sel.result || 'N/A'}
-            </div>
-        `).join('');
+    if (coupon.selections && Array.isArray(coupon.selections)) {
+        selectionsHTML = coupon.selections.map(sel => {
+            const finalScore = sel.final_score ? `<br>Score: ${sel.final_score}` : '';
+            return `
+                <div class="selection">
+                    <strong>${sel.match}</strong><br>
+                    Market: ${sel.market}<br>
+                    Pick: ${sel.pick} @ ${sel.odds}${finalScore}<br>
+                    Result: <span class="status-${sel.result}">${sel.result.toUpperCase()}</span>
+                    ${sel.notes ? `<br><em>${sel.notes}</em>` : ''}
+                </div>
+            `;
+        }).join('');
     }
 
+    const reviewHTML = coupon.review ? `
+        <hr style="border-color: #30363d; margin: 15px 0;">
+        <h3 style="color: #58a6ff; margin-bottom: 10px;">Review</h3>
+        <p><strong>Decision Quality:</strong> ${coupon.review.decision_quality}</p>
+        <p><strong>Main Lesson:</strong> ${coupon.review.main_lesson}</p>
+        <p><strong>Reason:</strong> ${coupon.review.reason}</p>
+    ` : '';
+
     document.getElementById('modalBody').innerHTML = `
-        <p><strong>Date:</strong> ${bet.date || 'N/A'}</p>
-        <p><strong>Stake:</strong> ${bet.stake.toFixed(2)} PLN</p>
-        <p><strong>Combined Odds:</strong> ${bet.odds || 'N/A'}</p>
-        <p><strong>Return:</strong> ${bet.return.toFixed(3)} PLN</p>
-        <p><strong>Result:</strong> <span class="status-${bet.result}">${bet.result.toUpperCase()}</span></p>
-        <p><strong>Net Result:</strong> ${(bet.return - bet.stake).toFixed(3)} PLN</p>
+        <p><strong>Type:</strong> ${coupon.type.toUpperCase()}</p>
+        <p><strong>Source:</strong> ${coupon.source.replace('_', ' ')}</p>
+        <p><strong>Stake:</strong> ${coupon.stake_pln.toFixed(2)} PLN</p>
+        <p><strong>Combined Odds:</strong> ${coupon.combined_odds}</p>
+        <p><strong>Potential Return:</strong> ${coupon.potential_return_pln.toFixed(3)} PLN</p>
+        <p><strong>Gross Return:</strong> ${coupon.gross_return_pln.toFixed(3)} PLN</p>
+        <p><strong>Result:</strong> <span class="status-${coupon.status}">${coupon.status.toUpperCase()}</span></p>
+        <p><strong>Net Result:</strong> ${coupon.net_result_pln.toFixed(3)} PLN</p>
         <hr style="border-color: #30363d; margin: 15px 0;">
         <h3 style="color: #58a6ff; margin-bottom: 10px;">Selections</h3>
-        ${selectionsHTML || '<p>No selections recorded</p>'}
-        ${bet.notes ? `<hr style="border-color: #30363d; margin: 15px 0;"><p><strong>Notes:</strong> ${bet.notes}</p>` : ''}
+        ${selectionsHTML}
+        ${reviewHTML}
     `;
     
     modal.style.display = 'block';
