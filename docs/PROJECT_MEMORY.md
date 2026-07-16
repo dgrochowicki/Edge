@@ -1,5 +1,15 @@
 # Edge Project Memory
 
+## Repository Status
+
+Current version: v0.1
+Last updated: 2026-07-16
+
+Recent changes:
+- Added EDGE-003 and EDGE-004
+- Added source field to bets.json
+- Reports are the source of historical analysis
+
 This document contains the current shared context, decisions, operating rules, open questions, and known data for the Edge project.
 
 A new assistant instance should read this file before producing reports or modifying the methodology.
@@ -105,6 +115,42 @@ Main lesson:
 - The map-total read was good.
 - The effect of Gentle Mates using a stand-in may have been overstated.
 
+### EDGE-003 — 2026-07-16
+
+Stake: 2 PLN  
+Combined odds: 2.83  
+Potential return: 5.66 PLN  
+Result: Lost  
+Net result: -2 PLN
+
+Selections:
+
+- paiN vs 3DMAX Over 2.5 maps @1.90 — lost 2:0
+- Gentle Mates vs NiP ML @1.50 — void (coupon failed on first leg)
+- Phantom vs HEROIC Over 2.5 maps @1.95 — void (coupon failed on first leg)
+
+Main lesson:
+
+- First coupon of the day failed immediately on first selection.
+
+### EDGE-004 — 2026-07-16
+
+Stake: 2 PLN  
+Combined odds: 2.8275  
+Potential return: 5.655 PLN  
+Result: Won  
+Net result: +3.655 PLN
+
+Selections:
+
+- Gentle Mates vs NiP ML @1.45 — won
+- Phantom vs HEROIC Over 2.5 maps @1.95 — won (match went to 3 maps)
+
+Main lesson:
+
+- After EDGE-003 failed on first leg, follow-up coupon with same two remaining selections won both legs.
+- Both selections showed independent value.
+
 ## Other Reviewed Matches
 
 ### NiP vs K27 — 2026-07-15
@@ -133,12 +179,14 @@ This PASS was justified because the short price did not compensate for the risk.
 
 ## Current Running Result
 
-- Coupons: 2
-- Won: 0
+- Coupons: 4
+- Won: 1
 - Lost: 2
-- Total staked: 4 PLN
-- Net result: -4 PLN
-- ROI: -100%
+- Voided: 1
+- Total staked: 8 PLN
+- Gross return: 5.655 PLN
+- Net result: -2.345 PLN
+- ROI: -29.3%
 
 This sample is not statistically meaningful.
 
@@ -194,7 +242,8 @@ Edge/
 │   └── PLAYBOOK.md
 └── reports/
     ├── 2026-07-13.md
-    └── 2026-07-15.md
+    ├── 2026-07-15.md
+    └── 2026-07-16.md
 ```
 
 ## Instructions for Future Assistant Instances
