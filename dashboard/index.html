@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge Dashboard</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📊 Edge Betting Dashboard</h1>
+            <p>Real-time performance tracking</p>
+        </header>
+
+        <!-- Summary Cards -->
+        <div class="summary">
+            <div class="card">
+                <h3>Net Result</h3>
+                <p class="value" id="netResult">-2.345 PLN</p>
+            </div>
+            <div class="card">
+                <h3>ROI</h3>
+                <p class="value" id="roi">-29.3%</p>
+            </div>
+            <div class="card">
+                <h3>Hit Rate</h3>
+                <p class="value" id="hitRate">25%</p>
+            </div>
+            <div class="card">
+                <h3>Total Staked</h3>
+                <p class="value" id="totalStaked">8 PLN</p>
+            </div>
+        </div>
+
+        <!-- Charts -->
+        <div class="charts">
+            <div class="chart-container">
+                <canvas id="roiChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="winLossChart"></canvas>
+            </div>
+        </div>
+
+        <!-- Bets Table -->
+        <div class="section">
+            <h2>Recent Coupons</h2>
+            <div class="table-wrapper">
+                <table id="betsTable">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Date</th>
+                            <th>Stake</th>
+                            <th>Return</th>
+                            <th>Result</th>
+                            <th>ROI</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="tableBody">
+                        <!-- Filled by JS -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Coupon Details Modal -->
+        <div id="modal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <div id="modalBody"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
