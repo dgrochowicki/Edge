@@ -1,1 +1,119 @@
-
+{
+  "project": "Edge",
+  "currency": "PLN",
+  "unit_value_pln": 2.0,
+  "bookmaker": "STS",
+  "updated_at": "2026-07-15",
+  "coupons": [
+    {
+      "id": "EDGE-001",
+      "date": "2026-07-13",
+      "type": "acca",
+      "stake_pln": 2.0,
+      "combined_odds": 2.6,
+      "potential_return_pln": 4.58,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "GenOne vs ex-RUSTEC",
+          "market": "moneyline",
+          "pick": "GenOne",
+          "odds": 1.18,
+          "result": "won",
+          "notes": "Added as a low-odds filler."
+        },
+        {
+          "match": "The Last Resort vs QUAZAR",
+          "market": "moneyline",
+          "pick": "The Last Resort",
+          "odds": 1.95,
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "Value selection. Lost the deciding map 4:13."
+        },
+        {
+          "match": "Just Players vs Entropy",
+          "market": "moneyline",
+          "pick": "Just Players",
+          "odds": 1.13,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "Added as a low-odds filler."
+        }
+      ],
+      "review": {
+        "main_lesson": "No fillers. Every selection must be strong enough to stand as a single bet.",
+        "decision_quality": "poor",
+        "reason": "Two very low-odds legs increased coupon failure risk without providing meaningful value."
+      }
+    },
+    {
+      "id": "EDGE-002",
+      "date": "2026-07-15",
+      "type": "acca",
+      "stake_pln": 2.0,
+      "combined_odds": 3.22,
+      "potential_return_pln": 5.66,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "HEROIC vs 3DMAX",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "result": "won",
+          "final_score": "1:1 after two maps",
+          "notes": "The bet was settled as won once the match reached a third map."
+        },
+        {
+          "match": "Wildcard vs Gentle Mates",
+          "market": "moneyline",
+          "pick": "Wildcard",
+          "odds": 1.65,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "The pre-match analysis may have overestimated the impact of Gentle Mates playing with a stand-in."
+        }
+      ],
+      "review": {
+        "main_lesson": "Do not overrate roster disruption without enough evidence that it materially lowers team performance.",
+        "decision_quality": "mixed",
+        "reason": "The maps over was correctly identified, but the Wildcard moneyline assessment was wrong."
+      }
+    }
+  ],
+  "observed_passes": [
+    {
+      "date": "2026-07-15",
+      "match": "NiP vs K27",
+      "market": "Over 2.5 maps",
+      "odds": 2.0,
+      "decision": "pass",
+      "result": "lost",
+      "final_score": "NiP 2:0 K27",
+      "map_scores": [
+        "Ancient 13:8",
+        "Nuke 13:8"
+      ]
+    },
+    {
+      "date": "2026-07-15",
+      "match": "paiN vs Phantom",
+      "market": "paiN moneyline",
+      "odds": 1.36,
+      "decision": "pass",
+      "result": "lost",
+      "final_score": "paiN 1:2 Phantom"
+    }
+  ],
+  "summary": {
+    "coupons": 2,
+    "won": 0,
+    "lost": 2,
+    "total_staked_pln": 4.0,
+    "net_result_pln": -4.0,
+    "roi": -1.0
+  }
+}
