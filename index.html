@@ -3,80 +3,72 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edge Dashboard</title>
+    <title>Edge — Terminal</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="dashboard/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="container">
-        <header>
-            <h1>📊 Edge Betting Dashboard</h1>
-            <p>Real-time performance tracking</p>
-        </header>
 
-        <!-- Summary Cards -->
-        <div class="summary">
-            <div class="card">
-                <h3>Net Result</h3>
-                <p class="value" id="netResult">-2.345 PLN</p>
-            </div>
-            <div class="card">
-                <h3>ROI</h3>
-                <p class="value" id="roi">-29.3%</p>
-            </div>
-            <div class="card">
-                <h3>Hit Rate</h3>
-                <p class="value" id="hitRate">25%</p>
-            </div>
-            <div class="card">
-                <h3>Total Staked</h3>
-                <p class="value" id="totalStaked">8 PLN</p>
-            </div>
+<div class="topnav">
+    <div class="topnav-inner">
+        <a href="index.html" class="brand"><span class="blade-sm"></span>EDGE</a>
+        <a href="index.html" class="navlink active">Dashboard</a>
+        <a href="reports.html" class="navlink">Reports</a>
+    </div>
+</div>
+<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
+
+<div class="container">
+    <header>
+        <div class="eyebrow">
+            <span>EDGE / ESPORTS RESEARCH TERMINAL / v0.1</span>
+            <span class="status-live">LIVE</span>
         </div>
+        <h1><span class="blade"></span>Edge</h1>
+        <p class="tagline">Real-time performance tracking — CS2 · LoL · Dota 2</p>
+    </header>
 
-        <!-- Charts -->
-        <div class="charts">
-            <div class="chart-container">
-                <canvas id="roiChart"></canvas>
-            </div>
-            <div class="chart-container">
-                <canvas id="winLossChart"></canvas>
-            </div>
+    <div class="kpi-row" id="kpiRow"></div>
+
+    <div class="charts">
+        <div class="panel">
+            <div class="panel-title"><span>Cumulative P&amp;L</span><span id="plMeta"></span></div>
+            <div class="chart-box"><canvas id="roiChart"></canvas></div>
         </div>
-
-        <!-- Bets Table -->
-        <div class="section">
-            <h2>Recent Coupons</h2>
-            <div class="table-wrapper">
-                <table id="betsTable">
-                    <thead>
-                        <tr>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>Stake</th>
-                            <th>Return</th>
-                            <th>Result</th>
-                            <th>ROI</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="tableBody">
-                        <!-- Filled by JS -->
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <!-- Coupon Details Modal -->
-        <div id="modal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2 id="modalTitle"></h2>
-                <div id="modalBody"></div>
-            </div>
+        <div class="panel">
+            <div class="panel-title"><span>Outcome Split</span></div>
+            <div class="chart-box"><canvas id="winLossChart"></canvas></div>
         </div>
     </div>
 
-    <script src="dashboard/dashboard.js"></script>
+    <div class="section">
+        <div class="section-head">
+            <h2>Coupon Log</h2>
+            <span class="count" id="couponCount"></span>
+        </div>
+        <table id="betsTable">
+            <thead>
+                <tr>
+                    <th>ID</th><th>Date</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th>ROI</th><th></th>
+                </tr>
+            </thead>
+            <tbody id="tableBody"><!-- Filled by JS --></tbody>
+        </table>
+    </div>
+</div>
+
+<div id="modal" class="modal">
+    <div class="modal-content">
+        <div class="modal-head">
+            <h2 id="modalTitle"></h2>
+            <span class="close" id="closeModal">&times;</span>
+        </div>
+        <div class="modal-body" id="modalBody"></div>
+    </div>
+</div>
+
+<script src="dashboard.js"></script>
 </body>
 </html>
