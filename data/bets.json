@@ -18,9 +18,32 @@
       "status": "lost",
       "net_result_pln": -2.0,
       "selections": [
-        {"match": "GenOne vs ex-RUSTEC", "market": "moneyline", "pick": "GenOne", "odds": 1.18, "result": "won", "notes": "Added as a low-odds filler."},
-        {"match": "The Last Resort vs QUAZAR", "market": "moneyline", "pick": "The Last Resort", "odds": 1.95, "result": "lost", "final_score": "1:2", "notes": "Value selection. Lost the deciding [...]"},
-        {"match": "Just Players vs Entropy", "market": "moneyline", "pick": "Just Players", "odds": 1.13, "result": "lost", "final_score": "0:2", "notes": "Added as a low-odds filler."}
+        {
+          "match": "GenOne vs ex-RUSTEC",
+          "market": "moneyline",
+          "pick": "GenOne",
+          "odds": 1.18,
+          "result": "won",
+          "notes": "Added as a low-odds filler."
+        },
+        {
+          "match": "The Last Resort vs QUAZAR",
+          "market": "moneyline",
+          "pick": "The Last Resort",
+          "odds": 1.95,
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "Value selection. Lost the deciding map."
+        },
+        {
+          "match": "Just Players vs Entropy",
+          "market": "moneyline",
+          "pick": "Just Players",
+          "odds": 1.13,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "Added as a low-odds filler."
+        }
       ],
       "review": {
         "main_lesson": "No fillers. Every selection must be strong enough to stand as a single bet.",
@@ -41,8 +64,24 @@
       "status": "lost",
       "net_result_pln": -2.0,
       "selections": [
-        {"match": "HEROIC vs 3DMAX", "market": "total_maps", "pick": "Over 2.5 maps", "odds": 1.95, "result": "won", "final_score": "1:1 after two maps", "notes": "The bet was settled as won once [...]"},
-        {"match": "Wildcard vs Gentle Mates", "market": "moneyline", "pick": "Wildcard", "odds": 1.65, "result": "lost", "final_score": "0:2", "notes": "The pre-match analysis may have overestimat[...]"}
+        {
+          "match": "HEROIC vs 3DMAX",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "result": "won",
+          "final_score": "1:1 after two maps",
+          "notes": "The bet was settled as won once the match reached a deciding map."
+        },
+        {
+          "match": "Wildcard vs Gentle Mates",
+          "market": "moneyline",
+          "pick": "Wildcard",
+          "odds": 1.65,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "The pre-match analysis may have overestimated the impact of roster disruption."
+        }
       ],
       "review": {
         "main_lesson": "Do not overrate roster disruption without enough evidence that it materially lowers team performance.",
@@ -57,20 +96,42 @@
       "source": "user_bet",
       "report": "reports/2026-07-16.md",
       "stake_pln": 2.0,
-      "combined_odds": 2.83,
-      "potential_return_pln": 5.66,
+      "combined_odds": 5.5575,
+      "potential_return_pln": 9.78,
       "gross_return_pln": 0.0,
       "status": "lost",
       "net_result_pln": -2.0,
       "selections": [
-        {"match": "paiN vs 3DMAX", "market": "total_maps", "pick": "Over 2.5 maps", "odds": 1.90, "result": "lost", "final_score": "2:0", "notes": "First leg lost, coupon void."},
-        {"match": "Gentle Mates vs NiP", "market": "moneyline", "pick": "NiP", "odds": 1.50, "result": "void"},
-        {"match": "Phantom vs HEROIC", "market": "total_maps", "pick": "Over 2.5 maps", "odds": 1.95, "result": "void"}
+        {
+          "match": "paiN vs 3DMAX",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.9,
+          "result": "lost",
+          "final_score": "2:0",
+          "notes": "This losing selection caused the full accumulator to lose."
+        },
+        {
+          "match": "Gentle Mates vs NiP",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.5,
+          "result": "won",
+          "notes": "NiP won."
+        },
+        {
+          "match": "Phantom vs HEROIC",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "result": "won",
+          "notes": "The match reached three maps."
+        }
       ],
       "review": {
-        "main_lesson": "First leg lost immediately. User proceeded with separate follow-up coupon.",
+        "main_lesson": "Two correct selections were not enough because one losing leg killed the accumulator.",
         "decision_quality": "not_scored",
-        "reason": "Coupon failed on first selection. paiN swept 3DMAX 2:0."
+        "reason": "The coupon lost on paiN vs 3DMAX Over 2.5 maps; the other two selections won."
       }
     },
     {
@@ -80,19 +141,33 @@
       "source": "user_bet",
       "report": "reports/2026-07-16.md",
       "stake_pln": 2.0,
-      "combined_odds": 2.8275,
-      "potential_return_pln": 5.655,
-      "gross_return_pln": 5.655,
+      "combined_odds": 2.925,
+      "potential_return_pln": 5.15,
+      "gross_return_pln": 4.89,
       "status": "won",
-      "net_result_pln": 3.655,
+      "net_result_pln": 2.89,
       "selections": [
-        {"match": "Gentle Mates vs NiP", "market": "moneyline", "pick": "NiP", "odds": 1.45, "result": "won", "notes": "NiP won as predicted."},
-        {"match": "Phantom vs HEROIC", "market": "total_maps", "pick": "Over 2.5 maps", "odds": 1.95, "result": "won", "notes": "Match went to 3 maps, Over 2.5 maps settled as winner."}
+        {
+          "match": "Gentle Mates vs NiP",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.5,
+          "result": "won",
+          "notes": "NiP won."
+        },
+        {
+          "match": "Phantom vs HEROIC",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "result": "won",
+          "notes": "The match reached three maps."
+        }
       ],
       "review": {
-        "main_lesson": "After EDGE-003 lost on first leg, this follow-up coupon with same two remaining selections won both legs.",
+        "main_lesson": "The two remaining selections both won on the follow-up coupon.",
         "decision_quality": "good",
-        "reason": "Both selections correctly identified. Even though combined into acca, each leg had independent value."
+        "reason": "Both selections were correct and the coupon returned 4.89 PLN."
       }
     },
     {
@@ -101,13 +176,19 @@
       "type": "single",
       "source": "user_bet",
       "stake_pln": 2.0,
-      "combined_odds": 2.00,
+      "combined_odds": 2.0,
       "potential_return_pln": 3.52,
       "gross_return_pln": 0.0,
       "status": "pending",
       "net_result_pln": 0.0,
       "selections": [
-        {"match": "Phantom vs K27", "market": "moneyline", "pick": "Phantom", "odds": 2.00, "result": "pending"}
+        {
+          "match": "Phantom vs K27",
+          "market": "moneyline",
+          "pick": "Phantom",
+          "odds": 2.0,
+          "result": "pending"
+        }
       ]
     },
     {
@@ -116,13 +197,19 @@
       "type": "single",
       "source": "user_bet",
       "stake_pln": 2.0,
-      "combined_odds": 2.00,
+      "combined_odds": 2.0,
       "potential_return_pln": 3.52,
       "gross_return_pln": 0.0,
       "status": "pending",
       "net_result_pln": 0.0,
       "selections": [
-        {"match": "Heroic vs NiP", "market": "moneyline", "pick": "Heroic", "odds": 2.00, "result": "pending"}
+        {
+          "match": "Heroic vs NiP",
+          "market": "moneyline",
+          "pick": "Heroic",
+          "odds": 2.0,
+          "result": "pending"
+        }
       ]
     }
   ],
@@ -135,7 +222,10 @@
       "decision": "pass",
       "result": "lost",
       "final_score": "NiP 2:0 K27",
-      "map_scores": ["Ancient 13:8", "Nuke 13:8"]
+      "map_scores": [
+        "Ancient 13:8",
+        "Nuke 13:8"
+      ]
     },
     {
       "date": "2026-07-15",
@@ -150,12 +240,12 @@
   "summary": {
     "coupons": 6,
     "won": 1,
-    "lost": 2,
-    "voided": 1,
+    "lost": 3,
+    "voided": 0,
     "pending": 2,
     "total_staked_pln": 12.0,
-    "gross_return_pln": 5.655,
-    "net_result_pln": -2.345,
-    "roi": -0.1954
+    "gross_return_pln": 4.89,
+    "net_result_pln": -3.11,
+    "roi": -0.2592
   }
 }
