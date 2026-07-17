@@ -5,7 +5,6 @@ let betsData = null;
 let roiChart = null;
 let winLossChart = null;
 
-// Initialize dashboard
 document.addEventListener('DOMContentLoaded', () => {
     loadBets();
     setupModalHandlers();
@@ -18,109 +17,112 @@ async function loadBets() {
         renderDashboard();
     } catch (error) {
         console.error('Error loading bets:', error);
-        document.getElementById('tableBody').innerHTML = '<tr><td colspan="7">Error loading data</td></tr>';
+        document.getElementById('tableBody').innerHTML = '<tr><td colspan="8">Error loading data</td></tr>';
     }
 }
 
+function fmt(n, d = 2) { return Number(n).toFixed(d); }
+
 function renderDashboard() {
-    updateSummary();
+    buildTicker();
+    buildKPIs();
     renderCharts();
     renderTable();
 }
 
-function updateSummary() {
-    const summary = betsData.summary;
-    
-    const netResult = summary.net_result_pln;
-    const roi = (summary.roi * 100).toFixed(1);
-    const hitRate = summary.coupons > 0 ? (summary.won / summary.coupons * 100).toFixed(1) : 0;
-    
-    document.getElementById('netResult').textContent = `${netResult.toFixed(3)} PLN`;
-    document.getElementById('netResult').className = netResult < 0 ? 'value negative' : 'value positive';
-    
-    document.getElementById('roi').textContent = `${roi}%`;
-    document.getElementById('roi').className = roi < 0 ? 'value negative' : 'value positive';
-    
-    document.getElementById('hitRate').textContent = `${hitRate}%`;
-    document.getElementById('totalStaked').textContent = `${summary.total_staked_pln.toFixed(2)} PLN`;
+function buildTicker() {
+    const el = document.getElementById('ticker');
+    const items = betsData.coupons.map(c => {
+        const cls = c.status === 'won' ? 't-pos' : c.status === 'lost' ? 't-neg' : c.status === 'void' ? 't-void' : '';
+        const val = c.status === 'pending' ? 'PENDING' : (c.net_result_pln >= 0 ? '+' : '') + fmt(c.net_result_pln, 2) + ' PLN';
+        return `<span><b>${c.id}</b><span class="${cls}">${val}</span></span>`;
+    });
+    // duplicate list so the marquee loop is seamless
+    el.innerHTML = items.join('') + items.join('');
+}
+
+function buildKPIs() {
+    const s = betsData.summary;
+    const roi = (s.roi * 100).toFixed(1);
+    const settledCount = s.coupons - s.pending;
+    const hitRate = settledCount > 0 ? (s.won / settledCount * 100).toFixed(0) : '0';
+
+    const kpis = [
+        { label: 'Net Result', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 3)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln)} PLN staked` },
+        { label: 'ROI', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `vs. flat stake baseline` },
+        { label: 'Hit Rate', value: `${hitRate}%`, cls: '', sub: `${s.won}W – ${s.lost}L – ${s.voided}V` },
+        { label: 'Pending', value: `${s.pending}`, cls: '', sub: `open coupons awaiting result` }
+    ];
+
+    document.getElementById('kpiRow').innerHTML = kpis.map(k => `
+        <div class="kpi ${k.cls}">
+            <div class="kpi-label">${k.label}</div>
+            <div class="kpi-value ${k.cls}">${k.value}</div>
+            <div class="kpi-sub">${k.sub}</div>
+        </div>`).join('');
+
+    document.getElementById('couponCount').textContent = `${s.coupons} total`;
 }
 
 function renderCharts() {
     const roiCtx = document.getElementById('roiChart').getContext('2d');
     const winLossCtx = document.getElementById('winLossChart').getContext('2d');
 
-    // ROI Trend Chart
-    const cumulativeROI = [];
+    const settled = betsData.coupons.filter(c => c.status !== 'pending');
     let cumulative = 0;
-    
-    betsData.coupons.forEach(coupon => {
-        cumulative += coupon.net_result_pln;
-        cumulativeROI.push(cumulative);
-    });
+    const cumulativeData = settled.map(c => { cumulative += c.net_result_pln; return cumulative; });
+    const labels = settled.map(c => c.id.replace('EDGE-', ''));
 
     if (roiChart) roiChart.destroy();
     roiChart = new Chart(roiCtx, {
         type: 'line',
         data: {
-            labels: betsData.coupons.map(c => c.id),
+            labels,
             datasets: [{
-                label: 'Cumulative Net Result (PLN)',
-                data: cumulativeROI,
-                borderColor: '#58a6ff',
-                backgroundColor: 'rgba(88, 166, 255, 0.1)',
-                tension: 0.4,
+                data: cumulativeData,
+                borderColor: '#ff9f1c',
+                backgroundColor: 'rgba(255,159,28,0.08)',
+                borderWidth: 2,
+                tension: 0.25,
                 fill: true,
-                pointBackgroundColor: '#58a6ff',
-                pointRadius: 5,
-                pointHoverRadius: 7
+                pointBackgroundColor: '#ff9f1c',
+                pointBorderColor: '#0a0b0d',
+                pointRadius: 4,
+                pointHoverRadius: 6
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: {
-                legend: {
-                    labels: { color: '#c9d1d9' }
-                }
-            },
+            plugins: { legend: { display: false } },
             scales: {
-                y: {
-                    ticks: { color: '#8b949e' },
-                    grid: { color: '#30363d' }
-                },
-                x: {
-                    ticks: { color: '#8b949e' },
-                    grid: { color: '#30363d' }
-                }
+                y: { ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: '#1c1e23' } },
+                x: { ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } }, grid: { display: false } }
             }
         }
     });
 
-    // Win/Loss Pie Chart
     const summary = betsData.summary;
-
     if (winLossChart) winLossChart.destroy();
     winLossChart = new Chart(winLossCtx, {
         type: 'doughnut',
         data: {
-            labels: ['Won', 'Lost', 'Voided'],
+            labels: ['Won', 'Lost', 'Void'],
             datasets: [{
                 data: [summary.won, summary.lost, summary.voided],
-                backgroundColor: [
-                    '#3fb950',
-                    '#f85149',
-                    '#d29922'
-                ],
-                borderColor: '#161b22',
-                borderWidth: 2
+                backgroundColor: ['#5ec26a', '#ff5c4d', '#d9a441'],
+                borderColor: '#121316',
+                borderWidth: 3
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            cutout: '68%',
             plugins: {
                 legend: {
-                    labels: { color: '#c9d1d9' }
+                    position: 'bottom',
+                    labels: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 11 }, boxWidth: 10, padding: 14 }
                 }
             }
         }
@@ -129,93 +131,73 @@ function renderCharts() {
 
 function renderTable() {
     const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = '';
-
-    betsData.coupons.forEach((coupon, index) => {
-        const row = document.createElement('tr');
-        const roi = coupon.stake_pln > 0 ? ((coupon.net_result_pln / coupon.stake_pln) * 100).toFixed(1) : '0.0';
-        const statusClass = `status-${coupon.status}`;
-
-        row.innerHTML = `
-            <td>${coupon.id}</td>
-            <td>${coupon.date}</td>
-            <td>${coupon.stake_pln.toFixed(2)} PLN</td>
-            <td>${coupon.gross_return_pln.toFixed(3)} PLN</td>
-            <td class="${statusClass}">${coupon.status.toUpperCase()}</td>
-            <td>${roi}%</td>
-            <td><button class="btn" onclick="showDetails('${coupon.id}')">View</button></td>
-        `;
-
-        tbody.appendChild(row);
-    });
+    tbody.innerHTML = betsData.coupons.map(c => {
+        const roi = c.stake_pln > 0 ? ((c.net_result_pln / c.stake_pln) * 100).toFixed(1) : '0.0';
+        return `<tr onclick="showDetails('${c.id}')">
+            <td>${c.id}</td>
+            <td>${c.date}</td>
+            <td class="num">${fmt(c.stake_pln)}</td>
+            <td class="num">${c.combined_odds}</td>
+            <td class="num">${fmt(c.gross_return_pln)}</td>
+            <td><span class="tag ${c.status}">${c.status}</span></td>
+            <td class="num">${roi}%</td>
+            <td class="view-link">VIEW &rarr;</td>
+        </tr>`;
+    }).join('');
 }
 
 function showDetails(couponId) {
-    const coupon = betsData.coupons.find(c => c.id === couponId);
-    if (!coupon) return;
+    const c = betsData.coupons.find(x => x.id === couponId);
+    if (!c) return;
 
-    const modal = document.getElementById('modal');
-    
-    document.getElementById('modalTitle').textContent = `${coupon.id} - ${coupon.date}`;
-    
+    document.getElementById('modalTitle').textContent = `${c.id} \u00b7 ${c.date}`;
+
     let selectionsHTML = '';
-    if (coupon.selections && Array.isArray(coupon.selections)) {
-        selectionsHTML = coupon.selections.map(sel => {
-            const finalScore = sel.final_score ? `<br>Score: ${sel.final_score}` : '';
-            return `
-                <div class="selection">
-                    <strong>${sel.match}</strong><br>
-                    Market: ${sel.market}<br>
-                    Pick: ${sel.pick} @ ${sel.odds}${finalScore}<br>
-                    Result: <span class="status-${sel.result}">${sel.result.toUpperCase()}</span>
-                    ${sel.notes ? `<br><em>${sel.notes}</em>` : ''}
+    if (c.selections && Array.isArray(c.selections)) {
+        selectionsHTML = c.selections.map(s => `
+            <div class="selection">
+                <div class="m">${s.match}</div>
+                <div class="d">${s.market} — ${s.pick} @ ${s.odds}${s.final_score ? ` — ${s.final_score}` : ''} —
+                    <span class="tag ${s.result}" style="padding:1px 5px;">${s.result}</span>
                 </div>
-            `;
-        }).join('');
+                ${s.notes ? `<div class="note">${s.notes}</div>` : ''}
+            </div>`).join('');
     }
 
-    const reviewHTML = coupon.review ? `
-        <hr style="border-color: #30363d; margin: 15px 0;">
-        <h3 style="color: #58a6ff; margin-bottom: 10px;">Review</h3>
-        <p><strong>Decision Quality:</strong> ${coupon.review.decision_quality}</p>
-        <p><strong>Main Lesson:</strong> ${coupon.review.main_lesson}</p>
-        <p><strong>Reason:</strong> ${coupon.review.reason}</p>
-    ` : '';
+    const reviewHTML = c.review ? `
+        <div class="review-title">Review</div>
+        <div class="review-box">
+            <div class="kv"><span class="k">Decision quality</span><span class="v">${c.review.decision_quality}</span></div>
+            <div style="margin-top:8px;"><span class="k">Lesson —</span> <span class="v">${c.review.main_lesson}</span></div>
+        </div>` : '';
 
     document.getElementById('modalBody').innerHTML = `
-        <p><strong>Type:</strong> ${coupon.type.toUpperCase()}</p>
-        <p><strong>Source:</strong> ${coupon.source.replace('_', ' ')}</p>
-        <p><strong>Stake:</strong> ${coupon.stake_pln.toFixed(2)} PLN</p>
-        <p><strong>Combined Odds:</strong> ${coupon.combined_odds}</p>
-        <p><strong>Potential Return:</strong> ${coupon.potential_return_pln.toFixed(3)} PLN</p>
-        <p><strong>Gross Return:</strong> ${coupon.gross_return_pln.toFixed(3)} PLN</p>
-        <p><strong>Result:</strong> <span class="status-${coupon.status}">${coupon.status.toUpperCase()}</span></p>
-        <p><strong>Net Result:</strong> ${coupon.net_result_pln.toFixed(3)} PLN</p>
-        <hr style="border-color: #30363d; margin: 15px 0;">
-        <h3 style="color: #58a6ff; margin-bottom: 10px;">Selections</h3>
+        <div class="kv"><span class="k">Type</span><span class="v">${c.type}</span></div>
+        <div class="kv"><span class="k">Source</span><span class="v">${c.source.replace('_', ' ')}</span></div>
+        <div class="kv"><span class="k">Stake</span><span class="v">${fmt(c.stake_pln)} PLN</span></div>
+        <div class="kv"><span class="k">Combined odds</span><span class="v">${c.combined_odds}</span></div>
+        <div class="kv"><span class="k">Potential return</span><span class="v">${fmt(c.potential_return_pln, 3)} PLN</span></div>
+        <div class="kv"><span class="k">Net result</span><span class="v">${fmt(c.net_result_pln, 3)} PLN</span></div>
+        <div class="selections-title">Selections</div>
         ${selectionsHTML}
         ${reviewHTML}
+        <div style="margin-top:16px;">
+            <a href="reports.html?date=${c.date}" style="font-family:var(--font-mono);font-size:11px;color:var(--edge);text-decoration:none;">Pełny raport dnia →</a>
+        </div>
     `;
-    
-    modal.style.display = 'block';
+
+    document.getElementById('modal').style.display = 'flex';
 }
 
 function setupModalHandlers() {
     const modal = document.getElementById('modal');
-    const closeBtn = document.querySelector('.close');
+    const closeBtn = document.getElementById('closeModal');
 
-    closeBtn.onclick = () => {
-        modal.style.display = 'none';
-    };
-
-    window.onclick = (event) => {
-        if (event.target === modal) {
-            modal.style.display = 'none';
-        }
-    };
+    closeBtn.onclick = () => { modal.style.display = 'none'; };
+    modal.addEventListener('click', (event) => {
+        if (event.target === modal) modal.style.display = 'none';
+    });
 }
 
 // Refresh data every 30 seconds
-setInterval(() => {
-    loadBets();
-}, 30000);
+setInterval(() => { loadBets(); }, 30000);
