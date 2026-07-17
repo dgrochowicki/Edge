@@ -3,12 +3,13 @@
 ## Repository Status
 
 Current version: v0.1
-Last updated: 2026-07-16
+Last updated: 2026-07-17
 
 Recent changes:
 - Added EDGE-003 and EDGE-004
 - Added source field to bets.json
 - Reports are the source of historical analysis
+- Settled EDGE-005 (lost) and EDGE-006 (won)
 
 This document contains the current shared context, decisions, operating rules, open questions, and known data for the Edge project.
 
@@ -168,6 +169,30 @@ The over PASS was correct.
 
 The moneyline decision cannot be fully reviewed unless the exact offered price is preserved.
 
+### EDGE-005 — 2026-07-17
+
+Stake: 2 PLN
+Odds: 2.00
+Potential return: 3.52 PLN
+Result: Lost
+Net result: -2 PLN
+
+Selections:
+
+- Phantom vs K27 ML @2.00 — lost
+
+### EDGE-006 — 2026-07-17
+
+Stake: 2 PLN
+Odds: 2.00
+Potential return: 3.52 PLN
+Result: Won
+Net result: +1.52 PLN
+
+Selections:
+
+- Heroic vs NiP ML @2.00 — won
+
 ### paiN vs Phantom — 2026-07-15
 
 Final score: paiN 1:2 Phantom
@@ -179,14 +204,14 @@ This PASS was justified because the short price did not compensate for the risk.
 
 ## Current Running Result
 
-- Coupons: 4
-- Won: 1
-- Lost: 2
-- Voided: 1
-- Total staked: 8 PLN
-- Gross return: 5.655 PLN
-- Net result: -2.345 PLN
-- ROI: -29.3%
+- Coupons: 6
+- Won: 2
+- Lost: 4
+- Voided: 0
+- Total staked: 12 PLN
+- Gross return: 8.41 PLN
+- Net result: -3.59 PLN
+- ROI: -29.9%
 
 This sample is not statistically meaningful.
 
