@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edge — Reports</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/9.1.6/marked.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<div class="topnav">
+    <div class="topnav-inner">
+        <a href="../index.html" class="brand"><span class="blade-sm"></span>EDGE</a>
+        <a href="../index.html" class="navlink">Dashboard</a>
+        <a href="reports.html" class="navlink active">Reports</a>
+    </div>
+</div>
+
+<div class="container">
+    <header>
+        <div class="eyebrow">
+            <span>EDGE / DAILY REPORTS ARCHIVE</span>
+        </div>
+        <h1><span class="blade"></span>Reports</h1>
+        <p class="tagline">Pre-match analysis, fair-odds estimates and BET/PASS decisions, by day.</p>
+    </header>
+
+    <div class="reports-layout">
+        <div class="report-list" id="reportList">
+            <div class="rv-loading" style="padding:16px;">Loading reports…</div>
+        </div>
+        <div class="report-view" id="reportView">
+            <div class="rv-loading">Select a report from the list.</div>
+        </div>
+    </div>
+</div>
+
+<script src="reports.js"></script>
+</body>
+</html>

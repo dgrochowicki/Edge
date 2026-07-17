@@ -28,6 +28,12 @@ function renderDashboard() {
     buildKPIs();
     renderCharts();
     renderTable();
+
+    const params = new URLSearchParams(window.location.search);
+    const openId = params.get('open');
+    if (openId && betsData.coupons.some(c => c.id === openId)) {
+        showDetails(openId);
+    }
 }
 
 function buildTicker() {
@@ -182,7 +188,7 @@ function showDetails(couponId) {
         ${selectionsHTML}
         ${reviewHTML}
         <div style="margin-top:16px;">
-            <a href="reports.html?date=${c.date}" style="font-family:var(--font-mono);font-size:11px;color:var(--edge);text-decoration:none;">Pełny raport dnia →</a>
+            <a href="dashboard/reports.html?date=${c.date}" style="font-family:var(--font-mono);font-size:11px;color:var(--edge);text-decoration:none;">Pełny raport dnia →</a>
         </div>
     `;
 
