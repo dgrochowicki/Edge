@@ -3,59 +3,42 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Edge — Terminal</title>
+    <title>Edge — Logs</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <link rel="stylesheet" href="dashboard/styles.css">
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
 
 <div class="app-shell">
 <aside class="sidebar">
-    <a href="index.html" class="brand" title="Edge"><span class="blade-sm"></span></a>
+    <a href="../index.html" class="brand" title="Edge"><span class="blade-sm"></span></a>
     <nav class="sidenav">
-        <a href="index.html" class="navlink active" title="Dashboard" aria-label="Dashboard">
+        <a href="../index.html" class="navlink" title="Dashboard" aria-label="Dashboard">
             <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><line x1="4" y1="20" x2="4" y2="13"></line><line x1="10" y1="20" x2="10" y2="7"></line><line x1="16" y1="20" x2="16" y2="11"></line><line x1="20" y1="20" x2="20" y2="4"></line></svg>
         </a>
-        <a href="dashboard/reports.html" class="navlink" title="Reports" aria-label="Reports">
+        <a href="reports.html" class="navlink" title="Reports" aria-label="Reports">
             <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><path d="M6 2h9l5 5v15H6z"></path><path d="M15 2v5h5"></path><line x1="9" y1="13" x2="17" y2="13"></line><line x1="9" y1="17" x2="17" y2="17"></line></svg>
         </a>
-        <a href="dashboard/logs.html" class="navlink" title="Logs" aria-label="Logs">
+        <a href="logs.html" class="navlink active" title="Logs" aria-label="Logs">
             <svg class="nav-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="square" stroke-linejoin="miter"><rect x="3" y="4" width="18" height="16"></rect><line x1="3" y1="10" x2="21" y2="10"></line><line x1="3" y1="15" x2="21" y2="15"></line><line x1="9" y1="4" x2="9" y2="20"></line></svg>
         </a>
     </nav>
 </aside>
 <div class="main">
 
-<div class="ticker-wrap"><div class="ticker" id="ticker"></div></div>
-
 <div class="container">
     <header>
         <div class="eyebrow">
-            <span>EDGE / ESPORTS RESEARCH TERMINAL / v0.1</span>
-            <span class="status-live">LIVE</span>
+            <span>EDGE / FULL COUPON LOG</span>
         </div>
-        <h1><span class="blade"></span>Edge</h1>
-        <p class="tagline">Real-time performance tracking — CS2 · LoL · Dota 2</p>
+        <h1><span class="blade"></span>Logs</h1>
+        <p class="tagline">Every coupon ever placed, newest first.</p>
     </header>
-
-    <div class="kpi-row" id="kpiRow"></div>
-
-    <div class="charts">
-        <div class="panel">
-            <div class="panel-title"><span>Cumulative P&amp;L</span><span id="plMeta"></span></div>
-            <div class="chart-box"><canvas id="roiChart"></canvas></div>
-        </div>
-        <div class="panel">
-            <div class="panel-title"><span>Outcome Split</span></div>
-            <div class="chart-box"><canvas id="winLossChart"></canvas></div>
-        </div>
-    </div>
 
     <div class="section">
         <div class="section-head">
-            <h2>Recent Coupons</h2>
+            <h2>All Coupons</h2>
             <span class="count" id="couponCount"></span>
         </div>
         <table id="betsTable">
@@ -82,6 +65,6 @@
     </div>
 </div>
 
-<script src="dashboard/dashboard.js"></script>
+<script src="logs.js"></script>
 </body>
 </html>

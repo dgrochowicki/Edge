@@ -1,6 +1,8 @@
 // Fetch and parse bets data from GitHub
 const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/dgrochowicki/Edge/main/data/bets.json';
 
+const RECENT_LIMIT = 6;
+
 let betsData = null;
 let roiChart = null;
 let winLossChart = null;
@@ -66,8 +68,6 @@ function buildKPIs() {
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('');
-
-    document.getElementById('couponCount').textContent = `${s.coupons} total`;
 }
 
 function renderCharts() {
@@ -137,7 +137,10 @@ function renderCharts() {
 
 function renderTable() {
     const tbody = document.getElementById('tableBody');
-    tbody.innerHTML = betsData.coupons.map(c => {
+    const total = betsData.coupons.length;
+    const recent = [...betsData.coupons].reverse().slice(0, RECENT_LIMIT);
+
+    tbody.innerHTML = recent.map(c => {
         const roi = c.stake_pln > 0 ? ((c.net_result_pln / c.stake_pln) * 100).toFixed(1) : '0.0';
         return `<tr onclick="showDetails('${c.id}')">
             <td>${c.id}</td>
@@ -150,6 +153,9 @@ function renderTable() {
             <td class="view-link">VIEW &rarr;</td>
         </tr>`;
     }).join('');
+
+    document.getElementById('couponCount').textContent =
+        total > recent.length ? `latest ${recent.length} of ${total}` : `${total} total`;
 }
 
 function showDetails(couponId) {
