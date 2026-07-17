@@ -23,6 +23,8 @@
           "market": "moneyline",
           "pick": "GenOne",
           "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "notes": "Added as a low-odds filler."
         },
@@ -31,6 +33,8 @@
           "market": "moneyline",
           "pick": "The Last Resort",
           "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
           "result": "lost",
           "final_score": "1:2",
           "notes": "Value selection. Lost the deciding map."
@@ -40,6 +44,8 @@
           "market": "moneyline",
           "pick": "Just Players",
           "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
           "result": "lost",
           "final_score": "0:2",
           "notes": "Added as a low-odds filler."
@@ -69,6 +75,8 @@
           "market": "total_maps",
           "pick": "Over 2.5 maps",
           "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "final_score": "1:1 after two maps",
           "notes": "The bet was settled as won once the match reached a deciding map."
@@ -78,6 +86,8 @@
           "market": "moneyline",
           "pick": "Wildcard",
           "odds": 1.65,
+          "confidence": null,
+          "closing_odds": null,
           "result": "lost",
           "final_score": "0:2",
           "notes": "The pre-match analysis may have overestimated the impact of roster disruption."
@@ -107,6 +117,8 @@
           "market": "total_maps",
           "pick": "Over 2.5 maps",
           "odds": 1.9,
+          "confidence": null,
+          "closing_odds": null,
           "result": "lost",
           "final_score": "2:0",
           "notes": "This losing selection caused the full accumulator to lose."
@@ -116,6 +128,8 @@
           "market": "moneyline",
           "pick": "NiP",
           "odds": 1.5,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "notes": "NiP won."
         },
@@ -124,6 +138,8 @@
           "market": "total_maps",
           "pick": "Over 2.5 maps",
           "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "notes": "The match reached three maps."
         }
@@ -152,6 +168,8 @@
           "market": "moneyline",
           "pick": "NiP",
           "odds": 1.5,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "notes": "NiP won."
         },
@@ -160,6 +178,8 @@
           "market": "total_maps",
           "pick": "Over 2.5 maps",
           "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
           "result": "won",
           "notes": "The match reached three maps."
         }
@@ -187,6 +207,8 @@
           "market": "moneyline",
           "pick": "Phantom",
           "odds": 2.0,
+          "confidence": 7,
+          "closing_odds": null,
           "result": "lost"
         }
       ]
@@ -208,6 +230,8 @@
           "market": "moneyline",
           "pick": "Heroic",
           "odds": 2.0,
+          "confidence": 8,
+          "closing_odds": null,
           "result": "won"
         }
       ]
