@@ -25,42 +25,6 @@ body{
 }
 ::selection{background:var(--edge);color:#0a0b0d;}
 
-/* ---------- Ticker ---------- */
-.ticker-wrap{
-  background:var(--panel-2);
-  border-bottom:1px solid var(--line);
-  overflow:hidden;
-  white-space:nowrap;
-  position:relative;
-  height:34px;
-  display:flex;
-  align-items:center;
-}
-.ticker-wrap::after{
-  content:"";
-  position:absolute;right:0;top:0;bottom:0;width:60px;
-  background:linear-gradient(90deg, transparent, var(--panel-2));
-  pointer-events:none;
-}
-.ticker{
-  display:inline-flex;
-  align-items:center;
-  animation:scroll 32s linear infinite;
-  font-family:var(--font-mono);
-  font-size:12px;
-  letter-spacing:0.02em;
-}
-.ticker-wrap:hover .ticker{animation-play-state:paused;}
-.ticker span{padding:0 18px;color:var(--ink-dim);border-right:1px solid var(--line);display:inline-flex;gap:8px;align-items:center;}
-.ticker b{color:var(--ink);font-weight:600;}
-.t-pos{color:var(--pos)!important;}
-.t-neg{color:var(--neg)!important;}
-.t-void{color:var(--void)!important;}
-@keyframes scroll{
-  from{transform:translateX(0);}
-  to{transform:translateX(-50%);}
-}
-
 .container{max-width:1180px;margin:0 auto;padding:0 24px 60px;}
 
 /* ---------- App shell / Sidebar ---------- */
@@ -135,36 +99,15 @@ header{padding:36px 0 22px;position:relative;}
   justify-content:space-between;
   margin-bottom:14px;
 }
-.eyebrow .status-live{color:var(--pos);}
-.eyebrow .status-live::before{
-  content:"";
-  display:inline-block;
-  width:6px;height:6px;
-  border-radius:50%;
-  background:var(--pos);
-  margin-right:6px;
-  box-shadow:0 0 6px var(--pos);
-}
 h1{
   font-size:42px;
   font-weight:700;
   letter-spacing:-0.02em;
-  display:flex;
-  align-items:baseline;
-  gap:14px;
-}
-h1 .blade{
-  display:inline-block;
-  width:22px;height:22px;
-  background:var(--edge);
-  clip-path:polygon(0 0, 100% 30%, 40% 100%);
-  flex-shrink:0;
 }
 header p.tagline{
   color:var(--ink-dim);
   font-size:14px;
   margin-top:8px;
-  margin-left:36px;
 }
 
 /* ---------- KPI Strip ---------- */
@@ -215,8 +158,8 @@ header p.tagline{
 
 /* ---------- Charts ---------- */
 .charts{
-  display:grid;
-  grid-template-columns:1.6fr 1fr;
+  display:flex;
+  flex-direction:column;
   gap:1px;
   background:var(--line);
   border:1px solid var(--line);
@@ -234,6 +177,39 @@ header p.tagline{
   justify-content:space-between;
 }
 .chart-box{height:260px;position:relative;}
+
+/* ---------- Outcome split (stacked progress bar) ---------- */
+.outcome-bar{
+  display:flex;
+  width:100%;
+  height:28px;
+  border-radius:4px;
+  overflow:hidden;
+  background:var(--line-soft);
+  gap:2px;
+}
+.outcome-seg{height:100%;}
+.outcome-legend{
+  display:flex;
+  flex-wrap:wrap;
+  gap:24px;
+  margin-top:18px;
+}
+.outcome-legend-item{
+  display:flex;
+  align-items:center;
+  gap:7px;
+  font-family:var(--font-mono);
+}
+.outcome-dot{width:8px;height:8px;border-radius:2px;flex-shrink:0;}
+.outcome-legend-item .ol-label{
+  font-size:10.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.outcome-legend-item .ol-count{font-size:12.5px;color:var(--ink);font-weight:600;}
+.outcome-legend-item .ol-pct{font-size:11px;color:var(--ink-faint);}
 
 /* ---------- Section / Table ---------- */
 .section{margin-bottom:20px;}
@@ -342,7 +318,6 @@ tr:hover .view-link{color:var(--edge);}
 @media (max-width:768px){
   h1{font-size:30px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);}
-  .charts{grid-template-columns:1fr;}
   table{font-size:11px;}
   th,td{padding:8px;}
   thead th:nth-child(4),td:nth-child(4){display:none;}

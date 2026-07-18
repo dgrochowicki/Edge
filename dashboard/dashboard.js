@@ -5,7 +5,6 @@ const RECENT_LIMIT = 6;
 
 let betsData = null;
 let roiChart = null;
-let winLossChart = null;
 
 document.addEventListener('DOMContentLoaded', () => {
     loadBets();
@@ -26,7 +25,6 @@ async function loadBets() {
 function fmt(n, d = 2) { return Number(n).toFixed(d); }
 
 function renderDashboard() {
-    buildTicker();
     buildKPIs();
     renderCharts();
     renderTable();
@@ -38,15 +36,17 @@ function renderDashboard() {
     }
 }
 
-function buildTicker() {
-    const el = document.getElementById('ticker');
-    const items = betsData.coupons.map(c => {
-        const cls = c.status === 'won' ? 't-pos' : c.status === 'lost' ? 't-neg' : c.status === 'void' ? 't-void' : '';
-        const val = c.status === 'pending' ? 'PENDING' : (c.net_result_pln >= 0 ? '+' : '') + fmt(c.net_result_pln, 2) + ' PLN';
-        return `<span><b>${c.id}</b><span class="${cls}">${val}</span></span>`;
-    });
-    // duplicate list so the marquee loop is seamless
-    el.innerHTML = items.join('') + items.join('');
+// Longest run of consecutive won/lost coupons, most recent first (voids don't break it).
+function computeStreak(coupons) {
+    const settled = [...coupons].reverse().filter(c => c.status === 'won' || c.status === 'lost');
+    if (settled.length === 0) return { count: 0, type: null };
+    const type = settled[0].status;
+    let count = 0;
+    for (const c of settled) {
+        if (c.status !== type) break;
+        count++;
+    }
+    return { count, type };
 }
 
 function buildKPIs() {
@@ -68,11 +68,31 @@ function buildKPIs() {
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('');
+
+    const wonReturned = betsData.coupons.filter(c => c.status === 'won').reduce((sum, c) => sum + c.gross_return_pln, 0);
+    const lostStaked = betsData.coupons.filter(c => c.status === 'lost').reduce((sum, c) => sum + c.stake_pln, 0);
+
+    const streak = computeStreak(betsData.coupons);
+    const streakCls = streak.type === 'won' ? 'pos' : streak.type === 'lost' ? 'neg' : '';
+    const streakValue = streak.count > 0 ? `${streak.count}${streak.type === 'won' ? 'W' : 'L'}` : '—';
+
+    const kpis2 = [
+        { label: 'Coupons', value: `${s.coupons}`, cls: '', sub: `${settledCount} settled` },
+        { label: 'Won', value: `${s.won}`, cls: 'pos', sub: `${fmt(wonReturned)} PLN returned` },
+        { label: 'Lost', value: `${s.lost}`, cls: 'neg', sub: `${fmt(lostStaked)} PLN staked` },
+        { label: 'Streak', value: streakValue, cls: streakCls, sub: streak.count > 0 ? 'current run' : 'no settled coupons yet' }
+    ];
+
+    document.getElementById('kpiRow2').innerHTML = kpis2.map(k => `
+        <div class="kpi ${k.cls}">
+            <div class="kpi-label">${k.label}</div>
+            <div class="kpi-value ${k.cls}">${k.value}</div>
+            <div class="kpi-sub">${k.sub}</div>
+        </div>`).join('');
 }
 
 function renderCharts() {
     const roiCtx = document.getElementById('roiChart').getContext('2d');
-    const winLossCtx = document.getElementById('winLossChart').getContext('2d');
 
     const settled = betsData.coupons.filter(c => c.status !== 'pending');
     let cumulative = 0;
@@ -108,31 +128,34 @@ function renderCharts() {
         }
     });
 
-    const summary = betsData.summary;
-    if (winLossChart) winLossChart.destroy();
-    winLossChart = new Chart(winLossCtx, {
-        type: 'doughnut',
-        data: {
-            labels: ['Won', 'Lost', 'Void'],
-            datasets: [{
-                data: [summary.won, summary.lost, summary.voided],
-                backgroundColor: ['#5ec26a', '#ff5c4d', '#d9a441'],
-                borderColor: '#121316',
-                borderWidth: 3
-            }]
-        },
-        options: {
-            responsive: true,
-            maintainAspectRatio: false,
-            cutout: '68%',
-            plugins: {
-                legend: {
-                    position: 'bottom',
-                    labels: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 11 }, boxWidth: 10, padding: 14 }
-                }
-            }
-        }
-    });
+    renderOutcomeBar();
+}
+
+function renderOutcomeBar() {
+    const s = betsData.summary;
+    const total = s.coupons || 1;
+
+    const segments = [
+        { label: 'Won', count: s.won, color: 'var(--pos)' },
+        { label: 'Lost', count: s.lost, color: 'var(--neg)' },
+        { label: 'Void', count: s.voided, color: 'var(--void)' },
+        { label: 'Pending', count: s.pending, color: 'var(--ink-faint)' }
+    ].filter(seg => seg.count > 0);
+
+    document.getElementById('outcomeBar').innerHTML = segments.map(seg => {
+        const pct = (seg.count / total) * 100;
+        return `<div class="outcome-seg" style="width:${pct}%;background:${seg.color};" title="${seg.label}: ${seg.count} (${pct.toFixed(0)}%)"></div>`;
+    }).join('');
+
+    document.getElementById('outcomeLegend').innerHTML = segments.map(seg => {
+        const pct = ((seg.count / total) * 100).toFixed(0);
+        return `<div class="outcome-legend-item">
+            <span class="outcome-dot" style="background:${seg.color};"></span>
+            <span class="ol-label">${seg.label}</span>
+            <span class="ol-count">${seg.count}</span>
+            <span class="ol-pct">${pct}%</span>
+        </div>`;
+    }).join('');
 }
 
 function renderTable() {
