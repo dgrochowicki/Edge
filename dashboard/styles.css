@@ -349,18 +349,31 @@ tr:hover .view-link{color:var(--edge);}
 }
 
 /* ---------- Reports page ---------- */
-.reports-layout{
-  display:grid;
-  grid-template-columns:220px 1fr;
-  gap:1px;
-  background:var(--line);
-  border:1px solid var(--line);
-  margin-top:28px;
-  align-items:start;
+.report-nav{
+  width:220px;
+  flex-shrink:0;
+  border-right:1px solid var(--line);
+  background:var(--panel);
+  display:flex;
+  flex-direction:column;
+  position:sticky;
+  top:0;
+  align-self:flex-start;
+  height:100vh;
+}
+.report-nav-head{
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  letter-spacing:0.14em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+  padding:16px 16px 12px;
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
 }
 .report-list{
   background:var(--panel);
-  max-height:calc(100vh - 200px);
+  flex:1;
   overflow-y:auto;
 }
 .report-list-item{
@@ -403,8 +416,10 @@ tr:hover .view-link{color:var(--edge);}
 
 .report-view{
   background:var(--panel);
+  border:1px solid var(--line);
   padding:32px 40px;
   min-height:400px;
+  margin-top:28px;
 }
 .report-view .rv-loading,
 .report-view .rv-empty{
@@ -503,7 +518,14 @@ tr:hover .view-link{color:var(--edge);}
 .report-meta-bar .linked-coupons a:hover{color:var(--edge);border-color:var(--edge);}
 
 @media (max-width:760px){
-  .reports-layout{grid-template-columns:1fr;}
-  .report-view{padding:20px;}
+  .report-nav{
+    width:100%;
+    height:auto;
+    position:relative;
+    top:auto;
+    border-right:none;
+    border-bottom:1px solid var(--line);
+  }
   .report-list{max-height:220px;}
+  .report-view{padding:20px;margin-top:20px;}
 }
