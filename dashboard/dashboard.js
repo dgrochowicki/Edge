@@ -55,11 +55,19 @@ function buildKPIs() {
     const settledCount = s.coupons - s.pending;
     const hitRate = settledCount > 0 ? (s.won / settledCount * 100).toFixed(0) : '0';
 
+    const streak = computeStreak(betsData.coupons);
+    const streakCls = streak.type === 'won' ? 'pos' : streak.type === 'lost' ? 'neg' : '';
+    const streakValue = streak.count > 0 ? `${streak.count}${streak.type === 'won' ? 'W' : 'L'}` : '—';
+    const streakNoun = streak.type === 'won'
+        ? (streak.count === 1 ? 'win' : 'wins')
+        : (streak.count === 1 ? 'loss' : 'losses');
+    const streakSub = streak.count > 0 ? `${streak.count} ${streakNoun} in a row` : 'no settled coupons yet';
+
     const kpis = [
         { label: 'Net Result', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 3)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln)} PLN staked` },
         { label: 'ROI', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `vs. flat stake baseline` },
         { label: 'Hit Rate', value: `${hitRate}%`, cls: '', sub: `${s.won}W – ${s.lost}L – ${s.voided}V` },
-        { label: 'Pending', value: `${s.pending}`, cls: '', sub: `open coupons awaiting result` }
+        { label: 'Streak', value: streakValue, cls: streakCls, sub: streakSub }
     ];
 
     document.getElementById('kpiRow').innerHTML = kpis.map(k => `
@@ -72,15 +80,11 @@ function buildKPIs() {
     const wonReturned = betsData.coupons.filter(c => c.status === 'won').reduce((sum, c) => sum + c.gross_return_pln, 0);
     const lostStaked = betsData.coupons.filter(c => c.status === 'lost').reduce((sum, c) => sum + c.stake_pln, 0);
 
-    const streak = computeStreak(betsData.coupons);
-    const streakCls = streak.type === 'won' ? 'pos' : streak.type === 'lost' ? 'neg' : '';
-    const streakValue = streak.count > 0 ? `${streak.count}${streak.type === 'won' ? 'W' : 'L'}` : '—';
-
     const kpis2 = [
         { label: 'Coupons', value: `${s.coupons}`, cls: '', sub: `${settledCount} settled` },
         { label: 'Won', value: `${s.won}`, cls: 'pos', sub: `${fmt(wonReturned)} PLN returned` },
         { label: 'Lost', value: `${s.lost}`, cls: 'neg', sub: `${fmt(lostStaked)} PLN staked` },
-        { label: 'Streak', value: streakValue, cls: streakCls, sub: streak.count > 0 ? 'current run' : 'no settled coupons yet' }
+        { label: 'Pending', value: `${s.pending}`, cls: '', sub: `open coupons awaiting result` }
     ];
 
     document.getElementById('kpiRow2').innerHTML = kpis2.map(k => `
