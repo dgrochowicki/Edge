@@ -55,9 +55,8 @@ body{
   flex-shrink:0;
 }
 .sidebar .brand .blade-sm{
-  display:inline-block;width:13px;height:13px;
-  background:var(--edge);
-  clip-path:polygon(0 0, 100% 30%, 40% 100%);
+  display:block;width:13px;height:13px;
+  color:var(--edge);
 }
 .sidenav{display:flex;flex-direction:column;align-items:center;gap:4px;width:100%;}
 .sidenav a.navlink{
