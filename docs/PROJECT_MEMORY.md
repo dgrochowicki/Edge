@@ -117,41 +117,9 @@ Main lesson:
 - The map-total read was good.
 - The effect of Gentle Mates using a stand-in may have been overstated.
 
-### EDGE-003 — 2026-07-16
+### EDGE-003 / EDGE-004 clarification — 2026-07-16
 
-Stake: 2 PLN  
-Combined odds: 2.83  
-Potential return: 5.66 PLN  
-Result: Lost  
-Net result: -2 PLN
-
-Selections:
-
-- paiN vs 3DMAX Over 2.5 maps @1.90 — lost 2:0
-- Gentle Mates vs NiP ML @1.50 — void (coupon failed on first leg)
-- Phantom vs HEROIC Over 2.5 maps @1.95 — void (coupon failed on first leg)
-
-Main lesson:
-
-- First coupon of the day failed immediately on first selection.
-
-### EDGE-004 — 2026-07-16
-
-Stake: 2 PLN  
-Combined odds: 2.8275  
-Potential return: 5.655 PLN  
-Result: Won  
-Net result: +3.655 PLN
-
-Selections:
-
-- Gentle Mates vs NiP ML @1.45 — won
-- Phantom vs HEROIC Over 2.5 maps @1.95 — won (match went to 3 maps)
-
-Main lesson:
-
-- After EDGE-003 failed on first leg, follow-up coupon with same two remaining selections won both legs.
-- Both selections showed independent value.
+EDGE-003 was a 3-leg accumulator that lost because one leg failed while the other two were still pending or won. To keep exposure on the two surviving selections, EDGE-004 was placed on those same two events as a new 2-leg accumulator, which won. This was a deliberate re-entry, not chasing losses. `data/bets.json` is the source of truth for all coupon figures (odds, stakes, returns); wherever this document previously stated different numbers for EDGE-003/004, the bets.json values are correct.
 
 ## Other Reviewed Matches
 
