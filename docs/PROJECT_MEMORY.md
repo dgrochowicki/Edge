@@ -286,3 +286,4 @@ Before creating a report:
 8. Update the repository files after results are known.
 9. Never invent missing odds, results, or historical decisions.
 10. Clearly mark assumptions and incomplete information.
+11. Before producing any report, follow the Calibration & CLV Protocol section in `docs/PLAYBOOK.md` — every analyzed market is appended to the `predictions` array in `data/bets.json`, including PASS decisions and `market_odds_opponent`.
