@@ -1,6 +1,3 @@
-// Fetch and parse bets data from GitHub
-const GITHUB_RAW_URL = 'https://raw.githubusercontent.com/dgrochowicki/Edge/main/data/bets.json';
-
 const RECENT_LIMIT = 6;
 
 let betsData = null;
@@ -13,8 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
 async function loadBets() {
     try {
-        const response = await fetch(GITHUB_RAW_URL);
-        betsData = await response.json();
+        betsData = await fetchBetsData();
         renderDashboard();
     } catch (error) {
         console.error('Error loading bets:', error);

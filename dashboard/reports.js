@@ -1,5 +1,4 @@
 const GITHUB_API_REPORTS = 'https://api.github.com/repos/dgrochowicki/Edge/contents/reports';
-const GITHUB_RAW_BETS = 'https://raw.githubusercontent.com/dgrochowicki/Edge/main/data/bets.json';
 
 let reportFiles = [];   // [{date, download_url}]
 let couponsByDate = {}; // { '2026-07-16': [coupon, ...] }
@@ -8,18 +7,16 @@ document.addEventListener('DOMContentLoaded', init);
 
 async function init() {
     try {
-        const [filesRes, betsRes] = await Promise.all([
-            fetch(GITHUB_API_REPORTS),
-            fetch(GITHUB_RAW_BETS)
+        const [filesJson, betsJson] = await Promise.all([
+            fetch(GITHUB_API_REPORTS).then(r => r.json()),
+            fetchBetsData()
         ]);
 
-        const filesJson = await filesRes.json();
         reportFiles = (Array.isArray(filesJson) ? filesJson : [])
             .filter(f => f.name.endsWith('.md'))
             .map(f => ({ date: f.name.replace('.md', ''), download_url: f.download_url }))
             .sort((a, b) => b.date.localeCompare(a.date));
 
-        const betsJson = await betsRes.json();
         couponsByDate = {};
         (betsJson.coupons || []).forEach(c => {
             (couponsByDate[c.date] = couponsByDate[c.date] || []).push(c);
