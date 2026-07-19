@@ -339,6 +339,7 @@ function renderCalibration() {
         inv: invalid.length
     };
 
+    const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
     let html = `
         <div class="calib-grid">
             <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
@@ -346,7 +347,18 @@ function renderCalibration() {
             <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
         </div>
-        <div class="calib-progress"><div class="calib-progress-fill" style="width:${Math.min(100, settledEst.length / CAL_T.PRELIM * 100)}%"></div></div>
+        <div class="panel calib-progress-panel">
+            <div class="panel-title"><span>Settled Progress</span></div>
+            <div class="outcome-bar"><div class="outcome-seg" style="width:${progressPct}%;background:var(--edge);"></div></div>
+            <div class="outcome-legend">
+                <div class="outcome-legend-item">
+                    <span class="outcome-dot" style="background:var(--edge);"></span>
+                    <span class="ol-label">Settled</span>
+                    <span class="ol-count">${settledEst.length}</span>
+                    <span class="ol-pct">/ ${CAL_T.PRELIM} prelim \u00b7 / ${CAL_T.VALID} valid</span>
+                </div>
+            </div>
+        </div>
         <div class="calib-quality click" onclick="calibInfo('quality')">
             data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
         </div>`;
