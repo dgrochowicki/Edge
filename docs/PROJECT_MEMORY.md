@@ -52,6 +52,7 @@ Requirements:
 - End with either Bet of the Day or No Bet of the Day.
 - Include a short reason for each important decision.
 - Do not present uncertain live information as confirmed.
+- Daily report procedure: search the web for today's schedule, rosters and news before writing; ask the user for STS odds; never invent odds.
 
 ## Established Rules
 
