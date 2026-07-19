@@ -27,6 +27,7 @@ function fmt(n, d = 2) { return Number(n).toFixed(d); }
 function renderDashboard() {
     buildKPIs();
     renderCharts();
+    renderCalibration();
     renderTable();
 
     const params = new URLSearchParams(window.location.search);
@@ -236,6 +237,104 @@ function setupModalHandlers() {
     modal.addEventListener('click', (event) => {
         if (event.target === modal) modal.style.display = 'none';
     });
+}
+
+
+
+// ===== Calibration Lab =====
+// Computes Brier vs de-vigged market baseline, calibration buckets and CLV
+// from betsData.predictions. Below MIN_SETTLED, per playbook protocol,
+// no metrics are shown — only collection progress.
+
+const MIN_SETTLED = 50;
+
+function devig(oddsPick, oddsOpp) {
+    if (!oddsPick || !oddsOpp) return null;
+    const a = 1 / oddsPick, b = 1 / oddsOpp;
+    return a / (a + b);
+}
+
+function renderCalibration() {
+    const el = document.getElementById('calibBody');
+    if (!el) return;
+    const preds = betsData.predictions || [];
+    const settled = preds.filter(p => p.result === 'won' || p.result === 'lost');
+    const pending = preds.filter(p => p.result === 'pending');
+    const withClose = preds.filter(p => p.closing_odds && p.market_odds_at_analysis);
+
+    const countEl = document.getElementById('calibCount');
+    if (countEl) countEl.textContent = `${preds.length} logged \u00b7 ${settled.length} settled`;
+
+    if (preds.length === 0) {
+        el.innerHTML = `<div class="calib-note">No predictions logged yet. The reporting agent appends every analyzed market (BET and PASS) to <span class="mono">data/bets.json \u2192 predictions</span> per the playbook protocol.</div>`;
+        return;
+    }
+
+    if (settled.length < MIN_SETTLED) {
+        const pct = Math.min(100, settled.length / MIN_SETTLED * 100);
+        el.innerHTML = `
+            <div class="calib-grid">
+                <div class="calib-cell"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
+                <div class="calib-cell"><div class="cl">Settled</div><div class="cv">${settled.length}</div></div>
+                <div class="calib-cell"><div class="cl">Pending</div><div class="cv">${pending.length}</div></div>
+                <div class="calib-cell"><div class="cl">Closing snapshots</div><div class="cv">${withClose.length}</div></div>
+            </div>
+            <div class="calib-progress"><div class="calib-progress-fill" style="width:${pct}%"></div></div>
+            <div class="calib-note">Data collection phase \u2014 ${settled.length}/${MIN_SETTLED} settled predictions. Per playbook protocol, metrics are not computed below this threshold.${withClose.length === 0 ? ' Closing snapshots: none yet \u2014 currently the biggest gap in the dataset.' : ''}</div>`;
+        return;
+    }
+
+    const out = p => p.result === 'won' ? 1 : 0;
+    const eb = settled.filter(p => typeof p.estimated_probability === 'number');
+    const brier = eb.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / eb.length;
+
+    const mkt = settled
+        .map(p => ({ p, m: devig(p.market_odds_at_analysis, p.market_odds_opponent) }))
+        .filter(x => x.m !== null && typeof x.p.estimated_probability === 'number');
+    const brierMkt = mkt.length
+        ? mkt.reduce((s, x) => s + Math.pow(x.m - out(x.p), 2), 0) / mkt.length
+        : null;
+
+    const buckets = {};
+    eb.forEach(p => {
+        const lo = Math.min(90, Math.floor(p.estimated_probability * 10) * 10);
+        buckets[lo] = buckets[lo] || { n: 0, w: 0 };
+        buckets[lo].n++;
+        buckets[lo].w += out(p);
+    });
+    const bucketRows = Object.keys(buckets).sort((a, b) => a - b).map(lo => {
+        const b = buckets[lo];
+        return `<tr><td>${lo}\u2013${Number(lo) + 10}%</td><td>${b.n}</td><td>${(100 * b.w / b.n).toFixed(0)}%</td></tr>`;
+    }).join('');
+
+    const clvOf = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
+    const avg = a => a.reduce((s, x) => s + x, 0) / a.length;
+    const clvAll = withClose.map(clvOf);
+    const clvBets = withClose.filter(e => e.decision === 'BET').map(clvOf);
+    const beat = clvBets.filter(c => c > 0).length;
+
+    let verdict = '';
+    if (brierMkt !== null) {
+        const better = brier < brierMkt;
+        verdict = `<div class="calib-verdict ${better ? 'pos' : 'neg'}">${better
+            ? 'Edge estimates currently beat the de-vigged market baseline.'
+            : 'Edge estimates do not beat the market baseline \u2014 fair odds should be anchored to the de-vigged market price.'}</div>`;
+    }
+
+    el.innerHTML = `
+        <div class="calib-grid">
+            <div class="calib-cell"><div class="cl">Brier (Edge)</div><div class="cv">${brier.toFixed(4)}</div></div>
+            <div class="calib-cell"><div class="cl">Brier (Market)</div><div class="cv">${brierMkt !== null ? brierMkt.toFixed(4) : '\u2014'}</div></div>
+            <div class="calib-cell"><div class="cl">CLV avg (all)</div><div class="cv">${clvAll.length ? (avg(clvAll) >= 0 ? '+' : '') + avg(clvAll).toFixed(2) + '%' : '\u2014'}</div></div>
+            <div class="calib-cell"><div class="cl">CLV avg (BET)</div><div class="cv">${clvBets.length ? (avg(clvBets) >= 0 ? '+' : '') + avg(clvBets).toFixed(2) + '%' : '\u2014'}</div></div>
+        </div>
+        ${clvBets.length ? `<div class="calib-note">BETs beating the close: ${beat}/${clvBets.length}</div>` : ''}
+        <table class="calib-table">
+            <thead><tr><th>Estimated</th><th>n</th><th>Actual win rate</th></tr></thead>
+            <tbody>${bucketRows}</tbody>
+        </table>
+        ${brierMkt === null ? '<div class="calib-note" style="margin-top:10px;">Market baseline unavailable \u2014 settled entries lack <span class="mono">market_odds_opponent</span>.</div>' : ''}
+        ${verdict}`;
 }
 
 // Refresh data every 30 seconds

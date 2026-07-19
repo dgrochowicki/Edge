@@ -492,3 +492,20 @@ tr:hover .view-link{color:var(--edge);}
   .report-list{max-height:220px;}
   .report-view{padding:20px;margin-top:20px;}
 }
+
+/* ===== Calibration Lab ===== */
+.calib-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-bottom:14px;}
+@media (max-width:640px){.calib-grid{grid-template-columns:repeat(2,1fr);}}
+.calib-cell .cl{font-family:var(--font-mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-faint);}
+.calib-cell .cv{font-size:20px;font-weight:600;margin-top:3px;}
+.calib-progress{height:4px;background:var(--panel-2);margin:4px 0 10px;overflow:hidden;}
+.calib-progress-fill{height:100%;background:var(--edge);}
+.calib-note{font-size:12px;color:var(--ink-dim);line-height:1.55;}
+.calib-note .mono{font-family:var(--font-mono);font-size:11px;color:var(--ink);}
+.calib-table{width:100%;border-collapse:collapse;margin-top:10px;}
+.calib-table th,.calib-table td{font-family:var(--font-mono);font-size:11px;padding:5px 8px;text-align:right;border-bottom:1px solid var(--line);color:var(--ink-dim);}
+.calib-table th:first-child,.calib-table td:first-child{text-align:left;}
+.calib-table th{color:var(--ink-faint);letter-spacing:.06em;text-transform:uppercase;font-size:10px;}
+.calib-verdict{margin-top:12px;font-size:12px;font-weight:500;}
+.calib-verdict.pos{color:var(--pos);}
+.calib-verdict.neg{color:var(--neg);}
