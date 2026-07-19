@@ -54,7 +54,8 @@ function buildKPIs() {
     const s = betsData.summary;
     const roi = (s.roi * 100).toFixed(1);
     const settledCount = s.coupons - s.pending;
-    const hitRate = settledCount > 0 ? (s.won / settledCount * 100).toFixed(0) : '0';
+    const decided = s.won + s.lost;
+    const hitRate = decided > 0 ? (s.won / decided * 100).toFixed(0) : '0';
 
     const streak = computeStreak(betsData.coupons);
     const streakCls = streak.type === 'won' ? 'pos' : streak.type === 'lost' ? 'neg' : '';
@@ -241,12 +242,13 @@ function setupModalHandlers() {
 
 
 
-// ===== Calibration Lab =====
-// Computes Brier vs de-vigged market baseline, calibration buckets and CLV
-// from betsData.predictions. Below MIN_SETTLED, per playbook protocol,
-// no metrics are shown — only collection progress.
+// ===== Calibration Lab v2 =====
+// Per protocol: Brier vs market only on the paired sample; verdicts only at
+// pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
+// snapshots for CLV); CLV progress independent of settlement count;
+// basic record validation; historical backfill surfaced, not hidden.
 
-const MIN_SETTLED = 50;
+const CAL_T = { PRELIM: 50, EMERG: 100, VALID: 150, CLV_VALID: 50 };
 
 function devig(oddsPick, oddsOpp) {
     if (!oddsPick || !oddsOpp) return null;
@@ -254,87 +256,184 @@ function devig(oddsPick, oddsOpp) {
     return a / (a + b);
 }
 
+function validatePredictions(preds) {
+    const seen = {}, invalid = [];
+    preds.forEach(p => {
+        const issues = [];
+        if (!p.id) issues.push('missing id');
+        else if (seen[p.id]) issues.push('duplicate id'); else seen[p.id] = 1;
+        if (!['BET', 'PASS'].includes(p.decision)) issues.push('bad decision');
+        if (!['won', 'lost', 'void', 'pending'].includes(p.result)) issues.push('bad result');
+        if (p.estimated_probability != null && (p.estimated_probability <= 0 || p.estimated_probability >= 1)) issues.push('probability out of range');
+        ['fair_odds', 'market_odds_at_analysis', 'market_odds_opponent', 'closing_odds'].forEach(k => {
+            if (p[k] != null && p[k] <= 1) issues.push(k + ' <= 1');
+        });
+        if (p.estimated_probability != null && p.fair_odds != null &&
+            Math.abs(p.estimated_probability - 1 / p.fair_odds) > 0.001) issues.push('probability != 1/fair_odds');
+        if (issues.length) invalid.push({ id: p.id || '(no id)', issues });
+    });
+    return invalid;
+}
+
+function calibStage(n) {
+    if (n < CAL_T.PRELIM) return { key: 'collection', label: 'Collection', cls: 'stage-col' };
+    if (n < CAL_T.EMERG) return { key: 'prelim', label: 'Preliminary signal', cls: 'stage-pre' };
+    if (n < CAL_T.VALID) return { key: 'emerg', label: 'Emerging pattern', cls: 'stage-pre' };
+    return { key: 'valid', label: 'Validation checkpoint', cls: 'stage-val' };
+}
+
+const CALIB_INFO = {
+    logged: ['Logged', 'Liczba wszystkich predykcji zapisanych w dzienniku (data/bets.json → predictions) — każdy w pełni przeanalizowany mecz, zarówno BET, jak i PASS. Logujemy też PASS-y, bo bez nich nie da się zmierzyć, czy szacunki agenta są trafne (patrzylibyśmy tylko na wybrane rodzynki).'],
+    settled: ['Settled', 'Ile predykcji ma już wpisany wynik meczu (typ wygrał albo przegrał). Dwa progi z protokołu: od 50 pokazujemy wstępne metryki (preliminary), od 150 działa checkpoint walidacji dla Brier score. Poniżej 50 nie liczymy nic — przy małej próbce nawet rzut monetą wygląda raz jak geniusz, raz jak katastrofa.'],
+    paired: ['Paired baseline', 'Liczba rozliczonych predykcji, które mają komplet: szacunek agenta ORAZ kursy na obie strony rynku. Tylko na tej wspólnej próbie wolno porównywać Brier agenta z rynkiem — porównanie na różnych zbiorach meczów byłoby metodologicznie nieważne. Dlatego pole market_odds_opponent jest obowiązkowe w nowych wpisach.'],
+    snapshots: ['BET closing snapshots', 'Ile zakładów (BET) ma zapisany kurs tuż przed meczem. To licznik niezależny od rozliczeń — kurs zamknięcia znamy przed wynikiem. Od 50 snapshotów działa checkpoint walidacji CLV. To najszybszy sposób sprawdzenia, czy typy wyprzedzają rynek.'],
+    quality: ['Data quality', 'Znane braki w danych: wpisy historyczne (backfill z raportów) nie mają kursu przeciwnika, dokładnego timestampu ani kursu zamknięcia — bo tych danych nie zapisano na czas i nie wolno ich odtwarzać z pamięci. Braki są oznaczone, nie ukryte: wpisy z flagami są wyłączane z metryk, których nie mogą uczciwie zasilić.'],
+    brier: ['Brier score', 'Kara za pomyłki ważona pewnością siebie: (prognoza − wynik)². Dał 80% i wygrali → kara 0.04. Dał 80% i przegrali → kara 0.64. Średnia z kar = Brier; im niżej, tym lepiej. Punkt odniesienia: ktoś, kto zawsze mówi 50/50, ma równo 0.25. Porównanie z rynkiem liczone jest wyłącznie na próbie paired, a werdykt zapada dopiero przy 150 rozliczonych.'],
+    buckets: ['Kalibracja', 'Czy „70%" znaczy 70%? Bierzemy wszystkie mecze z szacunkiem 70–80% i sprawdzamy, ile faktycznie wygrało. Kolumna gap pokazuje rozjazd: systematycznie ujemny = agent jest zbyt pewny siebie, co produkuje fałszywe „value" — kurs wygląda na okazję tylko dlatego, że szacunek jest napompowany.'],
+    clv: ['CLV — Closing Line Value', 'Porównanie kursu wziętego rano z kursem tuż przed meczem: (kurs rano / kurs zamknięcia − 1). Linia zamknięcia to najlepiej poinformowana cena na rynku. Systematycznie dodatnie CLV = widzisz wartość, zanim rynek się skoryguje — najsilniejszy wczesny dowód przewagi, widoczny po ~50 zakładach. Ujemne CLV przy wygranych = wygrywasz szczęściem, nie metodą.'],
+    stage: ['Etapy', 'Collection (0–49 rozliczonych): tylko zbieranie. Preliminary (50–99): wstępne sygnały, zero wniosków. Emerging (100–149): wzorce warte rozmowy. Validation checkpoint (150+): działa zapisany z góry warunek porażki dla Brier. Osobno: checkpoint CLV przy 50 closing snapshotach na BET-ach. Progi zapisano zanim znamy wyniki — żeby nie przesuwać bramek.']
+};
+
+function calibInfo(key) {
+    const info = CALIB_INFO[key];
+    if (!info) return;
+    let ov = document.getElementById('calibModal');
+    if (!ov) {
+        ov = document.createElement('div');
+        ov.id = 'calibModal';
+        ov.className = 'calib-modal-overlay';
+        ov.innerHTML = '<div class="calib-modal"><div class="calib-modal-head"><span id="calibModalTitle"></span><button class="calib-modal-x" onclick="document.getElementById(\'calibModal\').style.display=\'none\'">&times;</button></div><div id="calibModalBody"></div></div>';
+        ov.addEventListener('click', e => { if (e.target === ov) ov.style.display = 'none'; });
+        document.body.appendChild(ov);
+    }
+    document.getElementById('calibModalTitle').textContent = info[0];
+    document.getElementById('calibModalBody').textContent = info[1];
+    ov.style.display = 'flex';
+}
+
 function renderCalibration() {
     const el = document.getElementById('calibBody');
     if (!el) return;
     const preds = betsData.predictions || [];
-    const settled = preds.filter(p => p.result === 'won' || p.result === 'lost');
-    const pending = preds.filter(p => p.result === 'pending');
-    const withClose = preds.filter(p => p.closing_odds && p.market_odds_at_analysis);
-
     const countEl = document.getElementById('calibCount');
-    if (countEl) countEl.textContent = `${preds.length} logged \u00b7 ${settled.length} settled`;
 
     if (preds.length === 0) {
-        el.innerHTML = `<div class="calib-note">No predictions logged yet. The reporting agent appends every analyzed market (BET and PASS) to <span class="mono">data/bets.json \u2192 predictions</span> per the playbook protocol.</div>`;
+        if (countEl) countEl.textContent = '0 logged';
+        el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
         return;
     }
 
-    if (settled.length < MIN_SETTLED) {
-        const pct = Math.min(100, settled.length / MIN_SETTLED * 100);
-        el.innerHTML = `
-            <div class="calib-grid">
-                <div class="calib-cell"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
-                <div class="calib-cell"><div class="cl">Settled</div><div class="cv">${settled.length}</div></div>
-                <div class="calib-cell"><div class="cl">Pending</div><div class="cv">${pending.length}</div></div>
-                <div class="calib-cell"><div class="cl">Closing snapshots</div><div class="cv">${withClose.length}</div></div>
-            </div>
-            <div class="calib-progress"><div class="calib-progress-fill" style="width:${pct}%"></div></div>
-            <div class="calib-note">Data collection phase \u2014 ${settled.length}/${MIN_SETTLED} settled predictions. Per playbook protocol, metrics are not computed below this threshold.${withClose.length === 0 ? ' Closing snapshots: none yet \u2014 currently the biggest gap in the dataset.' : ''}</div>`;
+    const invalid = validatePredictions(preds);
+    const invalidIds = {};
+    invalid.forEach(x => invalidIds[x.id] = 1);
+    const valid = preds.filter(p => !invalidIds[p.id]);
+
+    const settled = valid.filter(p => p.result === 'won' || p.result === 'lost');
+    const settledEst = settled.filter(p => typeof p.estimated_probability === 'number');
+    const paired = settledEst.filter(p => p.market_odds_at_analysis && p.market_odds_opponent);
+    const snapsBet = valid.filter(p => p.decision === 'BET' && p.closing_odds && p.market_odds_at_analysis);
+    const stage = calibStage(settledEst.length);
+
+    if (countEl) countEl.textContent = `${preds.length} logged \u00b7 ${settledEst.length} settled`;
+
+    const dq = {
+        opp: valid.filter(p => p.market_odds_opponent == null).length,
+        ts: valid.filter(p => p.odds_timestamp == null).length,
+        close: valid.filter(p => p.closing_odds == null).length,
+        inv: invalid.length
+    };
+
+    let html = `
+        <div class="calib-stage ${stage.cls}" onclick="calibInfo('stage')">${stage.label}</div>
+        <div class="calib-grid">
+            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled</div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
+        </div>
+        <div class="calib-progress"><div class="calib-progress-fill" style="width:${Math.min(100, settledEst.length / CAL_T.PRELIM * 100)}%"></div></div>
+        <div class="calib-quality click" onclick="calibInfo('quality')">
+            data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
+        </div>`;
+
+    if (settledEst.length < CAL_T.PRELIM) {
+        html += `<div class="calib-note">Collection phase \u2014 ${settledEst.length}/${CAL_T.PRELIM} settled predictions with a probability estimate. Per protocol, metrics are not computed below this threshold.</div>`;
+        el.innerHTML = html;
         return;
     }
 
     const out = p => p.result === 'won' ? 1 : 0;
-    const eb = settled.filter(p => typeof p.estimated_probability === 'number');
-    const brier = eb.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / eb.length;
+    const brierEdge = settledEst.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / settledEst.length;
 
-    const mkt = settled
-        .map(p => ({ p, m: devig(p.market_odds_at_analysis, p.market_odds_opponent) }))
-        .filter(x => x.m !== null && typeof x.p.estimated_probability === 'number');
-    const brierMkt = mkt.length
-        ? mkt.reduce((s, x) => s + Math.pow(x.m - out(x.p), 2), 0) / mkt.length
-        : null;
-
-    const buckets = {};
-    eb.forEach(p => {
-        const lo = Math.min(90, Math.floor(p.estimated_probability * 10) * 10);
-        buckets[lo] = buckets[lo] || { n: 0, w: 0 };
-        buckets[lo].n++;
-        buckets[lo].w += out(p);
-    });
-    const bucketRows = Object.keys(buckets).sort((a, b) => a - b).map(lo => {
-        const b = buckets[lo];
-        return `<tr><td>${lo}\u2013${Number(lo) + 10}%</td><td>${b.n}</td><td>${(100 * b.w / b.n).toFixed(0)}%</td></tr>`;
-    }).join('');
-
-    const clvOf = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
-    const avg = a => a.reduce((s, x) => s + x, 0) / a.length;
-    const clvAll = withClose.map(clvOf);
-    const clvBets = withClose.filter(e => e.decision === 'BET').map(clvOf);
-    const beat = clvBets.filter(c => c > 0).length;
-
-    let verdict = '';
-    if (brierMkt !== null) {
-        const better = brier < brierMkt;
-        verdict = `<div class="calib-verdict ${better ? 'pos' : 'neg'}">${better
-            ? 'Edge estimates currently beat the de-vigged market baseline.'
-            : 'Edge estimates do not beat the market baseline \u2014 fair odds should be anchored to the de-vigged market price.'}</div>`;
+    let pairBlock = '';
+    if (paired.length > 0) {
+        const be = paired.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / paired.length;
+        const bm = paired.reduce((s, p) => s + Math.pow(devig(p.market_odds_at_analysis, p.market_odds_opponent) - out(p), 2), 0) / paired.length;
+        let verdict;
+        if (paired.length >= CAL_T.VALID) {
+            const better = be < bm;
+            verdict = `<div class="calib-verdict ${better ? 'pos' : 'neg'}">${better
+                ? 'Validation checkpoint: Edge estimates beat the de-vigged market baseline on the paired sample.'
+                : 'Validation checkpoint failed: Edge estimates do not beat the market baseline \u2014 per pre-registered condition, fair odds should be anchored to the de-vigged market price.'}</div>`;
+        } else {
+            verdict = `<div class="calib-note">Paired comparison is ${stage.label.toLowerCase()} (n=${paired.length}). Verdict is rendered only at the validation checkpoint (${CAL_T.VALID} paired settled).</div>`;
+        }
+        pairBlock = `
+        <div class="calib-grid" style="margin-top:14px;">
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (paired)</div><div class="cv">${be.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Market (paired)</div><div class="cv">${bm.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired n</div><div class="cv">${paired.length}</div></div>
+        </div>${verdict}`;
+    } else {
+        pairBlock = `
+        <div class="calib-grid" style="margin-top:14px;">
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+        </div>
+        <div class="calib-note">Market comparison unavailable \u2014 no settled entries with both market prices. It requires <span class="mono">market_odds_opponent</span> in new entries.</div>`;
     }
 
-    el.innerHTML = `
-        <div class="calib-grid">
-            <div class="calib-cell"><div class="cl">Brier (Edge)</div><div class="cv">${brier.toFixed(4)}</div></div>
-            <div class="calib-cell"><div class="cl">Brier (Market)</div><div class="cv">${brierMkt !== null ? brierMkt.toFixed(4) : '\u2014'}</div></div>
-            <div class="calib-cell"><div class="cl">CLV avg (all)</div><div class="cv">${clvAll.length ? (avg(clvAll) >= 0 ? '+' : '') + avg(clvAll).toFixed(2) + '%' : '\u2014'}</div></div>
-            <div class="calib-cell"><div class="cl">CLV avg (BET)</div><div class="cv">${clvBets.length ? (avg(clvBets) >= 0 ? '+' : '') + avg(clvBets).toFixed(2) + '%' : '\u2014'}</div></div>
-        </div>
-        ${clvBets.length ? `<div class="calib-note">BETs beating the close: ${beat}/${clvBets.length}</div>` : ''}
-        <table class="calib-table">
-            <thead><tr><th>Estimated</th><th>n</th><th>Actual win rate</th></tr></thead>
-            <tbody>${bucketRows}</tbody>
-        </table>
-        ${brierMkt === null ? '<div class="calib-note" style="margin-top:10px;">Market baseline unavailable \u2014 settled entries lack <span class="mono">market_odds_opponent</span>.</div>' : ''}
-        ${verdict}`;
+    const buckets = {};
+    settledEst.forEach(p => {
+        const lo = Math.min(90, Math.floor(p.estimated_probability * 10) * 10);
+        const b = buckets[lo] = buckets[lo] || { n: 0, w: 0, sum: 0 };
+        b.n++; b.w += out(p); b.sum += p.estimated_probability;
+    });
+    const rows = Object.keys(buckets).sort((a, b) => a - b).map(lo => {
+        const b = buckets[lo];
+        const pred = 100 * b.sum / b.n, act = 100 * b.w / b.n, gap = act - pred;
+        return `<tr><td>${lo}\u2013${Number(lo) + 10}%</td><td>${b.n}</td><td>${pred.toFixed(0)}%</td><td>${act.toFixed(0)}%</td><td class="${gap < 0 ? 'neg' : 'pos'}">${gap >= 0 ? '+' : ''}${gap.toFixed(0)} pp</td></tr>`;
+    }).join('');
+    html += pairBlock + `
+        <table class="calib-table click" onclick="calibInfo('buckets')">
+            <thead><tr><th>Estimated</th><th>n</th><th>Mean predicted</th><th>Actual</th><th>Gap</th></tr></thead>
+            <tbody>${rows}</tbody>
+        </table>`;
+
+    el.innerHTML = html;
+    renderClv(el, snapsBet);
+}
+
+function renderClv(el, snapsBet) {
+    const clv = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
+    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value</div>';
+    if (snapsBet.length === 0) {
+        block += '<div class="calib-note">No BET closing snapshots yet (independent of settlement count \u2014 snapshot before each BET match).</div>';
+    } else {
+        const vals = snapsBet.map(clv).sort((a, b) => a - b);
+        const avg = vals.reduce((s, x) => s + x, 0) / vals.length;
+        const med = vals.length % 2 ? vals[(vals.length - 1) / 2] : (vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2;
+        const beat = vals.filter(c => c > 0).length;
+        block += `<div class="calib-note">n=${vals.length} \u00b7 avg ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% \u00b7 median ${med >= 0 ? '+' : ''}${med.toFixed(2)}% \u00b7 beat close: ${beat}/${vals.length}</div>`;
+        if (snapsBet.length >= CAL_T.CLV_VALID) {
+            block += `<div class="calib-verdict ${avg > 0 ? 'pos' : 'neg'}">${avg > 0
+                ? 'CLV validation checkpoint: average CLV on BETs is positive.'
+                : 'CLV validation checkpoint failed: average CLV on BETs is negative \u2014 per pre-registered condition, the selection method is not validated.'}</div>`;
+        } else {
+            block += `<div class="calib-note">CLV verdict at ${CAL_T.CLV_VALID} snapshots.</div>`;
+        }
+    }
+    el.innerHTML += block;
 }
 
 // Refresh data every 30 seconds

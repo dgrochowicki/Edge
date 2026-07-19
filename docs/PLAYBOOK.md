@@ -263,6 +263,14 @@ After the match, set `result` to `won` / `lost` / `void` — meaning: did the **
 - **Calibration table**: entries bucketed by estimated probability (50–60%, 60–70%, …) vs actual win rate per bucket. Systematic gaps reveal over- or under-confidence.
 - **CLV**: `(odds_at_analysis / closing_odds − 1) × 100` for entries with a closing price. Consistently positive CLV on BETs is the strongest early evidence of edge; consistently negative CLV predicts long-term losses regardless of recent results.
 
+### Historical backfill
+
+Entries reconstructed from already-published reports carry `"recording_mode": "historical_backfill"` and a `data_quality` array naming what is missing (e.g. `missing_opponent_odds`, `unknown_exact_timestamp`, `missing_market_odds`, `fair_odds_not_recorded`). The required-fields rule applies in full to new entries only; backfilled entries are exempt but must declare their gaps explicitly. Missing information is never reconstructed from memory or assumption — a missing value stays null, and entries lacking a probability estimate are excluded from calibration metrics.
+
+### Verdict staging
+
+Metrics are surfaced in stages tied to the sample-size discipline above: Collection (0–49 settled eligible predictions — nothing computed), Preliminary signal (50–99), Emerging pattern (100–149), Validation checkpoint (150+). The Brier failure condition is evaluated only at the validation checkpoint and only on the paired sample — settled entries that have both a probability estimate and both market prices, so Edge and the market are always scored on identical matches. The CLV checkpoint is independent: it triggers at 50 closing snapshots on BETs regardless of how many predictions are settled, since closing lines are known before results.
+
 ### Sample size discipline
 
 Under 50 settled predictions: compute nothing, conclude nothing. 50–100: preliminary signal. 100–300: patterns worth discussing. 300+: conclusions may carry weight. Do not create or change rules from a smaller sample.
