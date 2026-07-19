@@ -379,14 +379,14 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 7.5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. STS odds recorded as approximate in report."
+      "notes": "Backfilled. STS odds recorded as approximate in report. Result confirmed via web lookup: LGD Gaming swept MOUZ 2-0 (EWC 2026 Dota 2 Survival Stage)."
     },
     {
       "id": "P-2026-07-14-02",
@@ -404,14 +404,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": null,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used."
+      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used. Result confirmed via web lookup: ODDIK beat paiN Academy 2-0 (CCT 2026 South America Series 4)."
     },
     {
       "id": "P-2026-07-15-01",
@@ -533,7 +533,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -541,7 +541,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set."
+      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set. Result confirmed via web lookup: Gen.G beat Sentinels (EWC 2026 LoL Group B)."
     },
     {
       "id": "P-2026-07-16-02",
@@ -559,7 +559,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -567,7 +567,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Bilibili Gaming beat T1 1-0 (EWC 2026 LoL Group C)."
     },
     {
       "id": "P-2026-07-16-03",
@@ -585,7 +585,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -593,7 +593,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Hanwha Life Esports beat JD Gaming 1-0 (EWC 2026 LoL Group Stage)."
     },
     {
       "id": "P-2026-07-16-04",
@@ -611,7 +611,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -619,7 +619,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: AG.AL (Anyone's Legend) beat G2 1-0 (EWC 2026 LoL Group A)."
     },
     {
       "id": "P-2026-07-16-05",
@@ -637,7 +637,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -645,7 +645,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: K27 beat Wildcard 2-0 (13-8 Mirage, 16-13 Dust2, Stake Ranked Episode 3 lower bracket)."
     },
     {
       "id": "P-2026-07-16-06",
@@ -663,7 +663,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -671,7 +671,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: 3DMAX beat paiN Gaming 2-0 (Stake Ranked Episode 3 lower bracket round 1)."
     },
     {
       "id": "P-2026-07-16-07",
@@ -689,7 +689,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -697,7 +697,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: BetBoom Team beat Nigma Galaxy 2-0 (EWC 2026 Dota 2 quarterfinals)."
     },
     {
       "id": "P-2026-07-16-08",
@@ -715,7 +715,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -723,7 +723,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Vici Gaming beat Team Falcons 2-0 (EWC 2026 Dota 2 quarterfinals)."
     },
     {
       "id": "P-2026-07-16-09",
@@ -819,14 +819,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5.5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Result confirmed via web lookup: 3DMAX beat Gentle Mates 2-0 (Stake Ranked Episode 3)."
     },
     {
       "id": "P-2026-07-17-02",
@@ -1098,14 +1098,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Result confirmed via web lookup: this was a second, later meeting between the two teams (Stake Ranked Episode 3 lower bracket) — K27 beat NiP 2-1, distinct from their earlier 07-15 encounter which NiP won 2-0."
     },
     {
       "id": "P-2026-07-19-01",
