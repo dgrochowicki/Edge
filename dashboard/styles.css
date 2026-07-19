@@ -498,7 +498,7 @@ tr:hover .view-link{color:var(--edge);}
 /* ===== Calibration Lab — grid reuses the .kpi card styles above ===== */
 .calib-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);margin-bottom:14px;}
 @media (max-width:640px){.calib-grid{grid-template-columns:repeat(2,1fr);}}
-.calib-progress-panel{margin:0 0 20px;}
+.charts .calib-grid{background:none;border:none;margin-bottom:0;}
 .calib-note{font-size:12px;color:var(--ink-dim);line-height:1.55;}
 .calib-note .mono{font-family:var(--font-mono);font-size:11px;color:var(--ink);}
 .calib-table{width:100%;border-collapse:collapse;margin-top:10px;}
@@ -511,7 +511,7 @@ tr:hover .view-link{color:var(--edge);}
 .calib-cell .cs{font-size:11px;color:var(--ink-faint);margin-left:5px;font-family:var(--font-mono);}
 .calib-cell.click,.calib-table.click,.calib-quality.click,.calib-sub.click{cursor:pointer;}
 .calib-cell.click:hover .cl{color:var(--ink);}
-.calib-quality{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);margin:2px 0 12px;letter-spacing:.02em;}
+.calib-quality{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.02em;}
 .calib-quality:hover{color:var(--ink-dim);}
 .calib-sub{font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px;margin-bottom:6px;}
 .calib-table td.pos{color:var(--pos);} .calib-table td.neg{color:var(--neg);}

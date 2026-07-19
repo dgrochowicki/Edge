@@ -340,14 +340,14 @@ function renderCalibration() {
     };
 
     const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
-    let html = `
+    let frame = `
         <div class="calib-grid">
             <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled</div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
             <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
         </div>
-        <div class="panel calib-progress-panel">
+        <div class="panel">
             <div class="panel-title"><span>Settled Progress</span></div>
             <div class="outcome-bar"><div class="outcome-seg" style="width:${progressPct}%;background:var(--edge);"></div></div>
             <div class="outcome-legend">
@@ -359,15 +359,17 @@ function renderCalibration() {
                 </div>
             </div>
         </div>
-        <div class="calib-quality click" onclick="calibInfo('quality')">
+        <div class="panel calib-quality click" onclick="calibInfo('quality')">
             data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
-        html += `<div class="calib-note">Collection phase \u2014 ${settledEst.length}/${CAL_T.PRELIM} settled predictions with a probability estimate. Per protocol, metrics are not computed below this threshold.</div>`;
-        el.innerHTML = html;
+        frame += `<div class="panel calib-note">Collection phase \u2014 ${settledEst.length}/${CAL_T.PRELIM} settled predictions with a probability estimate. Per protocol, metrics are not computed below this threshold.</div>`;
+        el.innerHTML = `<div class="charts">${frame}</div>`;
         return;
     }
+
+    let html = `<div class="charts">${frame}</div>`;
 
     const out = p => p.result === 'won' ? 1 : 0;
     const brierEdge = settledEst.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / settledEst.length;
