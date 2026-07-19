@@ -9,9 +9,9 @@ const SIDEBAR_ICONS = {
 };
 
 const SIDEBAR_LINKS = {
-    index:   { home: 'index.html',    dashboard: 'index.html',    reports: 'dashboard/reports.html', logs: 'dashboard/logs.html' },
-    reports: { home: '../index.html', dashboard: '../index.html', reports: 'reports.html',           logs: 'logs.html' },
-    logs:    { home: '../index.html', dashboard: '../index.html', reports: 'reports.html',           logs: 'logs.html' }
+    dashboard: { home: 'index.html',    dashboard: 'index.html',    reports: 'dashboard/reports.html', logs: 'dashboard/logs.html' },
+    reports:   { home: '../index.html', dashboard: '../index.html', reports: 'reports.html',           logs: 'logs.html' },
+    logs:      { home: '../index.html', dashboard: '../index.html', reports: 'reports.html',           logs: 'logs.html' }
 };
 
 const SIDEBAR_NAV = [
