@@ -56,12 +56,21 @@ The project will track:
 ```text
 Edge/
 ├── README.md
-├── PLAYBOOK.md
-├── ROADMAP.md
+├── index.html
 ├── data/
 │   └── bets.json
-├── reports/
-└── reviews/
+├── dashboard/
+│   ├── reports.html
+│   ├── logs.html
+│   ├── dashboard.js
+│   ├── reports.js
+│   ├── logs.js
+│   ├── styles.css
+│   └── icons/
+├── docs/
+│   ├── PLAYBOOK.md
+│   └── PROJECT_MEMORY.md
+└── reports/
 ```
 
 The structure will grow only when a real need appears.
