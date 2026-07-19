@@ -434,6 +434,3 @@ function renderClv(el, snapsBet) {
     }
     el.innerHTML += block;
 }
-
-// Refresh data every 30 seconds
-setInterval(() => { loadBets(); }, 30000);

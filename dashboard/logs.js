@@ -100,6 +100,3 @@ function setupModalHandlers() {
         if (event.target === modal) modal.style.display = 'none';
     });
 }
-
-// Refresh data every 30 seconds
-setInterval(() => { loadBets(); }, 30000);
