@@ -345,7 +345,7 @@ function renderCalibration() {
 
     let html = `
         <div class="calib-grid">
-            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged <span class="calib-stage-tag ${stage.cls}" onclick="event.stopPropagation();calibInfo('stage')">${stage.label}</span></div><div class="cv">${preds.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled <span class="calib-stage-tag ${stage.cls}" onclick="event.stopPropagation();calibInfo('stage')">${stage.label}</span></div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
             <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
