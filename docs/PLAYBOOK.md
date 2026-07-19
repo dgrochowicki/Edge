@@ -237,3 +237,39 @@ A rule may be updated when:
 - a new market requires an explicit process.
 
 Every meaningful change should be committed with a short explanation.
+
+## Calibration & CLV Protocol
+
+This section answers the two questions the rest of the playbook depends on: are Edge's probability estimates calibrated, and do identified prices beat the closing line? Until both have answers, every fair-odds figure is an unvalidated estimate.
+
+### Logging
+
+Every market that receives a full analysis in a daily report is appended to the `predictions` array in `data/bets.json` — **both BET and PASS**. Logging only BETs creates selection bias. A logged entry means Edge produced an estimated probability for it.
+
+Required fields per entry: `id` (P-YYYY-MM-DD-NN), `date`, `report`, `game` (cs2 | lol | dota2), `match`, `market`, `pick`, `estimated_probability` (must equal 1 / fair_odds), `fair_odds`, `market_odds_at_analysis`, `market_odds_opponent` (the other side's price at the same moment — required, since without it the de-vigged market baseline cannot be computed), `odds_timestamp`, `closing_odds` (null at creation), `decision`, `confidence`, `result` (`pending` at creation).
+
+### Closing snapshot
+
+As close to match start as practical, record `closing_odds` for the pick (same bookmaker: STS). A snapshot 1–2 hours before start is acceptable. **Never fill closing odds after the result is known** — a missing value stays null forever; a backfilled one is corrupted data. Priority: all BETs first, then highest-confidence PASSes.
+
+### Settlement
+
+After the match, set `result` to `won` / `lost` / `void` — meaning: did the **pick** win, regardless of the decision.
+
+### Metrics
+
+- **Brier score**: mean of `(estimated_probability − outcome)²` over settled entries; outcome is 1 if the pick won, else 0. Lower is better; 0.25 equals always saying 50%.
+- **Market baseline**: de-vigged market probability `p = (1/odds_pick) / (1/odds_pick + 1/odds_opponent)`, scored the same way on the same matches. Edge's estimates add information only if their Brier beats this baseline over a real sample. If they do not, fair odds should be anchored to the de-vigged market price.
+- **Calibration table**: entries bucketed by estimated probability (50–60%, 60–70%, …) vs actual win rate per bucket. Systematic gaps reveal over- or under-confidence.
+- **CLV**: `(odds_at_analysis / closing_odds − 1) × 100` for entries with a closing price. Consistently positive CLV on BETs is the strongest early evidence of edge; consistently negative CLV predicts long-term losses regardless of recent results.
+
+### Sample size discipline
+
+Under 50 settled predictions: compute nothing, conclude nothing. 50–100: preliminary signal. 100–300: patterns worth discussing. 300+: conclusions may carry weight. Do not create or change rules from a smaller sample.
+
+### Failure conditions (pre-registered)
+
+- If after 150 settled predictions Edge's Brier score is not better than the market baseline, the probability-estimation method is considered not validated.
+- If after 50 closing snapshots on BETs the average CLV is negative, the selection method is considered not validated.
+
+Either failure means: stop real-money bets, keep logging paper predictions, and revise the method — or accept "no edge found" as the project's result. That outcome is a valid finding, not a failure of the project.
