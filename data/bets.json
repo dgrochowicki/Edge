@@ -195,6 +195,7 @@
       "date": "2026-07-17",
       "type": "single",
       "source": "user_bet",
+      "report": "reports/2026-07-17.md",
       "stake_pln": 2.0,
       "combined_odds": 2.0,
       "potential_return_pln": 3.52,
@@ -211,13 +212,19 @@
           "closing_odds": null,
           "result": "lost"
         }
-      ]
+      ],
+      "review": {
+        "main_lesson": "A correctly identified value bet can still lose when the report itself already flagged high variance risk.",
+        "decision_quality": "mixed",
+        "reason": "Fair odds were estimated around 1.72; the 2.04 market price gave about +18.6% value, but the market favored K27, so high risk was already priced into the call before the result."
+      }
     },
     {
       "id": "EDGE-006",
       "date": "2026-07-17",
       "type": "single",
       "source": "user_bet",
+      "report": "reports/2026-07-17.md",
       "stake_pln": 2.0,
       "combined_odds": 2.0,
       "potential_return_pln": 3.52,
@@ -234,7 +241,12 @@
           "closing_odds": null,
           "result": "won"
         }
-      ]
+      ],
+      "review": {
+        "main_lesson": "The highest-value bet of the day among confirmed STS odds performed as expected.",
+        "decision_quality": "good",
+        "reason": "Fair odds were estimated around 1.72; the 2.08 market price gave about +20.9% value, the largest computed edge of any confirmed-odds selection that day, and it won."
+      }
     }
   ],
   "observed_passes": [
@@ -712,6 +724,84 @@
         "missing_market_odds"
       ],
       "notes": "Backfilled. STS odds not read that day."
+    },
+    {
+      "id": "P-2026-07-16-09",
+      "date": "2026-07-16",
+      "report": "reports/2026-07-16.md",
+      "game": "cs2",
+      "match": "paiN vs 3DMAX",
+      "market": "total_maps",
+      "pick": "Over 2.5 maps",
+      "estimated_probability": null,
+      "fair_odds": null,
+      "market_odds_at_analysis": 1.9,
+      "market_odds_opponent": null,
+      "odds_timestamp": null,
+      "closing_odds": null,
+      "decision": "BET",
+      "confidence": null,
+      "result": "lost",
+      "agent": "gpt",
+      "recording_mode": "historical_backfill",
+      "data_quality": [
+        "missing_opponent_odds",
+        "unknown_exact_timestamp",
+        "fair_odds_not_recorded"
+      ],
+      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report calls it a small BET around 1.90+ without a recorded numeric fair odds. Result from EDGE-003 (2:0)."
+    },
+    {
+      "id": "P-2026-07-16-10",
+      "date": "2026-07-16",
+      "report": "reports/2026-07-16.md",
+      "game": "cs2",
+      "match": "Gentle Mates vs NiP",
+      "market": "moneyline",
+      "pick": "NiP",
+      "estimated_probability": null,
+      "fair_odds": null,
+      "market_odds_at_analysis": 1.5,
+      "market_odds_opponent": null,
+      "odds_timestamp": null,
+      "closing_odds": null,
+      "decision": "BET",
+      "confidence": null,
+      "result": "won",
+      "agent": "gpt",
+      "recording_mode": "historical_backfill",
+      "data_quality": [
+        "missing_opponent_odds",
+        "unknown_exact_timestamp",
+        "fair_odds_not_recorded"
+      ],
+      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report notes NiP as predicted winner but flags 1.50 as a low price, no separate numeric fair odds recorded. Result from EDGE-003/EDGE-004 (won)."
+    },
+    {
+      "id": "P-2026-07-16-11",
+      "date": "2026-07-16",
+      "report": "reports/2026-07-16.md",
+      "game": "cs2",
+      "match": "Phantom vs HEROIC",
+      "market": "total_maps",
+      "pick": "Over 2.5 maps",
+      "estimated_probability": null,
+      "fair_odds": null,
+      "market_odds_at_analysis": 1.95,
+      "market_odds_opponent": null,
+      "odds_timestamp": null,
+      "closing_odds": null,
+      "decision": "BET",
+      "confidence": null,
+      "result": "won",
+      "agent": "gpt",
+      "recording_mode": "historical_backfill",
+      "data_quality": [
+        "missing_opponent_odds",
+        "unknown_exact_timestamp",
+        "fair_odds_not_recorded"
+      ],
+      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report names it the best direction on the list and later Bet of the Day, no separate numeric fair odds recorded. Result from EDGE-003/EDGE-004 (won)."
     },
     {
       "id": "P-2026-07-17-01",
