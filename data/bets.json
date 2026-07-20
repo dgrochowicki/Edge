@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-07-19",
+  "updated_at": "2026-07-20",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -195,7 +195,6 @@
       "date": "2026-07-17",
       "type": "single",
       "source": "user_bet",
-      "report": "reports/2026-07-17.md",
       "stake_pln": 2.0,
       "combined_odds": 2.0,
       "potential_return_pln": 3.52,
@@ -212,19 +211,13 @@
           "closing_odds": null,
           "result": "lost"
         }
-      ],
-      "review": {
-        "main_lesson": "A correctly identified value bet can still lose when the report itself already flagged high variance risk.",
-        "decision_quality": "mixed",
-        "reason": "Fair odds were estimated around 1.72; the 2.04 market price gave about +18.6% value, but the market favored K27, so high risk was already priced into the call before the result."
-      }
+      ]
     },
     {
       "id": "EDGE-006",
       "date": "2026-07-17",
       "type": "single",
       "source": "user_bet",
-      "report": "reports/2026-07-17.md",
       "stake_pln": 2.0,
       "combined_odds": 2.0,
       "potential_return_pln": 3.52,
@@ -241,12 +234,7 @@
           "closing_odds": null,
           "result": "won"
         }
-      ],
-      "review": {
-        "main_lesson": "The highest-value bet of the day among confirmed STS odds performed as expected.",
-        "decision_quality": "good",
-        "reason": "Fair odds were estimated around 1.72; the 2.08 market price gave about +20.9% value, the largest computed edge of any confirmed-odds selection that day, and it won."
-      }
+      ]
     }
   ],
   "observed_passes": [
@@ -379,14 +367,14 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 7.5,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. STS odds recorded as approximate in report. Result confirmed via web lookup: LGD Gaming swept MOUZ 2-0 (EWC 2026 Dota 2 Survival Stage)."
+      "notes": "Backfilled. STS odds recorded as approximate in report."
     },
     {
       "id": "P-2026-07-14-02",
@@ -404,14 +392,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": null,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used. Result confirmed via web lookup: ODDIK beat paiN Academy 2-0 (CCT 2026 South America Series 4)."
+      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used."
     },
     {
       "id": "P-2026-07-15-01",
@@ -533,7 +521,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -541,7 +529,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set. Result confirmed via web lookup: Gen.G beat Sentinels (EWC 2026 LoL Group B)."
+      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set."
     },
     {
       "id": "P-2026-07-16-02",
@@ -559,7 +547,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -567,7 +555,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Bilibili Gaming beat T1 1-0 (EWC 2026 LoL Group C)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-03",
@@ -585,7 +573,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -593,7 +581,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Hanwha Life Esports beat JD Gaming 1-0 (EWC 2026 LoL Group Stage)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-04",
@@ -611,7 +599,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -619,7 +607,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: AG.AL (Anyone's Legend) beat G2 1-0 (EWC 2026 LoL Group A)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-05",
@@ -637,7 +625,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "lost",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -645,7 +633,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: K27 beat Wildcard 2-0 (13-8 Mirage, 16-13 Dust2, Stake Ranked Episode 3 lower bracket)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-06",
@@ -663,7 +651,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -671,7 +659,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: 3DMAX beat paiN Gaming 2-0 (Stake Ranked Episode 3 lower bracket round 1)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-07",
@@ -689,7 +677,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -697,7 +685,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: BetBoom Team beat Nigma Galaxy 2-0 (EWC 2026 Dota 2 quarterfinals)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-16-08",
@@ -715,7 +703,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "lost",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -723,85 +711,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day. Result confirmed via web lookup: Vici Gaming beat Team Falcons 2-0 (EWC 2026 Dota 2 quarterfinals)."
-    },
-    {
-      "id": "P-2026-07-16-09",
-      "date": "2026-07-16",
-      "report": "reports/2026-07-16.md",
-      "game": "cs2",
-      "match": "paiN vs 3DMAX",
-      "market": "total_maps",
-      "pick": "Over 2.5 maps",
-      "estimated_probability": null,
-      "fair_odds": null,
-      "market_odds_at_analysis": 1.9,
-      "market_odds_opponent": null,
-      "odds_timestamp": null,
-      "closing_odds": null,
-      "decision": "BET",
-      "confidence": null,
-      "result": "lost",
-      "agent": "gpt",
-      "recording_mode": "historical_backfill",
-      "data_quality": [
-        "missing_opponent_odds",
-        "unknown_exact_timestamp",
-        "fair_odds_not_recorded"
-      ],
-      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report calls it a small BET around 1.90+ without a recorded numeric fair odds. Result from EDGE-003 (2:0)."
-    },
-    {
-      "id": "P-2026-07-16-10",
-      "date": "2026-07-16",
-      "report": "reports/2026-07-16.md",
-      "game": "cs2",
-      "match": "Gentle Mates vs NiP",
-      "market": "moneyline",
-      "pick": "NiP",
-      "estimated_probability": null,
-      "fair_odds": null,
-      "market_odds_at_analysis": 1.5,
-      "market_odds_opponent": null,
-      "odds_timestamp": null,
-      "closing_odds": null,
-      "decision": "BET",
-      "confidence": null,
-      "result": "won",
-      "agent": "gpt",
-      "recording_mode": "historical_backfill",
-      "data_quality": [
-        "missing_opponent_odds",
-        "unknown_exact_timestamp",
-        "fair_odds_not_recorded"
-      ],
-      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report notes NiP as predicted winner but flags 1.50 as a low price, no separate numeric fair odds recorded. Result from EDGE-003/EDGE-004 (won)."
-    },
-    {
-      "id": "P-2026-07-16-11",
-      "date": "2026-07-16",
-      "report": "reports/2026-07-16.md",
-      "game": "cs2",
-      "match": "Phantom vs HEROIC",
-      "market": "total_maps",
-      "pick": "Over 2.5 maps",
-      "estimated_probability": null,
-      "fair_odds": null,
-      "market_odds_at_analysis": 1.95,
-      "market_odds_opponent": null,
-      "odds_timestamp": null,
-      "closing_odds": null,
-      "decision": "BET",
-      "confidence": null,
-      "result": "won",
-      "agent": "gpt",
-      "recording_mode": "historical_backfill",
-      "data_quality": [
-        "missing_opponent_odds",
-        "unknown_exact_timestamp",
-        "fair_odds_not_recorded"
-      ],
-      "notes": "Backfilled. One of three legs staked on EDGE-003/EDGE-004; report names it the best direction on the list and later Bet of the Day, no separate numeric fair odds recorded. Result from EDGE-003/EDGE-004 (won)."
+      "notes": "Backfilled. STS odds not read that day."
     },
     {
       "id": "P-2026-07-17-01",
@@ -819,14 +729,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5.5,
-      "result": "won",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report. Result confirmed via web lookup: 3DMAX beat Gentle Mates 2-0 (Stake Ranked Episode 3)."
+      "notes": "Backfilled from report."
     },
     {
       "id": "P-2026-07-17-02",
@@ -1098,14 +1008,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "lost",
+      "result": "pending",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report. Result confirmed via web lookup: this was a second, later meeting between the two teams (Stake Ranked Episode 3 lower bracket) — K27 beat NiP 2-1, distinct from their earlier 07-15 encounter which NiP won 2-0."
+      "notes": "Backfilled from report."
     },
     {
       "id": "P-2026-07-19-01",
@@ -1123,14 +1033,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report (Value corrected to -10.1% would apply to KC-Dplus; this entry per table)."
+      "notes": "Backfilled from report (Value corrected to -10.1% would apply to KC-Dplus; this entry per table). Settled 2026-07-20 from EWC final results (web)."
     },
     {
       "id": "P-2026-07-19-02",
@@ -1148,14 +1058,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Settled 2026-07-20 from EWC final results (web)."
     },
     {
       "id": "P-2026-07-19-03",
@@ -1173,14 +1083,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Settled 2026-07-20 from EWC final results (web)."
     },
     {
       "id": "P-2026-07-19-04",
@@ -1198,14 +1108,54 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Settled 2026-07-20 from EWC final results (web)."
+    },
+    {
+      "id": "P-2026-07-20-G1",
+      "date": "2026-07-20",
+      "report": "reports/2026-07-20-gpt.md",
+      "game": "cs2",
+      "match": "Just Players vs Walczaki",
+      "market": "match_winner",
+      "pick": "Walczaki",
+      "estimated_probability": 0.689655,
+      "fair_odds": 1.45,
+      "market_odds_at_analysis": 1.32,
+      "market_odds_opponent": 3.1,
+      "odds_timestamp": "2026-07-20T08:02:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 7,
+      "result": "pending",
+      "agent": "gpt",
+      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02)."
+    },
+    {
+      "id": "P-2026-07-20-G2",
+      "date": "2026-07-20",
+      "report": "reports/2026-07-20-gpt.md",
+      "game": "cs2",
+      "match": "ARCRED vs 1win",
+      "market": "match_winner",
+      "pick": "1win",
+      "estimated_probability": 0.621118,
+      "fair_odds": 1.61,
+      "market_odds_at_analysis": 1.7,
+      "market_odds_opponent": 2.04,
+      "odds_timestamp": "2026-07-20T08:02:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 6,
+      "result": "pending",
+      "agent": "gpt",
+      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02)."
     }
   ]
 }
