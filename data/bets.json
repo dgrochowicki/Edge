@@ -355,7 +355,7 @@
       "id": "P-2026-07-14-01",
       "date": "2026-07-14",
       "report": "reports/2026-07-14.md",
-      "game": null,
+      "game": "dota2",
       "match": "LGD Gaming vs MOUZ",
       "market": "moneyline",
       "pick": "LGD Gaming",
@@ -367,14 +367,14 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 7.5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. STS odds recorded as approximate in report."
+      "notes": "Backfilled. STS odds recorded as approximate in report. Settled 2026-07-20: EWC Survival Stage: LGD 2:0 MOUZ (web, GosuGamers/FLM)."
     },
     {
       "id": "P-2026-07-14-02",
@@ -392,14 +392,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": null,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used."
+      "notes": "Backfilled. Fair odds recorded as range 1.42-1.48; midpoint used. Settled 2026-07-20: ODDIK beat paiN Academy 2-0 (CCT 2026 South America Series 4, web)."
     },
     {
       "id": "P-2026-07-15-01",
@@ -521,7 +521,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -529,7 +529,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set."
+      "notes": "Backfilled. STS odds not read that day; game outside cs2/lol/dota2 set. Settled 2026-07-20: EWC LoL Group C UB final: Gen.G beat Sentinels; SEN then eliminated (web, FLM/GosuGamers)."
     },
     {
       "id": "P-2026-07-16-02",
@@ -547,7 +547,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -555,7 +555,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: EWC LoL Group A UB final: Bilibili 1:0 T1 (web, GosuGamers)."
     },
     {
       "id": "P-2026-07-16-03",
@@ -573,7 +573,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -581,7 +581,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: EWC LoL Group D UB final: HLE 1:0 JDG (web, egamersworld/rft)."
     },
     {
       "id": "P-2026-07-16-04",
@@ -599,7 +599,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -607,7 +607,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: EWC LoL: AG.AL beat G2 in UB decider (web, techtimes)."
     },
     {
       "id": "P-2026-07-16-05",
@@ -625,7 +625,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -633,7 +633,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: Stake Ranked Ep. 3: K27 beat Wildcard (lower bracket), K27 advanced to later rounds (web, HLTV/dust2/tips.gg)."
     },
     {
       "id": "P-2026-07-16-06",
@@ -651,7 +651,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -659,7 +659,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: Stake Ranked Ep. 3: 3DMAX eliminated paiN on day two (web, HLTV newsline)."
     },
     {
       "id": "P-2026-07-16-07",
@@ -677,7 +677,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "void",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -685,7 +685,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: Duplicate of P-2026-07-17-05 — fixture previewed a day early, played 17.07. Voided to avoid double-counting."
     },
     {
       "id": "P-2026-07-16-08",
@@ -703,7 +703,7 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "void",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
@@ -711,7 +711,7 @@
         "unknown_exact_timestamp",
         "missing_market_odds"
       ],
-      "notes": "Backfilled. STS odds not read that day."
+      "notes": "Backfilled. STS odds not read that day. Settled 2026-07-20: Duplicate of P-2026-07-17-04 — fixture previewed a day early, played 17.07. Voided to avoid double-counting."
     },
     {
       "id": "P-2026-07-17-01",
@@ -729,14 +729,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5.5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Settled 2026-07-20: Stake Ranked Ep. 3: 3DMAX 2:0 Gentle Mates (web, tips.gg score)."
     },
     {
       "id": "P-2026-07-17-02",
@@ -1008,14 +1008,14 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
         "unknown_exact_timestamp"
       ],
-      "notes": "Backfilled from report."
+      "notes": "Backfilled from report. Settled 2026-07-20: Stake Ranked Ep. 3 lower final: K27 beat NiP and reached grand final (HEROIC swept K27 on 18.07) (web, HLTV newsline)."
     },
     {
       "id": "P-2026-07-19-01",
