@@ -1133,9 +1133,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
-      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02)."
+      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02). Settled 2026-07-20: Just Players beat Walczaki 2-0 (13-11 Nuke, 13-10 Mirage, European Pro League Series 8, web)."
     },
     {
       "id": "P-2026-07-20-G2",
@@ -1153,9 +1153,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02)."
+      "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02). Settled 2026-07-20: 1win beat ARCRED 2-1 (European Pro League Series 8 quarterfinal, web)."
     }
   ]
 }
