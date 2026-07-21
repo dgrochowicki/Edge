@@ -178,6 +178,8 @@ header p.tagline{
   display:flex;
   justify-content:space-between;
 }
+.panel-title #plMeta.pos{color:var(--pos);}
+.panel-title #plMeta.neg{color:var(--neg);}
 .chart-box{height:260px;position:relative;}
 
 /* ---------- Outcome split (stacked progress bar) ---------- */
@@ -247,6 +249,8 @@ tbody tr{
 tbody tr:hover{background:var(--panel-2);box-shadow:inset 3px 0 0 var(--edge);}
 td{padding:11px 12px;color:var(--ink);}
 td.num{font-variant-numeric:tabular-nums;}
+#couponsTable td.pos{color:var(--pos);}
+#couponsTable td.neg{color:var(--neg);}
 .tag{
   display:inline-flex;
   align-items:center;
@@ -324,7 +328,17 @@ tr:hover .view-link{color:var(--edge);}
   .kpi-row.cols-3{grid-template-columns:1fr;}
   table{font-size:11px;}
   th,td{padding:8px;}
-  thead th:nth-child(4),td:nth-child(4){display:none;}
+  /* logs.html full log table: ID/Date/Stake/Odds/Return/Status/ROI -- hide Odds (4th) */
+  #betsTable thead th:nth-child(4),#betsTable td:nth-child(4){display:none;}
+  /* index.html Recent Coupons: ID/Date/Type/Game/Stake/Odds/Return/Status -- hide Type (3rd) and Odds (6th) */
+  #couponsTable thead th:nth-child(3),#couponsTable td:nth-child(3),
+  #couponsTable thead th:nth-child(6),#couponsTable td:nth-child(6){display:none;}
+}
+
+@media (max-width:420px){
+  th,td{padding:7px 6px;}
+  /* Narrow phones: also hide Game (4th) so the remaining columns fit without horizontal scroll */
+  #couponsTable thead th:nth-child(4),#couponsTable td:nth-child(4){display:none;}
 }
 
 /* ---------- Reports page ---------- */

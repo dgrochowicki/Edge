@@ -7,6 +7,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-date-fns@3/dist/chartjs-adapter-date-fns.bundle.min.js"></script>
     <link rel="stylesheet" href="dashboard/styles.css">
 </head>
 <body>
@@ -27,7 +28,6 @@
     </header>
 
     <div class="kpi-row" id="kpiRow"></div>
-    <div class="kpi-row" id="kpiRow2"></div>
 
     <div class="charts">
         <div class="panel">
@@ -78,10 +78,10 @@
             <h2>Recent Coupons</h2>
             <span class="count" id="couponCount"></span>
         </div>
-        <table id="betsTable">
+        <table id="couponsTable">
             <thead>
                 <tr>
-                    <th>ID</th><th>Date</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th>ROI</th><th></th>
+                    <th>ID</th><th>Date</th><th>Type</th><th>Game</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th></th>
                 </tr>
             </thead>
             <tbody id="tableBody"><!-- Filled by JS --></tbody>

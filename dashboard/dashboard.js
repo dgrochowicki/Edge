@@ -52,9 +52,6 @@ function computeStreak(coupons) {
 function buildKPIs() {
     const s = betsData.summary;
     const roi = (s.roi * 100).toFixed(1);
-    const settledCount = s.coupons - s.pending;
-    const decided = s.won + s.lost;
-    const hitRate = decided > 0 ? (s.won / decided * 100).toFixed(0) : '0';
 
     const streak = computeStreak(betsData.coupons);
     const streakCls = streak.type === 'won' ? 'pos' : streak.type === 'lost' ? 'neg' : '';
@@ -62,12 +59,15 @@ function buildKPIs() {
     const streakNoun = streak.type === 'won'
         ? (streak.count === 1 ? 'win' : 'wins')
         : (streak.count === 1 ? 'loss' : 'losses');
-    const streakSub = streak.count > 0 ? `${streak.count} ${streakNoun} in a row` : 'no settled coupons yet';
+    const streakSub = streak.count > 0 ? `${streak.count} ${streakNoun} in a row (coupons)` : 'no settled coupons yet';
+
+    const selStats = selectionStats(getAllSelections(betsData));
+    const selHitCls = selStats.hitRate == null ? '' : (selStats.hitRate >= 0.55 ? 'pos' : selStats.hitRate < 0.45 ? 'neg' : '');
 
     const kpis = [
-        { label: 'Net Result', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 3)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln)} PLN staked` },
-        { label: 'ROI', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `vs. flat stake baseline` },
-        { label: 'Hit Rate', value: `${hitRate}%`, cls: '', sub: `${s.won}W – ${s.lost}L – ${s.voided}V` },
+        { label: 'Net Result', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 2)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln, 2)} PLN staked` },
+        { label: 'ROI', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `on ${fmt(s.total_staked_pln, 2)} PLN staked · flat 1u stakes` },
+        { label: 'Selection Hit Rate', value: selStats.hitRate != null ? `${(selStats.hitRate * 100).toFixed(0)}%` : '—', cls: selHitCls, sub: `coupons: ${s.won}W – ${s.lost}L` },
         { label: 'Streak', value: streakValue, cls: streakCls, sub: streakSub }
     ];
 
@@ -77,61 +77,105 @@ function buildKPIs() {
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('');
+}
 
-    const wonReturned = betsData.coupons.filter(c => c.status === 'won').reduce((sum, c) => sum + c.gross_return_pln, 0);
-    const lostStaked = betsData.coupons.filter(c => c.status === 'lost').reduce((sum, c) => sum + c.stake_pln, 0);
+function parseISODate(s) {
+    const [y, m, d] = s.split('-').map(Number);
+    return new Date(Date.UTC(y, m - 1, d));
+}
+function formatISODate(date) { return date.toISOString().slice(0, 10); }
 
-    const kpis2 = [
-        { label: 'Coupons', value: `${s.coupons}`, cls: '', sub: `${settledCount} settled` },
-        { label: 'Won', value: `${s.won}`, cls: 'pos', sub: `${fmt(wonReturned)} PLN returned` },
-        { label: 'Lost', value: `${s.lost}`, cls: 'neg', sub: `${fmt(lostStaked)} PLN staked` },
-        { label: 'Pending', value: `${s.pending}`, cls: '', sub: `open coupons awaiting result` }
-    ];
+// One point per calendar day (coupons settled the same day are summed into
+// one point, tooltip lists their IDs), plus a synthetic (first day - 1, 0)
+// point so the line always starts at zero.
+function buildPnlSeries(coupons) {
+    const settled = coupons.filter(c => c.status !== 'pending');
+    const byDate = {};
+    settled.forEach(c => {
+        const day = byDate[c.date] = byDate[c.date] || { date: c.date, net: 0, ids: [] };
+        day.net += c.net_result_pln;
+        day.ids.push(c.id);
+    });
+    const days = Object.values(byDate).sort((a, b) => a.date.localeCompare(b.date));
 
-    document.getElementById('kpiRow2').innerHTML = kpis2.map(k => `
-        <div class="kpi ${k.cls}">
-            <div class="kpi-label">${k.label}</div>
-            <div class="kpi-value ${k.cls}">${k.value}</div>
-            <div class="kpi-sub">${k.sub}</div>
-        </div>`).join('');
+    let cumulative = 0;
+    const points = days.map(d => {
+        cumulative += d.net;
+        return { x: d.date, y: cumulative, dayNet: d.net, ids: d.ids };
+    });
+
+    if (points.length > 0) {
+        const start = parseISODate(points[0].x);
+        start.setUTCDate(start.getUTCDate() - 1);
+        points.unshift({ x: formatISODate(start), y: 0, dayNet: 0, ids: [] });
+    }
+    return points;
 }
 
 function renderCharts() {
     const roiCtx = document.getElementById('roiChart').getContext('2d');
-
-    const settled = betsData.coupons.filter(c => c.status !== 'pending');
-    let cumulative = 0;
-    const cumulativeData = settled.map(c => { cumulative += c.net_result_pln; return cumulative; });
-    const labels = settled.map(c => c.id.replace('EDGE-', ''));
+    const points = buildPnlSeries(betsData.coupons);
 
     if (roiChart) roiChart.destroy();
     roiChart = new Chart(roiCtx, {
         type: 'line',
         data: {
-            labels,
             datasets: [{
-                data: cumulativeData,
+                data: points,
                 borderColor: '#ff9f1c',
-                backgroundColor: 'rgba(255,159,28,0.08)',
                 borderWidth: 2,
                 tension: 0.25,
-                fill: true,
+                fill: { target: 'origin', above: 'rgba(94,194,106,0.12)', below: 'rgba(255,92,77,0.12)' },
                 pointBackgroundColor: '#ff9f1c',
                 pointBorderColor: '#0a0b0d',
-                pointRadius: 4,
+                pointRadius: ctx => (ctx.raw && ctx.raw.ids && ctx.raw.ids.length ? 4 : 0),
                 pointHoverRadius: 6
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
-            plugins: { legend: { display: false } },
+            plugins: {
+                legend: { display: false },
+                tooltip: {
+                    callbacks: {
+                        title: items => items[0].raw.x,
+                        label: item => {
+                            const r = item.raw;
+                            const lines = [
+                                `Daily net: ${r.dayNet >= 0 ? '+' : ''}${r.dayNet.toFixed(2)} PLN`,
+                                `Cumulative: ${r.y >= 0 ? '+' : ''}${r.y.toFixed(2)} PLN`
+                            ];
+                            if (r.ids && r.ids.length) lines.push(`Coupons: ${r.ids.join(', ')}`);
+                            return lines;
+                        }
+                    }
+                }
+            },
             scales: {
-                y: { ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } }, grid: { color: '#1c1e23' } },
-                x: { ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } }, grid: { display: false } }
+                y: {
+                    ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } },
+                    grid: {
+                        color: ctx => ctx.tick.value === 0 ? 'rgba(242,240,235,0.3)' : '#1c1e23',
+                        lineWidth: ctx => ctx.tick.value === 0 ? 2 : 1
+                    }
+                },
+                x: {
+                    type: 'time',
+                    time: { unit: 'day', tooltipFormat: 'yyyy-MM-dd', displayFormats: { day: 'MM-dd' } },
+                    ticks: { color: '#a8abb3', font: { family: 'JetBrains Mono', size: 10 } },
+                    grid: { display: false }
+                }
             }
         }
     });
+
+    const plMeta = document.getElementById('plMeta');
+    if (plMeta) {
+        const total = betsData.summary.net_result_pln;
+        plMeta.textContent = `total ${total >= 0 ? '+' : ''}${total.toFixed(2)} PLN`;
+        plMeta.className = total >= 0 ? 'pos' : 'neg';
+    }
 
     renderOutcomeBar();
 }
@@ -163,21 +207,37 @@ function renderOutcomeBar() {
     }).join('');
 }
 
+function couponGameLabel(couponId, allSelections) {
+    const games = new Set(allSelections.filter(s => s.couponId === couponId && s.game).map(s => s.game));
+    if (games.size === 0) return '—';
+    if (games.size === 1) {
+        const key = [...games][0];
+        const known = BY_GAME_LIST.find(g => g.key === key);
+        return known ? known.label : key;
+    }
+    return 'multi';
+}
+
 function renderTable() {
     const tbody = document.getElementById('tableBody');
     const total = betsData.coupons.length;
     const recent = [...betsData.coupons].reverse().slice(0, RECENT_LIMIT);
+    const allSelections = getAllSelections(betsData);
 
     tbody.innerHTML = recent.map(c => {
-        const roi = c.stake_pln > 0 ? ((c.net_result_pln / c.stake_pln) * 100).toFixed(1) : '0.0';
+        const legs = (c.selections || []).length;
+        const type = c.type === 'single' ? 'single' : `acca · ${legs}`;
+        const game = couponGameLabel(c.id, allSelections);
+        const returnCls = c.gross_return_pln > c.stake_pln ? 'pos' : c.gross_return_pln === 0 ? 'neg' : '';
         return `<tr onclick="showDetails('${c.id}')">
             <td>${c.id}</td>
             <td>${c.date}</td>
+            <td>${type}</td>
+            <td>${game}</td>
             <td class="num">${fmt(c.stake_pln)}</td>
             <td class="num">${c.combined_odds}</td>
-            <td class="num">${fmt(c.gross_return_pln)}</td>
+            <td class="num ${returnCls}">${fmt(c.gross_return_pln)}</td>
             <td><span class="tag ${c.status}">${c.status}</span></td>
-            <td class="num">${roi}%</td>
             <td class="view-link">VIEW &rarr;</td>
         </tr>`;
     }).join('');
@@ -216,8 +276,8 @@ function showDetails(couponId) {
         <div class="kv"><span class="k">Source</span><span class="v">${c.source.replace('_', ' ')}</span></div>
         <div class="kv"><span class="k">Stake</span><span class="v">${fmt(c.stake_pln)} PLN</span></div>
         <div class="kv"><span class="k">Combined odds</span><span class="v">${c.combined_odds}</span></div>
-        <div class="kv"><span class="k">Potential return</span><span class="v">${fmt(c.potential_return_pln, 3)} PLN</span></div>
-        <div class="kv"><span class="k">Net result</span><span class="v">${fmt(c.net_result_pln, 3)} PLN</span></div>
+        <div class="kv"><span class="k">Potential return</span><span class="v">${fmt(c.potential_return_pln, 2)} PLN</span></div>
+        <div class="kv"><span class="k">Net result</span><span class="v">${fmt(c.net_result_pln, 2)} PLN</span></div>
         <div class="selections-title">Selections</div>
         ${selectionsHTML}
         ${reviewHTML}
