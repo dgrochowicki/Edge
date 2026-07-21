@@ -1293,8 +1293,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "agent": "gpt"
+      "result": "lost",
+      "agent": "gpt",
+      "notes": "Settled 2026-07-21: Gentle Mates beat 3DMAX 2:1 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-G4",
