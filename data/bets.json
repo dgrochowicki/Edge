@@ -1273,8 +1273,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "agent": "gpt"
+      "result": "lost",
+      "agent": "gpt",
+      "notes": "Settled 2026-07-21: HOTU beat HEROIC 2:1 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-G3",
