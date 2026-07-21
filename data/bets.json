@@ -1213,9 +1213,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "agent": "claude",
-      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24)."
+      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: MOUZ beat Nuclear TigeRES 2:0 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-C4",
@@ -1233,9 +1233,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "agent": "claude",
-      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24)."
+      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: Wildcard beat Alliance 2:0 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-G1",
@@ -1311,8 +1311,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "agent": "gpt"
+      "result": "won",
+      "agent": "gpt",
+      "notes": "Settled 2026-07-21: Astralis beat FOKUS 2:1 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-G5",
