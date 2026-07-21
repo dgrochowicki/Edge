@@ -238,6 +238,133 @@ function setupModalHandlers() {
 
 
 
+// ===== Selection-level metrics engine =====
+// Pure functions, no DOM/rendering side effects — wiring happens in the
+// render* functions further down. All aggregation is computed live from
+// betsData; nothing here hardcodes a count.
+
+function normalizeMatchKey(date, match) {
+    return `${date}|${(match || '').toLowerCase().trim().replace(/\s+/g, ' ')}`;
+}
+
+// Flattens every coupon selection into one list, joined with its prediction's
+// `game` via (date, match). Match text is NOT always consistent between the
+// bookmaker-sourced coupon selections and the predictions log (short names,
+// reversed team order, aliases) — normalized comparison catches simple
+// whitespace/case drift, but a genuine mismatch is left as game: null rather
+// than guessed. null is a valid, expected value here.
+function getAllSelections(betsData) {
+    const predByKey = {};
+    (betsData.predictions || []).forEach(p => {
+        const key = normalizeMatchKey(p.date, p.match);
+        if (!predByKey[key]) predByKey[key] = p;
+    });
+
+    const selections = [];
+    (betsData.coupons || []).forEach(c => {
+        (c.selections || []).forEach(s => {
+            const pred = predByKey[normalizeMatchKey(c.date, s.match)];
+            selections.push({
+                couponId: c.id,
+                couponDate: c.date,
+                couponStatus: c.status,
+                match: s.match,
+                market: s.market,
+                pick: s.pick,
+                odds: s.odds,
+                result: s.result,
+                notes: s.notes,
+                game: pred ? (pred.game || null) : null
+            });
+        });
+    });
+    return selections;
+}
+
+function selectionStats(selections) {
+    const total = selections.length;
+    const won = selections.filter(s => s.result === 'won').length;
+    const lost = selections.filter(s => s.result === 'lost').length;
+    const voided = selections.filter(s => s.result === 'void').length;
+    const decided = won + lost;
+    return { total, won, lost, void: voided, hitRate: decided > 0 ? won / decided : null };
+}
+
+const ODDS_BUCKETS = [
+    { label: '< 1.30', min: 1, max: 1.30 },
+    { label: '1.30–1.59', min: 1.30, max: 1.60 },
+    { label: '1.60–1.99', min: 1.60, max: 2.00 },
+    { label: '≥ 2.00', min: 2.00, max: Infinity }
+];
+
+function selectionsByOddsBucket(selections) {
+    return ODDS_BUCKETS.map(b => {
+        const inBucket = selections.filter(s => typeof s.odds === 'number' && s.odds >= b.min && s.odds < b.max);
+        const stats = selectionStats(inBucket);
+        const avgOdds = inBucket.length ? inBucket.reduce((sum, s) => sum + s.odds, 0) / inBucket.length : null;
+        return { label: b.label, n: stats.total, won: stats.won, lost: stats.lost, hitRate: stats.hitRate, avgOdds };
+    });
+}
+
+function groupSelectionsBy(selections, keyFn) {
+    const groups = {};
+    selections.forEach(s => {
+        const key = keyFn(s);
+        (groups[key] = groups[key] || []).push(s);
+    });
+    return Object.keys(groups).map(key => {
+        const stats = selectionStats(groups[key]);
+        return { label: key, n: stats.total, won: stats.won, lost: stats.lost, hitRate: stats.hitRate };
+    });
+}
+
+function selectionsByGame(selections) { return groupSelectionsBy(selections, s => s.game || 'unknown'); }
+function selectionsByMarket(selections) { return groupSelectionsBy(selections, s => s.market || 'unknown'); }
+
+// BET vs PASS record. Interpretive note: a high PASS "hit rate" (the picked
+// side would have won) is NOT evidence of a bad decision -- PASS is a verdict
+// about price (no value at the offered odds), not about who wins. Treat this
+// as contextual information only; see the Discipline Monitor's value-aware
+// breakdown for the metric that actually evaluates the PASS threshold.
+// TODO(agent-filter): once predictions carry multiple agents in volume, allow
+// filtering decisionStats by betsData.predictions[].agent.
+function decisionStats(predictions) {
+    const stat = (list) => {
+        const won = list.filter(p => p.result === 'won').length;
+        const lost = list.filter(p => p.result === 'lost').length;
+        const voided = list.filter(p => p.result === 'void').length;
+        const pending = list.filter(p => p.result === 'pending').length;
+        const decided = won + lost;
+        return { n: list.length, won, lost, void: voided, pending, hitRate: decided > 0 ? won / decided : null };
+    };
+    return {
+        bet: stat(predictions.filter(p => p.decision === 'BET')),
+        pass: stat(predictions.filter(p => p.decision === 'PASS'))
+    };
+}
+
+// Hypothetical result of staking 1u on every observed_passes entry that has
+// a recorded odds (i.e. "what if we'd bet the ones we watched but skipped").
+function observedPassStats(observedPasses, unitStake) {
+    const withOdds = (observedPasses || []).filter(o => o.odds);
+    const hypotheticalNet = withOdds.reduce((sum, o) => {
+        return sum + (o.result === 'won' ? unitStake * (o.odds - 1) : -unitStake);
+    }, 0);
+    return { n: withOdds.length, hypotheticalNet };
+}
+
+function couponsByLegCount(coupons) {
+    const groups = {};
+    (coupons || []).forEach(c => {
+        const legs = (c.selections || []).length;
+        const g = groups[legs] = groups[legs] || { legs, coupons: 0, won: 0, lost: 0 };
+        g.coupons++;
+        if (c.status === 'won') g.won++;
+        if (c.status === 'lost') g.lost++;
+    });
+    return Object.keys(groups).map(k => groups[k]).sort((a, b) => a.legs - b.legs);
+}
+
 // ===== Calibration Lab v2 =====
 // Per protocol: Brier vs market only on the paired sample; verdicts only at
 // pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
