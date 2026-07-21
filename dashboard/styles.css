@@ -526,12 +526,42 @@ tr:hover .view-link{color:var(--edge);}
 .calib-verdict.pos{color:var(--pos);}
 .calib-verdict.neg{color:var(--neg);}
 .calib-cell .cs{font-size:11px;color:var(--ink-faint);margin-left:5px;font-family:var(--font-mono);}
-.calib-cell.click,.calib-table.click,.calib-quality.click,.calib-sub.click{cursor:pointer;}
+.calib-cell.click,.calib-table.click,.calib-quality.click,.calib-sub.click,.kpi-label.click{cursor:pointer;}
 .calib-cell.click:hover .cl{color:var(--ink);}
 .calib-quality{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.02em;}
 .calib-quality:hover{color:var(--ink-dim);}
 .calib-sub{font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px;margin-bottom:6px;}
 .calib-table td.pos{color:var(--pos);} .calib-table td.neg{color:var(--neg);}
+
+/* Click-for-explanation affordance, shared across Calibration Lab and the
+   Selections Performance / Discipline Monitor / By Game sections. */
+.info-dot{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:13px;height:13px;border-radius:50%;
+  border:1px solid var(--ink-faint);
+  color:var(--ink-faint);
+  font-family:var(--font-mono);
+  font-size:9px;
+  margin-left:6px;
+  vertical-align:middle;
+}
+.click:hover .info-dot{color:var(--ink-dim);border-color:var(--ink-dim);}
+
+/* Selections Performance: By odds range / By market side by side on desktop */
+.perf-tables{display:grid;grid-template-columns:1.4fr 1fr;gap:20px;margin-top:14px;}
+.perf-tables .calib-sub{margin-top:0;}
+.perf-tables .calib-table.compact th,.perf-tables .calib-table.compact td{padding:3px 8px;}
+@media (max-width:768px){.perf-tables{grid-template-columns:1fr;gap:0;}}
+
+/* Discipline Monitor: PASS discipline card -- separate the "missed" group */
+.discipline-missed{
+  margin-top:12px;padding-top:12px;
+  border-top:1px solid var(--line-soft);
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--ink-faint);
+  line-height:1.6;
+}
 .calib-modal-overlay{display:flex;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:20px;}
 .calib-modal{background:var(--panel);border:1px solid var(--line);max-width:520px;width:100%;padding:18px 20px;}
 .calib-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:600;}

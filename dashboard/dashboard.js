@@ -297,6 +297,13 @@ function setupModalHandlers() {
     modal.addEventListener('click', (event) => {
         if (event.target === modal) modal.style.display = 'none';
     });
+
+    document.addEventListener('keydown', (event) => {
+        if (event.key !== 'Escape') return;
+        modal.style.display = 'none';
+        const calibModal = document.getElementById('calibModal');
+        if (calibModal) calibModal.style.display = 'none';
+    });
 }
 
 
@@ -454,15 +461,15 @@ function renderSelectionsPerformance() {
 
     const hrCls = stats.hitRate == null ? '' : (stats.hitRate >= 0.55 ? 'pos' : stats.hitRate < 0.45 ? 'neg' : '');
     const cards = [
-        { label: 'Selection Hit Rate', value: stats.hitRate != null ? `${(stats.hitRate * 100).toFixed(0)}%` : '—', cls: hrCls, sub: `${stats.won}W – ${stats.lost}L on legs` },
-        { label: 'Avg Leg Odds', value: avgOdds != null ? avgOdds.toFixed(2) : '—', cls: '', sub: 'across all logged legs' },
-        { label: 'Best Bucket', value: best ? best.label : '—', cls: best ? 'pos' : '', sub: best ? `${(best.hitRate * 100).toFixed(0)}% hit rate (n=${best.n})` : 'not enough data (need n≥2)' },
-        { label: 'Worst Bucket', value: worst ? worst.label : '—', cls: worst ? 'neg' : '', sub: worst ? `${(worst.hitRate * 100).toFixed(0)}% hit rate (n=${worst.n})` : 'not enough data (need n≥2)' }
+        { label: 'Selection Hit Rate', info: 'selHitRate', value: stats.hitRate != null ? `${(stats.hitRate * 100).toFixed(0)}%` : '—', cls: hrCls, sub: `${stats.won}W – ${stats.lost}L on legs` },
+        { label: 'Avg Leg Odds', info: 'avgOdds', value: avgOdds != null ? avgOdds.toFixed(2) : '—', cls: '', sub: 'across all logged legs' },
+        { label: 'Best Bucket', info: 'bestWorst', value: best ? best.label : '—', cls: best ? 'pos' : '', sub: best ? `${(best.hitRate * 100).toFixed(0)}% hit rate (n=${best.n})` : 'not enough data (need n≥2)' },
+        { label: 'Worst Bucket', info: 'bestWorst', value: worst ? worst.label : '—', cls: worst ? 'neg' : '', sub: worst ? `${(worst.hitRate * 100).toFixed(0)}% hit rate (n=${worst.n})` : 'not enough data (need n≥2)' }
     ];
 
     const cardsHTML = `<div class="kpi-row">${cards.map(k => `
         <div class="kpi ${k.cls}">
-            <div class="kpi-label">${k.label}</div>
+            <div class="kpi-label click" onclick="calibInfo('${k.info}')">${k.label} <span class="info-dot">i</span></div>
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('')}</div>`;
@@ -477,16 +484,22 @@ function renderSelectionsPerformance() {
 
     el.innerHTML = `
         ${cardsHTML}
-        <div class="calib-sub" style="margin-top:14px;">By odds range</div>
-        <table class="calib-table">
-            <thead><tr><th>Range</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
-            <tbody>${oddsRows}</tbody>
-        </table>
-        <div class="calib-sub">By market</div>
-        <table class="calib-table">
-            <thead><tr><th>Market</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
-            <tbody>${marketRows}</tbody>
-        </table>`;
+        <div class="perf-tables">
+            <div>
+                <div class="calib-sub click" onclick="calibInfo('oddsRange')">By odds range <span class="info-dot">i</span></div>
+                <table class="calib-table compact">
+                    <thead><tr><th>Range</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
+                    <tbody>${oddsRows}</tbody>
+                </table>
+            </div>
+            <div>
+                <div class="calib-sub click" onclick="calibInfo('byMarketTbl')">By market <span class="info-dot">i</span></div>
+                <table class="calib-table compact">
+                    <thead><tr><th>Market</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
+                    <tbody>${marketRows}</tbody>
+                </table>
+            </div>
+        </div>`;
 }
 
 // ===== Discipline Monitor =====
@@ -511,6 +524,7 @@ function renderDisciplineMonitor() {
     const passPct = total > 0 ? (ds.pass.n / total) * 100 : 0;
 
     const barHTML = `
+        <div class="calib-sub click" onclick="calibInfo('betPass')">BET / PASS split <span class="info-dot">i</span></div>
         <div class="outcome-bar">
             ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
             ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--ink-faint);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
@@ -522,7 +536,7 @@ function renderDisciplineMonitor() {
 
     const betCard = `
         <div class="kpi">
-            <div class="kpi-label">BET record</div>
+            <div class="kpi-label click" onclick="calibInfo('betRecord')">BET record <span class="info-dot">i</span></div>
             <div class="kpi-value ${ds.bet.hitRate == null ? '' : (ds.bet.hitRate >= 0.5 ? 'pos' : 'neg')}">${ds.bet.won}W – ${ds.bet.lost}L</div>
             <div class="kpi-sub">${ds.bet.hitRate != null ? (ds.bet.hitRate * 100).toFixed(0) + '% hit rate' : 'no settled BETs yet'}</div>
         </div>`;
@@ -547,13 +561,12 @@ function renderDisciplineMonitor() {
 
     const passCard = `
         <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
-            <div class="kpi-label">PASS discipline</div>
-            <div class="kpi-sub" style="margin-top:0;line-height:1.6;">
-                <div><span class="ol-count">${correctPasses.length}</span> at value ≤ 0 (correct) — ${correctWon}/${correctPasses.length} would have won (not a loss)</div>
-                <div style="margin-top:6px;">${missedPasses.length > 0
-                    ? `<span class="ol-count">${missedPasses.length}</span> at value &gt; 0 — ${missedWon}/${missedPasses.length} would have won · hypothetical: <span class="${missedHypothetical >= 0 ? 'pos' : 'neg'}">${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN</span>`
-                    : 'no missed opportunities — PASS threshold is working (n=0 at value &gt; 0)'}</div>
-            </div>
+            <div class="kpi-label click" onclick="calibInfo('passDiscipline')">PASS discipline <span class="info-dot">i</span></div>
+            <div class="kpi-value">${correctPasses.length}</div>
+            <div class="kpi-sub">correct passes (price too low) · ${correctWon}/${correctPasses.length} would've won (not a loss)</div>
+            <div class="discipline-missed">${missedPasses.length > 0
+                ? `<span class="ol-count">${missedPasses.length}</span> at value &gt; 0 · ${missedWon}/${missedPasses.length} would've won · hypothetical <span class="${missedHypothetical >= 0 ? 'pos' : 'neg'}">${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN</span>`
+                : '<span class="pos">no missed opportunities — threshold working</span>'}</div>
         </div>`;
 
     let obsNote = '';
@@ -652,7 +665,16 @@ const CALIB_INFO = {
     brier: ['Brier score', 'Kara za pomyłki ważona pewnością siebie: (prognoza − wynik)². Dał 80% i wygrali → kara 0.04. Dał 80% i przegrali → kara 0.64. Średnia z kar = Brier; im niżej, tym lepiej. Punkt odniesienia: ktoś, kto zawsze mówi 50/50, ma równo 0.25. Porównanie z rynkiem liczone jest wyłącznie na próbie paired, a werdykt zapada dopiero przy 150 rozliczonych.'],
     buckets: ['Kalibracja', 'Czy „70%" znaczy 70%? Bierzemy wszystkie mecze z szacunkiem 70–80% i sprawdzamy, ile faktycznie wygrało. Kolumna gap pokazuje rozjazd: systematycznie ujemny = agent jest zbyt pewny siebie, co produkuje fałszywe „value" — kurs wygląda na okazję tylko dlatego, że szacunek jest napompowany.'],
     clv: ['CLV — Closing Line Value', 'Porównanie kursu wziętego rano z kursem tuż przed meczem: (kurs rano / kurs zamknięcia − 1). Linia zamknięcia to najlepiej poinformowana cena na rynku. Systematycznie dodatnie CLV = widzisz wartość, zanim rynek się skoryguje — najsilniejszy wczesny dowód przewagi, widoczny po ~50 zakładach. Ujemne CLV przy wygranych = wygrywasz szczęściem, nie metodą.'],
-    stage: ['Etapy', 'Collection (0–49 rozliczonych): tylko zbieranie. Preliminary (50–99): wstępne sygnały, zero wniosków. Emerging (100–149): wzorce warte rozmowy. Validation checkpoint (150+): działa zapisany z góry warunek porażki dla Brier. Osobno: checkpoint CLV przy 50 closing snapshotach na BET-ach. Progi zapisano zanim znamy wyniki — żeby nie przesuwać bramek.']
+    stage: ['Etapy', 'Collection (0–49 rozliczonych): tylko zbieranie. Preliminary (50–99): wstępne sygnały, zero wniosków. Emerging (100–149): wzorce warte rozmowy. Validation checkpoint (150+): działa zapisany z góry warunek porażki dla Brier. Osobno: checkpoint CLV przy 50 closing snapshotach na BET-ach. Progi zapisano zanim znamy wyniki — żeby nie przesuwać bramek.'],
+    selHitRate: ['Selection Hit Rate', 'Jaki procent pojedynczych typów (nóg) trafiasz. Liczone po nogach, nie po całych kuponach: kupon z 3 zdarzeń to 3 osobne nogi. Void nie liczy się do mianownika. To surowa trafność — mówi, jak często masz rację, ale NIE czy zarabiasz (do tego trzeba value i kursów).'],
+    avgOdds: ['Avg Leg Odds', 'Średni kurs Twoich pojedynczych typów. Niski (bliżej 1.00) = grasz głównie faworytów. Wysoki = częściej sięgasz po niepewniaki. Sam w sobie nic nie ocenia — służy do czytania tabeli „wg zakresu kursu" obok: gdzie faktycznie masz wyczucie.'],
+    bestWorst: ['Best / Worst Bucket', 'Automatyczne wskazanie przedziału kursu z najwyższą i najniższą trafnością (przy min. 2 zakładach). Skrót z tabeli obok: od razu widzisz swój najmocniejszy i najsłabszy rodzaj zakładu.'],
+    oddsRange: ['Wg zakresu kursu', 'Twoje trafienia rozbite na przedziały kursu. Kluczowa diagnoza: może faworytów (kurs <1.30) trafiasz w 80%, ale niepewniaki (kurs ≥2.00) tylko w 30%. Pokazuje, w którym typie zakładów masz oko, a gdzie zgadujesz.'],
+    byMarketTbl: ['Wg rynku', 'Trafienia w podziale na typ zakładu: zwycięzca meczu (moneyline), liczba map (over/under), handicap. Na razie prawie wszystko to moneyline, więc tabela ma jeden wiersz — rozrośnie się, gdy zaczniesz grać różne rynki.'],
+    betPass: ['BET / PASS', 'Ile razy postawiłeś (BET) vs ile odpuściłeś (PASS). Duża przewaga PASS-ów to NIE lenistwo — to dyscyplina: stawiamy tylko, gdy jest przewaga (value), a nie na każdy mecz.'],
+    betRecord: ['BET record', 'Bilans zakładów, które faktycznie postawiłeś: ile wygranych, ile przegranych. Twój realny wynik na tym, na co zdecydowałeś się zagrać — w odróżnieniu od PASS-ów, których nie ruszałeś.'],
+    passDiscipline: ['PASS discipline', 'Najczęściej mylona metryka. PASS to werdykt o CENIE (brak value), nie o zwycięzcy. Dlatego rozbijamy pasy na dwie grupy: „słuszne" (kurs był za niski — trafienie tu to NIE strata) i „potencjalnie stracone" (był dodatni value, a typ wygrał — dopiero TO oznacza przeoczoną okazję). Tylko druga grupa może uzasadniać poluzowanie ostrożności. Sama liczba „ile pasów trafiłoby" jest myląca i celowo jej nie pokazujemy.'],
+    byGame: ['By Game', 'Te same metryki w podziale na grę: CS2, LoL, Dota 2. Pokazuje, w której grze masz najlepsze wyczucie. CS2 to rynek główny projektu.']
 };
 
 function calibInfo(key) {
@@ -740,10 +762,10 @@ function renderCalibration() {
     const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
     let frame = `
         <div class="calib-grid">
-            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled</div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
-            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
+            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged <span class="info-dot">i</span></div><div class="cv">${preds.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled <span class="info-dot">i</span></div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline <span class="info-dot">i</span></div><div class="cv">${paired.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps <span class="info-dot">i</span></div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
         </div>
         <div class="panel">
             <div class="panel-title"><span>Settled Progress</span></div>
@@ -758,7 +780,7 @@ function renderCalibration() {
             </div>
         </div>
         <div class="panel calib-quality click" onclick="calibInfo('quality')">
-            data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
+            data quality <span class="info-dot">i</span> \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
@@ -790,15 +812,15 @@ function renderCalibration() {
         }
         pairBlock = `
         <div class="calib-grid" style="margin-top:14px;">
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (paired)</div><div class="cv">${be.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Market (paired)</div><div class="cv">${bm.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired n</div><div class="cv">${paired.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (paired) <span class="info-dot">i</span></div><div class="cv">${be.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Market (paired) <span class="info-dot">i</span></div><div class="cv">${bm.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall) <span class="info-dot">i</span></div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired n <span class="info-dot">i</span></div><div class="cv">${paired.length}</div></div>
         </div>${verdict}`;
     } else {
         pairBlock = `
         <div class="calib-grid" style="margin-top:14px;">
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall) <span class="info-dot">i</span></div><div class="cv">${brierEdge.toFixed(4)}</div></div>
         </div>
         <div class="calib-note">Market comparison unavailable \u2014 no settled entries with both market prices. It requires <span class="mono">market_odds_opponent</span> in new entries.</div>`;
     }
@@ -829,7 +851,7 @@ function renderCalibration() {
 
 function renderClv(el, snapsBet) {
     const clv = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
-    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value</div>';
+    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value <span class="info-dot">i</span></div>';
     if (snapsBet.length === 0) {
         block += '<div class="calib-note">No BET closing snapshots yet (independent of settlement count \u2014 snapshot before each BET match).</div>';
     } else {
