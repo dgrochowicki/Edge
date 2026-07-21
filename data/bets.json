@@ -1193,9 +1193,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "claude",
-      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Resolved probability/fair_odds mismatch in favor of fair_odds=1.52: estimated_probability corrected to 0.6579 (= 1/1.52); the original 0.66 was a mis-rounding at entry time."
+      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Resolved probability/fair_odds mismatch in favor of fair_odds=1.52: estimated_probability corrected to 0.6579 (= 1/1.52); the original 0.66 was a mis-rounding at entry time. Settled 2026-07-21: Astralis beat Nemesis 2:1 (Nuke 11:13 Nemesis, Ancient 13:10 Astralis, Cache 13:4 Astralis; BLAST Bounty 2026 Season 2, web)."
     },
     {
       "id": "P-2026-07-21-C3",
