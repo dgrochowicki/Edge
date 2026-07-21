@@ -281,3 +281,22 @@ Under 50 settled predictions: compute nothing, conclude nothing. 50–100: preli
 - If after 50 closing snapshots on BETs the average CLV is negative, the selection method is considered not validated.
 
 Either failure means: stop real-money bets, keep logging paper predictions, and revise the method — or accept "no edge found" as the project's result. That outcome is a valid finding, not a failure of the project.
+
+### Method versioning
+
+A red verdict (Brier not beating the market at 150, or negative CLV at 50 snapshots) does not end the project — it ends the *current method*. Revising and trying again is the correct scientific move, but only under one strict rule that prevents fooling ourselves.
+
+**Every method revision starts a fresh, separate sample. Never re-evaluate a changed method on the data that produced the old verdict.**
+
+Tuning a method until the past numbers look good is overfitting: it fits the noise of matches already played and will not survive on new ones. It is the most common way people manufacture an illusion of edge. The defence is procedural, not a matter of willpower.
+
+Rules:
+
+- Each prediction carries a `method_version` field (e.g. `"v1"`, `"v2"`). All entries logged under one version belong to one experiment.
+- When the method changes in any way that affects how fair odds are estimated (new model, new inputs, different scope of events, different market types), bump the version. Cosmetic changes (wording, formatting) do not bump it.
+- A new version's failure conditions are evaluated **only** on entries with that version — its own fresh 150 settled predictions for Brier, its own 50 snapshots for CLV. The counter effectively resets per version.
+- Old-version entries are never deleted. They become the archive of "what did not work" and stay in the dataset, excluded from the new version's metrics.
+- The metrics dashboard evaluates each version independently. A version is validated, not validated, or still collecting — on its own data only.
+- Document each version bump in PROJECT_MEMORY: what changed, why, and the verdict that triggered it. This is the project's research log.
+
+This turns Edge into an open-ended research loop — collect, get a verdict, revise, collect again — where every iteration is an honest, independent test rather than a retrofit of the last one. The project can run this loop indefinitely as a learning exercise, with or without ever placing real money.
