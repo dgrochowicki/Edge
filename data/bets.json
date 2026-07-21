@@ -1173,9 +1173,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "claude",
-      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24)."
+      "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: NiP beat M80 2:0 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-C2",
@@ -1253,8 +1253,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "agent": "gpt"
+      "result": "won",
+      "agent": "gpt",
+      "notes": "Settled 2026-07-21: magic beat Walczaki 2:0 (source: hltv.org, user-confirmed)."
     },
     {
       "id": "P-2026-07-21-G2",
@@ -1329,8 +1330,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "agent": "gpt"
+      "result": "won",
+      "agent": "gpt",
+      "notes": "Settled 2026-07-21: NiP beat M80 2:0 (source: hltv.org, user-confirmed)."
     }
   ]
 }
