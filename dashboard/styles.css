@@ -155,6 +155,8 @@ header p.tagline{
   color:var(--ink-faint);
   margin-top:8px;
 }
+.kpi-row.cols-2{grid-template-columns:repeat(2,1fr);}
+.kpi-row.cols-3{grid-template-columns:repeat(3,1fr);}
 
 /* ---------- Charts ---------- */
 .charts{
@@ -319,6 +321,7 @@ tr:hover .view-link{color:var(--edge);}
 @media (max-width:768px){
   h1{font-size:30px;}
   .kpi-row{grid-template-columns:repeat(2,1fr);}
+  .kpi-row.cols-3{grid-template-columns:1fr;}
   table{font-size:11px;}
   th,td{padding:8px;}
   thead th:nth-child(4),td:nth-child(4){display:none;}
@@ -520,3 +523,17 @@ tr:hover .view-link{color:var(--edge);}
 .calib-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:600;}
 .calib-modal-x{background:none;border:none;color:var(--ink-dim);font-size:20px;cursor:pointer;line-height:1;}
 #calibModalBody{font-size:13px;line-height:1.65;color:var(--ink-dim);}
+
+/* ===== Calibration Lab — collapsed compact bar ===== */
+.section-head.click{cursor:pointer;}
+.calib-compact{cursor:pointer;padding-bottom:10px;}
+.calib-compact-label{
+  font-family:var(--font-mono);
+  font-size:12.5px;
+  color:var(--ink-dim);
+  margin-bottom:10px;
+  display:flex;
+  justify-content:space-between;
+}
+.calib-compact:hover .calib-compact-label{color:var(--ink);}
+.calib-compact-arrow{color:var(--ink-faint);font-weight:600;}

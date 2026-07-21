@@ -23,6 +23,9 @@ function fmt(n, d = 2) { return Number(n).toFixed(d); }
 function renderDashboard() {
     buildKPIs();
     renderCharts();
+    renderSelectionsPerformance();
+    renderDisciplineMonitor();
+    renderByGame();
     renderCalibration();
     renderTable();
 
@@ -365,6 +368,181 @@ function couponsByLegCount(coupons) {
     return Object.keys(groups).map(k => groups[k]).sort((a, b) => a.legs - b.legs);
 }
 
+// ===== Selections Performance =====
+
+function renderSelectionsPerformance() {
+    const el = document.getElementById('selBody');
+    const countEl = document.getElementById('selCount');
+    if (!el) return;
+
+    const selections = getAllSelections(betsData);
+    const stats = selectionStats(selections);
+    if (countEl) countEl.textContent = `${stats.total} legs · ${stats.won + stats.lost} settled`;
+
+    if (stats.total === 0) {
+        el.innerHTML = '<div class="calib-note">No selections logged yet.</div>';
+        return;
+    }
+
+    const oddsBuckets = selectionsByOddsBucket(selections).filter(b => b.n > 0);
+    const qualifying = oddsBuckets.filter(b => b.n >= 2 && b.hitRate != null);
+    const best = qualifying.length ? qualifying.reduce((a, b) => b.hitRate > a.hitRate ? b : a) : null;
+    const worst = qualifying.length ? qualifying.reduce((a, b) => b.hitRate < a.hitRate ? b : a) : null;
+
+    const oddsValues = selections.filter(s => typeof s.odds === 'number');
+    const avgOdds = oddsValues.length ? oddsValues.reduce((s, x) => s + x.odds, 0) / oddsValues.length : null;
+
+    const hrCls = stats.hitRate == null ? '' : (stats.hitRate >= 0.55 ? 'pos' : stats.hitRate < 0.45 ? 'neg' : '');
+    const cards = [
+        { label: 'Selection Hit Rate', value: stats.hitRate != null ? `${(stats.hitRate * 100).toFixed(0)}%` : '—', cls: hrCls, sub: `${stats.won}W – ${stats.lost}L on legs` },
+        { label: 'Avg Leg Odds', value: avgOdds != null ? avgOdds.toFixed(2) : '—', cls: '', sub: 'across all logged legs' },
+        { label: 'Best Bucket', value: best ? best.label : '—', cls: best ? 'pos' : '', sub: best ? `${(best.hitRate * 100).toFixed(0)}% hit rate (n=${best.n})` : 'not enough data (need n≥2)' },
+        { label: 'Worst Bucket', value: worst ? worst.label : '—', cls: worst ? 'neg' : '', sub: worst ? `${(worst.hitRate * 100).toFixed(0)}% hit rate (n=${worst.n})` : 'not enough data (need n≥2)' }
+    ];
+
+    const cardsHTML = `<div class="kpi-row">${cards.map(k => `
+        <div class="kpi ${k.cls}">
+            <div class="kpi-label">${k.label}</div>
+            <div class="kpi-value ${k.cls}">${k.value}</div>
+            <div class="kpi-sub">${k.sub}</div>
+        </div>`).join('')}</div>`;
+
+    const hrCell = b => b.hitRate == null ? '—' : `<span class="${b.hitRate >= 0.5 ? 'pos' : 'neg'}">${(b.hitRate * 100).toFixed(0)}%</span>`;
+
+    const oddsRows = oddsBuckets.map(b => `
+        <tr><td>${b.label}</td><td>${b.n}</td><td>${b.won}–${b.lost}</td><td>${hrCell(b)}</td></tr>`).join('');
+
+    const marketRows = selectionsByMarket(selections).map(m => `
+        <tr><td>${m.label}</td><td>${m.n}</td><td>${m.won}–${m.lost}</td><td>${hrCell(m)}</td></tr>`).join('');
+
+    el.innerHTML = `
+        ${cardsHTML}
+        <div class="calib-sub" style="margin-top:14px;">By odds range</div>
+        <table class="calib-table">
+            <thead><tr><th>Range</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
+            <tbody>${oddsRows}</tbody>
+        </table>
+        <div class="calib-sub">By market</div>
+        <table class="calib-table">
+            <thead><tr><th>Market</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
+            <tbody>${marketRows}</tbody>
+        </table>`;
+}
+
+// ===== Discipline Monitor =====
+
+function renderDisciplineMonitor() {
+    const el = document.getElementById('disciplineBody');
+    const countEl = document.getElementById('disciplineCount');
+    if (!el) return;
+
+    const preds = betsData.predictions || [];
+    if (preds.length === 0) {
+        if (countEl) countEl.textContent = '0 predictions';
+        el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
+        return;
+    }
+
+    const ds = decisionStats(preds);
+    if (countEl) countEl.textContent = `${preds.length} predictions · ${ds.bet.n} BET / ${ds.pass.n} PASS`;
+
+    const total = ds.bet.n + ds.pass.n;
+    const betPct = total > 0 ? (ds.bet.n / total) * 100 : 0;
+    const passPct = total > 0 ? (ds.pass.n / total) * 100 : 0;
+
+    const barHTML = `
+        <div class="outcome-bar">
+            ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
+            ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--ink-faint);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
+        </div>
+        <div class="outcome-legend">
+            <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--edge);"></span><span class="ol-label">BET</span><span class="ol-count">${ds.bet.n}</span><span class="ol-pct">${betPct.toFixed(0)}%</span></div>
+            <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--ink-faint);"></span><span class="ol-label">PASS</span><span class="ol-count">${ds.pass.n}</span><span class="ol-pct">${passPct.toFixed(0)}%</span></div>
+        </div>`;
+
+    const betCard = `
+        <div class="kpi">
+            <div class="kpi-label">BET record</div>
+            <div class="kpi-value ${ds.bet.hitRate == null ? '' : (ds.bet.hitRate >= 0.5 ? 'pos' : 'neg')}">${ds.bet.won}W – ${ds.bet.lost}L</div>
+            <div class="kpi-sub">${ds.bet.hitRate != null ? (ds.bet.hitRate * 100).toFixed(0) + '% hit rate' : 'no settled BETs yet'}</div>
+        </div>`;
+
+    // PASS discipline: split settled PASS-es by value, not by whether the pick would
+    // have won. A correct PASS (value <= 0) winning is NOT a loss -- the price just
+    // didn't compensate for the risk. Only value > 0 PASS-es that would have won are
+    // genuinely missed opportunities.
+    const settledPass = preds.filter(p => p.decision === 'PASS' && (p.result === 'won' || p.result === 'lost'));
+    const withValue = settledPass
+        .filter(p => typeof p.market_odds_at_analysis === 'number' && typeof p.fair_odds === 'number')
+        .map(p => ({ p, value: p.market_odds_at_analysis / p.fair_odds - 1 }));
+
+    const correctPasses = withValue.filter(x => x.value <= 0);
+    const missedPasses = withValue.filter(x => x.value > 0);
+    const correctWon = correctPasses.filter(x => x.p.result === 'won').length;
+    const missedWon = missedPasses.filter(x => x.p.result === 'won').length;
+    const unitStake = betsData.unit_value_pln;
+    const missedHypothetical = missedPasses.reduce((sum, x) => {
+        return sum + (x.p.result === 'won' ? unitStake * (x.p.market_odds_at_analysis - 1) : -unitStake);
+    }, 0);
+
+    const passCard = `
+        <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
+            <div class="kpi-label">PASS discipline</div>
+            <div class="kpi-sub" style="margin-top:0;line-height:1.6;">
+                <div><span class="ol-count">${correctPasses.length}</span> at value ≤ 0 (correct) — ${correctWon}/${correctPasses.length} would have won (not a loss)</div>
+                <div style="margin-top:6px;">${missedPasses.length > 0
+                    ? `<span class="ol-count">${missedPasses.length}</span> at value &gt; 0 — ${missedWon}/${missedPasses.length} would have won · hypothetical: <span class="${missedHypothetical >= 0 ? 'pos' : 'neg'}">${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN</span>`
+                    : 'no missed opportunities — PASS threshold is working (n=0 at value &gt; 0)'}</div>
+            </div>
+        </div>`;
+
+    let obsNote = '';
+    const obs = observedPassStats(betsData.observed_passes, unitStake);
+    if (obs.n > 0) {
+        const savedOrCost = obs.hypotheticalNet >= 0 ? 'cost' : 'saved';
+        obsNote = `<div class="calib-note" style="margin-top:14px;">Observed passes with odds: n=${obs.n} · hypothetical result at 1u: ${obs.hypotheticalNet >= 0 ? '+' : ''}${obs.hypotheticalNet.toFixed(2)} PLN · discipline ${savedOrCost} money</div>`;
+    }
+
+    el.innerHTML = `${barHTML}<div class="kpi-row cols-2">${betCard}${passCard}</div>${obsNote}`;
+}
+
+// ===== By Game =====
+
+const BY_GAME_LIST = [
+    { key: 'cs2', label: 'CS2', primary: true },
+    { key: 'lol', label: 'LoL', primary: false },
+    { key: 'dota2', label: 'Dota 2', primary: false }
+];
+
+function renderByGame() {
+    const el = document.getElementById('byGameBody');
+    if (!el) return;
+
+    const preds = betsData.predictions || [];
+    const selections = getAllSelections(betsData);
+    const gameSelStats = {};
+    selectionsByGame(selections).forEach(g => { gameSelStats[g.label] = g; });
+
+    const cards = BY_GAME_LIST.map(g => {
+        const gamePreds = preds.filter(p => (p.game || 'unknown') === g.key);
+        const bet = gamePreds.filter(p => p.decision === 'BET').length;
+        const pass = gamePreds.filter(p => p.decision === 'PASS').length;
+        const selStat = gameSelStats[g.key];
+        const selSub = selStat && selStat.n > 0
+            ? `${selStat.won}W – ${selStat.lost}L on legs`
+            : 'no joined legs yet';
+        return `
+            <div class="kpi">
+                <div class="kpi-label">${g.label}${g.primary ? ' <span style="color:var(--edge);">primary market</span>' : ''}</div>
+                <div class="kpi-value">${gamePreds.length}</div>
+                <div class="kpi-sub">${bet} BET / ${pass} PASS</div>
+                <div class="kpi-sub">${selSub}</div>
+            </div>`;
+    }).join('');
+
+    el.innerHTML = `<div class="kpi-row cols-3">${cards}</div>`;
+}
+
 // ===== Calibration Lab v2 =====
 // Per protocol: Brier vs market only on the paired sample; verdicts only at
 // pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
@@ -434,6 +612,36 @@ function calibInfo(key) {
     ov.style.display = 'flex';
 }
 
+// Collapsed by default until the preliminary threshold is reached; click to
+// expand/collapse. No persistence across reloads, per spec.
+let calibExpanded = false;
+
+function toggleCalibrationLab() {
+    calibExpanded = !calibExpanded;
+    applyCalibLabVisibility();
+}
+
+function applyCalibLabVisibility() {
+    const head = document.getElementById('calibHead');
+    const compact = document.getElementById('calibCompact');
+    const body = document.getElementById('calibBody');
+    if (!head || !compact || !body) return;
+    head.style.display = calibExpanded ? '' : 'none';
+    compact.style.display = calibExpanded ? 'none' : '';
+    body.style.display = calibExpanded ? '' : 'none';
+}
+
+function renderCalibCompact(stageLabel, settledCount, threshold) {
+    const el = document.getElementById('calibCompact');
+    if (!el) return;
+    const pct = Math.min(100, settledCount / threshold * 100);
+    el.innerHTML = `
+        <div class="calib-compact click" onclick="toggleCalibrationLab()">
+            <div class="calib-compact-label">Calibration Lab — ${stageLabel} · ${settledCount}/${threshold} settled <span class="calib-compact-arrow">+</span></div>
+            <div class="outcome-bar"><div class="outcome-seg" style="width:${pct}%;background:var(--edge);"></div></div>
+        </div>`;
+}
+
 function renderCalibration() {
     const el = document.getElementById('calibBody');
     if (!el) return;
@@ -443,6 +651,9 @@ function renderCalibration() {
     if (preds.length === 0) {
         if (countEl) countEl.textContent = '0 logged';
         el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
+        renderCalibCompact('collection', 0, CAL_T.PRELIM);
+        calibExpanded = false;
+        applyCalibLabVisibility();
         return;
     }
 
@@ -493,6 +704,9 @@ function renderCalibration() {
     if (settledEst.length < CAL_T.PRELIM) {
         frame += `<div class="panel calib-note">Collection phase \u2014 ${settledEst.length}/${CAL_T.PRELIM} settled predictions with a probability estimate. Per protocol, metrics are not computed below this threshold.</div>`;
         el.innerHTML = `<div class="charts">${frame}</div>`;
+        renderCalibCompact(stage.label.toLowerCase(), settledEst.length, CAL_T.PRELIM);
+        calibExpanded = settledEst.length >= CAL_T.PRELIM;
+        applyCalibLabVisibility();
         return;
     }
 
@@ -548,6 +762,9 @@ function renderCalibration() {
 
     el.innerHTML = html;
     renderClv(el, snapsBet);
+    renderCalibCompact(stage.label.toLowerCase(), settledEst.length, CAL_T.PRELIM);
+    calibExpanded = settledEst.length >= CAL_T.PRELIM;
+    applyCalibLabVisibility();
 }
 
 function renderClv(el, snapsBet) {

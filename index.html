@@ -23,7 +23,7 @@
             <span>EDGE / ESPORTS RESEARCH TERMINAL / v0.1</span>
         </div>
         <h1>Edge</h1>
-        <p class="tagline">Real-time performance tracking — CS2 · LoL · Dota 2</p>
+        <p class="tagline">Performance tracking — CS2 · LoL · Dota 2</p>
     </header>
 
     <div class="kpi-row" id="kpiRow"></div>
@@ -41,11 +41,35 @@
         </div>
     </div>
 
-        <div class="section">
-        <div class="section-head no-line">
+    <div class="section">
+        <div class="section-head">
+            <h2>Selections Performance</h2>
+            <span class="count" id="selCount"></span>
+        </div>
+        <div id="selBody"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-head">
+            <h2>Discipline Monitor</h2>
+            <span class="count" id="disciplineCount"></span>
+        </div>
+        <div id="disciplineBody"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-head">
+            <h2>By Game</h2>
+        </div>
+        <div id="byGameBody"></div>
+    </div>
+
+    <div class="section">
+        <div class="section-head no-line click" id="calibHead" onclick="toggleCalibrationLab()">
             <h2>Calibration Lab</h2>
             <span class="count" id="calibCount"></span>
         </div>
+        <div id="calibCompact"></div>
         <div id="calibBody"></div>
     </div>
 
