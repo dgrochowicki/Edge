@@ -527,7 +527,7 @@ function renderDisciplineMonitor() {
         <div class="calib-sub click" onclick="calibInfo('betPass')">BET / PASS split</div>
         <div class="outcome-bar">
             ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
-            ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--ink-faint);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
+            ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--line-soft);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
         </div>
         <div class="outcome-legend">
             <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--edge);"></span><span class="ol-label">BET</span><span class="ol-count">${ds.bet.n}</span><span class="ol-pct">${betPct.toFixed(0)}%</span></div>
@@ -576,7 +576,7 @@ function renderDisciplineMonitor() {
                 : '<span class="pos">no missed opportunities — threshold working</span>'}${obsLine}</div>
         </div>`;
 
-    el.innerHTML = `${barHTML}<div class="kpi-row cols-2">${betCard}${passCard}</div>`;
+    el.innerHTML = `${barHTML}<div class="kpi-row cols-2" style="margin-top:20px;">${betCard}${passCard}</div>`;
 }
 
 // ===== By Game =====
