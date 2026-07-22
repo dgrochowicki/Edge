@@ -453,6 +453,7 @@
       "confidence": null,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -479,6 +480,7 @@
       "confidence": null,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -505,6 +507,7 @@
       "confidence": null,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -531,6 +534,7 @@
       "confidence": 7.5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -556,6 +560,7 @@
       "confidence": null,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -581,6 +586,7 @@
       "confidence": null,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -607,6 +613,7 @@
       "confidence": null,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -633,6 +640,7 @@
       "confidence": null,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -659,6 +667,7 @@
       "confidence": null,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -685,6 +694,7 @@
       "confidence": 8,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -711,6 +721,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -737,6 +748,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -763,6 +775,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -789,6 +802,7 @@
       "confidence": 5,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -815,6 +829,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -841,6 +856,7 @@
       "confidence": 7,
       "result": "void",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -867,6 +883,7 @@
       "confidence": 8,
       "result": "void",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -893,6 +910,7 @@
       "confidence": 5.5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -918,6 +936,7 @@
       "confidence": 5.5,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -943,6 +962,7 @@
       "confidence": 5.5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -968,6 +988,7 @@
       "confidence": 8,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -994,6 +1015,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1020,6 +1042,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1046,6 +1069,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1072,6 +1096,7 @@
       "confidence": 9,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1097,6 +1122,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1122,6 +1148,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1147,6 +1174,7 @@
       "confidence": 8,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1172,6 +1200,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1197,6 +1226,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1222,6 +1252,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1247,6 +1278,7 @@
       "confidence": 8,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1272,6 +1304,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "recording_mode": "historical_backfill",
       "data_quality": [
         "missing_opponent_odds",
@@ -1297,6 +1330,7 @@
       "confidence": 7,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02). Settled 2026-07-20: Just Players beat Walczaki 2-0 (13-11 Nuke, 13-10 Mirage, European Pro League Series 8, web)."
     },
     {
@@ -1317,6 +1351,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Merged by maintainer: id normalized (agent suffix), timestamp set to odds screenshot time (08:02). Settled 2026-07-20: 1win beat ARCRED 2-1 (European Pro League Series 8 quarterfinal, web)."
     },
     {
@@ -1337,6 +1372,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: NiP beat M80 2:0 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1357,6 +1393,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Resolved probability/fair_odds mismatch in favor of fair_odds=1.52: estimated_probability corrected to 0.6579 (= 1/1.52); the original 0.66 was a mis-rounding at entry time. Settled 2026-07-21: Astralis beat Nemesis 2:1 (Nuke 11:13 Nemesis, Ancient 13:10 Astralis, Cache 13:4 Astralis; BLAST Bounty 2026 Season 2, web)."
     },
     {
@@ -1377,6 +1414,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: MOUZ beat Nuclear TigeRES 2:0 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1397,6 +1435,7 @@
       "confidence": 5,
       "result": "lost",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Merged by maintainer: odds_timestamp corrected from report's 11:30 to actual odds screenshot time (08:24). Settled 2026-07-21: Wildcard beat Alliance 2:0 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1417,6 +1456,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Settled 2026-07-21: magic beat Walczaki 2:0 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1437,6 +1477,7 @@
       "confidence": 7,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Settled 2026-07-21: HOTU beat HEROIC 2:1 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1457,6 +1498,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Settled 2026-07-21: Gentle Mates beat 3DMAX 2:1 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1477,6 +1519,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Settled 2026-07-21: Astralis beat FOKUS 2:1 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1497,6 +1540,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "Settled 2026-07-21: NiP beat M80 2:0 (source: hltv.org, user-confirmed)."
     },
     {
@@ -1517,6 +1561,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Settled 2026-07-22: FaZe beat EYEBALLERS (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
@@ -1537,6 +1582,7 @@
       "confidence": 5,
       "result": "lost",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Settled 2026-07-22: HOTU beat Astralis (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
@@ -1556,7 +1602,8 @@
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "agent": "claude"
+      "agent": "claude",
+      "method_version": "v1"
     },
     {
       "id": "P-2026-07-22-C4",
@@ -1576,6 +1623,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Settled 2026-07-22: G2 beat Nemiga (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
@@ -1596,6 +1644,7 @@
       "confidence": 5,
       "result": "won",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Settled 2026-07-22: Nemesis beat INFINITE (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
@@ -1616,6 +1665,7 @@
       "confidence": 4,
       "result": "lost",
       "agent": "claude",
+      "method_version": "v1",
       "erratum": "reports/2026-07-22-claude.md#6-errata",
       "erratum_scope": "narrative_only_odds_sides_misstated_in_prose",
       "notes": "Numeric fields verified correct against user-provided odds (NiP 1.62 / 100 Thieves 2.15). Section 2 prose of the source report swapped which side it called market favorite -- see errata section 6 of the report. Does not affect this entry's values. Settled 2026-07-22: NiP beat 100 Thieves (user's coupon EDGE-009, direct match-winner bet at 1.80 on NiP)."
@@ -1638,6 +1688,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "claude",
+      "method_version": "v1",
       "notes": "Settled 2026-07-22: HOTU beat GamerLegion 2:0, confirmed via the GamerLegion +0.5 map handicap losing on user's coupon EDGE-008 (BLAST Bounty)."
     },
     {
@@ -1657,7 +1708,8 @@
       "decision": "PASS",
       "confidence": 4,
       "result": "pending",
-      "agent": "claude"
+      "agent": "claude",
+      "method_version": "v1"
     },
     {
       "id": "P-2026-07-22-C9",
@@ -1676,7 +1728,8 @@
       "decision": "PASS",
       "confidence": 7,
       "result": "pending",
-      "agent": "claude"
+      "agent": "claude",
+      "method_version": "v1"
     },
     {
       "id": "P-2026-07-22-G1",
@@ -1696,6 +1749,7 @@
       "confidence": 7,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "kurs jest niższy od fair. Settled 2026-07-22: FaZe beat EYEBALLERS (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
@@ -1716,6 +1770,7 @@
       "confidence": 7,
       "result": "pending",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "przewaga Aurory jest w pełni zawarta w cenie."
     },
     {
@@ -1736,6 +1791,7 @@
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "dodatnie value nie jest wystarczająco wiarygodne przy aktualnej jakości danych i ryzyku online BO3. Settled 2026-07-22: HOTU beat Astralis (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
@@ -1756,6 +1812,7 @@
       "confidence": 8,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "kurs jest zdecydowanie poniżej fair. Settled 2026-07-22: G2 beat Nemiga (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
@@ -1776,6 +1833,7 @@
       "confidence": 6,
       "result": "won",
       "agent": "gpt",
+      "method_version": "v1",
       "notes": "kurs jest poniżej fair. Settled 2026-07-22: NiP beat 100 Thieves (user's coupon EDGE-009, direct match-winner bet at 1.80 on NiP)."
     }
   ]
