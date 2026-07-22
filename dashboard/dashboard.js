@@ -469,7 +469,7 @@ function renderSelectionsPerformance() {
 
     const cardsHTML = `<div class="kpi-row">${cards.map(k => `
         <div class="kpi ${k.cls}">
-            <div class="kpi-label click" onclick="calibInfo('${k.info}')">${k.label} <span class="info-dot">i</span></div>
+            <div class="kpi-label click" onclick="calibInfo('${k.info}')">${k.label}</div>
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('')}</div>`;
@@ -486,14 +486,14 @@ function renderSelectionsPerformance() {
         ${cardsHTML}
         <div class="perf-tables">
             <div>
-                <div class="calib-sub click" onclick="calibInfo('oddsRange')">By odds range <span class="info-dot">i</span></div>
+                <div class="calib-sub click" onclick="calibInfo('oddsRange')">By odds range</div>
                 <table class="calib-table compact">
                     <thead><tr><th>Range</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
                     <tbody>${oddsRows}</tbody>
                 </table>
             </div>
             <div>
-                <div class="calib-sub click" onclick="calibInfo('byMarketTbl')">By market <span class="info-dot">i</span></div>
+                <div class="calib-sub click" onclick="calibInfo('byMarketTbl')">By market</div>
                 <table class="calib-table compact">
                     <thead><tr><th>Market</th><th>n</th><th>W–L</th><th>Hit rate</th></tr></thead>
                     <tbody>${marketRows}</tbody>
@@ -524,7 +524,7 @@ function renderDisciplineMonitor() {
     const passPct = total > 0 ? (ds.pass.n / total) * 100 : 0;
 
     const barHTML = `
-        <div class="calib-sub click" onclick="calibInfo('betPass')">BET / PASS split <span class="info-dot">i</span></div>
+        <div class="calib-sub click" onclick="calibInfo('betPass')">BET / PASS split</div>
         <div class="outcome-bar">
             ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
             ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--ink-faint);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
@@ -536,7 +536,7 @@ function renderDisciplineMonitor() {
 
     const betCard = `
         <div class="kpi">
-            <div class="kpi-label click" onclick="calibInfo('betRecord')">BET record <span class="info-dot">i</span></div>
+            <div class="kpi-label click" onclick="calibInfo('betRecord')">BET record</div>
             <div class="kpi-value ${ds.bet.hitRate == null ? '' : (ds.bet.hitRate >= 0.5 ? 'pos' : 'neg')}">${ds.bet.won}W – ${ds.bet.lost}L</div>
             <div class="kpi-sub">${ds.bet.hitRate != null ? (ds.bet.hitRate * 100).toFixed(0) + '% hit rate' : 'no settled BETs yet'}</div>
         </div>`;
@@ -561,7 +561,7 @@ function renderDisciplineMonitor() {
 
     const passCard = `
         <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
-            <div class="kpi-label click" onclick="calibInfo('passDiscipline')">PASS discipline <span class="info-dot">i</span></div>
+            <div class="kpi-label click" onclick="calibInfo('passDiscipline')">PASS discipline</div>
             <div class="kpi-value">${correctPasses.length}</div>
             <div class="kpi-sub">correct passes (price too low) · ${correctWon}/${correctPasses.length} would've won (not a loss)</div>
             <div class="discipline-missed">${missedPasses.length > 0
@@ -762,10 +762,10 @@ function renderCalibration() {
     const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
     let frame = `
         <div class="calib-grid">
-            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged <span class="info-dot">i</span></div><div class="cv">${preds.length}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled <span class="info-dot">i</span></div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
-            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline <span class="info-dot">i</span></div><div class="cv">${paired.length}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps <span class="info-dot">i</span></div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
+            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled</div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} \u00b7 / ${CAL_T.VALID}</span></div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
         </div>
         <div class="panel">
             <div class="panel-title"><span>Settled Progress</span></div>
@@ -780,7 +780,7 @@ function renderCalibration() {
             </div>
         </div>
         <div class="panel calib-quality click" onclick="calibInfo('quality')">
-            data quality <span class="info-dot">i</span> \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
+            data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
@@ -812,15 +812,15 @@ function renderCalibration() {
         }
         pairBlock = `
         <div class="calib-grid" style="margin-top:14px;">
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (paired) <span class="info-dot">i</span></div><div class="cv">${be.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Market (paired) <span class="info-dot">i</span></div><div class="cv">${bm.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall) <span class="info-dot">i</span></div><div class="cv">${brierEdge.toFixed(4)}</div></div>
-            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired n <span class="info-dot">i</span></div><div class="cv">${paired.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (paired)</div><div class="cv">${be.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Market (paired)</div><div class="cv">${bm.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired n</div><div class="cv">${paired.length}</div></div>
         </div>${verdict}`;
     } else {
         pairBlock = `
         <div class="calib-grid" style="margin-top:14px;">
-            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall) <span class="info-dot">i</span></div><div class="cv">${brierEdge.toFixed(4)}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('brier')"><div class="cl">Brier Edge (overall)</div><div class="cv">${brierEdge.toFixed(4)}</div></div>
         </div>
         <div class="calib-note">Market comparison unavailable \u2014 no settled entries with both market prices. It requires <span class="mono">market_odds_opponent</span> in new entries.</div>`;
     }
@@ -851,7 +851,7 @@ function renderCalibration() {
 
 function renderClv(el, snapsBet) {
     const clv = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
-    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value <span class="info-dot">i</span></div>';
+    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value</div>';
     if (snapsBet.length === 0) {
         block += '<div class="calib-note">No BET closing snapshots yet (independent of settlement count \u2014 snapshot before each BET match).</div>';
     } else {
