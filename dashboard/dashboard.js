@@ -25,6 +25,7 @@ function renderDashboard() {
     renderCharts();
     renderSelectionsPerformance();
     renderDisciplineMonitor();
+    renderBetSource();
     renderByGame();
     renderCalibration();
     renderTable();
@@ -435,6 +436,34 @@ function couponsByLegCount(coupons) {
     return Object.keys(groups).map(k => groups[k]).sort((a, b) => a.legs - b.legs);
 }
 
+// Splits coupons by how the bet came about: Edge's own BET recommendation
+// vs. a bet the user placed on their own judgement. Coupons with a missing
+// or unrecognized `source` are kept as their own "unknown" group rather
+// than dropped, so every coupon is still accounted for somewhere.
+function couponsBySource(coupons) {
+    const groupOf = c => c.source === 'official_recommendation' ? 'edge'
+        : c.source === 'user_bet' ? 'own'
+        : 'unknown';
+    const buckets = { edge: [], own: [], unknown: [] };
+    (coupons || []).forEach(c => buckets[groupOf(c)].push(c));
+
+    const agg = group => {
+        const won = group.filter(c => c.status === 'won').length;
+        const lost = group.filter(c => c.status === 'lost').length;
+        const void_ = group.filter(c => c.status === 'void').length;
+        const pending = group.filter(c => c.status === 'pending').length;
+        const staked = group.reduce((s, c) => s + (c.stake_pln || 0), 0);
+        const net = group.reduce((s, c) => s + (c.net_result_pln || 0), 0);
+        return {
+            n: group.length, won, lost, void: void_, pending, staked, net,
+            roi: staked > 0 ? net / staked : null,
+            hitRate: (won + lost) > 0 ? won / (won + lost) : null
+        };
+    };
+
+    return { edge: agg(buckets.edge), own: agg(buckets.own), unknown: agg(buckets.unknown) };
+}
+
 // ===== Selections Performance =====
 
 function renderSelectionsPerformance() {
@@ -589,6 +618,73 @@ function renderDisciplineMonitor() {
     el.innerHTML = `${barHTML}<div class="kpi-row" style="margin-top:20px;">${betCard}${passCard}${missedCard}${obsCard}</div>`;
 }
 
+// ===== Bet Source =====
+// Splits real-money coupons by how the bet came about (Edge's own BET call
+// vs. the user's own judgement), so the two can eventually be compared once
+// there's a meaningful sample -- see the small-sample note below.
+
+function renderBetSource() {
+    const el = document.getElementById('sourceBody');
+    const countEl = document.getElementById('sourceCount');
+    if (!el) return;
+
+    const coupons = betsData.coupons || [];
+    const by = couponsBySource(coupons);
+    const total = by.edge.n + by.own.n + by.unknown.n;
+
+    if (countEl) {
+        countEl.textContent = `${total} coupons · ${by.edge.n} Edge / ${by.own.n} own`
+            + (by.unknown.n > 0 ? ` · ${by.unknown.n} unknown` : '');
+    }
+
+    if (total === 0) {
+        el.innerHTML = '<div class="calib-note">No coupons logged yet.</div>';
+        return;
+    }
+
+    const fmtSigned = n => `${n >= 0 ? '+' : ''}${n.toFixed(2)} PLN`;
+
+    const sourceCard = (label, infoKey, g, emptyNote) => {
+        if (g.n === 0) {
+            return `
+                <div class="kpi">
+                    <div class="kpi-label click" onclick="calibInfo('${infoKey}')">${label}</div>
+                    <div class="kpi-value">—</div>
+                    <div class="kpi-sub">${emptyNote}</div>
+                </div>`;
+        }
+        const hitPct = g.hitRate != null ? `${(g.hitRate * 100).toFixed(0)}%` : '—';
+        const roiPct = g.roi != null ? `${g.roi >= 0 ? '+' : ''}${(g.roi * 100).toFixed(0)}%` : '—';
+        return `
+            <div class="kpi">
+                <div class="kpi-label click" onclick="calibInfo('${infoKey}')">${label}</div>
+                <div class="kpi-value ${g.net >= 0 ? 'pos' : 'neg'}">${fmtSigned(g.net)}</div>
+                <div class="kpi-sub">${g.won}W – ${g.lost}L · hit rate ${hitPct}</div>
+                <div class="kpi-sub">ROI ${roiPct} · staked ${g.staked.toFixed(2)} PLN</div>
+            </div>`;
+    };
+
+    const edgeCard = sourceCard('Edge recommendations', 'sourceEdge', by.edge, 'no coupons from Edge recommendations yet');
+    const ownCard = sourceCard('Own bets', 'sourceOwn', by.own, 'no coupons from own bets yet');
+    const hasUnknown = by.unknown.n > 0;
+    const unknownCard = hasUnknown ? `
+        <div class="kpi">
+            <div class="kpi-label">Unsourced</div>
+            <div class="kpi-value ${by.unknown.net >= 0 ? 'pos' : 'neg'}">${fmtSigned(by.unknown.net)}</div>
+            <div class="kpi-sub">missing source field</div>
+        </div>` : '';
+
+    const sampleN = by.edge.n + by.own.n;
+    const smallSampleNote = sampleN < 20
+        ? '<div class="calib-note" style="margin-top:8px;">Sample too small for conclusions — this panel collects data, it does not compare performance yet.</div>'
+        : '';
+
+    el.innerHTML = `
+        <div class="kpi-row ${hasUnknown ? 'cols-3' : 'cols-2'}">${edgeCard}${ownCard}${unknownCard}</div>
+        <div class="calib-note" style="margin-top:14px;">Edge ${fmtSigned(by.edge.net)} (${by.edge.n} coupons) · Own ${fmtSigned(by.own.net)} (${by.own.n} coupons)</div>
+        ${smallSampleNote}`;
+}
+
 // ===== By Game =====
 
 const BY_GAME_LIST = [
@@ -685,6 +781,8 @@ const CALIB_INFO = {
     betRecord: ['BET record', 'Bilans zakładów, które faktycznie postawiłeś: ile wygranych, ile przegranych. Twój realny wynik na tym, na co zdecydowałeś się zagrać — w odróżnieniu od PASS-ów, których nie ruszałeś.'],
     passDiscipline: ['PASS discipline', 'Najczęściej mylona metryka. PASS to werdykt o CENIE (brak value), nie o zwycięzcy. Dlatego rozbijamy pasy na dwie grupy: „słuszne" (kurs był za niski — trafienie tu to NIE strata) i „potencjalnie stracone" (był dodatni value, a typ wygrał — dopiero TO oznacza przeoczoną okazję). Tylko druga grupa może uzasadniać poluzowanie ostrożności. Sama liczba „ile pasów trafiłoby" jest myląca i celowo jej nie pokazujemy.'],
     byGame: ['By Game', 'Te same metryki w podziale na grę: CS2, LoL, Dota 2. Pokazuje, w której grze masz najlepsze wyczucie. CS2 to rynek główny projektu.'],
+    sourceEdge: ['Edge recommendations', 'Kupony zagrane zgodnie z rekomendacją z raportu — czyli takie, gdzie metoda Edge oznaczyła zakład jako BET i został on faktycznie postawiony. Ta grupa mierzy, ile realnie zarabia (lub traci) sama metoda.'],
+    sourceOwn: ['Own bets', 'Zakłady zagrane z własnej decyzji, niezależnie od tego, co mówił raport — także na mecze oznaczone jako PASS. Ta grupa mierzy Twoje własne typowanie. Rozdzielenie obu grup pozwoli po czasie zobaczyć, które decyzje wychodzą lepiej — ale dopiero przy sensownej liczbie kuponów, nie po kilku.'],
     netResult: ['Net Result', 'Suma wygranych minus suma przegranych, po wszystkich kuponach. Realny wynik w PLN przy stawkach faktycznie postawionych — to liczba, która ostatecznie się liczy, niezależnie od tego, jak wyglądały poszczególne zakłady po drodze.'],
     roi: ['ROI', 'Net Result podzielony przez sumę stawek. Pokazuje zwrot względem tego, ile realnie zaryzykowano — dwa identyczne Net Result przy różnych stawkach dają bardzo różne ROI. Liczone przy stałych stawkach 1u, więc porównanie między kuponami jest uczciwe.'],
     streak: ['Streak', 'Najdłuższa aktualna seria wygranych albo przegranych kuponów pod rząd, licząc od najnowszego. Void nie przerywa serii. To ciekawostka o formie, nie sygnał — krótkie serie w małej próbce są w dużej mierze losowe.']
