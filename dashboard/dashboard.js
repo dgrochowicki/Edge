@@ -65,15 +65,15 @@ function buildKPIs() {
     const selHitCls = selStats.hitRate == null ? '' : (selStats.hitRate >= 0.55 ? 'pos' : selStats.hitRate < 0.45 ? 'neg' : '');
 
     const kpis = [
-        { label: 'Net Result', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 2)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln, 2)} PLN staked` },
-        { label: 'ROI', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `on ${fmt(s.total_staked_pln, 2)} PLN staked · flat 1u stakes` },
-        { label: 'Selection Hit Rate', value: selStats.hitRate != null ? `${(selStats.hitRate * 100).toFixed(0)}%` : '—', cls: selHitCls, sub: `coupons: ${s.won}W – ${s.lost}L` },
-        { label: 'Streak', value: streakValue, cls: streakCls, sub: streakSub }
+        { label: 'Net Result', info: 'netResult', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 2)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln, 2)} PLN staked` },
+        { label: 'ROI', info: 'roi', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `on ${fmt(s.total_staked_pln, 2)} PLN staked · flat 1u stakes` },
+        { label: 'Selection Hit Rate', info: 'selHitRate', value: selStats.hitRate != null ? `${(selStats.hitRate * 100).toFixed(0)}%` : '—', cls: selHitCls, sub: `coupons: ${s.won}W – ${s.lost}L` },
+        { label: 'Streak', info: 'streak', value: streakValue, cls: streakCls, sub: streakSub }
     ];
 
     document.getElementById('kpiRow').innerHTML = kpis.map(k => `
         <div class="kpi ${k.cls}">
-            <div class="kpi-label">${k.label}</div>
+            <div class="kpi-label click" onclick="calibInfo('${k.info}')">${k.label}</div>
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
         </div>`).join('');
@@ -674,7 +674,10 @@ const CALIB_INFO = {
     betPass: ['BET / PASS', 'Ile razy postawiłeś (BET) vs ile odpuściłeś (PASS). Duża przewaga PASS-ów to NIE lenistwo — to dyscyplina: stawiamy tylko, gdy jest przewaga (value), a nie na każdy mecz.'],
     betRecord: ['BET record', 'Bilans zakładów, które faktycznie postawiłeś: ile wygranych, ile przegranych. Twój realny wynik na tym, na co zdecydowałeś się zagrać — w odróżnieniu od PASS-ów, których nie ruszałeś.'],
     passDiscipline: ['PASS discipline', 'Najczęściej mylona metryka. PASS to werdykt o CENIE (brak value), nie o zwycięzcy. Dlatego rozbijamy pasy na dwie grupy: „słuszne" (kurs był za niski — trafienie tu to NIE strata) i „potencjalnie stracone" (był dodatni value, a typ wygrał — dopiero TO oznacza przeoczoną okazję). Tylko druga grupa może uzasadniać poluzowanie ostrożności. Sama liczba „ile pasów trafiłoby" jest myląca i celowo jej nie pokazujemy.'],
-    byGame: ['By Game', 'Te same metryki w podziale na grę: CS2, LoL, Dota 2. Pokazuje, w której grze masz najlepsze wyczucie. CS2 to rynek główny projektu.']
+    byGame: ['By Game', 'Te same metryki w podziale na grę: CS2, LoL, Dota 2. Pokazuje, w której grze masz najlepsze wyczucie. CS2 to rynek główny projektu.'],
+    netResult: ['Net Result', 'Suma wygranych minus suma przegranych, po wszystkich kuponach. Realny wynik w PLN przy stawkach faktycznie postawionych — to liczba, która ostatecznie się liczy, niezależnie od tego, jak wyglądały poszczególne zakłady po drodze.'],
+    roi: ['ROI', 'Net Result podzielony przez sumę stawek. Pokazuje zwrot względem tego, ile realnie zaryzykowano — dwa identyczne Net Result przy różnych stawkach dają bardzo różne ROI. Liczone przy stałych stawkach 1u, więc porównanie między kuponami jest uczciwe.'],
+    streak: ['Streak', 'Najdłuższa aktualna seria wygranych albo przegranych kuponów pod rząd, licząc od najnowszego. Void nie przerywa serii. To ciekawostka o formie, nie sygnał — krótkie serie w małej próbce są w dużej mierze losowe.']
 };
 
 function calibInfo(key) {
