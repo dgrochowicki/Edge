@@ -542,13 +542,16 @@ tr:hover .view-link{color:var(--edge);}
 .calib-verdict.pos{color:var(--pos);}
 .calib-verdict.neg{color:var(--neg);}
 .calib-cell .cs{font-size:11px;color:var(--ink-faint);margin-left:5px;font-family:var(--font-mono);}
-.calib-cell.click,.calib-table.click,.calib-quality.click,.calib-sub.click,.kpi-label.click{cursor:pointer;}
+.calib-cell.click,.calib-table.click,.calib-sub.click,.kpi-label.click{cursor:pointer;}
 .calib-cell.click:hover .cl{color:var(--ink);}
-.calib-quality{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);letter-spacing:.02em;}
-.calib-quality:hover{color:var(--ink-dim);}
 .calib-sub{font-family:var(--font-mono);font-size:10px;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-faint);margin-top:16px;margin-bottom:6px;}
 .calib-sub.click:hover{color:var(--ink-dim);}
 .calib-table td.pos{color:var(--pos);} .calib-table td.neg{color:var(--neg);}
+
+.dq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+@media (max-width:640px){.dq-grid{grid-template-columns:repeat(2,1fr);}}
+.dq-value{font-family:var(--font-mono);font-size:20px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1;}
+.dq-label{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);margin-top:4px;}
 
 /* Click-for-explanation affordance: subtle hover color, no icon. */
 .kpi-label.click:hover{color:var(--ink);}

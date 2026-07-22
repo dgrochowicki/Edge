@@ -771,7 +771,7 @@ function renderCalibration() {
             <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
         </div>
         <div class="panel">
-            <div class="panel-title"><span>Settled Progress</span></div>
+            <div class="calib-sub" style="margin-top:0;">Settled Progress</div>
             <div class="outcome-bar"><div class="outcome-seg" style="width:${progressPct}%;background:var(--edge);"></div></div>
             <div class="outcome-legend">
                 <div class="outcome-legend-item">
@@ -782,8 +782,14 @@ function renderCalibration() {
                 </div>
             </div>
         </div>
-        <div class="panel calib-quality click" onclick="calibInfo('quality')">
-            data quality \u2014 missing opponent odds: ${dq.opp} \u00b7 unknown timestamps: ${dq.ts} \u00b7 missing closing: ${dq.close} \u00b7 invalid records: ${dq.inv}
+        <div class="panel">
+            <div class="calib-sub click" style="margin-top:0;" onclick="calibInfo('quality')">Data quality</div>
+            <div class="dq-grid">
+                <div class="dq-cell"><div class="dq-value">${dq.opp}</div><div class="dq-label">missing opponent odds</div></div>
+                <div class="dq-cell"><div class="dq-value">${dq.ts}</div><div class="dq-label">unknown timestamps</div></div>
+                <div class="dq-cell"><div class="dq-value">${dq.close}</div><div class="dq-label">missing closing</div></div>
+                <div class="dq-cell"><div class="dq-value">${dq.inv}</div><div class="dq-label">invalid records</div></div>
+            </div>
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
