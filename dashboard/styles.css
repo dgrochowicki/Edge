@@ -472,6 +472,9 @@ tr:hover .view-link{color:var(--edge);}
 .tag-bet{color:var(--edge)!important;font-weight:700;}
 .val-pos{color:var(--pos)!important;}
 .val-neg{color:var(--neg)!important;}
+.risk-low{color:var(--pos)!important;}
+.risk-med{color:var(--void)!important;}
+.risk-high{color:var(--neg)!important;}
 
 .report-meta-bar{
   display:flex;

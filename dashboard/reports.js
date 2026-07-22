@@ -125,9 +125,18 @@ async function renderReport(date, agent, agents) {
         // Highlight BET / PASS decisions
         html = html.replace(/<strong>PASS<\/strong>/g, '<strong class="tag-pass">PASS</strong>');
         html = html.replace(/<strong>BET<\/strong>/g, '<strong class="tag-bet">BET</strong>');
-        // Color value percentages, e.g. <strong>+18.6%</strong> or <strong>−5.7%</strong>
-        html = html.replace(/<strong>(\+[\d.]+%)<\/strong>/g, '<strong class="val-pos">$1</strong>');
-        html = html.replace(/<strong>([−-][\d.]+%)<\/strong>/g, '<strong class="val-neg">$1</strong>');
+        // Color value percentages (e.g. +5.6%, −4.1%), whether in table cells or plain
+        // prose after a bold "Value:" label -- reports don't bold the number itself.
+        html = html.replace(/([+\-−]\d+(?:[.,]\d+)?%)/g, (m) => {
+            const cls = (m[0] === '-' || m[0] === '−') ? 'val-neg' : 'val-pos';
+            return `<span class="${cls}">${m}</span>`;
+        });
+        // Color risk levels (Ryzyko): a closed Polish vocabulary, safe to match anywhere.
+        html = html.replace(/(Bardzo wysokie|Średnio-wysokie|Wysokie|Średnie|Niskie)/gi, (m) => {
+            const norm = m.toLowerCase();
+            const cls = norm.includes('wysok') ? 'risk-high' : norm.includes('nisk') ? 'risk-low' : 'risk-med';
+            return `<span class="${cls}">${m}</span>`;
+        });
 
         const coupons = couponsByDate[date] || [];
         const linkedBar = `
