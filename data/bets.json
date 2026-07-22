@@ -1601,9 +1601,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "claude",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled 2026-07-22: Aurora beat K27 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-22-C4",
@@ -1769,10 +1770,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "przewaga Aurory jest w pełni zawarta w cenie."
+      "notes": "przewaga Aurory jest w pełni zawarta w cenie. Settled 2026-07-22: Aurora beat K27 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-22-G3",
