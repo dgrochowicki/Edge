@@ -116,7 +116,6 @@ header p.tagline{
   gap:1px;
   background:var(--line);
   border:1px solid var(--line);
-  margin:28px 0;
 }
 /* Shared card look — reused by the Calibration Lab grid below */
 .kpi,.calib-cell{
@@ -165,7 +164,6 @@ header p.tagline{
   gap:1px;
   background:var(--line);
   border:1px solid var(--line);
-  margin-bottom:28px;
 }
 .panel{background:var(--panel);padding:20px;}
 .panel-title{
@@ -216,7 +214,7 @@ header p.tagline{
 .outcome-legend-item .ol-pct{font-size:11px;color:var(--ink-faint);}
 
 /* ---------- Section / Table ---------- */
-.section{margin-bottom:20px;}
+.section,.charts,.kpi-row{margin-bottom:28px;}
 .section-head{
   display:flex;
   justify-content:space-between;
