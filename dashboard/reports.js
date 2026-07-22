@@ -1,9 +1,14 @@
 const GITHUB_API_REPORTS = 'https://api.github.com/repos/dgrochowicki/Edge/contents/reports';
 
-let reportFiles = [];   // [{date, download_url}]
+// { '2026-07-21': { claude: {url}, gpt: {url} }, '2026-07-16': { single: {url} } }
+let reportsByDate = {};
 let couponsByDate = {}; // { '2026-07-16': [coupon, ...] }
+let currentDate = null;
+let currentAgent = null;
 
 document.addEventListener('DOMContentLoaded', init);
+
+const FILENAME_RE = /^(\d{4}-\d{2}-\d{2})(?:-(claude|gpt))?$/;
 
 async function init() {
     try {
@@ -12,10 +17,16 @@ async function init() {
             fetchBetsData()
         ]);
 
-        reportFiles = (Array.isArray(filesJson) ? filesJson : [])
+        reportsByDate = {};
+        (Array.isArray(filesJson) ? filesJson : [])
             .filter(f => f.name.endsWith('.md'))
-            .map(f => ({ date: f.name.replace('.md', ''), download_url: f.download_url }))
-            .sort((a, b) => b.date.localeCompare(a.date));
+            .forEach(f => {
+                const m = FILENAME_RE.exec(f.name.replace('.md', ''));
+                if (!m) return;
+                const [, date, agent] = m;
+                const day = reportsByDate[date] = reportsByDate[date] || {};
+                day[agent || 'single'] = { download_url: f.download_url };
+            });
 
         couponsByDate = {};
         (betsJson.coupons || []).forEach(c => {
@@ -26,8 +37,9 @@ async function init() {
 
         const params = new URLSearchParams(window.location.search);
         const requestedDate = params.get('date');
-        const initial = reportFiles.find(f => f.date === requestedDate) || reportFiles[0];
-        if (initial) selectReport(initial.date);
+        const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
+        const initialDate = reportsByDate[requestedDate] ? requestedDate : dates[0];
+        if (initialDate) selectReport(initialDate, params.get('agent'));
 
     } catch (err) {
         console.error('Error loading reports:', err);
@@ -44,15 +56,16 @@ function statusDotClass(status) {
 
 function renderList() {
     const el = document.getElementById('reportList');
-    if (reportFiles.length === 0) {
+    const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
+    if (dates.length === 0) {
         el.innerHTML = '<div class="rv-empty" style="padding:16px;">No reports found.</div>';
         return;
     }
-    el.innerHTML = reportFiles.map(f => {
-        const coupons = couponsByDate[f.date] || [];
+    el.innerHTML = dates.map(date => {
+        const coupons = couponsByDate[date] || [];
         const dots = coupons.map(c => `<span class="rl-dot ${statusDotClass(c.status)}">${c.id.replace('EDGE-', '')}</span>`).join('');
-        return `<a href="?date=${f.date}" class="report-list-item" data-date="${f.date}">
-            <div class="rl-date">${f.date}</div>
+        return `<a href="?date=${date}" class="report-list-item" data-date="${date}">
+            <div class="rl-date">${date}</div>
             <div class="rl-meta">${dots || '<span style="color:var(--ink-faint);">no coupon</span>'}</div>
         </a>`;
     }).join('');
@@ -67,15 +80,38 @@ function renderList() {
     });
 }
 
-async function selectReport(date) {
+async function selectReport(date, preferredAgent) {
+    const day = reportsByDate[date];
+    currentDate = date;
+
     document.querySelectorAll('.report-list-item').forEach(el => {
         el.classList.toggle('active', el.getAttribute('data-date') === date);
     });
 
     const view = document.getElementById('reportView');
+    if (!day) {
+        view.innerHTML = '<div class="rv-empty">No report found for this date.</div>';
+        return;
+    }
+
+    const agents = Object.keys(day).filter(a => a !== 'single');
+    currentAgent = agents.includes(preferredAgent) ? preferredAgent : agents[0] || 'single';
+
+    await renderReport(date, currentAgent, agents);
+}
+
+function switchAgent(agent) {
+    currentAgent = agent;
+    history.pushState({}, '', `?date=${currentDate}&agent=${agent}`);
+    const agents = Object.keys(reportsByDate[currentDate]).filter(a => a !== 'single');
+    renderReport(currentDate, agent, agents);
+}
+
+async function renderReport(date, agent, agents) {
+    const view = document.getElementById('reportView');
     view.innerHTML = '<div class="rv-loading">Loading report…</div>';
 
-    const file = reportFiles.find(f => f.date === date);
+    const file = reportsByDate[date][agent];
     if (!file) {
         view.innerHTML = '<div class="rv-empty">No report found for this date.</div>';
         return;
@@ -104,7 +140,11 @@ async function selectReport(date) {
                 </div>
             </div>`;
 
-        view.innerHTML = `${linkedBar}<div class="markdown-body">${html}</div>`;
+        const tabsBar = agents.length > 1
+            ? `<div class="report-tabs">${agents.map(a => `<span class="report-tab ${a === agent ? 'active' : ''}" onclick="switchAgent('${a}')">${a}</span>`).join('')}</div>`
+            : '';
+
+        view.innerHTML = `${linkedBar}${tabsBar}<div class="markdown-body">${html}</div>`;
     } catch (err) {
         console.error('Error loading report file:', err);
         view.innerHTML = '<div class="rv-empty">Error loading this report.</div>';

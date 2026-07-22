@@ -397,9 +397,6 @@ tr:hover .view-link{color:var(--edge);}
 .rl-dot.pending::before{background:var(--ink-dim);}
 
 .report-view{
-  background:var(--panel);
-  border:1px solid var(--line);
-  padding:32px 40px;
   min-height:400px;
   margin-top:28px;
 }
@@ -499,6 +496,22 @@ tr:hover .view-link{color:var(--edge);}
 }
 .report-meta-bar .linked-coupons a:hover{color:var(--edge);border-color:var(--edge);}
 
+.report-tabs{display:flex;gap:8px;margin-bottom:20px;}
+.report-tab{
+  font-family:var(--font-mono);
+  font-size:11px;
+  letter-spacing:0.04em;
+  text-transform:uppercase;
+  color:var(--ink-dim);
+  text-decoration:none;
+  border:1px solid var(--line);
+  padding:5px 10px;
+  cursor:pointer;
+  background:none;
+}
+.report-tab:hover{color:var(--edge);border-color:var(--edge);}
+.report-tab.active{color:var(--edge);border-color:var(--edge);}
+
 @media (max-width:760px){
   .report-nav{
     width:100%;
@@ -509,7 +522,7 @@ tr:hover .view-link{color:var(--edge);}
     border-bottom:1px solid var(--line);
   }
   .report-list{max-height:220px;}
-  .report-view{padding:20px;margin-top:20px;}
+  .report-view{margin-top:20px;}
 }
 
 /* ===== Calibration Lab — grid reuses the .kpi card styles above ===== */
