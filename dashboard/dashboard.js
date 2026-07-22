@@ -560,23 +560,35 @@ function renderDisciplineMonitor() {
     }, 0);
 
     const obs = observedPassStats(betsData.observed_passes, unitStake);
-    let obsLine = '';
-    if (obs.n > 0) {
-        const savedOrCost = obs.hypotheticalNet >= 0 ? 'cost' : 'saved';
-        obsLine = `<div class="discipline-obs">observed passes with odds: n=${obs.n} · hypothetical at 1u: <span class="${obs.hypotheticalNet >= 0 ? 'pos' : 'neg'}">${obs.hypotheticalNet >= 0 ? '+' : ''}${obs.hypotheticalNet.toFixed(2)} PLN</span> · discipline ${savedOrCost} money</div>`;
-    }
 
     const passCard = `
-        <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
+        <div class="kpi">
             <div class="kpi-label click" onclick="calibInfo('passDiscipline')">PASS discipline</div>
             <div class="kpi-value">${correctPasses.length}</div>
             <div class="kpi-sub">correct passes (price too low) · ${correctWon}/${correctPasses.length} would've won (not a loss)</div>
-            <div class="discipline-missed">${missedPasses.length > 0
-                ? `<span class="ol-count">${missedPasses.length}</span> at value &gt; 0 · ${missedWon}/${missedPasses.length} would've won · hypothetical <span class="${missedHypothetical >= 0 ? 'pos' : 'neg'}">${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN</span>`
-                : '<span class="pos">no missed opportunities — threshold working</span>'}${obsLine}</div>
         </div>`;
 
-    el.innerHTML = `${barHTML}<div class="kpi-row cols-2" style="margin-top:20px;">${betCard}${passCard}</div>`;
+    const missedCard = `
+        <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
+            <div class="kpi-label click" onclick="calibInfo('passDiscipline')">Missed value</div>
+            <div class="kpi-value ${missedPasses.length > 0 ? (missedHypothetical >= 0 ? 'pos' : 'neg') : ''}">${missedPasses.length}</div>
+            <div class="kpi-sub">${missedPasses.length > 0
+                ? `at value &gt; 0 · ${missedWon}/${missedPasses.length} would've won · hypothetical ${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN`
+                : 'no missed opportunities — threshold working'}</div>
+        </div>`;
+
+    const obsCard = `
+        <div class="kpi">
+            <div class="kpi-label">Observed passes</div>
+            <div class="kpi-value ${obs.n > 0 ? (obs.hypotheticalNet >= 0 ? 'pos' : 'neg') : ''}">${obs.n}</div>
+            <div class="kpi-sub">${obs.n > 0
+                ? `hypothetical at 1u: ${obs.hypotheticalNet >= 0 ? '+' : ''}${obs.hypotheticalNet.toFixed(2)} PLN · discipline ${obs.hypotheticalNet >= 0 ? 'cost' : 'saved'} money`
+                : 'no observed passes with odds logged yet'}</div>
+        </div>`;
+
+    el.innerHTML = `${barHTML}<div class="kpi-row cols-2" style="margin-top:20px;">${betCard}${passCard}</div>
+        <div class="calib-sub" style="margin-top:20px;">Missed value</div>
+        <div class="kpi-row cols-2">${missedCard}${obsCard}</div>`;
 }
 
 // ===== By Game =====

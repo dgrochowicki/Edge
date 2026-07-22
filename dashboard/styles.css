@@ -561,16 +561,6 @@ tr:hover .view-link{color:var(--edge);}
 .perf-tables .calib-table.compact th,.perf-tables .calib-table.compact td{padding:3px 8px;}
 @media (max-width:768px){.perf-tables{grid-template-columns:1fr;gap:0;}}
 
-/* Discipline Monitor: PASS discipline card -- separate the "missed" group */
-.discipline-missed{
-  margin-top:12px;padding-top:12px;
-  border-top:1px solid var(--line-soft);
-  font-family:var(--font-mono);
-  font-size:11px;
-  color:var(--ink-faint);
-  line-height:1.6;
-}
-.discipline-obs{margin-top:8px;}
 .calib-modal-overlay{display:flex;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:20px;}
 .calib-modal{background:var(--panel);border:1px solid var(--line);max-width:520px;width:100%;padding:18px 20px;}
 .calib-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:600;}
