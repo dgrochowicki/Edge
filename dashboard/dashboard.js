@@ -25,9 +25,9 @@ function renderDashboard() {
     renderCharts();
     renderSelectionsPerformance();
     renderDisciplineMonitor();
-    renderBetSource();
     renderByGame();
     renderCalibration();
+    renderBetSource();
     renderTable();
 
     const params = new URLSearchParams(window.location.search);
