@@ -255,3 +255,19 @@ Before creating a report:
 9. Never invent missing odds, results, or historical decisions.
 10. Clearly mark assumptions and incomplete information.
 11. Before producing any report, follow the Calibration & CLV Protocol section in `docs/PLAYBOOK.md` — every analyzed market is appended to the `predictions` array in `data/bets.json`, including PASS decisions and `market_odds_opponent`.
+
+
+## Open ideas (dashboard restructure)
+
+Zapisane 2026-07-22. Do podjęcia po przekroczeniu progu 50 rozliczonych predykcji w Calibration Lab, w osobnej sesji.
+
+1. Podział dashboardu na dwie strony tematyczne
+Strona główna rosła organicznie i miesza dwa różne tryby korzystania:
+Wyniki / dziennik (pytanie „jak mi idzie", codzienny rzut oka): KPI, wykres P&L, Selections Performance, Bet Source, kupony.
+Metoda / badanie (pytanie „czy Edge ma przewagę", raz na tydzień, do przemyślenia): Discipline Monitor, By Game, Calibration Lab.
+Propozycja: rozdzielić na dwie strony — główną (krótką, codzienną) i osobną Research/Method. Nawigacja urosłaby do czterech pozycji (Dashboard, Research, Reports, Logs).
+Taby pasowałyby właśnie na stronie Research — tam każda zakładka to pełny zestaw metryk porównywany sekwencyjnie (agent claude vs gpt, method_version v1 vs v2), a nie równolegle. Ten sam wzorzec, co już wdrożony w widoku raportów (data na liście, agenci w tabach).
+Dlaczego dopiero po progu 50: dopiero wtedy Calibration Lab pokaże pełną zawartość (Brier, tabela kalibracji, CLV, werdykty) i będzie wiadomo, ile miejsca ta część realnie zajmuje. Projektowanie podziału wcześniej to zgadywanie.
+2. Tabela kuponów poza dashboard
+Recent Coupons to dane szczegółowe, nie metryka — wchodzi się w nie, gdy chce się sprawdzić konkret, a nie przy codziennym podglądzie. Propozycja: przenieść pełną tabelę do widoku szczegółowego (osobna strona albo dołączona do logs.html), a na dashboardzie zostawić skrót — 2–3 ostatnie kupony (data, typ, wynik) z linkiem „zobacz wszystkie".
+Uwaga: punkty 1 i 2 to w istocie ta sama decyzja — oddzielenie „codziennego rzutu oka" od „siadam i analizuję". Warto zrobić je za jednym razem, jako jeden przemyślany redesign, a nie po kawałku.
