@@ -269,6 +269,134 @@
           "notes": "Wildcard won 2:0. Agent's report (P-2026-07-21-C4) had picked Alliance at 1.50 and passed; user bet the other side at 2.04."
         }
       ]
+    },
+    {
+      "id": "EDGE-008",
+      "date": "2026-07-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.56,
+      "potential_return_pln": 6.27,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "EYEBALLERS vs FaZe",
+          "market": "moneyline",
+          "pick": "FaZe",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Matches P-2026-07-22-C1/G1 (BLAST Bounty)."
+        },
+        {
+          "match": "HOTU vs Astralis",
+          "market": "moneyline",
+          "pick": "Astralis",
+          "odds": 1.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Astralis lost; HOTU won. This losing leg sank the accumulator. Matches P-2026-07-22-C2/G3 (StarLadder StarSeries EU CQ)."
+        },
+        {
+          "match": "Nemiga vs G2",
+          "market": "moneyline",
+          "pick": "G2",
+          "odds": 1.07,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Matches P-2026-07-22-C4/G4 (BLAST Bounty)."
+        },
+        {
+          "match": "NiP vs 100 Thieves",
+          "market": "total_maps_handicap",
+          "pick": "NiP +0.5 maps",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "NiP won at least one map (StarLadder StarSeries EU CQ). Different market than the match-winner predictions P-2026-07-22-C6/G5, so this does not settle those."
+        },
+        {
+          "match": "INFINITE vs Nemesis",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.3,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Matches P-2026-07-22-C5 (StarLadder StarSeries EU CQ)."
+        },
+        {
+          "match": "HOTU vs GamerLegion",
+          "market": "total_maps_handicap",
+          "pick": "GamerLegion +0.5 maps",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "GamerLegion won 0 maps (swept 0:2 by HOTU), so this handicap lost. Confirms match winner for P-2026-07-22-C7 (BLAST Bounty)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-009",
+      "date": "2026-07-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 6.42,
+      "potential_return_pln": 11.3,
+      "gross_return_pln": 11.3,
+      "status": "won",
+      "net_result_pln": 9.3,
+      "selections": [
+        {
+          "match": "Nemiga vs G2",
+          "market": "moneyline",
+          "pick": "G2",
+          "odds": 1.08,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Matches P-2026-07-22-C4/G4 (BLAST Bounty)."
+        },
+        {
+          "match": "INFINITE vs Nemesis",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.3,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Matches P-2026-07-22-C5 (StarLadder StarSeries EU CQ)."
+        },
+        {
+          "match": "NiP vs 100 Thieves",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.8,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Direct match-winner confirmation: NiP won (StarLadder StarSeries EU CQ). Settles P-2026-07-22-C6 (pick 100 Thieves -- lost) and P-2026-07-22-G5 (pick Ninjas in Pyjamas -- won)."
+        },
+        {
+          "match": "HOTU vs GamerLegion",
+          "market": "moneyline",
+          "pick": "HOTU",
+          "odds": 2.54,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Direct match-winner confirmation of HOTU beating GamerLegion (BLAST Bounty), consistent with the handicap leg on EDGE-008."
+        }
+      ]
     }
   ],
   "observed_passes": [
@@ -296,15 +424,15 @@
     }
   ],
   "summary": {
-    "coupons": 7,
-    "won": 3,
-    "lost": 4,
+    "coupons": 9,
+    "won": 4,
+    "lost": 5,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 14.0,
-    "gross_return_pln": 13.08,
-    "net_result_pln": -0.92,
-    "roi": -0.0657
+    "total_staked_pln": 18.0,
+    "gross_return_pln": 24.38,
+    "net_result_pln": 6.38,
+    "roi": 0.3544
   },
   "predictions": [
     {
@@ -1387,8 +1515,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "agent": "claude"
+      "result": "won",
+      "agent": "claude",
+      "notes": "Settled 2026-07-22: FaZe beat EYEBALLERS (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
       "id": "P-2026-07-22-C2",
@@ -1406,8 +1535,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "agent": "claude"
+      "result": "lost",
+      "agent": "claude",
+      "notes": "Settled 2026-07-22: HOTU beat Astralis (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
       "id": "P-2026-07-22-C3",
@@ -1444,8 +1574,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "agent": "claude"
+      "result": "won",
+      "agent": "claude",
+      "notes": "Settled 2026-07-22: G2 beat Nemiga (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
       "id": "P-2026-07-22-C5",
@@ -1463,8 +1594,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "agent": "claude"
+      "result": "won",
+      "agent": "claude",
+      "notes": "Settled 2026-07-22: Nemesis beat INFINITE (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
       "id": "P-2026-07-22-C6",
@@ -1482,11 +1614,11 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "lost",
       "agent": "claude",
       "erratum": "reports/2026-07-22-claude.md#6-errata",
       "erratum_scope": "narrative_only_odds_sides_misstated_in_prose",
-      "notes": "Numeric fields verified correct against user-provided odds (NiP 1.62 / 100 Thieves 2.15). Section 2 prose of the source report swapped which side it called market favorite -- see errata section 6 of the report. Does not affect this entry's values."
+      "notes": "Numeric fields verified correct against user-provided odds (NiP 1.62 / 100 Thieves 2.15). Section 2 prose of the source report swapped which side it called market favorite -- see errata section 6 of the report. Does not affect this entry's values. Settled 2026-07-22: NiP beat 100 Thieves (user's coupon EDGE-009, direct match-winner bet at 1.80 on NiP)."
     },
     {
       "id": "P-2026-07-22-C7",
@@ -1504,8 +1636,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "agent": "claude"
+      "result": "lost",
+      "agent": "claude",
+      "notes": "Settled 2026-07-22: HOTU beat GamerLegion 2:0, confirmed via the GamerLegion +0.5 map handicap losing on user's coupon EDGE-008 (BLAST Bounty)."
     },
     {
       "id": "P-2026-07-22-C8",
@@ -1561,9 +1694,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "notes": "kurs jest niższy od fair."
+      "notes": "kurs jest niższy od fair. Settled 2026-07-22: FaZe beat EYEBALLERS (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
       "id": "P-2026-07-22-G2",
@@ -1601,9 +1734,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
-      "notes": "dodatnie value nie jest wystarczająco wiarygodne przy aktualnej jakości danych i ryzyku online BO3."
+      "notes": "dodatnie value nie jest wystarczająco wiarygodne przy aktualnej jakości danych i ryzyku online BO3. Settled 2026-07-22: HOTU beat Astralis (user's coupon EDGE-008, StarLadder StarSeries EU CQ)."
     },
     {
       "id": "P-2026-07-22-G4",
@@ -1621,9 +1754,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "notes": "kurs jest zdecydowanie poniżej fair."
+      "notes": "kurs jest zdecydowanie poniżej fair. Settled 2026-07-22: G2 beat Nemiga (user's coupon EDGE-008, BLAST Bounty)."
     },
     {
       "id": "P-2026-07-22-G5",
@@ -1641,9 +1774,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-22: NiP beat 100 Thieves (user's coupon EDGE-009, direct match-winner bet at 1.80 on NiP)."
     }
   ]
 }
