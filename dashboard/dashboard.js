@@ -537,7 +537,7 @@ function renderDisciplineMonitor() {
     const betCard = `
         <div class="kpi">
             <div class="kpi-label click" onclick="calibInfo('betRecord')">BET record</div>
-            <div class="kpi-value ${ds.bet.hitRate == null ? '' : (ds.bet.hitRate >= 0.5 ? 'pos' : 'neg')}">${ds.bet.won}W – ${ds.bet.lost}L</div>
+            <div class="kpi-value ${ds.bet.hitRate == null ? '' : (ds.bet.hitRate >= 0.55 ? 'pos' : ds.bet.hitRate < 0.45 ? 'neg' : '')}">${ds.bet.won}W – ${ds.bet.lost}L</div>
             <div class="kpi-sub">${ds.bet.hitRate != null ? (ds.bet.hitRate * 100).toFixed(0) + '% hit rate' : 'no settled BETs yet'}</div>
         </div>`;
 
