@@ -196,6 +196,7 @@ header p.tagline{
   flex-wrap:wrap;
   gap:24px;
   margin-top:18px;
+  margin-bottom:20px;
 }
 .outcome-legend-item{
   display:flex;
