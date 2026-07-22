@@ -787,7 +787,6 @@ function renderCalibration() {
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
-        frame += `<div class="panel calib-note">Collection phase \u2014 ${settledEst.length}/${CAL_T.PRELIM} settled predictions with a probability estimate. Per protocol, metrics are not computed below this threshold.</div>`;
         el.innerHTML = `<div class="charts">${frame}</div>`;
         renderCalibCompact(stage.label.toLowerCase(), settledEst.length, CAL_T.PRELIM);
         calibExpanded = settledEst.length >= CAL_T.PRELIM;
