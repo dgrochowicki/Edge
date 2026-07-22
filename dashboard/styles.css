@@ -572,6 +572,7 @@ tr:hover .view-link{color:var(--edge);}
   color:var(--ink-faint);
   line-height:1.6;
 }
+.discipline-obs{margin-top:8px;}
 .calib-modal-overlay{display:flex;position:fixed;inset:0;background:rgba(0,0,0,0.6);z-index:100;align-items:center;justify-content:center;padding:20px;}
 .calib-modal{background:var(--panel);border:1px solid var(--line);max-width:520px;width:100%;padding:18px 20px;}
 .calib-modal-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px;font-weight:600;}
@@ -581,13 +582,4 @@ tr:hover .view-link{color:var(--edge);}
 /* ===== Calibration Lab — collapsed compact bar ===== */
 .section-head.click{cursor:pointer;}
 .calib-compact{cursor:pointer;padding-bottom:10px;}
-.calib-compact-label{
-  font-family:var(--font-mono);
-  font-size:12.5px;
-  color:var(--ink-dim);
-  margin-bottom:10px;
-  display:flex;
-  justify-content:space-between;
-}
-.calib-compact:hover .calib-compact-label{color:var(--ink);}
 .calib-compact-arrow{color:var(--ink-faint);font-weight:600;}

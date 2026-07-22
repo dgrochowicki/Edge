@@ -559,6 +559,13 @@ function renderDisciplineMonitor() {
         return sum + (x.p.result === 'won' ? unitStake * (x.p.market_odds_at_analysis - 1) : -unitStake);
     }, 0);
 
+    const obs = observedPassStats(betsData.observed_passes, unitStake);
+    let obsLine = '';
+    if (obs.n > 0) {
+        const savedOrCost = obs.hypotheticalNet >= 0 ? 'cost' : 'saved';
+        obsLine = `<div class="discipline-obs">observed passes with odds: n=${obs.n} · hypothetical at 1u: <span class="${obs.hypotheticalNet >= 0 ? 'pos' : 'neg'}">${obs.hypotheticalNet >= 0 ? '+' : ''}${obs.hypotheticalNet.toFixed(2)} PLN</span> · discipline ${savedOrCost} money</div>`;
+    }
+
     const passCard = `
         <div class="kpi" title="Trafiony PASS przy ujemnym value to dobra decyzja, nie strata. Tylko dodatnie value, które wygrywa, oznacza przeoczoną okazję.">
             <div class="kpi-label click" onclick="calibInfo('passDiscipline')">PASS discipline</div>
@@ -566,17 +573,10 @@ function renderDisciplineMonitor() {
             <div class="kpi-sub">correct passes (price too low) · ${correctWon}/${correctPasses.length} would've won (not a loss)</div>
             <div class="discipline-missed">${missedPasses.length > 0
                 ? `<span class="ol-count">${missedPasses.length}</span> at value &gt; 0 · ${missedWon}/${missedPasses.length} would've won · hypothetical <span class="${missedHypothetical >= 0 ? 'pos' : 'neg'}">${missedHypothetical >= 0 ? '+' : ''}${missedHypothetical.toFixed(2)} PLN</span>`
-                : '<span class="pos">no missed opportunities — threshold working</span>'}</div>
+                : '<span class="pos">no missed opportunities — threshold working</span>'}${obsLine}</div>
         </div>`;
 
-    let obsNote = '';
-    const obs = observedPassStats(betsData.observed_passes, unitStake);
-    if (obs.n > 0) {
-        const savedOrCost = obs.hypotheticalNet >= 0 ? 'cost' : 'saved';
-        obsNote = `<div class="calib-note" style="margin-top:14px;">Observed passes with odds: n=${obs.n} · hypothetical result at 1u: ${obs.hypotheticalNet >= 0 ? '+' : ''}${obs.hypotheticalNet.toFixed(2)} PLN · discipline ${savedOrCost} money</div>`;
-    }
-
-    el.innerHTML = `${barHTML}<div class="kpi-row cols-2">${betCard}${passCard}</div>${obsNote}`;
+    el.innerHTML = `${barHTML}<div class="kpi-row cols-2">${betCard}${passCard}</div>`;
 }
 
 // ===== By Game =====
@@ -707,13 +707,13 @@ function toggleCalibrationLab() {
 }
 
 function applyCalibLabVisibility() {
-    const head = document.getElementById('calibHead');
     const compact = document.getElementById('calibCompact');
     const body = document.getElementById('calibBody');
-    if (!head || !compact || !body) return;
-    head.style.display = calibExpanded ? '' : 'none';
+    const arrow = document.getElementById('calibArrow');
+    if (!compact || !body) return;
     compact.style.display = calibExpanded ? 'none' : '';
     body.style.display = calibExpanded ? '' : 'none';
+    if (arrow) arrow.textContent = calibExpanded ? '−' : '+';
 }
 
 function renderCalibCompact(stageLabel, settledCount, threshold) {
@@ -722,7 +722,6 @@ function renderCalibCompact(stageLabel, settledCount, threshold) {
     const pct = Math.min(100, settledCount / threshold * 100);
     el.innerHTML = `
         <div class="calib-compact click" onclick="toggleCalibrationLab()">
-            <div class="calib-compact-label">Calibration Lab — ${stageLabel} · ${settledCount}/${threshold} settled <span class="calib-compact-arrow">+</span></div>
             <div class="outcome-bar"><div class="outcome-seg" style="width:${pct}%;background:var(--edge);"></div></div>
         </div>`;
 }
