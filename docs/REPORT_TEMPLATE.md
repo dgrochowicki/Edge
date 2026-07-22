@@ -1,9 +1,13 @@
 # Edge Daily Report Template
 
-Current version: v1.3 (2026-07-20)
+Current version: v1.4 (2026-07-22)
 Status: obowiązuje obu agentów (claude, gpt)
 
 Każdy raport dzienny ma nazwę `reports/RRRR-MM-DD-{claude|gpt}.md` (małe litery) i składa się z poniższych sekcji w tej kolejności. Sekcję 5 pomijamy tylko wtedy, gdy nie ma treści. Raport jest dokumentem niezmiennym: opisuje wyłącznie stan sprzed meczów i po publikacji nie wolno go edytować. Rozliczenia wyników nie trafiają do raportów — jedynym miejscem rozliczeń jest data/bets.json (księga główna), a ich widokiem dashboard. Wartości liczbowe: kursy z dwoma miejscami po przecinku, value z jednym, probability z czterema.
+
+**Format Value i Ryzyko (wymagany, nie tylko przykładowy — dashboard koloruje po tym wzorcu):**
+- `Value` zawsze ze znakiem, nawet przy zerze: `+5.6%`, `-4.1%`, `+0.0%`. Bez znaku dashboard nie rozpozna, czy kolorować na zielono czy czerwono.
+- `Ryzyko` wyłącznie jedną z wartości: `Niskie`, `Średnie`, `Wysokie`, `Średnio-wysokie`, `Bardzo wysokie` (dowolna wielkość liter). Inne sformułowanie (np. "Umiarkowane", "High") nie zostanie pokolorowane.
 
 ---
 
