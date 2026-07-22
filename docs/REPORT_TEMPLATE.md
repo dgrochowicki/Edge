@@ -1,6 +1,6 @@
 # Edge Daily Report Template
 
-Current version: v1.4 (2026-07-22)
+Current version: v1.5 (2026-07-22)
 Status: obowiązuje obu agentów (claude, gpt)
 
 Każdy raport dzienny ma nazwę `reports/RRRR-MM-DD-{claude|gpt}.md` (małe litery) i składa się z poniższych sekcji w tej kolejności. Sekcję 5 pomijamy tylko wtedy, gdy nie ma treści. Raport jest dokumentem niezmiennym: opisuje wyłącznie stan sprzed meczów i po publikacji nie wolno go edytować. Rozliczenia wyników nie trafiają do raportów — jedynym miejscem rozliczeń jest data/bets.json (księga główna), a ich widokiem dashboard. Wartości liczbowe: kursy z dwoma miejscami po przecinku, value z jednym, probability z czterema.
@@ -57,6 +57,7 @@ Blok JSON ze wszystkimi wpisami z sekcji 2 (BET **i** PASS). Zasady:
 - `report`: ścieżka z sufiksem agenta, np. `"reports/2026-07-20-gpt.md"`
 - `odds_timestamp`: faktyczny czas odczytu kursów (godzina podania ich przez użytkownika), nie czas raportu ani wartość okrągła z założenia
 - `estimated_probability` = 1 / fair_odds (4 miejsca), `market_odds_opponent` obowiązkowe, `closing_odds: null`, `result: "pending"`
+- `method_version: "v1"` — wersja metody szacowania fair kursów. Bumpuje się tylko przy zmianie sposobu liczenia (patrz „Method versioning" w PLAYBOOK.md); raport nigdy nie zmienia wersji z własnej inicjatywy.
 - Meczów odrzuconych na filtrze NIE logujemy
 
 Agenci nie modyfikują `data/bets.json` bezpośrednio — plik ma jednego opiekuna, który scala, waliduje i commituje wpisy z raportów.
