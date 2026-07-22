@@ -1707,9 +1707,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "won",
       "agent": "claude",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled 2026-07-22: Echo beat NTR 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-22-C9",
