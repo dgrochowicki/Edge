@@ -1729,9 +1729,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "agent": "claude",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled 2026-07-22: 100 Thieves upset Falcons 2:1 after a 1:1 decider (user-confirmed). Notable miss given fair_odds implied ~90%."
     },
     {
       "id": "P-2026-07-22-G1",
