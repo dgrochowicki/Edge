@@ -2268,9 +2268,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "dodatnie value jest zbyt małe przy bardzo wysokim ryzyku i niskiej jakości porównywalnych danych."
+      "notes": "dodatnie value jest zbyt małe przy bardzo wysokim ryzyku i niskiej jakości porównywalnych danych. Settled 2026-07-23: 100 Thieves beat Nuclear TigeRES 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-23-G8",
