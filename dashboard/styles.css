@@ -215,7 +215,6 @@ header p.tagline{
 
 /* ---------- Section / Table ---------- */
 .section,.charts,.kpi-row{margin-bottom:28px;}
-.section.hero{border-left:3px solid var(--edge);padding-left:16px;}
 .section.hero .section-head h2{font-size:19px;}
 .section-head{
   display:flex;
