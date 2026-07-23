@@ -25,15 +25,22 @@
         <p class="tagline">Every coupon ever placed, newest first.</p>
     </header>
 
+    <div class="kpi-row" id="logsSummaryRow"></div>
+
     <div class="section">
         <div class="section-head">
             <h2>All Coupons</h2>
             <span class="count" id="couponCount"></span>
         </div>
+        <div class="report-tabs" id="sourceToggle" style="margin-bottom:14px;">
+            <span class="report-tab active" data-src="all" onclick="setSource('all')">All</span>
+            <span class="report-tab" data-src="real" onclick="setSource('real')">Real</span>
+            <span class="report-tab" data-src="rec" onclick="setSource('rec')">Recommended</span>
+        </div>
         <table id="betsTable">
             <thead>
                 <tr>
-                    <th>ID</th><th>Date</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th>ROI</th><th></th>
+                    <th>ID</th><th>Date</th><th>Type</th><th>Game</th><th>Source</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th></th>
                 </tr>
             </thead>
             <tbody id="tableBody"><!-- Filled by JS --></tbody>

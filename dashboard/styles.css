@@ -249,8 +249,8 @@ tbody tr{
 tbody tr:hover{background:var(--panel-2);box-shadow:inset 3px 0 0 var(--edge);}
 td{padding:11px 12px;color:var(--ink);}
 td.num{font-variant-numeric:tabular-nums;}
-#couponsTable td.pos{color:var(--pos);}
-#couponsTable td.neg{color:var(--neg);}
+#betsTable td.pos{color:var(--pos);}
+#betsTable td.neg{color:var(--neg);}
 .tag{
   display:inline-flex;
   align-items:center;
@@ -274,6 +274,18 @@ td.num{font-variant-numeric:tabular-nums;}
   letter-spacing:0.04em;
 }
 tr:hover .view-link{color:var(--edge);}
+
+.source-tag{
+  display:inline-block;
+  font-family:var(--font-mono);
+  font-size:10px;
+  letter-spacing:0.05em;
+  text-transform:uppercase;
+  color:var(--ink-dim);
+  border:1px solid var(--line);
+  padding:2px 6px;
+}
+.source-tag.rec{color:var(--edge);border-color:rgba(255,159,28,.35);}
 
 /* ---------- Modal ---------- */
 .modal{
@@ -328,17 +340,18 @@ tr:hover .view-link{color:var(--edge);}
   .kpi-row.cols-3{grid-template-columns:1fr;}
   table{font-size:11px;}
   th,td{padding:8px;}
-  /* logs.html full log table: ID/Date/Stake/Odds/Return/Status/ROI -- hide Odds (4th) */
-  #betsTable thead th:nth-child(4),#betsTable td:nth-child(4){display:none;}
-  /* index.html Recent Coupons: ID/Date/Type/Game/Stake/Odds/Return/Status -- hide Type (3rd) and Odds (6th) */
-  #couponsTable thead th:nth-child(3),#couponsTable td:nth-child(3),
-  #couponsTable thead th:nth-child(6),#couponsTable td:nth-child(6){display:none;}
+  /* logs.html full log table: ID/Date/Type/Game/Source/Stake/Odds/Return/Status/-- hide Type (3rd) and Odds (7th) */
+  #betsTable thead th:nth-child(3),#betsTable td:nth-child(3),
+  #betsTable thead th:nth-child(7),#betsTable td:nth-child(7){display:none;}
 }
 
 @media (max-width:420px){
   th,td{padding:7px 6px;}
-  /* Narrow phones: also hide Game (4th) so the remaining columns fit without horizontal scroll */
-  #couponsTable thead th:nth-child(4),#couponsTable td:nth-child(4){display:none;}
+  /* Narrow phones: also hide Game (4th) and Source (5th) -- the toggle above
+     the table already filters by source, so the column is redundant here --
+     so the remaining columns fit without horizontal scroll */
+  #betsTable thead th:nth-child(4),#betsTable td:nth-child(4),
+  #betsTable thead th:nth-child(5),#betsTable td:nth-child(5){display:none;}
 }
 
 /* ---------- Reports page ---------- */

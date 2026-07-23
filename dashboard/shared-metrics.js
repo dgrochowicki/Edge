@@ -139,6 +139,23 @@ function couponsByLegCount(coupons) {
     return Object.keys(groups).map(k => groups[k]).sort((a, b) => a.legs - b.legs);
 }
 
+// Totals (stake/net/W-L-void-pending) for one already-filtered coupon list.
+// Shared by couponsBySource's per-group buckets and any page that needs a
+// plain summary over a coupon subset (e.g. logs.js's summary bar).
+function aggregateCoupons(coupons) {
+    const won = coupons.filter(c => c.status === 'won').length;
+    const lost = coupons.filter(c => c.status === 'lost').length;
+    const void_ = coupons.filter(c => c.status === 'void').length;
+    const pending = coupons.filter(c => c.status === 'pending').length;
+    const staked = coupons.reduce((s, c) => s + (c.stake_pln || 0), 0);
+    const net = coupons.reduce((s, c) => s + (c.net_result_pln || 0), 0);
+    return {
+        n: coupons.length, won, lost, void: void_, pending, staked, net,
+        roi: staked > 0 ? net / staked : null,
+        hitRate: (won + lost) > 0 ? won / (won + lost) : null
+    };
+}
+
 // Splits coupons by how the bet came about: Edge's own BET recommendation
 // vs. a bet the user placed on their own judgement. Coupons with a missing
 // or unrecognized `source` are kept as their own "unknown" group rather
@@ -150,21 +167,7 @@ function couponsBySource(coupons) {
     const buckets = { edge: [], own: [], unknown: [] };
     (coupons || []).forEach(c => buckets[groupOf(c)].push(c));
 
-    const agg = group => {
-        const won = group.filter(c => c.status === 'won').length;
-        const lost = group.filter(c => c.status === 'lost').length;
-        const void_ = group.filter(c => c.status === 'void').length;
-        const pending = group.filter(c => c.status === 'pending').length;
-        const staked = group.reduce((s, c) => s + (c.stake_pln || 0), 0);
-        const net = group.reduce((s, c) => s + (c.net_result_pln || 0), 0);
-        return {
-            n: group.length, won, lost, void: void_, pending, staked, net,
-            roi: staked > 0 ? net / staked : null,
-            hitRate: (won + lost) > 0 ? won / (won + lost) : null
-        };
-    };
-
-    return { edge: agg(buckets.edge), own: agg(buckets.own), unknown: agg(buckets.unknown) };
+    return { edge: aggregateCoupons(buckets.edge), own: aggregateCoupons(buckets.own), unknown: aggregateCoupons(buckets.unknown) };
 }
 
 // Game taxonomy shared by dashboard.js's coupon-table game column
