@@ -25,10 +25,15 @@
         <p class="tagline">Does the method have an edge?</p>
     </header>
 
-    <div class="section">
-        <div class="section-head">
+    <!-- TODO(agent-tabs): once gpt/claude both have enough per-agent volume,
+         turn this into clickable tabs (same pattern as the reports view:
+         list + tabs, compared sequentially, not side by side). -->
+    <div class="calib-note" style="margin-bottom:20px;">Comparing gpt vs claude — coming once each agent has enough settled predictions on its own.</div>
+
+    <div class="section hero">
+        <div class="section-head no-line click" id="calibHead" onclick="toggleCalibrationLab()">
             <h2>Calibration Lab</h2>
-            <span class="count" id="calibCount"></span>
+            <span class="count"><span id="calibCount"></span> <span class="calib-compact-arrow" id="calibArrow">+</span></span>
         </div>
         <div id="calibCompact"></div>
         <div id="calibBody"></div>
@@ -43,7 +48,7 @@
     </div>
 
     <div class="section">
-        <div class="section-head">
+        <div class="section-head no-line click" onclick="calibInfo('byGame')">
             <h2>By Game</h2>
         </div>
         <div id="byGameBody"></div>

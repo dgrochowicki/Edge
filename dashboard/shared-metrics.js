@@ -167,6 +167,14 @@ function couponsBySource(coupons) {
     return { edge: agg(buckets.edge), own: agg(buckets.own), unknown: agg(buckets.unknown) };
 }
 
+// Game taxonomy shared by dashboard.js's coupon-table game column
+// (couponGameLabel) and research.js's By Game section.
+const BY_GAME_LIST = [
+    { key: 'cs2', label: 'CS2', primary: true },
+    { key: 'lol', label: 'LoL', primary: false },
+    { key: 'dota2', label: 'Dota 2', primary: false }
+];
+
 // ===== Calibration Lab v2 =====
 // Per protocol: Brier vs market only on the paired sample; verdicts only at
 // pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
