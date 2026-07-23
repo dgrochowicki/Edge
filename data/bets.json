@@ -397,6 +397,168 @@
           "notes": "Direct match-winner confirmation of HOTU beating GamerLegion (BLAST Bounty), consistent with the handicap leg on EDGE-008."
         }
       ]
+    },
+    {
+      "id": "EDGE-010",
+      "date": "2026-07-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 7.79,
+      "potential_return_pln": 13.70,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "FOKUS vs Aurora",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Aurora lost; FOKUS won. Settles P-2026-07-23-C1/G1 (BLAST Bounty)."
+        },
+        {
+          "match": "Walczaki vs 3DMAX",
+          "market": "moneyline",
+          "pick": "3DMAX",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "3DMAX lost; Walczaki won. Settles P-2026-07-23-C5/G5 (StarLadder StarSeries EU CQ)."
+        },
+        {
+          "match": "SINNERS vs FUT",
+          "market": "moneyline",
+          "pick": "FUT",
+          "odds": 1.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Settles P-2026-07-23-C2/G9 (BLAST Bounty)."
+        },
+        {
+          "match": "NiP vs Echo",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Settles P-2026-07-23-G6 (StarLadder StarSeries EU CQ)."
+        },
+        {
+          "match": "Gentle Mates vs paiN",
+          "market": "moneyline",
+          "pick": "paiN",
+          "odds": 1.62,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-C3/G2, left pending until the match concludes."
+        },
+        {
+          "match": "HEROIC vs FOKUS",
+          "market": "moneyline",
+          "pick": "HEROIC",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-C6/G4, left pending until the match concludes."
+        },
+        {
+          "match": "K27 vs INFINITE",
+          "market": "moneyline",
+          "pick": "K27",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-G8, left pending until the match concludes."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-011",
+      "date": "2026-07-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.25,
+      "potential_return_pln": 3.96,
+      "gross_return_pln": 3.96,
+      "status": "won",
+      "net_result_pln": 1.96,
+      "selections": [
+        {
+          "match": "100 Thieves vs Nuclear TigeRES",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Different market than the match-winner prediction P-2026-07-23-G7 (pick Nuclear TigeRES), so this doesn't settle that -- the match went the distance (3 maps) regardless of who won."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-012",
+      "date": "2026-07-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.17,
+      "potential_return_pln": 7.34,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "NiP vs Echo",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as a leg on EDGE-010; already settles P-2026-07-23-G6."
+        },
+        {
+          "match": "Gentle Mates vs paiN",
+          "market": "moneyline",
+          "pick": "paiN",
+          "odds": 1.67,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress. Corresponds to P-2026-07-23-C3/G2."
+        },
+        {
+          "match": "HEROIC vs FOKUS",
+          "market": "moneyline",
+          "pick": "HEROIC",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress. Corresponds to P-2026-07-23-C6/G4."
+        },
+        {
+          "match": "K27 vs INFINITE",
+          "market": "moneyline",
+          "pick": "K27",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress. Corresponds to P-2026-07-23-G8."
+        }
+      ]
     }
   ],
   "observed_passes": [
@@ -424,15 +586,15 @@
     }
   ],
   "summary": {
-    "coupons": 9,
-    "won": 4,
-    "lost": 5,
+    "coupons": 12,
+    "won": 5,
+    "lost": 6,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 18.0,
-    "gross_return_pln": 24.38,
-    "net_result_pln": 6.38,
-    "roi": 0.3544
+    "pending": 1,
+    "total_staked_pln": 24.0,
+    "gross_return_pln": 28.34,
+    "net_result_pln": 4.34,
+    "roi": 0.1808
   },
   "predictions": [
     {
@@ -1855,9 +2017,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-23: Walczaki beat 3DMAX (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-C6",
@@ -1896,9 +2059,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-23: FOKUS beat Aurora (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-C2",
@@ -1916,9 +2080,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-23: FUT beat SINNERS (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-C3",
@@ -1977,9 +2142,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair i nie oferuje marginesu bezpieczeństwa."
+      "notes": "kurs jest poniżej fair i nie oferuje marginesu bezpieczeństwa. Settled 2026-07-23: FOKUS beat Aurora (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-G2",
@@ -2061,9 +2226,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-23: Walczaki beat 3DMAX (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-G6",
@@ -2082,9 +2247,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-23: NiP beat Echo (user's coupon EDGE-010)."
     },
     {
       "id": "P-2026-07-23-G7",
@@ -2145,9 +2310,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-23: FUT beat SINNERS (user's coupon EDGE-010)."
     }
   ]
 }
