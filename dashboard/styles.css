@@ -488,6 +488,9 @@ tr:hover .view-link{color:var(--edge);}
   flex-wrap:wrap;
 }
 .report-meta-bar .linked-coupons a{
+  display:inline-flex;
+  align-items:center;
+  gap:5px;
   font-family:var(--font-mono);
   font-size:11px;
   color:var(--ink-dim);

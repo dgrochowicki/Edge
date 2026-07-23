@@ -144,7 +144,7 @@ async function renderReport(date, agent, agents) {
                 <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">${date}</span>
                 <div class="linked-coupons">
                     ${coupons.length
-                        ? coupons.map(c => `<a href="../index.html?open=${c.id}">${c.id} · ${c.status}</a>`).join('')
+                        ? coupons.map(c => `<a href="../index.html?open=${c.id}"><span class="rl-dot ${statusDotClass(c.status)}"></span>${c.id} · ${c.status}</a>`).join('')
                         : '<span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">no coupon placed this day</span>'}
                 </div>
             </div>`;
