@@ -134,10 +134,10 @@ function renderCharts() {
     const group = pnlSource === 'real' ? bySrc.own : pnlSource === 'rec' ? bySrc.edge : null;
     const settledCount = group ? group.won + group.lost + group.void : filtered.filter(c => c.status !== 'pending').length;
 
-    // Below 2 settled points a line chart is misleading noise -- show the raw
+    // Below 3 settled points a line chart is misleading noise -- show the raw
     // record instead. Only applies to the Real/Recommended subsets; All always
     // has enough history to chart.
-    if (pnlSource !== 'all' && settledCount < 2) {
+    if (pnlSource !== 'all' && settledCount < 3) {
         if (roiChart) { roiChart.destroy(); roiChart = null; }
         chartBox.style.display = 'none';
         noteEl.style.display = '';
