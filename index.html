@@ -32,21 +32,22 @@
     <div class="charts">
         <div class="panel">
             <div class="panel-title"><span>Cumulative P&amp;L</span><span id="plMeta"></span></div>
-            <div class="chart-box"><canvas id="roiChart"></canvas></div>
+            <div class="pnl-toggle-row">
+                <div class="report-tabs tight" id="pnlSourceToggle">
+                    <span class="report-tab active" data-src="all" onclick="setPnlSource('all')">All</span>
+                    <span class="report-tab" data-src="real" onclick="setPnlSource('real')">Real</span>
+                    <span class="report-tab" data-src="rec" onclick="setPnlSource('rec')">Recommended</span>
+                </div>
+                <span class="pnl-source-caption" id="pnlSourceCaption"></span>
+            </div>
+            <div class="chart-box" id="pnlChartBox"><canvas id="roiChart"></canvas></div>
+            <div class="calib-note" id="pnlNote" style="display:none;"></div>
         </div>
         <div class="panel">
             <div class="panel-title"><span>Outcome Split</span></div>
             <div class="outcome-bar" id="outcomeBar"></div>
             <div class="outcome-legend" id="outcomeLegend"></div>
         </div>
-    </div>
-
-    <div class="section">
-        <div class="section-head no-line">
-            <h2>Selections Performance</h2>
-            <span class="count" id="selCount"></span>
-        </div>
-        <div id="selBody"></div>
     </div>
 
     <div class="section">
@@ -58,32 +59,15 @@
     </div>
 
     <div class="section">
-        <div class="section-head">
-            <h2>Recent Coupons</h2>
-            <span class="count" id="couponCount"></span>
+        <div class="section-head no-line">
+            <h2>Selections Performance</h2>
+            <span class="count" id="selCount"></span>
         </div>
-        <table id="couponsTable">
-            <thead>
-                <tr>
-                    <th>ID</th><th>Date</th><th>Type</th><th>Game</th><th>Stake</th><th>Odds</th><th>Return</th><th>Status</th><th></th>
-                </tr>
-            </thead>
-            <tbody id="tableBody"><!-- Filled by JS --></tbody>
-        </table>
+        <div id="selBody"></div>
     </div>
 </div>
 
 </div>
-</div>
-
-<div id="modal" class="modal">
-    <div class="modal-content">
-        <div class="modal-head">
-            <h2 id="modalTitle"></h2>
-            <span class="close" id="closeModal">&times;</span>
-        </div>
-        <div class="modal-body" id="modalBody"></div>
-    </div>
 </div>
 
 <script src="dashboard/data.js"></script>

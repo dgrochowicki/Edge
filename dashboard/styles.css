@@ -517,6 +517,10 @@ tr:hover .view-link{color:var(--edge);}
 }
 .report-tab:hover{color:var(--edge);border-color:var(--edge);}
 .report-tab.active{color:var(--edge);border-color:var(--edge);}
+.report-tabs.tight{margin-bottom:0;}
+
+.pnl-toggle-row{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:10px;flex-wrap:wrap;}
+.pnl-source-caption{font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);}
 
 @media (max-width:760px){
   .report-nav{

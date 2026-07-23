@@ -1,11 +1,9 @@
-const RECENT_LIMIT = 6;
-
 let betsData = null;
 let roiChart = null;
+let pnlSource = 'all';
 
 document.addEventListener('DOMContentLoaded', () => {
     loadBets();
-    setupModalHandlers();
 });
 
 async function loadBets() {
@@ -14,22 +12,15 @@ async function loadBets() {
         renderDashboard();
     } catch (error) {
         console.error('Error loading bets:', error);
-        document.getElementById('tableBody').innerHTML = '<tr><td colspan="8">Error loading data</td></tr>';
+        document.getElementById('kpiRow').innerHTML = '<div class="calib-note">Error loading data</div>';
     }
 }
 
 function renderDashboard() {
     buildKPIs();
     renderCharts();
-    renderSelectionsPerformance();
     renderBetSource();
-    renderTable();
-
-    const params = new URLSearchParams(window.location.search);
-    const openId = params.get('open');
-    if (openId && betsData.coupons.some(c => c.id === openId)) {
-        showDetails(openId);
-    }
+    renderSelectionsPerformance();
 }
 
 // Longest run of consecutive won/lost coupons, most recent first (voids don't break it).
@@ -60,8 +51,12 @@ function buildKPIs() {
     const selStats = selectionStats(getAllSelections(betsData));
     const selHitCls = selStats.hitRate == null ? '' : (selStats.hitRate >= 0.55 ? 'pos' : selStats.hitRate < 0.45 ? 'neg' : '');
 
+    const bySrc = couponsBySource(betsData.coupons);
+    const signed = n => `${n >= 0 ? '+' : ''}${n.toFixed(2)}`;
+    const netSourceSub = `real ${signed(bySrc.own.net)} · rec ${signed(bySrc.edge.net)} PLN`;
+
     const kpis = [
-        { label: 'Net Result', info: 'netResult', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 2)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln, 2)} PLN staked` },
+        { label: 'Net Result', info: 'netResult', value: `${s.net_result_pln >= 0 ? '+' : ''}${fmt(s.net_result_pln, 2)} PLN`, cls: s.net_result_pln < 0 ? 'neg' : 'pos', sub: `${fmt(s.total_staked_pln, 2)} PLN staked`, sub2: netSourceSub },
         { label: 'ROI', info: 'roi', value: `${roi >= 0 ? '+' : ''}${roi}%`, cls: roi < 0 ? 'neg' : 'pos', sub: `on ${fmt(s.total_staked_pln, 2)} PLN staked · flat 1u stakes` },
         { label: 'Selection Hit Rate', info: 'selHitRate', value: selStats.hitRate != null ? `${(selStats.hitRate * 100).toFixed(0)}%` : '—', cls: selHitCls, sub: `coupons: ${s.won}W – ${s.lost}L` },
         { label: 'Streak', info: 'streak', value: streakValue, cls: streakCls, sub: streakSub }
@@ -72,6 +67,7 @@ function buildKPIs() {
             <div class="kpi-label click" onclick="calibInfo('${k.info}')">${k.label}</div>
             <div class="kpi-value ${k.cls}">${k.value}</div>
             <div class="kpi-sub">${k.sub}</div>
+            ${k.sub2 ? `<div class="kpi-sub">${k.sub2}</div>` : ''}
         </div>`).join('');
 }
 
@@ -108,9 +104,55 @@ function buildPnlSeries(coupons) {
     return points;
 }
 
+// Which coupons feed the P&L chart under the current All/Real/Recommended toggle.
+function couponsForSource(src) {
+    if (src === 'all') return betsData.coupons;
+    const key = src === 'real' ? 'user_bet' : 'official_recommendation';
+    return (betsData.coupons || []).filter(c => c.source === key);
+}
+
+function setPnlSource(src) {
+    pnlSource = src;
+    document.querySelectorAll('#pnlSourceToggle .report-tab').forEach(el => {
+        el.classList.toggle('active', el.dataset.src === src);
+    });
+    renderCharts();
+}
+
 function renderCharts() {
+    const chartBox = document.getElementById('pnlChartBox');
+    const noteEl = document.getElementById('pnlNote');
+    const plMeta = document.getElementById('plMeta');
+    const captionEl = document.getElementById('pnlSourceCaption');
+
+    const bySrc = couponsBySource(betsData.coupons);
+    if (captionEl) {
+        captionEl.textContent = pnlSource === 'all' ? `${bySrc.own.n} real · ${bySrc.edge.n} recommended` : '';
+    }
+
+    const filtered = couponsForSource(pnlSource);
+    const group = pnlSource === 'real' ? bySrc.own : pnlSource === 'rec' ? bySrc.edge : null;
+    const settledCount = group ? group.won + group.lost + group.void : filtered.filter(c => c.status !== 'pending').length;
+
+    // Below 2 settled points a line chart is misleading noise -- show the raw
+    // record instead. Only applies to the Real/Recommended subsets; All always
+    // has enough history to chart.
+    if (pnlSource !== 'all' && settledCount < 2) {
+        if (roiChart) { roiChart.destroy(); roiChart = null; }
+        chartBox.style.display = 'none';
+        noteEl.style.display = '';
+        const label = pnlSource === 'real' ? 'Real' : 'Recommended';
+        noteEl.textContent = `${label}: ${settledCount} settled coupons · ${group.won}W–${group.lost}L · net ${group.net >= 0 ? '+' : ''}${group.net.toFixed(2)} PLN — too few for a trend line`;
+        if (plMeta) { plMeta.textContent = ''; plMeta.className = ''; }
+        renderOutcomeBar();
+        return;
+    }
+
+    chartBox.style.display = '';
+    noteEl.style.display = 'none';
+
     const roiCtx = document.getElementById('roiChart').getContext('2d');
-    const points = buildPnlSeries(betsData.coupons);
+    const points = buildPnlSeries(filtered);
 
     if (roiChart) roiChart.destroy();
     roiChart = new Chart(roiCtx, {
@@ -166,9 +208,8 @@ function renderCharts() {
         }
     });
 
-    const plMeta = document.getElementById('plMeta');
     if (plMeta) {
-        const total = betsData.summary.net_result_pln;
+        const total = points.length ? points[points.length - 1].y : 0;
         plMeta.textContent = `total ${total >= 0 ? '+' : ''}${total.toFixed(2)} PLN`;
         plMeta.className = total >= 0 ? 'pos' : 'neg';
     }
@@ -201,45 +242,6 @@ function renderOutcomeBar() {
             <span class="ol-pct">${pct}%</span>
         </div>`;
     }).join('');
-}
-
-function couponGameLabel(couponId, allSelections) {
-    const games = new Set(allSelections.filter(s => s.couponId === couponId && s.game).map(s => s.game));
-    if (games.size === 0) return '—';
-    if (games.size === 1) {
-        const key = [...games][0];
-        const known = BY_GAME_LIST.find(g => g.key === key);
-        return known ? known.label : key;
-    }
-    return 'multi';
-}
-
-function renderTable() {
-    const tbody = document.getElementById('tableBody');
-    const total = betsData.coupons.length;
-    const recent = [...betsData.coupons].reverse().slice(0, RECENT_LIMIT);
-    const allSelections = getAllSelections(betsData);
-
-    tbody.innerHTML = recent.map(c => {
-        const legs = (c.selections || []).length;
-        const type = c.type === 'single' ? 'single' : `acca · ${legs}`;
-        const game = couponGameLabel(c.id, allSelections);
-        const returnCls = c.gross_return_pln > c.stake_pln ? 'pos' : c.gross_return_pln === 0 ? 'neg' : '';
-        return `<tr onclick="showDetails('${c.id}')">
-            <td>${c.id}</td>
-            <td>${c.date}</td>
-            <td>${type}</td>
-            <td>${game}</td>
-            <td class="num">${fmt(c.stake_pln)}</td>
-            <td class="num">${c.combined_odds}</td>
-            <td class="num ${returnCls}">${fmt(c.gross_return_pln)}</td>
-            <td><span class="tag ${c.status}">${c.status}</span></td>
-            <td class="view-link">VIEW &rarr;</td>
-        </tr>`;
-    }).join('');
-
-    document.getElementById('couponCount').textContent =
-        total > recent.length ? `latest ${recent.length} of ${total}` : `${total} total`;
 }
 
 // ===== Selections Performance =====
