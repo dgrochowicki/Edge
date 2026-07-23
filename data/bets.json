@@ -535,8 +535,8 @@
           "odds": 1.67,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress. Corresponds to P-2026-07-23-C3/G2."
+          "result": "won",
+          "notes": "paiN beat Gentle Mates 2:0. Settles P-2026-07-23-C3/G2."
         },
         {
           "match": "HEROIC vs FOKUS",
@@ -2101,9 +2101,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-23: paiN beat Gentle Mates 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-23-C4",
@@ -2163,9 +2164,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest minimalnie poniżej fair."
+      "notes": "kurs jest minimalnie poniżej fair. Settled 2026-07-23: paiN beat Gentle Mates 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-23-G3",
