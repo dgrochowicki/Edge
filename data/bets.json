@@ -2122,9 +2122,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-23: Spirit beat OG 2:1 (maps 4:13, 13:11, 16:19 — user-confirmed)."
     },
     {
       "id": "P-2026-07-23-G1",
@@ -2185,9 +2186,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest skrajnie niski i zdecydowanie poniżej fair."
+      "notes": "kurs jest skrajnie niski i zdecydowanie poniżej fair. Settled 2026-07-23: Spirit beat OG 2:1 (maps 4:13, 13:11, 16:19 — user-confirmed)."
     },
     {
       "id": "P-2026-07-23-G4",
