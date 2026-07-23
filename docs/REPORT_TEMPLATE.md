@@ -1,7 +1,9 @@
 # Edge Daily Report Template
 
-Current version: v1.5 (2026-07-22)
+Current version: v1.6 (2026-07-23)
 Status: obowiązuje obu agentów (claude, gpt)
+
+Zmiana w v1.6: kolumna „Kurs STS" w tabeli sekcji 1 pokazuje teraz OBA kursy zamiast samego kursu picku, w kolejności zgodnej z nazwą meczu (np. „A vs B" → „kurs A / kurs B"). Ułatwia to przegląd wyborów — para kursów czyta się w tym samym porządku co nazwa meczu, a zestawienie z kolumną „Gram na" pokazuje, po której stronie jest faworyt rynku.
 
 Każdy raport dzienny ma nazwę `reports/RRRR-MM-DD-{claude|gpt}.md` (małe litery) i składa się z poniższych sekcji w tej kolejności. Sekcję 5 pomijamy tylko wtedy, gdy nie ma treści. Raport jest dokumentem niezmiennym: opisuje wyłącznie stan sprzed meczów i po publikacji nie wolno go edytować. Rozliczenia wyników nie trafiają do raportów — jedynym miejscem rozliczeń jest data/bets.json (księga główna), a ich widokiem dashboard. Wartości liczbowe: kursy z dwoma miejscami po przecinku, value z jednym, probability z czterema.
 
@@ -24,8 +26,10 @@ Jedna tabela z meczami po pełnej analizie — kolumny jak niżej, decyzja wył�
 
 | Godz. | Mecz | Gram na | Kurs STS | Fair | Value | Ryzyko | Decyzja | Pewność | Stawka |
 |---:|---|---|---:|---:|---:|---|---|---|---:|
-| 12:30 | A vs B | B ML | 1.70 | 1.61 | +5.6% | Średnie | **PASS** | 6/10 | — |
-| 14:00 | G vs H | H ML | 1.95 | 2.10 | +7.7% | Średnie | **BET** | 7/10 | 1u |
+| 12:30 | A vs B | B ML | 2.04 / 1.70 | 1.61 | +5.6% | Średnie | **PASS** | 6/10 | — |
+| 14:00 | G vs H | H ML | 1.85 / 1.95 | 2.10 | +7.7% | Średnie | **BET** | 7/10 | 1u |
+
+Kolumna „Kurs STS": oba kursy w kolejności zgodnej z nazwą meczu — pierwsza liczba to kurs drużyny wymienionej jako pierwsza, druga to kurs drugiej (np. „A vs B" → „kurs A / kurs B"). Dzięki temu para kursów czyta się w tym samym porządku co nazwa meczu, a zestawienie z kolumną „Gram na" od razu pokazuje, czy pick jest faworytem rynku (niższy kurs) czy underdogiem.
 
 Pod tabelą krótka lista meczów odsianych na filtrze (bez wyceny) — jedna linia na mecz, z powodem:
 
