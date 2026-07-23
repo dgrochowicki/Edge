@@ -545,8 +545,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress. Corresponds to P-2026-07-23-C6/G4."
+          "result": "won",
+          "notes": "HEROIC beat FOKUS 2:0. Settles P-2026-07-23-C6/G4."
         },
         {
           "match": "K27 vs INFINITE",
@@ -2038,10 +2038,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "Jedyna dodatnia wartość dnia (+1.5%); PASS z powodu niskiego edge poniżej progu wiarygodności i słabych danych o nowym składzie HEROIC."
+      "notes": "Jedyna dodatnia wartość dnia (+1.5%); PASS z powodu niskiego edge poniżej progu wiarygodności i słabych danych o nowym składzie HEROIC. Settled 2026-07-23: HEROIC beat FOKUS 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-23-C1",
@@ -2206,9 +2206,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs pozostaje poniżej fair."
+      "notes": "kurs pozostaje poniżej fair. Settled 2026-07-23: HEROIC beat FOKUS 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-23-G5",
