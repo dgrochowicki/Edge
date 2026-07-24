@@ -733,8 +733,9 @@
           "odds": 1.55,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "In progress. Corresponds to P-2026-07-24-G8."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "Gentle Mates beat Walczaki 2:0. Settles P-2026-07-24-G8."
         },
         {
           "match": "Bounty Hunters vs ODDIK",
@@ -2781,9 +2782,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest wyraźnie poniżej fair."
+      "notes": "kurs jest wyraźnie poniżej fair. Settled 2026-07-24: Gentle Mates beat Walczaki 2:0 (user-confirmed via coupon EDGE-015)."
     },
     {
       "id": "P-2026-07-24-G9",
