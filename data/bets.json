@@ -559,6 +559,94 @@
           "notes": "INFINITE beat K27 2:0. This losing leg sank the accumulator despite the other three legs winning. Settles P-2026-07-23-G8."
         }
       ]
+    },
+    {
+      "id": "EDGE-013",
+      "date": "2026-07-24",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 7.29,
+      "potential_return_pln": 12.82,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "1win vs Eternal Fire",
+          "market": "total_maps_handicap",
+          "pick": "1win maps +0.5",
+          "odds": 1.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "final_score": "2:3",
+          "notes": "1win took 2 maps in the BO5, covering the +0.5 leg even though Eternal Fire won the match overall."
+        },
+        {
+          "match": "3DMAX vs magic",
+          "market": "moneyline",
+          "pick": "magic",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "3DMAX beat magic 2:1. Same match as P-2026-07-24-C2/G2 (already settled lost)."
+        },
+        {
+          "match": "HEROIC vs The MongolZ",
+          "market": "moneyline",
+          "pick": "HEROIC",
+          "odds": 1.57,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "The MongolZ beat HEROIC 2:1. Settles P-2026-07-24-C3/G3."
+        },
+        {
+          "match": "Nemesis vs INFINITE",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.30,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "INFINITE beat Nemesis 2:1. Settles P-2026-07-24-G4."
+        },
+        {
+          "match": "Liquid vs Vitality",
+          "market": "total_maps",
+          "pick": "under 2.5 maps",
+          "odds": 1.22,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs, left pending until it concludes."
+        },
+        {
+          "match": "Astralis vs HEROIC",
+          "market": "total_maps_handicap",
+          "pick": "Astralis maps +0.5",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs, left pending until it concludes."
+        },
+        {
+          "match": "DENDELE vs FURIA",
+          "market": "total_maps",
+          "pick": "under 2.5 maps",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Not started yet (18:30) when the accumulator already failed on earlier legs, left pending until it concludes."
+        }
+      ]
     }
   ],
   "observed_passes": [
@@ -586,15 +674,15 @@
     }
   ],
   "summary": {
-    "coupons": 12,
+    "coupons": 13,
     "won": 5,
-    "lost": 7,
+    "lost": 8,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 24.0,
+    "total_staked_pln": 26.0,
     "gross_return_pln": 28.34,
-    "net_result_pln": 4.34,
-    "roi": 0.1808
+    "net_result_pln": 2.34,
+    "roi": 0.09
   },
   "predictions": [
     {
@@ -2374,9 +2462,10 @@
       "closing_odds": 1.65,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-24: The MongolZ beat HEROIC 2:1 (user-confirmed via coupon EDGE-013)."
     },
     {
       "id": "P-2026-07-24-C4",
@@ -2477,9 +2566,9 @@
       "closing_odds": 1.65,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest wyraźnie poniżej fair."
+      "notes": "kurs jest wyraźnie poniżej fair. Settled 2026-07-24: The MongolZ beat HEROIC 2:1 (user-confirmed via coupon EDGE-013)."
     },
     {
       "id": "P-2026-07-24-G4",
@@ -2498,9 +2587,9 @@
       "closing_odds": 1.4,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-24: INFINITE beat Nemesis 2:1 (user-confirmed via coupon EDGE-013)."
     },
     {
       "id": "P-2026-07-24-G5",
