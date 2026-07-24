@@ -648,8 +648,9 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Not started yet (18:30) when the accumulator already failed on earlier legs, left pending until it concludes."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "DENDELE beat FURIA 2:1 -- went the distance, 3 maps played, over 2.5. Settles P-2026-07-24-C5/G9 (both lost)."
         }
       ]
     },
@@ -716,8 +717,9 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Not started yet when the accumulator already failed on earlier legs, left pending until it concludes."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "DENDELE beat FURIA 2:1 -- went the distance, 3 maps played, over 2.5. Settles P-2026-07-24-C5/G9 (both lost)."
         }
       ]
     },
@@ -2624,9 +2626,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "agent": "claude"
+      "agent": "claude",
+      "notes": "Settled 2026-07-24: DENDELE beat FURIA 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-G1",
@@ -2813,9 +2816,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-24: DENDELE beat FURIA 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-G10",
