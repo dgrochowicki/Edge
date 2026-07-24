@@ -2332,10 +2332,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "grand final EPL S8, format BO5 (nie BO3); dodatnia wartosc +4.2% ale poza sprawdzonym formatem i przy slabych danych"
+      "notes": "grand final EPL S8, format BO5 (nie BO3); dodatnia wartosc +4.2% ale poza sprawdzonym formatem i przy slabych danych. Settled 2026-07-24: Eternal Fire beat 1win 3:2 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-C2",
@@ -2353,10 +2353,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "dodatnia wartosc +2.0% ale magic jest faworytem rynku; wartosc pochodzi z narzutu nad devig, nie z przewagi informacyjnej"
+      "notes": "dodatnia wartosc +2.0% ale magic jest faworytem rynku; wartosc pochodzi z narzutu nad devig, nie z przewagi informacyjnej. Settled 2026-07-24: 3DMAX beat magic 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-C3",
@@ -2435,9 +2435,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair, a finał BO5 nadal ma istotną wariancję."
+      "notes": "kurs jest poniżej fair, a finał BO5 nadal ma istotną wariancję. Settled 2026-07-24: Eternal Fire beat 1win 3:2 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-G2",
@@ -2456,9 +2456,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-24: 3DMAX beat magic 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-G3",
