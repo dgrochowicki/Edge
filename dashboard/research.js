@@ -47,14 +47,16 @@ function renderDisciplineMonitor() {
     const passPct = total > 0 ? (ds.pass.n / total) * 100 : 0;
 
     const barHTML = `
-        <div class="calib-sub click" onclick="calibInfo('betPass')">BET / PASS split</div>
-        <div class="outcome-bar">
-            ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
-            ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--line-soft);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
-        </div>
-        <div class="outcome-legend">
-            <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--edge);"></span><span class="ol-label">BET</span><span class="ol-count">${ds.bet.n}</span><span class="ol-pct">${betPct.toFixed(0)}%</span></div>
-            <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--ink-faint);"></span><span class="ol-label">PASS</span><span class="ol-count">${ds.pass.n}</span><span class="ol-pct">${passPct.toFixed(0)}%</span></div>
+        <div class="panel">
+            <div class="calib-sub click" style="margin-top:0;" onclick="calibInfo('betPass')">BET / PASS split</div>
+            <div class="outcome-bar">
+                ${ds.bet.n > 0 ? `<div class="outcome-seg" style="width:${betPct}%;background:var(--edge);" title="BET: ${ds.bet.n} (${betPct.toFixed(0)}%)"></div>` : ''}
+                ${ds.pass.n > 0 ? `<div class="outcome-seg" style="width:${passPct}%;background:var(--line-soft);" title="PASS: ${ds.pass.n} (${passPct.toFixed(0)}%)"></div>` : ''}
+            </div>
+            <div class="outcome-legend">
+                <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--edge);"></span><span class="ol-label">BET</span><span class="ol-count">${ds.bet.n}</span><span class="ol-pct">${betPct.toFixed(0)}%</span></div>
+                <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--ink-faint);"></span><span class="ol-label">PASS</span><span class="ol-count">${ds.pass.n}</span><span class="ol-pct">${passPct.toFixed(0)}%</span></div>
+            </div>
         </div>`;
 
     const betCard = `
@@ -109,7 +111,7 @@ function renderDisciplineMonitor() {
                 : 'no observed passes with odds logged yet'}</div>
         </div>`;
 
-    el.innerHTML = `${barHTML}<div class="kpi-row" style="margin-top:20px;">${betCard}${passCard}${missedCard}${obsCard}</div>`;
+    el.innerHTML = `<div class="kpi-row">${betCard}${passCard}${missedCard}${obsCard}</div><div style="margin-top:20px;">${barHTML}</div>`;
 }
 
 // ===== By Game =====
