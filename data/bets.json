@@ -457,8 +457,9 @@
           "odds": 1.62,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-C3/G2, left pending until the match concludes."
+          "result": "won",
+          "final_score": "0:2",
+          "notes": "paiN beat Gentle Mates 2:0. Settles P-2026-07-23-C3/G2. Same match as a leg on EDGE-012 (won there too)."
         },
         {
           "match": "HEROIC vs FOKUS",
@@ -467,8 +468,9 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-C6/G4, left pending until the match concludes."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "HEROIC beat FOKUS 2:0. Settles P-2026-07-23-C6/G4. Same match as a leg on EDGE-012 (won there too)."
         },
         {
           "match": "K27 vs INFINITE",
@@ -477,8 +479,9 @@
           "odds": 1.33,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-23-G8, left pending until the match concludes."
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "INFINITE beat K27 2:0. Settles P-2026-07-23-G8. Same match as a leg on EDGE-012 (lost there too)."
         }
       ]
     },
