@@ -2855,9 +2855,9 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "lost",
+      "result": "won",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair. Settled 2026-07-24: Vitality beat KC 2:0 (user-confirmed)."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-24: KC (Karmine Corp) beat Vitality 2:0 (user-confirmed; correction of an earlier reversed result)."
     }
   ]
 }
