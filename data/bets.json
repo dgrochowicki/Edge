@@ -2732,9 +2732,9 @@
       "closing_odds": 1.57,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "kurs jest poniżej fair, a świeży H2H zwiększa niepewność."
+      "notes": "kurs jest poniżej fair, a świeży H2H zwiększa niepewność. Settled 2026-07-24: Echo beat Nuclear TigeRES 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-24-G6",
