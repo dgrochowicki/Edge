@@ -111,7 +111,7 @@ function renderDisciplineMonitor() {
                 : 'no observed passes with odds logged yet'}</div>
         </div>`;
 
-    el.innerHTML = `<div class="kpi-row">${betCard}${passCard}${missedCard}${obsCard}</div><div style="margin-top:20px;">${barHTML}</div>`;
+    el.innerHTML = `<div class="charts"><div class="kpi-row">${betCard}${passCard}${missedCard}${obsCard}</div>${barHTML}</div>`;
 }
 
 // ===== By Game =====
