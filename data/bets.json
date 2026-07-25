@@ -778,9 +778,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.65,
       "potential_return_pln": 4.66,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.66,
+      "status": "won",
+      "net_result_pln": 2.66,
       "selections": [
         {
           "match": "Liquid vs G2",
@@ -789,8 +789,9 @@
           "odds": 2.65,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Following gpt's BET recommendation P-2026-07-25-G3 (Liquid ML, 0.5u). In progress."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "Following gpt's BET recommendation P-2026-07-25-G3 (Liquid ML, 0.5u). Liquid beat G2 2:0 -- BET call paid off."
         }
       ]
     },
@@ -813,8 +814,9 @@
           "odds": 1.50,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Not started yet."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "Liquid swept G2 2:0, comfortably covers +0.5."
         },
         {
           "match": "Aurora vs Echo",
@@ -823,8 +825,9 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Corresponds to P-2026-07-25-G4. Not started yet."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "Corresponds to P-2026-07-25-G4. Aurora beat Echo 2:0."
         },
         {
           "match": "BORRACHEIROS vs ODDIK",
@@ -853,8 +856,9 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Corresponds to P-2026-07-25-G5 (different market -- moneyline there). Not started yet."
+          "result": "won",
+          "final_score": "2:0",
+          "notes": "Corresponds to P-2026-07-25-G5 (different market -- moneyline there). magic beat Gentle Mates 2:0, covers +0.5."
         },
         {
           "match": "HOTU vs Astralis",
@@ -863,8 +867,9 @@
           "odds": 1.17,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Corresponds to P-2026-07-25-G6 (different market -- moneyline there). Not started yet."
+          "result": "won",
+          "final_score": "1:2",
+          "notes": "Corresponds to P-2026-07-25-G6 (different market -- moneyline there). Astralis beat HOTU 2:1, covers +0.5."
         },
         {
           "match": "FOKUS vs MOUZ",
@@ -873,8 +878,9 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Corresponds to P-2026-07-25-C3/G8. Not started yet."
+          "result": "won",
+          "final_score": "0:2",
+          "notes": "Corresponds to P-2026-07-25-C3/G8. MOUZ beat FOKUS 2:0."
         }
       ]
     }
@@ -905,14 +911,14 @@
   ],
   "summary": {
     "coupons": 17,
-    "won": 5,
+    "won": 6,
     "lost": 10,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 34.0,
-    "gross_return_pln": 28.34,
-    "net_result_pln": -1.66,
-    "roi": -0.0488
+    "gross_return_pln": 33.0,
+    "net_result_pln": 1.0,
+    "roi": 0.0294
   },
   "predictions": [
     {
@@ -2986,10 +2992,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "BB R16 BO3; kurs faworyta ponizej fair (value -6.2%); DENDELE po pojedynczym upsecie FURIA, wysoka wariancja"
+      "notes": "BB R16 BO3; kurs faworyta ponizej fair (value -6.2%); DENDELE po pojedynczym upsecie FURIA, wysoka wariancja. Settled 2026-07-25: FaZe beat DENDELE 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-C2",
@@ -3007,10 +3013,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "p_est ponizej de-vigu rynku (0.645 vs 0.663) bo Liquid rozbil Vitality 2:0 na debiucie; kurs G2 za krotki, value -9.7%; Liquid @2.75 = -2.4%, najblizej zera ale teza na jednym meczu"
+      "notes": "p_est ponizej de-vigu rynku (0.645 vs 0.663) bo Liquid rozbil Vitality 2:0 na debiucie; kurs G2 za krotki, value -9.7%; Liquid @2.75 = -2.4%, najblizej zera ale teza na jednym meczu. Settled 2026-07-25: Liquid beat G2 2:0 (user-confirmed) -- gpt's BET thesis (G3) paid off."
     },
     {
       "id": "P-2026-07-25-C3",
@@ -3028,10 +3034,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "short-favourite bez wartosci; MOUZ 1.13 fair 1.15 value -1.7%; FOKUS upset Aurory mowi wiecej o problemach Aurory; wzorzec jak Vitality 1.01 z 24.07"
+      "notes": "short-favourite bez wartosci; MOUZ 1.13 fair 1.15 value -1.7%; FOKUS upset Aurory mowi wiecej o problemach Aurory; wzorzec jak Vitality 1.01 z 24.07. Settled 2026-07-25: MOUZ beat FOKUS 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G1",
@@ -3050,10 +3056,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "niewielkie dodatnie value nie rekompensuje wysokiego ryzyka i krótkiego odpoczynku."
+      "notes": "niewielkie dodatnie value nie rekompensuje wysokiego ryzyka i krótkiego odpoczynku. Settled 2026-07-25: FaZe beat DENDELE 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G2",
@@ -3072,10 +3078,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-25: HOTU beat INFINITE 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G3",
@@ -3094,10 +3100,10 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0.5,
-      "notes": "wyraźne dodatnie value przy świeżym, jakościowym wyniku Liquid; stawka obniżona ze względu na wysoką wariancję."
+      "notes": "wyraźne dodatnie value przy świeżym, jakościowym wyniku Liquid; stawka obniżona ze względu na wysoką wariancję. Settled 2026-07-25: Liquid beat G2 2:0 (user-confirmed) -- BET call paid off."
     },
     {
       "id": "P-2026-07-25-G4",
@@ -3116,10 +3122,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest wyraźnie poniżej fair."
+      "notes": "kurs jest wyraźnie poniżej fair. Settled 2026-07-25: Aurora beat Echo 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G5",
@@ -3138,10 +3144,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-25: magic beat Gentle Mates 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G6",
@@ -3160,10 +3166,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "cena jest zbyt krótka przy wysokiej niepewności matchupowej."
+      "notes": "cena jest zbyt krótka przy wysokiej niepewności matchupowej. Settled 2026-07-25: Astralis beat HOTU 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G7",
@@ -3182,10 +3188,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest poniżej fair w bardzo wyrównanym meczu."
+      "notes": "kurs jest poniżej fair w bardzo wyrównanym meczu. Settled 2026-07-25: Ninjas in Pyjamas beat HEROIC 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G8",
@@ -3204,10 +3210,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-25: MOUZ beat FOKUS 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G9",
@@ -3226,10 +3232,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest wyraźnie poniżej fair."
+      "notes": "kurs jest wyraźnie poniżej fair. Settled 2026-07-25: G2 beat Vitality 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-25-G10",
@@ -3248,10 +3254,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs jest poniżej fair."
+      "notes": "kurs jest poniżej fair. Settled 2026-07-25: KC beat MKOI 2:0 (user-confirmed)."
     }
   ]
 }
