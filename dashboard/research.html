@@ -28,7 +28,12 @@
     <!-- TODO(agent-tabs): once gpt/claude both have enough per-agent volume,
          turn this into clickable tabs (same pattern as the reports view:
          list + tabs, compared sequentially, not side by side). -->
-    <div class="calib-note" style="margin-bottom:20px;">Comparing gpt vs claude — coming once each agent has enough settled predictions on its own.</div>
+    <div class="section" style="margin-bottom:20px;">
+        <div class="section-head no-line">
+            <h2>Per-agent calibration — unlocks at 50 settled</h2>
+        </div>
+        <div id="agentProgressBody"></div>
+    </div>
 
     <div class="section hero">
         <div class="section-head no-line click" id="calibHead" onclick="toggleCalibrationLab()">

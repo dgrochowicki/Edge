@@ -14,6 +14,8 @@ async function loadBets() {
 }
 
 function renderResearch() {
+    renderAgentProgress();
+
     renderCalibration();
     // Calibration Lab is this page's reason to exist -- it always starts
     // expanded here, regardless of the settled-count threshold that governs
@@ -23,6 +25,36 @@ function renderResearch() {
 
     renderDisciplineMonitor();
     renderByGame();
+}
+
+// ===== Per-agent calibration progress =====
+// Placeholder ahead of clickable gpt-vs-claude comparison tabs (see the
+// agent-tabs TODO above) -- for now just live progress toward the same
+// CAL_T.PRELIM threshold Calibration Lab itself uses, via the shared
+// settledEstCount so this can't drift from what actually unlocks a stage.
+
+function renderAgentProgress() {
+    const el = document.getElementById('agentProgressBody');
+    if (!el) return;
+
+    const preds = betsData.predictions || [];
+    const agents = [...new Set(preds.map(p => p.agent))].filter(Boolean);
+    if (agents.length === 0) {
+        el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
+        return;
+    }
+
+    el.innerHTML = agents.map((agent, i) => {
+        const n = settledEstCount(preds, agent);
+        const pct = Math.min(100, n / CAL_T.PRELIM * 100);
+        const ready = n >= CAL_T.PRELIM;
+        return `
+            <div class="calib-sub" style="${i === 0 ? 'margin-top:0;' : ''}display:flex;justify-content:space-between;">
+                <span>${agent}${ready ? ' <span style="color:var(--pos);">ready</span>' : ''}</span>
+                <span>${n} / ${CAL_T.PRELIM}</span>
+            </div>
+            <div class="outcome-bar"><div class="outcome-seg" style="width:${pct}%;background:var(--edge);"></div></div>`;
+    }).join('');
 }
 
 // ===== Discipline Monitor =====

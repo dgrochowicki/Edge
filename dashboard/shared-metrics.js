@@ -245,6 +245,23 @@ function calibStage(n) {
     return { key: 'valid', label: 'Validation checkpoint' };
 }
 
+// The exact "settled" population Calibration Lab measures CAL_T.PRELIM/VALID
+// against: valid (per validatePredictions), settled won/lost, with a logged
+// probability estimate. Shared so Research's per-agent progress counters
+// can't drift from what actually unlocks each calibration stage -- pass
+// `agent` to scope it to one agent, omit for the overall count.
+function settledEstPredictions(preds, agent) {
+    const invalid = validatePredictions(preds);
+    const invalidIds = {};
+    invalid.forEach(x => invalidIds[x.id] = 1);
+    return preds
+        .filter(p => !invalidIds[p.id])
+        .filter(p => p.result === 'won' || p.result === 'lost')
+        .filter(p => typeof p.estimated_probability === 'number')
+        .filter(p => agent == null || p.agent === agent);
+}
+function settledEstCount(preds, agent) { return settledEstPredictions(preds, agent).length; }
+
 const CALIB_INFO = {
     logged: ['Logged', 'Liczba wszystkich predykcji zapisanych w dzienniku (data/bets.json → predictions) — każdy w pełni przeanalizowany mecz, zarówno BET, jak i PASS. Logujemy też PASS-y, bo bez nich nie da się zmierzyć, czy szacunki agenta są trafne (patrzylibyśmy tylko na wybrane rodzynki).'],
     settled: ['Settled', 'Ile predykcji ma już wpisany wynik meczu (typ wygrał albo przegrał). Dwa progi z protokołu: od 50 pokazujemy wstępne metryki (preliminary), od 150 działa checkpoint walidacji dla Brier score. Poniżej 50 nie liczymy nic — przy małej próbce nawet rzut monetą wygląda raz jak geniusz, raz jak katastrofa.'],
@@ -337,8 +354,7 @@ function renderCalibration() {
     invalid.forEach(x => invalidIds[x.id] = 1);
     const valid = preds.filter(p => !invalidIds[p.id]);
 
-    const settled = valid.filter(p => p.result === 'won' || p.result === 'lost');
-    const settledEst = settled.filter(p => typeof p.estimated_probability === 'number');
+    const settledEst = settledEstPredictions(preds);
     const paired = settledEst.filter(p => p.market_odds_at_analysis && p.market_odds_opponent);
     const snapsBet = valid.filter(p => p.decision === 'BET' && p.closing_odds && p.market_odds_at_analysis);
     const stage = calibStage(settledEst.length);
