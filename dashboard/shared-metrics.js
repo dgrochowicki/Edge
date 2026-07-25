@@ -156,16 +156,43 @@ function aggregateCoupons(coupons) {
     };
 }
 
+// Source classification. `source` on a coupon is either 'user_bet', the
+// legacy 'official_recommendation' (agent unknown, kept for backward compat
+// with 2 historical coupons), or 'recommendation_<agent>' (e.g.
+// 'recommendation_gpt') which also carries which agent's call was followed.
+// Every place that reads coupon.source goes through these -- no raw string
+// comparisons elsewhere.
+function isRecommendation(source) {
+    return source === 'official_recommendation' || (typeof source === 'string' && source.startsWith('recommendation'));
+}
+function isUserBet(source) { return source === 'user_bet'; }
+function recAgent(source) {
+    if (typeof source !== 'string' || !source.startsWith('recommendation_')) return null;
+    return source.slice('recommendation_'.length) || null;
+}
+function sourceGroup(source) {
+    if (isRecommendation(source)) return 'edge';
+    if (isUserBet(source)) return 'own';
+    return 'unknown';
+}
+// Human-readable source, for the modal and anywhere else showing it raw --
+// never render the source string itself (it has underscores).
+function sourceLabel(source) {
+    if (isUserBet(source)) return 'own bet';
+    if (isRecommendation(source)) {
+        const agent = recAgent(source);
+        return agent ? `Edge rec · ${agent}` : 'Edge rec';
+    }
+    return source || '—';
+}
+
 // Splits coupons by how the bet came about: Edge's own BET recommendation
 // vs. a bet the user placed on their own judgement. Coupons with a missing
 // or unrecognized `source` are kept as their own "unknown" group rather
 // than dropped, so every coupon is still accounted for somewhere.
 function couponsBySource(coupons) {
-    const groupOf = c => c.source === 'official_recommendation' ? 'edge'
-        : c.source === 'user_bet' ? 'own'
-        : 'unknown';
     const buckets = { edge: [], own: [], unknown: [] };
-    (coupons || []).forEach(c => buckets[groupOf(c)].push(c));
+    (coupons || []).forEach(c => buckets[sourceGroup(c.source)].push(c));
 
     return { edge: aggregateCoupons(buckets.edge), own: aggregateCoupons(buckets.own), unknown: aggregateCoupons(buckets.unknown) };
 }
@@ -471,7 +498,7 @@ function showDetails(couponId) {
 
     document.getElementById('modalBody').innerHTML = `
         <div class="kv"><span class="k">Type</span><span class="v">${c.type}</span></div>
-        <div class="kv"><span class="k">Source</span><span class="v">${c.source.replace('_', ' ')}</span></div>
+        <div class="kv"><span class="k">Source</span><span class="v">${sourceLabel(c.source)}</span></div>
         <div class="kv"><span class="k">Stake</span><span class="v">${fmt(c.stake_pln)} PLN</span></div>
         <div class="kv"><span class="k">Combined odds</span><span class="v">${c.combined_odds}</span></div>
         <div class="kv"><span class="k">Potential return</span><span class="v">${fmt(c.potential_return_pln, 2)} PLN</span></div>

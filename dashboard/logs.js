@@ -25,8 +25,8 @@ async function loadBets() {
 // Which coupons are shown under the current All/Real/Recommended filter.
 function couponsForSource(src) {
     if (src === 'all') return betsData.coupons;
-    const key = src === 'real' ? 'user_bet' : 'official_recommendation';
-    return (betsData.coupons || []).filter(c => c.source === key);
+    const test = src === 'real' ? isUserBet : isRecommendation;
+    return (betsData.coupons || []).filter(c => test(c.source));
 }
 
 function setSource(src) {
@@ -90,8 +90,11 @@ function couponGameLabel(couponId, allSelections) {
 }
 
 function sourceTag(c) {
-    if (c.source === 'user_bet') return '<span class="source-tag">real</span>';
-    if (c.source === 'official_recommendation') return '<span class="source-tag rec">rec</span>';
+    if (isUserBet(c.source)) return '<span class="source-tag">real</span>';
+    if (isRecommendation(c.source)) {
+        const agent = recAgent(c.source);
+        return `<span class="source-tag rec">rec${agent ? ` · ${agent}` : ''}</span>`;
+    }
     return '<span class="source-tag">—</span>';
 }
 

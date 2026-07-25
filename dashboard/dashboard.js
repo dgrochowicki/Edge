@@ -107,8 +107,8 @@ function buildPnlSeries(coupons) {
 // Which coupons feed the P&L chart under the current All/Real/Recommended toggle.
 function couponsForSource(src) {
     if (src === 'all') return betsData.coupons;
-    const key = src === 'real' ? 'user_bet' : 'official_recommendation';
-    return (betsData.coupons || []).filter(c => c.source === key);
+    const test = src === 'real' ? isUserBet : isRecommendation;
+    return (betsData.coupons || []).filter(c => test(c.source));
 }
 
 function setPnlSource(src) {
