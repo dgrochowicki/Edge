@@ -793,6 +793,90 @@
           "notes": "Following gpt's BET recommendation P-2026-07-25-G3 (Liquid ML, 0.5u). In progress."
         }
       ]
+    },
+    {
+      "id": "EDGE-017",
+      "date": "2026-07-25",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.52,
+      "potential_return_pln": 6.20,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Liquid vs G2",
+          "market": "total_maps_handicap",
+          "pick": "Liquid maps +0.5",
+          "odds": 1.50,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Not started yet."
+        },
+        {
+          "match": "Aurora vs Echo",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Corresponds to P-2026-07-25-G4. Not started yet."
+        },
+        {
+          "match": "BORRACHEIROS vs ODDIK",
+          "market": "moneyline",
+          "pick": "ODDIK",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Not started yet. No corresponding logged prediction for this match."
+        },
+        {
+          "match": "Black Phoenix vs Just Players",
+          "market": "total_maps_handicap",
+          "pick": "Just Players maps +0.5",
+          "odds": 1.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Not started yet. No corresponding logged prediction for this match."
+        },
+        {
+          "match": "magic vs Gentle Mates",
+          "market": "total_maps_handicap",
+          "pick": "magic maps +0.5",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Corresponds to P-2026-07-25-G5 (different market -- moneyline there). Not started yet."
+        },
+        {
+          "match": "HOTU vs Astralis",
+          "market": "total_maps_handicap",
+          "pick": "Astralis maps +0.5",
+          "odds": 1.17,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Corresponds to P-2026-07-25-G6 (different market -- moneyline there). Not started yet."
+        },
+        {
+          "match": "FOKUS vs MOUZ",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Corresponds to P-2026-07-25-C3/G8. Not started yet."
+        }
+      ]
     }
   ],
   "observed_passes": [
@@ -820,15 +904,15 @@
     }
   ],
   "summary": {
-    "coupons": 16,
+    "coupons": 17,
     "won": 5,
     "lost": 10,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 32.0,
+    "pending": 2,
+    "total_staked_pln": 34.0,
     "gross_return_pln": 28.34,
     "net_result_pln": -1.66,
-    "roi": -0.0519
+    "roi": -0.0488
   },
   "predictions": [
     {
