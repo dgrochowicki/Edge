@@ -130,6 +130,14 @@ function renderCharts() {
         captionEl.textContent = pnlSource === 'all' ? `${bySrc.own.n} real · ${bySrc.edge.n} recommended` : '';
     }
 
+    // Outcome Split always reflects every coupon regardless of this toggle
+    // (a filtered outcome bar on a 2-coupon "Recommended" slice would just
+    // show a meaningless 100%-lost bar) -- flag the scope mismatch instead.
+    const scopeNoteEl = document.getElementById('outcomeScopeNote');
+    if (scopeNoteEl) {
+        scopeNoteEl.textContent = pnlSource === 'all' ? '' : 'chart filtered · outcome split shows all coupons';
+    }
+
     const filtered = couponsForSource(pnlSource);
     const group = pnlSource === 'real' ? bySrc.own : pnlSource === 'rec' ? bySrc.edge : null;
     const settledCount = group ? group.won + group.lost + group.void : filtered.filter(c => c.status !== 'pending').length;
