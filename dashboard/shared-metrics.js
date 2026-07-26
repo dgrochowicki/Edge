@@ -324,13 +324,27 @@ function applyCalibLabVisibility() {
     if (arrow) arrow.textContent = calibExpanded ? '−' : '+';
 }
 
-function renderCalibCompact(stageLabel, settledCount, threshold) {
+// Renders fixed checkpoint zones (e.g. [50, 150]) as separate bar segments,
+// each filled independently -- so the same scale applies whether an agent
+// has 10 or 140 settled, and two agents' bars stay directly comparable.
+function renderScaledProgressBar(count, thresholds) {
+    const total = thresholds[thresholds.length - 1];
+    let lo = 0;
+    return thresholds.map(hi => {
+        const zoneWidthPct = (hi - lo) / total * 100;
+        const fillPct = Math.min(100, Math.max(0, count - lo) / (hi - lo) * 100);
+        const seg = `<div class="progress-zone" style="width:${zoneWidthPct}%;"><div class="progress-zone-fill" style="width:${fillPct}%;"></div></div>`;
+        lo = hi;
+        return seg;
+    }).join('');
+}
+
+function renderCalibCompact(stageLabel, settledCount) {
     const el = document.getElementById('calibCompact');
     if (!el) return;
-    const pct = Math.min(100, settledCount / threshold * 100);
     el.innerHTML = `
         <div class="calib-compact click" onclick="toggleCalibrationLab()">
-            <div class="outcome-bar"><div class="outcome-seg" style="width:${pct}%;background:var(--edge);"></div></div>
+            <div class="progress-scaled">${renderScaledProgressBar(settledCount, [CAL_T.PRELIM, CAL_T.VALID])}</div>
         </div>`;
 }
 
@@ -386,7 +400,6 @@ function renderCalibrationAgentSection(preds, agent, invalidIds) {
 
     const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()}</div>`;
 
-    const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
     const frame = `
         <div class="calib-grid">
             <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${logged}</div></div>
@@ -396,7 +409,7 @@ function renderCalibrationAgentSection(preds, agent, invalidIds) {
         </div>
         <div class="panel">
             <div class="calib-sub" style="margin-top:0;">Settled Progress</div>
-            <div class="outcome-bar"><div class="outcome-seg" style="width:${progressPct}%;background:var(--edge);"></div></div>
+            <div class="progress-scaled">${renderScaledProgressBar(settledEst.length, [CAL_T.PRELIM, CAL_T.VALID])}</div>
             <div class="outcome-legend">
                 <div class="outcome-legend-item">
                     <span class="outcome-dot" style="background:var(--edge);"></span>
@@ -484,7 +497,7 @@ function renderCalibration() {
     if (preds.length === 0) {
         if (countEl) countEl.textContent = '0 logged';
         el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
-        renderCalibCompact('collection', 0, CAL_T.PRELIM);
+        renderCalibCompact('collection', 0);
         calibExpanded = false;
         applyCalibLabVisibility();
         return;
@@ -494,7 +507,7 @@ function renderCalibration() {
     if (agents.length === 0) {
         if (countEl) countEl.textContent = `${preds.length} logged · 0 settled`;
         el.innerHTML = '<div class="calib-note">No predictions have an agent field yet.</div>';
-        renderCalibCompact('collection', 0, CAL_T.PRELIM);
+        renderCalibCompact('collection', 0);
         calibExpanded = false;
         applyCalibLabVisibility();
         return;
@@ -521,7 +534,7 @@ function renderCalibration() {
     // to show, regardless of where the other agent's sample stands.
     const maxSettled = Math.max(...sections.map(s => s.settledCount));
     const stageForCompact = calibStage(maxSettled);
-    renderCalibCompact(stageForCompact.label.toLowerCase(), maxSettled, CAL_T.PRELIM);
+    renderCalibCompact(stageForCompact.label.toLowerCase(), maxSettled);
     calibExpanded = maxSettled >= CAL_T.PRELIM;
     applyCalibLabVisibility();
 }

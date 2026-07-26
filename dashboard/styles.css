@@ -191,6 +191,15 @@ header p.tagline{
   gap:1px;
 }
 .outcome-seg{height:100%;}
+
+/* Scaled progress bar: fixed checkpoint zones (e.g. 0-50, 50-150) separated
+   by a 1px gap, each with its own fill -- so progress past the first
+   checkpoint stays visible instead of the bar reading as "done". */
+.progress-scaled{display:flex;width:100%;height:4px;gap:1px;}
+.progress-zone{position:relative;height:100%;background:var(--line-soft);overflow:hidden;}
+.progress-zone:first-child{border-radius:3px 0 0 3px;}
+.progress-zone:last-child{border-radius:0 3px 3px 0;}
+.progress-zone-fill{position:absolute;top:0;left:0;height:100%;background:var(--edge);}
 .outcome-legend{
   display:flex;
   flex-wrap:wrap;
@@ -570,7 +579,7 @@ tr:hover .view-link{color:var(--edge);}
 
 .dq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
 @media (max-width:640px){.dq-grid{grid-template-columns:repeat(2,1fr);}}
-.dq-value{font-family:var(--font-mono);font-size:20px;font-weight:600;color:var(--ink);font-variant-numeric:tabular-nums;line-height:1;}
+.dq-value{font-family:var(--font-mono);font-size:15px;font-weight:500;color:var(--ink-dim);font-variant-numeric:tabular-nums;line-height:1;}
 .dq-label{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);margin-top:4px;}
 
 /* Click-for-explanation affordance: subtle hover color, no icon. */
