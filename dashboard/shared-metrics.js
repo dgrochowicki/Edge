@@ -334,44 +334,62 @@ function renderCalibCompact(stageLabel, settledCount, threshold) {
         </div>`;
 }
 
-function renderCalibration() {
-    const el = document.getElementById('calibBody');
-    if (!el) return;
-    const preds = betsData.predictions || [];
-    const countEl = document.getElementById('calibCount');
+// Per playbook ("Verdict staging"): stages and the 150 checkpoint are
+// counted per agent, not pooled -- gpt x v1 and claude x v1 are independent
+// samples, each reaching its own stage and its own verdict on its own
+// settled entries. renderCalibration() below renders one full section per
+// agent rather than one pooled section; nothing here changes CAL_T,
+// settledEstPredictions, validatePredictions, or the Brier/CLV formulas
+// themselves.
 
-    if (preds.length === 0) {
-        if (countEl) countEl.textContent = '0 logged';
-        el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
-        renderCalibCompact('collection', 0, CAL_T.PRELIM);
-        calibExpanded = false;
-        applyCalibLabVisibility();
-        return;
+function clvHtml(snapsBet) {
+    const clv = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
+    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value</div>';
+    if (snapsBet.length === 0) {
+        block += '<div class="calib-note">No BET closing snapshots yet (independent of settlement count — snapshot before each BET match).</div>';
+    } else {
+        const vals = snapsBet.map(clv).sort((a, b) => a - b);
+        const avg = vals.reduce((s, x) => s + x, 0) / vals.length;
+        const med = vals.length % 2 ? vals[(vals.length - 1) / 2] : (vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2;
+        const beat = vals.filter(c => c > 0).length;
+        block += `<div class="calib-note">n=${vals.length} · avg ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% · median ${med >= 0 ? '+' : ''}${med.toFixed(2)}% · beat close: ${beat}/${vals.length}</div>`;
+        if (snapsBet.length >= CAL_T.CLV_VALID) {
+            block += `<div class="calib-verdict ${avg > 0 ? 'pos' : 'neg'}">${avg > 0
+                ? 'CLV validation checkpoint: average CLV on BETs is positive.'
+                : 'CLV validation checkpoint failed: average CLV on BETs is negative — per pre-registered condition, the selection method is not validated.'}</div>`;
+        } else {
+            block += `<div class="calib-note">CLV verdict at ${CAL_T.CLV_VALID} snapshots.</div>`;
+        }
     }
+    return block;
+}
 
-    const invalid = validatePredictions(preds);
-    const invalidIds = {};
-    invalid.forEach(x => invalidIds[x.id] = 1);
-    const valid = preds.filter(p => !invalidIds[p.id]);
-
-    const settledEst = settledEstPredictions(preds);
+// Builds one agent's full Calibration Lab section (grid, settled progress,
+// data quality, Brier/verdict, calibration buckets, CLV) -- identical logic
+// to the old pooled renderCalibration body, just scoped to one agent via
+// settledEstPredictions(preds, agent). Returns the section's logged/settled
+// counts (for the header) alongside its HTML.
+function renderCalibrationAgentSection(preds, agent, invalidIds) {
+    const valid = preds.filter(p => !invalidIds[p.id] && p.agent === agent);
+    const logged = preds.filter(p => p.agent === agent).length;
+    const settledEst = settledEstPredictions(preds, agent);
     const paired = settledEst.filter(p => p.market_odds_at_analysis && p.market_odds_opponent);
     const snapsBet = valid.filter(p => p.decision === 'BET' && p.closing_odds && p.market_odds_at_analysis);
     const stage = calibStage(settledEst.length);
-
-    if (countEl) countEl.textContent = `${preds.length} logged · ${settledEst.length} settled`;
 
     const dq = {
         opp: valid.filter(p => p.market_odds_opponent == null).length,
         ts: valid.filter(p => p.odds_timestamp == null).length,
         close: valid.filter(p => p.closing_odds == null).length,
-        inv: invalid.length
+        inv: preds.filter(p => p.agent === agent && invalidIds[p.id]).length
     };
 
+    const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()}</div>`;
+
     const progressPct = Math.min(100, settledEst.length / CAL_T.PRELIM * 100);
-    let frame = `
+    const frame = `
         <div class="calib-grid">
-            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${preds.length}</div></div>
+            <div class="calib-cell click" onclick="calibInfo('logged')"><div class="cl">Logged</div><div class="cv">${logged}</div></div>
             <div class="calib-cell click" onclick="calibInfo('settled')"><div class="cl">Settled</div><div class="cv">${settledEst.length}<span class="cs">/ ${CAL_T.PRELIM} · / ${CAL_T.VALID}</span></div></div>
             <div class="calib-cell click" onclick="calibInfo('paired')"><div class="cl">Paired baseline</div><div class="cv">${paired.length}</div></div>
             <div class="calib-cell click" onclick="calibInfo('snapshots')"><div class="cl">BET closing snaps</div><div class="cv">${snapsBet.length}<span class="cs">/ ${CAL_T.CLV_VALID}</span></div></div>
@@ -399,14 +417,10 @@ function renderCalibration() {
         </div>`;
 
     if (settledEst.length < CAL_T.PRELIM) {
-        el.innerHTML = `<div class="charts">${frame}</div>`;
-        renderCalibCompact(stage.label.toLowerCase(), settledEst.length, CAL_T.PRELIM);
-        calibExpanded = settledEst.length >= CAL_T.PRELIM;
-        applyCalibLabVisibility();
-        return;
+        return { logged, settledCount: settledEst.length, html: `${header}<div class="charts">${frame}</div>` };
     }
 
-    let html = `<div class="charts">${frame}</div>`;
+    let html = `${header}<div class="charts">${frame}</div>`;
 
     const out = p => p.result === 'won' ? 1 : 0;
     const brierEdge = settledEst.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / settledEst.length;
@@ -456,33 +470,60 @@ function renderCalibration() {
             <tbody>${rows}</tbody>
         </table>`;
 
-    el.innerHTML = html;
-    renderClv(el, snapsBet);
-    renderCalibCompact(stage.label.toLowerCase(), settledEst.length, CAL_T.PRELIM);
-    calibExpanded = settledEst.length >= CAL_T.PRELIM;
-    applyCalibLabVisibility();
+    html += clvHtml(snapsBet);
+
+    return { logged, settledCount: settledEst.length, html };
 }
 
-function renderClv(el, snapsBet) {
-    const clv = e => (e.market_odds_at_analysis / e.closing_odds - 1) * 100;
-    let block = '<div class="calib-sub click" onclick="calibInfo(\'clv\')">Closing Line Value</div>';
-    if (snapsBet.length === 0) {
-        block += '<div class="calib-note">No BET closing snapshots yet (independent of settlement count — snapshot before each BET match).</div>';
-    } else {
-        const vals = snapsBet.map(clv).sort((a, b) => a - b);
-        const avg = vals.reduce((s, x) => s + x, 0) / vals.length;
-        const med = vals.length % 2 ? vals[(vals.length - 1) / 2] : (vals[vals.length / 2 - 1] + vals[vals.length / 2]) / 2;
-        const beat = vals.filter(c => c > 0).length;
-        block += `<div class="calib-note">n=${vals.length} · avg ${avg >= 0 ? '+' : ''}${avg.toFixed(2)}% · median ${med >= 0 ? '+' : ''}${med.toFixed(2)}% · beat close: ${beat}/${vals.length}</div>`;
-        if (snapsBet.length >= CAL_T.CLV_VALID) {
-            block += `<div class="calib-verdict ${avg > 0 ? 'pos' : 'neg'}">${avg > 0
-                ? 'CLV validation checkpoint: average CLV on BETs is positive.'
-                : 'CLV validation checkpoint failed: average CLV on BETs is negative — per pre-registered condition, the selection method is not validated.'}</div>`;
-        } else {
-            block += `<div class="calib-note">CLV verdict at ${CAL_T.CLV_VALID} snapshots.</div>`;
-        }
+function renderCalibration() {
+    const el = document.getElementById('calibBody');
+    if (!el) return;
+    const preds = betsData.predictions || [];
+    const countEl = document.getElementById('calibCount');
+
+    if (preds.length === 0) {
+        if (countEl) countEl.textContent = '0 logged';
+        el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
+        renderCalibCompact('collection', 0, CAL_T.PRELIM);
+        calibExpanded = false;
+        applyCalibLabVisibility();
+        return;
     }
-    el.innerHTML += block;
+
+    const agents = [...new Set(preds.map(p => p.agent).filter(Boolean))].sort();
+    if (agents.length === 0) {
+        if (countEl) countEl.textContent = `${preds.length} logged · 0 settled`;
+        el.innerHTML = '<div class="calib-note">No predictions have an agent field yet.</div>';
+        renderCalibCompact('collection', 0, CAL_T.PRELIM);
+        calibExpanded = false;
+        applyCalibLabVisibility();
+        return;
+    }
+
+    const invalid = validatePredictions(preds);
+    const invalidIds = {};
+    invalid.forEach(x => invalidIds[x.id] = 1);
+
+    const sections = agents.map((agent, i) => {
+        const s = renderCalibrationAgentSection(preds, agent, invalidIds);
+        const border = i === 0 ? '' : 'margin-top:28px;padding-top:20px;border-top:1px solid var(--line);';
+        return { ...s, wrapped: `<div style="${border}">${s.html}</div>` };
+    });
+
+    if (countEl) {
+        countEl.textContent = sections.map((s, i) => `${agents[i]}: ${s.logged} logged · ${s.settledCount} settled`).join(' · ');
+    }
+
+    el.innerHTML = sections.map(s => s.wrapped).join('');
+
+    // Compact/expand teaser reflects whichever agent is furthest along --
+    // once any agent clears the preliminary threshold there's real content
+    // to show, regardless of where the other agent's sample stands.
+    const maxSettled = Math.max(...sections.map(s => s.settledCount));
+    const stageForCompact = calibStage(maxSettled);
+    renderCalibCompact(stageForCompact.label.toLowerCase(), maxSettled, CAL_T.PRELIM);
+    calibExpanded = maxSettled >= CAL_T.PRELIM;
+    applyCalibLabVisibility();
 }
 
 // ===== Coupon detail modal =====
