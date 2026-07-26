@@ -894,8 +894,8 @@
       "combined_odds": 2.75,
       "potential_return_pln": 4.84,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "Wildcard vs The MongolZ",
@@ -904,8 +904,9 @@
           "odds": 2.75,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Following claude's BET recommendation P-2026-07-26-C3 (Wildcard ML, 1.0u). In progress."
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "Following claude's BET recommendation P-2026-07-26-C3 (Wildcard ML, 1.0u). The MongolZ swept Wildcard 2:0 -- BET lost."
         }
       ]
     },
@@ -950,8 +951,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G3, left pending until it concludes."
+          "result": "won",
+          "notes": "Aurora beat HOTU. Match in progress when the accumulator already failed on earlier legs, but this leg itself won. Corresponds to P-2026-07-26-G3."
         },
         {
           "match": "ODDIK vs LargadosyPelados",
@@ -970,8 +971,9 @@
           "odds": 1.53,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there), left pending until it concludes."
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "The MongolZ swept Wildcard 2:0, Wildcard won 0 maps -- fails to cover +0.5. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there)."
         },
         {
           "match": "magic vs Ninjas in Pyjamas",
@@ -1025,8 +1027,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on the 3DMAX-FUT leg, left pending until it concludes. Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G3."
+          "result": "won",
+          "notes": "Aurora beat HOTU. Accumulator already failed on the 3DMAX-FUT leg, but this leg itself won. Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G3."
         },
         {
           "match": "ODDIK vs LargadosyPelados",
@@ -1045,8 +1047,9 @@
           "odds": 1.47,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Re-bet of an EDGE-019 leg, odds moved from 1.53 to 1.47 by placement. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there). In progress."
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "The MongolZ swept Wildcard 2:0, Wildcard won 0 maps -- fails to cover +0.5. Re-bet of an EDGE-019 leg, odds moved from 1.53 to 1.47 by placement. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there)."
         },
         {
           "match": "magic vs Ninjas in Pyjamas",
@@ -1067,6 +1070,51 @@
           "closing_odds": null,
           "result": "pending",
           "notes": "Re-bet of an EDGE-019 leg, odds moved from 1.07 to 1.08 by placement. Corresponds to P-2026-07-26-C4/G9. In progress."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-021",
+      "date": "2026-07-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.60,
+      "potential_return_pln": 4.57,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "HOTU vs Aurora",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Aurora beat HOTU. Corresponds to P-2026-07-26-G3."
+        },
+        {
+          "match": "Wildcard vs The MongolZ",
+          "market": "total_maps_handicap",
+          "pick": "Wildcard maps +0.5",
+          "odds": 1.40,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "The MongolZ swept Wildcard 2:0, Wildcard won 0 maps -- fails to cover +0.5. This losing leg sinks the accumulator. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there)."
+        },
+        {
+          "match": "ODDIK vs LargadosyPelados",
+          "market": "moneyline",
+          "pick": "LargadosyPelados",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on the Wildcard-MongolZ leg, left pending until it concludes. Corresponds to P-2026-07-26-G5."
         }
       ]
     }
@@ -1096,15 +1144,15 @@
     }
   ],
   "summary": {
-    "coupons": 20,
+    "coupons": 21,
     "won": 7,
-    "lost": 12,
+    "lost": 14,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 40.0,
+    "pending": 0,
+    "total_staked_pln": 42.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": 0.17,
-    "roi": 0.0043
+    "net_result_pln": -3.83,
+    "roi": -0.0912
   },
   "predictions": [
     {
@@ -3503,11 +3551,11 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "stake": 1.0,
       "method_version": "v1",
       "agent": "claude",
-      "notes": "BET 1u; p_est Wildcard 0.40 vs de-vig 0.34 (value +10%); teza: MongolZ niesprawdzony sklad po przebudowie 12.07 (tikuak+DarkMeister za mzinho/cobrazera), ledwo przeszli HEROIC 2:1; kurs MongolZ 1.40 za krotki; zastosowanie lekcji 25.07 (przegapiony Liquid @2.75)"
+      "notes": "BET 1u; p_est Wildcard 0.40 vs de-vig 0.34 (value +10%); teza: MongolZ niesprawdzony sklad po przebudowie 12.07 (tikuak+DarkMeister za mzinho/cobrazera), ledwo przeszli HEROIC 2:1; kurs MongolZ 1.40 za krotki; zastosowanie lekcji 25.07 (przegapiony Liquid @2.75). Settled 2026-07-26: The MongolZ swept Wildcard 2:0 (user-confirmed) -- BET lost."
     },
     {
       "id": "P-2026-07-26-C4",
@@ -3591,10 +3639,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "przewaga Aurory jest nadmiernie uwzględniona w cenie."
+      "notes": "przewaga Aurory jest nadmiernie uwzględniona w cenie. Settled 2026-07-26: Aurora beat HOTU (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G4",
@@ -3657,10 +3705,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "najbliżej akceptowalnej ceny, ale nadal poniżej fair."
+      "notes": "najbliżej akceptowalnej ceny, ale nadal poniżej fair. Settled 2026-07-26: The MongolZ swept Wildcard 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G7",
