@@ -2,6 +2,20 @@ let betsData = null;
 let roiChart = null;
 let pnlSource = 'all';
 
+// Read a color straight from :root in styles.css, so the P&L chart's
+// Chart.js canvas stays in sync with the palette without duplicating hex
+// values here -- change the variable once, the chart follows.
+function cssVar(name) {
+    return getComputedStyle(document.documentElement).getPropertyValue(name).trim();
+}
+function hexToRgba(hex, alpha) {
+    const h = hex.replace('#', '');
+    const r = parseInt(h.substring(0, 2), 16);
+    const g = parseInt(h.substring(2, 4), 16);
+    const b = parseInt(h.substring(4, 6), 16);
+    return `rgba(${r},${g},${b},${alpha})`;
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     loadBets();
 });
@@ -162,18 +176,26 @@ function renderCharts() {
     const roiCtx = document.getElementById('roiChart').getContext('2d');
     const points = buildPnlSeries(filtered);
 
+    // Read theme colors from the CSS custom properties in styles.css (:root)
+    // instead of hardcoding hex here -- Chart.js draws to canvas so it can't
+    // pick up var(--edge) etc. on its own, but this way a palette change only
+    // ever needs to happen in one place.
+    const edgeColor = cssVar('--edge');
+    const posFill = hexToRgba(cssVar('--pos'), 0.12);
+    const negFill = hexToRgba(cssVar('--neg'), 0.12);
+
     if (roiChart) roiChart.destroy();
     roiChart = new Chart(roiCtx, {
         type: 'line',
         data: {
             datasets: [{
                 data: points,
-                borderColor: '#ff9f1c',
+                borderColor: edgeColor,
                 borderWidth: 2,
                 tension: 0.25,
-                fill: { target: 'origin', above: 'rgba(94,194,106,0.12)', below: 'rgba(255,92,77,0.12)' },
-                pointBackgroundColor: '#ff9f1c',
-                pointBorderColor: '#0a0b0d',
+                fill: { target: 'origin', above: posFill, below: negFill },
+                pointBackgroundColor: edgeColor,
+                pointBorderColor: cssVar('--bg'),
                 pointRadius: ctx => (ctx.raw && ctx.raw.ids && ctx.raw.ids.length ? 4 : 0),
                 pointHoverRadius: 6
             }]
