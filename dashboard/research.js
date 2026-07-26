@@ -44,7 +44,7 @@ function renderAgentProgress() {
         return;
     }
 
-    el.innerHTML = agents.map((agent, i) => {
+    const rows = agents.map((agent, i) => {
         const n = settledEstCount(preds, agent);
         const pct = Math.min(100, n / CAL_T.PRELIM * 100);
         const ready = n >= CAL_T.PRELIM;
@@ -55,6 +55,10 @@ function renderAgentProgress() {
             </div>
             <div class="outcome-bar"><div class="outcome-seg" style="width:${pct}%;background:var(--edge);"></div></div>`;
     }).join('');
+
+    // Single shared frame for both agents' bars, same as Calibration Lab's
+    // own "Settled Progress" panel -- .charts supplies the bordered look.
+    el.innerHTML = `<div class="charts"><div class="panel">${rows}</div></div>`;
 }
 
 // ===== Discipline Monitor =====
