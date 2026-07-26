@@ -171,6 +171,18 @@ Decision:
 
 This PASS was justified because the short price did not compensate for the risk.
 
+## Calibration & Method Decisions
+
+### Preliminary threshold reached (gpt), continue collecting — 2026-07-26
+
+gpt passed the preliminary-signal threshold (50 settled predictions with a probability estimate; currently 72). claude is at 30, still in Collection.
+
+**Decision: keep collecting to the validation checkpoint (150) per the existing staging. Do NOT enable per-agent calibration or surface a per-agent verdict at 50.** Crossing 50 only means "preliminary signal," not "evaluate." The real verdict (Brier vs market baseline) is computed at 150 on each version's own sample, as pre-registered.
+
+This resolves "Change C" from spec-v4 (source-per-agent + UI): C was reframed from a progress-counter task into this methodological choice, and the choice is "wait." Changes A, B, D of that spec were implemented; C is intentionally deferred. Spec files (v3, v4) and the dated daily-plan note can be removed — this entry is the durable record.
+
+No method change: everything stays `method_version: v1`. At current report cadence gpt is expected to reach 150 in roughly 3–4 weeks, claude somewhat later.
+
 ## Current Running Result
 
 - Coupons: 6
