@@ -26,16 +26,10 @@
         <p class="tagline">Does the method have an edge?</p>
     </header>
 
-    <!-- TODO(agent-tabs): once gpt/claude both have enough per-agent volume,
-         turn this into clickable tabs (same pattern as the reports view:
-         list + tabs, compared sequentially, not side by side). -->
-    <div class="section" style="margin-bottom:20px;">
-        <div class="section-head no-line">
-            <h2>Per-agent calibration</h2>
-            <span class="count">unlocks at 50 settled</span>
-        </div>
-        <div id="agentProgressBody"></div>
-    </div>
+    <!-- TODO(agent-tabs): Calibration Lab below already renders one section
+         per agent. Once there's a clearer read on how to make gpt vs claude
+         easier to compare at a glance, revisit this -- clickable tabs (same
+         pattern as the reports view) is one option, not the only one. -->
 
     <div class="section hero">
         <div class="section-head no-line click" id="calibHead" onclick="toggleCalibrationLab()">
