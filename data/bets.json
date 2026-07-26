@@ -961,8 +961,9 @@
           "odds": 1.11,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G5 (different market -- moneyline there), left pending until it concludes."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "ODDIK beat LargadosyPelados 2:1; LP won 1 map, +0.5 = 1.5 still short of ODDIK's 2 -- fails to cover. Corresponds to P-2026-07-26-G5 (different market -- moneyline there)."
         },
         {
           "match": "Wildcard vs The MongolZ",
@@ -1037,8 +1038,9 @@
           "odds": 1.11,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G5 (different market -- moneyline there). In progress."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "ODDIK beat LargadosyPelados 2:1; LP won 1 map, +0.5 = 1.5 still short of ODDIK's 2 -- fails to cover. Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G5 (different market -- moneyline there)."
         },
         {
           "match": "Wildcard vs The MongolZ",
@@ -1113,8 +1115,9 @@
           "odds": 1.45,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on the Wildcard-MongolZ leg, left pending until it concludes. Corresponds to P-2026-07-26-G5."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "ODDIK beat LargadosyPelados 2:1. Accumulator already failed on the Wildcard-MongolZ leg. Corresponds to P-2026-07-26-G5."
         }
       ]
     },
@@ -1127,8 +1130,8 @@
       "combined_odds": 2.86,
       "potential_return_pln": 5.03,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "ODDIK vs LargadosyPelados",
@@ -1137,8 +1140,9 @@
           "odds": 1.50,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Corresponds to P-2026-07-26-G5. In progress."
+          "result": "lost",
+          "final_score": "2:1",
+          "notes": "ODDIK beat LargadosyPelados 2:1. This losing leg sinks the accumulator. Corresponds to P-2026-07-26-G5."
         },
         {
           "match": "magic vs Ninjas in Pyjamas",
@@ -1148,7 +1152,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Corresponds to P-2026-07-26-G8. In progress."
+          "notes": "Match in progress when the accumulator already failed on the ODDIK-LargadosyPelados leg, left pending until it concludes. Corresponds to P-2026-07-26-G8."
         },
         {
           "match": "100 Thieves vs Spirit",
@@ -1158,7 +1162,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Corresponds to P-2026-07-26-C4/G9. In progress."
+          "notes": "Match in progress when the accumulator already failed on the ODDIK-LargadosyPelados leg, left pending until it concludes. Corresponds to P-2026-07-26-C4/G9."
         }
       ]
     }
@@ -1190,13 +1194,13 @@
   "summary": {
     "coupons": 22,
     "won": 7,
-    "lost": 14,
+    "lost": 15,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 44.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": -3.83,
-    "roi": -0.087
+    "net_result_pln": -5.83,
+    "roi": -0.1325
   },
   "predictions": [
     {
@@ -3727,10 +3731,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "ujemne value i wysoka niepewność rynku niższego tieru."
+      "notes": "ujemne value i wysoka niepewność rynku niższego tieru. Settled 2026-07-26: ODDIK beat LargadosyPelados 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G6",
