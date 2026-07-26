@@ -908,6 +908,165 @@
           "notes": "Following claude's BET recommendation P-2026-07-26-C3 (Wildcard ML, 1.0u). In progress."
         }
       ]
+    },
+    {
+      "id": "EDGE-019",
+      "date": "2026-07-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.01,
+      "potential_return_pln": 7.06,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "NiP vs paiN",
+          "market": "total_maps_handicap",
+          "pick": "NiP maps +0.5",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "NiP swept 0:2 by paiN, won 0 maps -- fails to cover +0.5. Same match as P-2026-07-26-C1/G1."
+        },
+        {
+          "match": "3DMAX vs FUT",
+          "market": "moneyline",
+          "pick": "FUT",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-C2/G2, left pending until it concludes."
+        },
+        {
+          "match": "HOTU vs Aurora",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G3, left pending until it concludes."
+        },
+        {
+          "match": "ODDIK vs LargadosyPelados",
+          "market": "total_maps_handicap",
+          "pick": "LargadosyPelados maps +0.5",
+          "odds": 1.11,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G5 (different market -- moneyline there), left pending until it concludes."
+        },
+        {
+          "match": "Wildcard vs The MongolZ",
+          "market": "total_maps_handicap",
+          "pick": "Wildcard maps +0.5",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there), left pending until it concludes."
+        },
+        {
+          "match": "magic vs Ninjas in Pyjamas",
+          "market": "total_maps_handicap",
+          "pick": "Ninjas in Pyjamas maps +0.5",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G8 (different market -- moneyline there), left pending until it concludes."
+        },
+        {
+          "match": "100 Thieves vs Spirit",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.07,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-C4/G9, left pending until it concludes."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-020",
+      "date": "2026-07-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.44,
+      "potential_return_pln": 6.06,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "3DMAX vs FUT",
+          "market": "moneyline",
+          "pick": "FUT",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg (that coupon already died on NiP-paiN) as its own fresh coupon. Corresponds to P-2026-07-26-C2/G2. In progress."
+        },
+        {
+          "match": "HOTU vs Aurora",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G3. In progress."
+        },
+        {
+          "match": "ODDIK vs LargadosyPelados",
+          "market": "total_maps_handicap",
+          "pick": "LargadosyPelados maps +0.5",
+          "odds": 1.11,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G5 (different market -- moneyline there). In progress."
+        },
+        {
+          "match": "Wildcard vs The MongolZ",
+          "market": "total_maps_handicap",
+          "pick": "Wildcard maps +0.5",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg, odds moved from 1.53 to 1.47 by placement. Corresponds to P-2026-07-26-C3/G6 (different market -- moneyline there). In progress."
+        },
+        {
+          "match": "magic vs Ninjas in Pyjamas",
+          "market": "total_maps_handicap",
+          "pick": "Ninjas in Pyjamas maps +0.5",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G8 (different market -- moneyline there). In progress."
+        },
+        {
+          "match": "100 Thieves vs Spirit",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.08,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Re-bet of an EDGE-019 leg, odds moved from 1.07 to 1.08 by placement. Corresponds to P-2026-07-26-C4/G9. In progress."
+        }
+      ]
     }
   ],
   "observed_passes": [
@@ -935,15 +1094,15 @@
     }
   ],
   "summary": {
-    "coupons": 18,
+    "coupons": 20,
     "won": 7,
-    "lost": 10,
+    "lost": 11,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 36.0,
+    "pending": 2,
+    "total_staked_pln": 40.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": 4.17,
-    "roi": 0.1158
+    "net_result_pln": 2.17,
+    "roi": 0.0543
   },
   "predictions": [
     {
