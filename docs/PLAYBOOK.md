@@ -287,7 +287,7 @@ Entries reconstructed from already-published reports carry `"recording_mode": "h
 
 ### Verdict staging
 
-Metrics are surfaced in stages tied to the sample-size discipline above: Collection (0–49 settled eligible predictions — nothing computed), Preliminary signal (50–99), Emerging pattern (100–149), Validation checkpoint (150+). The Brier failure condition is evaluated only at the validation checkpoint and only on the paired sample — settled entries that have both a probability estimate and both market prices, so Edge and the market are always scored on identical matches. The CLV checkpoint is independent: it triggers at 50 closing snapshots on BETs regardless of how many predictions are settled, since closing lines are known before results.
+Metrics are surfaced in stages tied to the sample-size discipline above: Collection (0–49 settled eligible predictions — nothing computed), Preliminary signal (50–99), Emerging pattern (100–149), Validation checkpoint (150+). **These stages and the 150 checkpoint are counted per agent, not pooled.** Each agent (gpt, claude) is an independent experiment with its own probability estimates, its own calibration curve, and its own Brier score, so each reaches every stage on its own settled sample. The unit of a sample is therefore (agent × method_version): e.g. `gpt × v1` and `claude × v1` are counted and evaluated separately, and one reaching 150 says nothing about the other. Agents cross the checkpoint at different times (gpt well before claude at current volumes) — that is expected; each gets its verdict when its own sample matures. The Brier failure condition is evaluated only at the validation checkpoint and only on the paired sample — settled entries that have both a probability estimate and both market prices, so Edge and the market are always scored on identical matches. The CLV checkpoint is independent: it triggers at 50 closing snapshots on BETs regardless of how many predictions are settled, since closing lines are known before results.
 
 ### Sample size discipline
 
@@ -295,7 +295,7 @@ Under 50 settled predictions: compute nothing, conclude nothing. 50–100: preli
 
 ### Failure conditions (pre-registered)
 
-- If after 150 settled predictions Edge's Brier score is not better than the market baseline, the probability-estimation method is considered not validated.
+- If after 150 settled predictions (counted per agent) an agent's Brier score is not better than the market baseline, that agent's probability-estimation method is considered not validated. Each agent is evaluated on its own sample.
 - If after 50 closing snapshots on BETs the average CLV is negative, the selection method is considered not validated.
 
 Either failure means: stop real-money bets, keep logging paper predictions, and revise the method — or accept "no edge found" as the project's result. That outcome is a valid finding, not a failure of the project.
