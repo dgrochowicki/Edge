@@ -225,6 +225,24 @@ For every important PASS:
 - Short-priced favourites can still be poor bets.
 - Exact odds for PASS decisions must be preserved.
 
+### From the roster-change sequence (25–26 Jul)
+
+- **Observed signal beats predicted signal.** Betting against an "overvalued favourite with a rebuilt roster" is only justified when the new lineup has *already shown* weakness at this level — not on the assumption that a roster change will cause it. Liquid (25 Jul) had a hard, fresh result behind it (a 2:0 over Vitality on debut) and would have won; Wildcard vs a rebuilt MongolZ (26 Jul) rested only on the hypothesis that the new players would underperform, and the bet lost — MongolZ went on to the final. A roster change is uncertainty, not direction.
+- **Good calibration can still lose a single bet.** On the day the Wildcard bet lost, Edge's Brier over the four matches still beat the de-vigged market baseline. A well-priced bet on a ~0.60 favourite's opponent loses ~40% of the time by construction. One settled BET is variance, not a verdict — the sample-size discipline applies to bets too.
+
+## Daily Discipline
+
+The unit of success for a day is not a won coupon. It is one more trustworthy observation in the current method's sample.
+
+Each day:
+
+- Log every analysed market (BET and PASS) with `agent`, `method_version`, estimated probability, fair odds, market odds at analysis, decision, confidence, and stake if BET.
+- Settle results after matches (`won` / `lost` / `void`).
+- Record closing odds only when it can be done without disrupting the process; a missing snapshot stays null (see Closing snapshot).
+- New ideas and observations are logged as notes or hypotheses — they do not change the active method's rules mid-flight.
+
+A day is correctly closed when every prediction is logged with correct `agent` and `method_version`, reports remain immutable after publication, and played matches are settled. What a day is explicitly *not* for: switching method version, changing BET/PASS thresholds, fitting probabilities to earlier results, editing published predictions, or declaring the method works or fails on that day's evidence.
+
 ## Change Policy
 
 The playbook should not change because of one surprising result.
