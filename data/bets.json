@@ -3277,10 +3277,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "value +5.7% nominalnie (p_est paiN 0.45 vs de-vig 0.39) bo NiP ze standinem n0te; ale zbyt cienki margines bez twardego sygnalu, PASS"
+      "notes": "Settled 2026-07-26: paiN beat NiP 2:0 (user-confirmed). value +5.7% nominalnie (p_est paiN 0.45 vs de-vig 0.39) bo NiP ze standinem n0te; ale zbyt cienki margines bez twardego sygnalu, PASS"
     },
     {
       "id": "P-2026-07-26-C2",
@@ -3363,10 +3363,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs minimalnie poniżej fair; brak marginesu na ryzyko meczu."
+      "notes": "kurs minimalnie poniżej fair; brak marginesu na ryzyko meczu. Settled 2026-07-26: paiN beat NiP 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G2",
