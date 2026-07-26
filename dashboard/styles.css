@@ -195,7 +195,7 @@ header p.tagline{
 /* Scaled progress bar: fixed checkpoint zones (e.g. 0-50, 50-150) separated
    by a 1px gap, each with its own fill -- so progress past the first
    checkpoint stays visible instead of the bar reading as "done". */
-.progress-scaled{display:flex;width:100%;height:4px;gap:1px;}
+.progress-scaled{display:flex;width:100%;height:4px;gap:4px;}
 .progress-zone{position:relative;height:100%;background:var(--line-soft);overflow:hidden;}
 .progress-zone:first-child{border-radius:3px 0 0 3px;}
 .progress-zone:last-child{border-radius:0 3px 3px 0;}
