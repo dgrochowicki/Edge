@@ -3709,10 +3709,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "kurs nie kompensuje zmienności pojedynczej serii."
+      "notes": "kurs nie kompensuje zmienności pojedynczej serii. Settled 2026-07-26: Vitality beat Movistar KOI 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G5",
