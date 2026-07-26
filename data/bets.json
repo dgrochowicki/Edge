@@ -983,8 +983,9 @@
           "odds": 1.23,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-G8 (different market -- moneyline there), left pending until it concludes."
+          "result": "lost",
+          "final_score": "2:0",
+          "notes": "magic swept NiP 2:0, NiP won 0 maps -- fails to cover +0.5. Corresponds to P-2026-07-26-G8 (different market -- moneyline there)."
         },
         {
           "match": "100 Thieves vs Spirit",
@@ -993,8 +994,9 @@
           "odds": 1.07,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on earlier legs. Corresponds to P-2026-07-26-C4/G9, left pending until it concludes."
+          "result": "won",
+          "final_score": "1:2",
+          "notes": "Spirit beat 100 Thieves 2:1. Corresponds to P-2026-07-26-C4/G9."
         }
       ]
     },
@@ -1060,8 +1062,9 @@
           "odds": 1.23,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G8 (different market -- moneyline there). In progress."
+          "result": "lost",
+          "final_score": "2:0",
+          "notes": "magic swept NiP 2:0, NiP won 0 maps -- fails to cover +0.5. Re-bet of an EDGE-019 leg. Corresponds to P-2026-07-26-G8 (different market -- moneyline there)."
         },
         {
           "match": "100 Thieves vs Spirit",
@@ -1070,8 +1073,9 @@
           "odds": 1.08,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Re-bet of an EDGE-019 leg, odds moved from 1.07 to 1.08 by placement. Corresponds to P-2026-07-26-C4/G9. In progress."
+          "result": "won",
+          "final_score": "1:2",
+          "notes": "Spirit beat 100 Thieves 2:1. Re-bet of an EDGE-019 leg, odds moved from 1.07 to 1.08 by placement. Corresponds to P-2026-07-26-C4/G9."
         }
       ]
     },
@@ -1151,8 +1155,9 @@
           "odds": 1.70,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on the ODDIK-LargadosyPelados leg, left pending until it concludes. Corresponds to P-2026-07-26-G8."
+          "result": "lost",
+          "final_score": "2:0",
+          "notes": "magic beat Ninjas in Pyjamas 2:0. Accumulator already failed on the ODDIK-LargadosyPelados leg. Corresponds to P-2026-07-26-G8."
         },
         {
           "match": "100 Thieves vs Spirit",
@@ -1161,8 +1166,9 @@
           "odds": 1.10,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Match in progress when the accumulator already failed on the ODDIK-LargadosyPelados leg, left pending until it concludes. Corresponds to P-2026-07-26-C4/G9."
+          "result": "won",
+          "final_score": "1:2",
+          "notes": "Spirit beat 100 Thieves 2:1. Accumulator already failed on the ODDIK-LargadosyPelados leg. Corresponds to P-2026-07-26-C4/G9."
         }
       ]
     }
@@ -3621,10 +3627,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "skrajny short-favourite; Spirit #2 elita; 100T upset Falcons 2:1 ale Spirit inny poziom; kurs 1.07 de-vig 0.87 fair 1.15 value -6.9%; 100T @7.10 = -7.7%; wzorzec jak Vitality 1.01/MOUZ 1.13"
+      "notes": "skrajny short-favourite; Spirit #2 elita; 100T upset Falcons 2:1 ale Spirit inny poziom; kurs 1.07 de-vig 0.87 fair 1.15 value -6.9%; 100T @7.10 = -7.7%; wzorzec jak Vitality 1.01/MOUZ 1.13. Settled 2026-07-26: Spirit beat 100 Thieves 2:1 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G1",
@@ -3797,10 +3803,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "wyrównany mecz i możliwe obciążenie drugim spotkaniem dnia."
+      "notes": "wyrównany mecz i możliwe obciążenie drugim spotkaniem dnia. Settled 2026-07-26: magic beat Ninjas in Pyjamas 2:0 (user-confirmed)."
     },
     {
       "id": "P-2026-07-26-G9",
@@ -3819,10 +3825,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "stake": 0,
-      "notes": "bardzo mocny faworyt, ale skrajnie nieatrakcyjna cena."
+      "notes": "bardzo mocny faworyt, ale skrajnie nieatrakcyjna cena. Settled 2026-07-26: Spirit beat 100 Thieves 2:1 (user-confirmed)."
     }
   ]
 }
