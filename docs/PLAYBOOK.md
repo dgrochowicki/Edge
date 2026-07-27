@@ -266,6 +266,21 @@ Edge analyses only **tier-1 CS2 matches** — primarily BLAST events and equival
 
 Out-of-scope matches are not "PASS" — PASS is a valuation decision for an in-scope match with no edge. An out-of-scope match is never valued in the first place: it does not get an `estimated_probability`, `fair_odds`, a row in the valuation table, or a JSON entry. If a day has no in-scope matches (e.g. a break in the tier-1 calendar), the correct result is **NO QUALIFYING MATCHES** with an empty predictions block — not a set of tier-2 valuations that happen to end in PASS. Logging out-of-scope matches, even as PASS, contaminates the calibration sample with a different data-quality and predictability regime and is not permitted.
 
+**Why tier-1 specifically:** tier-1 markets are deep — bookmakers invest analyst time proportional to betting volume, so lines are sharp and de-vigged prices are a meaningful baseline. Tier-2/3 markets are thin and loose; a "value" figure there reflects bookmaker inattention, not a calibrated edge, and mixing both regimes corrupts the Brier comparison.
+
+**In-scope tournaments (reference list — judge by tier/series, not exact edition name):**
+
+Scope is defined by the *series/organiser at tier-1 (S-Tier, Valve Tier 1)* — edition names and dates change each season, so match the series, not the string. In scope:
+
+- **Valve Majors** — the two official Majors each year (2026: IEM Cologne in June, PGL Major Singapore in November). Highest priority.
+- **BLAST** top events — Bounty (Winter/Summer seasons), BLAST Open, BLAST Rivals. (Current: BLAST Bounty S2, Malta LAN 30 Jul–2 Aug.)
+- **IEM** (Intel Extreme Masters) main events — e.g. IEM Kraków, IEM Rio, IEM Atlanta, IEM China. (Not IEM regional/Challenger — those are tier-2.)
+- **ESL Pro League** — the season main events / finals (roughly two seasons a year; S23 spring, S24 ~Oct).
+- **PGL** main events — PGL Bucharest, PGL Cluj-Napoca, PGL Astana, PGL Masters, plus any PGL Major.
+- **Esports World Cup** CS2 (Aug) and other confirmed S-Tier internationals (e.g. FISSURE Playground main events, StarLadder StarSeries *main events*).
+
+**Explicitly out of scope**, regardless of which teams play: any qualifier (closed or open) including qualifiers *to* a tier-1 event (the qualifier itself is lower-tier — e.g. StarLadder StarSeries qualifiers are out even though the September main event is in); tier-2/3 circuits (CCT, Thunderpick World Championship, NODWIN, Urban Riga, United21, ESL Challenger, ESEA Premier, regional IEM); academy / B-teams (e.g. paiN Academy); and any event not at S-Tier. When unsure whether an event is tier-1, check its Liquipedia tier — "S-Tier" / "Valve Tier 1" is in scope, anything below is not.
+
 ### Logging
 
 Every **in-scope** market that receives a full analysis in a daily report is appended to the `predictions` array in `data/bets.json` — **both BET and PASS**. Logging only BETs creates selection bias. A logged entry means Edge produced an estimated probability for it. Out-of-scope matches are excluded entirely (see Scope above).
