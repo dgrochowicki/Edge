@@ -92,7 +92,6 @@ function groupSelectionsBy(selections, keyFn) {
     });
 }
 
-function selectionsByGame(selections) { return groupSelectionsBy(selections, s => s.game || 'unknown'); }
 function selectionsByMarket(selections) { return groupSelectionsBy(selections, s => s.market || 'unknown'); }
 
 // BET vs PASS record. Interpretive note: a high PASS "hit rate" (the picked
@@ -197,14 +196,6 @@ function couponsBySource(coupons) {
     return { edge: aggregateCoupons(buckets.edge), own: aggregateCoupons(buckets.own), unknown: aggregateCoupons(buckets.unknown) };
 }
 
-// Game taxonomy shared by dashboard.js's coupon-table game column
-// (couponGameLabel) and research.js's By Game section.
-const BY_GAME_LIST = [
-    { key: 'cs2', label: 'CS2', primary: true },
-    { key: 'lol', label: 'LoL', primary: false },
-    { key: 'dota2', label: 'Dota 2', primary: false }
-];
-
 // ===== Calibration Lab v2 =====
 // Per protocol: Brier vs market only on the paired sample; verdicts only at
 // pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
@@ -280,7 +271,6 @@ const CALIB_INFO = {
     betPass: ['BET / PASS', 'Ile razy postawiłeś (BET) vs ile odpuściłeś (PASS). Duża przewaga PASS-ów to NIE lenistwo — to dyscyplina: stawiamy tylko, gdy jest przewaga (value), a nie na każdy mecz.'],
     betRecord: ['BET record', 'Bilans zakładów, które faktycznie postawiłeś: ile wygranych, ile przegranych. Twój realny wynik na tym, na co zdecydowałeś się zagrać — w odróżnieniu od PASS-ów, których nie ruszałeś.'],
     passDiscipline: ['PASS discipline', 'Najczęściej mylona metryka. PASS to werdykt o CENIE (brak value), nie o zwycięzcy. Dlatego rozbijamy pasy na dwie grupy: „słuszne" (kurs był za niski — trafienie tu to NIE strata) i „potencjalnie stracone" (był dodatni value, a typ wygrał — dopiero TO oznacza przeoczoną okazję). Tylko druga grupa może uzasadniać poluzowanie ostrożności. Sama liczba „ile pasów trafiłoby" jest myląca i celowo jej nie pokazujemy.'],
-    byGame: ['By Game', 'Te same metryki w podziale na grę: CS2, LoL, Dota 2. Pokazuje, w której grze masz najlepsze wyczucie. CS2 to rynek główny projektu.'],
     sourceEdge: ['Edge recommendations', 'Kupony zagrane zgodnie z rekomendacją z raportu — czyli takie, gdzie metoda Edge oznaczyła zakład jako BET i został on faktycznie postawiony. Ta grupa mierzy, ile realnie zarabia (lub traci) sama metoda.'],
     sourceOwn: ['Own bets', 'Zakłady zagrane z własnej decyzji, niezależnie od tego, co mówił raport — także na mecze oznaczone jako PASS. Ta grupa mierzy Twoje własne typowanie. Rozdzielenie obu grup pozwoli po czasie zobaczyć, które decyzje wychodzą lepiej — ale dopiero przy sensownej liczbie kuponów, nie po kilku.'],
     netResult: ['Net Result', 'Suma wygranych minus suma przegranych, po wszystkich kuponach. Realny wynik w PLN przy stawkach faktycznie postawionych — to liczba, która ostatecznie się liczy, niezależnie od tego, jak wyglądały poszczególne zakłady po drodze.'],

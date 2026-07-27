@@ -22,7 +22,6 @@ function renderResearch() {
     applyCalibLabVisibility();
 
     renderDisciplineMonitor();
-    renderByGame();
 }
 
 // ===== Discipline Monitor =====
@@ -112,37 +111,4 @@ function renderDisciplineMonitor() {
         </div>`;
 
     el.innerHTML = `<div class="charts"><div class="kpi-row">${betCard}${passCard}${missedCard}${obsCard}</div>${barHTML}</div>`;
-}
-
-// ===== By Game =====
-// BY_GAME_LIST itself lives in shared-metrics.js -- dashboard.js's coupon
-// table (couponGameLabel) needs it too, not just this page's render function.
-
-function renderByGame() {
-    const el = document.getElementById('byGameBody');
-    if (!el) return;
-
-    const preds = betsData.predictions || [];
-    const selections = getAllSelections(betsData);
-    const gameSelStats = {};
-    selectionsByGame(selections).forEach(g => { gameSelStats[g.label] = g; });
-
-    const cards = BY_GAME_LIST.map(g => {
-        const gamePreds = preds.filter(p => (p.game || 'unknown') === g.key);
-        const bet = gamePreds.filter(p => p.decision === 'BET').length;
-        const pass = gamePreds.filter(p => p.decision === 'PASS').length;
-        const selStat = gameSelStats[g.key];
-        const selSub = selStat && selStat.n > 0
-            ? `${selStat.won}W – ${selStat.lost}L on legs`
-            : 'no joined legs yet';
-        return `
-            <div class="kpi">
-                <div class="kpi-label">${g.label}${g.primary ? ' <span style="color:var(--edge);">primary market</span>' : ''}</div>
-                <div class="kpi-value">${gamePreds.length}</div>
-                <div class="kpi-sub">${bet} BET / ${pass} PASS</div>
-                <div class="kpi-sub">${selSub}</div>
-            </div>`;
-    }).join('');
-
-    el.innerHTML = `<div class="kpi-row cols-3">${cards}</div>`;
 }

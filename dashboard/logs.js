@@ -18,7 +18,7 @@ async function loadBets() {
         }
     } catch (error) {
         console.error('Error loading bets:', error);
-        document.getElementById('tableBody').innerHTML = '<tr><td colspan="10">Error loading data</td></tr>';
+        document.getElementById('tableBody').innerHTML = '<tr><td colspan="9">Error loading data</td></tr>';
     }
 }
 
@@ -75,20 +75,6 @@ function renderSummaryRow() {
         </div>`).join('');
 }
 
-// Game column: joins a coupon's selections back to the predictions log via
-// shared getAllSelections/BY_GAME_LIST, same approach dashboard.js used
-// before its coupon table moved here.
-function couponGameLabel(couponId, allSelections) {
-    const games = new Set(allSelections.filter(s => s.couponId === couponId && s.game).map(s => s.game));
-    if (games.size === 0) return '—';
-    if (games.size === 1) {
-        const key = [...games][0];
-        const known = BY_GAME_LIST.find(g => g.key === key);
-        return known ? known.label : key;
-    }
-    return 'multi';
-}
-
 function sourceTag(c) {
     if (isUserBet(c.source)) return '<span class="source-tag">real</span>';
     if (isRecommendation(c.source)) {
@@ -101,18 +87,15 @@ function sourceTag(c) {
 function renderTable() {
     const tbody = document.getElementById('tableBody');
     const filtered = [...couponsForSource(logsSource)].reverse();
-    const allSelections = getAllSelections(betsData);
 
     tbody.innerHTML = filtered.map(c => {
         const legs = (c.selections || []).length;
         const type = c.type === 'single' ? 'single' : `acca · ${legs}`;
-        const game = couponGameLabel(c.id, allSelections);
         const returnCls = c.gross_return_pln > c.stake_pln ? 'pos' : c.gross_return_pln === 0 ? 'neg' : '';
         return `<tr onclick="showDetails('${c.id}')">
             <td>${c.id}</td>
             <td>${c.date}</td>
             <td>${type}</td>
-            <td>${game}</td>
             <td>${sourceTag(c)}</td>
             <td class="num">${fmt(c.stake_pln)}</td>
             <td class="num">${c.combined_odds}</td>
