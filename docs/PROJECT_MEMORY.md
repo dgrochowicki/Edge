@@ -183,6 +183,14 @@ This resolves "Change C" from spec-v4 (source-per-agent + UI): C was reframed fr
 
 No method change: everything stays `method_version: v1`. At current report cadence gpt is expected to reach 150 in roughly 3–4 weeks, claude somewhat later.
 
+### Scope discipline reaffirmed — out-of-scope matches get no ledger entry — 2026-07-27
+
+On 2026-07-27 (a break in the BLAST calendar, no tier-1 matches), the gpt report valued two tier-3 matches (ex-RUSTEC vs ex-RUBY; ODDIK vs paiN Academy) with full `estimated_probability`, fair odds, and prepared JSON entries (P-2026-07-27-G1/G2), ending both in PASS. These are out of scope (tier-3, academy team). The claude report for the same day correctly returned NO QUALIFYING MATCHES with an empty block.
+
+**Root cause:** the playbook's Logging rule said "every market that receives a full analysis is logged" but never defined *which matches merit analysis at all*. gpt followed the letter (valued → logged) but valued out-of-scope matches. Gap closed: a **Scope** subsection was added to PLAYBOOK before Logging, stating Edge analyses only tier-1/S-Tier (primarily BLAST); tier-2/3, qualifiers (StarLadder/CCT/Thunderpick/NODWIN/etc.), academy/B-teams, and non-BLAST non-S-Tier get no analysis, no fair odds, no JSON entry. Out-of-scope ≠ PASS.
+
+**Action:** do NOT merge P-2026-07-27-G1/G2 into `data/bets.json` — they would contaminate gpt's calibration sample with a different tier/data-quality regime. This is also a concrete argument for per-agent calibration: agents can differ in scope interpretation, and pooling would spread one agent's out-of-scope noise into the shared verdict.
+
 ## Current Running Result
 
 - Coupons: 6
