@@ -262,7 +262,9 @@ This section answers the two questions the rest of the playbook depends on: are 
 
 ### Scope (what gets analysed at all)
 
-Edge analyses only **tier-1 CS2 matches** — primarily BLAST events and equivalent S-Tier tournaments (Valve Tier 1). Everything below that is out of scope and receives **no analysis, no fair-odds figure, and no ledger entry**: tier-2/tier-3 events, closed/open qualifiers (including StarLadder, CCT, Thunderpick, NODWIN, Urban Riga, and similar), academy or B-teams (e.g. *paiN Academy*), and non-BLAST events that are not S-Tier.
+**Edge is CS2-only.** Other esports (LoL, Dota 2, etc.) are out of scope — the project's edge comes from deep, game-specific knowledge of Counter-Strike (rosters, transfers, form, map pools), which does not transfer to games the analyst does not follow at the same level. Without that qualitative signal there is nothing but copying the market, so non-CS2 matches get no analysis and no ledger entry.
+
+Within CS2, Edge analyses only **tier-1 matches** — primarily BLAST events and equivalent S-Tier tournaments (Valve Tier 1). Everything below that is out of scope and receives **no analysis, no fair-odds figure, and no ledger entry**: tier-2/tier-3 events, closed/open qualifiers (including StarLadder, CCT, Thunderpick, NODWIN, Urban Riga, and similar), academy or B-teams (e.g. *paiN Academy*), and non-BLAST events that are not S-Tier.
 
 Out-of-scope matches are not "PASS" — PASS is a valuation decision for an in-scope match with no edge. An out-of-scope match is never valued in the first place: it does not get an `estimated_probability`, `fair_odds`, a row in the valuation table, or a JSON entry. If a day has no in-scope matches (e.g. a break in the tier-1 calendar), the correct result is **NO QUALIFYING MATCHES** with an empty predictions block — not a set of tier-2 valuations that happen to end in PASS. Logging out-of-scope matches, even as PASS, contaminates the calibration sample with a different data-quality and predictability regime and is not permitted.
 
@@ -285,7 +287,7 @@ Scope is defined by the *series/organiser at tier-1 (S-Tier, Valve Tier 1)* — 
 
 Every **in-scope** market that receives a full analysis in a daily report is appended to the `predictions` array in `data/bets.json` — **both BET and PASS**. Logging only BETs creates selection bias. A logged entry means Edge produced an estimated probability for it. Out-of-scope matches are excluded entirely (see Scope above).
 
-Required fields per entry: `id` (P-YYYY-MM-DD-NN), `date`, `report`, `game` (cs2 | lol | dota2), `match`, `market`, `pick`, `estimated_probability` (must equal 1 / fair_odds), `fair_odds`, `market_odds_at_analysis`, `market_odds_opponent` (the other side's price at the same moment — required, since without it the de-vigged market baseline cannot be computed), `odds_timestamp`, `closing_odds` (null at creation), `decision`, `confidence`, `result` (`pending` at creation).
+Required fields per entry: `id` (P-YYYY-MM-DD-NN), `date`, `report`, `game` (always `cs2` — Edge is CS2-only; see Scope), `match`, `market`, `pick`, `estimated_probability` (must equal 1 / fair_odds), `fair_odds`, `market_odds_at_analysis`, `market_odds_opponent` (the other side's price at the same moment — required, since without it the de-vigged market baseline cannot be computed), `odds_timestamp`, `closing_odds` (null at creation), `decision`, `confidence`, `result` (`pending` at creation).
 
 ### Closing snapshot
 

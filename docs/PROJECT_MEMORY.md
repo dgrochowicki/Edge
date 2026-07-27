@@ -175,7 +175,7 @@ This PASS was justified because the short price did not compensate for the risk.
 
 ### Preliminary threshold reached (gpt), continue collecting — 2026-07-26
 
-gpt passed the preliminary-signal threshold (50 settled predictions with a probability estimate; currently 72). claude is at 30, still in Collection.
+gpt passed the preliminary-signal threshold (50 settled predictions with a probability estimate). **[Corrected 2026-07-27: the figure originally recorded here (72) was inflated by 25 non-CS2 entries (LoL/Dota) later removed — see the scope-cleanup entry below. gpt's true CS2 settled count is ~52; it has only just crossed 50, not reached the midpoint to 150.]** claude is at 30, still in Collection.
 
 **Decision: keep collecting to the validation checkpoint (150) per the existing staging. Do NOT enable per-agent calibration or surface a per-agent verdict at 50.** Crossing 50 only means "preliminary signal," not "evaluate." The real verdict (Brier vs market baseline) is computed at 150 on each version's own sample, as pre-registered.
 
@@ -190,6 +190,16 @@ On 2026-07-27 (a break in the BLAST calendar, no tier-1 matches), the gpt report
 **Root cause:** the playbook's Logging rule said "every market that receives a full analysis is logged" but never defined *which matches merit analysis at all*. gpt followed the letter (valued → logged) but valued out-of-scope matches. Gap closed: a **Scope** subsection was added to PLAYBOOK before Logging, stating Edge analyses only tier-1/S-Tier (primarily BLAST); tier-2/3, qualifiers (StarLadder/CCT/Thunderpick/NODWIN/etc.), academy/B-teams, and non-BLAST non-S-Tier get no analysis, no fair odds, no JSON entry. Out-of-scope ≠ PASS.
 
 **Action:** do NOT merge P-2026-07-27-G1/G2 into `data/bets.json` — they would contaminate gpt's calibration sample with a different tier/data-quality regime. This is also a concrete argument for per-agent calibration: agents can differ in scope interpretation, and pooling would spread one agent's out-of-scope noise into the shared verdict.
+
+### Edge is CS2-only — non-CS2 entries removed, scope narrowed — 2026-07-27
+
+A review of gpt's history (prompted by the 27 Jul scope issue) found gpt had been logging non-CS2 matches since 13 Jul: **25 entries — 15 LoL, 9 Dota 2, 1 with no game** — all under `agent: gpt`. claude's data was clean (CS2 only). The playbook's required-fields line had listed `game (cs2 | lol | dota2)`, so these were technically permitted by the letter — but the project's edge is CS2-specific knowledge, and the analyst does not follow LoL/Dota at that level, so those entries were pure market-copying noise, not signal.
+
+**Decisions:**
+1. Edge is now **CS2-only**. The `game` field is restricted to `cs2`; LoL/Dota/other are out of scope. PLAYBOOK Scope section and required-fields updated accordingly.
+2. The 25 non-CS2 entries are **deleted permanently** from `data/bets.json` (not archived — immutability covers method versions of in-scope data, not out-of-scope games that never belonged). Exact IDs listed in `docs/cs2-cleanup-2026-07-27.md`.
+
+**Effect on the sample:** gpt drops from 84 to 59 CS2 predictions, and from ~74 to ~52 settled-with-estimate. gpt has therefore *only just* crossed the preliminary threshold (50), not approached the midpoint to 150 — the earlier "72" was inflated. claude unaffected (31 CS2, 31 settled). Per-agent, per-version staging unchanged; both agents still collect to 150 on their CS2 samples. Note: one deleted entry was a Dota 2 BET (P-2026-07-14-01, LGD vs MOUZ, "won") — removing it also removes a non-CS2 result from gpt's P&L.
 
 ## Current Running Result
 
