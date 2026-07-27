@@ -348,18 +348,17 @@ tr:hover .view-link{color:var(--edge);}
   .kpi-row.cols-3{grid-template-columns:1fr;}
   table{font-size:11px;}
   th,td{padding:8px;}
-  /* logs.html full log table: ID/Date/Type/Game/Source/Stake/Odds/Return/Status/-- hide Type (3rd) and Odds (7th) */
+  /* logs.html coupon table: ID/Date/Type/Source/Stake/Odds/Return/Status/-- hide Type (3rd) and Odds (6th) */
   #betsTable thead th:nth-child(3),#betsTable td:nth-child(3),
-  #betsTable thead th:nth-child(7),#betsTable td:nth-child(7){display:none;}
+  #betsTable thead th:nth-child(6),#betsTable td:nth-child(6){display:none;}
 }
 
 @media (max-width:420px){
   th,td{padding:7px 6px;}
-  /* Narrow phones: also hide Game (4th) and Source (5th) -- the toggle above
-     the table already filters by source, so the column is redundant here --
-     so the remaining columns fit without horizontal scroll */
-  #betsTable thead th:nth-child(4),#betsTable td:nth-child(4),
-  #betsTable thead th:nth-child(5),#betsTable td:nth-child(5){display:none;}
+  /* Narrow phones: also hide Source (4th) -- the toggle above the table
+     already filters by source, so the column is redundant here -- so the
+     remaining columns fit without horizontal scroll */
+  #betsTable thead th:nth-child(4),#betsTable td:nth-child(4){display:none;}
 }
 
 /* ---------- Reports page ---------- */

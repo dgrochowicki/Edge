@@ -118,13 +118,6 @@ function buildPnlSeries(coupons) {
     return points;
 }
 
-// Which coupons feed the P&L chart under the current All/Real/Recommended toggle.
-function couponsForSource(src) {
-    if (src === 'all') return betsData.coupons;
-    const test = src === 'real' ? isUserBet : isRecommendation;
-    return (betsData.coupons || []).filter(c => test(c.source));
-}
-
 function setPnlSource(src) {
     pnlSource = src;
     document.querySelectorAll('#pnlSourceToggle .report-tab').forEach(el => {
@@ -152,7 +145,7 @@ function renderCharts() {
         scopeNoteEl.textContent = pnlSource === 'all' ? '' : 'chart filtered · outcome split shows all coupons';
     }
 
-    const filtered = couponsForSource(pnlSource);
+    const filtered = couponsForSource(betsData.coupons, pnlSource);
     const group = pnlSource === 'real' ? bySrc.own : pnlSource === 'rec' ? bySrc.edge : null;
     const settledCount = group ? group.won + group.lost + group.void : filtered.filter(c => c.status !== 'pending').length;
 

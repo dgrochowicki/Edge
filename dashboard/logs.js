@@ -22,13 +22,6 @@ async function loadBets() {
     }
 }
 
-// Which coupons are shown under the current All/Real/Recommended filter.
-function couponsForSource(src) {
-    if (src === 'all') return betsData.coupons;
-    const test = src === 'real' ? isUserBet : isRecommendation;
-    return (betsData.coupons || []).filter(c => test(c.source));
-}
-
 function setSource(src) {
     logsSource = src;
     document.querySelectorAll('#sourceToggle .report-tab').forEach(el => {
@@ -43,7 +36,7 @@ function renderLogs() {
 }
 
 function renderSummaryRow() {
-    const filtered = couponsForSource(logsSource);
+    const filtered = couponsForSource(betsData.coupons, logsSource);
     const bySrc = couponsBySource(filtered);
     const totals = aggregateCoupons(filtered);
     const roiPct = totals.roi != null ? (totals.roi * 100).toFixed(1) : '0.0';
@@ -86,7 +79,7 @@ function sourceTag(c) {
 
 function renderTable() {
     const tbody = document.getElementById('tableBody');
-    const filtered = [...couponsForSource(logsSource)].reverse();
+    const filtered = [...couponsForSource(betsData.coupons, logsSource)].reverse();
 
     tbody.innerHTML = filtered.map(c => {
         const legs = (c.selections || []).length;

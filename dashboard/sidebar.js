@@ -9,11 +9,14 @@ const SIDEBAR_ICONS = {
     logs: '<path d="M0.5 3L0.5 3.35449C0.5 3.70759 0.576256 4.066 0.711914 4.41406C1.02578 5.21909 1.56641 6.77054 1.56641 8C1.56641 9.22946 1.02578 10.7809 0.711914 11.5859C0.576256 11.934 0.499999 12.2924 0.499999 12.6455L0.499999 13C0.499999 14.3807 1.61929 15.5 3 15.5L13 15.5C14.3807 15.5 15.5 14.3807 15.5 13L15.5 12.6455C15.5 12.2924 15.4237 11.934 15.2881 11.5859C14.9742 10.7809 14.4336 9.22946 14.4336 8C14.4336 6.77054 14.9742 5.21909 15.2881 4.41406C15.4237 4.066 15.5 3.70759 15.5 3.35449L15.5 3C15.5 1.61929 14.3807 0.500001 13 0.500001L3 0.5C1.61929 0.5 0.5 1.61929 0.5 3Z" stroke="currentColor"/>'
 };
 
+// index.html lives at repo root; research/reports/logs.html all live under
+// dashboard/ and so share the same relative links to each other and home.
+const SUBPAGE_LINKS = { home: '../index.html', dashboard: '../index.html', research: 'research.html', reports: 'reports.html', logs: 'logs.html' };
 const SIDEBAR_LINKS = {
-    dashboard: { home: 'index.html',    dashboard: 'index.html',    research: 'dashboard/research.html', reports: 'dashboard/reports.html', logs: 'dashboard/logs.html' },
-    reports:   { home: '../index.html', dashboard: '../index.html', research: 'research.html',           reports: 'reports.html',           logs: 'logs.html' },
-    logs:      { home: '../index.html', dashboard: '../index.html', research: 'research.html',           reports: 'reports.html',           logs: 'logs.html' },
-    research:  { home: '../index.html', dashboard: '../index.html', research: 'research.html',           reports: 'reports.html',           logs: 'logs.html' }
+    dashboard: { home: 'index.html', dashboard: 'index.html', research: 'dashboard/research.html', reports: 'dashboard/reports.html', logs: 'dashboard/logs.html' },
+    reports: SUBPAGE_LINKS,
+    logs: SUBPAGE_LINKS,
+    research: SUBPAGE_LINKS
 };
 
 const SIDEBAR_NAV = [

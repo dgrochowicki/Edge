@@ -126,18 +126,6 @@ function observedPassStats(observedPasses, unitStake) {
     return { n: withOdds.length, hypotheticalNet };
 }
 
-function couponsByLegCount(coupons) {
-    const groups = {};
-    (coupons || []).forEach(c => {
-        const legs = (c.selections || []).length;
-        const g = groups[legs] = groups[legs] || { legs, coupons: 0, won: 0, lost: 0 };
-        g.coupons++;
-        if (c.status === 'won') g.won++;
-        if (c.status === 'lost') g.lost++;
-    });
-    return Object.keys(groups).map(k => groups[k]).sort((a, b) => a.legs - b.legs);
-}
-
 // Totals (stake/net/W-L-void-pending) for one already-filtered coupon list.
 // Shared by couponsBySource's per-group buckets and any page that needs a
 // plain summary over a coupon subset (e.g. logs.js's summary bar).
@@ -196,6 +184,14 @@ function couponsBySource(coupons) {
     return { edge: aggregateCoupons(buckets.edge), own: aggregateCoupons(buckets.own), unknown: aggregateCoupons(buckets.unknown) };
 }
 
+// Which coupons pass the current All/Real/Recommended filter -- shared by
+// dashboard.js's P&L chart and logs.js's coupon table.
+function couponsForSource(coupons, src) {
+    if (src === 'all') return coupons;
+    const test = src === 'real' ? isUserBet : isRecommendation;
+    return (coupons || []).filter(c => test(c.source));
+}
+
 // ===== Calibration Lab v2 =====
 // Per protocol: Brier vs market only on the paired sample; verdicts only at
 // pre-registered checkpoints (150 settled paired for Brier, 50 BET closing
@@ -230,10 +226,10 @@ function validatePredictions(preds) {
 }
 
 function calibStage(n) {
-    if (n < CAL_T.PRELIM) return { key: 'collection', label: 'Collection' };
-    if (n < CAL_T.EMERG) return { key: 'prelim', label: 'Preliminary signal' };
-    if (n < CAL_T.VALID) return { key: 'emerg', label: 'Emerging pattern' };
-    return { key: 'valid', label: 'Validation checkpoint' };
+    if (n < CAL_T.PRELIM) return { label: 'Collection' };
+    if (n < CAL_T.EMERG) return { label: 'Preliminary signal' };
+    if (n < CAL_T.VALID) return { label: 'Emerging pattern' };
+    return { label: 'Validation checkpoint' };
 }
 
 // The exact "settled" population Calibration Lab measures CAL_T.PRELIM/VALID
@@ -251,7 +247,6 @@ function settledEstPredictions(preds, agent) {
         .filter(p => typeof p.estimated_probability === 'number')
         .filter(p => agent == null || p.agent === agent);
 }
-function settledEstCount(preds, agent) { return settledEstPredictions(preds, agent).length; }
 
 const CALIB_INFO = {
     logged: ['Logged', 'Liczba wszystkich predykcji zapisanych w dzienniku (data/bets.json → predictions) — każdy w pełni przeanalizowany mecz, zarówno BET, jak i PASS. Logujemy też PASS-y, bo bez nich nie da się zmierzyć, czy szacunki agenta są trafne (patrzylibyśmy tylko na wybrane rodzynki).'],
@@ -329,7 +324,7 @@ function renderScaledProgressBar(count, thresholds) {
     }).join('');
 }
 
-function renderCalibCompact(stageLabel, settledCount) {
+function renderCalibCompact(settledCount) {
     const el = document.getElementById('calibCompact');
     if (!el) return;
     el.innerHTML = `
@@ -487,7 +482,7 @@ function renderCalibration() {
     if (preds.length === 0) {
         if (countEl) countEl.textContent = '0 logged';
         el.innerHTML = '<div class="calib-note">No predictions logged yet.</div>';
-        renderCalibCompact('collection', 0);
+        renderCalibCompact(0);
         calibExpanded = false;
         applyCalibLabVisibility();
         return;
@@ -497,7 +492,7 @@ function renderCalibration() {
     if (agents.length === 0) {
         if (countEl) countEl.textContent = `${preds.length} logged · 0 settled`;
         el.innerHTML = '<div class="calib-note">No predictions have an agent field yet.</div>';
-        renderCalibCompact('collection', 0);
+        renderCalibCompact(0);
         calibExpanded = false;
         applyCalibLabVisibility();
         return;
@@ -523,8 +518,7 @@ function renderCalibration() {
     // once any agent clears the preliminary threshold there's real content
     // to show, regardless of where the other agent's sample stands.
     const maxSettled = Math.max(...sections.map(s => s.settledCount));
-    const stageForCompact = calibStage(maxSettled);
-    renderCalibCompact(stageForCompact.label.toLowerCase(), maxSettled);
+    renderCalibCompact(maxSettled);
     calibExpanded = maxSettled >= CAL_T.PRELIM;
     applyCalibLabVisibility();
 }
