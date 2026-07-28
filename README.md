@@ -65,8 +65,7 @@ Edge/
 │   ├── reports.js
 │   ├── logs.js
 │   ├── styles.css
-│   ├── favicon.svg
-│   └── icons/
+│   └── favicon.svg
 ├── docs/
 │   ├── PLAYBOOK.md
 │   ├── PROJECT_MEMORY.md
