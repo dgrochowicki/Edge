@@ -1173,30 +1173,7 @@
       ]
     }
   ],
-  "observed_passes": [
-    {
-      "date": "2026-07-15",
-      "match": "NiP vs K27",
-      "market": "Over 2.5 maps",
-      "odds": 2.0,
-      "decision": "pass",
-      "result": "lost",
-      "final_score": "NiP 2:0 K27",
-      "map_scores": [
-        "Ancient 13:8",
-        "Nuke 13:8"
-      ]
-    },
-    {
-      "date": "2026-07-15",
-      "match": "paiN vs Phantom",
-      "market": "paiN moneyline",
-      "odds": 1.36,
-      "decision": "pass",
-      "result": "lost",
-      "final_score": "paiN 1:2 Phantom"
-    }
-  ],
+  "observed_passes": [],
   "summary": {
     "coupons": 22,
     "won": 7,

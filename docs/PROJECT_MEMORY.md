@@ -211,6 +211,8 @@ A 28 Jul audit found `predictions` still wasn't a clean tier-1 sample even after
 
 **Result:** `predictions` 90 → **43** (all `game: cs2`, all dated ≥21 Jul, all with market odds), `archived_predictions` **47** (gpt 39, claude 8). `coupons` untouched (22) — coupons are the real-money layer and were never in scope for this cleanup regardless of which prediction they correspond to; `summary`/P&L unaffected. **Both agents drop back below the preliminary threshold** (gpt 52→**20**, claude 23) — the "gpt crossed 50" reached on 26–27 Jul was itself an artifact of tier-2/3 noise in the sample, not real progress toward the 150 checkpoint. Collection continues from here on the clean tier-1 sample; no counter should cite pre-28 Jul settled figures again.
 
+**`observed_passes` cleared too (2→0), same date.** Its only two entries (NiP vs K27, paiN vs Phantom, both 15 Jul) were the exact same pre-protocol matches as `P-2026-07-15-01`/`P-2026-07-15-04` above. The mechanism is undocumented in PLAYBOOK and was never used past 15 Jul, so rather than build a parallel `archived_observed_passes` array for two rows, they were simply removed — the underlying matches aren't lost, they're fully preserved with more context in `archived_predictions`.
+
 ## Current Running Result
 
 - Coupons: 6
