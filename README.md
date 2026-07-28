@@ -54,16 +54,23 @@ Edge/
 ├── data/
 │   └── bets.json
 ├── dashboard/
+│   ├── research.html
 │   ├── reports.html
 │   ├── logs.html
+│   ├── data.js
+│   ├── shared-metrics.js
+│   ├── sidebar.js
 │   ├── dashboard.js
+│   ├── research.js
 │   ├── reports.js
 │   ├── logs.js
 │   ├── styles.css
+│   ├── favicon.svg
 │   └── icons/
 ├── docs/
 │   ├── PLAYBOOK.md
 │   ├── PROJECT_MEMORY.md
+│   ├── REPORT_TEMPLATE.md
 │   └── ROADMAP.md
 └── reports/
 ```
