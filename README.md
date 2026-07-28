@@ -19,13 +19,7 @@ The goal is not to predict every match correctly or to place bets every day. The
 
 ## Current scope
 
-Edge currently focuses on:
-
-- Counter-Strike 2
-- League of Legends
-- Dota 2
-
-CS2 is the primary market during the initial testing phase.
+Edge is CS2-only: tier-1 (S-Tier / Valve Tier 1) Counter-Strike 2 matches, primarily BLAST events. Other esports and lower-tier CS2 events (qualifiers, tier-2/3 circuits, academy/B-teams) are out of scope and receive no analysis or ledger entry — see `docs/PLAYBOOK.md`'s Scope section for the full rule.
 
 ## Daily workflow
 
