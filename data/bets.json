@@ -1206,8 +1206,8 @@
       "combined_odds": 4.84,
       "potential_return_pln": 8.52,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "3DMAX vs MOUZ",
@@ -1216,8 +1216,9 @@
           "odds": 4.84,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Following claude's BET recommendation P-2026-07-30-C2 (3DMAX ML, 0.5u). BLAST Bounty LAN quarterfinal, Malta."
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "Following claude's BET recommendation P-2026-07-30-C2 (3DMAX ML, 0.5u). BLAST Bounty LAN quarterfinal, Malta. MOUZ beat 3DMAX 2:1."
         }
       ]
     },
@@ -1230,8 +1231,8 @@
       "combined_odds": 3.52,
       "potential_return_pln": 6.2,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "Walczaki vs ex-RUSTEC",
@@ -1251,8 +1252,9 @@
           "odds": 2.75,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Live/in-play price taken mid-match (maps 1:1), not the pre-match analysis price -- same match/pick as claude's/gpt's BLAST BET calls (P-2026-07-30-C2/G2 at 4.84), but this leg was priced live, not at analysis. Match in progress as of logging."
+          "result": "lost",
+          "final_score": "1:2",
+          "notes": "Live/in-play price taken mid-match (maps 1:1), not the pre-match analysis price -- same match/pick as claude's/gpt's BLAST BET calls (P-2026-07-30-C2/G2 at 4.84), but this leg was priced live, not at analysis. MOUZ beat 3DMAX 2:1 -- acca fails on this leg despite leg 1 winning."
         }
       ]
     }
@@ -1261,13 +1263,13 @@
   "summary": {
     "coupons": 25,
     "won": 7,
-    "lost": 16,
+    "lost": 18,
     "voided": 0,
-    "pending": 2,
+    "pending": 0,
     "total_staked_pln": 50.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": -7.83,
-    "roi": -0.1566
+    "net_result_pln": -11.83,
+    "roi": -0.2366
   },
   "archived_predictions": [
     {
@@ -3296,11 +3298,11 @@
       "closing_odds": null,
       "decision": "BET",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "stake": 0.5,
       "method_version": "v1",
       "agent": "claude",
-      "notes": "BET 0.5u; p_est 3DMAX 0.23 vs de-vig 0.196 (value +11.3%); teza: 3DMAX świadomie wybrał MOUZ pod map pool (wasiNk), MOUZ nowy IGL xertioN + eksperymentalny skład; stawka zredukowana do 0.5u - przesłanka mocniejsza niż Wildcard (fakt draftowy) ale słabsza niż Liquid (brak dowodu LAN), + wariancja 1. meczu LAN."
+      "notes": "BET 0.5u; p_est 3DMAX 0.23 vs de-vig 0.196 (value +11.3%); teza: 3DMAX świadomie wybrał MOUZ pod map pool (wasiNk), MOUZ nowy IGL xertioN + eksperymentalny skład; stawka zredukowana do 0.5u - przesłanka mocniejsza niż Wildcard (fakt draftowy) ale słabsza niż Liquid (brak dowodu LAN), + wariancja 1. meczu LAN. Settled: MOUZ beat 3DMAX 2:1."
     },
     {
       "id": "P-2026-07-30-G1",
@@ -3341,10 +3343,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 0,
-      "notes": "Dodatnie odchylenie nie kompensuje bardzo wysokiego ryzyka oraz przewagi mapowej MOUZ."
+      "notes": "Dodatnie odchylenie nie kompensuje bardzo wysokiego ryzyka oraz przewagi mapowej MOUZ. Settled: MOUZ beat 3DMAX 2:1 -- correct PASS, price didn't compensate for the risk."
     }
   ]
 }
