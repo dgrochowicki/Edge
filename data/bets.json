@@ -1171,19 +1171,68 @@
           "notes": "Spirit beat 100 Thieves 2:1. Accumulator already failed on the ODDIK-LargadosyPelados leg. Corresponds to P-2026-07-26-C4/G9."
         }
       ]
+    },
+    {
+      "id": "EDGE-023",
+      "date": "2026-07-30",
+      "type": "single",
+      "source": "recommendation_gpt",
+      "stake_pln": 2.0,
+      "combined_odds": 4.19,
+      "potential_return_pln": 7.37,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Liquid vs Spirit",
+          "market": "moneyline",
+          "pick": "Liquid",
+          "odds": 4.19,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "final_score": "0:2",
+          "notes": "Following gpt's BET recommendation P-2026-07-30-G1 (Liquid ML, 1.0u). BLAST Bounty LAN quarterfinal, Malta. Spirit beat Liquid 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-024",
+      "date": "2026-07-30",
+      "type": "single",
+      "source": "recommendation_claude",
+      "stake_pln": 2.0,
+      "combined_odds": 4.84,
+      "potential_return_pln": 8.52,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "3DMAX vs MOUZ",
+          "market": "moneyline",
+          "pick": "3DMAX",
+          "odds": 4.84,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Following claude's BET recommendation P-2026-07-30-C2 (3DMAX ML, 0.5u). BLAST Bounty LAN quarterfinal, Malta."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 22,
+    "coupons": 24,
     "won": 7,
-    "lost": 15,
+    "lost": 16,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 44.0,
+    "pending": 1,
+    "total_staked_pln": 48.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": -5.83,
-    "roi": -0.1325
+    "net_result_pln": -7.83,
+    "roi": -0.1631
   },
   "archived_predictions": [
     {
@@ -3191,10 +3240,10 @@
       "closing_odds": 1.32,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "Spirit faworyt turnieju (donk forma życia); kurs 1.23 za krótki wobec fair 1.27, value -2.8%; Liquid nowy niedośw. AWP Jorko na LAN, Liquid @4.19 = -12%. Merged by maintainer: report gave estimated_probability 0.79, which doesn't equal 1/fair_odds (1/1.27=0.7874) -- corrected to 0.7874 to match the reported fair_odds; 0.79 was a mis-rounding at entry time. Closing snapshot ~14:50 (10 min before start): Spirit 1.32 / Liquid 4.26. Line moved non-monotonically: 08:30 Spirit 1.23 -> 12:00 Spirit 1.25 -> close 1.32."
+      "notes": "Spirit faworyt turnieju (donk forma życia); kurs 1.23 za krótki wobec fair 1.27, value -2.8%; Liquid nowy niedośw. AWP Jorko na LAN, Liquid @4.19 = -12%. Merged by maintainer: report gave estimated_probability 0.79, which doesn't equal 1/fair_odds (1/1.27=0.7874) -- corrected to 0.7874 to match the reported fair_odds; 0.79 was a mis-rounding at entry time. Closing snapshot ~14:50 (10 min before start): Spirit 1.32 / Liquid 4.26. Line moved non-monotonically: 08:30 Spirit 1.23 -> 12:00 Spirit 1.25 -> close 1.32. Settled: Spirit beat Liquid 2:0."
     },
     {
       "id": "P-2026-07-30-C2",
@@ -3235,10 +3284,10 @@
       "closing_odds": 4.26,
       "decision": "BET",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "stake": 1.0,
-      "notes": "Dwa jakościowe zwycięstwa 2:0 nowego składu Liquid podnoszą szansę underdoga ponad wycenę STS. Closing snapshot ~14:50 (10 min before start): Liquid 4.26 / Spirit 1.32. Line moved non-monotonically: 08:28 Liquid 4.19 -> 12:00 Liquid 3.97 -> close 4.26."
+      "notes": "Dwa jakościowe zwycięstwa 2:0 nowego składu Liquid podnoszą szansę underdoga ponad wycenę STS. Closing snapshot ~14:50 (10 min before start): Liquid 4.26 / Spirit 1.32. Line moved non-monotonically: 08:28 Liquid 4.19 -> 12:00 Liquid 3.97 -> close 4.26. Settled: Spirit beat Liquid 2:0 -- BET lost."
     },
     {
       "id": "P-2026-07-30-G2",
