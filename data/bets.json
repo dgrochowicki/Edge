@@ -1220,19 +1220,54 @@
           "notes": "Following claude's BET recommendation P-2026-07-30-C2 (3DMAX ML, 0.5u). BLAST Bounty LAN quarterfinal, Malta."
         }
       ]
+    },
+    {
+      "id": "EDGE-025",
+      "date": "2026-07-30",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.52,
+      "potential_return_pln": 6.2,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Walczaki vs ex-RUSTEC",
+          "market": "moneyline",
+          "pick": "ex-RUSTEC",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "final_score": "0:2",
+          "notes": "Own bet, not an Edge pick -- not analysed in either agent's 30 Jul report (out of Edge's tier-1 scope). ex-RUSTEC won 2:0."
+        },
+        {
+          "match": "3DMAX vs MOUZ",
+          "market": "moneyline",
+          "pick": "3DMAX",
+          "odds": 2.75,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Live/in-play price taken mid-match (maps 1:1), not the pre-match analysis price -- same match/pick as claude's/gpt's BLAST BET calls (P-2026-07-30-C2/G2 at 4.84), but this leg was priced live, not at analysis. Match in progress as of logging."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 24,
+    "coupons": 25,
     "won": 7,
     "lost": 16,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 48.0,
+    "pending": 2,
+    "total_staked_pln": 50.0,
     "gross_return_pln": 38.17,
     "net_result_pln": -7.83,
-    "roi": -0.1631
+    "roi": -0.1566
   },
   "archived_predictions": [
     {
