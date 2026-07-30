@@ -3188,13 +3188,13 @@
       "market_odds_at_analysis": 1.23,
       "market_odds_opponent": 4.19,
       "odds_timestamp": "2026-07-30T08:30:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.32,
       "decision": "PASS",
       "confidence": 7,
       "result": "pending",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "Spirit faworyt turnieju (donk forma życia); kurs 1.23 za krótki wobec fair 1.27, value -2.8%; Liquid nowy niedośw. AWP Jorko na LAN, Liquid @4.19 = -12%. Merged by maintainer: report gave estimated_probability 0.79, which doesn't equal 1/fair_odds (1/1.27=0.7874) -- corrected to 0.7874 to match the reported fair_odds; 0.79 was a mis-rounding at entry time."
+      "notes": "Spirit faworyt turnieju (donk forma życia); kurs 1.23 za krótki wobec fair 1.27, value -2.8%; Liquid nowy niedośw. AWP Jorko na LAN, Liquid @4.19 = -12%. Merged by maintainer: report gave estimated_probability 0.79, which doesn't equal 1/fair_odds (1/1.27=0.7874) -- corrected to 0.7874 to match the reported fair_odds; 0.79 was a mis-rounding at entry time. Closing snapshot ~14:50 (10 min before start): Spirit 1.32 / Liquid 4.26. Line moved non-monotonically: 08:30 Spirit 1.23 -> 12:00 Spirit 1.25 -> close 1.32."
     },
     {
       "id": "P-2026-07-30-C2",
@@ -3232,13 +3232,13 @@
       "market_odds_at_analysis": 4.19,
       "market_odds_opponent": 1.23,
       "odds_timestamp": "2026-07-30T08:28:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 4.26,
       "decision": "BET",
       "confidence": 7,
       "result": "pending",
       "method_version": "v1",
       "stake": 1.0,
-      "notes": "Dwa jakościowe zwycięstwa 2:0 nowego składu Liquid podnoszą szansę underdoga ponad wycenę STS."
+      "notes": "Dwa jakościowe zwycięstwa 2:0 nowego składu Liquid podnoszą szansę underdoga ponad wycenę STS. Closing snapshot ~14:50 (10 min before start): Liquid 4.26 / Spirit 1.32. Line moved non-monotonically: 08:28 Liquid 4.19 -> 12:00 Liquid 3.97 -> close 4.26."
     },
     {
       "id": "P-2026-07-30-G2",
