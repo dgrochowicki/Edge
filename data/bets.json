@@ -1257,19 +1257,77 @@
           "notes": "Live/in-play price taken mid-match (maps 1:1), not the pre-match analysis price -- same match/pick as claude's/gpt's BLAST BET calls (P-2026-07-30-C2/G2 at 4.84), but this leg was priced live, not at analysis. MOUZ beat 3DMAX 2:1 -- acca fails on this leg despite leg 1 winning."
         }
       ]
+    },
+    {
+      "id": "EDGE-026",
+      "date": "2026-07-31",
+      "type": "single",
+      "source": "recommendation_gpt",
+      "stake_pln": 2.0,
+      "combined_odds": 2.41,
+      "potential_return_pln": 4.24,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "FaZe vs The MongolZ",
+          "market": "moneyline",
+          "pick": "The MongolZ",
+          "odds": 2.41,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Following gpt's BET recommendation P-2026-07-31-G1 (The MongolZ ML, 1.0u). BLAST Bounty LAN quarterfinal, Malta."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-027",
+      "date": "2026-07-31",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.57,
+      "potential_return_pln": 4.53,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "ex-RUBY vs Lavdek",
+          "market": "moneyline",
+          "pick": "ex-RUBY",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope."
+        },
+        {
+          "match": "INFINITE vs Sparta",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope. Match didn't reach a decider map -- acca fails on this leg despite leg 1 winning."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 25,
+    "coupons": 27,
     "won": 7,
-    "lost": 18,
+    "lost": 19,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 50.0,
+    "pending": 1,
+    "total_staked_pln": 54.0,
     "gross_return_pln": 38.17,
-    "net_result_pln": -11.83,
-    "roi": -0.2366
+    "net_result_pln": -13.83,
+    "roi": -0.2561
   },
   "archived_predictions": [
     {
