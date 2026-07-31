@@ -395,9 +395,28 @@ function renderBetSource() {
         ? '<div class="calib-note" style="margin-top:8px;">Sample too small for conclusions — this panel collects data, it does not compare performance yet.</div>'
         : '';
 
+    // Per-agent breakdown of the same `edge` bucket above -- claude vs gpt is
+    // the direct head-to-head, shown alongside (not instead of) the combined
+    // Edge card. `both`/`official` only surface once they have entries.
+    const byAgent = couponsByAgent(coupons);
+    const claudeCard = sourceCard('claude', 'sourceEdge', byAgent.claude, 'no coupons from claude recommendations yet');
+    const gptCard = sourceCard('gpt', 'sourceEdge', byAgent.gpt, 'no coupons from gpt recommendations yet');
+    const bothCard = byAgent.both.n > 0 ? sourceCard('both agents agreed', 'sourceEdge', byAgent.both, '') : '';
+    const officialCard = byAgent.official.n > 0 ? sourceCard('official (legacy)', 'sourceEdge', byAgent.official, '') : '';
+    const agentCards = `${claudeCard}${gptCard}${bothCard}${officialCard}`;
+    const agentCols = 2 + (byAgent.both.n > 0 ? 1 : 0) + (byAgent.official.n > 0 ? 1 : 0);
+    const agentColsCls = agentCols === 2 ? 'cols-2' : agentCols === 3 ? 'cols-3' : '';
+
+    const agentSmallSampleNote = (byAgent.claude.n < 10 || byAgent.gpt.n < 10)
+        ? '<div class="calib-note" style="margin-top:8px;">Small sample — per-agent ROI/hit rate not yet meaningful.</div>'
+        : '';
+
     el.innerHTML = `
         <div class="kpi-row ${hasUnknown ? 'cols-3' : 'cols-2'}">${edgeCard}${ownCard}${unknownCard}</div>
         <div class="calib-note" style="margin-top:14px;">Edge ${fmtSigned(by.edge.net)} (${by.edge.n} coupons) · Own ${fmtSigned(by.own.net)} (${by.own.n} coupons)</div>
-        ${smallSampleNote}`;
+        ${smallSampleNote}
+        <div class="calib-sub">Edge recommendations, by agent</div>
+        <div class="kpi-row ${agentColsCls}">${agentCards}</div>
+        ${agentSmallSampleNote}`;
 }
 

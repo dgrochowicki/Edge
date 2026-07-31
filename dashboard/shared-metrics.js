@@ -184,6 +184,38 @@ function couponsBySource(coupons) {
     return { edge: aggregateCoupons(buckets.edge), own: aggregateCoupons(buckets.own), unknown: aggregateCoupons(buckets.unknown) };
 }
 
+// Splits the `edge` bucket from couponsBySource further, by which agent's
+// call the coupon followed -- claude vs gpt is the direct head-to-head
+// comparison couponsBySource can't show on its own. `recommendation_both`
+// (both agents called the same bet, one coupon placed) gets its own bucket
+// rather than being force-assigned to either agent or double-counted.
+// `official_recommendation` (2 legacy coupons, agent unknown) is `official`.
+// Additive alongside couponsBySource -- doesn't replace it.
+function couponsByAgent(coupons) {
+    const buckets = { claude: [], gpt: [], both: [], official: [], own: [], unknown: [] };
+    (coupons || []).forEach(c => {
+        const src = c.source;
+        if (isUserBet(src)) { buckets.own.push(c); return; }
+        if (isRecommendation(src)) {
+            if (src === 'recommendation_both') { buckets.both.push(c); return; }
+            const a = recAgent(src);
+            if (a === 'claude') buckets.claude.push(c);
+            else if (a === 'gpt') buckets.gpt.push(c);
+            else buckets.official.push(c);
+            return;
+        }
+        buckets.unknown.push(c);
+    });
+    return {
+        claude: aggregateCoupons(buckets.claude),
+        gpt: aggregateCoupons(buckets.gpt),
+        both: aggregateCoupons(buckets.both),
+        official: aggregateCoupons(buckets.official),
+        own: aggregateCoupons(buckets.own),
+        unknown: aggregateCoupons(buckets.unknown)
+    };
+}
+
 // Which coupons pass the current All/Real/Recommended filter -- shared by
 // dashboard.js's P&L chart and logs.js's coupon table.
 function couponsForSource(coupons, src) {
