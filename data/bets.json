@@ -3441,13 +3441,13 @@
       "market_odds_at_analysis": 2.16,
       "market_odds_opponent": 1.7,
       "odds_timestamp": "2026-07-31T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.29,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "map-pool teza (biguzera: Astralis picuje Ancient, paiN nie gra) - zaobserwowana przesłanka jak 3DMAX wczoraj; ale value tylko +1.5% (vs 3DMAX +11.3%) - za cienkie; paiN #29 słabsze klasowo; Astralis @1.70 = -9.9%; PASS bo kurs nie płaci mimo trafnej tezy."
+      "notes": "map-pool teza (biguzera: Astralis picuje Ancient, paiN nie gra) - zaobserwowana przesłanka jak 3DMAX wczoraj; ale value tylko +1.5% (vs 3DMAX +11.3%) - za cienkie; paiN #29 słabsze klasowo; Astralis @1.70 = -9.9%; PASS bo kurs nie płaci mimo trafnej tezy. Match started later than scheduled 17:30. Closing snapshot 15-17 min before actual start: paiN 2.29 / Astralis 1.55. Settled: Astralis beat paiN 2:1."
     },
     {
       "id": "P-2026-07-31-G1",
@@ -3486,11 +3486,12 @@
       "market_odds_at_analysis": 2.24,
       "market_odds_opponent": 1.65,
       "odds_timestamp": "2026-07-31T08:35:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.29,
       "decision": "PASS",
       "confidence": 5,
       "stake": 0,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Match started later than scheduled 17:30. Closing snapshot 15-17 min before actual start: paiN 2.29 / Astralis 1.55. Settled: Astralis beat paiN 2:1."
     }
   ]
 }
