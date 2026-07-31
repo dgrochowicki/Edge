@@ -380,8 +380,16 @@ function renderBetSource() {
             </div>`;
     };
 
-    const edgeCard = sourceCard('Edge recommendations', 'sourceEdge', by.edge, 'no coupons from Edge recommendations yet');
+    // One row: Edge all (claude+gpt+both combined) alongside the claude/gpt
+    // breakdown and Own, so the pieces visibly sum to the whole instead of
+    // living in two disconnected rows. `both`/`unknown` only surface once
+    // they have entries.
+    const byAgent = couponsByAgent(coupons);
+    const edgeAllCard = sourceCard('Edge all', 'sourceEdge', by.edge, 'no coupons from Edge recommendations yet');
+    const claudeCard = sourceCard('claude', 'sourceEdge', byAgent.claude, 'no coupons from claude recommendations yet');
+    const gptCard = sourceCard('gpt', 'sourceEdge', byAgent.gpt, 'no coupons from gpt recommendations yet');
     const ownCard = sourceCard('Own bets', 'sourceOwn', by.own, 'no coupons from own bets yet');
+    const bothCard = byAgent.both.n > 0 ? sourceCard('both agents agreed', 'sourceEdge', byAgent.both, '') : '';
     const hasUnknown = by.unknown.n > 0;
     const unknownCard = hasUnknown ? `
         <div class="kpi">
@@ -394,29 +402,14 @@ function renderBetSource() {
     const smallSampleNote = sampleN < 20
         ? '<div class="calib-note" style="margin-top:8px;">Sample too small for conclusions — this panel collects data, it does not compare performance yet.</div>'
         : '';
-
-    // Per-agent breakdown of the same `edge` bucket above -- claude vs gpt is
-    // the direct head-to-head, shown alongside (not instead of) the combined
-    // Edge card. `both`/`official` only surface once they have entries.
-    const byAgent = couponsByAgent(coupons);
-    const claudeCard = sourceCard('claude', 'sourceEdge', byAgent.claude, 'no coupons from claude recommendations yet');
-    const gptCard = sourceCard('gpt', 'sourceEdge', byAgent.gpt, 'no coupons from gpt recommendations yet');
-    const bothCard = byAgent.both.n > 0 ? sourceCard('both agents agreed', 'sourceEdge', byAgent.both, '') : '';
-    const officialCard = byAgent.official.n > 0 ? sourceCard('official (legacy)', 'sourceEdge', byAgent.official, '') : '';
-    const agentCards = `${claudeCard}${gptCard}${bothCard}${officialCard}`;
-    const agentCols = 2 + (byAgent.both.n > 0 ? 1 : 0) + (byAgent.official.n > 0 ? 1 : 0);
-    const agentColsCls = agentCols === 2 ? 'cols-2' : agentCols === 3 ? 'cols-3' : '';
-
     const agentSmallSampleNote = (byAgent.claude.n < 10 || byAgent.gpt.n < 10)
-        ? '<div class="calib-note" style="margin-top:8px;">Small sample — per-agent ROI/hit rate not yet meaningful.</div>'
+        ? '<div class="calib-note" style="margin-top:4px;">Small sample — per-agent ROI/hit rate not yet meaningful.</div>'
         : '';
 
     el.innerHTML = `
-        <div class="kpi-row ${hasUnknown ? 'cols-3' : 'cols-2'}">${edgeCard}${ownCard}${unknownCard}</div>
-        <div class="calib-note" style="margin-top:14px;">Edge ${fmtSigned(by.edge.net)} (${by.edge.n} coupons) · Own ${fmtSigned(by.own.net)} (${by.own.n} coupons)</div>
+        <div class="kpi-row">${edgeAllCard}${claudeCard}${gptCard}${ownCard}${bothCard}${unknownCard}</div>
+        <div class="calib-note" style="margin-top:14px;">Edge ${fmtSigned(by.edge.net)} (${by.edge.n} coupons) · claude ${fmtSigned(byAgent.claude.net)} (${byAgent.claude.n}) · gpt ${fmtSigned(byAgent.gpt.net)} (${byAgent.gpt.n}) · Own ${fmtSigned(by.own.net)} (${by.own.n} coupons)</div>
         ${smallSampleNote}
-        <div class="calib-sub">Edge recommendations, by agent</div>
-        <div class="kpi-row ${agentColsCls}">${agentCards}</div>
         ${agentSmallSampleNote}`;
 }
 

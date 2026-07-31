@@ -154,6 +154,10 @@ function isRecommendation(source) {
 }
 function isUserBet(source) { return source === 'user_bet'; }
 function recAgent(source) {
+    // official_recommendation predates claude's first report (21 Jul) -- gpt
+    // was the project's only agent then, just before the recommendation_gpt
+    // naming convention existed. Historically these are gpt's calls.
+    if (source === 'official_recommendation') return 'gpt';
     if (typeof source !== 'string' || !source.startsWith('recommendation_')) return null;
     return source.slice('recommendation_'.length) || null;
 }
@@ -189,10 +193,11 @@ function couponsBySource(coupons) {
 // comparison couponsBySource can't show on its own. `recommendation_both`
 // (both agents called the same bet, one coupon placed) gets its own bucket
 // rather than being force-assigned to either agent or double-counted.
-// `official_recommendation` (2 legacy coupons, agent unknown) is `official`.
+// `official_recommendation` (2 legacy, pre-claude coupons) resolves to gpt
+// via recAgent() -- no separate bucket for it.
 // Additive alongside couponsBySource -- doesn't replace it.
 function couponsByAgent(coupons) {
-    const buckets = { claude: [], gpt: [], both: [], official: [], own: [], unknown: [] };
+    const buckets = { claude: [], gpt: [], both: [], own: [], unknown: [] };
     (coupons || []).forEach(c => {
         const src = c.source;
         if (isUserBet(src)) { buckets.own.push(c); return; }
@@ -201,7 +206,7 @@ function couponsByAgent(coupons) {
             const a = recAgent(src);
             if (a === 'claude') buckets.claude.push(c);
             else if (a === 'gpt') buckets.gpt.push(c);
-            else buckets.official.push(c);
+            else buckets.unknown.push(c);
             return;
         }
         buckets.unknown.push(c);
@@ -210,7 +215,6 @@ function couponsByAgent(coupons) {
         claude: aggregateCoupons(buckets.claude),
         gpt: aggregateCoupons(buckets.gpt),
         both: aggregateCoupons(buckets.both),
-        official: aggregateCoupons(buckets.official),
         own: aggregateCoupons(buckets.own),
         unknown: aggregateCoupons(buckets.unknown)
     };
