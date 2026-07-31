@@ -3419,13 +3419,13 @@
       "market_odds_at_analysis": 1.57,
       "market_odds_opponent": 2.41,
       "odds_timestamp": "2026-07-31T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.56,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "bliski mecz, oba składy z problemami (FaZe loan+standin, MongolZ 2 debiutantów, brak trenera); p_est FaZe ≈ de-vig 0.606; value -7.4%; MongolZ @2.41 = -1.2%; korekta: przebudowany MongolZ działa lepiej niż zakładałem przy Wildcard. Merged by maintainer: report gave estimated_probability 0.59, which doesn't equal 1/fair_odds (1/1.69=0.5917) -- corrected to 0.5917 to match the reported fair_odds."
+      "notes": "bliski mecz, oba składy z problemami (FaZe loan+standin, MongolZ 2 debiutantów, brak trenera); p_est FaZe ≈ de-vig 0.606; value -7.4%; MongolZ @2.41 = -1.2%; korekta: przebudowany MongolZ działa lepiej niż zakładałem przy Wildcard. Merged by maintainer: report gave estimated_probability 0.59, which doesn't equal 1/fair_odds (1/1.69=0.5917) -- corrected to 0.5917 to match the reported fair_odds. Closing snapshot ~14:20 (10 min before start): FaZe 1.56 / MongolZ 2.44."
     },
     {
       "id": "P-2026-07-31-C2",
@@ -3463,11 +3463,12 @@
       "market_odds_at_analysis": 2.41,
       "market_odds_opponent": 1.57,
       "odds_timestamp": "2026-07-31T08:35:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.44,
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot ~14:20 (10 min before start): MongolZ 2.44 / FaZe 1.56."
     },
     {
       "id": "P-2026-07-31-G2",
