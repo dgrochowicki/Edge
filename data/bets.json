@@ -1325,9 +1325,9 @@
       "stake_pln": 2.0,
       "combined_odds": 3.29,
       "potential_return_pln": 5.79,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 5.79,
+      "status": "won",
+      "net_result_pln": 3.79,
       "selections": [
         {
           "match": "Liquid vs Betclic Apogee",
@@ -1346,8 +1346,8 @@
           "odds": 1.55,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick. Same match/pick as claude's/gpt's BLAST BET-scope PASS calls (P-2026-08-01-C2/G2 at 1.30), but this leg was priced later/live at 1.55, not at analysis."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick. Same match/pick as claude's/gpt's BLAST BET-scope PASS calls (P-2026-08-01-C2/G2 at 1.30), but this leg was priced later/live at 1.55, not at analysis. Settled: MOUZ beat Astralis 2:1 (13:6, 9:13, 9:13)."
         },
         {
           "match": "Just Players vs Sashi",
@@ -1365,14 +1365,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 28,
-    "won": 7,
+    "won": 8,
     "lost": 20,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 56.0,
-    "gross_return_pln": 38.17,
-    "net_result_pln": -15.83,
-    "roi": -0.2827
+    "gross_return_pln": 43.96,
+    "net_result_pln": -12.04,
+    "roi": -0.215
   },
   "archived_predictions": [
     {
@@ -3574,10 +3574,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "MOUZ 3 serie z rzędu ale prawie przegrał z 3DMAX; nowy IGL xertioN jeszcze nie klika; Astralis (trener NEO) męczył się z paiN (3 mapy 3 OT); veto: Nuke/Dust2 MOUZ, Ancient/Inferno Astralis, Mirage decyduje; p_est MOUZ 0.72 ~ de-vig 0.714; value -6.4%; Astralis @3.25 = -9.0% (podrożał z 3.50)."
+      "notes": "MOUZ 3 serie z rzędu ale prawie przegrał z 3DMAX; nowy IGL xertioN jeszcze nie klika; Astralis (trener NEO) męczył się z paiN (3 mapy 3 OT); veto: Nuke/Dust2 MOUZ, Ancient/Inferno Astralis, Mirage decyduje; p_est MOUZ 0.72 ~ de-vig 0.714; value -6.4%; Astralis @3.25 = -9.0% (podrożał z 3.50). Settled: MOUZ beat Astralis 2:1 (13:6, 9:13, 9:13)."
     },
     {
       "id": "P-2026-08-01-G1",
@@ -3620,7 +3620,8 @@
       "decision": "PASS",
       "confidence": 5,
       "stake": 0,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: MOUZ beat Astralis 2:1 (13:6, 9:13, 9:13)."
     }
   ]
 }
