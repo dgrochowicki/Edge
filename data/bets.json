@@ -3506,13 +3506,13 @@
       "market_odds_at_analysis": 1.14,
       "market_odds_opponent": 4.75,
       "odds_timestamp": "2026-08-01T09:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.12,
       "decision": "PASS",
       "confidence": 7,
       "result": "pending",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "Spirit faworyt turnieju (donk forma życia), jedyny rutynowy awans (2:0 Liquid); FaZe doszło absurdalnym comebackiem vs MongolZ ale Spirit nie będzie hojny; JBOEN vs sh1ro kluczowy; p_est 0.82 ~ de-vig 0.806; value -6.5%; FaZe @4.75 = -14.5% (podrożał z 5.55)."
+      "notes": "Spirit faworyt turnieju (donk forma życia), jedyny rutynowy awans (2:0 Liquid); FaZe doszło absurdalnym comebackiem vs MongolZ ale Spirit nie będzie hojny; JBOEN vs sh1ro kluczowy; p_est 0.82 ~ de-vig 0.806; value -6.5%; FaZe @4.75 = -14.5% (podrożał z 5.55). Closing snapshot ~12:20 (10 min before start): Spirit 1.12 / FaZe 5.09."
     },
     {
       "id": "P-2026-08-01-C2",
@@ -3550,11 +3550,12 @@
       "market_odds_at_analysis": 1.14,
       "market_odds_opponent": 4.75,
       "odds_timestamp": "2026-08-01T09:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.12,
       "decision": "PASS",
       "confidence": 5,
       "stake": 0,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot ~12:20 (10 min before start): Spirit 1.12 / FaZe 5.09."
     },
     {
       "id": "P-2026-08-01-G2",
