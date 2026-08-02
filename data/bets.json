@@ -3622,6 +3622,48 @@
       "stake": 0,
       "result": "won",
       "notes": "Settled: MOUZ beat Astralis 2:1 (13:6, 9:13, 9:13)."
+    },
+    {
+      "id": "P-2026-08-02-C1",
+      "date": "2026-08-02",
+      "report": "reports/2026-08-02-claude.md",
+      "game": "cs2",
+      "match": "Spirit vs MOUZ",
+      "market": "match_winner",
+      "pick": "Spirit",
+      "estimated_probability": 0.8475,
+      "fair_odds": 1.18,
+      "market_odds_at_analysis": 1.18,
+      "market_odds_opponent": 4.67,
+      "odds_timestamp": "2026-08-02T08:50:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 8,
+      "result": "pending",
+      "method_version": "v1",
+      "agent": "claude",
+      "notes": "WIELKI FINAL BO5; Spirit wyrazny faworyt - H2H 3:0 w 2026 (m.in. 13:2 ostatnio), Dust2 80% + Ancient sprzyjaja Spirit, jedyna mocna mapa MOUZ to Nuke (69%); BO5 wzmacnia faworyta; donk lider statystyk; p_est Spirit 0.85 > de-vig 0.798 (rynek lekko zanizyl) ale kurs 1.18 = fair 1.18, value +0.3% = zero; MOUZ @4.67 przewartosciowany (-29.9%); PASS - mam racje vs rynek ale krotki kurs zjada value"
+    },
+    {
+      "id": "P-2026-08-02-G1",
+      "date": "2026-08-02",
+      "agent": "gpt",
+      "method_version": "v1",
+      "report": "reports/2026-08-02-gpt.md",
+      "game": "cs2",
+      "match": "Spirit vs MOUZ",
+      "market": "moneyline",
+      "pick": "Spirit",
+      "estimated_probability": 0.8,
+      "fair_odds": 1.25,
+      "market_odds_at_analysis": 1.18,
+      "market_odds_opponent": 4.67,
+      "odds_timestamp": "2026-08-02T08:47:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "stake": null,
+      "result": "pending"
     }
   ]
 }
