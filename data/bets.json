@@ -1390,8 +1390,8 @@
           "odds": 2.4,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope. Leg individually still in progress but accumulator already lost due to leg 1."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope. Settled: GenOne beat Cybershoke 2:0. Leg individually won but accumulator already lost due to leg 1."
         }
       ]
     }
