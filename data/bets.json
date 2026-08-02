@@ -3639,10 +3639,10 @@
       "closing_odds": 1.15,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
       "agent": "claude",
-      "notes": "WIELKI FINAL BO5; Spirit wyrazny faworyt - H2H 3:0 w 2026 (m.in. 13:2 ostatnio), Dust2 80% + Ancient sprzyjaja Spirit, jedyna mocna mapa MOUZ to Nuke (69%); BO5 wzmacnia faworyta; donk lider statystyk; p_est Spirit 0.85 > de-vig 0.798 (rynek lekko zanizyl) ale kurs 1.18 = fair 1.18, value +0.3% = zero; MOUZ @4.67 przewartosciowany (-29.9%); PASS - mam racje vs rynek ale krotki kurs zjada value. Closing snapshot 12:20 (10 min przed startem): Spirit 1.15 / MOUZ 4.98."
+      "notes": "WIELKI FINAL BO5; Spirit wyrazny faworyt - H2H 3:0 w 2026 (m.in. 13:2 ostatnio), Dust2 80% + Ancient sprzyjaja Spirit, jedyna mocna mapa MOUZ to Nuke (69%); BO5 wzmacnia faworyta; donk lider statystyk; p_est Spirit 0.85 > de-vig 0.798 (rynek lekko zanizyl) ale kurs 1.18 = fair 1.18, value +0.3% = zero; MOUZ @4.67 przewartosciowany (-29.9%); PASS - mam racje vs rynek ale krotki kurs zjada value. Closing snapshot 12:20 (10 min przed startem): Spirit 1.15 / MOUZ 4.98. Settled: MOUZ beat Spirit 3:1 -- upset, PASS was correct discipline (no stake lost)."
     },
     {
       "id": "P-2026-08-02-G1",
@@ -3663,8 +3663,8 @@
       "decision": "PASS",
       "confidence": 5,
       "stake": null,
-      "result": "pending",
-      "notes": "Closing snapshot 12:20 (10 min przed startem): Spirit 1.15 / MOUZ 4.98."
+      "result": "lost",
+      "notes": "Closing snapshot 12:20 (10 min przed startem): Spirit 1.15 / MOUZ 4.98. Settled: MOUZ beat Spirit 3:1 -- upset, PASS was correct discipline (no stake lost)."
     }
   ]
 }
