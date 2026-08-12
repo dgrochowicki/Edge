@@ -3844,7 +3844,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: BIG won 13-9."
     },
     {
       "id": "P-2026-08-12-C2",
@@ -3885,7 +3886,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FUT won 13-10."
     },
     {
       "id": "P-2026-08-12-C4",
@@ -3926,7 +3928,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 Esports won 13-11."
     },
     {
       "id": "P-2026-08-12-C6",
@@ -3967,7 +3970,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Falcons won 13-6."
     },
     {
       "id": "P-2026-08-12-C8",
@@ -3987,7 +3991,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Legacy won 5-13."
     },
     {
       "id": "P-2026-08-12-C9",
@@ -4007,7 +4012,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FaZe won 11-13."
     },
     {
       "id": "P-2026-08-12-C10",
@@ -4027,7 +4033,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: B8 won 11-13."
     },
     {
       "id": "P-2026-08-12-C11",
@@ -4068,7 +4075,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Natus Vincere won 13-9."
     },
     {
       "id": "P-2026-08-12-C13",
@@ -4088,7 +4096,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality won 13-4."
     },
     {
       "id": "P-2026-08-12-C14",
@@ -4108,7 +4117,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA won 10-13."
     },
     {
       "id": "P-2026-08-12-C15",
@@ -4149,7 +4159,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: MOUZ won 8-13."
     },
     {
       "id": "P-2026-08-12-G1",
@@ -4167,7 +4178,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
+      "notes": "Settled: BIG won 13-9.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4209,7 +4221,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: FUT won 13-10.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4250,7 +4263,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: G2 Esports won 13-11.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4292,7 +4306,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Falcons won 13-6.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4312,7 +4327,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Legacy won 5-13.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4332,7 +4348,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
+      "notes": "Settled: FaZe won 11-13.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4352,7 +4369,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
+      "notes": "Settled: B8 won 11-13.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4394,7 +4412,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Natus Vincere won 13-9.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4414,7 +4433,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Vitality won 13-4.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4434,7 +4454,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: FURIA won 10-13.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4476,7 +4497,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: MOUZ won 8-13.",
       "agent": "gpt",
       "method_version": "v1"
     }
