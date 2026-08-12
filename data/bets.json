@@ -1394,19 +1394,145 @@
           "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope. Settled: GenOne beat Cybershoke 2:0. Leg individually won but accumulator already lost due to leg 1."
         }
       ]
+    },
+    {
+      "id": "EDGE-030",
+      "date": "2026-08-12",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 1.82,
+      "potential_return_pln": 3.19,
+      "gross_return_pln": 3.19,
+      "status": "won",
+      "net_result_pln": 1.19,
+      "selections": [
+        {
+          "match": "Luminosity vs GamerLegion",
+          "market": "moneyline",
+          "pick": "GamerLegion",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same pick as gpt's EWC-scope BET call (P-2026-08-12-G2 at 1.93), combined by the user into an own acca rather than staked as an independent single -- gpt's report explicitly noted no need to combine into a coupon."
+        },
+        {
+          "match": "9z vs paiN",
+          "market": "moneyline",
+          "pick": "9z",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same pick as gpt's EWC-scope BET call (P-2026-08-12-G15 at 1.45) and claude's PASS pick. User cashed out before this leg finished to lock in profit -- coupon-level combined_odds (1.82) and potential_return_pln (3.19) reflect the actual cash-out value, not the full 1.93x1.45=2.80 combo (which did land, per the user)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-031",
+      "date": "2026-08-12",
+      "type": "single",
+      "source": "recommendation_gpt",
+      "stake_pln": 2.0,
+      "combined_odds": 1.62,
+      "potential_return_pln": 2.85,
+      "gross_return_pln": 2.85,
+      "status": "won",
+      "net_result_pln": 0.85,
+      "selections": [
+        {
+          "match": "magic vs The MongolZ",
+          "market": "moneyline",
+          "pick": "The MongolZ",
+          "odds": 1.62,
+          "confidence": 7,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Direct bet on gpt's EWC-scope BET call (P-2026-08-12-G6), gpt's Bet of the Day."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-032",
+      "date": "2026-08-12",
+      "type": "single",
+      "source": "recommendation_gpt",
+      "stake_pln": 2.0,
+      "combined_odds": 1.72,
+      "potential_return_pln": 3.03,
+      "gross_return_pln": 3.03,
+      "status": "won",
+      "net_result_pln": 1.03,
+      "selections": [
+        {
+          "match": "MiBR vs Astralis",
+          "market": "moneyline",
+          "pick": "Astralis",
+          "odds": 1.72,
+          "confidence": 7,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Direct bet on gpt's EWC-scope BET call (P-2026-08-12-G11)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-033",
+      "date": "2026-08-12",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.57,
+      "potential_return_pln": 6.28,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Spirit vs JiJieHao",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.85,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- placed live/in-play during the match, which explains the large deviation from the 1.02 pre-match STS price (both agents' pre-match PASS picks, P-2026-08-12-C4/G4). Settled: JiJieHao upset Spirit -- confirmed here and used to settle C4/G4."
+        },
+        {
+          "match": "ex-RUSTEC vs SAW Youngsters",
+          "market": "moneyline",
+          "pick": "ex-RUSTEC",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not in Edge's tier-1 scope."
+        },
+        {
+          "match": "9z vs paiN",
+          "market": "moneyline",
+          "pick": "9z",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match/pick as today's EWC-scope BET calls (P-2026-08-12-G15/C15), independently placed as part of this own acca. Accumulator already lost on leg 1 (Spirit)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 29,
-    "won": 8,
-    "lost": 21,
+    "coupons": 33,
+    "won": 11,
+    "lost": 22,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 58.0,
-    "gross_return_pln": 43.96,
-    "net_result_pln": -14.04,
-    "roi": -0.2421
+    "total_staked_pln": 66.0,
+    "gross_return_pln": 53.03,
+    "net_result_pln": -12.97,
+    "roi": -0.1965
   },
   "archived_predictions": [
     {
@@ -3738,7 +3864,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: GamerLegion beat Luminosity."
     },
     {
       "id": "P-2026-08-12-C3",
@@ -3778,7 +3905,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: JiJieHao upset Spirit -- confirmed via user's live cash-out bet slip. Major BO1 upset against a 1.02 pre-match favorite."
     },
     {
       "id": "P-2026-08-12-C5",
@@ -3818,7 +3946,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: The MongolZ beat magic."
     },
     {
       "id": "P-2026-08-12-C7",
@@ -3918,7 +4047,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Astralis beat MiBR."
     },
     {
       "id": "P-2026-08-12-C12",
@@ -3998,7 +4128,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: 9z beat paiN."
     },
     {
       "id": "P-2026-08-12-C16",
@@ -4057,7 +4188,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: GamerLegion beat Luminosity.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4097,7 +4229,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
+      "result": "lost",
+      "notes": "Settled: JiJieHao upset Spirit -- confirmed via user's live cash-out bet slip. Major BO1 upset against a 1.02 pre-match favorite.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4138,7 +4271,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: The MongolZ beat magic.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4239,7 +4373,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Astralis beat MiBR.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4320,7 +4455,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: 9z beat paiN.",
       "agent": "gpt",
       "method_version": "v1"
     },
