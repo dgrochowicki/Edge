@@ -4608,7 +4608,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: GamerLegion won 2-0."
     },
     {
       "id": "P-2026-08-13-C2",
@@ -4649,7 +4650,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 won 2-1."
     },
     {
       "id": "P-2026-08-13-C4",
@@ -4669,7 +4671,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Aurora won 0-2."
     },
     {
       "id": "P-2026-08-13-C5",
@@ -4710,7 +4713,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FaZe won 2-0."
     },
     {
       "id": "P-2026-08-13-G1",
@@ -4728,7 +4732,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: GamerLegion won 2-0.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4748,7 +4753,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: G2 Esports won 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4789,7 +4795,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Aurora won 0-2.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -4831,7 +4838,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: FaZe won 2-0.",
       "agent": "gpt",
       "method_version": "v1"
     }
