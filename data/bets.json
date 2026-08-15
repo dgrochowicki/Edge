@@ -1759,9 +1759,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.53,
       "potential_return_pln": 4.45,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.45,
+      "status": "won",
+      "net_result_pln": 2.45,
       "selections": [
         {
           "match": "magic vs 3DMAX",
@@ -1770,8 +1770,8 @@
           "odds": 1.72,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C4/G4)."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C4/G4). Settled: magic beat 3DMAX 2-0."
         },
         {
           "match": "9z vs FURIA",
@@ -1780,8 +1780,8 @@
           "odds": 1.47,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C3/G3 even once resolved."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. FURIA beat 9z 2-1, so 9z avoided the 0-2 sweep and this leg wins even though 9z lost the match."
         }
       ]
     },
@@ -1864,14 +1864,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 40,
-    "won": 14,
+    "won": 15,
     "lost": 25,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 80.0,
-    "gross_return_pln": 62.49,
-    "net_result_pln": -15.51,
-    "roi": -0.1939
+    "gross_return_pln": 66.94,
+    "net_result_pln": -13.06,
+    "roi": -0.1633
   },
   "archived_predictions": [
     {
@@ -5407,7 +5407,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA beat 9z 2-1."
     },
     {
       "id": "P-2026-08-15-C4",
@@ -5448,7 +5449,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Aurora beat JiJieHao 2-0."
     },
     {
       "id": "P-2026-08-15-C6",
@@ -5528,7 +5530,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: FURIA beat 9z 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -5569,7 +5572,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Aurora beat JiJieHao 2-0.",
       "agent": "gpt",
       "method_version": "v1"
     },
