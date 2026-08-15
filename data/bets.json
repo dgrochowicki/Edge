@@ -1793,9 +1793,10 @@
       "stake_pln": 2.0,
       "combined_odds": 2.37,
       "potential_return_pln": 4.17,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 3.27,
+      "status": "won",
+      "net_result_pln": 1.27,
+      "notes": "User cashed out after 4 of 6 legs won, before Spirit vs BIG and JiJieHao vs Aurora (both still upcoming) could put the remaining stake at risk. Cash-out payout 3.27 PLN vs 4.17 PLN full potential -- the usual discount for locking in early.",
       "selections": [
         {
           "match": "The MongolZ vs Natus Vincere",
@@ -1824,8 +1825,8 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C3/G3 even once resolved."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so doesn't settle P-2026-08-15-C3/G3 (FURIA just avoided a 0-2 sweep, doesn't confirm the match winner)."
         },
         {
           "match": "magic vs 3DMAX",
@@ -1834,8 +1835,8 @@
           "odds": 1.23,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C4/G4 even once resolved."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so doesn't settle P-2026-08-15-C4/G4 (magic just avoided a 0-2 sweep, doesn't confirm the match winner)."
         },
         {
           "match": "Spirit vs BIG",
@@ -1845,7 +1846,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C6/G6)."
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C6/G6). Coupon was cashed out before this leg resolved, so its outcome no longer affects the coupon payout -- still tracked here for Edge settlement purposes."
         },
         {
           "match": "JiJieHao vs Aurora",
@@ -1855,7 +1856,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5)."
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5). Coupon was cashed out before this leg resolved, so its outcome no longer affects the coupon payout -- still tracked here for Edge settlement purposes."
         }
       ]
     }
@@ -1863,14 +1864,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 40,
-    "won": 13,
+    "won": 14,
     "lost": 25,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 80.0,
-    "gross_return_pln": 59.22,
-    "net_result_pln": -16.78,
-    "roi": -0.2098
+    "gross_return_pln": 62.49,
+    "net_result_pln": -15.51,
+    "roi": -0.1939
   },
   "archived_predictions": [
     {
