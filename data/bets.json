@@ -5365,7 +5365,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: paiN beat Wildcard 2-1."
     },
     {
       "id": "P-2026-08-15-C2",
@@ -5386,7 +5387,7 @@
       "decision": "PASS",
       "confidence": 6,
       "result": "won",
-      "notes": "Settled: Natus Vincere beat The MongolZ -- confirmed via user's coupon leg (Zwyciezca meczu: Natus Vincere, won)."
+      "notes": "Settled: Natus Vincere beat The MongolZ 2-1."
     },
     {
       "id": "P-2026-08-15-C3",
@@ -5426,7 +5427,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: magic beat 3DMAX 2-0."
     },
     {
       "id": "P-2026-08-15-C5",
@@ -5484,7 +5486,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: paiN beat Wildcard 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -5505,7 +5508,7 @@
       "decision": "PASS",
       "confidence": 5,
       "result": "won",
-      "notes": "Settled: Natus Vincere beat The MongolZ -- confirmed via user's coupon leg (Zwyciezca meczu: Natus Vincere, won).",
+      "notes": "Settled: Natus Vincere beat The MongolZ 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     },
@@ -5545,7 +5548,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: magic beat 3DMAX 2-0.",
       "agent": "gpt",
       "method_version": "v1"
     },
