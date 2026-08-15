@@ -5024,7 +5024,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: FUT beat MOUZ 2-1."
     },
     {
       "id": "P-2026-08-14-C3",
@@ -5147,7 +5148,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
+      "notes": "Settled: FUT beat MOUZ 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     },
