@@ -122,6 +122,12 @@ async function renderReport(date, agent, agents) {
         const md = await res.text();
         let html = marked.parse(md);
 
+        // Wrap tables in a horizontally-scrolling container so wide report
+        // tables (10 columns) scroll internally instead of forcing the page
+        // itself to overflow horizontally.
+        html = html.replace(/<table>/g, '<div class="table-scroll"><table>');
+        html = html.replace(/<\/table>/g, '</table></div>');
+
         // Highlight BET / PASS decisions
         html = html.replace(/<strong>PASS<\/strong>/g, '<strong class="tag-pass">PASS</strong>');
         html = html.replace(/<strong>BET<\/strong>/g, '<strong class="tag-bet">BET</strong>');
