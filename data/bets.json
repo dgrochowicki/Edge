@@ -1750,19 +1750,127 @@
           "notes": "Own bet for fun, not an Edge pick. Confirms PARIVISION beat 100 Thieves -- used to settle P-2026-08-14-C4/G4 (both picked PARIVISION) as won."
         }
       ]
+    },
+    {
+      "id": "EDGE-039",
+      "date": "2026-08-15",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.53,
+      "potential_return_pln": 4.45,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "magic vs 3DMAX",
+          "market": "moneyline",
+          "pick": "magic",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C4/G4)."
+        },
+        {
+          "match": "9z vs FURIA",
+          "market": "handicap_maps",
+          "pick": "9z +0.5",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C3/G3 even once resolved."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-040",
+      "date": "2026-08-15",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.37,
+      "potential_return_pln": 4.17,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "The MongolZ vs Natus Vincere",
+          "market": "moneyline",
+          "pick": "Natus Vincere",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C2/G2). Used to settle those as won."
+        },
+        {
+          "match": "paiN vs Wildcard",
+          "market": "handicap_maps",
+          "pick": "paiN +0.5",
+          "odds": 1.09,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so doesn't settle P-2026-08-15-C1/G1 (paiN just avoided a 0-2 sweep, doesn't confirm the match winner)."
+        },
+        {
+          "match": "9z vs FURIA",
+          "market": "handicap_maps",
+          "pick": "FURIA +0.5",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C3/G3 even once resolved."
+        },
+        {
+          "match": "magic vs 3DMAX",
+          "market": "handicap_maps",
+          "pick": "magic +0.5",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-15-C4/G4 even once resolved."
+        },
+        {
+          "match": "Spirit vs BIG",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C6/G6)."
+        },
+        {
+          "match": "JiJieHao vs Aurora",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.07,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 38,
+    "coupons": 40,
     "won": 13,
     "lost": 25,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 76.0,
+    "pending": 2,
+    "total_staked_pln": 80.0,
     "gross_return_pln": 59.22,
     "net_result_pln": -16.78,
-    "roi": -0.2208
+    "roi": -0.2098
   },
   "archived_predictions": [
     {
@@ -5276,7 +5384,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Natus Vincere beat The MongolZ -- confirmed via user's coupon leg (Zwyciezca meczu: Natus Vincere, won)."
     },
     {
       "id": "P-2026-08-15-C3",
@@ -5394,7 +5503,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Natus Vincere beat The MongolZ -- confirmed via user's coupon leg (Zwyciezca meczu: Natus Vincere, won).",
       "agent": "gpt",
       "method_version": "v1"
     },
