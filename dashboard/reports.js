@@ -33,8 +33,6 @@ async function init() {
             (couponsByDate[c.date] = couponsByDate[c.date] || []).push(c);
         });
 
-        renderList();
-
         const params = new URLSearchParams(window.location.search);
         const requestedDate = params.get('date');
         const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
@@ -43,7 +41,7 @@ async function init() {
 
     } catch (err) {
         console.error('Error loading reports:', err);
-        document.getElementById('reportList').innerHTML = '<div class="rv-empty" style="padding:16px;">Error loading report list.</div>';
+        document.getElementById('reportView').innerHTML = '<div class="rv-empty">Error loading reports.</div>';
     }
 }
 
@@ -54,39 +52,9 @@ function statusDotClass(status) {
     return 'pending';
 }
 
-function renderList() {
-    const el = document.getElementById('reportList');
-    const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
-    if (dates.length === 0) {
-        el.innerHTML = '<div class="rv-empty" style="padding:16px;">No reports found.</div>';
-        return;
-    }
-    el.innerHTML = dates.map(date => {
-        const coupons = couponsByDate[date] || [];
-        const dots = coupons.map(c => `<span class="rl-dot ${statusDotClass(c.status)}">${c.id.replace('EDGE-', '')}</span>`).join('');
-        return `<a href="?date=${date}" class="report-list-item" data-date="${date}">
-            <div class="rl-date">${date}</div>
-            <div class="rl-meta">${dots || '<span style="color:var(--ink-faint);">no coupon</span>'}</div>
-        </a>`;
-    }).join('');
-
-    el.querySelectorAll('.report-list-item').forEach(item => {
-        item.addEventListener('click', (e) => {
-            e.preventDefault();
-            const date = item.getAttribute('data-date');
-            history.pushState({}, '', `?date=${date}`);
-            selectReport(date);
-        });
-    });
-}
-
 async function selectReport(date, preferredAgent) {
     const day = reportsByDate[date];
     currentDate = date;
-
-    document.querySelectorAll('.report-list-item').forEach(el => {
-        el.classList.toggle('active', el.getAttribute('data-date') === date);
-    });
 
     const view = document.getElementById('reportView');
     if (!day) {
