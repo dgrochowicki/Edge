@@ -377,7 +377,13 @@ tr:hover .view-link{color:var(--edge);}
 .report-list{
   flex:1;
   overflow-y:auto;
+  scrollbar-width:thin;
+  scrollbar-color:var(--edge) transparent;
 }
+.report-list::-webkit-scrollbar{width:6px;}
+.report-list::-webkit-scrollbar-track{background:transparent;}
+.report-list::-webkit-scrollbar-thumb{background:var(--edge);border-radius:3px;}
+.report-list::-webkit-scrollbar-thumb:hover{background:var(--edge);opacity:0.8;}
 .report-list-item{
   display:block;
   padding:12px 16px;
