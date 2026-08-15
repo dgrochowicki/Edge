@@ -33,12 +33,12 @@ async function init() {
             (couponsByDate[c.date] = couponsByDate[c.date] || []).push(c);
         });
 
-        renderList();
-
         const params = new URLSearchParams(window.location.search);
         const requestedDate = params.get('date');
         const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
         const initialDate = reportsByDate[requestedDate] ? requestedDate : dates[0];
+
+        renderList(initialDate ? initialDate.slice(0, 7) : undefined);
         if (initialDate) selectReport(initialDate, params.get('agent'));
 
     } catch (err) {
@@ -54,21 +54,56 @@ function statusDotClass(status) {
     return 'pending';
 }
 
-function renderList() {
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'];
+
+function monthLabel(monthKey) {
+    const [y, m] = monthKey.split('-');
+    return `${MONTH_NAMES[parseInt(m, 10) - 1]} ${y}`;
+}
+
+function renderList(expandedMonth) {
     const el = document.getElementById('reportList');
     const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
     if (dates.length === 0) {
         el.innerHTML = '<div class="rv-empty" style="padding:16px;">No reports found.</div>';
         return;
     }
-    el.innerHTML = dates.map(date => {
-        const coupons = couponsByDate[date] || [];
-        const dots = coupons.map(c => `<span class="rl-dot ${statusDotClass(c.status)}">${c.id.replace('EDGE-', '')}</span>`).join('');
-        return `<a href="?date=${date}" class="report-list-item" data-date="${date}">
-            <div class="rl-date">${date}</div>
-            <div class="rl-meta">${dots || '<span style="color:var(--ink-faint);">no coupon</span>'}</div>
-        </a>`;
+
+    const months = [];
+    const byMonth = {};
+    dates.forEach(date => {
+        const monthKey = date.slice(0, 7);
+        if (!byMonth[monthKey]) { byMonth[monthKey] = []; months.push(monthKey); }
+        byMonth[monthKey].push(date);
+    });
+    if (!expandedMonth) expandedMonth = months[0];
+
+    el.innerHTML = months.map(monthKey => {
+        const isOpen = monthKey === expandedMonth;
+        const items = byMonth[monthKey].map(date => {
+            const coupons = couponsByDate[date] || [];
+            const dots = coupons.map(c => `<span class="rl-dot ${statusDotClass(c.status)}">${c.id.replace('EDGE-', '')}</span>`).join('');
+            return `<a href="?date=${date}" class="report-list-item" data-date="${date}">
+                <div class="rl-date">${date}</div>
+                <div class="rl-meta">${dots || '<span style="color:var(--ink-faint);">no coupon</span>'}</div>
+            </a>`;
+        }).join('');
+        return `<div class="report-month${isOpen ? ' open' : ''}" data-month="${monthKey}">
+            <button type="button" class="report-month-head">
+                <span class="rm-chevron">▸</span>
+                <span class="rm-label">${monthLabel(monthKey)}</span>
+                <span class="rm-count">${byMonth[monthKey].length}</span>
+            </button>
+            <div class="report-month-items">${items}</div>
+        </div>`;
     }).join('');
+
+    el.querySelectorAll('.report-month-head').forEach(head => {
+        head.addEventListener('click', () => {
+            head.closest('.report-month').classList.toggle('open');
+        });
+    });
 
     el.querySelectorAll('.report-list-item').forEach(item => {
         item.addEventListener('click', (e) => {
@@ -87,6 +122,8 @@ async function selectReport(date, preferredAgent) {
     document.querySelectorAll('.report-list-item').forEach(el => {
         el.classList.toggle('active', el.getAttribute('data-date') === date);
     });
+    const monthGroup = document.querySelector(`.report-month[data-month="${date.slice(0, 7)}"]`);
+    if (monthGroup) monthGroup.classList.add('open');
 
     const view = document.getElementById('reportView');
     if (!day) {
