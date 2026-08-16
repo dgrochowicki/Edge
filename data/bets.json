@@ -1966,9 +1966,9 @@
       "stake_pln": 2.0,
       "combined_odds": 3.59,
       "potential_return_pln": 6.32,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 6.32,
+      "status": "won",
+      "net_result_pln": 4.32,
       "selections": [
         {
           "match": "9z vs magic",
@@ -1987,8 +1987,8 @@
           "odds": 1.53,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C6/G6)."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C6/G6). Settled: Legacy beat MiBR 2-0."
         },
         {
           "match": "Astralis vs Ninjas in Pyjamas",
@@ -2006,14 +2006,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 43,
-    "won": 15,
+    "won": 16,
     "lost": 27,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 86.0,
-    "gross_return_pln": 66.94,
-    "net_result_pln": -17.06,
-    "roi": -0.1984
+    "gross_return_pln": 73.26,
+    "net_result_pln": -12.74,
+    "roi": -0.1481
   },
   "archived_predictions": [
     {
@@ -5864,8 +5864,8 @@
       "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- barely moved from 1.53/2.30 at analysis."
+      "result": "won",
+      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- barely moved from 1.53/2.30 at analysis. Settled: Legacy beat MiBR 2-0."
     },
     {
       "id": "P-2026-08-16-G1",
@@ -5990,8 +5990,8 @@
       "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- unchanged from analysis."
+      "result": "won",
+      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- unchanged from analysis. Settled: Legacy beat MiBR 2-0."
     }
   ]
 }
