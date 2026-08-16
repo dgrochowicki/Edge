@@ -1977,8 +1977,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- placed live, map 2, with magic up 1-0 in maps. Not a moneyline outright market, so won't settle P-2026-08-16-C3/G3 even once resolved (both agents picked 9z outright pre-match)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- placed live, map 2, with magic up 1-0 in maps. 9z won map 2 to level 1-1 (decider incoming), so this leg is already locked in as won regardless of the decider. Not a moneyline outright market, so won't settle P-2026-08-16-C3/G3 even once resolved (both agents picked 9z outright pre-match)."
         },
         {
           "match": "Legacy vs MiBR",
