@@ -330,9 +330,17 @@ function processReportMarkdown(md) {
     return html;
 }
 
+function setPageTitle(title, tagline) {
+    const titleEl = document.getElementById('pageTitle');
+    const taglineEl = document.getElementById('pageTagline');
+    if (titleEl) titleEl.textContent = title;
+    if (taglineEl) taglineEl.textContent = tagline;
+}
+
 async function renderReport(date, agent, agents) {
     const view = document.getElementById('reportView');
     view.innerHTML = '<div class="rv-loading">Loading report…</div>';
+    setPageTitle('Reports', 'Pre-match analysis, fair-odds estimates and BET/PASS decisions, by day.');
 
     const file = reportsByDate[date][agent];
     if (!file) {
@@ -370,6 +378,8 @@ async function renderReport(date, agent, agents) {
 async function renderSummary(tournament, phase, phases) {
     const view = document.getElementById('reportView');
     view.innerHTML = '<div class="rv-loading">Loading summary…</div>';
+    const tournamentName = tournament.replace(/-/g, ' ');
+    setPageTitle(tournamentName, 'Phase-by-phase calibration and results review.');
 
     const file = summariesByTournament[tournament][phase];
     if (!file) {
@@ -384,7 +394,7 @@ async function renderSummary(tournament, phase, phases) {
 
         const metaBar = `
             <div class="report-meta-bar">
-                <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">${tournament.replace(/-/g, ' ')}</span>
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">${phaseLabel(phase)}</span>
             </div>`;
 
         const tabsBar = phases.length > 1
