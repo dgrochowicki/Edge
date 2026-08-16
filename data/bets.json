@@ -5860,10 +5860,11 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.3,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- barely moved from 1.53/2.30 at analysis."
     },
     {
       "id": "P-2026-08-16-G1",
@@ -5984,10 +5985,11 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.35,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Snapshot 19:24 (match likely delayed from 18:50 by the preceding 9z-magic decider): Legacy 1.53 / MiBR 2.35 -- unchanged from analysis."
     }
   ]
 }
