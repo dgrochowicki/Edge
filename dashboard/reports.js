@@ -1,4 +1,5 @@
 const GITHUB_API_REPORTS = 'https://api.github.com/repos/dgrochowicki/Edge/contents/reports';
+const GITHUB_API_SUMMARIES = 'https://api.github.com/repos/dgrochowicki/Edge/contents/reports/summaries';
 
 // { '2026-07-21': { claude: {url}, gpt: {url} }, '2026-07-16': { single: {url} } }
 let reportsByDate = {};
@@ -6,14 +7,39 @@ let couponsByDate = {}; // { '2026-07-16': [coupon, ...] }
 let currentDate = null;
 let currentAgent = null;
 
+// { 'EWC-2026': { group: {download_url}, playoffs: {...}, final: {...} } }
+let summariesByTournament = {};
+let currentTournament = null;
+let currentPhase = null;
+
+let mode = 'daily'; // 'daily' | 'summary'
+
 document.addEventListener('DOMContentLoaded', init);
 
 const FILENAME_RE = /^(\d{4}-\d{2}-\d{2})(?:-(claude|gpt))?$/;
+const SUMMARY_FILENAME_RE = /^(.+)-([a-zA-Z0-9]+)$/;
+const PHASE_ORDER = ['group', 'playoffs', 'final'];
+const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary' };
+
+function phaseLabel(phase) {
+    return PHASE_LABELS[phase] || (phase.charAt(0).toUpperCase() + phase.slice(1));
+}
+
+function sortPhases(phases) {
+    return phases.sort((a, b) => {
+        const ia = PHASE_ORDER.indexOf(a), ib = PHASE_ORDER.indexOf(b);
+        if (ia === -1 && ib === -1) return a.localeCompare(b);
+        if (ia === -1) return 1;
+        if (ib === -1) return -1;
+        return ia - ib;
+    });
+}
 
 async function init() {
     try {
-        const [filesJson, betsJson] = await Promise.all([
+        const [filesJson, summaryFilesJson, betsJson] = await Promise.all([
             fetch(GITHUB_API_REPORTS).then(r => r.json()),
+            fetch(GITHUB_API_SUMMARIES).then(r => r.ok ? r.json() : []).catch(() => []),
             fetchBetsData()
         ]);
 
@@ -28,12 +54,35 @@ async function init() {
                 day[agent || 'single'] = { download_url: f.download_url };
             });
 
+        summariesByTournament = {};
+        (Array.isArray(summaryFilesJson) ? summaryFilesJson : [])
+            .filter(f => f.name.endsWith('.md'))
+            .forEach(f => {
+                const m = SUMMARY_FILENAME_RE.exec(f.name.replace('.md', ''));
+                if (!m) return;
+                const [, tournament, phase] = m;
+                const t = summariesByTournament[tournament] = summariesByTournament[tournament] || {};
+                t[phase] = { download_url: f.download_url };
+            });
+
         couponsByDate = {};
         (betsJson.coupons || []).forEach(c => {
             (couponsByDate[c.date] = couponsByDate[c.date] || []).push(c);
         });
 
+        wireModeToggle();
+
         const params = new URLSearchParams(window.location.search);
+
+        if (params.get('view') === 'summary') {
+            const tournaments = Object.keys(summariesByTournament);
+            const requestedTournament = params.get('tournament');
+            const initialTournament = summariesByTournament[requestedTournament] ? requestedTournament : tournaments[0];
+            setMode('summary', { skipHistory: true });
+            if (initialTournament) selectSummary(initialTournament, params.get('phase'));
+            return;
+        }
+
         const requestedDate = params.get('date');
         const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
         const initialDate = reportsByDate[requestedDate] ? requestedDate : dates[0];
@@ -43,7 +92,38 @@ async function init() {
 
     } catch (err) {
         console.error('Error loading reports:', err);
-        document.getElementById('reportList').innerHTML = '<div class="rv-empty" style="padding:16px;">Error loading report list.</div>';
+        document.getElementById('reportView').innerHTML = '<div class="rv-empty">Error loading reports.</div>';
+    }
+}
+
+function wireModeToggle() {
+    document.querySelectorAll('.rmt-btn').forEach(btn => {
+        btn.addEventListener('click', () => setMode(btn.getAttribute('data-mode')));
+    });
+}
+
+function setMode(nextMode, opts) {
+    mode = nextMode;
+    document.querySelectorAll('.rmt-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-mode') === mode);
+    });
+
+    if (mode === 'daily') {
+        const dates = Object.keys(reportsByDate).sort((a, b) => b.localeCompare(a));
+        const date = currentDate || dates[0];
+        if (!(opts && opts.skipHistory)) history.pushState({}, '', date ? `?date=${date}` : '?');
+        renderList(date ? date.slice(0, 7) : undefined);
+        if (date) selectReport(date, currentAgent);
+    } else {
+        renderSummaryList(currentTournament);
+        if (!(opts && opts.skipHistory)) {
+            const tournaments = Object.keys(summariesByTournament);
+            const t = currentTournament || tournaments[0];
+            if (t) {
+                history.pushState({}, '', `?view=summary&tournament=${t}`);
+                selectSummary(t, currentPhase);
+            }
+        }
     }
 }
 
@@ -115,6 +195,48 @@ function renderList(expandedMonth) {
     });
 }
 
+function renderSummaryList(activeTournament) {
+    const el = document.getElementById('reportList');
+    const tournaments = Object.keys(summariesByTournament);
+    if (tournaments.length === 0) {
+        el.innerHTML = '<div class="rv-empty" style="padding:16px;">No phase summaries yet.</div>';
+        return;
+    }
+    if (!activeTournament) activeTournament = tournaments[0];
+
+    el.innerHTML = tournaments.map(tournament => {
+        const phases = sortPhases(Object.keys(summariesByTournament[tournament]));
+        const items = phases.map(phase => `<a href="?view=summary&tournament=${tournament}&phase=${phase}"
+                class="report-list-item" data-tournament="${tournament}" data-phase="${phase}">
+                <div class="rl-date">${phaseLabel(phase)}</div>
+            </a>`).join('');
+        return `<div class="report-month open" data-tournament-group="${tournament}">
+            <button type="button" class="report-month-head">
+                <span class="rm-chevron">▸</span>
+                <span class="rm-label">${tournament.replace(/-/g, ' ')}</span>
+                <span class="rm-count">${phases.length}</span>
+            </button>
+            <div class="report-month-items">${items}</div>
+        </div>`;
+    }).join('');
+
+    el.querySelectorAll('.report-month-head').forEach(head => {
+        head.addEventListener('click', () => {
+            head.closest('.report-month').classList.toggle('open');
+        });
+    });
+
+    el.querySelectorAll('.report-list-item[data-tournament]').forEach(item => {
+        item.addEventListener('click', (e) => {
+            e.preventDefault();
+            const tournament = item.getAttribute('data-tournament');
+            const phase = item.getAttribute('data-phase');
+            history.pushState({}, '', `?view=summary&tournament=${tournament}&phase=${phase}`);
+            selectSummary(tournament, phase);
+        });
+    });
+}
+
 async function selectReport(date, preferredAgent) {
     const day = reportsByDate[date];
     currentDate = date;
@@ -144,6 +266,70 @@ function switchAgent(agent) {
     renderReport(currentDate, agent, agents);
 }
 
+async function selectSummary(tournament, preferredPhase) {
+    const entry = summariesByTournament[tournament];
+    currentTournament = tournament;
+
+    document.querySelectorAll('.report-list-item[data-tournament]').forEach(el => {
+        el.classList.toggle('active',
+            el.getAttribute('data-tournament') === tournament &&
+            (!preferredPhase || el.getAttribute('data-phase') === preferredPhase));
+    });
+
+    const view = document.getElementById('reportView');
+    if (!entry) {
+        view.innerHTML = '<div class="rv-empty">No summary found for this tournament.</div>';
+        return;
+    }
+
+    const phases = sortPhases(Object.keys(entry));
+    currentPhase = phases.includes(preferredPhase) ? preferredPhase : phases[phases.length - 1];
+
+    await renderSummary(tournament, currentPhase, phases);
+}
+
+function switchPhase(phase) {
+    currentPhase = phase;
+    history.pushState({}, '', `?view=summary&tournament=${currentTournament}&phase=${phase}`);
+    const phases = sortPhases(Object.keys(summariesByTournament[currentTournament]));
+    renderSummary(currentTournament, phase, phases);
+    document.querySelectorAll('.report-list-item[data-tournament]').forEach(el => {
+        el.classList.toggle('active',
+            el.getAttribute('data-tournament') === currentTournament &&
+            el.getAttribute('data-phase') === phase);
+    });
+}
+
+// Shared markdown -> decorated HTML pipeline used by both daily reports and
+// phase summaries, so they read visually the same.
+function processReportMarkdown(md) {
+    let html = marked.parse(md);
+
+    // Wrap tables in a horizontally-scrolling container so wide report
+    // tables (10 columns) scroll internally instead of forcing the page
+    // itself to overflow horizontally.
+    html = html.replace(/<table>/g, '<div class="table-scroll"><table>');
+    html = html.replace(/<\/table>/g, '</table></div>');
+
+    // Highlight BET / PASS decisions
+    html = html.replace(/<strong>PASS<\/strong>/g, '<strong class="tag-pass">PASS</strong>');
+    html = html.replace(/<strong>BET<\/strong>/g, '<strong class="tag-bet">BET</strong>');
+    // Color value percentages (e.g. +5.6%, −4.1%), whether in table cells or plain
+    // prose after a bold "Value:" label -- reports don't bold the number itself.
+    html = html.replace(/([+\-−]\d+(?:[.,]\d+)?%)/g, (m) => {
+        const cls = (m[0] === '-' || m[0] === '−') ? 'val-neg' : 'val-pos';
+        return `<span class="${cls}">${m}</span>`;
+    });
+    // Color risk levels (Ryzyko): a closed Polish vocabulary, safe to match anywhere.
+    html = html.replace(/(Bardzo wysokie|Średnio-wysokie|Wysokie|Średnie|Niskie)/gi, (m) => {
+        const norm = m.toLowerCase();
+        const cls = norm.includes('wysok') ? 'risk-high' : norm.includes('nisk') ? 'risk-low' : 'risk-med';
+        return `<span class="${cls}">${m}</span>`;
+    });
+
+    return html;
+}
+
 async function renderReport(date, agent, agents) {
     const view = document.getElementById('reportView');
     view.innerHTML = '<div class="rv-loading">Loading report…</div>';
@@ -157,29 +343,7 @@ async function renderReport(date, agent, agents) {
     try {
         const res = await fetch(file.download_url);
         const md = await res.text();
-        let html = marked.parse(md);
-
-        // Wrap tables in a horizontally-scrolling container so wide report
-        // tables (10 columns) scroll internally instead of forcing the page
-        // itself to overflow horizontally.
-        html = html.replace(/<table>/g, '<div class="table-scroll"><table>');
-        html = html.replace(/<\/table>/g, '</table></div>');
-
-        // Highlight BET / PASS decisions
-        html = html.replace(/<strong>PASS<\/strong>/g, '<strong class="tag-pass">PASS</strong>');
-        html = html.replace(/<strong>BET<\/strong>/g, '<strong class="tag-bet">BET</strong>');
-        // Color value percentages (e.g. +5.6%, −4.1%), whether in table cells or plain
-        // prose after a bold "Value:" label -- reports don't bold the number itself.
-        html = html.replace(/([+\-−]\d+(?:[.,]\d+)?%)/g, (m) => {
-            const cls = (m[0] === '-' || m[0] === '−') ? 'val-neg' : 'val-pos';
-            return `<span class="${cls}">${m}</span>`;
-        });
-        // Color risk levels (Ryzyko): a closed Polish vocabulary, safe to match anywhere.
-        html = html.replace(/(Bardzo wysokie|Średnio-wysokie|Wysokie|Średnie|Niskie)/gi, (m) => {
-            const norm = m.toLowerCase();
-            const cls = norm.includes('wysok') ? 'risk-high' : norm.includes('nisk') ? 'risk-low' : 'risk-med';
-            return `<span class="${cls}">${m}</span>`;
-        });
+        const html = processReportMarkdown(md);
 
         const coupons = couponsByDate[date] || [];
         const linkedBar = `
@@ -200,5 +364,36 @@ async function renderReport(date, agent, agents) {
     } catch (err) {
         console.error('Error loading report file:', err);
         view.innerHTML = '<div class="rv-empty">Error loading this report.</div>';
+    }
+}
+
+async function renderSummary(tournament, phase, phases) {
+    const view = document.getElementById('reportView');
+    view.innerHTML = '<div class="rv-loading">Loading summary…</div>';
+
+    const file = summariesByTournament[tournament][phase];
+    if (!file) {
+        view.innerHTML = '<div class="rv-empty">No summary found for this phase.</div>';
+        return;
+    }
+
+    try {
+        const res = await fetch(file.download_url);
+        const md = await res.text();
+        const html = processReportMarkdown(md);
+
+        const metaBar = `
+            <div class="report-meta-bar">
+                <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">${tournament.replace(/-/g, ' ')}</span>
+            </div>`;
+
+        const tabsBar = phases.length > 1
+            ? `<div class="report-tabs">${phases.map(p => `<span class="report-tab ${p === phase ? 'active' : ''}" onclick="switchPhase('${p}')">${phaseLabel(p)}</span>`).join('')}</div>`
+            : '';
+
+        view.innerHTML = `${metaBar}${tabsBar}<div class="markdown-body">${html}</div>`;
+    } catch (err) {
+        console.error('Error loading summary file:', err);
+        view.innerHTML = '<div class="rv-empty">Error loading this summary.</div>';
     }
 }

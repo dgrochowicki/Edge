@@ -375,6 +375,26 @@ tr:hover .view-link{color:var(--edge);}
   align-self:flex-start;
   height:100vh;
 }
+.report-mode-toggle{
+  display:flex;
+  border-bottom:1px solid var(--line);
+  flex-shrink:0;
+}
+.rmt-btn{
+  flex:1;
+  padding:10px 8px;
+  background:none;
+  border:none;
+  border-bottom:2px solid transparent;
+  cursor:pointer;
+  font-family:var(--font-mono);
+  font-size:10.5px;
+  letter-spacing:0.06em;
+  text-transform:uppercase;
+  color:var(--ink-faint);
+}
+.rmt-btn:hover{color:var(--ink-dim);}
+.rmt-btn.active{color:var(--edge);border-bottom-color:var(--edge);}
 .report-list{
   flex:1;
   overflow-y:auto;
