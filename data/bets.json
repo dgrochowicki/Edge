@@ -1997,8 +1997,8 @@
           "odds": 1.7,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C5/G5)."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C5/G5). Settled: Astralis beat Ninjas in Pyjamas 2-1."
         }
       ]
     }
@@ -5843,7 +5843,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Astralis beat Ninjas in Pyjamas 2-1."
     },
     {
       "id": "P-2026-08-16-C6",
@@ -5968,7 +5969,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Astralis beat Ninjas in Pyjamas 2-1."
     },
     {
       "id": "P-2026-08-16-G6",
