@@ -5733,11 +5733,11 @@
       "market_odds_at_analysis": 1.47,
       "market_odds_opponent": 2.5,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": 1.5,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Closing snapshot 12:25 (35 min przed startem): The MongolZ 1.50 / paiN 2.40 -- drifted from 1.47/2.50 at analysis."
+      "notes": "Closing snapshot 12:51 (9 min przed startem): The MongolZ 1.47 / paiN 2.50 -- back to the analysis price (12:25 interim snapshot of 1.50/2.40 was a temporary drift)."
     },
     {
       "id": "P-2026-08-16-C3",
@@ -5855,11 +5855,11 @@
       "market_odds_at_analysis": 1.47,
       "market_odds_opponent": 2.5,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": 1.5,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Closing snapshot 12:25 (35 min przed startem): The MongolZ 1.50 / paiN 2.40 -- drifted from 1.47/2.50 at analysis."
+      "notes": "Closing snapshot 12:51 (9 min przed startem): The MongolZ 1.47 / paiN 2.50 -- back to the analysis price (12:25 interim snapshot of 1.50/2.40 was a temporary drift)."
     },
     {
       "id": "P-2026-08-16-G3",
