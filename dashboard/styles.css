@@ -593,6 +593,15 @@ tr:hover .view-link{color:var(--edge);}
   padding:3px 8px;
 }
 .report-meta-bar .linked-coupons a:hover{color:var(--edge);border-color:var(--edge);}
+.report-meta-bar .hltv-link{
+  font-family:var(--font-mono);
+  font-size:11px;
+  color:var(--ink-dim);
+  text-decoration:none;
+  border:1px solid var(--line);
+  padding:3px 8px;
+}
+.report-meta-bar .hltv-link:hover{color:var(--edge);border-color:var(--edge);}
 
 .report-tabs{display:flex;gap:8px;margin-bottom:20px;}
 .report-tab{

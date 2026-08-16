@@ -21,6 +21,19 @@ const SUMMARY_FILENAME_RE = /^(.+)-([a-zA-Z0-9]+)$/;
 const PHASE_ORDER = ['group', 'playoffs', 'final'];
 const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary' };
 
+// Per-tournament display name + external reference link. Keyed by the
+// tournament slug used in the reports/summaries/ filenames.
+const TOURNAMENT_META = {
+    'EWC-2026': {
+        name: 'Esports World Cup 2026',
+        hltv: 'https://www.hltv.org/events/8261/esports-world-cup-2026'
+    }
+};
+
+function tournamentMeta(tournament) {
+    return TOURNAMENT_META[tournament] || { name: tournament.replace(/-/g, ' '), hltv: null };
+}
+
 function phaseLabel(phase) {
     return PHASE_LABELS[phase] || (phase.charAt(0).toUpperCase() + phase.slice(1));
 }
@@ -378,8 +391,8 @@ async function renderReport(date, agent, agents) {
 async function renderSummary(tournament, phase, phases) {
     const view = document.getElementById('reportView');
     view.innerHTML = '<div class="rv-loading">Loading summary…</div>';
-    const tournamentName = tournament.replace(/-/g, ' ');
-    setPageTitle(tournamentName, 'Phase-by-phase calibration and results review.');
+    const meta = tournamentMeta(tournament);
+    setPageTitle(meta.name, 'Phase-by-phase calibration and results review.');
 
     const file = summariesByTournament[tournament][phase];
     if (!file) {
@@ -395,6 +408,7 @@ async function renderSummary(tournament, phase, phases) {
         const metaBar = `
             <div class="report-meta-bar">
                 <span style="font-family:var(--font-mono);font-size:11px;color:var(--ink-faint);">${phaseLabel(phase)}</span>
+                ${meta.hltv ? `<a href="${meta.hltv}" target="_blank" rel="noopener" class="hltv-link">HLTV event ↗</a>` : ''}
             </div>`;
 
         const tabsBar = phases.length > 1
