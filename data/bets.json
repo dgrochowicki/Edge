@@ -1899,8 +1899,8 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-16-C4/G4 even once resolved."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick. MOUZ won outright 2-0, so this leg wins too -- doesn't change the coupon's already-lost status (leg 2, paiN, lost)."
         },
         {
           "match": "9z vs magic",
@@ -1943,8 +1943,8 @@
           "odds": 1.42,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C4/G4)."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C4/G4). Settled: MOUZ beat PARIVISION 2-0."
         },
         {
           "match": "Legacy vs MiBR",
@@ -5822,7 +5822,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: MOUZ beat PARIVISION 2-0."
     },
     {
       "id": "P-2026-08-16-C5",
@@ -5945,7 +5946,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: MOUZ beat PARIVISION 2-0."
     },
     {
       "id": "P-2026-08-16-G5",
