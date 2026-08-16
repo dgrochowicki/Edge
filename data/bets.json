@@ -1923,8 +1923,8 @@
       "combined_odds": 2.36,
       "potential_return_pln": 4.15,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "9z vs magic",
@@ -1933,8 +1933,8 @@
           "odds": 1.42,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C3/G3)."
+          "result": "lost",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C3/G3). Settled: magic beat 9z 2-1 -- coupon lost."
         },
         {
           "match": "MOUZ vs PARIVISION",
@@ -2007,13 +2007,13 @@
   "summary": {
     "coupons": 43,
     "won": 15,
-    "lost": 26,
+    "lost": 27,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 86.0,
     "gross_return_pln": 66.94,
-    "net_result_pln": -15.06,
-    "roi": -0.1751
+    "net_result_pln": -17.06,
+    "roi": -0.1984
   },
   "archived_predictions": [
     {
@@ -5801,8 +5801,8 @@
       "closing_odds": 1.42,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis."
+      "result": "lost",
+      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis. Settled: magic beat 9z 2-1 (decider)."
     },
     {
       "id": "P-2026-08-16-C4",
@@ -5925,8 +5925,8 @@
       "closing_odds": 1.42,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis."
+      "result": "lost",
+      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis. Settled: magic beat 9z 2-1 (decider)."
     },
     {
       "id": "P-2026-08-16-G4",
