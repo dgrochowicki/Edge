@@ -5754,10 +5754,11 @@
       "market_odds_at_analysis": 1.42,
       "market_odds_opponent": 2.65,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.42,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis."
     },
     {
       "id": "P-2026-08-16-C4",
@@ -5876,10 +5877,11 @@
       "market_odds_at_analysis": 1.42,
       "market_odds_opponent": 2.65,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.42,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 15:22 (33 min przed startem): 9z 1.42 / magic 2.65 -- unchanged from analysis."
     },
     {
       "id": "P-2026-08-16-G4",
