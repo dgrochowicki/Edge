@@ -78,7 +78,7 @@ Ten raport jest opisowy i NIE stanowi walidacji metody. Konkretnie:
 
 - **Faza Collection trwa.** Rozliczonych predykcji łącznie: **137 z docelowych 150** (checkpoint). Do checkpointu: 13 predykcji. Żaden wniosek kalibracyjny nie jest jeszcze rozstrzygający.
 - **Metoda v1 ma znany bias** (systematyczne przeszacowanie w stronę picku ~+2pp). v2 nie zdefiniowana. Kalibracja opisana wyżej to kalibracja metody, o której wiadomo, że jest niedokończona.
-- **CLV w większości niewypełnione.** closing_odds: null dla 113/137 predykcji (82%). Bez closing line value nie da się stwierdzić, czy predykcje biją rynek w sposób przewidujący długoterminowy zysk. Uwaga: 24 wpisy mają już closing_odds (12 claude, 12 gpt) — pokrycie rośnie, ale wciąż za niskie na wnioski CLV.
+- **CLV w większości niewypełnione.** closing_odds: null dla 113/137 predykcji (82%). Wypełnione: 24/137 (18%), rozłożone równo (claude 12, gpt 12 — closing to właściwość meczu/rynku, więc przypisywane obu agentom identycznie, niezależnie od tego kto typował). Źródło: kursy zamknięcia podawane manualnie przez operatora (via agent VS Code); żaden agent nie ma własnego dostępu do STS. Pokrycie zaczęło rosnąć od 16.08, gdy operator zaczął podawać closing. Bez closing line value nie da się stwierdzić, czy predykcje biją rynek w sposób przewidujący długoterminowy zysk — 18% to wciąż za mało na wnioski CLV.
 - **Nie ma tu i nie będzie** stwierdzeń typu "metoda działa" ani rekomendacji dotyczących grania. Dobry wynik na 150 oznacza "kontynuować i dopracować v2", nie "gotowe do gry".
 
 ## 7. Do prześledzenia w playoffach (19–23.08)
