@@ -1845,8 +1845,8 @@
           "odds": 1.10,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C6/G6). Coupon was cashed out before this leg resolved, so its outcome no longer affects the coupon payout -- still tracked here for Edge settlement purposes."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C6/G6). Coupon was cashed out before this leg resolved, so it didn't affect the coupon payout. Settled: Spirit beat BIG 2-1."
         },
         {
           "match": "JiJieHao vs Aurora",
@@ -1855,8 +1855,8 @@
           "odds": 1.07,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5). Coupon was cashed out before this leg resolved, so its outcome no longer affects the coupon payout -- still tracked here for Edge settlement purposes."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5). Coupon was cashed out before this leg resolved, so it didn't affect the coupon payout. Settled: Aurora beat JiJieHao 2-0."
         }
       ]
     }
@@ -5470,7 +5470,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat BIG 2-1."
     },
     {
       "id": "P-2026-08-15-G1",
@@ -5593,7 +5594,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
+      "notes": "Settled: Spirit beat BIG 2-1.",
       "agent": "gpt",
       "method_version": "v1"
     }
