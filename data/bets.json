@@ -1859,19 +1859,117 @@
           "notes": "Same pick as both agents' PASS calls (P-2026-08-15-C5/G5). Coupon was cashed out before this leg resolved, so it didn't affect the coupon payout. Settled: Aurora beat JiJieHao 2-0."
         }
       ]
+    },
+    {
+      "id": "EDGE-041",
+      "date": "2026-08-16",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 1.8,
+      "potential_return_pln": 3.17,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Lynn Vision vs Vitality",
+          "market": "moneyline",
+          "pick": "Vitality",
+          "odds": 1.01,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C1/G1)."
+        },
+        {
+          "match": "The MongolZ vs paiN",
+          "market": "handicap_maps",
+          "pick": "paiN +0.5",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-16-C2/G2 even once resolved (both agents picked The MongolZ outright)."
+        },
+        {
+          "match": "MOUZ vs PARIVISION",
+          "market": "handicap_maps",
+          "pick": "MOUZ +0.5",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-16-C4/G4 even once resolved."
+        },
+        {
+          "match": "9z vs magic",
+          "market": "handicap_maps",
+          "pick": "9z +0.5",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-16-C3/G3 even once resolved."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-042",
+      "date": "2026-08-16",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.36,
+      "potential_return_pln": 4.15,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "9z vs magic",
+          "market": "moneyline",
+          "pick": "9z",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C3/G3)."
+        },
+        {
+          "match": "MOUZ vs PARIVISION",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-16-C4/G4)."
+        },
+        {
+          "match": "Legacy vs MiBR",
+          "market": "handicap_maps",
+          "pick": "Legacy +0.5",
+          "odds": 1.17,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, won't settle P-2026-08-16-C6/G6 even once resolved."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 40,
+    "coupons": 42,
     "won": 15,
     "lost": 25,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 80.0,
+    "pending": 2,
+    "total_staked_pln": 84.0,
     "gross_return_pln": 66.94,
     "net_result_pln": -13.06,
-    "roi": -0.1633
+    "roi": -0.1555
   },
   "archived_predictions": [
     {
