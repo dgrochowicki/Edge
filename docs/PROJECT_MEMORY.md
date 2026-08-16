@@ -3,13 +3,14 @@
 ## Repository Status
 
 Current version: v0.1
-Last updated: 2026-07-17
+Last updated: 2026-08-16
 
 Recent changes:
-- Added EDGE-003 and EDGE-004
-- Added source field to bets.json
-- Reports are the source of historical analysis
-- Settled EDGE-005 (lost) and EDGE-006 (won)
+- Built the `dashboard/` static site (Dashboard, Research/Calibration Lab, Reports archive, Logs) reading `data/bets.json` client-side
+- Edge is now CS2-only, tier-1 only (see Calibration & Method Decisions below); pre-protocol and out-of-scope entries archived to `archived_predictions`
+- Both agents (claude, gpt) now report daily; `predictions` carries `agent` and `method_version` per entry
+- Real-money coupon tracking (`coupons`, `summary`) now spans EDGE-001 through EDGE-043
+- Full BLAST Bounty 2026 S2 tournament (21 Jul – 2 Aug) and EWC 2026 group stage (12–16 Aug) collected
 
 This document contains the current shared context, decisions, operating rules, open questions, and known data for the Edge project.
 
@@ -28,8 +29,7 @@ The project is not judged by a few winning or losing coupons. It is judged by re
 - Bookmaker: STS
 - Currency: PLN
 - Initial unit: 1u = 2 PLN
-- Primary esport: Counter-Strike 2
-- Secondary scope: major League of Legends and Dota 2 competitions
+- Esport: Counter-Strike 2 only (see "Edge is CS2-only" decision below — LoL/Dota are out of scope)
 - Daily report target time: 09:00 Europe/Warsaw
 - Maximum recommended bets per daily report: 1–3
 - It is acceptable to recommend no bets
@@ -213,16 +213,24 @@ A 28 Jul audit found `predictions` still wasn't a clean tier-1 sample even after
 
 **`observed_passes` cleared too (2→0), same date.** Its only two entries (NiP vs K27, paiN vs Phantom, both 15 Jul) were the exact same pre-protocol matches as `P-2026-07-15-01`/`P-2026-07-15-04` above. The mechanism is undocumented in PLAYBOOK and was never used past 15 Jul, so rather than build a parallel `archived_observed_passes` array for two rows, they were simply removed — the underlying matches aren't lost, they're fully preserved with more context in `archived_predictions`.
 
+### Both agents past the preliminary-signal threshold again — 2026-08-16
+
+After the 28 Jul archive reset both agents below 50 settled-with-estimate, collection continued through the rest of BLAST Bounty and the EWC 2026 group stage. As of 2026-08-16: **claude 70 settled, gpt 67 settled** (both `method_version: v1`, clean tier-1 CS2 sample). Both are solidly in the **Preliminary signal** stage (50–99) per the verdict-staging rule in PLAYBOOK — still well short of Emerging pattern (100) and Validation checkpoint (150). No metrics are computed or surfaced from this; it is only a milestone note per the "document each version bump / stage crossing" logging habit. No method or threshold change.
+
 ## Current Running Result
 
-- Coupons: 6
-- Won: 2
-- Lost: 4
+Snapshot as of 2026-08-16 (EDGE-001 through EDGE-043):
+
+- Coupons: 43
+- Won: 16
+- Lost: 27
 - Voided: 0
-- Total staked: 12 PLN
-- Gross return: 8.41 PLN
-- Net result: -3.59 PLN
-- ROI: -29.9%
+- Total staked: 86 PLN
+- Gross return: 73.26 PLN
+- Net result: -12.74 PLN
+- ROI: -14.8%
+
+`data/bets.json` (`summary` object) is the live source of truth for these figures — the dashboard's Reports/Logs pages compute them directly from `coupons` on every load. This snapshot will drift out of date; don't treat it as current without checking the top-level `updated_at` field.
 
 This sample is not statistically meaningful.
 
@@ -271,16 +279,32 @@ Desired when available:
 ```text
 Edge/
 ├── README.md
+├── index.html
 ├── data/
 │   └── bets.json
+├── dashboard/
+│   ├── research.html
+│   ├── reports.html
+│   ├── logs.html
+│   ├── data.js
+│   ├── shared-metrics.js
+│   ├── sidebar.js
+│   ├── dashboard.js
+│   ├── research.js
+│   ├── reports.js
+│   ├── logs.js
+│   ├── styles.css
+│   └── favicon.svg
 ├── docs/
+│   ├── PLAYBOOK.md
 │   ├── PROJECT_MEMORY.md
-│   └── PLAYBOOK.md
+│   ├── REPORT_TEMPLATE.md
+│   └── ROADMAP.md
 └── reports/
-    ├── 2026-07-13.md
-    ├── 2026-07-15.md
-    └── 2026-07-16.md
+    └── YYYY-MM-DD-{claude,gpt}.md  -- one pair per day
 ```
+
+Kept in sync with `README.md`'s own structure section — update both together.
 
 ## Instructions for Future Assistant Instances
 
