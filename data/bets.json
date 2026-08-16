@@ -5712,10 +5712,11 @@
       "market_odds_at_analysis": 1.01,
       "market_odds_opponent": 11.6,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 12:25 (35 min przed startem): Lynn Vision 11.60 / Vitality 1.01 -- unchanged from analysis."
     },
     {
       "id": "P-2026-08-16-C2",
@@ -5732,10 +5733,11 @@
       "market_odds_at_analysis": 1.47,
       "market_odds_opponent": 2.5,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.5,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 12:25 (35 min przed startem): The MongolZ 1.50 / paiN 2.40 -- drifted from 1.47/2.50 at analysis."
     },
     {
       "id": "P-2026-08-16-C3",
@@ -5832,10 +5834,11 @@
       "market_odds_at_analysis": 1.01,
       "market_odds_opponent": 11.6,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 12:25 (35 min przed startem): Lynn Vision 11.60 / Vitality 1.01 -- unchanged from analysis."
     },
     {
       "id": "P-2026-08-16-G2",
@@ -5852,10 +5855,11 @@
       "market_odds_at_analysis": 1.47,
       "market_odds_opponent": 2.5,
       "odds_timestamp": "2026-08-16T07:08:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.5,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 12:25 (35 min przed startem): The MongolZ 1.50 / paiN 2.40 -- drifted from 1.47/2.50 at analysis."
     },
     {
       "id": "P-2026-08-16-G3",
