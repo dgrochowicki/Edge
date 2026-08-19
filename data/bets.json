@@ -2055,8 +2055,8 @@
           "odds": 1.53,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- placed live, map 1, 0:0. Not a moneyline outright market, so won't settle P-2026-08-19-C1/G1 even once resolved (both agents picked FUT outright)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- placed live, map 1, 0:0. magic won map 1 (0:1), locking in this leg as won regardless of the rest of the match. Not a moneyline outright market, so won't settle P-2026-08-19-C1/G1 even once resolved (both agents picked FUT outright)."
         },
         {
           "match": "FURIA vs Aurora",
