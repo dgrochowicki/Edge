@@ -6197,7 +6197,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FUT beat magic 2-1."
     },
     {
       "id": "P-2026-08-19-C2",
@@ -6217,7 +6218,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat Astralis 2-1."
     },
     {
       "id": "P-2026-08-19-C3",
@@ -6279,7 +6281,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FUT beat magic 2-1."
     },
     {
       "id": "P-2026-08-19-G2",
@@ -6299,7 +6302,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat Astralis 2-1."
     },
     {
       "id": "P-2026-08-19-G3",
