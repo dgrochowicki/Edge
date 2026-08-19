@@ -6234,10 +6234,11 @@
       "market_odds_at_analysis": 1.44,
       "market_odds_opponent": 2.6,
       "odds_timestamp": "2026-08-19T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price."
     },
     {
       "id": "P-2026-08-19-C4",
@@ -6254,10 +6255,11 @@
       "market_odds_at_analysis": 1.2,
       "market_odds_opponent": 4.0,
       "odds_timestamp": "2026-08-19T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.18,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- MOUZ shortened slightly from 4.00/1.20 at analysis."
     },
     {
       "id": "P-2026-08-19-G1",
@@ -6314,10 +6316,11 @@
       "market_odds_at_analysis": 1.44,
       "market_odds_opponent": 2.6,
       "odds_timestamp": "2026-08-19T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price."
     },
     {
       "id": "P-2026-08-19-G4",
@@ -6334,10 +6337,11 @@
       "market_odds_at_analysis": 4.0,
       "market_odds_opponent": 1.2,
       "odds_timestamp": "2026-08-19T07:45:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 4.3,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- GamerLegion drifted slightly from 4.00/1.20 at analysis."
     }
   ]
 }
