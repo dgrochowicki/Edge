@@ -2044,9 +2044,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.25,
       "potential_return_pln": 3.96,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 3.96,
+      "status": "won",
+      "net_result_pln": 1.96,
       "selections": [
         {
           "match": "FUT vs magic",
@@ -2065,8 +2065,8 @@
           "odds": 1.47,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-19-C3/G3 even once resolved (both agents picked FURIA outright)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- series leveled 1-1, locking in this leg as won regardless of the decider. Not a moneyline outright market, so won't settle P-2026-08-19-C3/G3 even once resolved (both agents picked FURIA outright)."
         }
       ]
     },
@@ -2133,8 +2133,8 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-19-C3/G3 even once resolved (both agents picked FURIA outright)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- series leveled 1-1, locking in this leg as won regardless of the decider. Not a moneyline outright market, so won't settle P-2026-08-19-C3/G3 even once resolved (both agents picked FURIA outright)."
         },
         {
           "match": "GamerLegion vs MOUZ",
@@ -2192,14 +2192,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 47,
-    "won": 17,
+    "won": 18,
     "lost": 28,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 94.0,
-    "gross_return_pln": 78.71,
-    "net_result_pln": -11.29,
-    "roi": -0.1201
+    "gross_return_pln": 82.67,
+    "net_result_pln": -9.33,
+    "roi": -0.0993
   },
   "archived_predictions": [
     {
