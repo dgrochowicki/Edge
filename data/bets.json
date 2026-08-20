@@ -2187,19 +2187,111 @@
           "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. No Edge prediction exists yet."
         }
       ]
+    },
+    {
+      "id": "EDGE-048",
+      "date": "2026-08-20",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 1.93,
+      "potential_return_pln": 3.4,
+      "gross_return_pln": 3.4,
+      "status": "won",
+      "net_result_pln": 1.4,
+      "selections": [
+        {
+          "match": "G2 vs FURIA",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick. Settled: FURIA beat G2 2-1 -- went the distance. Not a moneyline outright market, so doesn't settle P-2026-08-20-C5/G5 (both already settled won via the moneyline entries)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-049",
+      "date": "2026-08-20",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.47,
+      "potential_return_pln": 6.11,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "FaZe vs Vitality",
+          "market": "handicap_maps",
+          "pick": "FaZe +0.5",
+          "odds": 1.8,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick. Settled: Vitality swept FaZe 2-0 -- FaZe never won a map, leg lost. Not a moneyline outright market, so doesn't settle P-2026-08-20-C4/G4 (both already settled won via the moneyline entries)."
+        },
+        {
+          "match": "G2 vs FURIA",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same leg as EDGE-048 -- won (FURIA beat G2 2-1), but the accumulator was already lost on leg 1 (FaZe +0.5)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-050",
+      "date": "2026-08-20",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.31,
+      "potential_return_pln": 5.83,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Falcons vs The MongolZ",
+          "market": "handicap_maps",
+          "pick": "The MongolZ +0.5",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick. Settled: Falcons swept The MongolZ 2-0 -- MongolZ never won a map, leg lost. Not a moneyline outright market, so doesn't settle P-2026-08-20-C1/G1 (both already settled won via the moneyline entries)."
+        },
+        {
+          "match": "Natus Vincere vs Legacy",
+          "market": "handicap_maps",
+          "pick": "Legacy +0.5",
+          "odds": 1.7,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick. Settled: Legacy upset Natus Vincere 2-0 outright, comfortably covering +0.5. Accumulator was already lost on leg 1 (The MongolZ +0.5), though."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 47,
-    "won": 18,
-    "lost": 28,
+    "coupons": 50,
+    "won": 19,
+    "lost": 30,
     "voided": 0,
     "pending": 1,
-    "total_staked_pln": 94.0,
-    "gross_return_pln": 82.67,
-    "net_result_pln": -9.33,
-    "roi": -0.0993
+    "total_staked_pln": 100.0,
+    "gross_return_pln": 86.07,
+    "net_result_pln": -11.93,
+    "roi": -0.1193
   },
   "archived_predictions": [
     {
@@ -6365,7 +6457,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Falcons won 2-0."
     },
     {
       "id": "P-2026-08-20-C2",
@@ -6385,7 +6478,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Legacy won 0-2."
     },
     {
       "id": "P-2026-08-20-C3",
@@ -6405,7 +6499,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit won 0-2."
     },
     {
       "id": "P-2026-08-20-C4",
@@ -6425,7 +6520,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality won 0-2."
     },
     {
       "id": "P-2026-08-20-C5",
@@ -6445,7 +6541,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA won 1-2."
     },
     {
       "id": "P-2026-08-20-G1",
@@ -6465,7 +6562,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Falcons won 2-0."
     },
     {
       "id": "P-2026-08-20-G2",
@@ -6485,7 +6583,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Legacy won 0-2."
     },
     {
       "id": "P-2026-08-20-G3",
@@ -6505,7 +6604,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Spirit won 0-2."
     },
     {
       "id": "P-2026-08-20-G4",
@@ -6525,7 +6625,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality won 0-2."
     },
     {
       "id": "P-2026-08-20-G5",
@@ -6545,7 +6646,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA won 1-2."
     }
   ]
 }
