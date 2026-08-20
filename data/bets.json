@@ -2143,8 +2143,8 @@
           "odds": 1.18,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-19-C4/G4)."
+          "result": "won",
+          "notes": "Same pick as claude's PASS call (P-2026-08-19-C4); gpt's PASS (G4) picked GamerLegion and lost. Settled: MOUZ beat GamerLegion 2-1."
         },
         {
           "match": "Aurora vs G2",
@@ -6239,8 +6239,8 @@
       "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price."
+      "result": "won",
+      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price. Settled: FURIA beat Aurora 2-1."
     },
     {
       "id": "P-2026-08-19-C4",
@@ -6260,8 +6260,8 @@
       "closing_odds": 1.18,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- MOUZ shortened slightly from 4.00/1.20 at analysis."
+      "result": "won",
+      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- MOUZ shortened slightly from 4.00/1.20 at analysis. Settled: MOUZ beat GamerLegion 2-1."
     },
     {
       "id": "P-2026-08-19-G1",
@@ -6323,8 +6323,8 @@
       "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price."
+      "result": "won",
+      "notes": "Snapshot 19:45: FURIA 1.47 / Aurora 2.50 -- drifted from 1.44/2.60 at analysis. Match was slated for 18:55, so this is ~50 min after scheduled start, not the usual pre-match closing window -- likely delayed or a live price. Settled: FURIA beat Aurora 2-1."
     },
     {
       "id": "P-2026-08-19-G4",
@@ -6344,8 +6344,8 @@
       "closing_odds": 4.3,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- GamerLegion drifted slightly from 4.00/1.20 at analysis."
+      "result": "lost",
+      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- GamerLegion drifted slightly from 4.00/1.20 at analysis. Settled: MOUZ beat GamerLegion 2-1."
     }
   ]
 }
