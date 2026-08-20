@@ -6345,7 +6345,7 @@
       "decision": "PASS",
       "confidence": 5,
       "result": "lost",
-      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- GamerLegion drifted slightly from 4.00/1.20 at analysis. Settled: MOUZ beat GamerLegion 2-1."
+      "notes": "Closing snapshot 19:45 (10 min przed startem): GamerLegion 4.30 / MOUZ 1.18 -- GamerLegion drifted slightly from 4.00/1.20 at analysis. Settled: MOUZ beat GamerLegion 2-1. DISPUTED (2026-08-20, self-reported by gpt): gpt states its actual pre-match thesis was MOUZ ~75% / GamerLegion ~25%, and this entry's pick/probability/fair_odds/market_odds fields were recorded in the wrong direction (should have been pick=MOUZ, estimated_probability~0.75, fair_odds~1.33, market_odds_at_analysis=1.20, market_odds_opponent=4.00). Per the pre-registered immutability rule, this settled record is NOT retroactively edited now that the result is known -- doing so after settlement cannot be distinguished from post-hoc rationalization of a loss, regardless of whether the claimed error is genuine. Left as originally logged (pick=GamerLegion, lost); flagged here for transparency and for any future pick-direction audit."
     },
     {
       "id": "P-2026-08-20-C1",
