@@ -2319,8 +2319,8 @@
           "odds": 1.9,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. Accumulator already lost on leg 1 (MOUZ +0.5)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. Series leveled 1-1, locking in this leg as won (guaranteed decider) -- moot since the coupon already lost on leg 1 (MOUZ +0.5)."
         }
       ]
     },
@@ -2435,23 +2435,47 @@
           "odds": 1.9,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. Series leveled 1-1, locking in this leg as won (guaranteed decider) -- moot since the coupon already lost on leg 1 (Falcons)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-056",
+      "date": "2026-08-21",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 4.0,
+      "combined_odds": 1.5,
+      "potential_return_pln": 5.28,
+      "gross_return_pln": 5.28,
+      "status": "won",
+      "net_result_pln": 1.28,
+      "selections": [
+        {
+          "match": "Vitality vs Spirit",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- placed live at 1:1, guaranteeing a decider, so this leg is locked in won regardless of who takes map 3. Not a moneyline outright market, so doesn't settle P-2026-08-21-C3/G3 (both agents' Vitality/Spirit picks still pending)."
         }
       ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 55,
-    "won": 20,
+    "coupons": 56,
+    "won": 21,
     "lost": 33,
     "voided": 0,
     "pending": 2,
-    "total_staked_pln": 110.0,
-    "gross_return_pln": 90.1,
-    "net_result_pln": -15.9,
-    "roi": -0.1445
+    "total_staked_pln": 114.0,
+    "gross_return_pln": 95.38,
+    "net_result_pln": -14.62,
+    "roi": -0.1282
   },
   "archived_predictions": [
     {
