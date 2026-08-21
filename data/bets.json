@@ -2390,9 +2390,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.2,
       "potential_return_pln": 3.87,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 3.87,
+      "status": "won",
+      "net_result_pln": 1.87,
       "selections": [
         {
           "match": "Vitality vs Spirit",
@@ -2401,8 +2401,8 @@
           "odds": 2.2,
           "confidence": 7,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Direct bet on gpt's EWC-scope BET call (P-2026-08-21-G3)."
+          "result": "won",
+          "notes": "Direct bet on gpt's EWC-scope BET call (P-2026-08-21-G3). Settled: Spirit beat Vitality 2-1."
         }
       ]
     },
@@ -2468,14 +2468,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 56,
-    "won": 21,
+    "won": 22,
     "lost": 33,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 114.0,
-    "gross_return_pln": 95.38,
-    "net_result_pln": -14.62,
-    "roi": -0.1282
+    "gross_return_pln": 99.25,
+    "net_result_pln": -12.75,
+    "roi": -0.1118
   },
   "archived_predictions": [
     {
@@ -6893,7 +6893,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Spirit beat Vitality 2-1."
     },
     {
       "id": "P-2026-08-21-G1",
@@ -6957,7 +6958,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat Vitality 2-1. BET on Spirit @2.20 won -- gpt's second BET win of the day."
     }
   ]
 }
