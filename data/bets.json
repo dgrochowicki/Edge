@@ -6824,11 +6824,11 @@
       "market_odds_at_analysis": 1.55,
       "market_odds_opponent": 2.29,
       "odds_timestamp": "2026-08-21T07:35:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.55,
       "decision": "PASS",
       "confidence": 5,
       "result": "lost",
-      "notes": "Settled: FUT beat MOUZ 2-0."
+      "notes": "Snapshot 12:15: FUT 2.29 / MOUZ 1.55 -- unchanged from analysis. Reports disagree on start time (13:00 gpt vs 14:00 claude), so this isn't a clean ~10-15 min closing window either way. Settled: FUT beat MOUZ 2-0."
     },
     {
       "id": "P-2026-08-21-C2",
@@ -6885,12 +6885,12 @@
       "market_odds_at_analysis": 2.29,
       "market_odds_opponent": 1.55,
       "odds_timestamp": "2026-08-21T07:35:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.29,
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
       "result": "won",
-      "notes": "Settled: FUT beat MOUZ 2-0. BET on FUT @2.29 won -- gpt's Bet of the Day."
+      "notes": "Snapshot 12:15: FUT 2.29 / MOUZ 1.55 -- unchanged from analysis. Reports disagree on start time (13:00 gpt vs 14:00 claude), so this isn't a clean ~10-15 min closing window either way. Settled: FUT beat MOUZ 2-0. BET on FUT @2.29 won -- gpt's Bet of the Day."
     },
     {
       "id": "P-2026-08-21-G2",
