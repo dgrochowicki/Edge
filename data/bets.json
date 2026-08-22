@@ -2483,8 +2483,8 @@
           "odds": 1.14,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C1/G1 even once resolved (claude picked FURIA outright, gpt picked FUT outright)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C1/G1 even once resolved (claude picked FURIA outright, gpt picked FUT outright). Series leveled 1-1, locking in this leg as won."
         },
         {
           "match": "Legacy vs Spirit",
@@ -2506,9 +2506,10 @@
       "stake_pln": 2.0,
       "combined_odds": 2.01,
       "potential_return_pln": 3.54,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 3.27,
+      "status": "won",
+      "net_result_pln": 1.27,
+      "notes": "User cashed out after FURIA-FUT leveled 1-1 (guaranteeing the Over 2.5 leg) rather than wait on the still-open Spirit +0.5 leg -- cash-out payout 3.27 PLN vs 3.54 PLN full potential, a small enough gap to justify locking it in.",
       "selections": [
         {
           "match": "FURIA vs FUT",
@@ -2517,8 +2518,8 @@
           "odds": 1.88,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. Series leveled 1-1, locking in this leg as won (guaranteed decider)."
         },
         {
           "match": "Legacy vs Spirit",
@@ -2528,7 +2529,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved (claude picked Spirit outright too, but this is a handicap not moneyline)."
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved (claude picked Spirit outright too, but this is a handicap not moneyline). Coupon was cashed out before this leg resolved, so it doesn't affect the payout -- still tracked here for Edge settlement purposes."
         }
       ]
     }
@@ -2536,14 +2537,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 58,
-    "won": 22,
+    "won": 23,
     "lost": 33,
     "voided": 0,
-    "pending": 3,
+    "pending": 2,
     "total_staked_pln": 118.0,
-    "gross_return_pln": 99.25,
-    "net_result_pln": -12.75,
-    "roi": -0.1081
+    "gross_return_pln": 102.52,
+    "net_result_pln": -11.48,
+    "roi": -0.0973
   },
   "archived_predictions": [
     {
