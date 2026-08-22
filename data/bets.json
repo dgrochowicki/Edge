@@ -7044,10 +7044,11 @@
       "market_odds_at_analysis": 1.6,
       "market_odds_opponent": 2.4,
       "odds_timestamp": "2026-08-22T08:30:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FURIA shortened notably from 1.60/2.40 at analysis."
     },
     {
       "id": "P-2026-08-22-C2",
@@ -7084,10 +7085,11 @@
       "market_odds_at_analysis": 2.4,
       "market_odds_opponent": 1.6,
       "odds_timestamp": "2026-08-22T08:30:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.5,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FUT drifted from 2.40 at analysis."
     },
     {
       "id": "P-2026-08-22-G2",
