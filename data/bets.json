@@ -2473,8 +2473,8 @@
       "combined_odds": 3.99,
       "potential_return_pln": 7.02,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "FURIA vs FUT",
@@ -2493,8 +2493,8 @@
           "odds": 3.5,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as gpt's EWC-scope BET call (P-2026-08-22-G2), gpt's Bet of the Day -- taken here as a leg in the user's own acca rather than as a direct single."
+          "result": "lost",
+          "notes": "Same pick as gpt's EWC-scope BET call (P-2026-08-22-G2), gpt's Bet of the Day -- taken here as a leg in the user's own acca rather than as a direct single. Settled: Spirit swept Legacy 2-0 -- coupon lost despite leg 1 winning."
         }
       ]
     },
@@ -2528,8 +2528,8 @@
           "odds": 1.07,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved (claude picked Spirit outright too, but this is a handicap not moneyline). Coupon was cashed out before this leg resolved, so it doesn't affect the payout -- still tracked here for Edge settlement purposes."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved (claude picked Spirit outright too, but this is a handicap not moneyline). Coupon was cashed out before this leg resolved, so it didn't affect the payout. Settled: Spirit swept Legacy 2-0."
         }
       ]
     },
@@ -2542,8 +2542,8 @@
       "combined_odds": 2.41,
       "potential_return_pln": 4.24,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "FURIA vs FUT",
@@ -2552,8 +2552,8 @@
           "odds": 1.36,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as claude's PASS call (P-2026-08-22-C1); gpt picked FUT."
+          "result": "lost",
+          "notes": "Same pick as claude's PASS call (P-2026-08-22-C1); gpt picked FUT. Settled: FUT beat FURIA 2-1."
         },
         {
           "match": "Legacy vs Spirit",
@@ -2562,8 +2562,8 @@
           "odds": 1.77,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved. Same match as gpt's BET call on Legacy outright (P-2026-08-22-G2), but this leg is a handicap, not the moneyline."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved. Same match as gpt's BET call on Legacy outright (P-2026-08-22-G2), but this leg is a handicap, not the moneyline. Settled: Spirit swept Legacy 2-0 -- Legacy never won a map, leg lost."
         }
       ]
     }
@@ -2572,13 +2572,13 @@
   "summary": {
     "coupons": 59,
     "won": 23,
-    "lost": 33,
+    "lost": 35,
     "voided": 0,
-    "pending": 3,
+    "pending": 1,
     "total_staked_pln": 120.0,
     "gross_return_pln": 102.52,
-    "net_result_pln": -11.48,
-    "roi": -0.0957
+    "net_result_pln": -15.48,
+    "roi": -0.129
   },
   "archived_predictions": [
     {
@@ -7082,8 +7082,8 @@
       "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FURIA shortened notably from 1.60/2.40 at analysis."
+      "result": "lost",
+      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FURIA shortened notably from 1.60/2.40 at analysis. Settled: FUT beat FURIA 2-1."
     },
     {
       "id": "P-2026-08-22-C2",
@@ -7103,7 +7103,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit swept Legacy 2-0 -- Legacy's upset run ends."
     },
     {
       "id": "P-2026-08-22-G1",
@@ -7123,8 +7124,8 @@
       "closing_odds": 2.5,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FUT drifted from 2.40 at analysis."
+      "result": "won",
+      "notes": "Closing snapshot 15:50 (10 min przed startem): FURIA 1.47 / FUT 2.50 -- FUT drifted from 2.40 at analysis. Settled: FUT beat FURIA 2-1."
     },
     {
       "id": "P-2026-08-22-G2",
@@ -7145,7 +7146,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake": 1.0,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Spirit swept Legacy 2-0. BET on Legacy @3.50 lost."
     }
   ]
 }
