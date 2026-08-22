@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-08-21",
+  "updated_at": "2026-08-22",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -2463,19 +2463,87 @@
           "notes": "Own bet for fun, not an Edge pick -- placed live at 1:1, guaranteeing a decider, so this leg is locked in won regardless of who takes map 3. Not a moneyline outright market, so doesn't settle P-2026-08-21-C3/G3 (both agents' Vitality/Spirit picks still pending)."
         }
       ]
+    },
+    {
+      "id": "EDGE-057",
+      "date": "2026-08-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.99,
+      "potential_return_pln": 7.02,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "FURIA vs FUT",
+          "market": "handicap_maps",
+          "pick": "FURIA +0.5",
+          "odds": 1.14,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C1/G1 even once resolved (claude picked FURIA outright, gpt picked FUT outright)."
+        },
+        {
+          "match": "Legacy vs Spirit",
+          "market": "moneyline",
+          "pick": "Legacy",
+          "odds": 3.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as gpt's EWC-scope BET call (P-2026-08-22-G2), gpt's Bet of the Day -- taken here as a leg in the user's own acca rather than as a direct single."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-058",
+      "date": "2026-08-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.01,
+      "potential_return_pln": 3.54,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "FURIA vs FUT",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market."
+        },
+        {
+          "match": "Legacy vs Spirit",
+          "market": "handicap_maps",
+          "pick": "Spirit +0.5",
+          "odds": 1.07,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market, so won't settle P-2026-08-22-C2/G2 even once resolved (claude picked Spirit outright too, but this is a handicap not moneyline)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 56,
+    "coupons": 58,
     "won": 22,
     "lost": 33,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 114.0,
+    "pending": 3,
+    "total_staked_pln": 118.0,
     "gross_return_pln": 99.25,
     "net_result_pln": -12.75,
-    "roi": -0.1118
+    "roi": -0.1081
   },
   "archived_predictions": [
     {
@@ -6960,6 +7028,87 @@
       "stake": 1.0,
       "result": "won",
       "notes": "Settled: Spirit beat Vitality 2-1. BET on Spirit @2.20 won -- gpt's second BET win of the day."
+    },
+    {
+      "id": "P-2026-08-22-C1",
+      "date": "2026-08-22",
+      "report": "reports/2026-08-22-claude.md",
+      "agent": "claude",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "FURIA vs FUT",
+      "market": "moneyline",
+      "pick": "FURIA",
+      "estimated_probability": 0.5988,
+      "fair_odds": 1.67,
+      "market_odds_at_analysis": 1.6,
+      "market_odds_opponent": 2.4,
+      "odds_timestamp": "2026-08-22T08:30:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "result": "pending"
+    },
+    {
+      "id": "P-2026-08-22-C2",
+      "date": "2026-08-22",
+      "report": "reports/2026-08-22-claude.md",
+      "agent": "claude",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Legacy vs Spirit",
+      "market": "moneyline",
+      "pick": "Spirit",
+      "estimated_probability": 0.6993,
+      "fair_odds": 1.43,
+      "market_odds_at_analysis": 1.26,
+      "market_odds_opponent": 3.5,
+      "odds_timestamp": "2026-08-22T08:30:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 6,
+      "result": "pending"
+    },
+    {
+      "id": "P-2026-08-22-G1",
+      "date": "2026-08-22",
+      "report": "reports/2026-08-22-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "FURIA vs FUT",
+      "market": "moneyline",
+      "pick": "FUT",
+      "estimated_probability": 0.4405,
+      "fair_odds": 2.27,
+      "market_odds_at_analysis": 2.4,
+      "market_odds_opponent": 1.6,
+      "odds_timestamp": "2026-08-22T08:30:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 6,
+      "result": "pending"
+    },
+    {
+      "id": "P-2026-08-22-G2",
+      "date": "2026-08-22",
+      "report": "reports/2026-08-22-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Legacy vs Spirit",
+      "market": "moneyline",
+      "pick": "Legacy",
+      "estimated_probability": 0.3155,
+      "fair_odds": 3.17,
+      "market_odds_at_analysis": 3.5,
+      "market_odds_opponent": 1.26,
+      "odds_timestamp": "2026-08-22T08:30:00+02:00",
+      "closing_odds": null,
+      "decision": "BET",
+      "confidence": 7,
+      "stake": 1.0,
+      "result": "pending"
     }
   ]
 }
