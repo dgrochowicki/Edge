@@ -545,19 +545,18 @@ tr:hover .view-link{color:var(--edge);}
   border-bottom:1px solid var(--line);
   border-right:1px solid var(--line-soft);
 }
-/* Columns without explicit markdown alignment (no `:` in the delimiter row)
-   default to left for both header and cell. Columns marked `---:`/`:---:`
-   keep whatever alignment marked assigns via the align attribute -- left
-   unset here so header and cell always match instead of the header being
-   force-left while right/center-aligned cell content reads backwards. */
-.markdown-body th:not([align]){text-align:left;}
+/* Always left-align, overriding whatever alignment marked assigns via the
+   align attribute per markdown column syntax (---:) -- headers and cell
+   values should read consistently down the left edge, not have some
+   columns' numbers flushed right against a left-aligned header. */
+.markdown-body th{text-align:left;}
 .markdown-body td{
   padding:8px 10px;
   border-bottom:1px solid var(--line-soft);
   border-right:1px solid var(--line-soft);
   color:var(--ink-dim);
+  text-align:left;
 }
-.markdown-body td:not([align]){text-align:left;}
 .markdown-body tr:hover td{background:var(--panel-2);}
 
 .tag-pass{color:var(--ink-faint)!important;font-weight:600;}
