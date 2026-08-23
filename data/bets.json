@@ -2597,23 +2597,47 @@
           "odds": 1.2,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-23-C2/G2). Coupon was cashed out before this leg resolved, so it won't affect the payout -- still tracked here for Edge settlement purposes."
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-23-C2/G2). Coupon was cashed out before this leg resolved, so it didn't affect the payout. Settled: Spirit beat FUT 3-1 in the Grand Final."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-061",
+      "date": "2026-08-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.78,
+      "combined_odds": 1.85,
+      "potential_return_pln": 4.53,
+      "gross_return_pln": 4.53,
+      "status": "won",
+      "net_result_pln": 1.75,
+      "selections": [
+        {
+          "match": "FUT vs Spirit",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.85,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, placed live during the Grand Final at a live price (1.85, well below the 1.20 pre-match price -- FUT was likely up early). Same pick as both agents' PASS calls (P-2026-08-23-C2/G2). Settled: Spirit beat FUT 3-1 -- EWC 2026 champion."
         }
       ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 60,
-    "won": 24,
+    "coupons": 61,
+    "won": 25,
     "lost": 35,
     "voided": 0,
     "pending": 1,
-    "total_staked_pln": 123.0,
-    "gross_return_pln": 107.34,
-    "net_result_pln": -13.66,
-    "roi": -0.1111
+    "total_staked_pln": 125.78,
+    "gross_return_pln": 111.87,
+    "net_result_pln": -11.91,
+    "roi": -0.0947
   },
   "archived_predictions": [
     {
@@ -7223,7 +7247,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat FUT 3-1 in the Grand Final (BO5) -- EWC 2026 champion."
     },
     {
       "id": "P-2026-08-23-G1",
@@ -7264,7 +7289,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat FUT 3-1 in the Grand Final (BO5) -- EWC 2026 champion."
     }
   ]
 }
