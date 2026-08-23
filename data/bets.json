@@ -7201,7 +7201,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Legacy beat FURIA 2-1 for 3rd place -- Legacy's third playoff upset of the tournament."
     },
     {
       "id": "P-2026-08-23-C2",
@@ -7241,7 +7242,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Legacy beat FURIA 2-1 for 3rd place -- Legacy's third playoff upset of the tournament."
     },
     {
       "id": "P-2026-08-23-G2",
