@@ -94,3 +94,29 @@ Cały turniej dał 3 czyste dywergencje (wszystkie w playoffach):
 
 ---
 *Wygenerowano ze stanu data/bets.json (finał EWC rozliczony). Turniej zamknięty — dokument niezmienny. Kalibracja liczona z rozliczonych predykcji. P&L operatora (kupony user_bet) celowo poza tym raportem — mierzy grę operatora, nie metodę; dostępny osobno na dashboardzie.*
+
+---
+
+## 10. Korekty po przeglądzie (append — treść powyżej niezmieniona)
+
+Dokument jest niezmienny; poniższa sekcja dopisana po przeglądzie raportu przez oba agenty. Nie zmienia liczb w sekcjach 1–9 — precyzuje dwa wnioski, które w pierwotnej wersji były sformułowane za mocno lub odwrotnie.
+
+### 10.1. Właściwy benchmark to Brier de-vigged market, nie 0.25 (uzupełnienie do sekcji 2 i 8)
+
+Sekcje 2 i 8 chwalą obu agentów za „mocne pobicie baseline 0.25". To prawda, ale 0.25 to model mówiący zawsze 50/50 — dla tier-1 CS2, gdzie większość meczów ma wyraźnego faworyta, jest to niski próg, który bije samo poprawne wskazanie faworyta (co rynek robi za darmo). Prawdziwym benchmarkiem — zgodnie z sekcją „Metrics" i „Failure conditions" w PLAYBOOK.md — jest **Brier rynku po zdjęciu marży, liczony na dokładnie tej samej (sparowanej) próbce**. Dopiero pobicie tego benchmarku oznacza, że probability Edge dodaje informację ponad cenę bukmachera.
+
+Tej liczby w raporcie końcowym brakuje i jest to najważniejszy brak. Docelowo raport ma podawać np. `gpt 0.2043 vs market 0.20xx` na sparowanej próbce (wpisy mające i probability, i oba kursy rynkowe), a nie `gpt vs 0.25`. Bez tego nie wiemy jeszcze, czy jesteśmy lepsi od rynku, czy tylko sensownie przewidujemy faworytów. Benchmark de-vigged formalnie rozstrzyga się dopiero na checkpoincie 150 per agent (sekcja 8) — do tego czasu jest liczbą orientacyjną, ale i tak informacyjnie ważniejszą niż 0.25.
+
+### 10.2. „0 BET claude'a = artefakt marży" jest sformułowane za mocno (korekta do sekcji 5)
+
+Sekcja 5 twierdzi, że 0 BET po stronie claude „potwierdziło się jako artefakt marży STS, NIE nadmierna ostrożność". To za mocny wniosek. Brier i hit rate mówią, jak dobre były probability i picki — ale nie mówią, czy próg konwersji probability → BET był optymalny. claude bardzo często trzymał wycenę blisko de-vigged market, więc przy marży STS ~8% niemal wszystko naturalnie kończyło się PASS-em. To może być dobrze skalibrowana ostrożność, ale równie dobrze częściowo **zbyt mocne zakotwiczenie do rynku** — tych dwóch przyczyn nie da się rozróżnić na obecnej próbce.
+
+Rozstrzygające będą CLV i większa próbka BET-ów, nie 9 zakładów gpt. Ostrożniejsze sformułowanie: *0 BET jest spójne z metodą trzymającą wycenę blisko rynku — czy to optymalna ostrożność, czy nadmierne zakotwiczenie, rozstrzygnie CLV, nie Brier.*
+
+### 10.3. „Marża rośnie z wagą meczu" jest odwrócone (korekta nagłówka w sekcji 7)
+
+Nagłówek w sekcji 7 brzmi „Marża rośnie z wagą meczu", ale przytoczone dane mówią co innego: raport półfinałowy podał ~4.2% marży na FURIA–FUT wobec typowych ~8%, a rynek finałowy opisano jako najostrzejszy i najbardziej płynny. To znaczy, że **wraz z wagą i płynnością meczu rośnie sharpness rynku i maleje dostępny edge — a sama marża bukmachera może wręcz maleć.** Malejące |value| w finale (Spirit −1.6%, FURIA −2.5%) wynika z ostrzejszej ceny, nie z wyższej marży. Właściwy wniosek: im ważniejszy i bardziej płynny mecz, tym mniejszy edge — mechanizmem jest sharpness ceny, nie wzrost marży.
+
+### 10.4. Uwaga procesowa: QA formatu meczu
+
+Raport finałowy gpt oznaczył FUT–Spirit jako BO3, choć był to BO5 (wychwycone w commicie repo). Probability pozostały matematycznie spójne, ale format meczu jest jednym z wejść analizy (krok 2 Decision Framework), więc taki błąd powinien łapać QA przed publikacją. Zasada trafia do PLAYBOOK.md jako „Pre-Publication Checklist".
