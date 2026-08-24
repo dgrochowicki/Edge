@@ -230,6 +230,12 @@ For every important PASS:
 - **Observed signal beats predicted signal.** Betting against an "overvalued favourite with a rebuilt roster" is only justified when the new lineup has *already shown* weakness at this level — not on the assumption that a roster change will cause it. Liquid (25 Jul) had a hard, fresh result behind it (a 2:0 over Vitality on debut) and would have won; Wildcard vs a rebuilt MongolZ (26 Jul) rested only on the hypothesis that the new players would underperform, and the bet lost — MongolZ went on to the final. A roster change is uncertainty, not direction.
 - **Good calibration can still lose a single bet.** On the day the Wildcard bet lost, Edge's Brier over the four matches still beat the de-vigged market baseline. A well-priced bet on a ~0.60 favourite's opponent loses ~40% of the time by construction. One settled BET is variance, not a verdict — the sample-size discipline applies to bets too.
 
+### From EWC 2026 (post-tournament review)
+
+- **The benchmark is the de-vigged market, never 0.25.** Beating 0.25 (always-50%) only proves an agent picks favourites; on tier-1 the market does that for free. Every calibration claim must be scored against the de-vigged market baseline on the paired sample. This is now a pre-publication check for summaries.
+- **A low BET count is not self-evidently correct discipline.** Claude placed 0 BET across all of EWC. That is consistent with well-calibrated caution *and* with over-anchoring to the market — Brier and hit rate cannot tell them apart. Only CLV and a larger BET sample resolve it. Do not report 0 BET as proof of discipline.
+- **Fresh-form vs market anchoring is the main v1→v2 axis, but not yet a rule.** The three EWC divergences (FUT>MOUZ, Spirit>Vitality won for the aggressive side; Legacy>Spirit lost) are three visible stories, not a signal. "Hot underdog = raise probability" is exactly the over-correction the Legacy bet fell into. v2 needs a *measurable* fresh-form signal (recent-opponent quality, results after a roster change, recency decay, maps vs top-tier, roster stability) tested on a fresh sample — designed on paper, not fitted to EWC results.
+
 ## Daily Discipline
 
 The unit of success for a day is not a won coupon. It is one more trustworthy observation in the current method's sample.
@@ -242,6 +248,25 @@ Each day:
 - New ideas and observations are logged as notes or hypotheses — they do not change the active method's rules mid-flight.
 
 A day is correctly closed when every prediction is logged with correct `agent` and `method_version`, reports remain immutable after publication, and played matches are settled. What a day is explicitly *not* for: switching method version, changing BET/PASS thresholds, fitting probabilities to earlier results, editing published predictions, or declaring the method works or fails on that day's evidence.
+
+## Pre-Publication Checklist
+
+Before any daily report or summary is published (delivered as a file), the author runs this checklist. Every item has caused a real, named error in the project; the checklist is the memory of those errors, not a formality. A report that fails any item is not published until fixed — because reports are immutable once out, a caught error here is cheap and a missed one costs a whole append.
+
+For every match analysed:
+
+- **Match format.** BO1 / BO3 / BO5 is verified against the source and stated correctly. Format is an input to the analysis (Decision Framework step 2), not decoration. *(FUT–Spirit was logged BO5-as-BO3 in the EWC final report.)*
+- **Market favorite direction.** The team described in prose as the market favorite is the one with the lower STS odds. The `Gram na` (pick) column and the STS odds pair must agree with the prose — a pick at the higher price is an underdog and the text must say so. *(A prior report described the wrong team as market favorite while the JSON said otherwise.)*
+- **Odds display order.** In the section-1 table the STS odds pair reads in match-name order (`A vs B` → `odds A / odds B`), not pick-first.
+- **Prose ↔ JSON consistency.** Pick, decision (BET/PASS), fair odds and estimated probability in the prose match the JSON block exactly. `estimated_probability` equals `round(1 / fair_odds, 4)`.
+- **Scope.** Every logged match is in-scope tier-1 CS2 (see Calibration & CLV Protocol → Scope). Out-of-scope matches are absent entirely, not logged as PASS.
+- **Calendar completeness.** The full bracket of every active tournament up to tier-2 was checked before the short list — a narrow date filter has repeatedly hidden qualifying matches.
+- **Data gaps named, not assumed.** Missing odds or timestamps are recorded as missing (`brak odczytu`, `STS nie oferuje`), never as assumed values. `odds_timestamp` is the time odds were read, not the report time.
+
+For summary / phase reports, additionally:
+
+- **Benchmark is de-vigged market, not 0.25.** Any calibration claim compares Brier against the de-vigged market baseline on the paired sample, not against the 0.25 coin-flip line. 0.25 may be mentioned but is never the headline benchmark.
+- **Checkpoint counted per agent × method_version.** Sample-size and validation-stage claims are per (agent × version), never pooled. A pooled total crossing 150 validates nobody.
 
 ## Change Policy
 
