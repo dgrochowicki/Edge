@@ -60,6 +60,42 @@ Nie 0.25. **Brier de-vigged market na sparowanej próbce.** v2 „dodaje informa
 
 ---
 
+## 7. Sposób uruchomienia v2: shadow / paper run równolegle z v1
+
+**To jest rekomendowana ścieżka domyślna, a nie klasyczne przełączenie v1 → v2.** Potwierdzamy ją przy checkpoincie 150 v1 — nie przesądzamy z góry — ale tak to na dziś projektujemy.
+
+Kiedy specyfikacja v2 jest zamknięta na papierze, v2 NIE zastępuje od razu v1. Zamiast tego v2 rusza jako **shadow model** wyceniający te same mecze co v1:
+
+- **v1 = raport oficjalny**, jak teraz. Normalny BET/PASS, może wpływać na realne zagrania, dalej dobija własną próbkę per agent do 150 — czyli dojeżdża do swojego pre-registered werdyktu, zamiast zostać porzucony w połowie (~100 obserwacji).
+- **v2 = shadow report**, druga wycena tych samych meczów według reguł v2. Wyłącznie badawcza. Zero realnej gry na jej podstawie.
+- Obie wersje dostają **jeden wspólny factual snapshot** (mecze, format, rostery, forma, te same kursy STS o tym samym `odds_timestamp`) i niezależnie wyceniają probability. Research robimy raz; dublujemy tylko wycenę.
+
+**Po co shadow, a nie czyste przełączenie.** Przełączenie zostawiłoby v1 na ~100 obserwacjach i już nigdy nie odpowiedzielibyśmy, czy v1 pobiło rynek na checkpoincie 150. Dodatkowo porównywalibyśmy v1 i v2 w różnych okresach, na innych składach i innej fazie mety — różnica metody zmieszałaby się z różnicą kalendarza. Shadow to eliminuje: v1 i v2 oceniają identyczne mecze i identyczny rynek, więc jedyną zmienną jest metoda. Pytanie rośnie z „czy v2 bije market?" do także „czy v2 bije v1 na tej samej sparowanej próbce?" — to prawdziwy A/B i mocniejszy dowód. A ponieważ reguły v2 zamrożono wcześniej na papierze, wpisy shadow są genuinely out-of-sample od pierwszego dnia.
+
+**Liczenie próbki się nie zmienia.** v2 i tak potrzebuje **własnych** 150 settled i 50 BET-snapshotów, per agent × version. NIE dziedziczy próbki v1 tylko dlatego, że dzieli mecze. Dzieli mecze, ale liczy od zera.
+
+**Kształt danych i raportów (spec dla agenta z pushem — agenci-analitycy tego nie implementują):**
+
+- Każdy wpis shadow niesie `method_version: "v2"` **oraz** flagę trybu (np. `mode: "shadow"`), żeby dashboard nigdy nie policzył shadow-BET-a jako realnej gry ani nie zmieszał go z P&L operatora czy wspólną pulą CLV.
+- Wpisy sparowane muszą być łączalne: ten sam `match` + `date` + identyczny `odds_timestamp` i snapshot kursów w wierszu v1 i v2 — inaczej „v2 vs v1 na sparowanej próbce" nie da się policzyć.
+- Raport pozostaje chudy, nie zdublowany: v1 to pełny raport oficjalny (`reports/2026-xx-xx-{agent}.md`); v2 to celowo cienki plik shadow (`reports/shadow/2026-xx-xx-{agent}-v2.md`) — tylko tabela wycen, decyzje i blok JSON, korzystający z prozy, kalendarza i weryfikacji rosterów z raportu v1, bez powtarzania ich.
+
+Przykład wartościowego przypadku, którego szukamy (ten sam mecz, ten sam kurs, dwie metody):
+
+| | v1 | v2 shadow |
+|---|---|---|
+| FUT win prob. | 52% | 58% |
+| Fair | 1.92 | 1.72 |
+| STS | 2.10 | 2.10 |
+| Decyzja | PASS | BET |
+| Realna gra | — | nie |
+
+Po 50–100 wspólnych meczach takie rozjazdy pozwalają powiedzieć „v2 realnie poprawia probability względem v1", zamiast zestawiać dwie metody działające w różnych okresach i na innych zespołach.
+
+**Kolejność jest nienegocjowalna.** Shadow rusza dopiero PO zamknięciu specyfikacji v2 na papierze. Dopóki reguły v2 nie są zamrożone, nie ma czego uruchamiać w cieniu — a pokusa dostrajania v2 pod to, jak radzi sobie shadow na żywo, to dokładnie overfitting, przed którym się bronimy. Shadow to miejsce na testowanie v2, nie na jego projektowanie.
+
+---
+
 ## Następny krok
 
-Zbierać dane dalej pod v1 przez najbliższy tier-1 (EWC zamrożone). Równolegle rozwijać sekcję 2 tego pliku do pełnych, policzalnych definicji. Gdy definicje są zamknięte i otwarte pytania z sekcji 6 rozstrzygnięte — przenieść zatwierdzoną metodę do PLAYBOOK.md jako v2, odnotować bump w PROJECT_MEMORY (co, dlaczego, jaki werdykt go wyzwolił) i dopiero wtedy pierwszy wpis `method_version: v2`.
+Zbierać dane dalej pod v1 przez najbliższy tier-1 (EWC zamrożone), aż każdy agent dobije własną próbkę do 150. Równolegle rozwijać sekcję 2 tego pliku do pełnych, policzalnych definicji i rozstrzygać otwarte pytania z sekcji 6. Gdy definicje są zamknięte — przenieść zatwierdzoną metodę do PLAYBOOK.md jako v2, odnotować bump w PROJECT_MEMORY (co, dlaczego, jaki werdykt go wyzwolił) i w `docs/decisions/`, i dopiero wtedy uruchomić pierwszy wpis `method_version: v2` — domyślnie jako shadow run z sekcji 7, potwierdzony przy checkpoincie 150 v1. Decyzja, czy v2 awansuje z shadow na metodę oficjalną, zapada osobno: gdy v1 ma swój werdykt z 150, a v2 dość sparowanych danych shadow, by go ocenić.
