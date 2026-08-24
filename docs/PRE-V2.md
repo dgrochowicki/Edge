@@ -57,6 +57,7 @@ Nie 0.25. **Brier de-vigged market na sparowanej próbce.** v2 „dodaje informa
 - Czy v2 dotyka progu konwersji z sekcji 3, czy zostawia go v1-owym (czeka na CLV).
 - Jak dashboard rozdziela metryki v1 vs v2 (Calibration Lab liczy per method_version — placeholder „v1" już dyskutowany).
 - Zdarzenie wyzwalające bump: który turniej tier-1 jest pierwszą świeżą próbką v2.
+- **Kształt pola `mode` — do rozstrzygnięcia przy freeze v2, nie teraz.** Spec gpt (sekcja 15) wprowadza `mode: active` / `mode: shadow` na wpisie. Problem: `active` to stan zależny od tego, która wersja jest aktualnie oficjalna — przy ewentualnej promocji v2 → active trzeba by przepisać wszystkie historyczne wpisy v1, co łamie niezmienność księgi. Do rozważenia rozdzielenie na dwie rzeczy: (a) trwały fakt o wpisie — czy poszły na to realne pieniądze (`paper` / `real`), ustawiany raz i nigdy nie zmieniany; (b) osobne, rootowe pole `active_version` na poziomie bets.json, mówiące która wersja jest teraz oficjalna — promocja to zmiana jednej linijki, zero migracji wpisów. Shadow v2 rozpoznaje się wtedy po `method_version: v2` + `paper`, nie po `mode`. Alternatywa: zostać przy jednym `mode`, ale z semantyką „raz ustawione, nigdy nie zmieniane" — prostsze, gorzej skaluje się na 3+ wersje. Decyzja należy do opiekuna księgi; implementację (nowe pole + backfill 169 istniejących wpisów) wykonuje agent VS Code z pushem, z notą o backwards-compatibility. **Nie jest potrzebne, dopóki nie ruszamy shadow — a shadow czeka na freeze. Zostawione świadomie otwarte.**
 
 ---
 
