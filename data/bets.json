@@ -2635,8 +2635,8 @@
       "combined_odds": 1.84,
       "potential_return_pln": 4.09,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.53,
       "selections": [
         {
           "match": "GenOne vs Leo Team",
@@ -2645,8 +2645,8 @@
           "odds": 1.33,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit). Placed live, map 1, 0:0."
+          "result": "lost",
+          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit). Placed live, map 1, 0:0. Settled: Leo Team beat GenOne 2-1."
         },
         {
           "match": "100 Thieves vs INOX Division",
@@ -2656,7 +2656,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit)."
+          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit). Accumulator already lost on leg 1 (GenOne)."
         }
       ]
     }
@@ -2665,13 +2665,13 @@
   "summary": {
     "coupons": 62,
     "won": 25,
-    "lost": 35,
+    "lost": 36,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 128.31,
     "gross_return_pln": 111.87,
-    "net_result_pln": -11.91,
-    "roi": -0.0928
+    "net_result_pln": -14.44,
+    "roi": -0.1125
   },
   "archived_predictions": [
     {
