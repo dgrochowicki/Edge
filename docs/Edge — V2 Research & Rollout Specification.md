@@ -24,11 +24,11 @@ Dokument ma umożliwić każdej nowej instancji / agentowi zrozumienie:
 - jak dashboard ma liczyć jakość metod,
 - kiedy v2 może zostać uznane za lepsze,
 - kiedy v2 może zostać promowane z `shadow` do `active`,
-- czego agentowi nie wolno zmieniać samodzielnie.
+- czego agentowi NIE wolno zmieniać samodzielnie.
 
 ---
 
-## 2. Stan projektu
+# 2. Stan projektu
 
 Aktualnie aktywna jest:
 
@@ -49,11 +49,9 @@ Przykłady:
 
 Próbek nie wolno łączyć.
 
-Obecna próbka v1 nie osiągnęła jeszcze checkpointu 150 per agent.
-
 ---
 
-## 3. Dlaczego powstaje v2
+# 3. Dlaczego powstaje v2
 
 EWC 2026 ujawnił potencjalną różnicę informacyjną pomiędzy sposobami wyceny:
 
@@ -73,42 +71,15 @@ Trzeci pokazał niebezpieczeństwo przeciwne:
 
 Dlatego v2 **NIE jest metodą „graj gorącego underdoga”**.
 
-### Zastrzeżenie: hipoteza pochodzi z jednego turnieju
+EWC generuje jedynie hipotezę.
 
-Hipoteza fresh-form została wygenerowana przede wszystkim przez obserwacje z EWC 2026. Ten sam turniej wyraźnie poprawił również zbiorcze metryki projektu.
-
-Orientacyjnie, względem słabego baseline `0.25`:
-
-- pre-EWC, 21.07–02.08:
-  - claude Brier: **0.2464**
-  - gpt Brier: **0.2189**
-- EWC:
-  - claude Brier: **0.1990**
-  - gpt Brier: **0.1973**
-
-Liczby te **nie są dowodem edge**, ponieważ właściwym benchmarkiem pozostaje de-vigged market Brier na sparowanej próbce.
-
-Pokazują jednak istotną zmianę reżimu: EWC mocno poprawia obraz wyników projektu.
-
-Możliwe wyjaśnienia obejmują m.in.:
-
-- rzeczywisty sygnał uchwycony przez metodę,
-- specyfikę jednego turnieju,
-- dużą liczbę wyraźnych faworytów,
-- łatwiejszy reżim predykcyjny,
-- zwykłą wariancję próbki.
-
-Dlatego trzy dywergencje z EWC generują **hipotezę badawczą**, a nie uzasadniają jeszcze zamrożenia konkretnego mechanizmu fresh-form.
-
-Przed finalnym freeze v2 kolejny niezależny tier-1 powinien dostarczyć dodatkowych obserwacji pokazujących, czy problem fresh-form / market anchoring występuje również poza EWC.
-
-EWC nie może zostać użyte do dobrania takich parametrów v2, które wstecznie dałyby najlepszy wynik na tym turnieju.
+Nie może zostać użyte do dobrania takich parametrów v2, które wstecznie dałyby najlepszy wynik na EWC.
 
 ---
 
-## 4. Fundamentalna zasada rozwoju
+# 4. Fundamentalna zasada rozwoju
 
-### v1 i v2 są osobnymi eksperymentami
+## v1 i v2 są osobnymi eksperymentami
 
 v1 ma własną próbkę.
 
@@ -129,11 +100,11 @@ Nie mogą służyć do:
 
 ---
 
-## 5. Docelowy model: ACTIVE v1 + SHADOW v2
+# 5. Docelowy model: ACTIVE v1 + SHADOW v2
 
 Po zamrożeniu definicji v2 obie metody mają przez pewien okres działać równolegle.
 
-### v1
+## v1
 
 `mode: active`
 
@@ -144,7 +115,7 @@ Po zamrożeniu definicji v2 obie metody mają przez pewien okres działać równ
 - może wpływać na realne decyzje operatora,
 - kontynuuje własną próbkę aż do checkpointu.
 
-### v2
+## v2
 
 `mode: shadow`
 
@@ -155,11 +126,9 @@ Po zamrożeniu definicji v2 obie metody mają przez pewien okres działać równ
 - **nie wolno grać realnych zakładów na podstawie v2**,
 - służy wyłącznie do zbierania świeżej próbki badawczej.
 
-Nazwy `active` i `shadow` opisują docelową rolę metod. Sposób zapisania tej informacji w `bets.json` pozostaje osobną otwartą decyzją migracyjną opisaną w sekcji 15 i 28.
-
 ---
 
-## 6. Jeden factual snapshot dla obu metod
+# 6. Jeden factual snapshot dla obu metod
 
 Nie należy wykonywać dwóch całkowicie niezależnych researchów meczu.
 
@@ -175,7 +144,7 @@ Może zawierać m.in.:
 - zmiany składu,
 - ostatnie wyniki,
 - ranking,
-- jakość przeciwników,
+- przeciwników,
 - map pool,
 - dane kontekstowe,
 - kurs STS,
@@ -199,7 +168,7 @@ V1 i v2 muszą dokonać tych ocen zgodnie z własnymi zasadami.
 
 ---
 
-## 7. Izolacja predykcji
+# 7. Izolacja predykcji
 
 Aby ograniczyć wzajemne kotwiczenie modeli:
 
@@ -227,7 +196,7 @@ To pozwala później uczciwiej porównywać obie metody.
 
 ---
 
-## 8. Kierunek metodologiczny v2
+# 8. Kierunek metodologiczny v2
 
 V2 ma przede wszystkim zmienić **sposób estymacji probability**, a nie równocześnie przebudować cały system BET/PASS.
 
@@ -239,7 +208,7 @@ bez mieszania tego z równoczesną zmianą stakingu, thresholdów i innych mecha
 
 ---
 
-## 9. Market jako anchor v2
+# 9. Market jako anchor v2
 
 Planowanym punktem wyjścia v2 jest:
 
@@ -267,7 +236,7 @@ Im większe odejście od rynku, tym silniejszego zestawu informacji powinno wyma
 
 ---
 
-## 10. Fresh-form signal
+# 10. Fresh-form signal
 
 Głównym nowym elementem v2 ma być **mierzalny fresh-form signal**.
 
@@ -279,6 +248,8 @@ Nie może być definiowany jako:
 - „underdogi są teraz mocne”.
 
 Docelowo powinien wykorzystywać policzalne komponenty.
+
+Kandydaci:
 
 ### A. Recent opponent quality
 
@@ -321,7 +292,7 @@ Uwzględnić m.in.:
 
 ---
 
-## 11. Czego fresh-form signal NIE robi
+# 11. Czego fresh-form signal NIE robi
 
 Fresh-form signal:
 
@@ -345,7 +316,7 @@ Pozwala to osobno ocenić jakość probability oraz jakość selekcji BET.
 
 ---
 
-## 12. BET threshold w pierwszej wersji v2
+# 12. BET threshold w pierwszej wersji v2
 
 Przy uruchomieniu v2 nie należy jednocześnie radykalnie zmieniać:
 
@@ -368,7 +339,7 @@ Jeżeli później CLV pokaże problem z selekcją BET, może to być osobny prze
 
 ---
 
-## 13. Ograniczenie nadmiernego odejścia od rynku
+# 13. Ograniczenie nadmiernego odejścia od rynku
 
 V2 powinno posiadać mechanizm ograniczający duże korekty probability wynikające z małej liczby świeżych obserwacji.
 
@@ -394,7 +365,7 @@ Nie wolno ich dobierać poprzez optymalizację na EWC.
 
 ---
 
-## 14. Raportowanie
+# 14. Raportowanie
 
 Po uruchomieniu shadow v2 rekomendowana struktura:
 
@@ -429,18 +400,25 @@ Musi jednak zawierać minimum:
 
 ---
 
-## 15. Ledger i rozróżnienie active/shadow
+# 15. Ledger
 
-Docelowo potrzebny jest jednoznaczny sposób odróżnienia predykcji aktywnych od shadow.
-
-Rozważanym rozwiązaniem jest pole:
+Każda predykcja powinna jednoznacznie określać:
 
 ```text
-mode: active
-mode: shadow
+agent
+method_version
+mode
 ```
 
-Przykładowy przyszły wpis:
+Przykład active:
+
+```text
+agent: gpt
+method_version: v1
+mode: active
+```
+
+Przykład shadow:
 
 ```text
 agent: gpt
@@ -448,49 +426,17 @@ method_version: v2
 mode: shadow
 ```
 
-### Ważne: decyzja migracyjna nie została jeszcze podjęta
+Shadow predictions są normalnymi obserwacjami badawczymi.
 
-Obecny `data/bets.json` nie posiada pola `mode` w historycznych wpisach.
+Po meczu otrzymują:
 
-Wprowadzenie go oznacza zmianę schematu ledgera i wymaga świadomej decyzji opiekuna repozytorium.
+`won / lost / void`
 
-Możliwe strategie obejmują m.in.:
-
-### A. Backfill
-
-Dodać:
-
-```text
-mode: active
-```
-
-do istniejących historycznych predykcji.
-
-### B. Backwards-compatible default
-
-Przyjąć konwencję:
-
-```text
-brak pola mode = active
-```
-
-a pole `mode` dodawać dopiero do nowych wpisów wymagających rozróżnienia active/shadow.
-
-Niniejsza specyfikacja **nie przesądza**, która strategia jest właściwa.
-
-Decyzja musi uwzględnić:
-
-- backwards compatibility,
-- dashboard,
-- istniejące skrypty i parsery,
-- integralność historycznego ledgera,
-- koszt i ryzyko backfillu.
-
-Zmiana schematu powinna zostać wykonana oddzielnie przez opiekuna danych / agenta posiadającego odpowiedzialność za push do repo i udokumentowana odpowiednim commitem.
+tak samo jak active predictions.
 
 ---
 
-## 16. Kursy dla porównania v1 vs v2
+# 16. Kursy dla porównania v1 vs v2
 
 Jeżeli v1 i v2 oceniają ten sam mecz, powinny wykorzystywać **ten sam snapshot kursów**.
 
@@ -512,7 +458,7 @@ Celem jest:
 
 ---
 
-## 17. Dashboard — podstawowa jednostka jakości
+# 17. Dashboard — podstawowa jednostka jakości
 
 Dashboard nie powinien pokazywać jednej globalnej wartości:
 
@@ -543,11 +489,11 @@ Każda kombinacja ma własne:
 
 ---
 
-## 18. Główna metryka jakości
+# 18. Główna metryka jakości
 
 Najbardziej intuicyjną metryką dashboardu powinno być:
 
-### Brier Advantage vs Market
+## Brier Advantage vs Market
 
 ```text
 market_brier - method_brier
@@ -559,7 +505,7 @@ Interpretacja:
 `= 0` → metoda nie dodaje informacji  
 `< 0` → rynek lepszy
 
-**Przykład ilustracyjny — placeholder, NIE realne dane projektu ani v2:**
+Przykład:
 
 ```text
 Market Brier: 0.211
@@ -567,19 +513,17 @@ v2 Brier:     0.196
 Advantage:   +0.015
 ```
 
-Na obecnym etapie v2 nie posiada żadnej rzeczywistej próbki ani realnego Brier.
-
 ---
 
-## 19. Paired Comparison: v1 vs v2
+# 19. Paired Comparison: v1 vs v2
 
 Najważniejszym nowym ekranem dashboardu ma być:
 
-### v1 vs v2 — Shared Matches Only
+## v1 vs v2 — Shared Matches Only
 
 Porównanie wykorzystuje **wyłącznie mecze ocenione równolegle przez obie wersje**.
 
-**Poniższa tabela jest wyłącznie przykładem przyszłego UI / sposobu liczenia. Wszystkie wartości są placeholderami. Realne dane v2 jeszcze nie istnieją.**
+Przykład:
 
 | Metric | v1 | v2 | Market |
 |---|---:|---:|---:|
@@ -598,7 +542,7 @@ To jest czystszy test niż porównywanie metod działających w różnych okresa
 
 ---
 
-## 20. Dywergencje między metodami
+# 20. Dywergencje między metodami
 
 Dashboard / research layer powinien również zapisywać sytuacje:
 
@@ -621,7 +565,7 @@ Główną metryką pozostaje pełny Brier na całej próbce.
 
 ---
 
-## 21. Etapy oceny
+# 21. Etapy oceny
 
 Liczone osobno dla każdego:
 
@@ -659,7 +603,7 @@ na sparowanej próbce.
 
 ---
 
-## 22. CLV
+# 22. CLV
 
 Brier testuje probability.
 
@@ -677,15 +621,15 @@ Shadow BET v2 może być oceniany pod kątem hipotetycznego CLV nawet jeśli nie
 
 ---
 
-## 23. Co dzieje się z v1 po osiągnięciu 150
+# 23. Co dzieje się z v1 po osiągnięciu 150
 
-### Jeżeli v1 zostaje validated
+## Jeżeli v1 zostaje validated
 
 v1 może pozostać `active`, podczas gdy v2 nadal zbiera shadow sample.
 
 Nie ma obowiązku przechodzenia na v2.
 
-### Jeżeli v1 zostaje not validated
+## Jeżeli v1 zostaje not validated
 
 Zgodnie z Playbookiem należy zatrzymać real-money betting na podstawie tej metody.
 
@@ -697,7 +641,7 @@ Nie wolno automatycznie promować v2 tylko dlatego, że v1 nie przeszło checkpo
 
 ---
 
-## 24. Warunki promocji v2
+# 24. Warunki promocji v2
 
 Warunki promocji powinny zostać zamrożone **przed rozpoczęciem shadow testu**.
 
@@ -729,11 +673,9 @@ Samo:
 
 nie wystarcza.
 
-Dokładny minimalny paired sample wymagany do promocji pozostaje jeszcze do zamrożenia.
-
 ---
 
-## 25. Freeze v2
+# 25. Freeze v2
 
 Przed pierwszą shadow prediction musi powstać jednoznaczna wersja:
 
@@ -764,7 +706,7 @@ Następnie należy zapisać:
 
 ---
 
-## 26. Zmiany po freeze
+# 26. Zmiany po freeze
 
 Po rozpoczęciu zbierania v2 nie wolno zmieniać zasad v2 i dalej wrzucać wyników do tej samej próbki.
 
@@ -782,7 +724,7 @@ Kosmetyczne zmiany raportowania nie wymagają bumpu.
 
 ---
 
-## 27. Czego agentowi NIE wolno robić
+# 27. Czego agentowi NIE wolno robić
 
 Agent nie może samodzielnie:
 
@@ -795,12 +737,11 @@ Agent nie może samodzielnie:
 - liczyć checkpointu wspólnie dla wersji,
 - zmieniać market snapshot między v1 i v2 w paired test,
 - przedstawiać shadow P&L jako realny P&L projektu,
-- uznać v2 za lepsze na podstawie kilku spektakularnych dywergencji,
-- samodzielnie wprowadzić migracji schematu `bets.json` bez decyzji opiekuna projektu.
+- uznać v2 za lepsze na podstawie kilku spektakularnych dywergencji.
 
 ---
 
-## 28. Otwarte elementy przed freeze
+# 28. Otwarte elementy przed freeze
 
 Na obecnym etapie **nie są jeszcze zdefiniowane** i wymagają dalszej pracy:
 
@@ -812,10 +753,7 @@ Na obecnym etapie **nie są jeszcze zdefiniowane** i wymagają dalszej pracy:
 6. warunki przekroczenia tego limitu,
 7. minimalna liczba świeżych obserwacji potrzebnych do silnej korekty,
 8. finalna definicja theoretical BET/PASS v2,
-9. dokładne promotion criteria wraz z minimalnym paired sample,
-10. **migracja schematu ledgera dla active/shadow** — zdecydować, czy `mode` zostanie backfillowane do historycznych wpisów, czy obowiązuje backwards-compatible konwencja `missing mode = active`; niniejsza specyfikacja nie podejmuje tej decyzji,
-11. **generalizacja fresh-form poza EWC** — sprawdzić kolejne obserwacje tier-1 i ocenić, czy problem fresh-form / market anchoring występuje również poza jednym turniejem, który wyraźnie poprawił metryki projektu,
-12. policzyć właściwy **paired de-vigged market Brier** dla istniejącej próbki v1, aby ustalić rzeczywisty punkt odniesienia przed rozpoczęciem shadow v2.
+9. dokładne promotion criteria wraz z minimalnym paired sample.
 
 Dopóki te elementy nie są zapisane i zamrożone:
 
@@ -825,7 +763,7 @@ Istnieje wyłącznie jako projekt.
 
 ---
 
-## 29. Docelowy lifecycle projektu
+# 29. Docelowy lifecycle projektu
 
 ```text
 v1 ACTIVE
@@ -836,7 +774,6 @@ v1 ACTIVE
 
 PRE-V2 DESIGN
    │
-   ├── kolejny tier-1 jako dodatkowa obserwacja
    └── definicja wszystkich parametrów
 
 V2 FREEZE
@@ -867,7 +804,7 @@ PROMOTION DECISION
 
 ---
 
-## 30. Najważniejsza zasada dla przyszłych agentów
+# 30. Najważniejsza zasada dla przyszłych agentów
 
 Celem Edge nie jest stworzenie v2, które wygląda lepiej od v1 na starych danych.
 
@@ -879,33 +816,35 @@ Jeżeli odpowiedź będzie „nie”, v2 zostaje odrzucone.
 
 To jest poprawny wynik eksperymentu.
 
-Promotion criteria muszą zostać określone **przed** rozpoczęciem shadow sample.
-
-Nie wolno po rozpoczęciu testu przesuwać bramki w zależności od obserwowanych wyników.
-
 ---
 
-## 31. Aktualny następny krok
+## Aktualny następny krok
 
 Nie uruchamiać jeszcze v2.
 
 Kontynuować v1.
 
-Najbliższy tier-1 ma pełnić podwójną rolę:
+Równolegle dopracować `PRE-V2.md`, koncentrując się teraz wyłącznie na otwartych elementach z sekcji 28.
 
-1. dalej zwiększać próbkę v1,
-2. dostarczyć niezależnych obserwacji pozwalających sprawdzić, czy problem fresh-form / market anchoring widoczny na EWC pojawia się również poza EWC.
+Gdy wszystkie będą jednoznacznie zdefiniowane:
 
-Równolegle rozwijać `PRE-V2.md`, koncentrując się na otwartych elementach z sekcji 28.
-
-Przed freeze należy dodatkowo policzyć paired de-vigged market Brier dla istniejącego v1.
-
-Gdy wszystkie wymagane elementy są jednoznacznie zdefiniowane:
-
-1. utworzyć finalną specyfikację `METHOD_V2.md`,
+1. utworzyć finalną specyfikację metody,
 2. zamrozić ją w Git,
-3. zapisać datę i commit SHA,
-4. rozstrzygnąć migrację schematu ledgera,
-5. wybrać pierwszy kwalifikujący się mecz po freeze,
-6. rozpocząć `v2 shadow`,
-7. od tego momentu nie zmieniać zasad v2 bez bumpu wersji.
+3. zapisać commit SHA,
+4. wybrać pierwszy kwalifikujący się mecz po freeze,
+5. rozpocząć `v2 shadow`.
+---
+
+## Aneks — uwaga z review (claude)
+
+Dopisane po review przez claude; treść powyżej (gpt) niezmieniona.
+
+**Sekcja 15 (`mode: active` / `mode: shadow`) — do rewizji.** Po sprawdzeniu realnej struktury `data/bets.json` i kodu dashboardu pole `mode` na predykcji okazuje się zbędne:
+
+- Rozdzielenie v1 vs v2 do liczenia i paired testu realizuje samo `method_version`. Jeden mecz ma osobny wpis na każdą kombinację `agent × method_version` (tak jak dziś ma osobne wpisy dla claude i gpt). Dashboard grupuje per `agent × method_version` — dwie różne wartości wersji wystarczają, bez dodatkowego pola.
+- Ochronę realnego P&L przed wpisami shadow daje istniejący rozdział `predictions` vs `coupons`: P&L/ROI/net liczą się wyłącznie z `coupons`, a shadow v2 to predykcje bez kuponów. Shadow fizycznie nie może dotknąć P&L, bez flagi.
+- Jedyne miejsce, gdzie flaga bywa potrzebna, to hipotetyczne kupony shadow dla teoretycznego CLV v2 (sekcja 22) — wtedy opcjonalne `paper: true` na tych kuponach, nie na predykcjach. Domyślnie brak = realny.
+
+**Sekcja 23 — potwierdzenie i doprecyzowanie.** Zgoda, że v1 nie znika. Warto zaznaczyć wprost: wpisy v1 pozostają w danych na zawsze jako zamrożony baseline i dowód uzasadniający ewentualne przejście na v2 (paired test żyje w danych v1 — ich skasowanie zniszczyłoby porównanie). Przełączenie „która wersja jest realna" to zmiana rootowego `active_version` w bets.json (jedna linijka), nie migracja ani kasowanie wpisów. Struktura skaluje się tak na v3+ bez sprzątania.
+
+**Sekcja 3 — zastrzeżenie o próbce.** Hipoteza fresh-form stoi na trzech meczach z EWC, a EWC jest jedynym okresem projektu, w którym metoda wyraźnie biła baseline (pre-EWC: claude Brier ~0.246, gpt ~0.219 wobec 0.25; EWC: ~0.199 / ~0.197). Zanim fresh-form zostanie zamrożony, kolejny tier-1 musi pokazać, że sygnał utrzymuje się poza EWC — inaczej ryzyko zamrożenia metody pod kształt jednego turnieju. (Liczby liczone vs baseline 0.25; właściwy benchmark to de-vigged market na sparowanej próbce — do policzenia.)
