@@ -2625,19 +2625,53 @@
           "notes": "Own bet for fun, placed live during the Grand Final at a live price (1.85, well below the 1.20 pre-match price -- FUT was likely up early). Same pick as both agents' PASS calls (P-2026-08-23-C2/G2). Settled: Spirit beat FUT 3-1 -- EWC 2026 champion."
         }
       ]
+    },
+    {
+      "id": "EDGE-062",
+      "date": "2026-08-24",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.53,
+      "combined_odds": 1.84,
+      "potential_return_pln": 4.09,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "GenOne vs Leo Team",
+          "market": "moneyline",
+          "pick": "GenOne",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit). Placed live, map 1, 0:0."
+        },
+        {
+          "match": "100 Thieves vs INOX Division",
+          "market": "moneyline",
+          "pick": "100 Thieves",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own for-fun bet, not an Edge pick -- NODWIN Clutch Series, explicitly out of scope per PLAYBOOK (tier-2/3 circuit)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 61,
+    "coupons": 62,
     "won": 25,
     "lost": 35,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 125.78,
+    "pending": 2,
+    "total_staked_pln": 128.31,
     "gross_return_pln": 111.87,
     "net_result_pln": -11.91,
-    "roi": -0.0947
+    "roi": -0.0928
   },
   "archived_predictions": [
     {
