@@ -2693,19 +2693,97 @@
           "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Opponent name as given by the user ('Have') may be abbreviated/mistyped. Settled: Black Phoenix swept 2-0 -- only 2 maps played, leg lost."
         }
       ]
+    },
+    {
+      "id": "EDGE-064",
+      "date": "2026-08-25",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.34,
+      "potential_return_pln": 4.12,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "1W vs Nemiga",
+          "market": "handicap_maps",
+          "pick": "1W +0.5",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: 1W beat Nemiga 2-0."
+        },
+        {
+          "match": "K27 vs Sparta",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-065",
+      "date": "2026-08-25",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.67,
+      "potential_return_pln": 4.69,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Leo Team vs Unity",
+          "market": "map_winner",
+          "pick": "Leo Team (map 1)",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: Leo Team swept Unity 2-0, so Leo necessarily won map 1."
+        },
+        {
+          "match": "1W vs Nemiga",
+          "market": "handicap_maps",
+          "pick": "1W +0.5",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Same match/leg as EDGE-064. Settled: 1W beat Nemiga 2-0."
+        },
+        {
+          "match": "K27 vs Sparta",
+          "market": "handicap_maps",
+          "pick": "K27 +0.5",
+          "odds": 1.14,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 63,
+    "coupons": 65,
     "won": 25,
     "lost": 37,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 130.31,
+    "pending": 3,
+    "total_staked_pln": 134.31,
     "gross_return_pln": 111.87,
     "net_result_pln": -16.44,
-    "roi": -0.1262
+    "roi": -0.1224
   },
   "archived_predictions": [
     {
