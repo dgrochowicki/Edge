@@ -2702,9 +2702,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.34,
       "potential_return_pln": 4.12,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.12,
+      "status": "won",
+      "net_result_pln": 2.12,
       "selections": [
         {
           "match": "1W vs Nemiga",
@@ -2723,8 +2723,8 @@
           "odds": 1.95,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+          "result": "won",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Series leveled 1-1, locking in this leg as won (guaranteed decider)."
         }
       ]
     },
@@ -2736,9 +2736,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.67,
       "potential_return_pln": 4.69,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.69,
+      "status": "won",
+      "net_result_pln": 2.69,
       "selections": [
         {
           "match": "Leo Team vs Unity",
@@ -2767,8 +2767,8 @@
           "odds": 1.14,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+          "result": "won",
+          "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Series leveled 1-1, locking in this leg as won (K27 already has a map)."
         }
       ]
     }
@@ -2776,14 +2776,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 65,
-    "won": 25,
+    "won": 27,
     "lost": 37,
     "voided": 0,
-    "pending": 3,
+    "pending": 1,
     "total_staked_pln": 134.31,
-    "gross_return_pln": 111.87,
-    "net_result_pln": -16.44,
-    "roi": -0.1224
+    "gross_return_pln": 120.68,
+    "net_result_pln": -11.63,
+    "roi": -0.0866
   },
   "archived_predictions": [
     {
