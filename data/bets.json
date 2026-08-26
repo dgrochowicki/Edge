@@ -2153,8 +2153,8 @@
           "odds": 1.22,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- a future/next-round leg dated 2026-08-26, well past this coupon's other EWC legs. User flagged this whole coupon as an accidental long-term acca (meant to bet just today's matches, ended up combined with a week-out future leg)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- a future/next-round leg dated 2026-08-26, well past this coupon's other EWC legs. User flagged this whole coupon as an accidental long-term acca (meant to bet just today's matches, ended up combined with a week-out future leg). Settled: G2 swept Aurora 2-0."
         },
         {
           "match": "Spirit vs DENDELE",
@@ -2163,8 +2163,8 @@
           "odds": 1.09,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. In-scope tournament per PLAYBOOK but no Edge prediction exists yet (too far out for either agent to have reported)."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. Settled: Spirit beat DENDELE 2-0."
         },
         {
           "match": "Natus Vincere vs M80",
@@ -2771,19 +2771,137 @@
           "notes": "Own for-fun bet, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Series leveled 1-1, locking in this leg as won (K27 already has a map)."
         }
       ]
+    },
+    {
+      "id": "EDGE-066",
+      "date": "2026-08-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 5.01,
+      "potential_return_pln": 8.81,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Aurora vs G2",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not a moneyline outright market. Settled: G2 swept Aurora 2-0 -- only 2 maps played, leg lost. This is what busted the coupon."
+        },
+        {
+          "match": "Spirit vs DENDELE",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.02,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C2/G2). Settled: Spirit beat DENDELE 2-0. Moot since the coupon already lost on leg 1."
+        },
+        {
+          "match": "Natus Vincere vs M80",
+          "market": "moneyline",
+          "pick": "Natus Vincere",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0. Moot since the coupon already lost on leg 1."
+        },
+        {
+          "match": "HOTU vs K27",
+          "market": "handicap_maps",
+          "pick": "K27 +0.5",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 17:00, not yet played. Moot since the coupon already lost on leg 1."
+        },
+        {
+          "match": "Nemesis vs 1W",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.85,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played. Moot since the coupon already lost on leg 1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-067",
+      "date": "2026-08-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.64,
+      "potential_return_pln": 4.64,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Spirit vs DENDELE",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.01,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C2/G2). Settled: Spirit beat DENDELE 2-0."
+        },
+        {
+          "match": "Natus Vincere vs M80",
+          "market": "moneyline",
+          "pick": "Natus Vincere",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0."
+        },
+        {
+          "match": "HOTU vs K27",
+          "market": "handicap_maps",
+          "pick": "K27 +0.5",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 17:00, not yet played."
+        },
+        {
+          "match": "Nemesis vs 1W",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.85,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 65,
+    "coupons": 67,
     "won": 27,
-    "lost": 37,
+    "lost": 38,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 134.31,
+    "pending": 2,
+    "total_staked_pln": 138.31,
     "gross_return_pln": 120.68,
-    "net_result_pln": -11.63,
-    "roi": -0.0866
+    "net_result_pln": -13.63,
+    "roi": -0.0985
   },
   "archived_predictions": [
     {
@@ -7456,8 +7574,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "won",
+      "notes": "Risk: Wysokie. Settled: G2 swept Aurora 2-0."
     },
     {
       "id": "P-2026-08-26-C2",
@@ -7477,8 +7595,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
-      "notes": "Risk: Niskie."
+      "result": "won",
+      "notes": "Risk: Niskie. Settled: Spirit beat DENDELE 2-0."
     },
     {
       "id": "P-2026-08-26-C3",
@@ -7540,7 +7658,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: G2 swept Aurora 2-0."
     },
     {
       "id": "P-2026-08-26-G2",
@@ -7560,7 +7679,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat DENDELE 2-0."
     },
     {
       "id": "P-2026-08-26-G3",
