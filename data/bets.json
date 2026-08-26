@@ -2183,8 +2183,8 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. No Edge prediction exists yet. Moot since the coupon already lost on the Natus Vincere-M80 leg."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. Settled: FURIA beat paiN 2:0. Moot since the coupon already lost on the Natus Vincere-M80 leg."
         }
       ]
     },
@@ -2889,19 +2889,53 @@
           "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
         }
       ]
+    },
+    {
+      "id": "EDGE-068",
+      "date": "2026-08-26",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.62,
+      "potential_return_pln": 8.14,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "FURIA vs paiN",
+          "market": "handicap_maps",
+          "pick": "paiN +0.5",
+          "odds": 3.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- placed live at map 2, FURIA led 1:0. Settled: FURIA swept paiN 2:0 (paiN not covered). This is what busted the coupon."
+        },
+        {
+          "match": "Nemesis vs 1W",
+          "market": "handicap_maps",
+          "pick": "Nemesis +0.5",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- placed live at map 1, 0:0. Moot since the coupon already lost on the FURIA-paiN leg."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 67,
+    "coupons": 68,
     "won": 27,
-    "lost": 40,
+    "lost": 41,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 138.31,
+    "total_staked_pln": 140.31,
     "gross_return_pln": 120.68,
-    "net_result_pln": -17.63,
-    "roi": -0.1275
+    "net_result_pln": -19.63,
+    "roi": -0.1399
   },
   "archived_predictions": [
     {
@@ -7616,8 +7650,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie."
+      "result": "won",
+      "notes": "Risk: Srednie. Settled: FURIA beat paiN 2:0."
     },
     {
       "id": "P-2026-08-26-C4",
@@ -7721,7 +7755,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA beat paiN 2:0."
     }
   ]
 }
