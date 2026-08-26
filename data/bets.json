@@ -2103,8 +2103,8 @@
       "combined_odds": 2.77,
       "potential_return_pln": 4.87,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "G2 vs Astralis",
@@ -2173,8 +2173,8 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. No Edge prediction exists yet."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. Settled: M80 beat NAVI 2:1. This is what busted the coupon."
         },
         {
           "match": "FURIA vs paiN",
@@ -2184,7 +2184,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. No Edge prediction exists yet."
+          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, 2026-08-26. No Edge prediction exists yet. Moot since the coupon already lost on the Natus Vincere-M80 leg."
         }
       ]
     },
@@ -2811,8 +2811,8 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0. Moot since the coupon already lost on leg 1."
+          "result": "lost",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0. Settled: M80 beat NAVI 2:1. Moot since the coupon already lost on leg 1."
         },
         {
           "match": "HOTU vs K27",
@@ -2821,8 +2821,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 17:00, not yet played. Moot since the coupon already lost on leg 1."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: HOTU beat K27 2:0 (K27 swept, handicap not covered). Moot since the coupon already lost on leg 1."
         },
         {
           "match": "Nemesis vs 1W",
@@ -2845,8 +2845,8 @@
       "combined_odds": 2.64,
       "potential_return_pln": 4.64,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "Spirit vs DENDELE",
@@ -2865,8 +2865,8 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0."
+          "result": "lost",
+          "notes": "Same pick as both agents' PASS calls (P-2026-08-26-C4/G3). Placed live at map 1, 0:0. Settled: M80 beat NAVI 2:1. Moot since the coupon already lost on the HOTU-K27 leg."
         },
         {
           "match": "HOTU vs K27",
@@ -2875,8 +2875,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 17:00, not yet played."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: HOTU beat K27 2:0 (K27 swept, handicap not covered). This is what busted the coupon."
         },
         {
           "match": "Nemesis vs 1W",
@@ -2895,13 +2895,13 @@
   "summary": {
     "coupons": 67,
     "won": 27,
-    "lost": 38,
+    "lost": 40,
     "voided": 0,
-    "pending": 2,
+    "pending": 0,
     "total_staked_pln": 138.31,
     "gross_return_pln": 120.68,
-    "net_result_pln": -13.63,
-    "roi": -0.0985
+    "net_result_pln": -17.63,
+    "roi": -0.1275
   },
   "archived_predictions": [
     {
@@ -7592,7 +7592,7 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.5,
       "odds_timestamp": "2026-08-26T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 8,
       "result": "won",
@@ -7634,11 +7634,11 @@
       "market_odds_at_analysis": 1.12,
       "market_odds_opponent": 5.3,
       "odds_timestamp": "2026-08-26T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.14,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie."
+      "result": "lost",
+      "notes": "Risk: Srednie. Settled: M80 beat NAVI 2:1."
     },
     {
       "id": "P-2026-08-26-G1",
@@ -7676,7 +7676,7 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.5,
       "odds_timestamp": "2026-08-26T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 8,
       "result": "won",
@@ -7697,10 +7697,11 @@
       "market_odds_at_analysis": 1.12,
       "market_odds_opponent": 5.3,
       "odds_timestamp": "2026-08-26T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.14,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: M80 beat NAVI 2:1."
     },
     {
       "id": "P-2026-08-26-G4",
