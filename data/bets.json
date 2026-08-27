@@ -2923,19 +2923,121 @@
           "notes": "Own bet for fun, not an Edge pick -- placed live at map 1, 0:0. Settled: Nemesis vs 1W finished 2:1 (3 maps played, Nemesis covered +0.5 either way). Moot since the coupon already lost on the FURIA-paiN leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-069",
+      "date": "2026-08-27",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.65,
+      "potential_return_pln": 6.43,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "STATE vs GenOne",
+          "market": "handicap_maps",
+          "pick": "STATE +0.5",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: STATE vs GenOne finished 1:2 (STATE covered +0.5)."
+        },
+        {
+          "match": "Nemiga vs Black Phoenix",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 2.15,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: Nemiga swept Black Phoenix 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-070",
+      "date": "2026-08-27",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.88,
+      "potential_return_pln": 5.06,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "MOUZ vs 9z",
+          "market": "handicap_maps",
+          "pick": "9z +0.5",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-27-C2/G2 (pick MOUZ outright, won). Settled: MOUZ swept 9z 2:0 (9z not covered). This is what busted the coupon."
+        },
+        {
+          "match": "Legacy vs FUT",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-27-C3/G3 (pick FUT, lost). Settled: Legacy beat FUT 2:0 (only 2 maps played, Over 2.5 missed)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-071",
+      "date": "2026-08-27",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 5.81,
+      "combined_odds": 2.91,
+      "potential_return_pln": 14.89,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -5.81,
+      "selections": [
+        {
+          "match": "Leo Team vs Butterfly",
+          "market": "map_winner",
+          "pick": "Butterfly (map 2)",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: Leo Team vs Butterfly finished 0:2, Butterfly won map 2 too."
+        },
+        {
+          "match": "Legacy vs FUT",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same leg/market as EDGE-070. Settled: Legacy beat FUT 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 68,
+    "coupons": 71,
     "won": 27,
-    "lost": 41,
+    "lost": 44,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 140.31,
+    "total_staked_pln": 150.12,
     "gross_return_pln": 120.68,
-    "net_result_pln": -19.63,
-    "roi": -0.1399
+    "net_result_pln": -29.44,
+    "roi": -0.1961
   },
   "archived_predictions": [
     {
@@ -7776,8 +7878,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
-      "notes": "Risk: Niskie. Pierwszy oficjalny mecz Vitality z jL (ex-NaVi, standin za mezii na urlopie ojcowskim)."
+      "result": "lost",
+      "notes": "Risk: Niskie. Pierwszy oficjalny mecz Vitality z jL (ex-NaVi, standin za mezii na urlopie ojcowskim). Settled: Inner Circle upset Vitality 2:0."
     },
     {
       "id": "P-2026-08-27-C2",
@@ -7797,8 +7899,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie. Najblizej progu wejscia dzien -- dodatni edge nad de-vig (+3.7pp), ale kurs 1.40 wciaz ponizej fair 1.43."
+      "result": "won",
+      "notes": "Risk: Srednie. Najblizej progu wejscia dzien -- dodatni edge nad de-vig (+3.7pp), ale kurs 1.40 wciaz ponizej fair 1.43. Settled: MOUZ beat 9z 2:0."
     },
     {
       "id": "P-2026-08-27-C3",
@@ -7818,8 +7920,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Watch: mecz-obserwacja pod katem wzorca v1 niedowazania swiezej formy underdoga (Legacy ograla Falcons i NaVi na EWC)."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Watch: mecz-obserwacja pod katem wzorca v1 niedowazania swiezej formy underdoga (Legacy ograla Falcons i NaVi na EWC). Settled: Legacy beat FUT 2:0 -- underdog form pattern confirmed again."
     },
     {
       "id": "P-2026-08-27-C4",
@@ -7841,6 +7943,89 @@
       "confidence": 8,
       "result": "pending",
       "notes": "Risk: Niskie."
+    },
+    {
+      "id": "P-2026-08-27-G1",
+      "date": "2026-08-27",
+      "report": "reports/2026-08-27-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Vitality vs Inner Circle",
+      "market": "moneyline",
+      "pick": "Vitality",
+      "estimated_probability": 0.8929,
+      "fair_odds": 1.12,
+      "market_odds_at_analysis": 1.04,
+      "market_odds_opponent": 8.5,
+      "odds_timestamp": "2026-08-27T08:12:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "result": "lost",
+      "notes": "Settled: Inner Circle upset Vitality 2:0."
+    },
+    {
+      "id": "P-2026-08-27-G2",
+      "date": "2026-08-27",
+      "report": "reports/2026-08-27-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "MOUZ vs 9z",
+      "market": "moneyline",
+      "pick": "MOUZ",
+      "estimated_probability": 0.6579,
+      "fair_odds": 1.52,
+      "market_odds_at_analysis": 1.40,
+      "market_odds_opponent": 2.75,
+      "odds_timestamp": "2026-08-27T08:12:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "result": "won",
+      "notes": "Settled: MOUZ beat 9z 2:0."
+    },
+    {
+      "id": "P-2026-08-27-G3",
+      "date": "2026-08-27",
+      "report": "reports/2026-08-27-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Legacy vs FUT",
+      "market": "moneyline",
+      "pick": "FUT",
+      "estimated_probability": 0.5263,
+      "fair_odds": 1.90,
+      "market_odds_at_analysis": 1.70,
+      "market_odds_opponent": 2.04,
+      "odds_timestamp": "2026-08-27T08:12:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "result": "lost",
+      "notes": "Settled: Legacy beat FUT 2:0."
+    },
+    {
+      "id": "P-2026-08-27-G4",
+      "date": "2026-08-27",
+      "report": "reports/2026-08-27-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Falcons vs Lynn Vision",
+      "market": "moneyline",
+      "pick": "Falcons",
+      "estimated_probability": 0.9174,
+      "fair_odds": 1.09,
+      "market_odds_at_analysis": 1.03,
+      "market_odds_opponent": 9.5,
+      "odds_timestamp": "2026-08-27T08:12:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 5,
+      "result": "pending"
     }
   ]
 }
