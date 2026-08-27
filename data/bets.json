@@ -2831,8 +2831,8 @@
           "odds": 1.85,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played. Moot since the coupon already lost on leg 1."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: Nemesis vs 1W finished 2:1 (3 maps played). Moot since the coupon already lost on leg 1."
         }
       ]
     },
@@ -2885,8 +2885,8 @@
           "odds": 1.85,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Match at 20:00, not yet played."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Settled: Nemesis vs 1W finished 2:1 (3 maps played). Moot since the coupon already lost on the Natus Vincere-M80/HOTU-K27 legs."
         }
       ]
     },
@@ -2919,8 +2919,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- placed live at map 1, 0:0. Moot since the coupon already lost on the FURIA-paiN leg."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- placed live at map 1, 0:0. Settled: Nemesis vs 1W finished 2:1 (3 maps played, Nemesis covered +0.5 either way). Moot since the coupon already lost on the FURIA-paiN leg."
         }
       ]
     }
