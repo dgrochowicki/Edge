@@ -7941,8 +7941,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 8,
-      "result": "pending",
-      "notes": "Risk: Niskie."
+      "result": "won",
+      "notes": "Risk: Niskie. Settled: Falcons beat Lynn Vision 2:1."
     },
     {
       "id": "P-2026-08-27-G1",
@@ -8025,7 +8025,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Falcons beat Lynn Vision 2:1."
     }
   ]
 }
