@@ -3025,19 +3025,97 @@
           "notes": "Same leg/market as EDGE-070. Settled: Legacy beat FUT 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
         }
       ]
+    },
+    {
+      "id": "EDGE-072",
+      "date": "2026-08-28",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.60,
+      "potential_return_pln": 8.10,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "1W vs SPARTA",
+          "market": "handicap_maps",
+          "pick": "SPARTA +0.5",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- not a tier-1 tournament, out of Edge scope. Moot since the coupon already lost on the DENDELE-Aurora leg."
+        },
+        {
+          "match": "DENDELE vs Aurora",
+          "market": "handicap_maps",
+          "pick": "DENDELE +0.5",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-28-C1/G1 (pick Aurora outright, won). Settled: Aurora swept DENDELE 2:0 (DENDELE not covered). This is what busted the coupon."
+        },
+        {
+          "match": "Spirit vs G2",
+          "market": "handicap_maps",
+          "pick": "G2 +0.5",
+          "odds": 1.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-28-C2/G2 (pick Spirit outright, won). Settled: Spirit swept G2 2:0 (G2 not covered)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-073",
+      "date": "2026-08-28",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.54,
+      "potential_return_pln": 6.22,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Spirit vs G2",
+          "market": "handicap_maps",
+          "pick": "G2 +0.5",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-28-C2/G2 (pick Spirit outright, won). Different odds than EDGE-072's G2 +0.5 leg (line moved between placements). Settled: Spirit swept G2 2:0 (G2 not covered). This is what busted the coupon."
+        },
+        {
+          "match": "paiN vs Natus Vincere",
+          "market": "handicap_maps",
+          "pick": "paiN +0.5",
+          "odds": 2.08,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-28-C3/G3 (pick NAVI outright). Moot since the coupon already lost on the Spirit-G2 leg."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 71,
+    "coupons": 73,
     "won": 27,
-    "lost": 44,
+    "lost": 46,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 150.12,
+    "total_staked_pln": 154.12,
     "gross_return_pln": 120.68,
-    "net_result_pln": -29.44,
-    "roi": -0.1961
+    "net_result_pln": -33.44,
+    "roi": -0.2170
   },
   "archived_predictions": [
     {
@@ -8046,8 +8124,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Watch: fresh-form -- DENDELE ograla FURIA w lipcu, Aurora bez rytmu (0:2 z G2 po prowadzeniu 12-7)."
+      "result": "won",
+      "notes": "Risk: Wysokie. Watch: fresh-form -- DENDELE ograla FURIA w lipcu, Aurora bez rytmu (0:2 z G2 po prowadzeniu 12-7). Settled: Aurora beat DENDELE 2:0."
     },
     {
       "id": "P-2026-08-28-C2",
@@ -8067,8 +8145,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "won",
+      "notes": "Risk: Wysokie. Settled: Spirit beat G2 2:0."
     },
     {
       "id": "P-2026-08-28-C3",
@@ -8130,7 +8208,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Aurora beat DENDELE 2:0."
     },
     {
       "id": "P-2026-08-28-G2",
@@ -8150,7 +8229,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat G2 2:0."
     },
     {
       "id": "P-2026-08-28-G3",
