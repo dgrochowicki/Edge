@@ -3099,8 +3099,8 @@
           "odds": 2.08,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-28-C3/G3 (pick NAVI outright). Moot since the coupon already lost on the Spirit-G2 leg."
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-28-C3/G3 (pick NAVI outright, won). Settled: NAVI swept paiN 2:0 (paiN not covered). Moot since the coupon already lost on the Spirit-G2 leg."
         }
       ]
     }
@@ -8166,8 +8166,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie. Watch: fresh-form -- NAVI faworyt bez formy (1:2 z M80, odpadla z grupy EWC)."
+      "result": "won",
+      "notes": "Risk: Srednie. Watch: fresh-form -- NAVI faworyt bez formy (1:2 z M80, odpadla z grupy EWC). Settled: NAVI beat paiN 2:0."
     },
     {
       "id": "P-2026-08-28-C4",
@@ -8187,8 +8187,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem po upsecie na NAVI (2:1)."
+      "result": "won",
+      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem po upsecie na NAVI (2:1). Settled: FURIA beat M80 2:0."
     },
     {
       "id": "P-2026-08-28-G1",
@@ -8250,7 +8250,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: NAVI beat paiN 2:0."
     },
     {
       "id": "P-2026-08-28-G4",
@@ -8270,7 +8271,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA beat M80 2:0."
     }
   ]
 }
