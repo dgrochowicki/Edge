@@ -3103,19 +3103,74 @@
           "notes": "Same match as Edge prediction P-2026-08-28-C3/G3 (pick NAVI outright, won). Settled: NAVI swept paiN 2:0 (paiN not covered). Moot since the coupon already lost on the Spirit-G2 leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-074",
+      "date": "2026-08-28",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.52,
+      "potential_return_pln": 4.44,
+      "gross_return_pln": 3.97,
+      "status": "won",
+      "net_result_pln": 1.97,
+      "notes": "User cashed out before the FURIA vs M80 match finished. Cash-out payout 3.97 PLN vs 4.44 PLN full potential.",
+      "selections": [
+        {
+          "match": "paiN vs Natus Vincere",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-28-C3/G3 (pick NAVI outright). Settled: NAVI beat paiN 2:0, exact score hit."
+        },
+        {
+          "match": "Just Players vs ex-RUSTEC",
+          "market": "handicap_maps",
+          "pick": "Just Players +0.5",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- Kibertochka, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+        },
+        {
+          "match": "FURIA vs M80",
+          "market": "moneyline",
+          "pick": "FURIA",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-28-C4/G4. Coupon was cashed out before this leg finished (this is the leg that triggered the cash-out). Settled: FURIA beat M80 2:0."
+        },
+        {
+          "match": "UPGRADE vs Black Phoenix",
+          "market": "handicap_maps",
+          "pick": "Black Phoenix +0.5",
+          "odds": 1.30,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 73,
-    "won": 27,
+    "coupons": 74,
+    "won": 28,
     "lost": 46,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 154.12,
-    "gross_return_pln": 120.68,
-    "net_result_pln": -33.44,
-    "roi": -0.2170
+    "total_staked_pln": 156.12,
+    "gross_return_pln": 124.65,
+    "net_result_pln": -31.47,
+    "roi": -0.2016
   },
   "archived_predictions": [
     {
