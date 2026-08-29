@@ -3154,8 +3154,8 @@
           "odds": 1.30,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Settled: Black Phoenix beat UPGRADE 2:1. Moot for payout since the coupon was already cashed out."
         }
       ]
     },
