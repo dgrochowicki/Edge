@@ -3178,8 +3178,8 @@
           "odds": 1.04,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-29-C1/G1 (pick Vitality outright)."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-29-C1/G1 (pick Vitality outright, won). Settled: Vitality beat 9z 2:0."
         },
         {
           "match": "Legacy vs Falcons",
@@ -8415,8 +8415,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "won",
+      "notes": "Risk: Wysokie. Settled: Vitality beat 9z 2:0."
     },
     {
       "id": "P-2026-08-29-C2",
@@ -8499,7 +8499,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality beat 9z 2:0."
     },
     {
       "id": "P-2026-08-29-G2",
