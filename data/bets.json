@@ -3134,8 +3134,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- Kibertochka, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- Kibertochka, out of Edge scope. Settled: ex-RUSTEC beat Just Players 2:1, Just Players covered +0.5. Moot for payout since the coupon was already cashed out."
         },
         {
           "match": "FURIA vs M80",
