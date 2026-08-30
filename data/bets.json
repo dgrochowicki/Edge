@@ -8799,11 +8799,11 @@
       "market_odds_at_analysis": 1.28,
       "market_odds_opponent": 3.35,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.32,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "notes": "Risk: Srednie."
+      "notes": "Risk: Srednie. Closing snapshot 15:55 (5min przed meczem): FUT 1.32 (z 1.28), Inner Circle 3.10 (z 3.35)."
     },
     {
       "id": "P-2026-08-30-C4",
@@ -8882,7 +8882,7 @@
       "market_odds_at_analysis": 1.28,
       "market_odds_opponent": 3.35,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.32,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending"
