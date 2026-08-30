@@ -8778,11 +8778,11 @@
       "market_odds_at_analysis": 1.26,
       "market_odds_opponent": 3.50,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem (upset na NAVI)."
+      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem (upset na NAVI). Closing snapshot 13:43 (mecz przesuniety na 14:20): kurs bez ruchu, wciaz 1.26."
     },
     {
       "id": "P-2026-08-30-C3",
@@ -8862,7 +8862,7 @@
       "market_odds_at_analysis": 1.26,
       "market_odds_opponent": 3.50,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending"
