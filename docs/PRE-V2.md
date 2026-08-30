@@ -102,6 +102,35 @@ Po 50–100 wspólnych meczach takie rozjazdy pozwalają powiedzieć „v2 realn
 
 ---
 
+## 8. Kandydat na komponent: dominacja mapowa / round differential (nie tylko wynik serii)
+
+**Obserwacja (Dom, 30.08.2026):** v1 czyta mecz binarnie — kto wygrał serię (won/lost) — i ignoruje *jak*. Ale seria 2:1, w której przegrane mapy szły 13:11, mówi coś zupełnie innego niż 2:1 z mapami przegranymi 13:3. Pierwsza drużyna była realnie równorzędna i miała pecha/drobny deficyt; druga została rozjechana i tylko urwała jedną mapę. Binarny wynik traktuje oba przypadki identycznie. Round differential (różnica rund na mapie) niesie informację o *sile* zwycięstwa/porażki, której v1 wyrzuca.
+
+To rozszerza istniejący w sekcji 2 komponent „wyniki map vs top-tier" — ale jest konkretniejsze: nie tylko *czy* zespół wygrywa mapy, ale *jak zdecydowanie*. Jest też naturalnym, mierzalnym proxy dla „świeżej formy", bo dominacja mapowa jest trudniejsza do podrobienia niż sam wynik serii (można wygrać 2:1 słabo grając, trudniej wygrać dwie mapy po 13:4 bez realnej przewagi).
+
+**Dlaczego to może działać jako sygnał:** wynik serii jest zaszumiony przez format BO3 (jedna mapa różnicy potrafi odwrócić serię), a różnica rund uśrednia się gładziej i jest bliższa „prawdziwej" różnicy sił. Dwa zespoły z bilansem 2:1 mogą mieć skrajnie różny profil rundowy — round diff to ujawnia, a rynek moneyline (kto wygra całą serię) tego wprost nie wycenia.
+
+**Propozycja operacjonalizacji (do przetestowania, nie ostateczna):**
+
+1. **Metryka bazowa — Round Differential per mapa (RD):** dla każdej rozegranej mapy `RD = rundy_zdobyte − rundy_stracone` z perspektywy danego zespołu (np. wygrana 13:7 → +6; przegrana 3:13 → −10). Neutralna wobec tego, kto wygrał serię.
+
+2. **Agregacja — Average Round Differential (ARD):** średni RD zespołu z ostatnich **N map** (kandydaci: N=6, N=10 — do zestrojenia). Liczony **per mapa, nie per mecz**, żeby BO3 2:0 ważył podwójnie względem forfeit/BO1. Wariant odporny: mediana RD zamiast średniej, żeby jeden pogrom (np. −11 vs superteam) nie zaburzał obrazu.
+
+3. **Ważenie jakością rywala (opcjonalne, łączy z sekcją 2):** surowy ARD premiuje bicie słabych. Korekta: RD skalowany różnicą VRS/rankingu rywala — +6 przeciw #3 waży więcej niż +6 przeciw #40. Prosty wariant: liczyć ARD tylko z map przeciw top-20, żeby odfiltrować „farmienie" underdogów.
+
+4. **Recency (spójnie z sekcją 2):** te same N map z jawnym rozpadem świeżości — ostatnie mapy ważą więcej. Jeden wspólny parametr rozpadu dla całego sygnału fresh-form, nie osobny.
+
+5. **Wejście do modelu — differential dwóch zespołów:** sygnał predykcyjny to `ARD_A − ARD_B` (przewaga dominacji A nad B). Testujemy, czy dodanie tego do oszacowania probability (jako korekta wobec kotwicy rynkowej) poprawia Brier vs de-vigged market. Kierunek i siła korekty **estymowane z danych** (regresja / kalibracja), nie wpisane ręcznie — inaczej wpadamy w tę samą pułapkę „ręcznego podnoszenia probability", przed którą ostrzega sekcja 2.
+
+**Otwarte pytania / ograniczenia (uczciwie):**
+
+- **Źródło danych rundowych.** Wynik serii mamy w bets.json, ale RD per mapa wymaga wyników mapowych (13:7 itd.). To dane z HLTV/dust2 per mecz — trzeba je zbierać osobno i konsekwentnie. Dopóki ich nie logujemy strukturalnie, ARD jest niepoliczalny z samego repo. **To jest warunek konieczny** — bez pipeline'u danych mapowych ten komponent zostaje hipotezą.
+- **N i parametr rozpadu** to hiperparametry — muszą być zamrożone *przed* patrzeniem na wyniki v2, inaczej overfitting (Phase 3).
+- **Kolinearność z rynkiem.** Rynek prawdopodobnie już częściowo wycenia dominację. Pytanie brzmi nie „czy ARD przewiduje wynik" (pewnie tak), ale „czy ARD niesie informację *ponad* to, co już jest w de-vigged odds". Testujemy przyrost względem rynku, nie samą korelację z wynikiem.
+- **Mapy a meta.** RD na jednej mapie (np. pistolety, przewagi CT/T) bywa zaszumiony przez veto i side. Ewentualne rozszerzenie: normalizacja per mapa/side — ale to już dużo później, najpierw surowy ARD.
+
+**Status:** kandydat na komponent v2, mierzalny w zasadzie, ale **zablokowany na dostępności danych mapowych** — wymaga strukturalnego zbierania wyników per mapa (round score), czego dziś nie robimy. Pierwszy krok operacyjny (jeśli zdecydujemy iść w tę stronę): dopisać do pipeline'u zbieranie round score per mapa dla meczów tier-1, równolegle do obecnych predykcji, żeby zacząć budować próbkę ARD zanim v2 wystartuje.
+
 ## Następny krok
 
 Zbierać dane dalej pod v1 przez najbliższy tier-1 (EWC zamrożone), aż każdy agent dobije własną próbkę do 150. Równolegle rozwijać sekcję 2 tego pliku do pełnych, policzalnych definicji i rozstrzygać otwarte pytania z sekcji 6. Gdy definicje są zamknięte — przenieść zatwierdzoną metodę do PLAYBOOK.md jako v2, odnotować bump w PROJECT_MEMORY (co, dlaczego, jaki werdykt go wyzwolił) i w `docs/decisions/`, i dopiero wtedy uruchomić pierwszy wpis `method_version: v2` — domyślnie jako shadow run z sekcji 7, potwierdzony przy checkpoincie 150 v1. Decyzja, czy v2 awansuje z shadow na metodę oficjalną, zapada osobno: gdy v1 ma swój werdykt z 150, a v2 dość sparowanych danych shadow, by go ocenić.
