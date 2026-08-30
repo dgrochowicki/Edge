@@ -3334,8 +3334,8 @@
           "odds": 1.28,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-30-C2/G2 (pick Aurora outright)."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-30-C2/G2 (pick Aurora outright, won). Settled: Aurora beat M80 2:0."
         },
         {
           "match": "Inner Circle vs FUT",
@@ -3388,8 +3388,8 @@
           "odds": 1.28,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-30-C2/G2 (pick Aurora outright). Same match/pick as EDGE-079's leg."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-30-C2/G2 (pick Aurora outright, won). Same match/pick as EDGE-079's leg. Settled: Aurora beat M80 2:0."
         },
         {
           "match": "Inner Circle vs FUT",
@@ -8781,8 +8781,8 @@
       "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem (upset na NAVI). Closing snapshot 13:43 (mecz przesuniety na 14:20): kurs bez ruchu, wciaz 1.26."
+      "result": "won",
+      "notes": "Risk: Srednie. Watch: fresh-form -- M80 underdog z pedem (upset na NAVI). Closing snapshot 13:43 (mecz przesuniety na 14:20): kurs bez ruchu, wciaz 1.26. Settled: Aurora beat M80 2:0."
     },
     {
       "id": "P-2026-08-30-C3",
@@ -8865,7 +8865,8 @@
       "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Aurora beat M80 2:0."
     },
     {
       "id": "P-2026-08-30-G3",
