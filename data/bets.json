@@ -3324,8 +3324,8 @@
           "odds": 1.14,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-30-C1/G1 (pick G2 outright). Placed live at map 1, 0:0."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-30-C1/G1 (pick G2 outright, won). Placed live at map 1, 0:0. Settled: G2 beat NAVI 2:0."
         },
         {
           "match": "Aurora vs M80",
@@ -8716,8 +8716,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Value +0.4% nominalnie dodatni, ale nie 'meaningfully above fair' -- mecz 50/50, edge w bledzie oszacowania."
+      "result": "won",
+      "notes": "Risk: Wysokie. Value +0.4% nominalnie dodatni, ale nie 'meaningfully above fair' -- mecz 50/50, edge w bledzie oszacowania. Settled: G2 beat NAVI 2:0."
     },
     {
       "id": "P-2026-08-30-C2",
@@ -8800,7 +8800,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat NAVI 2:0."
     },
     {
       "id": "P-2026-08-30-G2",
