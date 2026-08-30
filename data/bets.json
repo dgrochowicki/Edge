@@ -3446,8 +3446,8 @@
       "combined_odds": 1.95,
       "potential_return_pln": 4.02,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.34,
       "selections": [
         {
           "match": "Legacy vs Vitality",
@@ -3456,8 +3456,8 @@
           "odds": 1.95,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- opposite side from Edge predictions P-2026-08-30-C4/G4 (both picked Vitality). Placed live, series tied 1:1 going to the decider."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- opposite side from Edge predictions P-2026-08-30-C4/G4 (both picked Vitality, won). Placed live, series tied 1:1 going to the decider. Settled: Vitality beat Legacy 2:1."
         }
       ]
     }
@@ -3466,13 +3466,13 @@
   "summary": {
     "coupons": 82,
     "won": 31,
-    "lost": 50,
+    "lost": 51,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 173.43,
     "gross_return_pln": 140.65,
-    "net_result_pln": -30.44,
-    "roi": -0.1755
+    "net_result_pln": -32.78,
+    "roi": -0.1890
   },
   "archived_predictions": [
     {
@@ -8881,8 +8881,8 @@
       "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Druga z rzedu obserwacja fresh-form po Legacy-Falcons (29.08): Legacy ma value nominalny +17% (fair 2.86 vs kurs 3.35) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS, spojny z wczorajszym rozliczeniem. Closing snapshot 19:10: kurs bez ruchu, wciaz 1.28/3.35."
+      "result": "won",
+      "notes": "Risk: Wysokie. Druga z rzedu obserwacja fresh-form po Legacy-Falcons (29.08): Legacy ma value nominalny +17% (fair 2.86 vs kurs 3.35) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS, spojny z wczorajszym rozliczeniem. Closing snapshot 19:10: kurs bez ruchu, wciaz 1.28/3.35. Settled: Vitality beat Legacy 2:1 -- druga wygrana z rzedu dla dyscypliny fresh-form."
     },
     {
       "id": "P-2026-08-30-G1",
@@ -8965,7 +8965,8 @@
       "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality beat Legacy 2:1."
     }
   ]
 }
