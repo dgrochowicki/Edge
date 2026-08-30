@@ -8854,11 +8854,11 @@
       "market_odds_at_analysis": 1.28,
       "market_odds_opponent": 3.35,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Wysokie. Druga z rzedu obserwacja fresh-form po Legacy-Falcons (29.08): Legacy ma value nominalny +17% (fair 2.86 vs kurs 3.35) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS, spojny z wczorajszym rozliczeniem."
+      "notes": "Risk: Wysokie. Druga z rzedu obserwacja fresh-form po Legacy-Falcons (29.08): Legacy ma value nominalny +17% (fair 2.86 vs kurs 3.35) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS, spojny z wczorajszym rozliczeniem. Closing snapshot 19:10: kurs bez ruchu, wciaz 1.28/3.35."
     },
     {
       "id": "P-2026-08-30-G1",
@@ -8938,7 +8938,7 @@
       "market_odds_at_analysis": 1.28,
       "market_odds_opponent": 3.35,
       "odds_timestamp": "2026-08-30T08:38:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending"
