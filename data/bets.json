@@ -3535,8 +3535,8 @@
           "odds": 1.35,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Coupon was cashed out live at map 1, 0:0, before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Coupon was cashed out live at map 1, 0:0. Locked in early: series tied 1:1, guaranteeing the +0.5 leg regardless of the decider. Moot for payout since already cashed out."
         },
         {
           "match": "FUT vs Vitality",
@@ -3559,8 +3559,8 @@
       "combined_odds": 2.54,
       "potential_return_pln": 4.48,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "MOUZ vs Falcons",
@@ -3569,8 +3569,8 @@
           "odds": 1.62,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Placed live at map 1, 0:0."
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Placed live at map 1, 0:0. Busted early: MOUZ leveled the series 1:1, so a 0:2 Falcons sweep is no longer possible regardless of the decider. This is what busted the coupon."
         },
         {
           "match": "FUT vs Vitality",
@@ -3580,7 +3580,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Same match/side as EDGE-084's FUT +0.5 leg, different odds (1.57 vs 1.60)."
+          "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Same match/side as EDGE-084's FUT +0.5 leg, different odds (1.57 vs 1.60). Moot since the coupon already lost on the MOUZ-Falcons leg."
         }
       ]
     }
@@ -3589,13 +3589,13 @@
   "summary": {
     "coupons": 85,
     "won": 32,
-    "lost": 52,
+    "lost": 53,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 180.09,
     "gross_return_pln": 147.45,
-    "net_result_pln": -30.64,
-    "roi": -0.1701
+    "net_result_pln": -32.64,
+    "roi": -0.1812
   },
   "archived_predictions": [
     {
