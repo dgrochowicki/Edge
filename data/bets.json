@@ -9185,11 +9185,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.65,
       "decision": "PASS",
       "confidence": 6,
       "result": "won",
-      "notes": "Risk: Wysokie. Settled: G2 beat Aurora 2:1."
+      "notes": "Risk: Wysokie. Settled: G2 beat Aurora 2:1. Closing snapshot 13:32 (mecz 13:40): G2 1.65 (z 1.60)."
     },
     {
       "id": "P-2026-08-31-C3",
@@ -9206,11 +9206,11 @@
       "market_odds_at_analysis": 1.62,
       "market_odds_opponent": 2.15,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.75,
       "decision": "PASS",
       "confidence": 6,
       "result": "lost",
-      "notes": "Risk: Wysokie. Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3)."
+      "notes": "Risk: Wysokie. Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3). Closing snapshot 16:07 (mecz 16:30): Falcons 1.75 (z 1.62), MOUZ 1.95 (z 2.15) -- rynek wyczul upset."
     },
     {
       "id": "P-2026-08-31-C4",
@@ -9227,11 +9227,11 @@
       "market_odds_at_analysis": 1.32,
       "market_odds_opponent": 3.10,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.38,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "notes": "Risk: Wysokie. Trzecia z rzedu obserwacja fresh-form (po Legacy-Falcons 29.08 i Legacy-Vitality 30.08, oba underdog przegral): FUT ma value nominalny +17.8% (fair 2.63 vs kurs 3.10) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS."
+      "notes": "Risk: Wysokie. Trzecia z rzedu obserwacja fresh-form (po Legacy-Falcons 29.08 i Legacy-Vitality 30.08, oba underdog przegral): FUT ma value nominalny +17.8% (fair 2.63 vs kurs 3.10) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS. Closing snapshot 20:15 (mecz 20:45): Vitality 1.38 (z 1.32), FUT 2.90 (z 3.10) -- rynek przesunal sie w strone FUT."
     },
     {
       "id": "P-2026-08-31-G1",
@@ -9269,11 +9269,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.65,
       "decision": "PASS",
       "confidence": 5,
       "result": "won",
-      "notes": "Settled: G2 beat Aurora 2:1."
+      "notes": "Settled: G2 beat Aurora 2:1. Closing snapshot 13:32: G2 1.65 (z 1.60)."
     },
     {
       "id": "P-2026-08-31-G3",
@@ -9290,11 +9290,11 @@
       "market_odds_at_analysis": 1.62,
       "market_odds_opponent": 2.15,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.75,
       "decision": "PASS",
       "confidence": 5,
       "result": "lost",
-      "notes": "Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3)."
+      "notes": "Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3). Closing snapshot 16:07: Falcons 1.75 (z 1.62), MOUZ 1.95 (z 2.15)."
     },
     {
       "id": "P-2026-08-31-G4",
@@ -9311,12 +9311,12 @@
       "market_odds_at_analysis": 3.10,
       "market_odds_opponent": 1.32,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.90,
       "decision": "BET",
       "confidence": 7,
       "stake_units": 1,
       "result": "pending",
-      "notes": "Gpt's second BET on this fresh-form underdog pattern (first was Legacy-Falcons 08-29, lost) -- +11.5% value on FUT. Claude PASSed the same nominal value (playbook SS237), third such PASS in a row (Legacy-Falcons, Legacy-Vitality, both underdog lost)."
+      "notes": "Gpt's second BET on this fresh-form underdog pattern (first was Legacy-Falcons 08-29, lost) -- +11.5% value on FUT. Claude PASSed the same nominal value (playbook SS237), third such PASS in a row (Legacy-Falcons, Legacy-Vitality, both underdog lost). Closing snapshot 20:15 (mecz 20:45): FUT 2.90 (z 3.10) -- kurs sie skrocil, rynek zblizyl sie do gpt's fair (2.78)."
     }
   ]
 }
