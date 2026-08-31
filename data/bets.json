@@ -3583,19 +3583,53 @@
           "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Same match/side as EDGE-084's FUT +0.5 leg, different odds (1.57 vs 1.60). Moot since the coupon already lost on the MOUZ-Falcons leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-086",
+      "date": "2026-08-31",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.04,
+      "potential_return_pln": 3.59,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "MOUZ vs Falcons",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.30,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Opposite side from Edge predictions P-2026-08-31-C3/G3 (both picked Falcons). Placed live in the decider (series tied 1:1)."
+        },
+        {
+          "match": "FUT vs Vitality",
+          "market": "handicap_maps",
+          "pick": "FUT +0.5",
+          "odds": 1.57,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Same match/side as EDGE-084 and EDGE-085's FUT +0.5 legs."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 85,
+    "coupons": 86,
     "won": 32,
     "lost": 53,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 180.09,
+    "pending": 1,
+    "total_staked_pln": 182.09,
     "gross_return_pln": 147.45,
     "net_result_pln": -32.64,
-    "roi": -0.1812
+    "roi": -0.1793
   },
   "archived_predictions": [
     {
