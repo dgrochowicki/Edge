@@ -9227,11 +9227,11 @@
       "market_odds_at_analysis": 1.32,
       "market_odds_opponent": 3.10,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": 1.38,
+      "closing_odds": 1.40,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "notes": "Risk: Wysokie. Trzecia z rzedu obserwacja fresh-form (po Legacy-Falcons 29.08 i Legacy-Vitality 30.08, oba underdog przegral): FUT ma value nominalny +17.8% (fair 2.63 vs kurs 3.10) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS. Closing snapshot 20:15 (mecz 20:45): Vitality 1.38 (z 1.32), FUT 2.90 (z 3.10) -- rynek przesunal sie w strone FUT."
+      "notes": "Risk: Wysokie. Trzecia z rzedu obserwacja fresh-form (po Legacy-Falcons 29.08 i Legacy-Vitality 30.08, oba underdog przegral): FUT ma value nominalny +17.8% (fair 2.63 vs kurs 3.10) wylacznie z niezwalidowanej korekty v1 (playbook SS237) -- swiadomy PASS. Closing snapshot 3min przed meczem: Vitality 1.40, FUT 2.75 (z 1.32/3.10 na otwarciu) -- rynek dalej przesuwal sie w strone FUT."
     },
     {
       "id": "P-2026-08-31-G1",
@@ -9311,12 +9311,12 @@
       "market_odds_at_analysis": 3.10,
       "market_odds_opponent": 1.32,
       "odds_timestamp": "2026-08-31T07:50:00+02:00",
-      "closing_odds": 2.90,
+      "closing_odds": 2.75,
       "decision": "BET",
       "confidence": 7,
       "stake_units": 1,
       "result": "pending",
-      "notes": "Gpt's second BET on this fresh-form underdog pattern (first was Legacy-Falcons 08-29, lost) -- +11.5% value on FUT. Claude PASSed the same nominal value (playbook SS237), third such PASS in a row (Legacy-Falcons, Legacy-Vitality, both underdog lost). Closing snapshot 20:15 (mecz 20:45): FUT 2.90 (z 3.10) -- kurs sie skrocil, rynek zblizyl sie do gpt's fair (2.78)."
+      "notes": "Gpt's second BET on this fresh-form underdog pattern (first was Legacy-Falcons 08-29, lost) -- +11.5% value on FUT. Claude PASSed the same nominal value (playbook SS237), third such PASS in a row (Legacy-Falcons, Legacy-Vitality, both underdog lost). Closing snapshot 3min przed meczem: FUT 2.75 (z 3.10 na otwarciu) -- kurs kontynuowal ruch w strone gpt's fair (2.78), niemal go osiagajac."
     }
   ]
 }
