@@ -3460,19 +3460,142 @@
           "notes": "Own bet for fun, not an Edge pick -- opposite side from Edge predictions P-2026-08-30-C4/G4 (both picked Vitality, won). Placed live, series tied 1:1 going to the decider. Settled: Vitality beat Legacy 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-083",
+      "date": "2026-08-31",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.66,
+      "combined_odds": 2.30,
+      "potential_return_pln": 5.39,
+      "gross_return_pln": 5.39,
+      "status": "won",
+      "net_result_pln": 2.73,
+      "selections": [
+        {
+          "match": "Spirit vs FURIA",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.44,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-31-C1/G1 (pick Spirit outright, won). Settled: Spirit beat FURIA 2:0."
+        },
+        {
+          "match": "Aurora vs G2",
+          "market": "moneyline",
+          "pick": "G2",
+          "odds": 1.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-31-C2/G2 (pick G2 outright, won). Settled: G2 beat Aurora 2:1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-084",
+      "date": "2026-08-31",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.88,
+      "potential_return_pln": 5.07,
+      "gross_return_pln": 1.41,
+      "status": "lost",
+      "net_result_pln": -0.59,
+      "notes": "User cashed out with 2 of 4 legs already won and 2 still live/upcoming. Cash-out payout 1.41 PLN vs 5.07 PLN full potential -- net loss on the cash-out despite the two confirmed legs, since the remaining risk wasn't worth it live.",
+      "selections": [
+        {
+          "match": "Spirit vs FURIA",
+          "market": "handicap_maps",
+          "pick": "Spirit +0.5",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-31-C1/G1 (pick Spirit outright). Settled: Spirit beat FURIA 2:0."
+        },
+        {
+          "match": "Aurora vs G2",
+          "market": "handicap_maps",
+          "pick": "G2 +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-08-31-C2/G2 (pick G2 outright). Settled: G2 beat Aurora 2:1."
+        },
+        {
+          "match": "MOUZ vs Falcons",
+          "market": "handicap_maps",
+          "pick": "MOUZ +0.5",
+          "odds": 1.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Coupon was cashed out live at map 1, 0:0, before this leg's final result was confirmed."
+        },
+        {
+          "match": "FUT vs Vitality",
+          "market": "handicap_maps",
+          "pick": "FUT +0.5",
+          "odds": 1.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Coupon was cashed out before this leg's final result was confirmed."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-085",
+      "date": "2026-08-31",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.54,
+      "potential_return_pln": 4.48,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "MOUZ vs Falcons",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.62,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-31-C3/G3 (pick Falcons outright). Placed live at map 1, 0:0."
+        },
+        {
+          "match": "FUT vs Vitality",
+          "market": "handicap_maps",
+          "pick": "FUT +0.5",
+          "odds": 1.57,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-08-31-C4/G4. Same match/side as EDGE-084's FUT +0.5 leg, different odds (1.57 vs 1.60)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 82,
-    "won": 31,
-    "lost": 51,
+    "coupons": 85,
+    "won": 32,
+    "lost": 52,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 173.43,
-    "gross_return_pln": 140.65,
-    "net_result_pln": -32.78,
-    "roi": -0.1890
+    "pending": 1,
+    "total_staked_pln": 180.09,
+    "gross_return_pln": 147.45,
+    "net_result_pln": -30.64,
+    "roi": -0.1701
   },
   "archived_predictions": [
     {
@@ -8986,8 +9109,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 7,
-      "result": "pending",
-      "notes": "Risk: Srednie."
+      "result": "won",
+      "notes": "Risk: Srednie. Settled: Spirit beat FURIA 2:0."
     },
     {
       "id": "P-2026-08-31-C2",
@@ -9007,8 +9130,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "won",
+      "notes": "Risk: Wysokie. Settled: G2 beat Aurora 2:1."
     },
     {
       "id": "P-2026-08-31-C3",
@@ -9070,7 +9193,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Spirit beat FURIA 2:0."
     },
     {
       "id": "P-2026-08-31-G2",
@@ -9090,7 +9214,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat Aurora 2:1."
     },
     {
       "id": "P-2026-08-31-G3",
