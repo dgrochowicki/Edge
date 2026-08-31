@@ -3603,8 +3603,8 @@
           "odds": 1.30,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Opposite side from Edge predictions P-2026-08-31-C3/G3 (both picked Falcons). Placed live in the decider (series tied 1:1)."
+          "result": "won",
+          "notes": "Opposite side from Edge predictions P-2026-08-31-C3/G3 (both picked Falcons, lost). Placed live in the decider (series tied 1:1). Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3)."
         },
         {
           "match": "FUT vs Vitality",
@@ -9209,8 +9209,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3)."
     },
     {
       "id": "P-2026-08-31-C4",
@@ -9293,7 +9293,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: MOUZ beat Falcons 2:1 (6-13, 13-6, 13-3)."
     },
     {
       "id": "P-2026-08-31-G4",
