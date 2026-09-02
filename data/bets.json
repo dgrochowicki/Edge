@@ -3720,8 +3720,8 @@
           "odds": 1.35,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: Magic beat K27 2:0. Moot for payout since already cashed out."
         },
         {
           "match": "MiBR vs Eternal Fire",
@@ -3730,8 +3730,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: Eternal Fire beat MiBR 2:1. Moot for payout since already cashed out."
         },
         {
           "match": "3DMAX vs Heroic",
@@ -3740,8 +3740,8 @@
           "odds": 1.17,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: Heroic beat 3DMAX 2:1. Moot for payout since already cashed out."
         }
       ]
     },
@@ -3784,8 +3784,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Moot since the coupon already lost on the Nemesis-1W leg."
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: HOTU beat paiN 2:0. Moot since the coupon already lost on the Nemesis-1W leg."
         }
       ]
     },
