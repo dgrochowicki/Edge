@@ -3699,19 +3699,108 @@
           "notes": "Own bet for fun, not an Edge pick -- NODWIN Clutch Series, out of Edge scope. Settled: 1W beat Nuclear TigeRES 2:0, exact score hit."
         }
       ]
+    },
+    {
+      "id": "EDGE-090",
+      "date": "2026-09-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.88,
+      "combined_odds": 2.18,
+      "potential_return_pln": 5.52,
+      "gross_return_pln": 5.19,
+      "status": "won",
+      "net_result_pln": 2.31,
+      "notes": "User cashed out. Cash-out payout 5.19 PLN vs 5.52 PLN full potential.",
+      "selections": [
+        {
+          "match": "Magic vs K27",
+          "market": "moneyline",
+          "pick": "Magic",
+          "odds": 1.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+        },
+        {
+          "match": "MiBR vs Eternal Fire",
+          "market": "handicap_maps",
+          "pick": "Eternal Fire +0.5",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+        },
+        {
+          "match": "3DMAX vs Heroic",
+          "market": "handicap_maps",
+          "pick": "Heroic +0.5",
+          "odds": 1.17,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Coupon was cashed out before this leg's final result was confirmed."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-091",
+      "date": "2026-09-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.04,
+      "potential_return_pln": 5.35,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Nemesis vs 1W",
+          "market": "moneyline",
+          "pick": "1W",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- NODWIN Clutch Series, out of Edge scope. Settled: Nemesis beat 1W 2:0. This is what busted the coupon."
+        },
+        {
+          "match": "BIG vs Nemiga",
+          "market": "moneyline",
+          "pick": "BIG",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Placed live at map 3 (decider), 1:1. Moot since the coupon already lost on the Nemesis-1W leg."
+        },
+        {
+          "match": "HOTU vs paiN",
+          "market": "handicap_maps",
+          "pick": "HOTU +0.5",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Moot since the coupon already lost on the Nemesis-1W leg."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 89,
-    "won": 33,
-    "lost": 56,
+    "coupons": 91,
+    "won": 34,
+    "lost": 57,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 190.89,
-    "gross_return_pln": 156.69,
-    "net_result_pln": -34.20,
-    "roi": -0.1792
+    "total_staked_pln": 195.77,
+    "gross_return_pln": 161.88,
+    "net_result_pln": -33.89,
+    "roi": -0.1731
   },
   "archived_predictions": [
     {
