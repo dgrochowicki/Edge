@@ -3900,19 +3900,141 @@
           "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Moot since the coupon already lost on the Magic-Nuclear TigeRES leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-095",
+      "date": "2026-09-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 1.99,
+      "potential_return_pln": 5.25,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.0,
+      "selections": [
+        {
+          "match": "3DMAX vs Infinite",
+          "market": "handicap_maps",
+          "pick": "Infinite +0.5",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- NODWIN Clutch Series, out of Edge scope. Settled: 3DMAX swept Infinite 2:0 (Infinite not covered). This is what busted the coupon."
+        },
+        {
+          "match": "Nemesis vs HOTU",
+          "market": "handicap_maps",
+          "pick": "HOTU +0.5",
+          "odds": 1.30,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- NODWIN Clutch Series, out of Edge scope. Settled: HOTU beat Nemesis outright (per EDGE-096)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-096",
+      "date": "2026-09-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.51,
+      "potential_return_pln": 7.94,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "EYEBALLERS vs MiBR",
+          "market": "handicap_maps",
+          "pick": "EYEBALLERS +0.5",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: MiBR swept EYEBALLERS 2:0. This is what busted the coupon."
+        },
+        {
+          "match": "Magic vs BIG",
+          "market": "handicap_maps",
+          "pick": "BIG +0.5",
+          "odds": 1.44,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: Magic swept BIG 2:0."
+        },
+        {
+          "match": "Heroic vs Color",
+          "market": "map_winner",
+          "pick": "Heroic (map 2)",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- IEM Beijing Global CQ, out of Edge scope. Settled: Heroic won map 2 (incl. overtime)."
+        },
+        {
+          "match": "Nemesis vs HOTU",
+          "market": "moneyline",
+          "pick": "HOTU",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- NODWIN Clutch Series, out of Edge scope. Settled: HOTU beat Nemesis outright."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-097",
+      "date": "2026-09-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.05,
+      "potential_return_pln": 5.36,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Lavked vs HAVU",
+          "market": "moneyline",
+          "pick": "HAVU",
+          "odds": 2.54,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- CCT EU, out of Edge scope. Settled: Lavked beat HAVU. This is what busted the coupon."
+        },
+        {
+          "match": "NiP vs Sangal",
+          "market": "moneyline",
+          "pick": "NiP",
+          "odds": 1.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- CCT EU, out of Edge scope. Settled: NiP beat Sangal."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 94,
+    "coupons": 97,
     "won": 34,
-    "lost": 60,
+    "lost": 63,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 202.32,
+    "total_staked_pln": 209.32,
     "gross_return_pln": 161.88,
-    "net_result_pln": -40.44,
-    "roi": -0.1999
+    "net_result_pln": -47.44,
+    "roi": -0.2266
   },
   "archived_predictions": [
     {
