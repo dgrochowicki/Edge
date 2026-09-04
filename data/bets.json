@@ -4076,8 +4076,8 @@
           "odds": 1.42,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- StarLadder Ranked CQ, out of Edge scope. Placed live at map 1, 0:0. Moot since the coupon already lost on the HOTU-Eternal Fire leg."
+          "result": "void",
+          "notes": "Own bet for fun, not an Edge pick -- StarLadder Ranked CQ, out of Edge scope. Placed live at map 1, 0:0. Match cancelled. Moot since the coupon already lost on the HOTU-Eternal Fire leg."
         }
       ]
     }
