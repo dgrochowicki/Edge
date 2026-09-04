@@ -9833,8 +9833,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Playoffy QF1, rewanz z otwarcia IEM Cologne Stage 3 (Falcons wygralo tamten mecz)."
+      "result": "won",
+      "notes": "Risk: Wysokie. Playoffy QF1, rewanz z otwarcia IEM Cologne Stage 3 (Falcons wygralo tamten mecz). Settled: Falcons beat G2 2:0."
     },
     {
       "id": "P-2026-09-04-C2",
@@ -9875,7 +9875,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Falcons beat G2 2:0."
     },
     {
       "id": "P-2026-09-04-G2",
