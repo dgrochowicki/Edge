@@ -9854,8 +9854,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Playoffy QF2, Vitality wciaz z jL za mezii (urlop ojcowski)."
+      "result": "won",
+      "notes": "Risk: Wysokie. Playoffy QF2, Vitality wciaz z jL za mezii (urlop ojcowski). Settled: Vitality beat FURIA 2:1."
     },
     {
       "id": "P-2026-09-04-G1",
@@ -9896,7 +9896,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Vitality beat FURIA 2:1."
     }
   ]
 }
