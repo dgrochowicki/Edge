@@ -4056,8 +4056,8 @@
       "combined_odds": 2.63,
       "potential_return_pln": 4.62,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "HOTU vs Eternal Fire",
@@ -4066,8 +4066,8 @@
           "odds": 1.85,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Placed live at map 1, 0:0."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Placed live at map 1, 0:0. Settled: HOTU swept Eternal Fire 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
         },
         {
           "match": "TyLoo vs FlyQuest",
@@ -4077,7 +4077,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- StarLadder Ranked CQ, out of Edge scope. Placed live at map 1, 0:0."
+          "notes": "Own bet for fun, not an Edge pick -- StarLadder Ranked CQ, out of Edge scope. Placed live at map 1, 0:0. Moot since the coupon already lost on the HOTU-Eternal Fire leg."
         }
       ]
     }
@@ -4086,13 +4086,13 @@
   "summary": {
     "coupons": 99,
     "won": 34,
-    "lost": 64,
+    "lost": 65,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 213.32,
     "gross_return_pln": 161.88,
-    "net_result_pln": -49.44,
-    "roi": -0.2318
+    "net_result_pln": -51.44,
+    "roi": -0.2411
   },
   "archived_predictions": [
     {
