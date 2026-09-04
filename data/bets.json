@@ -4090,8 +4090,8 @@
       "combined_odds": 4.90,
       "potential_return_pln": 8.62,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "FURIA vs Vitality",
@@ -4100,8 +4100,8 @@
           "odds": 4.90,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-04-C2/G2 (both picked Vitality outright). Placed live at map 1, 0:0."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-04-C2/G2 (both picked Vitality outright). Placed live at map 1, 0:0. Busted early: series tied 1:1, so a 0:2 sweep is no longer possible regardless of the decider."
         }
       ]
     },
@@ -4113,9 +4113,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.88,
       "potential_return_pln": 5.07,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 5.07,
+      "status": "won",
+      "net_result_pln": 3.07,
       "selections": [
         {
           "match": "Eternal Fire vs Heroic",
@@ -4134,8 +4134,8 @@
           "odds": 1.80,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-04-C2/G2 -- not a moneyline outright market. Placed live at map 1, 0:0."
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-04-C2/G2 -- not a moneyline outright market. Placed live at map 1, 0:0. Locked in early: series tied 1:1, guaranteeing a decider (3 maps)."
         }
       ]
     }
@@ -4143,14 +4143,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 101,
-    "won": 34,
-    "lost": 65,
+    "won": 35,
+    "lost": 66,
     "voided": 0,
-    "pending": 2,
+    "pending": 0,
     "total_staked_pln": 217.32,
-    "gross_return_pln": 161.88,
-    "net_result_pln": -51.44,
-    "roi": -0.2367
+    "gross_return_pln": 166.95,
+    "net_result_pln": -50.37,
+    "roi": -0.2318
   },
   "archived_predictions": [
     {
