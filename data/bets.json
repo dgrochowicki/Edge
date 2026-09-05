@@ -10027,12 +10027,12 @@
       "market_odds_at_analysis": 2.54,
       "market_odds_opponent": 1.45,
       "odds_timestamp": "2026-09-05T08:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.40,
       "decision": "BET",
       "confidence": 6,
       "stake_units": 1,
       "result": "pending",
-      "notes": "Pierwszy BET claude w tym oknie -- swiadomie odrozniony od serii fresh-form (PASS). Oparty na twardym H2H (MOUZ pokonalo Falcons 2:1 w finale UB grupy B, dominacja mapowa) + struktura bye/swiezosc + udokumentowana slabosc Vitality ze standinem jL. Value +21.9%."
+      "notes": "Pierwszy BET claude w tym oknie -- swiadomie odrozniony od serii fresh-form (PASS). Oparty na twardym H2H (MOUZ pokonalo Falcons 2:1 w finale UB grupy B, dominacja mapowa) + struktura bye/swiezosc + udokumentowana slabosc Vitality ze standinem jL. Value +21.9%. Closing snapshot 10min przed meczem: MOUZ 2.40 (z 2.54) -- kurs zszedl w strone Vitality, dalej od fair (2.08)."
     },
     {
       "id": "P-2026-09-05-G1",
@@ -10070,7 +10070,7 @@
       "market_odds_at_analysis": 2.54,
       "market_odds_opponent": 1.45,
       "odds_timestamp": "2026-09-05T08:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.40,
       "decision": "BET",
       "confidence": 7,
       "stake_units": 1,
