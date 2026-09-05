@@ -9914,11 +9914,11 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.35,
       "odds_timestamp": "2026-09-05T08:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 7,
       "result": "pending",
-      "notes": "Risk: Srednie. Playoffy SF, Spirit flawless 3:0 w grupie A, wypoczete z bye."
+      "notes": "Risk: Srednie. Playoffy SF, Spirit flawless 3:0 w grupie A, wypoczete z bye. Closing snapshot 10min przed meczem: Spirit 1.47 (z 1.53) -- kurs przesunal sie w strone Spirit, blizej fair (1.59)."
     },
     {
       "id": "P-2026-09-05-C2",
@@ -9957,7 +9957,7 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.35,
       "odds_timestamp": "2026-09-05T08:50:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.47,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending"
