@@ -10194,11 +10194,11 @@
       "market_odds_at_analysis": 1.40,
       "market_odds_opponent": 2.75,
       "odds_timestamp": "2026-09-06T10:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.38,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
-      "notes": "Risk: Srednie. FINAL BO5 Porto. MOUZ ma swiezy H2H z finalu BLAST Bounty Malta (wygrane), ale Spirit flawless caly turniej. Swiadome zastrzezenie anty-bias: wczorajszy udany BET na MOUZ (Vitality) NIE podnosi dzisiejszego oszacowania MOUZ -- inny mecz, silniejszy rywal, dluzszy format."
+      "notes": "Risk: Srednie. FINAL BO5 Porto. MOUZ ma swiezy H2H z finalu BLAST Bounty Malta (wygrane), ale Spirit flawless caly turniej. Swiadome zastrzezenie anty-bias: wczorajszy udany BET na MOUZ (Vitality) NIE podnosi dzisiejszego oszacowania MOUZ -- inny mecz, silniejszy rywal, dluzszy format. Closing snapshot 15:50 (10min przed meczem): Spirit 1.38 (z 1.40)."
     },
     {
       "id": "P-2026-09-06-G1",
@@ -10215,7 +10215,7 @@
       "market_odds_at_analysis": 1.40,
       "market_odds_opponent": 2.75,
       "odds_timestamp": "2026-09-06T10:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.38,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending"
