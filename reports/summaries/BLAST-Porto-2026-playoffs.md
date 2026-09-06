@@ -81,7 +81,7 @@ W skali całego turnieju dywergencje wystąpiły tylko w fazie grupowej (3 mecze
 - **Faza Collection trwa.** Rozliczonych predykcji: **claude 115, gpt 112** — do checkpointu 150 brakuje 35 i 38. Playoffy Porto NIE dobiły do checkpointu (za mało meczów, zgodnie z przewidywaniem). Dobicie przesuwa się na kolejny tier-1: StarLadder StarSeries Fall (17-20.09).
 - **Jeden BET to za mało na wnioski o EV.** Trafiony pierwszy zakład (MOUZ, +1.54u) to zachęcający pojedynczy punkt, ale NIE dowód, że metoda generuje dodatnie EV. Potrzeba wielu betów na v2 z pełną walidacją, by cokolwiek twierdzić o zyskowności.
 - **Brier fazowy opisowy**, nie checkpoint. Pełna kalibracja per agent × method_version dopiero na 150.
-- **CLV wciąż w większości puste** — closing_odds nie zebrane dla pierwszego BET (MOUZ) na czas. Bez closing line nie da się ocenić, czy zakład bił rynek w sensie przewidującym długoterminowy zysk. Do poprawy: dla przyszłych BET priorytetowo zbierać closing snapshot.
+- **Pierwszy zmierzony CLV w projekcie — pozytywny.** Dla pierwszego BET (MOUZ vs Vitality) closing_odds = 2.40 zebrano live ~10 min przed meczem (P-2026-09-05-C2 i G2 w bets.json). BET zawarto @ 2.54, closing 2.40 → **CLV +5.8%** (cena wejścia wyższa od zamknięcia = zakład po lepszej cenie niż rynek na close). To pierwszy realny, niezerowy pomiar CLV w całym projekcie. Pojedynczy punkt NIE dowodzi zdolności do generowania CLV (wniosek wymaga wielu betów), ale kierunek jest właściwy: trafiony wynik (+1.54u) plus pozytywny CLV. Dla pozostałych predykcji (PASS) CLV nie dotyczy.
 - **Nie ma tu stwierdzeń "metoda działa".** Dobry turniej (86% trafień, 1/1 BET) to "kontynuować", nie "gotowe do gry".
 
 ## 7. Do prześledzenia dalej
@@ -90,7 +90,7 @@ W skali całego turnieju dywergencje wystąpiły tylko w fazie grupowej (3 mecze
 - **v2 shadow run** — po checkpoincie: uruchomić v2 jako paper-only równolegle z v1 na identycznych meczach (jedna para meczów = 4 wpisy). Priorytetowe komponenty z PRE-V2: sygnał fresh-form (sekcja 2) i round differential (sekcja 8, zablokowany na danych mapowych).
 - **Fresh-form: bilans końcowy turnieju.** 5 obserwacji (NAVI–M80 W, Legacy–FUT W, Legacy–Falcons L, Legacy–Vitality L, FUT–Vitality L) = underdog 2/5. Sygnał realny, ale v1 słusznie go nie gra bez narzędzia rozróżniającego. To główny cel badawczy v2.
 - **Zbieranie round score per mapa** — jeśli round diff ma być komponentem v2, zacząć logować wyniki mapowe (13:7 itd.) dla meczów tier-1 już teraz, by budować próbkę przed startem v2.
-- **CLV pipeline** — dla każdego przyszłego BET zbierać closing_odds. Pierwszy BET (MOUZ) pokazał, że bez tego tracimy kluczową metrykę na zakładach, które nas najbardziej interesują.
+- **CLV pipeline — kontynuować zbieranie.** Pierwszy BET (MOUZ) ma już zebrany closing snapshot z pozytywnym CLV (+5.8%) — pipeline działa, nie startuje od zera. Dla każdego przyszłego BET priorytetowo zbierać closing_odds tuż przed meczem, by budować próbkę CLV.
 
 ---
 *Raport wygenerowany na podstawie stanu data/bets.json. Liczby z rozliczonych predykcji playoff (claude 5, gpt 5) i całego turnieju (po 29). Turniej zamknięty — dokument niezmienny; ewentualne korekty jako nowa sekcja.*
