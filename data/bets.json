@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-05",
+  "updated_at": "2026-09-06",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -10100,6 +10100,47 @@
       "stake_units": 1,
       "result": "won",
       "notes": "Both agents agree: BET MOUZ ML @2.54, 1u each -- first BET agreement in this window, based on MOUZ's H2H dominance over Falcons rather than fresh-form correction. Settled: MOUZ swept Vitality 2:0."
+    },
+    {
+      "id": "P-2026-09-06-C1",
+      "date": "2026-09-06",
+      "report": "reports/2026-09-06-claude.md",
+      "agent": "claude",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Spirit vs MOUZ",
+      "market": "moneyline",
+      "pick": "Spirit",
+      "estimated_probability": 0.6289,
+      "fair_odds": 1.59,
+      "market_odds_at_analysis": 1.40,
+      "market_odds_opponent": 2.75,
+      "odds_timestamp": "2026-09-06T10:00:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 6,
+      "result": "pending",
+      "notes": "Risk: Srednie. FINAL BO5 Porto. MOUZ ma swiezy H2H z finalu BLAST Bounty Malta (wygrane), ale Spirit flawless caly turniej. Swiadome zastrzezenie anty-bias: wczorajszy udany BET na MOUZ (Vitality) NIE podnosi dzisiejszego oszacowania MOUZ -- inny mecz, silniejszy rywal, dluzszy format."
+    },
+    {
+      "id": "P-2026-09-06-G1",
+      "date": "2026-09-06",
+      "report": "reports/2026-09-06-gpt.md",
+      "agent": "gpt",
+      "method_version": "v1",
+      "game": "cs2",
+      "match": "Spirit vs MOUZ",
+      "market": "moneyline",
+      "pick": "Spirit",
+      "estimated_probability": 0.6711,
+      "fair_odds": 1.49,
+      "market_odds_at_analysis": 1.40,
+      "market_odds_opponent": 2.75,
+      "odds_timestamp": "2026-09-06T10:00:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 6,
+      "result": "pending"
     }
   ]
 }
