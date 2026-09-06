@@ -4332,19 +4332,63 @@
           "notes": "Same match as Edge predictions P-2026-09-06-C1/G1 -- not a moneyline outright market. Grand Final BO5. Moot since the coupon already lost on the FOKUS-Nemiga leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-108",
+      "date": "2026-09-06",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.97,
+      "potential_return_pln": 5.23,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Spirit vs MOUZ",
+          "market": "handicap_maps",
+          "pick": "MOUZ +1.5",
+          "odds": 1.44,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-06-C1/G1 -- not a moneyline outright market. Placed live at map 2, Spirit led 1:0. Moot since the coupon already lost on the Sinners-CYBERSHOKE leg."
+        },
+        {
+          "match": "Heroic vs EA Copenhagen",
+          "market": "moneyline",
+          "pick": "Heroic",
+          "odds": 1.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- BLAST Open, out of Edge scope. Settled: Heroic beat EA Copenhagen 1:0 (BO1)."
+        },
+        {
+          "match": "Sinners vs CYBERSHOKE",
+          "market": "moneyline",
+          "pick": "CYBERSHOKE",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- PGL Masters Bucharest EU Open Qualifier, out of Edge scope. Settled: Sinners beat CYBERSHOKE 1:0 (BO1). This is what busted the coupon."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 107,
+    "coupons": 108,
     "won": 35,
-    "lost": 71,
+    "lost": 72,
     "voided": 0,
     "pending": 1,
-    "total_staked_pln": 229.32,
+    "total_staked_pln": 231.32,
     "gross_return_pln": 166.95,
-    "net_result_pln": -60.37,
-    "roi": -0.2633
+    "net_result_pln": -62.37,
+    "roi": -0.2696
   },
   "archived_predictions": [
     {
