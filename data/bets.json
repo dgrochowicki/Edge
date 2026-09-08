@@ -4489,19 +4489,94 @@
           "notes": "Opposite side from Edge predictions P-2026-09-08-C5/G5 (both picked PARIVISION, won). Settled: PARIVISION swept TYLOO 2:0. This is what busted the coupon."
         }
       ]
+    },
+    {
+      "id": "EDGE-112",
+      "date": "2026-09-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.24,
+      "potential_return_pln": 3.94,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "notes": "System bet (Maxikombi) with a banker leg (\"Pewniak\" = 9z exact score, must win for any payout) plus a 5-leg system paying out on 5/5 or 4/5 hits (5/5: 3.94 PLN full potential; 4/5: 0.57-0.69 PLN). The Alliance-FaZe leg already lost, killing the 5/5 tier -- only the reduced 4/5 payout remains reachable, contingent on the still-open G2-Astralis leg. If G2 also misses, total loss.",
+      "selections": [
+        {
+          "match": "9z vs 5star",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Banker leg (\"Pewniak\") -- must win for any part of the coupon to pay out. Same match as Edge predictions P-2026-09-08-C1/G1 (both picked 9z outright). Settled: 9z beat 5star 2:0, exact score hit."
+        },
+        {
+          "match": "Legacy vs magic",
+          "market": "handicap_maps",
+          "pick": "Legacy +0.5",
+          "odds": 1.09,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "System leg 1/5. Same match as Edge predictions P-2026-09-08-C2/G2 (both picked Legacy outright, won). Settled: Legacy beat magic 2:1."
+        },
+        {
+          "match": "MiBR vs The MongolZ",
+          "market": "handicap_maps",
+          "pick": "The MongolZ +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "System leg 2/5. Same match as Edge predictions P-2026-09-08-C3/G3 (both picked The MongolZ outright, lost). Settled: MiBR beat The MongolZ 2:1, MongolZ covered +0.5."
+        },
+        {
+          "match": "Alliance vs FaZe",
+          "market": "moneyline",
+          "pick": "FaZe",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "System leg 3/5. Same match as Edge predictions P-2026-09-08-C4/G4 (both picked FaZe, lost). Settled: Alliance swept FaZe 2:0. This is what kills the 5/5 tier."
+        },
+        {
+          "match": "PARIVISION vs TyLoo",
+          "market": "handicap_maps",
+          "pick": "PARIVISION +0.5",
+          "odds": 1.13,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "System leg 4/5. Same match as Edge predictions P-2026-09-08-C5/G5 (both picked PARIVISION outright, won). Settled: PARIVISION swept TYLOO 2:0."
+        },
+        {
+          "match": "G2 vs Astralis",
+          "market": "handicap_maps",
+          "pick": "G2 +0.5",
+          "odds": 1.09,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "System leg 5/5 -- deciding leg. Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright). Placed live at map 1, 0:0. If this wins: 4/5 hit, payout 0.57-0.69 PLN. If this loses: 3/5 hit, below the paying threshold, total loss."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 111,
+    "coupons": 112,
     "won": 36,
     "lost": 75,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 238.32,
+    "pending": 1,
+    "total_staked_pln": 240.32,
     "gross_return_pln": 170.90,
     "net_result_pln": -67.42,
-    "roi": -0.2829
+    "roi": -0.2805
   },
   "archived_predictions": [
     {
