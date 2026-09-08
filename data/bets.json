@@ -10305,11 +10305,11 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.50,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
-      "notes": "Risk: Niskie. FISSURE Playground 3, dzien 1 UB. Marza STS 7.5-8.3% na dzien, wyzej niz typowe okno."
+      "result": "won",
+      "notes": "Risk: Niskie. FISSURE Playground 3, dzien 1 UB. Marza STS 7.5-8.3% na dzien, wyzej niz typowe okno. Closing snapshot 04:38: 9z 1.01 (z 1.02). Settled: 9z beat 5star 2:0."
     },
     {
       "id": "P-2026-09-08-C2",
@@ -10326,11 +10326,11 @@
       "market_odds_at_analysis": 1.30,
       "market_odds_opponent": 3.25,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. magic weszlo 29.08 jako zastepstwo za FUT (problemy wizowe), najkrotszy czas przygotowania w stawce."
+      "result": "won",
+      "notes": "Risk: Srednie. magic weszlo 29.08 jako zastepstwo za FUT (problemy wizowe), najkrotszy czas przygotowania w stawce. Closing snapshot 04:38: Legacy 1.28 (z 1.30). Settled: Legacy beat magic 2:1."
     },
     {
       "id": "P-2026-09-08-C3",
@@ -10350,8 +10350,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Jedyny mecz dnia gdzie ocena schodzi ponizej rynku po stronie faworyta -- oba skladu przemeblowane (cobrazera za Techno4K u MongolZ, tomaszin za brnz4na u MIBR)."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Jedyny mecz dnia gdzie ocena schodzi ponizej rynku po stronie faworyta -- oba skladu przemeblowane (cobrazera za Techno4K u MongolZ, tomaszin za brnz4na u MIBR). Settled: MIBR beat The MongolZ 2:1 -- niepewnosc skladowa uzasadniona, upset trafiony przez nizsza ocene."
     },
     {
       "id": "P-2026-09-08-C4",
@@ -10368,11 +10368,11 @@
       "market_odds_at_analysis": 1.20,
       "market_odds_opponent": 4.00,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.23,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednio-wysokie. STS wyraznie odstaje od konkurencji (FaZe 1.20 vs ok. 1.32 gdzie indziej) -- odnotowane jako obserwacja, nie grane jako sygnal."
+      "result": "lost",
+      "notes": "Risk: Srednio-wysokie. STS wyraznie odstaje od konkurencji (FaZe 1.20 vs ok. 1.32 gdzie indziej) -- odnotowane jako obserwacja, nie grane jako sygnal. Closing snapshot 07:42: FaZe 1.23 (z 1.20) -- kurs przesunal sie w strone Alliance, ktore ostatecznie zrobilo upset. Settled: Alliance swept FaZe 2:0."
     },
     {
       "id": "P-2026-09-08-C5",
@@ -10389,11 +10389,11 @@
       "market_odds_at_analysis": 1.45,
       "market_odds_opponent": 2.54,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. TYLOO gra u siebie w Suzhou, ale atut domowy juz w cenie rynku."
+      "result": "won",
+      "notes": "Risk: Srednie. TYLOO gra u siebie w Suzhou, ale atut domowy juz w cenie rynku. Closing snapshot 12:26 (mecz przesuniety na 12:40): PARIVISION 1.53 (z 1.45) -- kurs przesunal sie w strone TYLOO. Settled: PARIVISION beat TYLOO 2:0."
     },
     {
       "id": "P-2026-09-08-C6",
@@ -10410,11 +10410,11 @@
       "market_odds_at_analysis": 1.70,
       "market_odds_opponent": 2.04,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.72,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Najciasniejsza linia dnia -- BetBoom bez swiezego meczu tier-1 na LAN-ie (wycofani z Porto ws wiz)."
+      "result": "won",
+      "notes": "Risk: Wysokie. Najciasniejsza linia dnia -- BetBoom bez swiezego meczu tier-1 na LAN-ie (wycofani z Porto ws wiz). Closing snapshot 07:42: BetBoom 1.72 (z 1.70). Settled: BetBoom swept BIG 2:0."
     },
     {
       "id": "P-2026-09-08-C7",
@@ -10431,11 +10431,11 @@
       "market_odds_at_analysis": 1.30,
       "market_odds_opponent": 3.25,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Srednie."
+      "notes": "Risk: Srednie. Closing snapshot 14:11 (mecz przesuniety na 15:15): G2 1.28 (z 1.30)."
     },
     {
       "id": "P-2026-09-08-C8",
@@ -10473,10 +10473,11 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.50,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.01,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: 9z beat 5star 2:0."
     },
     {
       "id": "P-2026-09-08-G2",
@@ -10493,10 +10494,11 @@
       "market_odds_at_analysis": 1.30,
       "market_odds_opponent": 3.25,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Legacy beat magic 2:1."
     },
     {
       "id": "P-2026-09-08-G3",
@@ -10516,7 +10518,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: MIBR beat The MongolZ 2:1."
     },
     {
       "id": "P-2026-09-08-G4",
@@ -10533,10 +10536,11 @@
       "market_odds_at_analysis": 1.20,
       "market_odds_opponent": 4.00,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.23,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Alliance swept FaZe 2:0."
     },
     {
       "id": "P-2026-09-08-G5",
@@ -10553,10 +10557,11 @@
       "market_odds_at_analysis": 1.45,
       "market_odds_opponent": 2.54,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.53,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: PARIVISION beat TYLOO 2:0."
     },
     {
       "id": "P-2026-09-08-G6",
@@ -10573,10 +10578,11 @@
       "market_odds_at_analysis": 1.70,
       "market_odds_opponent": 2.04,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.72,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: BetBoom swept BIG 2:0."
     },
     {
       "id": "P-2026-09-08-G7",
@@ -10593,7 +10599,7 @@
       "market_odds_at_analysis": 1.30,
       "market_odds_opponent": 3.25,
       "odds_timestamp": "2026-09-07T21:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 3,
       "result": "pending"
