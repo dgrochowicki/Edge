@@ -4451,8 +4451,8 @@
           "odds": 1.28,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright). Placed live at map 1, 0:0. Moot since the coupon already lost on the Alliance-FaZe leg."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright, lost). Placed live at map 1, 0:0. Settled: Astralis beat G2 2:1. Moot since the coupon already lost on the Alliance-FaZe leg."
         }
       ]
     },
@@ -4560,8 +4560,8 @@
           "odds": 1.09,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "System leg 5/5 -- deciding leg. Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright). Placed live at map 1, 0:0. If this wins: 4/5 hit, payout 0.57-0.69 PLN. If this loses: 3/5 hit, below the paying threshold, total loss."
+          "result": "won",
+          "notes": "System leg 5/5 -- deciding leg. Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright, lost). Placed live at map 1, 0:0. Settled: Astralis beat G2 2:1, G2 covered +0.5. Triggers the 4/5 system payout tier (0.57-0.69 PLN)."
         }
       ]
     }
@@ -10597,8 +10597,8 @@
       "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. Closing snapshot 14:11 (mecz przesuniety na 15:15): G2 1.28 (z 1.30)."
+      "result": "lost",
+      "notes": "Risk: Srednie. Closing snapshot 14:11 (mecz przesuniety na 15:15): G2 1.28 (z 1.30). Settled: Astralis beat G2 2:1 -- upset mimo przegrywania 1:5 na mapie 1."
     },
     {
       "id": "P-2026-09-08-C8",
@@ -10765,7 +10765,8 @@
       "closing_odds": 1.28,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Astralis beat G2 2:1."
     },
     {
       "id": "P-2026-09-08-G8",
