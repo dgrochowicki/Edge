@@ -10618,8 +10618,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
-      "notes": "Risk: Niskie. Snax nie zagra w meczu otwarcia GamerLegion (problemy z podroza) -- zastapi go asystent trenera Grashog."
+      "result": "won",
+      "notes": "Risk: Niskie. Snax nie zagra w meczu otwarcia GamerLegion (problemy z podroza) -- zastapi go asystent trenera Grashog. Settled: FURIA beat GamerLegion 2:1 -- odrobili strate po przegranej mapie 1."
     },
     {
       "id": "P-2026-09-08-G1",
@@ -10786,7 +10786,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: FURIA beat GamerLegion 2:1."
     }
   ]
 }
