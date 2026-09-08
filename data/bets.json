@@ -4498,10 +4498,10 @@
       "stake_pln": 2.0,
       "combined_odds": 2.24,
       "potential_return_pln": 3.94,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
-      "notes": "System bet (Maxikombi) with a banker leg (\"Pewniak\" = 9z exact score, must win for any payout) plus a 5-leg system paying out on 5/5 or 4/5 hits (5/5: 3.94 PLN full potential; 4/5: 0.57-0.69 PLN). The Alliance-FaZe leg already lost, killing the 5/5 tier -- only the reduced 4/5 payout remains reachable, contingent on the still-open G2-Astralis leg. If G2 also misses, total loss.",
+      "gross_return_pln": 0.61,
+      "status": "won",
+      "net_result_pln": -1.39,
+      "notes": "System bet (Maxikombi) with a banker leg (\"Pewniak\" = 9z exact score, must win for any payout) plus a 5-leg system paying out on 5/5 or 4/5 hits (5/5: 3.94 PLN full potential; 4/5: 0.57-0.69 PLN). The Alliance-FaZe leg lost, killing the 5/5 tier. Final: 4/5 hits (Legacy, MongolZ, PARIVISION, G2 all covered) -- settled payout 0.61 PLN.",
       "selections": [
         {
           "match": "9z vs 5star",
@@ -4569,14 +4569,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 112,
-    "won": 36,
+    "won": 37,
     "lost": 75,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 240.32,
-    "gross_return_pln": 170.90,
-    "net_result_pln": -67.42,
-    "roi": -0.2805
+    "gross_return_pln": 171.51,
+    "net_result_pln": -68.81,
+    "roi": -0.2863
   },
   "archived_predictions": [
     {
