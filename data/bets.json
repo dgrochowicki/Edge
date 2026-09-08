@@ -4401,19 +4401,107 @@
           "notes": "Same match as Edge predictions P-2026-09-06-C1/G1 (both picked Spirit outright). Placed live at map 2, Spirit led 1:0. Grand Final BO5. Coupon was cashed out before this leg's final result was confirmed. Settled: Spirit won 3:1 -- exact score hit anyway, would have paid full potential (11.35 PLN) had it not been cashed out."
         }
       ]
+    },
+    {
+      "id": "EDGE-110",
+      "date": "2026-09-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.27,
+      "potential_return_pln": 3.99,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Alliance vs FaZe",
+          "market": "moneyline",
+          "pick": "FaZe",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-08-C4/G4 (both picked FaZe, lost). Settled: Alliance swept FaZe 2:0. This is what busted the coupon."
+        },
+        {
+          "match": "PARIVISION vs TyLoo",
+          "market": "handicap_maps",
+          "pick": "PARIVISION +0.5",
+          "odds": 1.17,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-08-C5/G5 (both picked PARIVISION outright, won). Settled: PARIVISION swept TYLOO 2:0."
+        },
+        {
+          "match": "BIG vs BetBoom",
+          "market": "handicap_maps",
+          "pick": "BetBoom +0.5",
+          "odds": 1.23,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-08-C6/G6 (both picked BetBoom outright, won). Settled: BetBoom swept BIG 2:0."
+        },
+        {
+          "match": "G2 vs Astralis",
+          "market": "moneyline",
+          "pick": "G2",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright). Placed live at map 1, 0:0. Moot since the coupon already lost on the Alliance-FaZe leg."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-111",
+      "date": "2026-09-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.82,
+      "potential_return_pln": 4.96,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "BIG vs BetBoom",
+          "market": "moneyline",
+          "pick": "BetBoom",
+          "odds": 1.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-08-C6/G6 (both picked BetBoom outright). Settled: BetBoom swept BIG 2:0."
+        },
+        {
+          "match": "PARIVISION vs TyLoo",
+          "market": "moneyline",
+          "pick": "TyLoo",
+          "odds": 2.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Opposite side from Edge predictions P-2026-09-08-C5/G5 (both picked PARIVISION, won). Settled: PARIVISION swept TYLOO 2:0. This is what busted the coupon."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 109,
+    "coupons": 111,
     "won": 36,
-    "lost": 73,
+    "lost": 75,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 234.32,
+    "total_staked_pln": 238.32,
     "gross_return_pln": 170.90,
-    "net_result_pln": -63.42,
-    "roi": -0.2707
+    "net_result_pln": -67.42,
+    "roi": -0.2829
   },
   "archived_predictions": [
     {
