@@ -4725,19 +4725,97 @@
           "notes": "Same match as Edge prediction P-2026-09-09-G8 (BET PARIVISION outright, lost) / C8 (pick FURIA, won). Placed live at map 2, PARIVISION led 1:0. Settled: FURIA swept PARIVISION 2:0 (PARIVISION not covered). Moot since the coupon already lost on the BetBoom-Astralis leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-118",
+      "date": "2026-09-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.24,
+      "combined_odds": 3.64,
+      "potential_return_pln": 7.16,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.24,
+      "selections": [
+        {
+          "match": "NiP vs FOKUS",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 2.00,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: FOKUS swept NiP 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
+        },
+        {
+          "match": "1W vs Infinite",
+          "market": "moneyline",
+          "pick": "1W",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: 1W beat Infinite 2:1."
+        },
+        {
+          "match": "K27 vs WW",
+          "market": "moneyline",
+          "pick": "K27",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: K27 beat WW 2:1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-119",
+      "date": "2026-09-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.50,
+      "combined_odds": 2.13,
+      "potential_return_pln": 4.68,
+      "gross_return_pln": 4.68,
+      "status": "won",
+      "net_result_pln": 2.18,
+      "selections": [
+        {
+          "match": "1W vs Infinite",
+          "market": "moneyline",
+          "pick": "1W",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: 1W beat Infinite 2:1."
+        },
+        {
+          "match": "K27 vs WW",
+          "market": "moneyline",
+          "pick": "K27",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: K27 beat WW 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 117,
-    "won": 38,
-    "lost": 79,
+    "coupons": 119,
+    "won": 39,
+    "lost": 80,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 250.93,
-    "gross_return_pln": 175.25,
-    "net_result_pln": -75.68,
-    "roi": -0.3016
+    "total_staked_pln": 255.67,
+    "gross_return_pln": 179.93,
+    "net_result_pln": -75.74,
+    "roi": -0.2962
   },
   "archived_predictions": [
     {
