@@ -10867,11 +10867,11 @@
       "market_odds_at_analysis": 1.23,
       "market_odds_opponent": 3.70,
       "odds_timestamp": "2026-09-08T21:20:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Srednio-wysokie. Dywergencja z gpt (BET Alliance @3.70, +19.4%). Claude celowo nie goni wczorajszej sensacji Alliance nad FaZe."
+      "notes": "Risk: Srednio-wysokie. Dywergencja z gpt (BET Alliance @3.70, +19.4%). Claude celowo nie goni wczorajszej sensacji Alliance nad FaZe. Closing snapshot 8:41: Legacy 1.26 (z 1.23)."
     },
     {
       "id": "P-2026-09-09-C5",
@@ -10951,11 +10951,11 @@
       "market_odds_at_analysis": 1.36,
       "market_odds_opponent": 2.90,
       "odds_timestamp": "2026-09-08T21:20:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.38,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Srednie. Dywergencja z gpt (BET PARIVISION @2.90, +9.4%)."
+      "notes": "Risk: Srednie. Dywergencja z gpt (BET PARIVISION @2.90, +9.4%). Closing snapshot 14:10: FURIA 1.38 (z 1.36)."
     },
     {
       "id": "P-2026-09-09-G1",
@@ -11032,12 +11032,12 @@
       "market_odds_at_analysis": 3.70,
       "market_odds_opponent": 1.23,
       "odds_timestamp": "2026-09-08T21:17:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 3.50,
       "decision": "BET",
       "confidence": 7,
       "stake_units": 1,
       "result": "pending",
-      "notes": "Bet of the Day gpt -- Alliance +19.4% value, underdog po wczorajszym 2:0 nad FaZe. Dywergencja z claude (PASS Legacy)."
+      "notes": "Bet of the Day gpt -- Alliance +19.4% value, underdog po wczorajszym 2:0 nad FaZe. Dywergencja z claude (PASS Legacy). Closing snapshot 8:41: Alliance 3.50 (z 3.70) -- CLV +5.7%, drugi z rzedu pozytywny CLV na realnym BET (po MOUZ 05.09)."
     },
     {
       "id": "P-2026-09-09-G5",
@@ -11114,12 +11114,12 @@
       "market_odds_at_analysis": 2.90,
       "market_odds_opponent": 1.36,
       "odds_timestamp": "2026-09-08T21:17:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.80,
       "decision": "BET",
       "confidence": 6,
       "stake_units": 1,
       "result": "pending",
-      "notes": "Second BET gpt -- PARIVISION +9.4% value, underdog. Dywergencja z claude (PASS FURIA)."
+      "notes": "Second BET gpt -- PARIVISION +9.4% value, underdog. Dywergencja z claude (PASS FURIA). Closing snapshot 14:10: PARIVISION 2.80 (z 2.90) -- CLV +3.6%."
     }
   ]
 }
