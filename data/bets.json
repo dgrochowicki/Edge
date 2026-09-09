@@ -4564,19 +4564,180 @@
           "notes": "System leg 5/5 -- deciding leg. Same match as Edge predictions P-2026-09-08-C7/G7 (both picked G2 outright, lost). Placed live at map 1, 0:0. Settled: Astralis beat G2 2:1, G2 covered +0.5. Triggers the 4/5 system payout tier (0.57-0.69 PLN)."
         }
       ]
+    },
+    {
+      "id": "EDGE-113",
+      "date": "2026-09-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.35,
+      "potential_return_pln": 4.13,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Legacy vs Alliance",
+          "market": "handicap_maps",
+          "pick": "Alliance +0.5",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-09-09-C4/G4 (claude picked Legacy, won; gpt BET Alliance, lost). Settled: Legacy swept Alliance 2:0 (Alliance not covered). This is what busted the coupon."
+        },
+        {
+          "match": "9z vs MIBR",
+          "market": "handicap_maps",
+          "pick": "MIBR +0.5",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-09-C3/G3 (both picked 9z outright, lost). Settled: MIBR upset 9z 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-114",
+      "date": "2026-09-09",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.70,
+      "potential_return_pln": 6.51,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Legacy vs Alliance",
+          "market": "moneyline",
+          "pick": "Alliance",
+          "odds": 3.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Copy of gpt's BET call P-2026-09-09-G4 (Alliance ML @3.70, +19.4% value, positive CLV +5.7%). Settled: Legacy swept Alliance 2:0 -- the bet lost despite the favorable closing move."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-115",
+      "date": "2026-09-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 4.55,
+      "potential_return_pln": 8.01,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "BIG vs G2",
+          "market": "moneyline",
+          "pick": "BIG",
+          "odds": 2.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Opposite side from Edge predictions P-2026-09-09-C6/G6 (both picked G2, won). Settled: G2 beat BIG 2:1. This is what busted the coupon."
+        },
+        {
+          "match": "TyLoo vs GamerLegion",
+          "market": "moneyline",
+          "pick": "TYLOO",
+          "odds": 1.75,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-09-C5/G5 (both picked TYLOO, won). Settled: TYLOO swept GamerLegion 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-116",
+      "date": "2026-09-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.12,
+      "potential_return_pln": 3.74,
+      "gross_return_pln": 3.74,
+      "status": "won",
+      "net_result_pln": 1.74,
+      "notes": "User cashed out. Cash-out payout equaled the quoted full potential (3.74 PLN) -- exact score already hit before the PARIVISION-FURIA leg's final result was known.",
+      "selections": [
+        {
+          "match": "TyLoo vs GamerLegion",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.65,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-09-C5/G5 (both picked TYLOO outright). Settled: TYLOO beat GamerLegion 2:0, exact score hit."
+        },
+        {
+          "match": "PARIVISION vs FURIA",
+          "market": "moneyline",
+          "pick": "FURIA",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-09-09-C8 (pick FURIA) / G8 (BET PARIVISION). Placed live at map 2, PARIVISION led 1:0. Coupon was cashed out before this leg's final result was confirmed."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-117",
+      "date": "2026-09-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.61,
+      "combined_odds": 2.94,
+      "potential_return_pln": 6.77,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.61,
+      "selections": [
+        {
+          "match": "BetBoom vs Astralis",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-09-C7/G7 -- not a moneyline outright market. Settled: BetBoom swept Astralis 2:0 (only 2 maps played, Over 2.5 missed). This is what busted the coupon."
+        },
+        {
+          "match": "PARIVISION vs FURIA",
+          "market": "handicap_maps",
+          "pick": "PARIVISION +0.5",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-09-09-G8 (BET PARIVISION outright) / C8 (pick FURIA). Placed live at map 2, PARIVISION led 1:0. Moot since the coupon already lost on the BetBoom-Astralis leg."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 112,
-    "won": 37,
-    "lost": 75,
+    "coupons": 117,
+    "won": 38,
+    "lost": 79,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 240.32,
-    "gross_return_pln": 171.51,
-    "net_result_pln": -68.81,
-    "roi": -0.2863
+    "total_staked_pln": 250.93,
+    "gross_return_pln": 175.25,
+    "net_result_pln": -75.68,
+    "roi": -0.3016
   },
   "archived_predictions": [
     {
@@ -10807,8 +10968,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
-      "notes": "Risk: Niskie. FISSURE Playground 3 dzien 2, LB elim. Marza STS 8.0% (rosnie drugi dzien z rzedu)."
+      "result": "lost",
+      "notes": "Risk: Niskie. FISSURE Playground 3 dzien 2, LB elim. Marza STS 8.0% (rosnie drugi dzien z rzedu). Settled: 5star upset The MongolZ 2:0."
     },
     {
       "id": "P-2026-09-09-C2",
@@ -10828,8 +10989,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. FaZe gra o niewypadniecie po wczorajszej porazce z Alliance."
+      "result": "lost",
+      "notes": "Risk: Wysokie. FaZe gra o niewypadniecie po wczorajszej porazce z Alliance. Settled: magic beat FaZe 2:1 -- drugi dzien z rzedu przegranej FaZe."
     },
     {
       "id": "P-2026-09-09-C3",
@@ -10849,8 +11010,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. Najwieksza rozbieznosc z rynkiem w tym dniu (+3.5pp), ale wciaz ponizej progu."
+      "result": "lost",
+      "notes": "Risk: Srednie. Najwieksza rozbieznosc z rynkiem w tym dniu (+3.5pp), ale wciaz ponizej progu. Settled: MIBR upset 9z 2:0."
     },
     {
       "id": "P-2026-09-09-C4",
@@ -10870,8 +11031,8 @@
       "closing_odds": 1.26,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednio-wysokie. Dywergencja z gpt (BET Alliance @3.70, +19.4%). Claude celowo nie goni wczorajszej sensacji Alliance nad FaZe. Closing snapshot 8:41: Legacy 1.26 (z 1.23)."
+      "result": "won",
+      "notes": "Risk: Srednio-wysokie. Dywergencja z gpt (BET Alliance @3.70, +19.4%). Claude celowo nie goni wczorajszej sensacji Alliance nad FaZe. Closing snapshot 8:41: Legacy 1.26 (z 1.23). Settled: Legacy beat Alliance 2:0 -- PASS slusznie, gpt's BET (Alliance) przegral mimo pozytywnego CLV."
     },
     {
       "id": "P-2026-09-09-C5",
@@ -10891,8 +11052,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
-      "notes": "Risk: Bardzo wysokie. Sklad GamerLegion niepotwierdzony na moment wyceny -- HLTV nadal wskazuje Grashoga (asystent trenera) za Snaxa. Ocena to mieszanka obu scenariuszy."
+      "result": "won",
+      "notes": "Risk: Bardzo wysokie. Sklad GamerLegion niepotwierdzony na moment wyceny -- HLTV nadal wskazuje Grashoga (asystent trenera) za Snaxa. Ocena to mieszanka obu scenariuszy. Settled: TYLOO beat GamerLegion 2:0."
     },
     {
       "id": "P-2026-09-09-C6",
@@ -10912,8 +11073,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie."
+      "result": "won",
+      "notes": "Risk: Srednie. Settled: G2 beat BIG 2:1."
     },
     {
       "id": "P-2026-09-09-C7",
@@ -10933,8 +11094,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Konflikt sygnalow: ranking VRS mowi BetBoom, wczorajszy skalp G2 mowi Astralis. Dywergencja z gpt (pick Astralis)."
+      "result": "won",
+      "notes": "Risk: Wysokie. Konflikt sygnalow: ranking VRS mowi BetBoom, wczorajszy skalp G2 mowi Astralis. Dywergencja z gpt (pick Astralis). Settled: BetBoom swept Astralis 2:0."
     },
     {
       "id": "P-2026-09-09-C8",
@@ -10975,7 +11136,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: 5star upset The MongolZ 2:0."
     },
     {
       "id": "P-2026-09-09-G2",
@@ -10995,7 +11157,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: magic beat FaZe 2:1."
     },
     {
       "id": "P-2026-09-09-G3",
@@ -11015,7 +11178,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: MIBR upset 9z 2:0."
     },
     {
       "id": "P-2026-09-09-G4",
@@ -11036,8 +11200,8 @@
       "decision": "BET",
       "confidence": 7,
       "stake_units": 1,
-      "result": "pending",
-      "notes": "Bet of the Day gpt -- Alliance +19.4% value, underdog po wczorajszym 2:0 nad FaZe. Dywergencja z claude (PASS Legacy). Closing snapshot 8:41: Alliance 3.50 (z 3.70) -- CLV +5.7%, drugi z rzedu pozytywny CLV na realnym BET (po MOUZ 05.09)."
+      "result": "lost",
+      "notes": "Bet of the Day gpt -- Alliance +19.4% value, underdog po wczorajszym 2:0 nad FaZe. Dywergencja z claude (PASS Legacy). Closing snapshot 8:41: Alliance 3.50 (z 3.70) -- CLV +5.7%, drugi z rzedu pozytywny CLV na realnym BET (po MOUZ 05.09). Settled: Legacy beat Alliance 2:0 -- BET lost mimo pozytywnego CLV, przypomnienie ze CLV mierzy dlugoterminowa krawedz, nie gwarantuje pojedynczego wyniku."
     },
     {
       "id": "P-2026-09-09-G5",
@@ -11057,7 +11221,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: TYLOO beat GamerLegion 2:0."
     },
     {
       "id": "P-2026-09-09-G6",
@@ -11077,7 +11242,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat BIG 2:1."
     },
     {
       "id": "P-2026-09-09-G7",
@@ -11097,7 +11263,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: BetBoom swept Astralis 2:0."
     },
     {
       "id": "P-2026-09-09-G8",
