@@ -4687,8 +4687,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-09-09-C8 (pick FURIA) / G8 (BET PARIVISION). Placed live at map 2, PARIVISION led 1:0. Coupon was cashed out before this leg's final result was confirmed."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-09-09-C8 (pick FURIA, won) / G8 (BET PARIVISION, lost). Placed live at map 2, PARIVISION led 1:0. Settled: FURIA swept PARIVISION 2:0. Moot for payout since already cashed out."
         }
       ]
     },
@@ -4721,8 +4721,8 @@
           "odds": 1.55,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-09-09-G8 (BET PARIVISION outright) / C8 (pick FURIA). Placed live at map 2, PARIVISION led 1:0. Moot since the coupon already lost on the BetBoom-Astralis leg."
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-09-09-G8 (BET PARIVISION outright, lost) / C8 (pick FURIA, won). Placed live at map 2, PARIVISION led 1:0. Settled: FURIA swept PARIVISION 2:0 (PARIVISION not covered). Moot since the coupon already lost on the BetBoom-Astralis leg."
         }
       ]
     }
@@ -11115,8 +11115,8 @@
       "closing_odds": 1.38,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. Dywergencja z gpt (BET PARIVISION @2.90, +9.4%). Closing snapshot 14:10: FURIA 1.38 (z 1.36)."
+      "result": "won",
+      "notes": "Risk: Srednie. Dywergencja z gpt (BET PARIVISION @2.90, +9.4%). Closing snapshot 14:10: FURIA 1.38 (z 1.36). Settled: FURIA swept PARIVISION 2:0 -- drugi PASS claude sluszny dzisiaj, gpt's drugi BET rowniez przegrany mimo pozytywnego CLV."
     },
     {
       "id": "P-2026-09-09-G1",
@@ -11285,8 +11285,8 @@
       "decision": "BET",
       "confidence": 6,
       "stake_units": 1,
-      "result": "pending",
-      "notes": "Second BET gpt -- PARIVISION +9.4% value, underdog. Dywergencja z claude (PASS FURIA). Closing snapshot 14:10: PARIVISION 2.80 (z 2.90) -- CLV +3.6%."
+      "result": "lost",
+      "notes": "Second BET gpt -- PARIVISION +9.4% value, underdog. Dywergencja z claude (PASS FURIA). Closing snapshot 14:10: PARIVISION 2.80 (z 2.90) -- CLV +3.6%. Settled: FURIA swept PARIVISION 2:0 -- second BET loss today for gpt, both with positive CLV. First 0-for-2 BET day for gpt since Legacy-Falcons/FUT-Vitality (08-29/31)."
     }
   ]
 }
