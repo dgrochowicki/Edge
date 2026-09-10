@@ -11834,8 +11834,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. Mecz pominiety w raporcie glownym przez blad kompletnosci kalendarza. Rynek podniosl 5star z 8.85% (vs Astralis, #20 VRS, wczoraj) na 10.90% (vs G2, #8 VRS, dzisiaj) -- przecena w gore mimo mocniejszego rywala. Odpowiedz na pytanie z wczorajszego post-match review: linia nie ruszyla przed meczem z Astralis, ruszyla dopiero po nim."
+      "result": "won",
+      "notes": "Risk: Srednie. Mecz pominiety w raporcie glownym przez blad kompletnosci kalendarza. Rynek podniosl 5star z 8.85% (vs Astralis, #20 VRS, wczoraj) na 10.90% (vs G2, #8 VRS, dzisiaj) -- przecena w gore mimo mocniejszego rywala. Odpowiedz na pytanie z wczorajszego post-match review: linia nie ruszyla przed meczem z Astralis, ruszyla dopiero po nim. Settled: G2 swept 5star 2:0 -- rynek mial racje tym razem."
     },
     {
       "id": "P-2026-09-10-G7",
@@ -11875,7 +11875,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 swept 5star 2:0."
     }
   ]
 }
