@@ -4803,19 +4803,195 @@
           "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: K27 beat WW 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-120",
+      "date": "2026-09-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 5.70,
+      "potential_return_pln": 10.03,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Alliance vs TYLOO",
+          "market": "moneyline",
+          "pick": "Alliance",
+          "odds": 2.29,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-10-C2/G2 (both picked TYLOO outright, lost). Settled: Alliance upset TYLOO 2:0."
+        },
+        {
+          "match": "magic vs PARIVISION",
+          "market": "handicap_maps",
+          "pick": "PARIVISION +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C4/G4 (both picked PARIVISION outright, lost). Settled: magic swept PARIVISION 2:0 (PARIVISION not covered). This is what busted the coupon."
+        },
+        {
+          "match": "MIBR vs BetBoom",
+          "market": "handicap_maps",
+          "pick": "MIBR +0.5",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C6/G6 (both picked BetBoom outright, won). Settled: BetBoom swept MIBR 2:0 (MIBR not covered)."
+        },
+        {
+          "match": "Legacy vs FURIA",
+          "market": "moneyline",
+          "pick": "FURIA",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C5/G5 (both picked FURIA outright, lost). Settled: Legacy swept FURIA 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-121",
+      "date": "2026-09-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.57,
+      "potential_return_pln": 6.28,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "9z vs G2",
+          "market": "handicap_maps",
+          "pick": "9z +0.5",
+          "odds": 1.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-10-C1/G1 (both picked G2 outright, won). Settled: G2 beat 9z 2:1, 9z covered +0.5."
+        },
+        {
+          "match": "magic vs PARIVISION",
+          "market": "handicap_maps",
+          "pick": "magic +0.5",
+          "odds": 1.33,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-10-C4/G4 (both picked PARIVISION outright, lost). Settled: magic swept PARIVISION 2:0."
+        },
+        {
+          "match": "MIBR vs BetBoom",
+          "market": "handicap_maps",
+          "pick": "MIBR +0.5",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C6/G6 (both picked BetBoom outright, won). Settled: BetBoom swept MIBR 2:0 (MIBR not covered). This is what busted the coupon."
+        },
+        {
+          "match": "Legacy vs FURIA",
+          "market": "handicap_maps",
+          "pick": "FURIA +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C5/G5 (both picked FURIA outright, lost). Settled: Legacy swept FURIA 2:0 (FURIA not covered)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-122",
+      "date": "2026-09-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.42,
+      "potential_return_pln": 6.02,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Legacy vs FURIA",
+          "market": "moneyline",
+          "pick": "FURIA",
+          "odds": 1.40,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C5/G5 (both picked FURIA outright, lost). Settled: Legacy swept FURIA 2:0. This is what busted the coupon."
+        },
+        {
+          "match": "MIBR vs BetBoom",
+          "market": "moneyline",
+          "pick": "MIBR",
+          "odds": 2.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C6/G6 (both picked BetBoom outright, won). Settled: BetBoom swept MIBR 2:0."
+        },
+        {
+          "match": "Alliance vs magic",
+          "market": "handicap_maps",
+          "pick": "magic +0.5",
+          "odds": 1.11,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-10-C7/G7 (both picked magic outright). Placed live at map 2, Alliance led 1:0. Moot since the coupon already lost on the Legacy-FURIA and MIBR-BetBoom legs."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-123",
+      "date": "2026-09-10",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.68,
+      "combined_odds": 2.80,
+      "potential_return_pln": 6.61,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "G2 vs 5star",
+          "market": "handicap_maps",
+          "pick": "5star +0.5",
+          "odds": 2.80,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-10-C8/G8 (both picked G2 outright) -- opposite side. Placed live at map 1, 0:0. Cash-out available at 3.43 PLN as of 13:36, not yet taken."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 119,
+    "coupons": 123,
     "won": 39,
-    "lost": 80,
+    "lost": 83,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 255.67,
+    "pending": 1,
+    "total_staked_pln": 264.35,
     "gross_return_pln": 179.93,
-    "net_result_pln": -75.74,
-    "roi": -0.2962
+    "net_result_pln": -81.74,
+    "roi": -0.3092
   },
   "archived_predictions": [
     {
