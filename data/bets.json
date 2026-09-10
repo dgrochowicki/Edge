@@ -4979,19 +4979,43 @@
           "notes": "Same match as Edge predictions P-2026-09-10-C8/G8 (both picked G2 outright) -- opposite side. Placed live at map 1, 0:0. Cash-out available at 3.43 PLN as of 13:36, not yet taken."
         }
       ]
+    },
+    {
+      "id": "EDGE-124",
+      "date": "2026-09-10",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 4.00,
+      "combined_odds": 1.90,
+      "potential_return_pln": 6.69,
+      "gross_return_pln": 6.69,
+      "status": "won",
+      "net_result_pln": 2.69,
+      "selections": [
+        {
+          "match": "Sinners vs Nemiga",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Locked in early: series tied 1:1, decider (map 3) underway, guaranteeing Over 2.5 regardless of the outcome."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 123,
-    "won": 39,
+    "coupons": 124,
+    "won": 40,
     "lost": 83,
     "voided": 0,
     "pending": 1,
-    "total_staked_pln": 264.35,
-    "gross_return_pln": 179.93,
-    "net_result_pln": -81.74,
-    "roi": -0.3092
+    "total_staked_pln": 268.35,
+    "gross_return_pln": 186.62,
+    "net_result_pln": -79.05,
+    "roi": -0.2946
   },
   "archived_predictions": [
     {
