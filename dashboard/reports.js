@@ -16,7 +16,23 @@ let mode = 'daily'; // 'daily' | 'summary'
 
 document.addEventListener('DOMContentLoaded', init);
 
-const FILENAME_RE = /^(\d{4}-\d{2}-\d{2})(?:-(claude|gpt))?$/;
+// Matches both addendum-filename conventions in use: a single-letter suffix
+// right after the date ("2026-09-10b-claude") or right after the agent
+// ("2026-09-10-gpt-b"). Either position maps to its own day[agent+suffix]
+// key (e.g. "claude-b") so an addendum report never overwrites the main
+// report for that agent/day.
+const FILENAME_RE = /^(\d{4}-\d{2}-\d{2})([a-z])?(?:-(claude|gpt))?(?:-([a-z]))?$/;
+
+function reportAgentKey(agent, dateSuffix, agentSuffix) {
+    const suffix = dateSuffix || agentSuffix;
+    if (!agent) return suffix ? `single-${suffix}` : 'single';
+    return suffix ? `${agent}-${suffix}` : agent;
+}
+
+function agentLabel(key) {
+    const m = /^(claude|gpt|single)-([a-z])$/.exec(key);
+    return m ? `${m[1]} (${m[2]})` : key;
+}
 const SUMMARY_FILENAME_RE = /^(.+)-([a-zA-Z0-9]+)$/;
 const PHASE_ORDER = ['group', 'playoffs', 'final'];
 const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary' };
@@ -62,9 +78,9 @@ async function init() {
             .forEach(f => {
                 const m = FILENAME_RE.exec(f.name.replace('.md', ''));
                 if (!m) return;
-                const [, date, agent] = m;
+                const [, date, dateSuffix, agent, agentSuffix] = m;
                 const day = reportsByDate[date] = reportsByDate[date] || {};
-                day[agent || 'single'] = { download_url: f.download_url };
+                day[reportAgentKey(agent, dateSuffix, agentSuffix)] = { download_url: f.download_url };
             });
 
         summariesByTournament = {};
@@ -378,7 +394,7 @@ async function renderReport(date, agent, agents) {
             </div>`;
 
         const tabsBar = agents.length > 1
-            ? `<div class="report-tabs">${agents.map(a => `<span class="report-tab ${a === agent ? 'active' : ''}" onclick="switchAgent('${a}')">${a}</span>`).join('')}</div>`
+            ? `<div class="report-tabs">${agents.map(a => `<span class="report-tab ${a === agent ? 'active' : ''}" onclick="switchAgent('${a}')">${agentLabel(a)}</span>`).join('')}</div>`
             : '';
 
         view.innerHTML = `${linkedBar}${tabsBar}<div class="markdown-body">${html}</div>`;
