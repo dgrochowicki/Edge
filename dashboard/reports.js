@@ -224,6 +224,9 @@ function renderList(expandedMonth) {
     });
 }
 
+// Flat list of event names only -- phases (Group Stage / Playoffs / Summary)
+// are navigated via the tab bar inside the report view (renderSummary), so
+// nesting them here too would just duplicate that navigation.
 function renderSummaryList(activeTournament) {
     const el = document.getElementById('reportList');
     const tournaments = Object.keys(summariesByTournament);
@@ -235,33 +238,19 @@ function renderSummaryList(activeTournament) {
 
     el.innerHTML = tournaments.map(tournament => {
         const phases = sortPhases(Object.keys(summariesByTournament[tournament]));
-        const items = phases.map(phase => `<a href="?view=summary&tournament=${tournament}&phase=${phase}"
-                class="report-list-item" data-tournament="${tournament}" data-phase="${phase}">
-                <div class="rl-date">${phaseLabel(phase)}</div>
-            </a>`).join('');
-        return `<div class="report-month open" data-tournament-group="${tournament}">
-            <button type="button" class="report-month-head">
-                <span class="rm-chevron">▸</span>
-                <span class="rm-label">${tournament.replace(/-/g, ' ')}</span>
-                <span class="rm-count">${phases.length}</span>
-            </button>
-            <div class="report-month-items">${items}</div>
-        </div>`;
+        return `<a href="?view=summary&tournament=${tournament}"
+                class="report-list-item${tournament === activeTournament ? ' active' : ''}" data-tournament="${tournament}">
+                <div class="rl-date">${tournament.replace(/-/g, ' ')}</div>
+                <div class="rl-meta">${phases.length} phase${phases.length === 1 ? '' : 's'}</div>
+            </a>`;
     }).join('');
-
-    el.querySelectorAll('.report-month-head').forEach(head => {
-        head.addEventListener('click', () => {
-            head.closest('.report-month').classList.toggle('open');
-        });
-    });
 
     el.querySelectorAll('.report-list-item[data-tournament]').forEach(item => {
         item.addEventListener('click', (e) => {
             e.preventDefault();
             const tournament = item.getAttribute('data-tournament');
-            const phase = item.getAttribute('data-phase');
-            history.pushState({}, '', `?view=summary&tournament=${tournament}&phase=${phase}`);
-            selectSummary(tournament, phase);
+            history.pushState({}, '', `?view=summary&tournament=${tournament}`);
+            selectSummary(tournament, null);
         });
     });
 }
@@ -300,9 +289,7 @@ async function selectSummary(tournament, preferredPhase) {
     currentTournament = tournament;
 
     document.querySelectorAll('.report-list-item[data-tournament]').forEach(el => {
-        el.classList.toggle('active',
-            el.getAttribute('data-tournament') === tournament &&
-            (!preferredPhase || el.getAttribute('data-phase') === preferredPhase));
+        el.classList.toggle('active', el.getAttribute('data-tournament') === tournament);
     });
 
     const view = document.getElementById('reportView');
@@ -322,11 +309,8 @@ function switchPhase(phase) {
     history.pushState({}, '', `?view=summary&tournament=${currentTournament}&phase=${phase}`);
     const phases = sortPhases(Object.keys(summariesByTournament[currentTournament]));
     renderSummary(currentTournament, phase, phases);
-    document.querySelectorAll('.report-list-item[data-tournament]').forEach(el => {
-        el.classList.toggle('active',
-            el.getAttribute('data-tournament') === currentTournament &&
-            el.getAttribute('data-phase') === phase);
-    });
+    // Sidebar highlighting is per-tournament only (phases live in the tab
+    // bar rendered by renderSummary), so the active item doesn't change here.
 }
 
 // Shared markdown -> decorated HTML pipeline used by both daily reports and
