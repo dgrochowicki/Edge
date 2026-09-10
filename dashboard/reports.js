@@ -37,17 +37,48 @@ const SUMMARY_FILENAME_RE = /^(.+)-([a-zA-Z0-9]+)$/;
 const PHASE_ORDER = ['group', 'playoffs', 'final'];
 const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary' };
 
-// Per-tournament display name + external reference link. Keyed by the
-// tournament slug used in the reports/summaries/ filenames.
+// Per-tournament display name, external reference link, and end date. Keyed
+// by the tournament slug used in the reports/summaries/ filenames. `end` is
+// the last day covered (from each summary's own "Zakres:" line) and drives
+// sidebar ordering -- most recent tournament first, same as the daily
+// reports list. New tournament added? Add its end date here too, or it
+// falls back to the bottom of the list (see sortTournaments below).
 const TOURNAMENT_META = {
     'EWC-2026': {
         name: 'Esports World Cup 2026',
-        hltv: 'https://www.hltv.org/events/8261/esports-world-cup-2026'
+        hltv: 'https://www.hltv.org/events/8261/esports-world-cup-2026',
+        end: '2026-08-23'
+    },
+    'BLAST-Porto-2026': {
+        end: '2026-09-06'
+    },
+    'FISSURE-Playground-3-2026': {
+        end: '2026-09-10'
     }
 };
 
 function tournamentMeta(tournament) {
-    return TOURNAMENT_META[tournament] || { name: tournament.replace(/-/g, ' '), hltv: null };
+    // Per-field fallback, not per-entry: an entry that only sets `end` (for
+    // sort order) still gets a sensible generated name and a null hltv link.
+    const meta = TOURNAMENT_META[tournament] || {};
+    return {
+        name: meta.name || tournament.replace(/-/g, ' '),
+        hltv: meta.hltv || null,
+        end: meta.end
+    };
+}
+
+// Most recent tournament (by TOURNAMENT_META.end) first. Tournaments missing
+// an `end` date sort after all dated ones, in their original (API) order.
+function sortTournaments(tournaments) {
+    return [...tournaments].sort((a, b) => {
+        const ea = TOURNAMENT_META[a] && TOURNAMENT_META[a].end;
+        const eb = TOURNAMENT_META[b] && TOURNAMENT_META[b].end;
+        if (!ea && !eb) return 0;
+        if (!ea) return 1;
+        if (!eb) return -1;
+        return eb.localeCompare(ea);
+    });
 }
 
 function phaseLabel(phase) {
@@ -104,7 +135,7 @@ async function init() {
         const params = new URLSearchParams(window.location.search);
 
         if (params.get('view') === 'summary') {
-            const tournaments = Object.keys(summariesByTournament);
+            const tournaments = sortTournaments(Object.keys(summariesByTournament));
             const requestedTournament = params.get('tournament');
             const initialTournament = summariesByTournament[requestedTournament] ? requestedTournament : tournaments[0];
             setMode('summary', { skipHistory: true });
@@ -146,7 +177,7 @@ function setMode(nextMode, opts) {
     } else {
         renderSummaryList(currentTournament);
         if (!(opts && opts.skipHistory)) {
-            const tournaments = Object.keys(summariesByTournament);
+            const tournaments = sortTournaments(Object.keys(summariesByTournament));
             const t = currentTournament || tournaments[0];
             if (t) {
                 history.pushState({}, '', `?view=summary&tournament=${t}`);
@@ -229,7 +260,7 @@ function renderList(expandedMonth) {
 // nesting them here too would just duplicate that navigation.
 function renderSummaryList(activeTournament) {
     const el = document.getElementById('reportList');
-    const tournaments = Object.keys(summariesByTournament);
+    const tournaments = sortTournaments(Object.keys(summariesByTournament));
     if (tournaments.length === 0) {
         el.innerHTML = '<div class="rv-empty" style="padding:16px;">No phase summaries yet.</div>';
         return;
