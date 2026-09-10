@@ -4951,8 +4951,8 @@
           "odds": 1.11,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-10-C7/G7 (both picked magic outright). Placed live at map 2, Alliance led 1:0. Moot since the coupon already lost on the Legacy-FURIA and MIBR-BetBoom legs."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-10-C7/G7 (both picked magic outright, lost). Placed live at map 2, Alliance led 1:0. Settled: Alliance swept magic 2:0 (magic not covered). Moot since the coupon already lost on the Legacy-FURIA and MIBR-BetBoom legs."
         }
       ]
     },
@@ -11813,8 +11813,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Mecz pominiety w raporcie glownym z 10.09 przez blad kompletnosci kalendarza (finaly dolnej drabinki, para TBD rano). Linia ruszyla w ciagu dnia: o 10:45 bylo 2.90/1.36 (Alliance 31.9% po de-vigu, praktycznie fair), wyceniane na kursach z 12:25 -- okno value zamknelo sie przed decyzja."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Mecz pominiety w raporcie glownym z 10.09 przez blad kompletnosci kalendarza (finaly dolnej drabinki, para TBD rano). Linia ruszyla w ciagu dnia: o 10:45 bylo 2.90/1.36 (Alliance 31.9% po de-vigu, praktycznie fair), wyceniane na kursach z 12:25 -- okno value zamknelo sie przed decyzja. Settled: Alliance swept magic 2:0 -- kolejny upset piatego dnia, piaty z rzedu na FISSURE."
     },
     {
       "id": "P-2026-09-10-C8",
@@ -11855,7 +11855,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Alliance swept magic 2:0."
     },
     {
       "id": "P-2026-09-10-G8",
