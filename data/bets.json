@@ -11381,11 +11381,11 @@
       "market_odds_at_analysis": 1.35,
       "market_odds_opponent": 2.95,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.30,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. FISSURE Playground 3 dzien 3 (ostatni dzien fazy grupowej), LB na wylot. MIBR zdemolowalo 9z 2:0 (13 rund lacznie), rynkowa przecena uzasadniona."
+      "result": "won",
+      "notes": "Risk: Wysokie. FISSURE Playground 3 dzien 3 (ostatni dzien fazy grupowej), LB na wylot. MIBR zdemolowalo 9z 2:0 (13 rund lacznie), rynkowa przecena uzasadniona. Closing snapshot 3:41: G2 1.30 (z 1.35). Settled: G2 beat 9z 2:1."
     },
     {
       "id": "P-2026-09-10-C2",
@@ -11402,11 +11402,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.57,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
-      "notes": "Risk: Bardzo wysokie. Najblizszy PASS dnia: strona Alliance @2.20 wychodzi na +3.8% wobec fair 2.12, ponizej progu. Swiadomie nie pogoniony -- najwiekszy ruch przeciw rynkowi w tym dniu (-5.0pp)."
+      "result": "lost",
+      "notes": "Risk: Bardzo wysokie. Najblizszy PASS dnia: strona Alliance @2.20 wychodzi na +3.8% wobec fair 2.12, ponizej progu. Swiadomie nie pogoniony -- najwiekszy ruch przeciw rynkowi w tym dniu (-5.0pp). Closing snapshot 3:41: TYLOO 1.57 (z 1.60). Settled: Alliance upset TYLOO 2:0 -- ten sam Alliance, ktory pozniej tego dnia przegral z magic."
     },
     {
       "id": "P-2026-09-10-C3",
@@ -11423,12 +11423,12 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.50,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.02,
       "decision": "PASS",
       "confidence": 4,
       "stake_units": 0,
-      "result": "pending",
-      "notes": "Pozycja pierwotnie wyceniona jako BET 1u na 5star @10.50 (fair 8.00, value +31.2%), wycofana przed publikacja po uzupelnieniu danych: 5star przegrali z 9z nie tylko 0:2, ale rozjechani 3-13/4-13 (7 rund na dwoch mapach) -- bardziej informacyjna probka niz mecz z The MongolZ. Astralis wypadaja na tym turnieju lepiej niz 9z mimo nizszego VRS (#20). Nowa ocena 9.09% vs breakeven 9.52% -- ponizej progu w obie strony, PASS. Claude sam flaguje to jako niedokonczony research przed BET-em, nie blad progu."
+      "result": "lost",
+      "notes": "Pozycja pierwotnie wyceniona jako BET 1u na 5star @10.50 (fair 8.00, value +31.2%), wycofana przed publikacja po uzupelnieniu danych: 5star przegrali z 9z nie tylko 0:2, ale rozjechani 3-13/4-13 (7 rund na dwoch mapach) -- bardziej informacyjna probka niz mecz z The MongolZ. Astralis wypadaja na tym turnieju lepiej niz 9z mimo nizszego VRS (#20). Nowa ocena 9.09% vs breakeven 9.52% -- ponizej progu w obie strony, PASS. Claude sam flaguje to jako niedokonczony research przed BET-em, nie blad progu. Closing snapshot 7:40: kurs bez ruchu, wciaz 1.02/10.50. Settled: 5star upset Astralis 2:1 -- gdyby BET nie zostal wycofany, wygralby. Wynik nie rozstrzyga jednak, czy wycofanie bylo bledem procesu (patrz notatka w raporcie: ocena byla 9.09% vs breakeven 9.52%, roznica mniejsza niz blad oszacowania)."
     },
     {
       "id": "P-2026-09-10-C4",
@@ -11445,11 +11445,11 @@
       "market_odds_at_analysis": 1.67,
       "market_odds_opponent": 2.08,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Closing snapshot 7:40: PARIVISION 1.60 (z 1.67). Settled: magic beat PARIVISION 2:0."
     },
     {
       "id": "P-2026-09-10-C5",
@@ -11466,11 +11466,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.40,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednio-wysokie. Finaly gornej drabinki graja o rozstawienie (playoffy juz pewne), nie o przetrwanie."
+      "result": "lost",
+      "notes": "Risk: Srednio-wysokie. Finaly gornej drabinki graja o rozstawienie (playoffy juz pewne), nie o przetrwanie. Closing snapshot 10:44: FURIA 1.40 (bez ruchu). Settled: Legacy swept FURIA 2:0."
     },
     {
       "id": "P-2026-09-10-C6",
@@ -11487,11 +11487,11 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.35,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. MIBR objawieniem turnieju (tomaszin po tygodniu treningow), ale VRS dystans (#21 vs #9) wciaz realny."
+      "result": "won",
+      "notes": "Risk: Wysokie. MIBR objawieniem turnieju (tomaszin po tygodniu treningow), ale VRS dystans (#21 vs #9) wciaz realny. Closing snapshot 10:44: BetBoom 1.60 (z 1.53). Settled: BetBoom swept MIBR 2:0."
     },
     {
       "id": "P-2026-09-10-G1",
@@ -11508,10 +11508,11 @@
       "market_odds_at_analysis": 1.35,
       "market_odds_opponent": 2.95,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.30,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: G2 beat 9z 2:1."
     },
     {
       "id": "P-2026-09-10-G2",
@@ -11528,10 +11529,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.57,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: Alliance upset TYLOO 2:0."
     },
     {
       "id": "P-2026-09-10-G3",
@@ -11548,11 +11550,11 @@
       "market_odds_at_analysis": 1.02,
       "market_odds_opponent": 10.50,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.02,
       "decision": "PASS",
       "confidence": 3,
-      "result": "pending",
-      "notes": "Dywergencja z claude (BET 5star @10.50, +31.2%)."
+      "result": "lost",
+      "notes": "Dywergencja z claude (BET 5star @10.50, +31.2%, pozniej wycofany do PASS Astralis -- ostatecznie zgodni). Closing snapshot 7:40: kurs bez ruchu. Settled: 5star upset Astralis 2:1."
     },
     {
       "id": "P-2026-09-10-G4",
@@ -11569,10 +11571,11 @@
       "market_odds_at_analysis": 1.67,
       "market_odds_opponent": 2.08,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: magic beat PARIVISION 2:0."
     },
     {
       "id": "P-2026-09-10-G5",
@@ -11589,11 +11592,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.40,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Value +3.2%, ponizej progu na pelne 1u."
+      "result": "lost",
+      "notes": "Value +3.2%, ponizej progu na pelne 1u. Closing snapshot 10:44: FURIA 1.40 (bez ruchu). Settled: Legacy swept FURIA 2:0."
     },
     {
       "id": "P-2026-09-10-G6",
@@ -11610,10 +11613,11 @@
       "market_odds_at_analysis": 1.53,
       "market_odds_opponent": 2.35,
       "odds_timestamp": "2026-09-09T19:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: BetBoom swept MIBR 2:0."
     },
     {
       "id": "P-2026-09-10-C7",
