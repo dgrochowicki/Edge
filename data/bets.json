@@ -11918,11 +11918,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-11T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Wysokie. FISSURE Playground 3 playoffy, cwiercfinal. Linia ruszyla przez noc o +6.5pp na korzysc MIBR (1.80/1.90 -> 1.60/2.20) bez widocznej przyczyny informacyjnej."
+      "notes": "Risk: Wysokie. FISSURE Playground 3 playoffy, cwiercfinal. Linia ruszyla przez noc o +6.5pp na korzysc MIBR (1.80/1.90 -> 1.60/2.20) bez widocznej przyczyny informacyjnej. Closing snapshot 7:22: kurs bez ruchu, wciaz 1.60/2.20."
     },
     {
       "id": "P-2026-09-11-C2",
@@ -11939,11 +11939,11 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-11T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.62,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
-      "notes": "Risk: Wysokie. Potwierdzone przez inna ksiege (1.64/2.26, de-vig 57.95% -- praktycznie identyczne)."
+      "notes": "Risk: Wysokie. Potwierdzone przez inna ksiege (1.64/2.26, de-vig 57.95% -- praktycznie identyczne). Closing snapshot 10:54: FURIA 1.62 (z 1.60) -- pierwszy closing_odds zebrany w calym turnieju FISSURE."
     },
     {
       "id": "P-2026-09-11-G1",
@@ -11960,7 +11960,7 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-11T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending"
@@ -11980,7 +11980,7 @@
       "market_odds_at_analysis": 1.60,
       "market_odds_opponent": 2.20,
       "odds_timestamp": "2026-09-11T07:40:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.62,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending"
