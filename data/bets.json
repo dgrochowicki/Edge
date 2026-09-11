@@ -5003,19 +5003,179 @@
           "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Locked in early: series tied 1:1, decider (map 3) underway, guaranteeing Over 2.5 regardless of the outcome."
         }
       ]
+    },
+    {
+      "id": "EDGE-125",
+      "date": "2026-09-11",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.69,
+      "combined_odds": 1.90,
+      "potential_return_pln": 4.50,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.69,
+      "selections": [
+        {
+          "match": "MIBR vs Alliance",
+          "market": "total_maps",
+          "pick": "Over 2.5 maps",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-11-C1/G1 -- not a moneyline outright market. Settled: MIBR swept Alliance 2:0 (only 2 maps played, Over 2.5 missed)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-126",
+      "date": "2026-09-11",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.42,
+      "potential_return_pln": 4.25,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "MIBR vs Alliance",
+          "market": "map_winner",
+          "pick": "MIBR (map 2)",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-11-C1/G1 (both picked MIBR outright, won). Settled: MIBR swept Alliance 2:0, won map 2."
+        },
+        {
+          "match": "K27 vs Virtus.pro",
+          "market": "handicap_maps",
+          "pick": "K27 +0.5",
+          "odds": 1.12,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Result not yet provided."
+        },
+        {
+          "match": "FURIA vs G2",
+          "market": "handicap_maps",
+          "pick": "FURIA +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-11-C2/G2 (both picked FURIA outright, lost). Settled: G2 swept FURIA 2:0 (FURIA not covered). This is what busted the coupon."
+        },
+        {
+          "match": "1W vs NiP",
+          "market": "handicap_maps",
+          "pick": "1W +0.5",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Placed live at map 1, 0:0. Not the same match as 1W vs Nemiga (separate tournament, separate result). Result not yet provided. Moot since the coupon already lost on the FURIA-G2 leg."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-127",
+      "date": "2026-09-11",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 8.00,
+      "combined_odds": 1.95,
+      "potential_return_pln": 13.73,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -8.00,
+      "selections": [
+        {
+          "match": "FURIA vs G2",
+          "market": "moneyline",
+          "pick": "FURIA",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-11-C2/G2 (both picked FURIA outright, lost). Settled: G2 upset FURIA 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-128",
+      "date": "2026-09-11",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.50,
+      "potential_return_pln": 5.0,
+      "gross_return_pln": 1.05,
+      "status": "lost",
+      "net_result_pln": -0.95,
+      "selections": [
+        {
+          "match": "Nemesis vs Wildcard",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 2.50,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. User cashed out for a partial-loss recovery. Cash-out payout 1.05 PLN vs 2.00 PLN stake (net -0.95 PLN) -- coupon was going badly live, cash-out cut further losses rather than locking in profit."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-129",
+      "date": "2026-09-11",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.05,
+      "combined_odds": 2.22,
+      "potential_return_pln": 3.99,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.05,
+      "selections": [
+        {
+          "match": "1W vs Nemiga",
+          "market": "map_winner",
+          "pick": "1W (map 2)",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- PGL Masters Bucharest EU Closed Qualifier, out of Edge scope. Settled: Nemiga swept 1W 2:0, winning map 2 as well. This is what busted the coupon."
+        },
+        {
+          "match": "3DMAX vs 100 Thieves",
+          "market": "moneyline",
+          "pick": "100 Thieves",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- PGL Masters Bucharest EU Closed Qualifier, out of Edge scope. Settled: 100 Thieves swept 3DMAX 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 124,
+    "coupons": 129,
     "won": 40,
-    "lost": 84,
+    "lost": 89,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 268.35,
-    "gross_return_pln": 186.62,
-    "net_result_pln": -81.73,
-    "roi": -0.3046
+    "total_staked_pln": 285.09,
+    "gross_return_pln": 187.67,
+    "net_result_pln": -97.42,
+    "roi": -0.3417
   },
   "archived_predictions": [
     {
@@ -11921,8 +12081,8 @@
       "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. FISSURE Playground 3 playoffy, cwiercfinal. Linia ruszyla przez noc o +6.5pp na korzysc MIBR (1.80/1.90 -> 1.60/2.20) bez widocznej przyczyny informacyjnej. Closing snapshot 7:22: kurs bez ruchu, wciaz 1.60/2.20."
+      "result": "won",
+      "notes": "Risk: Wysokie. FISSURE Playground 3 playoffy, cwiercfinal. Linia ruszyla przez noc o +6.5pp na korzysc MIBR (1.80/1.90 -> 1.60/2.20) bez widocznej przyczyny informacyjnej. Closing snapshot 7:22: kurs bez ruchu, wciaz 1.60/2.20. Settled: MIBR swept Alliance 2:0."
     },
     {
       "id": "P-2026-09-11-C2",
@@ -11942,8 +12102,8 @@
       "closing_odds": 1.62,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Wysokie. Potwierdzone przez inna ksiege (1.64/2.26, de-vig 57.95% -- praktycznie identyczne). Closing snapshot 10:54: FURIA 1.62 (z 1.60) -- pierwszy closing_odds zebrany w calym turnieju FISSURE."
+      "result": "lost",
+      "notes": "Risk: Wysokie. Potwierdzone przez inna ksiege (1.64/2.26, de-vig 57.95% -- praktycznie identyczne). Closing snapshot 10:54: FURIA 1.62 (z 1.60). Settled: G2 upset FURIA 2:0."
     },
     {
       "id": "P-2026-09-11-G1",
@@ -11963,7 +12123,8 @@
       "closing_odds": 1.60,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: MIBR swept Alliance 2:0."
     },
     {
       "id": "P-2026-09-11-G2",
@@ -11983,7 +12144,8 @@
       "closing_odds": 1.62,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "lost",
+      "notes": "Settled: G2 upset FURIA 2:0."
     }
   ]
 }
