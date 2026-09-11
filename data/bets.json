@@ -5057,8 +5057,8 @@
           "odds": 1.12,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Result not yet provided."
+          "result": "lost",
+          "notes": "Own bet for fun, not an Edge pick -- Thunderpick World Championship Closed Qualifier, out of Edge scope. Settled: Virtus.pro swept K27 2:0 (K27 not covered). Moot since the coupon already lost on the FURIA-G2 leg."
         },
         {
           "match": "FURIA vs G2",
