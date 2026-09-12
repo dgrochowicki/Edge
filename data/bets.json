@@ -5279,19 +5279,53 @@
           "notes": "Same match as Edge predictions P-2026-09-12-C2/G2 (both picked G2 outright). Busted early: series tied 1:1, so a 2:0 sweep is no longer possible regardless of the decider."
         }
       ]
+    },
+    {
+      "id": "EDGE-134",
+      "date": "2026-09-12",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.46,
+      "potential_return_pln": 4.32,
+      "gross_return_pln": 4.32,
+      "status": "won",
+      "net_result_pln": 2.32,
+      "selections": [
+        {
+          "match": "BetBoom vs G2",
+          "market": "moneyline",
+          "pick": "G2",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-12-C2/G2 (both picked G2 outright, both won). Settled: G2 beat BetBoom 2:1."
+        },
+        {
+          "match": "HOTU vs 100 Thieves",
+          "market": "moneyline",
+          "pick": "HOTU",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Own bet for fun, not an Edge pick -- out of Edge scope. Settled: HOTU beat 100 Thieves 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 133,
-    "won": 41,
+    "coupons": 134,
+    "won": 42,
     "lost": 92,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 295.00,
-    "gross_return_pln": 193.58,
-    "net_result_pln": -101.42,
-    "roi": -0.3438
+    "total_staked_pln": 297.00,
+    "gross_return_pln": 197.90,
+    "net_result_pln": -99.10,
+    "roi": -0.3337
   },
   "archived_predictions": [
     {
