@@ -5163,19 +5163,67 @@
           "notes": "Own bet for fun, not an Edge pick -- PGL Masters Bucharest EU Closed Qualifier, out of Edge scope. Settled: 100 Thieves swept 3DMAX 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-130",
+      "date": "2026-09-12",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.10,
+      "potential_return_pln": 5.46,
+      "gross_return_pln": 1.34,
+      "status": "lost",
+      "net_result_pln": -0.66,
+      "selections": [
+        {
+          "match": "Legacy vs MIBR",
+          "market": "correct_score",
+          "pick": "2:1",
+          "odds": 3.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright). Placed live at map 2, Legacy led 1:0. User cashed out for a partial-loss recovery. Cash-out payout 1.34 PLN vs 2.00 PLN stake (net -0.66 PLN)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-131",
+      "date": "2026-09-12",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 1.93,
+      "potential_return_pln": 5.10,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Legacy vs MIBR",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright). Placed live at map 2, Legacy led 1:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 129,
+    "coupons": 131,
     "won": 40,
-    "lost": 89,
+    "lost": 90,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 285.09,
-    "gross_return_pln": 187.67,
-    "net_result_pln": -97.42,
-    "roi": -0.3417
+    "pending": 1,
+    "total_staked_pln": 290.09,
+    "gross_return_pln": 189.01,
+    "net_result_pln": -98.08,
+    "roi": -0.3381
   },
   "archived_predictions": [
     {
