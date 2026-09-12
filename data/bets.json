@@ -12299,11 +12299,11 @@
       "market_odds_at_analysis": 1.62,
       "market_odds_opponent": 2.15,
       "odds_timestamp": "2026-09-11T19:25:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.50,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending",
-      "notes": "Risk: Bardzo wysokie. Najwieksze odejscie od rynku w turnieju: 52.1% wobec 57.0% po de-vigu. Podstawa: BetBoom niepokonani (3x 2:0, wygrana grupa), VRS #9 vs #8, przewaga wypoczynku (3 mecze i dzien przerwy vs 5 meczow). Strona BetBoom @2.15 wychodzi na +2.9%, ponizej progu."
+      "notes": "Risk: Bardzo wysokie. Najwieksze odejscie od rynku w turnieju: 52.1% wobec 57.0% po de-vigu. Podstawa: BetBoom niepokonani (3x 2:0, wygrana grupa), VRS #9 vs #8, przewaga wypoczynku (3 mecze i dzien przerwy vs 5 meczow). Strona BetBoom @2.15 wychodzi na +2.9%, ponizej progu. Closing: BetBoom 2.40 / G2 1.50 (~30 min przed meczem) -- rynek przesunal sie w strone G2 (1.62 -> 1.50), CLV +8.0%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-12-G1",
@@ -12341,10 +12341,11 @@
       "market_odds_at_analysis": 1.62,
       "market_odds_opponent": 2.15,
       "odds_timestamp": "2026-09-11T19:26:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.50,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "pending",
+      "notes": "Closing: BetBoom 2.40 / G2 1.50 (~30 min przed meczem) -- rynek przesunal sie w strone G2 (1.62 -> 1.50), CLV +8.0%, zgodnie z kierunkiem picku."
     }
   ]
 }
