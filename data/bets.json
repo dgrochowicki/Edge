@@ -5183,8 +5183,8 @@
           "odds": 3.10,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright). Placed live at map 2, Legacy led 1:0. User cashed out for a partial-loss recovery. Cash-out payout 1.34 PLN vs 2.00 PLN stake (net -0.66 PLN)."
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright, won). Placed live at map 2, Legacy led 1:0. User cashed out for a partial-loss recovery. Cash-out payout 1.34 PLN vs 2.00 PLN stake (net -0.66 PLN). Settled: Legacy beat MIBR 2:1 -- exact score hit, would have paid the full 5.46 PLN potential had it not been cashed out."
         }
       ]
     },
@@ -5197,8 +5197,8 @@
       "combined_odds": 1.93,
       "potential_return_pln": 5.10,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.0,
       "selections": [
         {
           "match": "Legacy vs MIBR",
@@ -5207,8 +5207,8 @@
           "odds": 1.93,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright). Placed live at map 2, Legacy led 1:0."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-12-C1/G1 (both picked Legacy outright). Placed live at map 2, Legacy led 1:0. Busted early: MIBR leveled the series 1:1, so a 2:0 sweep is no longer possible regardless of the decider."
         }
       ]
     }
@@ -5217,13 +5217,13 @@
   "summary": {
     "coupons": 131,
     "won": 40,
-    "lost": 90,
+    "lost": 91,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 290.09,
     "gross_return_pln": 189.01,
-    "net_result_pln": -98.08,
-    "roi": -0.3381
+    "net_result_pln": -101.08,
+    "roi": -0.3484
   },
   "archived_predictions": [
     {
@@ -12213,8 +12213,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
-      "notes": "Risk: Srednie. FISSURE Playground 3 playoffy, polfinal. Brazylijskie derby -- Legacy #6 VRS, najwyzej notowana druzyna w turnieju."
+      "result": "won",
+      "notes": "Risk: Srednie. FISSURE Playground 3 playoffy, polfinal. Brazylijskie derby -- Legacy #6 VRS, najwyzej notowana druzyna w turnieju. Settled: Legacy beat MIBR 2:1."
     },
     {
       "id": "P-2026-09-12-C2",
@@ -12255,7 +12255,8 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending"
+      "result": "won",
+      "notes": "Settled: Legacy beat MIBR 2:1."
     },
     {
       "id": "P-2026-09-12-G2",
