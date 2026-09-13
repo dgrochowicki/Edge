@@ -12425,7 +12425,7 @@
       "market": "moneyline",
       "pick": "Legacy",
       "bookmaker": "STS",
-      "market_odds": 1.77,
+      "market_odds_at_analysis": 1.77,
       "market_odds_opponent": 1.93,
       "odds_timestamp": "2026-09-13T00:00:00+02:00",
       "fair_odds": 1.82,
