@@ -5357,8 +5357,8 @@
       "combined_odds": 1.54,
       "potential_return_pln": 4.07,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.00,
       "selections": [
         {
           "match": "Virtus.pro vs Heroic",
@@ -5367,8 +5367,8 @@
           "odds": 1.47,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series tied 1:1."
+          "result": "lost",
+          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series tied 1:1, Heroic led 10:5. Settled: Virtus.pro won decider, VP beat Heroic 2:1."
         },
         {
           "match": "Sinners vs Nemiga",
@@ -5387,9 +5387,9 @@
   "summary": {
     "coupons": 136,
     "won": 42,
-    "lost": 93,
+    "lost": 94,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 302.32,
     "gross_return_pln": 197.90,
     "net_result_pln": -104.42,
