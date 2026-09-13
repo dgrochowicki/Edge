@@ -12436,9 +12436,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": 1.82,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Final BO5, jedyny mecz w tym formacie na turnieju. Podstawa oceny powyzej rynku: obciazenie map (Legacy 10 map w 4 seriach vs G2 16 map w 6 seriach), format BO5 redukujacy wariancje, dwa tytuly Legacy w Chinach w ostatnich 12 miesiacach. Closing: Legacy 1.82 / G2 1.88 (10:50, 10 min przed meczem) -- rynek odszedl od Legacy (1.77 -> 1.82), CLV -2.7%, przeciwnie do kierunku picku."
+      "notes": "Final BO5, jedyny mecz w tym formacie na turnieju. Podstawa oceny powyzej rynku: obciazenie map (Legacy 10 map w 4 seriach vs G2 16 map w 6 seriach), format BO5 redukujacy wariancje, dwa tytuly Legacy w Chinach w ostatnich 12 miesiacach. Closing: Legacy 1.82 / G2 1.88 (10:50, 10 min przed meczem) -- rynek odszedl od Legacy (1.77 -> 1.82), CLV -2.7%, przeciwnie do kierunku picku. Settled: Legacy beat G2 3:0, tytul FISSURE Playground 3."
     },
     {
       "id": "P-2026-09-13-G1",
@@ -12456,10 +12456,10 @@
       "closing_odds": 1.82,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Legacy 1.82 / G2 1.88 (10:50, 10 min przed meczem) -- rynek odszedl od Legacy (1.77 -> 1.82), CLV -2.7%, przeciwnie do kierunku picku."
+      "notes": "Closing: Legacy 1.82 / G2 1.88 (10:50, 10 min przed meczem) -- rynek odszedl od Legacy (1.77 -> 1.82), CLV -2.7%, przeciwnie do kierunku picku. Settled: Legacy beat G2 3:0, tytul FISSURE Playground 3."
     }
   ]
 }
