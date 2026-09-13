@@ -5347,19 +5347,53 @@
           "notes": "Out of Edge scope. Moot -- coupon already lost on the ENCE leg. Live 1:1 at last update, decider pending; will backfill final result for completeness."
         }
       ]
+    },
+    {
+      "id": "EDGE-136",
+      "date": "2026-09-13",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.00,
+      "combined_odds": 1.54,
+      "potential_return_pln": 4.07,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Virtus.pro vs Heroic",
+          "market": "moneyline",
+          "pick": "Heroic",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series tied 1:1."
+        },
+        {
+          "match": "Sinners vs Nemiga",
+          "market": "moneyline",
+          "pick": "Nemiga",
+          "odds": 1.05,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- Thunderpick World Championship Closed Qualifier. Settled: Nemiga beat Sinners 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 135,
+    "coupons": 136,
     "won": 42,
     "lost": 93,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 299.32,
+    "pending": 1,
+    "total_staked_pln": 302.32,
     "gross_return_pln": 197.90,
-    "net_result_pln": -101.42,
-    "roi": -0.3388
+    "net_result_pln": -104.42,
+    "roi": -0.3454
   },
   "archived_predictions": [
     {
