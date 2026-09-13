@@ -1,7 +1,9 @@
 # Edge Daily Report Template
 
-Current version: v1.6 (2026-07-23)
+Current version: v1.7 (2026-09-13)
 Status: obowiązuje obu agentów (claude, gpt)
+
+Zmiana w v1.7: sekcja 4 nazywa teraz wprost kanoniczną nazwę pola dla kursu z momentu analizy (`market_odds_at_analysis`). Powód: P-2026-09-13-C1 użył nazwy `market_odds`, co spowodowało ciche pominięcie wpisu w `shared-metrics.js` i `research.js` (patrz raport fazowy playoffów FISSURE, sekcja 5) — szablon wcześniej nie wymieniał tego pola wprost.
 
 Zmiana w v1.6: kolumna „Kurs STS" w tabeli sekcji 1 pokazuje teraz OBA kursy zamiast samego kursu picku, w kolejności zgodnej z nazwą meczu (np. „A vs B" → „kurs A / kurs B"). Ułatwia to przegląd wyborów — para kursów czyta się w tym samym porządku co nazwa meczu, a zestawienie z kolumną „Gram na" pokazuje, po której stronie jest faworyt rynku.
 
@@ -60,6 +62,7 @@ Blok JSON ze wszystkimi wpisami z sekcji 2 (BET **i** PASS). Zasady:
 - `agent`: `"claude"` / `"gpt"` — pole obowiązkowe
 - `report`: ścieżka z sufiksem agenta, np. `"reports/2026-07-20-gpt.md"`
 - `odds_timestamp`: faktyczny czas odczytu kursów (godzina podania ich przez użytkownika), nie czas raportu ani wartość okrągła z założenia
+- Kurs picku w momencie analizy zapisujemy pod kluczem **`market_odds_at_analysis`** — nazwa kanoniczna, nie `market_odds` ani żaden inny wariant. `dashboard/shared-metrics.js` (próbka sparowana, Brier rynku) i `dashboard/research.js` (analiza value) filtrują wpisy po dokładnie tej nazwie pola; wpis pod inną nazwą jest po cichu pomijany, bez błędu i bez ostrzeżenia.
 - `estimated_probability` = 1 / fair_odds (4 miejsca), `market_odds_opponent` obowiązkowe, `closing_odds: null`, `result: "pending"`
 - `method_version: "v1"` — wersja metody szacowania fair kursów. Bumpuje się tylko przy zmianie sposobu liczenia (patrz „Method versioning" w PLAYBOOK.md); raport nigdy nie zmienia wersji z własnej inicjatywy.
 - Meczów odrzuconych na filtrze NIE logujemy
