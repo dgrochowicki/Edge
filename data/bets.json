@@ -5511,19 +5511,43 @@
           "notes": "Out of Edge scope -- European Pro League. Cashed out early at combined 1.45 for a guaranteed 2.55 PLN instead of riding it -- match finished Nemesis beat 33 2:0, would have won straight for 3.20 PLN gross had it not been cashed out."
         }
       ]
+    },
+    {
+      "id": "EDGE-142",
+      "date": "2026-09-14",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.82,
+      "potential_return_pln": 3.20,
+      "gross_return_pln": 3.20,
+      "status": "won",
+      "net_result_pln": 1.20,
+      "selections": [
+        {
+          "match": "WW vs Black Phoenix",
+          "market": "moneyline",
+          "pick": "WW",
+          "odds": 2.04,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Cashed out early at combined 1.82 for a guaranteed 3.20 PLN. Match finished WW beat Black Phoenix 2:1 -- would have won straight anyway at the original 2.04."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 141,
-    "won": 43,
+    "coupons": 142,
+    "won": 44,
     "lost": 98,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 315.87,
-    "gross_return_pln": 200.45,
-    "net_result_pln": -115.42,
-    "roi": -0.3654
+    "total_staked_pln": 317.87,
+    "gross_return_pln": 203.65,
+    "net_result_pln": -114.22,
+    "roi": -0.3593
   },
   "archived_predictions": [
     {
