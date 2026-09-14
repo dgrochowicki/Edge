@@ -5405,19 +5405,125 @@
           "notes": "Out of Edge scope. BO5. Placed live during 2nd break, series 2:0 for Virtus.pro at time of bet -- betting on HOTU comeback. Settled: Virtus.pro swept HOTU 3:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-138",
+      "date": "2026-09-14",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.55,
+      "combined_odds": 2.63,
+      "potential_return_pln": 5.90,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.55,
+      "selections": [
+        {
+          "match": "Bushido Wildcats vs Natus Vincere Junior",
+          "market": "moneyline",
+          "pick": "Bushido Wildcats",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- European Pro League. Settled: Natus Vincere Junior beat Bushido Wildcats 2:1."
+        },
+        {
+          "match": "33 vs Butterfly",
+          "market": "moneyline",
+          "pick": "Butterfly",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- European Pro League. Settled: 33 beat Butterfly 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-139",
+      "date": "2026-09-14",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.62,
+      "potential_return_pln": 2.85,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "Bushido Wildcats vs Natus Vincere Junior",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.62,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- European Pro League. Settled: Natus Vincere Junior beat Bushido Wildcats 2:1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-140",
+      "date": "2026-09-14",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.65,
+      "potential_return_pln": 2.90,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "Nemesis vs Butterfly",
+          "market": "moneyline",
+          "pick": "Butterfly",
+          "odds": 1.65,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- European Pro League. Settled: Nemesis beat Butterfly 2:1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-141",
+      "date": "2026-09-14",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.60,
+      "potential_return_pln": 3.20,
+      "gross_return_pln": 2.55,
+      "status": "won",
+      "net_result_pln": 0.55,
+      "selections": [
+        {
+          "match": "Nemesis vs 33",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.60,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- European Pro League. Cashed out early at combined 1.45 for a guaranteed 2.55 PLN instead of riding it -- match finished Nemesis beat 33 2:0, would have won straight for 3.20 PLN gross had it not been cashed out."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 137,
-    "won": 42,
-    "lost": 95,
+    "coupons": 141,
+    "won": 43,
+    "lost": 98,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 307.32,
-    "gross_return_pln": 197.90,
-    "net_result_pln": -109.42,
-    "roi": -0.3560
+    "total_staked_pln": 315.87,
+    "gross_return_pln": 200.45,
+    "net_result_pln": -115.42,
+    "roi": -0.3654
   },
   "archived_predictions": [
     {
