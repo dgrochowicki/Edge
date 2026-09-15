@@ -5661,19 +5661,53 @@
           "notes": "Out of Edge scope -- Stake Ranked Open. Moot -- coupon already lost on the 9INE/aimclub leg. Settled: BAKS beat Spirit Academy 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-147",
+      "date": "2026-09-15",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.56,
+      "potential_return_pln": 4.51,
+      "gross_return_pln": 4.51,
+      "status": "won",
+      "net_result_pln": 2.51,
+      "selections": [
+        {
+          "match": "BAKS vs Spirit Academy",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.22,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Settled: BAKS beat Spirit Academy 2:0."
+        },
+        {
+          "match": "FORZE Reload vs UPGRADE",
+          "market": "map_winner",
+          "pick": "UPGRADE (map 2, incl. OT)",
+          "odds": 2.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Map 2 winner incl. overtime. Confirmed won by Dominik."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 146,
-    "won": 44,
+    "coupons": 147,
+    "won": 45,
     "lost": 102,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 326.15,
-    "gross_return_pln": 203.65,
-    "net_result_pln": -122.50,
-    "roi": -0.3756
+    "total_staked_pln": 328.15,
+    "gross_return_pln": 208.16,
+    "net_result_pln": -119.99,
+    "roi": -0.3657
   },
   "archived_predictions": [
     {
