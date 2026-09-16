@@ -5801,8 +5801,8 @@
       "combined_odds": 2.50,
       "potential_return_pln": 4.42,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.01,
       "selections": [
         {
           "match": "ex-RUSTEC vs Nexus",
@@ -5811,8 +5811,8 @@
           "odds": 2.50,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 1:0 for ex-RUSTEC at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 1:0 for ex-RUSTEC at time of bet. Settled: Nexus won map 2, series tied 1:1."
         }
       ]
     }
@@ -5821,9 +5821,9 @@
   "summary": {
     "coupons": 152,
     "won": 48,
-    "lost": 103,
+    "lost": 104,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 338.20,
     "gross_return_pln": 219.35,
     "net_result_pln": -118.85,
