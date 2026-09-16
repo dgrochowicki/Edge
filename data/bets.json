@@ -5743,19 +5743,43 @@
           "notes": "Out of Edge scope. Settled: Natus Vincere Junior beat Just Players 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-150",
+      "date": "2026-09-16",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.01,
+      "combined_odds": 2.10,
+      "potential_return_pln": 3.72,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Lavked vs Honved",
+          "market": "moneyline",
+          "pick": "Honved",
+          "odds": 2.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 for Lavked at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 149,
+    "coupons": 150,
     "won": 47,
     "lost": 102,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 332.17,
+    "pending": 1,
+    "total_staked_pln": 334.18,
     "gross_return_pln": 215.74,
-    "net_result_pln": -116.43,
-    "roi": -0.3505
+    "net_result_pln": -118.44,
+    "roi": -0.3544
   },
   "archived_predictions": [
     {
