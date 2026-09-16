@@ -5695,19 +5695,67 @@
           "notes": "Out of Edge scope -- CCT EU. Map 2 winner incl. overtime. Confirmed won by Dominik."
         }
       ]
+    },
+    {
+      "id": "EDGE-148",
+      "date": "2026-09-16",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.01,
+      "combined_odds": 1.64,
+      "potential_return_pln": 2.89,
+      "gross_return_pln": 2.89,
+      "status": "won",
+      "net_result_pln": 0.88,
+      "selections": [
+        {
+          "match": "Just Players vs Natus Vincere Junior",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 2.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Cashed out early at combined 1.64 for a guaranteed 2.89 PLN. Match finished Just Players lost 1:2 to NaVi Junior -- 3 maps played, would have won straight at 2.10 had it not been cashed out."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-149",
+      "date": "2026-09-16",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.01,
+      "combined_odds": 2.65,
+      "potential_return_pln": 4.69,
+      "gross_return_pln": 4.69,
+      "status": "won",
+      "net_result_pln": 2.68,
+      "selections": [
+        {
+          "match": "Just Players vs Natus Vincere Junior",
+          "market": "moneyline",
+          "pick": "Natus Vincere Junior",
+          "odds": 2.65,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Settled: Natus Vincere Junior beat Just Players 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 147,
-    "won": 45,
+    "coupons": 149,
+    "won": 47,
     "lost": 102,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 328.15,
-    "gross_return_pln": 208.16,
-    "net_result_pln": -119.99,
-    "roi": -0.3657
+    "total_staked_pln": 332.17,
+    "gross_return_pln": 215.74,
+    "net_result_pln": -116.43,
+    "roi": -0.3505
   },
   "archived_predictions": [
     {
