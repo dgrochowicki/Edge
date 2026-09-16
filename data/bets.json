@@ -5791,19 +5791,43 @@
           "notes": "Out of Edge scope -- CCT EU. Placed live, 1st map, 0:0 rounds at time of bet. Cashed out at 10:9 on map 1 for a guaranteed 3.61 PLN instead of riding it."
         }
       ]
+    },
+    {
+      "id": "EDGE-152",
+      "date": "2026-09-16",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.01,
+      "combined_odds": 2.50,
+      "potential_return_pln": 4.42,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "ex-RUSTEC vs Nexus",
+          "market": "map_winner",
+          "pick": "ex-RUSTEC (map 2, incl. OT)",
+          "odds": 2.50,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 1:0 for ex-RUSTEC at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 151,
+    "coupons": 152,
     "won": 48,
     "lost": 103,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 336.19,
+    "pending": 1,
+    "total_staked_pln": 338.20,
     "gross_return_pln": 219.35,
-    "net_result_pln": -116.84,
-    "roi": -0.3475
+    "net_result_pln": -118.85,
+    "roi": -0.3514
   },
   "archived_predictions": [
     {
