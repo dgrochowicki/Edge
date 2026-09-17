@@ -13149,10 +13149,10 @@
       "risk": "Wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 2.08,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Cwiercfinal gornej drabinki BO3. Pick po stronie underdoga rynkowego. Podstawa odejscia +5.0 pp powyzej rynku: oba rankingi stawiaja Aurore wyzej (HLTV #9 vs #10, VRS #12/1535 vs #13/1520) oraz rozjazd glebokosci map poolu (rdzen Aurory 34+ map w 3 mies. z szescioma mapami powyzej 40%, rdzen NAVI 13 map, tylko Mirage/Inferno/Ancient z probka min. 3). Kontrargument rynku: NAVI 4:0 w seriach w 2026 i 26-9 w mapach H2H. Najwieksze odejscie od rynku w projekcie i pierwsze w strone underdoga -- test tezy PRE-V2 par.2."
+      "notes": "Cwiercfinal gornej drabinki BO3. Pick po stronie underdoga rynkowego. Podstawa odejscia +5.0 pp powyzej rynku: oba rankingi stawiaja Aurore wyzej (HLTV #9 vs #10, VRS #12/1535 vs #13/1520) oraz rozjazd glebokosci map poolu (rdzen Aurory 34+ map w 3 mies. z szescioma mapami powyzej 40%, rdzen NAVI 13 map, tylko Mirage/Inferno/Ancient z probka min. 3). Kontrargument rynku: NAVI 4:0 w seriach w 2026 i 26-9 w mapach H2H. Najwieksze odejscie od rynku w projekcie i pierwsze w strone underdoga -- test tezy PRE-V2 par.2. Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku. Inny wzorzec niz poprzednie dwa sprostowania (te dotyczyly zejscia ponizej rynku po stronie faworyta) -- to test tezy PRE-V2 par.2 po stronie underdoga, wynik meczu rozstrzygnie wiecej niz sama linia."
     },
     {
       "id": "P-2026-09-17-C4",
@@ -13234,12 +13234,13 @@
       "market_odds_at_analysis": 2.04,
       "market_odds_opponent": 1.70,
       "odds_timestamp": "2026-09-17T07:30:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.08,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku."
     },
     {
       "id": "P-2026-09-17-G4",
