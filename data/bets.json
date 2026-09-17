@@ -6008,9 +6008,9 @@
       "stake_pln": 2.00,
       "combined_odds": 3.29,
       "potential_return_pln": 5.78,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 5.78,
+      "status": "won",
+      "net_result_pln": 3.78,
       "selections": [
         {
           "match": "Honved vs ENCE",
@@ -6029,8 +6029,8 @@
           "odds": 1.95,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- NODWIN Clutch Series. Placed live, 3rd (decider) map, series 1:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope -- NODWIN Clutch Series. Placed live, 3rd (decider) map, series 1:1 at time of bet. Settled: Black Phoenix beat ex-RUSTEC 2:1."
         },
         {
           "match": "Natus Vincere vs Aurora",
@@ -6048,14 +6048,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 159,
-    "won": 49,
+    "won": 50,
     "lost": 109,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 353.05,
-    "gross_return_pln": 222.55,
-    "net_result_pln": -130.50,
-    "roi": -0.3696
+    "gross_return_pln": 228.33,
+    "net_result_pln": -124.72,
+    "roi": -0.3533
   },
   "archived_predictions": [
     {
