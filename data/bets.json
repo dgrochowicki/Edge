@@ -5913,8 +5913,8 @@
           "odds": 2.04,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-17-C3/G3 (both picked Aurora). Moot -- coupon already lost on the MOUZ/NRG leg. Will backfill final result for completeness."
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-17-C3/G3 (both picked Aurora). Moot -- coupon already lost on the MOUZ/NRG leg. Settled: Aurora swept NAVI 2:0."
         }
       ]
     },
@@ -13184,9 +13184,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": 2.08,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Cwiercfinal gornej drabinki BO3. Pick po stronie underdoga rynkowego. Podstawa odejscia +5.0 pp powyzej rynku: oba rankingi stawiaja Aurore wyzej (HLTV #9 vs #10, VRS #12/1535 vs #13/1520) oraz rozjazd glebokosci map poolu (rdzen Aurory 34+ map w 3 mies. z szescioma mapami powyzej 40%, rdzen NAVI 13 map, tylko Mirage/Inferno/Ancient z probka min. 3). Kontrargument rynku: NAVI 4:0 w seriach w 2026 i 26-9 w mapach H2H. Najwieksze odejscie od rynku w projekcie i pierwsze w strone underdoga -- test tezy PRE-V2 par.2. Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku. Inny wzorzec niz poprzednie dwa sprostowania (te dotyczyly zejscia ponizej rynku po stronie faworyta) -- to test tezy PRE-V2 par.2 po stronie underdoga, wynik meczu rozstrzygnie wiecej niz sama linia."
+      "notes": "Cwiercfinal gornej drabinki BO3. Pick po stronie underdoga rynkowego. Podstawa odejscia +5.0 pp powyzej rynku: oba rankingi stawiaja Aurore wyzej (HLTV #9 vs #10, VRS #12/1535 vs #13/1520) oraz rozjazd glebokosci map poolu (rdzen Aurory 34+ map w 3 mies. z szescioma mapami powyzej 40%, rdzen NAVI 13 map, tylko Mirage/Inferno/Ancient z probka min. 3). Kontrargument rynku: NAVI 4:0 w seriach w 2026 i 26-9 w mapach H2H. Najwieksze odejscie od rynku w projekcie i pierwsze w strone underdoga -- test tezy PRE-V2 par.2. Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku. Settled: Aurora swept NAVI 2:0 -- picked despite negative CLV, thesis from PRE-V2 par.2 confirmed by result on this single case."
     },
     {
       "id": "P-2026-09-17-C4",
@@ -13271,10 +13271,10 @@
       "closing_odds": 2.08,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku."
+      "notes": "Closing: NAVI 1.67 / Aurora 2.08 (10 min przed meczem) -- rynek odszedl od Aurory (2.04 -> 2.08), CLV -1.9%, przeciwnie do kierunku picku. Settled: Aurora swept NAVI 2:0."
     },
     {
       "id": "P-2026-09-17-G4",
