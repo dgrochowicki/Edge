@@ -13277,9 +13277,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": 1.32,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Cwiercfinal gornej drabinki BO3, derby brazylijskie. Oba zespoly z FISSURE Playground 3 w Suzhou: MIBR polfinal (3-4), FURIA cwiercfinal (5-6, porazka z G2). tomaszin w skladzie MIBR od 28.08. Ocena 1.6 pp ponizej rynku po stronie faworyta, bez tezy. Linia ruszyla 1.30 -> 1.32 / 3.25 -> 3.10 miedzy wieczorem a 07:30. Godzina meczu do weryfikacji: HLTV 19:30, kursy przyszly z adnotacja 20:30 -- potwierdzone przez Dominika jako HLTV 19:30 (zrzut ekranu). Closing: FURIA 1.32 / MIBR 3.10, potwierdzone 5 min przed meczem (19:05) -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla przez caly dzien."
+      "notes": "Cwiercfinal gornej drabinki BO3, derby brazylijskie. Oba zespoly z FISSURE Playground 3 w Suzhou: MIBR polfinal (3-4), FURIA cwiercfinal (5-6, porazka z G2). tomaszin w skladzie MIBR od 28.08. Ocena 1.6 pp ponizej rynku po stronie faworyta, bez tezy. Linia ruszyla 1.30 -> 1.32 / 3.25 -> 3.10 miedzy wieczorem a 07:30. Godzina meczu do weryfikacji: HLTV 19:30, kursy przyszly z adnotacja 20:30 -- potwierdzone przez Dominika jako HLTV 19:30 (zrzut ekranu). Closing: FURIA 1.32 / MIBR 3.10, potwierdzone 5 min przed meczem (19:05) -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla przez caly dzien. Settled: FURIA beat MIBR 2:1, po tym jak MIBR wygralo mape 1."
     },
     {
       "id": "P-2026-09-17-G1",
@@ -13360,10 +13360,10 @@
       "closing_odds": 3.10,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: FURIA 1.32 / MIBR 3.10, potwierdzone 5 min przed meczem (19:05) -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla przez caly dzien."
+      "notes": "Closing: FURIA 1.32 / MIBR 3.10, potwierdzone 5 min przed meczem (19:05) -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla przez caly dzien. Settled: FURIA beat MIBR 2:1, po tym jak MIBR wygralo mape 1."
     }
   ]
 }
