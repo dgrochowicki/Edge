@@ -13174,10 +13174,10 @@
       "risk": "Srednio-wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.32,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Cwiercfinal gornej drabinki BO3, derby brazylijskie. Oba zespoly z FISSURE Playground 3 w Suzhou: MIBR polfinal (3-4), FURIA cwiercfinal (5-6, porazka z G2). tomaszin w skladzie MIBR od 28.08. Ocena 1.6 pp ponizej rynku po stronie faworyta, bez tezy. Linia ruszyla 1.30 -> 1.32 / 3.25 -> 3.10 miedzy wieczorem a 07:30. Godzina meczu do weryfikacji: HLTV 19:30, kursy przyszly z adnotacja 20:30 -- potwierdzone przez Dominika jako HLTV 19:30 (zrzut ekranu)."
+      "notes": "Cwiercfinal gornej drabinki BO3, derby brazylijskie. Oba zespoly z FISSURE Playground 3 w Suzhou: MIBR polfinal (3-4), FURIA cwiercfinal (5-6, porazka z G2). tomaszin w skladzie MIBR od 28.08. Ocena 1.6 pp ponizej rynku po stronie faworyta, bez tezy. Linia ruszyla 1.30 -> 1.32 / 3.25 -> 3.10 miedzy wieczorem a 07:30. Godzina meczu do weryfikacji: HLTV 19:30, kursy przyszly z adnotacja 20:30 -- potwierdzone przez Dominika jako HLTV 19:30 (zrzut ekranu). Closing: FURIA 1.32 / MIBR 3.10 -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla."
     },
     {
       "id": "P-2026-09-17-G1",
@@ -13255,12 +13255,13 @@
       "market_odds_at_analysis": 3.10,
       "market_odds_opponent": 1.32,
       "odds_timestamp": "2026-09-17T07:30:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 3.10,
       "decision": "PASS",
       "confidence": 6,
       "result": "pending",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Closing: FURIA 1.32 / MIBR 3.10 -- identyczne z kursem analizy, CLV +0.0%, linia sie nie ruszyla."
     }
   ]
 }
