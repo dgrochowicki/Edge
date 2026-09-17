@@ -6043,19 +6043,43 @@
           "notes": "Same match as Edge predictions P-2026-09-17-C3/G3 (both picked Aurora, won). Odds of 1.04 suggest this leg was added live, late in the match. Settled: Aurora swept NAVI 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-160",
+      "date": "2026-09-17",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.28,
+      "combined_odds": 2.10,
+      "potential_return_pln": 4.22,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "FURIA vs MIBR",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 2.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-17-C4/G4 (FURIA/MIBR, both PASS). Placed live, 1st map, 0:0 rounds at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 159,
+    "coupons": 160,
     "won": 50,
     "lost": 109,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 353.05,
+    "pending": 1,
+    "total_staked_pln": 355.33,
     "gross_return_pln": 228.33,
-    "net_result_pln": -124.72,
-    "roi": -0.3533
+    "net_result_pln": -127.00,
+    "roi": -0.3574
   },
   "archived_predictions": [
     {
