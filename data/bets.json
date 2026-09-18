@@ -6091,19 +6091,53 @@
           "notes": "Same match as Edge predictions P-2026-09-18-C2/G2 (both picked MIBR ML, PASS, won). Settled: MIBR beat magic 2:1, 3 maps played."
         }
       ]
+    },
+    {
+      "id": "EDGE-162",
+      "date": "2026-09-18",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.02,
+      "combined_odds": 2.85,
+      "potential_return_pln": 5.07,
+      "gross_return_pln": 5.07,
+      "status": "won",
+      "net_result_pln": 3.05,
+      "selections": [
+        {
+          "match": "MOUZ vs Natus Vincere",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.50,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-18-C1/G1 (both picked MOUZ, PASS, won). Settled: MOUZ beat NAVI 2:1."
+        },
+        {
+          "match": "NRG vs Aurora",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge predictions P-2026-09-18-C3/G3 (claude picked Aurora, gpt picked NRG, both PASS). Settled: Aurora swept NRG 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 161,
-    "won": 52,
+    "coupons": 162,
+    "won": 53,
     "lost": 109,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 357.33,
-    "gross_return_pln": 236.69,
-    "net_result_pln": -120.64,
-    "roi": -0.3376
+    "total_staked_pln": 359.35,
+    "gross_return_pln": 241.76,
+    "net_result_pln": -117.59,
+    "roi": -0.3272
   },
   "archived_predictions": [
     {
