@@ -13443,10 +13443,10 @@
       "risk": "Wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.44,
       "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. Obie ekipy po porazkach dnia 1: MOUZ 1:2 z NRG (Cache 11:13, Inferno 13:5, Dust2 10:13; xertioN najwyzszy Rating 3.0 meczu), NAVI 0:2 z Aurora (Nuke 8:13, Mirage 7:13 na wlasnej najlepszej mapie). MOUZ #3 HLTV / #4 VRS po stracie 31 pkt, NAVI #10 HLTV / #14 VRS. Ruch +2.6 pp powyzej rynku na asymetrii charakteru obu porazek; celowo maly, bo to argument z bilansu biezacego turnieju, dwukrotnie sprostowany przy FISSURE. Settled: MOUZ beat NAVI 2:1."
+      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. Obie ekipy po porazkach dnia 1: MOUZ 1:2 z NRG (Cache 11:13, Inferno 13:5, Dust2 10:13; xertioN najwyzszy Rating 3.0 meczu), NAVI 0:2 z Aurora (Nuke 8:13, Mirage 7:13 na wlasnej najlepszej mapie). MOUZ #3 HLTV / #4 VRS po stracie 31 pkt, NAVI #10 HLTV / #14 VRS. Ruch +2.6 pp powyzej rynku na asymetrii charakteru obu porazek; celowo maly, bo to argument z bilansu biezacego turnieju, dwukrotnie sprostowany przy FISSURE. Settled: MOUZ beat NAVI 2:1. Closing: MOUZ 1.44 / NAVI 2.60 (11:54, 6 min przed meczem) -- rynek przesunal sie w strone MOUZ (1.50 -> 1.44), CLV +4.2%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-18-C2",
@@ -13468,10 +13468,10 @@
       "risk": "Srednie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.30,
       "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. magic nadal bez AW (wizy), trener eksiver stoi w skladzie na caly turniej. Pierwszy odczyt kosztu stand-ina przeciwko rywalowi z tej samej polki -- wczorajsze 0:2 z Vitality niczego nie rozstrzyga. MIBR po 1:2 z FURIA, wczesniej polfinal FISSURE Playground 3. Ruch +2.6 pp powyzej rynku wylacznie na jakosci stand-ina. Settled: MIBR beat magic 2:1."
+      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. magic nadal bez AW (wizy), trener eksiver stoi w skladzie na caly turniej. Pierwszy odczyt kosztu stand-ina przeciwko rywalowi z tej samej polki -- wczorajsze 0:2 z Vitality niczego nie rozstrzyga. MIBR po 1:2 z FURIA, wczesniej polfinal FISSURE Playground 3. Ruch +2.6 pp powyzej rynku wylacznie na jakosci stand-ina. Settled: MIBR beat magic 2:1. Closing: magic 3.25 / MIBR 1.30 (14:46, wg Dominika 14 min przed meczem, czyli start ok. 15:00 a nie 14:30) -- identyczne z kursem analizy, CLV +0.0%."
     },
     {
       "id": "P-2026-09-18-C3",
@@ -13493,10 +13493,10 @@
       "risk": "Srednio-wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.23,
       "result": "won",
       "method_version": "v1",
-      "notes": "Polfinal gornej drabinki BO3. NRG po sensacji z MOUZ (+129 pkt VRS, awans o 18 miejsc na 33.), wyceniani wczoraj na 13.1% przeciw MOUZ, dzis 24.9% przeciw Aurorze -- po rozbiciu na czynniki wiekszosc skoku tlumaczy zmiana przeciwnika z #3 na #9, wiec nie traktuje tego jako przereagowania rynku. Aurora 2:0 z NAVI na Nuke i Mirage, dwie mapy na serwerze. Ruch +1.3 pp, brak konkretnego powodu do dalszego odejscia. Settled: Aurora swept NRG 2:0."
+      "notes": "Polfinal gornej drabinki BO3. NRG po sensacji z MOUZ (+129 pkt VRS, awans o 18 miejsc na 33.), wyceniani wczoraj na 13.1% przeciw MOUZ, dzis 24.9% przeciw Aurorze -- po rozbiciu na czynniki wiekszosc skoku tlumaczy zmiana przeciwnika z #3 na #9, wiec nie traktuje tego jako przereagowania rynku. Aurora 2:0 z NAVI na Nuke i Mirage, dwie mapy na serwerze. Ruch +1.3 pp, brak konkretnego powodu do dalszego odejscia. Settled: Aurora swept NRG 2:0. Closing: NRG 3.70 / Aurora 1.23 (bez godziny odczytu) -- identyczne z kursem analizy, CLV +0.0%; snapshot bez znacznika czasu, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-18-C4",
@@ -13518,10 +13518,10 @@
       "risk": "Srednie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.33,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Polfinal gornej drabinki BO3. Vitality w pelnym skladzie (mezii wrocil), wczoraj 2:0 z magic -- dwie mapy, najmniej czasu na serwerze w gornej drabince. FURIA 2:1 z MIBR (trzy mapy) plus przelot z Suzhou po wylocie z FISSURE Playground 3 11.09. Argument obciazeniowy swiadomie nieprzewazony: ten sam argument sprostowany dwukrotnie w zeszlym tygodniu. Ruch +0.8 pp, najmniejszy dnia."
+      "notes": "Polfinal gornej drabinki BO3. Vitality w pelnym skladzie (mezii wrocil), wczoraj 2:0 z magic -- dwie mapy, najmniej czasu na serwerze w gornej drabince. FURIA 2:1 z MIBR (trzy mapy) plus przelot z Suzhou po wylocie z FISSURE Playground 3 11.09. Argument obciazeniowy swiadomie nieprzewazony: ten sam argument sprostowany dwukrotnie w zeszlym tygodniu. Ruch +0.8 pp, najmniejszy dnia. Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-18-G1",
@@ -13536,13 +13536,13 @@
       "market_odds_at_analysis": 1.50,
       "market_odds_opponent": 2.40,
       "odds_timestamp": "2026-09-18T08:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.44,
       "decision": "PASS",
       "confidence": 5,
       "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: MOUZ beat NAVI 2:1."
+      "notes": "Settled: MOUZ beat NAVI 2:1. Closing: MOUZ 1.44 / NAVI 2.60 (11:54, 6 min przed meczem) -- rynek przesunal sie w strone MOUZ (1.50 -> 1.44), CLV +4.2%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-18-G2",
@@ -13557,13 +13557,13 @@
       "market_odds_at_analysis": 1.30,
       "market_odds_opponent": 3.25,
       "odds_timestamp": "2026-09-18T08:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.30,
       "decision": "PASS",
       "confidence": 4,
       "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: MIBR beat magic 2:1."
+      "notes": "Settled: MIBR beat magic 2:1. Closing: magic 3.25 / MIBR 1.30 (14:46, wg Dominika 14 min przed meczem, czyli start ok. 15:00 a nie 14:30) -- identyczne z kursem analizy, CLV +0.0%."
     },
     {
       "id": "P-2026-09-18-G3",
@@ -13578,13 +13578,13 @@
       "market_odds_at_analysis": 3.70,
       "market_odds_opponent": 1.23,
       "odds_timestamp": "2026-09-18T08:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 3.70,
       "decision": "PASS",
       "confidence": 6,
       "result": "lost",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: Aurora swept NRG 2:0."
+      "notes": "Settled: Aurora swept NRG 2:0. Closing: NRG 3.70 / Aurora 1.23 (bez godziny odczytu) -- identyczne z kursem analizy, CLV +0.0%; snapshot bez znacznika czasu, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-18-G4",
@@ -13599,12 +13599,13 @@
       "market_odds_at_analysis": 1.33,
       "market_odds_opponent": 3.05,
       "odds_timestamp": "2026-09-18T08:00:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 1.33,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem."
     }
   ]
 }
