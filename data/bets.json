@@ -13386,9 +13386,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. Obie ekipy po porazkach dnia 1: MOUZ 1:2 z NRG (Cache 11:13, Inferno 13:5, Dust2 10:13; xertioN najwyzszy Rating 3.0 meczu), NAVI 0:2 z Aurora (Nuke 8:13, Mirage 7:13 na wlasnej najlepszej mapie). MOUZ #3 HLTV / #4 VRS po stracie 31 pkt, NAVI #10 HLTV / #14 VRS. Ruch +2.6 pp powyzej rynku na asymetrii charakteru obu porazek; celowo maly, bo to argument z bilansu biezacego turnieju, dwukrotnie sprostowany przy FISSURE."
+      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. Obie ekipy po porazkach dnia 1: MOUZ 1:2 z NRG (Cache 11:13, Inferno 13:5, Dust2 10:13; xertioN najwyzszy Rating 3.0 meczu), NAVI 0:2 z Aurora (Nuke 8:13, Mirage 7:13 na wlasnej najlepszej mapie). MOUZ #3 HLTV / #4 VRS po stracie 31 pkt, NAVI #10 HLTV / #14 VRS. Ruch +2.6 pp powyzej rynku na asymetrii charakteru obu porazek; celowo maly, bo to argument z bilansu biezacego turnieju, dwukrotnie sprostowany przy FISSURE. Settled: MOUZ beat NAVI 2:1."
     },
     {
       "id": "P-2026-09-18-C2",
@@ -13411,9 +13411,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. magic nadal bez AW (wizy), trener eksiver stoi w skladzie na caly turniej. Pierwszy odczyt kosztu stand-ina przeciwko rywalowi z tej samej polki -- wczorajsze 0:2 z Vitality niczego nie rozstrzyga. MIBR po 1:2 z FURIA, wczesniej polfinal FISSURE Playground 3. Ruch +2.6 pp powyzej rynku wylacznie na jakosci stand-ina."
+      "notes": "Dolna drabinka runda 1, mecz eliminacyjny BO3. magic nadal bez AW (wizy), trener eksiver stoi w skladzie na caly turniej. Pierwszy odczyt kosztu stand-ina przeciwko rywalowi z tej samej polki -- wczorajsze 0:2 z Vitality niczego nie rozstrzyga. MIBR po 1:2 z FURIA, wczesniej polfinal FISSURE Playground 3. Ruch +2.6 pp powyzej rynku wylacznie na jakosci stand-ina. Settled: MIBR beat magic 2:1."
     },
     {
       "id": "P-2026-09-18-C3",
@@ -13436,9 +13436,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Polfinal gornej drabinki BO3. NRG po sensacji z MOUZ (+129 pkt VRS, awans o 18 miejsc na 33.), wyceniani wczoraj na 13.1% przeciw MOUZ, dzis 24.9% przeciw Aurorze -- po rozbiciu na czynniki wiekszosc skoku tlumaczy zmiana przeciwnika z #3 na #9, wiec nie traktuje tego jako przereagowania rynku. Aurora 2:0 z NAVI na Nuke i Mirage, dwie mapy na serwerze. Ruch +1.3 pp, brak konkretnego powodu do dalszego odejscia."
+      "notes": "Polfinal gornej drabinki BO3. NRG po sensacji z MOUZ (+129 pkt VRS, awans o 18 miejsc na 33.), wyceniani wczoraj na 13.1% przeciw MOUZ, dzis 24.9% przeciw Aurorze -- po rozbiciu na czynniki wiekszosc skoku tlumaczy zmiana przeciwnika z #3 na #9, wiec nie traktuje tego jako przereagowania rynku. Aurora 2:0 z NAVI na Nuke i Mirage, dwie mapy na serwerze. Ruch +1.3 pp, brak konkretnego powodu do dalszego odejscia. Settled: Aurora swept NRG 2:0."
     },
     {
       "id": "P-2026-09-18-C4",
@@ -13481,9 +13481,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: MOUZ beat NAVI 2:1."
     },
     {
       "id": "P-2026-09-18-G2",
@@ -13501,9 +13502,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: MIBR beat magic 2:1."
     },
     {
       "id": "P-2026-09-18-G3",
@@ -13521,9 +13523,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: Aurora swept NRG 2:0."
     },
     {
       "id": "P-2026-09-18-G4",
