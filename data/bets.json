@@ -13521,7 +13521,7 @@
       "closing_odds": 1.33,
       "result": "won",
       "method_version": "v1",
-      "notes": "Polfinal gornej drabinki BO3. Vitality w pelnym skladzie (mezii wrocil), wczoraj 2:0 z magic -- dwie mapy, najmniej czasu na serwerze w gornej drabince. FURIA 2:1 z MIBR (trzy mapy) plus przelot z Suzhou po wylocie z FISSURE Playground 3 11.09. Argument obciazeniowy swiadomie nieprzewazony: ten sam argument sprostowany dwukrotnie w zeszlym tygodniu. Ruch +0.8 pp, najmniejszy dnia. Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem. Settled: Vitality beat FURIA 2:0 (wynik z raportow 19.09 i drabinki -- upper final Aurora vs Vitality, FURIA w dolnej; nie podany bezposrednio przez Dominika)."
+      "notes": "Polfinal gornej drabinki BO3. Vitality w pelnym skladzie (mezii wrocil), wczoraj 2:0 z magic -- dwie mapy, najmniej czasu na serwerze w gornej drabince. FURIA 2:1 z MIBR (trzy mapy) plus przelot z Suzhou po wylocie z FISSURE Playground 3 11.09. Argument obciazeniowy swiadomie nieprzewazony: ten sam argument sprostowany dwukrotnie w zeszlym tygodniu. Ruch +0.8 pp, najmniejszy dnia. Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem. Settled: Vitality beat FURIA 2:0 (potwierdzone przez Dominika)."
     },
     {
       "id": "P-2026-09-18-G1",
@@ -13605,7 +13605,7 @@
       "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem. Settled: Vitality beat FURIA 2:0 (wynik z raportow 19.09 i drabinki -- upper final Aurora vs Vitality, FURIA w dolnej; nie podany bezposrednio przez Dominika)."
+      "notes": "Closing: Vitality 1.33 / FURIA 3.05 (19:45, wg Dominika 45 min przed meczem, czyli start ok. 20:30 a nie 19:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt 45 min przed startem, moze nie byc prawdziwym zamknieciem. Settled: Vitality beat FURIA 2:0 (potwierdzone przez Dominika)."
     },
     {
       "id": "P-2026-09-19-C1",
@@ -13630,7 +13630,7 @@
       "closing_odds": 1.44,
       "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia. Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek przesunal sie w strone MIBR (1.45 -> 1.44), CLV +0.7%, zgodnie z kierunkiem picku."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia. Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; potwierdzone zrzutem HLTV od Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek przesunal sie w strone MIBR (1.45 -> 1.44), CLV +0.7%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-19-C2",
@@ -13655,7 +13655,7 @@
       "closing_odds": 1.60,
       "result": "lost",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy. Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy. Settled: FURIA beat MOUZ 2:1 (potwierdzone zrzutem HLTV od Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-19-C3",
@@ -13678,9 +13678,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": 1.30,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "Final gornej drabinki BO3. Oba zespoly niepokonane, 4:0 w mapach. Vitality w pelnym skladzie (mezii), przeszli magic i FURIE. Aurora przeszla NAVI i NRG, przy czym wczoraj wyszla z dwoch dogrywek przeciwko #50. Ruch +0.5 pp, brak mierzalnego powodu do odejscia od ceny. Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek odszedl od Vitality (1.26 -> 1.30), CLV -3.1%, przeciwnie do kierunku picku."
+      "notes": "Final gornej drabinki BO3. Oba zespoly niepokonane, 4:0 w mapach. Vitality w pelnym skladzie (mezii), przeszli magic i FURIE. Aurora przeszla NAVI i NRG, przy czym wczoraj wyszla z dwoch dogrywek przeciwko #50. Ruch +0.5 pp, brak mierzalnego powodu do odejscia od ceny. Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek odszedl od Vitality (1.26 -> 1.30), CLV -3.1%, przeciwnie do kierunku picku. Settled: Aurora beat Vitality 2:1 (final gornej drabinki; potwierdzone zrzutem HLTV od Dominika)."
     },
     {
       "id": "P-2026-09-19-G1",
@@ -13701,7 +13701,7 @@
       "result": "lost",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek odszedl od NRG (2.54 -> 2.60), CLV -2.3%, przeciwnie do kierunku picku."
+      "notes": "Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; potwierdzone zrzutem HLTV od Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek odszedl od NRG (2.54 -> 2.60), CLV -2.3%, przeciwnie do kierunku picku."
     },
     {
       "id": "P-2026-09-19-G2",
@@ -13722,7 +13722,7 @@
       "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
+      "notes": "Settled: FURIA beat MOUZ 2:1 (potwierdzone zrzutem HLTV od Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-19-G3",
@@ -13740,10 +13740,10 @@
       "closing_odds": 3.25,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek przesunal sie w strone Aurory (3.50 -> 3.25), CLV +7.7%, zgodnie z kierunkiem picku."
+      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek przesunal sie w strone Aurory (3.50 -> 3.25), CLV +7.7%, zgodnie z kierunkiem picku. Settled: Aurora beat Vitality 2:1 (final gornej drabinki; potwierdzone zrzutem HLTV od Dominika)."
     },
     {
       "id": "P-2026-09-19-C4",
@@ -13766,9 +13766,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Final dolnej drabinki BO3, rewanz cwiercfinalu z 17.09 w tych samych skladach (FURIA 2:1: Inferno 11:13 pick MIBR, Nuke 13:6 pick FURII, Cache 13:6). MIBR od tego czasu 2:0 z magic i 2:0 z NRG (Cache 13:7, Inferno 13:2). FURIA 0:2 z Vitality, dzis wyeliminowala MOUZ (szczegoly map niedostepne w chwili analizy). Ocena na de-vigu (-0.1 pp): wynik bezposredni i poprawa formy MIBR ciagna w przeciwne strony, brak policzalnego rozstrzygniecia. Obciazenie swiadomie niewazone (nazwany blad v1)."
+      "notes": "Final dolnej drabinki BO3, rewanz cwiercfinalu z 17.09 w tych samych skladach (FURIA 2:1: Inferno 11:13 pick MIBR, Nuke 13:6 pick FURII, Cache 13:6). MIBR od tego czasu 2:0 z magic i 2:0 z NRG (Cache 13:7, Inferno 13:2). FURIA 0:2 z Vitality, dzis wyeliminowala MOUZ (szczegoly map niedostepne w chwili analizy). Ocena na de-vigu (-0.1 pp): wynik bezposredni i poprawa formy MIBR ciagna w przeciwne strony, brak policzalnego rozstrzygniecia. Obciazenie swiadomie niewazone (nazwany blad v1). Settled: FURIA swept MIBR 2:0 (final dolnej drabinki; potwierdzone zrzutem HLTV od Dominika)."
     },
     {
       "id": "P-2026-09-19-G4",
@@ -13786,9 +13786,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: FURIA swept MIBR 2:0 (final dolnej drabinki; potwierdzone zrzutem HLTV od Dominika)."
     }
   ]
 }
