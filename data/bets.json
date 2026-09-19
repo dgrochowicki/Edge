@@ -13627,10 +13627,10 @@
       "risk": "Wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.44,
       "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia. Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika)."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia. Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek przesunal sie w strone MIBR (1.45 -> 1.44), CLV +0.7%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-19-C2",
@@ -13652,10 +13652,10 @@
       "risk": "Srednio-wysokie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.60,
       "result": "lost",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy. Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika)."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy. Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-19-C3",
@@ -13677,10 +13677,10 @@
       "risk": "Srednie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": null,
+      "closing_odds": 1.30,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Final gornej drabinki BO3. Oba zespoly niepokonane, 4:0 w mapach. Vitality w pelnym skladzie (mezii), przeszli magic i FURIE. Aurora przeszla NAVI i NRG, przy czym wczoraj wyszla z dwoch dogrywek przeciwko #50. Ruch +0.5 pp, brak mierzalnego powodu do odejscia od ceny."
+      "notes": "Final gornej drabinki BO3. Oba zespoly niepokonane, 4:0 w mapach. Vitality w pelnym skladzie (mezii), przeszli magic i FURIE. Aurora przeszla NAVI i NRG, przy czym wczoraj wyszla z dwoch dogrywek przeciwko #50. Ruch +0.5 pp, brak mierzalnego powodu do odejscia od ceny. Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek odszedl od Vitality (1.26 -> 1.30), CLV -3.1%, przeciwnie do kierunku picku."
     },
     {
       "id": "P-2026-09-19-G1",
@@ -13695,13 +13695,13 @@
       "market_odds_at_analysis": 2.54,
       "market_odds_opponent": 1.45,
       "odds_timestamp": "2026-09-19T09:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.60,
       "decision": "PASS",
       "confidence": 5,
       "result": "lost",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika)."
+      "notes": "Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika). Closing: MIBR 1.44 / NRG 2.60 (11:57, 3 min przed meczem) -- rynek odszedl od NRG (2.54 -> 2.60), CLV -2.3%, przeciwnie do kierunku picku."
     },
     {
       "id": "P-2026-09-19-G2",
@@ -13716,13 +13716,13 @@
       "market_odds_at_analysis": 2.20,
       "market_odds_opponent": 1.60,
       "odds_timestamp": "2026-09-19T09:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 2.20,
       "decision": "PASS",
       "confidence": 4,
       "result": "won",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika)."
+      "notes": "Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika). Closing: MOUZ 1.60 / FURIA 2.20 (13:45, ok. 45 min przed planowanym startem 14:30) -- identyczne z kursem analizy, CLV +0.0%; odczyt wczesniejszy niz 10 min przed startem, moze nie byc prawdziwym zamknieciem."
     },
     {
       "id": "P-2026-09-19-G3",
@@ -13737,12 +13737,13 @@
       "market_odds_at_analysis": 3.50,
       "market_odds_opponent": 1.26,
       "odds_timestamp": "2026-09-19T09:10:00+02:00",
-      "closing_odds": null,
+      "closing_odds": 3.25,
       "decision": "PASS",
       "confidence": 5,
       "result": "pending",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (17:12, po planowanym starcie 17:00 -- mecz najpewniej ruszyl pozniej) -- rynek przesunal sie w strone Aurory (3.50 -> 3.25), CLV +7.7%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-19-C4",
