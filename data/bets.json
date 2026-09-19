@@ -13628,9 +13628,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Ranking HLTV z 14.09 (MIBR #18, NRG #50) jest sprzed zwyciestwa NRG nad MOUZ; VRS przesunal NRG o 18 miejsc na 33., wiec realny dystans to ok. #18 vs #33. NRG wczoraj 0:2 z Aurora, ale druga mapa oddana dopiero 17:19 w drugiej dogrywce po prowadzeniu 11:7. MIBR w skladzie z tomaszinem trzeci tydzien. Ocena postawiona DOKLADNIE na de-vigu rynku, ruch 0.0 pp -- pierwszy taki wpis w projekcie; brak mierzalnego powodu do odejscia. Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika)."
     },
     {
       "id": "P-2026-09-19-C2",
@@ -13653,9 +13653,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": null,
-      "result": "pending",
+      "result": "lost",
       "method_version": "v1",
-      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy."
+      "notes": "Dolna drabinka runda 2, mecz eliminacyjny BO3. Najblizsza ceny fair wycena w turnieju (-0.6%). Podstawa odejscia +4.2 pp: map pool obecnej piatki MOUZ (Inferno 100%/5, Mirage 89%/9, Nuke 75%/8, Dust2 60%/10) wobec FURII bez mapy powyzej 71%; oraz rozjazd VRS (MOUZ #3/1870 pkt, FURIA #8/1770) przy jednym miejscu roznicy w HLTV (#3 vs #4). Kontrargument: FURIA wygrala obie serie w 2026 (2:0 IEM Rio, 2:1 Major Kolonia), H2H w mapach 9:7. KOREKTA wczorajszego wpisu C1: teza o 'rozbudowanym na nowo skladzie MOUZ' byla nieprecyzyjna -- obecna piatka ma 9-10 map na mape w ostatnich 3 miesiacach, gra razem od miesiecy. Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika)."
     },
     {
       "id": "P-2026-09-19-C3",
@@ -13698,9 +13698,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: MIBR beat NRG 2:0 (Cache 13:7, Inferno 13:2 wg aneksow 19.09; wynik z aneksow i drabinki, nie podany bezposrednio przez Dominika)."
     },
     {
       "id": "P-2026-09-19-G2",
@@ -13718,9 +13719,10 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 4,
-      "result": "pending",
+      "result": "won",
       "agent": "gpt",
-      "method_version": "v1"
+      "method_version": "v1",
+      "notes": "Settled: FURIA beat MOUZ, eliminujac MOUZ (wynik z aneksow 19.09 i drabinki -- MIBR vs FURIA gra final dolnej; wynik map nieznany; nie podany bezposrednio przez Dominika)."
     },
     {
       "id": "P-2026-09-19-G3",
@@ -13738,6 +13740,51 @@
       "closing_odds": null,
       "decision": "PASS",
       "confidence": 5,
+      "result": "pending",
+      "agent": "gpt",
+      "method_version": "v1"
+    },
+    {
+      "id": "P-2026-09-19-C4",
+      "agent": "claude",
+      "report": "reports/2026-09-19b-claude.md",
+      "date": "2026-09-19",
+      "game": "cs2",
+      "match": "MIBR vs FURIA",
+      "market": "moneyline",
+      "pick": "FURIA",
+      "bookmaker": "STS",
+      "market_odds_at_analysis": 1.35,
+      "market_odds_opponent": 2.95,
+      "odds_timestamp": "2026-09-19T17:14:00+02:00",
+      "fair_odds": 1.46,
+      "estimated_probability": 0.6849,
+      "value_pct": -7.5,
+      "confidence": 3,
+      "risk": "Srednio-wysokie",
+      "decision": "PASS",
+      "stake_units": 0,
+      "closing_odds": null,
+      "result": "pending",
+      "method_version": "v1",
+      "notes": "Final dolnej drabinki BO3, rewanz cwiercfinalu z 17.09 w tych samych skladach (FURIA 2:1: Inferno 11:13 pick MIBR, Nuke 13:6 pick FURII, Cache 13:6). MIBR od tego czasu 2:0 z magic i 2:0 z NRG (Cache 13:7, Inferno 13:2). FURIA 0:2 z Vitality, dzis wyeliminowala MOUZ (szczegoly map niedostepne w chwili analizy). Ocena na de-vigu (-0.1 pp): wynik bezposredni i poprawa formy MIBR ciagna w przeciwne strony, brak policzalnego rozstrzygniecia. Obciazenie swiadomie niewazone (nazwany blad v1)."
+    },
+    {
+      "id": "P-2026-09-19-G4",
+      "date": "2026-09-19",
+      "report": "reports/2026-09-19b-gpt.md",
+      "game": "cs2",
+      "match": "MIBR vs FURIA",
+      "market": "moneyline",
+      "pick": "FURIA",
+      "estimated_probability": 0.6803,
+      "fair_odds": 1.47,
+      "market_odds_at_analysis": 1.35,
+      "market_odds_opponent": 2.95,
+      "odds_timestamp": "2026-09-19T17:14:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 4,
       "result": "pending",
       "agent": "gpt",
       "method_version": "v1"
