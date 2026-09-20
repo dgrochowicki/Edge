@@ -217,6 +217,21 @@ A 28 Jul audit found `predictions` still wasn't a clean tier-1 sample even after
 
 After the 28 Jul archive reset both agents below 50 settled-with-estimate, collection continued through the rest of BLAST Bounty and the EWC 2026 group stage. As of 2026-08-16: **claude 70 settled, gpt 67 settled** (both `method_version: v1`, clean tier-1 CS2 sample). Both are solidly in the **Preliminary signal** stage (50–99) per the verdict-staging rule in PLAYBOOK — still well short of Emerging pattern (100) and Validation checkpoint (150). No metrics are computed or surfaced from this; it is only a milestone note per the "document each version bump / stage crossing" logging habit. No method or threshold change.
 
+### v1 validation checkpoint (150) reached — 2026-09-19
+
+Both agents crossed 150 settled `v1` predictions during StarLadder StarSeries Fall 2026. Verdict computed on the **first 150 per agent, ordered by `date` then `id`** (rule clarified here: the checkpoint is never recomputed at a later N).
+
+| Agent × version | Brier | Market (de-vigged STS) | Diff | Verdict |
+|---|---:|---:|---:|---|
+| claude × v1 | 0.21523 | 0.21503 | +0.00020 | **not validated** |
+| gpt × v1 | 0.20759 | 0.20793 | −0.00034 | **validated** |
+
+**Caveat that must travel with the verdict:** neither difference is distinguishable from zero (95% bootstrap CI ±0.0045 claude, ±0.006 gpt; P(agent beats market) 0.47 / 0.54), and each verdict flips if a single match is removed (claude: FURIA vs DENDELE 24.07; gpt: 3DMAX vs FUT 26.07). Detecting a realistic 0.002 Brier edge would need ~800–1,400 predictions per agent. On the 141 matches both agents priced, both were marginally better than the market (gpt 0.19997, claude 0.20094, market 0.20130).
+
+Corrections recorded in the report: the "+2pp toward the pick" bias belongs to gpt (+2.17pp mean move), not claude (+0.28pp; −0.03pp on favorites). claude's losses vs the market come from moves *below* market (n=40), not from raising favorites.
+
+Consequences per PLAYBOOK / v2 spec §23: claude × v1 ends real-money use (paper baseline continues); gpt × v1 formally may continue; v2 is not auto-promoted. Operator decisions (real money for gpt, direction, v2 primary metric) are open in `docs/decisions/2026-09-19-v1-checkpoint-150.md`. Full analysis: `reports/summaries/v1-checkpoint-150.md`.
+
 ## Current Running Result
 
 Snapshot as of 2026-08-16 (EDGE-001 through EDGE-043):

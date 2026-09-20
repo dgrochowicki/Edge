@@ -131,6 +131,17 @@ To rozszerza istniejący w sekcji 2 komponent „wyniki map vs top-tier" — ale
 
 **Status:** kandydat na komponent v2, mierzalny w zasadzie, ale **zablokowany na dostępności danych mapowych** — wymaga strukturalnego zbierania wyników per mapa (round score), czego dziś nie robimy. Pierwszy krok operacyjny (jeśli zdecydujemy iść w tę stronę): dopisać do pipeline'u zbieranie round score per mapa dla meczów tier-1, równolegle do obecnych predykcji, żeby zacząć budować próbkę ARD zanim v2 wystartuje.
 
+## 9. Wejście z checkpointu v1 (2026-09-19)
+
+Pełna analiza: `reports/summaries/v1-checkpoint-150.md`. Tu tylko to, co zmienia projektowanie v2. Zasada z góry tego pliku obowiązuje: to są wnioski z próbki v1, a nie reguły do strojenia na niej.
+
+1. **Brier przy 150 nie odróżnił żadnego agenta od rynku** (P 0.47 i 0.54, CI ±0.0045 i ±0.006). v2 oceniane tym samym testem skończy bez odpowiedzi. **Przed startem v2 trzeba pre-rejestrować miarę główną, która nie zależy od wyniku meczu.** Kandydat: odsetek odejść od rynku, przy których linia zamknięcia poszła w stronę agenta (v1: claude 47%, gpt 55%, oba na poziomie przypadku). Warunek techniczny: kurs zamknięcia po obu stronach, dla wszystkich predykcji. W schemacie trzeba dodać `closing_odds_opponent`.
+2. **Obciążenie jest inne u każdego agenta.** claude traci na odejściach poniżej rynku (n=40, wkład +0.1535). gpt średnio podnosi pick o +2.17 pp i traci na underdogach (28 picków, 29% trafień). Punkt 13 specyfikacji v2 (ograniczenie nadmiernego odejścia od rynku) ma więc dwa różne cele w zależności od agenta.
+3. **Skrajni faworyci (90%+) przeszacowani przez rynek i obu agentów** (claude 5 porażek na 13, gpt 4 na 15). Hipoteza do testu na świeżej próbce, bez korekty v1.
+4. **Doprecyzowanie licznika:** checkpoint N to pierwsze N w kolejności `date`, potem `id`. Tak samo ma liczyć v2.
+
 ## Następny krok
+
+*[Zaktualizowane 2026-09-19: v1 osiągnęło checkpoint 150 u obu agentów — zob. sekcja 9. Tekst poniżej opisuje plan sprzed checkpointu.]*
 
 Zbierać dane dalej pod v1 przez najbliższy tier-1 (EWC zamrożone), aż każdy agent dobije własną próbkę do 150. Równolegle rozwijać sekcję 2 tego pliku do pełnych, policzalnych definicji i rozstrzygać otwarte pytania z sekcji 6. Gdy definicje są zamknięte — przenieść zatwierdzoną metodę do PLAYBOOK.md jako v2, odnotować bump w PROJECT_MEMORY (co, dlaczego, jaki werdykt go wyzwolił) i w `docs/decisions/`, i dopiero wtedy uruchomić pierwszy wpis `method_version: v2` — domyślnie jako shadow run z sekcji 7, potwierdzony przy checkpoincie 150 v1. Decyzja, czy v2 awansuje z shadow na metodę oficjalną, zapada osobno: gdy v1 ma swój werdykt z 150, a v2 dość sparowanych danych shadow, by go ocenić.
