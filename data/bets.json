@@ -13893,10 +13893,10 @@
       "risk": "Srednie",
       "decision": "PASS",
       "stake_units": 0,
-      "closing_odds": 1.35,
+      "closing_odds": 1.36,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Final konsolidacyjny BO3 (nie wielki final). Rewanz polfinalu z 18.09: Vitality 2:0 (Mirage 13:8, Dust2 13:5; ZywOo 1.63). Od tego czasu Vitality przegrali 1:2 z Aurora (reszta skladu 0.77-0.94), a FURIA wygrala 2:1 z MOUZ i 2:0 z MIBR jednego dnia. Sygnaly w przeciwnych kierunkach, ocena na de-vigu (-0.2 pp). Obciazenie FURII (5 map 19.09, w tym Mirage 35 rund) swiadomie niewazone -- nazwany blad v1 i glowne zrodlo strat claude'a na checkpoincie 150. Closing: Vitality 1.35 / FURIA 2.95 (4 min przed meczem, ok. 13:56; odczyt z 13:50 identyczny) -- rynek odszedl od Vitality (1.32 -> 1.35), CLV -2.2%, przeciwnie do kierunku picku."
+      "notes": "Final konsolidacyjny BO3 (nie wielki final). Rewanz polfinalu z 18.09: Vitality 2:0 (Mirage 13:8, Dust2 13:5; ZywOo 1.63). Od tego czasu Vitality przegrali 1:2 z Aurora (reszta skladu 0.77-0.94), a FURIA wygrala 2:1 z MOUZ i 2:0 z MIBR jednego dnia. Sygnaly w przeciwnych kierunkach, ocena na de-vigu (-0.2 pp). Obciazenie FURII (5 map 19.09, w tym Mirage 35 rund) swiadomie niewazone -- nazwany blad v1 i glowne zrodlo strat claude'a na checkpoincie 150. Closing: Vitality 1.36 / FURIA 2.90 (1 min przed meczem, ok. 13:59; wczesniejsze odczyty: 13:50 i 13:56 po 1.35 / 2.95) -- rynek odszedl od Vitality (1.32 -> 1.36), CLV -2.9%, przeciwnie do kierunku picku."
     },
     {
       "id": "P-2026-09-20-G1",
@@ -13911,13 +13911,13 @@
       "market_odds_at_analysis": 1.32,
       "market_odds_opponent": 3.10,
       "odds_timestamp": "2026-09-20T08:05:00+02:00",
-      "closing_odds": 1.35,
+      "closing_odds": 1.36,
       "decision": "PASS",
       "confidence": 4,
       "result": "pending",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Vitality 1.35 / FURIA 2.95 (4 min przed meczem, ok. 13:56; odczyt z 13:50 identyczny) -- rynek odszedl od Vitality (1.32 -> 1.35), CLV -2.2%, przeciwnie do kierunku picku."
+      "notes": "Closing: Vitality 1.36 / FURIA 2.90 (1 min przed meczem, ok. 13:59; wczesniejsze odczyty: 13:50 i 13:56 po 1.35 / 2.95) -- rynek odszedl od Vitality (1.32 -> 1.36), CLV -2.9%, przeciwnie do kierunku picku."
     }
   ]
 }
