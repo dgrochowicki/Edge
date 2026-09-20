@@ -6207,19 +6207,43 @@
           "notes": "Same match as Edge predictions P-2026-09-19-C3/G3 (claude Vitality, gpt Aurora, both PASS). Settled: Aurora beat Vitality 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-166",
+      "date": "2026-09-20",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.07,
+      "combined_odds": 2.25,
+      "potential_return_pln": 4.10,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Vitality vs FURIA",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge predictions P-2026-09-20-C1/G1 (both picked Vitality, PASS). Placed live at 14:26, 1st map, 0:0 rounds at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 165,
+    "coupons": 166,
     "won": 55,
     "lost": 110,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 365.71,
+    "pending": 1,
+    "total_staked_pln": 367.78,
     "gross_return_pln": 250.68,
-    "net_result_pln": -115.03,
-    "roi": -0.3145
+    "net_result_pln": -117.10,
+    "roi": -0.3184
   },
   "archived_predictions": [
     {
