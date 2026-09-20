@@ -6241,8 +6241,8 @@
       "combined_odds": 1.90,
       "potential_return_pln": 4.01,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.40,
       "selections": [
         {
           "match": "Aurora vs Vitality",
@@ -6251,8 +6251,8 @@
           "odds": 1.90,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-20-C2/G2 (claude Vitality, gpt Aurora, both PASS). Grand final BO5. Placed live, 1st map, 0:0 rounds at time of bet."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-20-C2/G2 (claude Vitality, gpt Aurora, both PASS). Grand final BO5. Placed live, 1st map, 0:0 rounds at time of bet. Settled: Vitality won 3:1, Aurora took only one map, so +1.5 (needs two maps) did not cover."
         }
       ]
     },
@@ -6265,8 +6265,8 @@
       "combined_odds": 3.35,
       "potential_return_pln": 5.90,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
       "selections": [
         {
           "match": "Aurora vs Vitality",
@@ -6275,8 +6275,8 @@
           "odds": 3.35,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge predictions P-2026-09-20-C2/G2 (claude Vitality, gpt Aurora, both PASS). Grand final BO5. Placed live, 1st map, 0:0 rounds at time of bet."
+          "result": "lost",
+          "notes": "Same match as Edge predictions P-2026-09-20-C2/G2 (claude Vitality, gpt Aurora, both PASS). Grand final BO5. Placed live, 1st map, 0:0 rounds at time of bet. Settled: Vitality beat Aurora 3:1."
         }
       ]
     },
@@ -6309,9 +6309,9 @@
   "summary": {
     "coupons": 169,
     "won": 55,
-    "lost": 112,
+    "lost": 114,
     "voided": 0,
-    "pending": 2,
+    "pending": 0,
     "total_staked_pln": 374.18,
     "gross_return_pln": 250.68,
     "net_result_pln": -123.50,
@@ -14036,9 +14036,9 @@
       "decision": "PASS",
       "stake_units": 0,
       "closing_odds": 1.30,
-      "result": "pending",
+      "result": "won",
       "method_version": "v1",
-      "notes": "Wielki final BO5, jedyny BO5 turnieju. Rewanz finalu gornej drabinki z 19.09 (Aurora 2:1: Anubis 13:7, Inferno 11:13, Nuke 13:8). Vitality dzis 2:0 z FURIA (Cache 13:5, Anubis 13:8; ZywOo 1.88, ropz 1.36). Rynek: 69.6% w BO5 = ok. 61% na mape, wobec ok. 66% na mape przed wczorajszym meczem. Ocena na de-vigu (-0.2 pp). Wypoczynek Aurory swiadomie niewazony. odds_timestamp = godzina wiadomosci z kursami, dokladny czas odczytu niepodany. Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek przesunal sie w strone Vitality (1.33 -> 1.30), CLV +2.3%, zgodnie z kierunkiem picku."
+      "notes": "Wielki final BO5, jedyny BO5 turnieju. Rewanz finalu gornej drabinki z 19.09 (Aurora 2:1: Anubis 13:7, Inferno 11:13, Nuke 13:8). Vitality dzis 2:0 z FURIA (Cache 13:5, Anubis 13:8; ZywOo 1.88, ropz 1.36). Rynek: 69.6% w BO5 = ok. 61% na mape, wobec ok. 66% na mape przed wczorajszym meczem. Ocena na de-vigu (-0.2 pp). Wypoczynek Aurory swiadomie niewazony. odds_timestamp = godzina wiadomosci z kursami, dokladny czas odczytu niepodany. Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek przesunal sie w strone Vitality (1.33 -> 1.30), CLV +2.3%, zgodnie z kierunkiem picku. Settled: Vitality beat Aurora 3:1 in the grand final, winning StarSeries Fall 2026."
     },
     {
       "id": "P-2026-09-20-G2",
@@ -14056,10 +14056,10 @@
       "closing_odds": 3.25,
       "decision": "PASS",
       "confidence": 6,
-      "result": "pending",
+      "result": "lost",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek odszedl od Aurory (3.05 -> 3.25), CLV -6.2%, przeciwnie do kierunku picku."
+      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek odszedl od Aurory (3.05 -> 3.25), CLV -6.2%, przeciwnie do kierunku picku. Settled: Vitality beat Aurora 3:1 in the grand final, winning StarSeries Fall 2026."
     }
   ]
 }
