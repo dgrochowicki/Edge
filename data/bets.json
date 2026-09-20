@@ -13966,7 +13966,7 @@
       "closing_odds": 1.30,
       "result": "pending",
       "method_version": "v1",
-      "notes": "Wielki final BO5, jedyny BO5 turnieju. Rewanz finalu gornej drabinki z 19.09 (Aurora 2:1: Anubis 13:7, Inferno 11:13, Nuke 13:8). Vitality dzis 2:0 z FURIA (Cache 13:5, Anubis 13:8; ZywOo 1.88, ropz 1.36). Rynek: 69.6% w BO5 = ok. 61% na mape, wobec ok. 66% na mape przed wczorajszym meczem. Ocena na de-vigu (-0.2 pp). Wypoczynek Aurory swiadomie niewazony. odds_timestamp = godzina wiadomosci z kursami, dokladny czas odczytu niepodany. Closing: Aurora 3.25 / Vitality 1.30 (bez godziny odczytu) -- rynek przesunal sie w strone Vitality (1.33 -> 1.30), CLV +2.3%, zgodnie z kierunkiem picku."
+      "notes": "Wielki final BO5, jedyny BO5 turnieju. Rewanz finalu gornej drabinki z 19.09 (Aurora 2:1: Anubis 13:7, Inferno 11:13, Nuke 13:8). Vitality dzis 2:0 z FURIA (Cache 13:5, Anubis 13:8; ZywOo 1.88, ropz 1.36). Rynek: 69.6% w BO5 = ok. 61% na mape, wobec ok. 66% na mape przed wczorajszym meczem. Ocena na de-vigu (-0.2 pp). Wypoczynek Aurory swiadomie niewazony. odds_timestamp = godzina wiadomosci z kursami, dokladny czas odczytu niepodany. Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek przesunal sie w strone Vitality (1.33 -> 1.30), CLV +2.3%, zgodnie z kierunkiem picku."
     },
     {
       "id": "P-2026-09-20-G2",
@@ -13987,7 +13987,7 @@
       "result": "pending",
       "agent": "gpt",
       "method_version": "v1",
-      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (bez godziny odczytu) -- rynek odszedl od Aurory (3.05 -> 3.25), CLV -6.2%, przeciwnie do kierunku picku."
+      "notes": "Closing: Aurora 3.25 / Vitality 1.30 (16:57, 3 min przed meczem) -- rynek odszedl od Aurory (3.05 -> 3.25), CLV -6.2%, przeciwnie do kierunku picku."
     }
   ]
 }
