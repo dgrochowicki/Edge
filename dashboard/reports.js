@@ -35,7 +35,7 @@ function agentLabel(key) {
 }
 const SUMMARY_FILENAME_RE = /^(.+)-([a-zA-Z0-9]+)$/;
 const PHASE_ORDER = ['group', 'playoffs', 'final'];
-const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary' };
+const PHASE_LABELS = { group: 'Group Stage', playoffs: 'Playoffs', final: 'Summary', '150': 'Checkpoint 150' };
 
 // Per-tournament display name, external reference link, and end date. Keyed
 // by the tournament slug used in the reports/summaries/ filenames. `end` is
@@ -54,6 +54,10 @@ const TOURNAMENT_META = {
     },
     'FISSURE-Playground-3-2026': {
         end: '2026-09-10'
+    },
+    'v1-checkpoint': {
+        name: 'Method v1 checkpoint',
+        end: '2026-09-19'
     }
 };
 
