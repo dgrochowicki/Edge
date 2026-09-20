@@ -58,6 +58,11 @@ const TOURNAMENT_META = {
     'v1-checkpoint': {
         name: 'Method v1 checkpoint',
         end: '2026-09-19'
+    },
+    'StarLadder-StarSeries-Fall-2026': {
+        name: 'StarLadder StarSeries Fall 2026',
+        hltv: 'https://www.hltv.org/events/8057/starladder-starseries-fall-2026',
+        end: '2026-09-20'
     }
 };
 
