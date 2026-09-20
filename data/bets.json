@@ -6279,19 +6279,43 @@
           "notes": "Same match as Edge predictions P-2026-09-20-C2/G2 (claude Vitality, gpt Aurora, both PASS). Grand final BO5. Placed live, 1st map, 0:0 rounds at time of bet."
         }
       ]
+    },
+    {
+      "id": "EDGE-169",
+      "date": "2026-09-20",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.80,
+      "potential_return_pln": 4.93,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "BRUTE vs 33",
+          "market": "moneyline",
+          "pick": "BRUTE",
+          "odds": 2.80,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for 33 at time of bet (Dominik expects it to lose; not settled yet)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 168,
+    "coupons": 169,
     "won": 55,
     "lost": 111,
     "voided": 0,
-    "pending": 2,
-    "total_staked_pln": 372.18,
+    "pending": 3,
+    "total_staked_pln": 374.18,
     "gross_return_pln": 250.68,
-    "net_result_pln": -121.50,
-    "roi": -0.3265
+    "net_result_pln": -123.50,
+    "roi": -0.3301
   },
   "archived_predictions": [
     {
