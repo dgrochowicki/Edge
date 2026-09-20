@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-19",
+  "updated_at": "2026-09-20",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -13872,6 +13872,51 @@
       "agent": "gpt",
       "method_version": "v1",
       "notes": "Settled: FURIA swept MIBR 2:0 (final dolnej drabinki; potwierdzone zrzutem HLTV od Dominika)."
+    },
+    {
+      "id": "P-2026-09-20-C1",
+      "agent": "claude",
+      "report": "reports/2026-09-20-claude.md",
+      "date": "2026-09-20",
+      "game": "cs2",
+      "match": "Vitality vs FURIA",
+      "market": "moneyline",
+      "pick": "Vitality",
+      "bookmaker": "STS",
+      "market_odds_at_analysis": 1.32,
+      "market_odds_opponent": 3.10,
+      "odds_timestamp": "2026-09-20T08:08:00+02:00",
+      "fair_odds": 1.43,
+      "estimated_probability": 0.6993,
+      "value_pct": -7.7,
+      "confidence": 3,
+      "risk": "Srednie",
+      "decision": "PASS",
+      "stake_units": 0,
+      "closing_odds": null,
+      "result": "pending",
+      "method_version": "v1",
+      "notes": "Final konsolidacyjny BO3 (nie wielki final). Rewanz polfinalu z 18.09: Vitality 2:0 (Mirage 13:8, Dust2 13:5; ZywOo 1.63). Od tego czasu Vitality przegrali 1:2 z Aurora (reszta skladu 0.77-0.94), a FURIA wygrala 2:1 z MOUZ i 2:0 z MIBR jednego dnia. Sygnaly w przeciwnych kierunkach, ocena na de-vigu (-0.2 pp). Obciazenie FURII (5 map 19.09, w tym Mirage 35 rund) swiadomie niewazone -- nazwany blad v1 i glowne zrodlo strat claude'a na checkpoincie 150."
+    },
+    {
+      "id": "P-2026-09-20-G1",
+      "date": "2026-09-20",
+      "report": "reports/2026-09-20-gpt.md",
+      "game": "cs2",
+      "match": "Vitality vs FURIA",
+      "market": "moneyline",
+      "pick": "Vitality",
+      "estimated_probability": 0.7092,
+      "fair_odds": 1.41,
+      "market_odds_at_analysis": 1.32,
+      "market_odds_opponent": 3.10,
+      "odds_timestamp": "2026-09-20T08:05:00+02:00",
+      "closing_odds": null,
+      "decision": "PASS",
+      "confidence": 4,
+      "result": "pending",
+      "agent": "gpt",
+      "method_version": "v1"
     }
   ]
 }
