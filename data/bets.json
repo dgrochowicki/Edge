@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-20",
+  "updated_at": "2026-09-21",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -6303,19 +6303,67 @@
           "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for 33 at time of bet Settled: 33 beat BRUTE 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-170",
+      "date": "2026-09-20",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.90,
+      "potential_return_pln": 3.34,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "BRUTE vs SPARTA",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- NODWIN Clutch Series. Reported lost by Dominik (match did not reach 3 maps)."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-171",
+      "date": "2026-09-20",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.04,
+      "potential_return_pln": 3.59,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "Leo Team vs UNiTY",
+          "market": "moneyline",
+          "pick": "Leo Team",
+          "odds": 2.04,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- Fiesta Series. Reported lost by Dominik. potential_return_pln computed from stake x odds x 0.88 (slip did not show it)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 169,
+    "coupons": 171,
     "won": 55,
-    "lost": 114,
+    "lost": 116,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 374.18,
+    "total_staked_pln": 378.18,
     "gross_return_pln": 250.68,
-    "net_result_pln": -123.50,
-    "roi": -0.3301
+    "net_result_pln": -127.50,
+    "roi": -0.3371
   },
   "archived_predictions": [
     {
