@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-21",
+  "updated_at": "2026-09-23",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -6375,19 +6375,43 @@
           "notes": "Out of Edge scope. Settled: Bushido Wildcats beat Nexus 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-173",
+      "date": "2026-09-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.14,
+      "combined_odds": 1.70,
+      "potential_return_pln": 3.20,
+      "gross_return_pln": 3.20,
+      "status": "won",
+      "net_result_pln": 1.06,
+      "selections": [
+        {
+          "match": "UPGRADE vs Just Players",
+          "market": "moneyline",
+          "pick": "UPGRADE",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Settled: UPGRADE beat Just Players 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 172,
-    "won": 56,
+    "coupons": 173,
+    "won": 57,
     "lost": 116,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 380.18,
-    "gross_return_pln": 255.52,
-    "net_result_pln": -124.66,
-    "roi": -0.3279
+    "total_staked_pln": 382.32,
+    "gross_return_pln": 258.72,
+    "net_result_pln": -123.60,
+    "roi": -0.3233
   },
   "archived_predictions": [
     {
