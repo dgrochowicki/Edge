@@ -1,6 +1,6 @@
 # Edge Roadmap
 
-Last updated: 2026-08-24
+Last updated: 2026-09-23 — v1 closed at its 150 checkpoint, v2 frozen and active. See `docs/archive/METHOD_V1.md`, `docs/METHOD_V2.md`, `docs/decisions/2026-09-23-v2-freeze.md`.
 
 ## Purpose
 
@@ -10,9 +10,11 @@ The repository remains the source of truth. Rules belong in `docs/PLAYBOOK.md`, 
 
 Roadmap items describe planned work. They are not active rules until they are implemented and, where relevant, added to the playbook.
 
-## Current stage — validation and data collection
+## Current stage — v2 data collection
 
-Edge is currently testing whether its pre-match probability estimates and BET/PASS decisions add information beyond the bookmaker market.
+**v1 is closed.** Both agents reached their 150-prediction checkpoint during StarLadder StarSeries Fall 2026 (2026-09-19/20): claude not validated (+0.00020 vs market, n=150), gpt formally validated (−0.00034 vs market, n=150) — but neither difference is distinguishable from zero at that sample size (95% CI roughly ±0.0045–0.006). Full analysis: `reports/summaries/v1-checkpoint-150.md`. v1 entries stay in `data/bets.json` permanently as the archive; no new `method_version: "v1"` predictions are logged after the freeze.
+
+**v2 is the active method**, frozen 2026-09-23 (`docs/METHOD_V2.md`, `docs/decisions/2026-09-23-v2-freeze.md`). Edge is now testing whether v2's mechanical fresh-form adjustment to the de-vigged market contains information beyond that market — the same underlying question v1 tested, with a different, deterministic estimation method and one canonical prediction per match instead of two independent ones.
 
 Already in place:
 
@@ -49,9 +51,9 @@ A report can be traced to its predictions, every placed bet can be traced to a p
 
 ## Phase 2 — calibration and edge validation
 
-Collect enough settled predictions to evaluate whether Edge is better than a de-vigged market baseline.
+Collect enough settled predictions to evaluate whether Edge is better than a de-vigged market baseline. **v1 completed this phase and reached its verdict on 2026-09-19/20** (see Current stage). v2 restarts the same milestone ladder from zero, per `docs/METHOD_V2.md` §19, plus one metric v1 did not have: **at n ≥ 100 valid two-sided closing snapshots, the closing-line movement metric gets its first read** (§18.2) — a bootstrap-tested mean movement of `p_market` toward v2's adjustment, independent of match outcome, reported alongside Brier rather than replacing it.
 
-Milestones:
+Milestones (v1, historical — v2 uses the same ladder, see above):
 
 - **Under 50 settled predictions:** collection only; no conclusions.
 - **50–100:** preliminary calibration and CLV signal.
@@ -99,33 +101,17 @@ Each investigation should define:
 
 Meaningful methodology changes should later be recorded as short decision notes in `docs/decisions/` so the reason and evidence are not lost.
 
-### Method versioning path (v1 → v2)
+### Method versioning path (v1 → v2) — resolved 2026-09-23
 
-Edge is currently running method `v1`. When a recurring observation is strong enough to justify a new way of estimating fair odds, it becomes `v2` — but only through a controlled path that keeps the test honest. The point of this subsection is that the path is written down before it is walked, so no step is skipped under the pressure of a good-looking result.
+Edge ran `v1` from 2026-07-21 to its 150-checkpoint verdict on 2026-09-19/20 (see Current stage, above). The path from there to `v2` was **not** the shadow run this section originally planned — that plan is superseded and kept here only as history.
 
-**Where we are now.** EWC 2026 is a frozen `v1` sample. Both agents are still in preliminary signal on their own per-agent counts (claude 86, gpt 83 settled), so `v1` keeps running unchanged through the next tier-1 events to grow its sample toward the per-agent 150 checkpoint. No rule changes mid-flight.
+**What actually happened.** At the v1 checkpoint, both agents' Brier scores were statistically indistinguishable from the de-vigged market (95% CI spanning zero for both). This changed the shadow plan's own premise: a live `v1` running alongside `v2` would have compared v2 against a baseline that is itself indistinguishable from the market — giving no information a direct "v2 vs contemporaneous market" comparison doesn't already give, at roughly double the daily cost (two valuations per match instead of one). The operator decided (2026-09-23, `docs/decisions/2026-09-23-v2-freeze.md`) that **v2 replaces v1 outright**: v1 is frozen as the historical archive, no new v1 predictions are logged, and v2 is scored against the contemporaneous de-vigged STS market — the same benchmark v1 was scored against, not against v1 itself.
 
-**What `docs/PRE-V2.md` is.** A working notebook, not a method. It collects the hypotheses EWC surfaced — chiefly a *measurable* fresh-form signal (recent-opponent quality, results after a roster change, recency decay, maps vs top-tier, roster stability) and the open question of whether the probability→BET conversion threshold is optimally cautious or over-anchored to the market. Everything in it is explicitly labelled non-active: every prediction still carries `method_version: v1`. The file exists so these ideas are not lost and not turned into rules prematurely.
+**What v2 actually is.** A single deterministic formula, not a discretionary judgment call: de-vigged market prior → mechanical fresh-form adjustment (round-differential window, recency- and opponent-weighted) → one objective roster penalty (stand-in only, −2 pp) → capped adjustment (±4 pp fresh, ±5 pp total) → `p_v2`. Full specification, frozen parameters, and validation criteria: `docs/METHOD_V2.md`. Because the formula is deterministic, there is **one canonical v2 prediction per match** — gpt executes it daily, claude audits periodically rather than computing a parallel independent estimate (§21 of the method; this is also why the "two independent agents" framing throughout this roadmap's older sections describes v1, not v2).
 
-**What we do with it.** The pre-v2 notebook is developed *on paper, in parallel* with continued v1 collection — deliberately not fitted to EWC outcomes, since designing rules after seeing which bets won is overfitting. Each candidate signal must be operationalised into something computable before the match, with a defined sample, primary metric, and minimum size (Phase 3 discipline). Its benchmark is the de-vigged market Brier on a paired sample, never the 0.25 coin-flip line.
+**Sample counting.** v2 needs its own 150 settled predictions to reach a checkpoint — it does not inherit anything from v1's sample. v1 entries are never deleted, rescored, or mixed into v2 metrics; they remain the archive of what the method looked like before the freeze.
 
-**When and how it becomes v2 — via a shadow run.** When the definition is closed on paper and the open questions in `PRE-V2.md` are resolved, v2 does **not** immediately replace v1. The recommended default path (confirmed at the v1 150 checkpoint, not pre-decided) is to run v2 as a **shadow / paper model in parallel with v1 on the same matches**:
-
-- `v1` stays the **official** method. It keeps its normal BET/PASS decisions, may drive real-money play, and continues collecting toward its own per-agent 150 checkpoint — so its pre-registered verdict is actually reached, not abandoned at ~100.
-- `v2` runs as a **shadow** re-valuation of the *same* matches: its own probability and BET/PASS under its own rules, but purely research — never real money.
-- Both versions receive **one shared factual snapshot** (matches, format, rosters, form, and the same STS odds at the same `odds_timestamp`) and then value it independently. The research is done once; only the valuation is duplicated.
-
-Why shadow rather than a clean switch. A straight cutover would leave v1 stranded below 150 and would compare v1 and v2 across *different* periods, teams, and meta phases — confounding the method difference with the calendar. Shadow removes that: v1 and v2 score identical matches against an identical market, so the only variable is the method. That upgrades the question from "does v2 beat the market?" to also "does v2 beat v1 on the same paired sample?" — a genuine A/B, and the stronger evidence. And because v2's rules were frozen on paper first, its shadow entries are genuinely out-of-sample from day one.
-
-Sample counting is unchanged by sharing matches. v2 still needs its **own** 150 settled predictions and 50 BET snapshots, per agent × version — it does **not** inherit v1's sample just because the matches overlap. v1 entries are never deleted; they remain the archive of what the method looked like before, excluded from v2 metrics.
-
-Data and reporting shape (spec for the maintainer's coding agent, not implemented by the analyst agents):
-
-- Every shadow entry carries `method_version: "v2"` **and** a mode flag (e.g. `mode: "shadow"`) so the dashboard never counts a shadow BET as real play or folds it into operator P&L or the shared CLV pool.
-- Paired entries must be linkable: same `match` + `date` + identical `odds_timestamp` and odds snapshot across the v1 and v2 rows, so "v2 vs v1 on the paired sample" is computable later.
-- Reporting stays lean, not doubled: v1 remains the full official report (`reports/2026-xx-xx-{agent}.md`); v2 is a deliberately thin shadow file (`reports/shadow/2026-xx-xx-{agent}-v2.md`) — valuation table, decisions, and JSON block only, reusing the v1 report's prose, calendar, and roster work rather than repeating it.
-
-Only the version bump itself (approved method into `PLAYBOOK.md`, recorded in `PROJECT_MEMORY.md` and as a decision note in `docs/decisions/`) marks the moment the first `method_version: "v2"` entry is logged. Whether v2 later graduates from shadow to the official method is a separate decision, taken once v1 reaches its 150 verdict and v2 has enough paired shadow data to judge. A v2 bump is a real methodology change, so it should also trigger the dashboard-versioning work noted in Phase 4.
+**What's new relative to v1.** v2 adds a metric independent of match outcome (closing-line movement in the direction of the adjustment, `docs/METHOD_V2.md` §18.2) precisely because the v1 checkpoint showed that Brier-at-150 alone can leave the question unresolved. It also adds an explicit stop rule (§20): if at 150 the confidence interval both contains zero and is already narrow (half-width ≤ 0.003), the result is recorded as "no detectable edge" and collection stops, rather than continuing indefinitely on an inconclusive method.
 
 ## Phase 4 — dashboard as an audit tool
 
@@ -195,6 +181,8 @@ Create these files only when their contents become necessary:
 
 Already created:
 
-- `docs/PRE-V2.md` — working notebook seeding the future v2 method (non-active; see Phase 3 → Method versioning path). Graduates into `PLAYBOOK.md` as v2 when its definition is closed.
+- `docs/METHOD_V2.md` — the active method (frozen 2026-09-23). Superseded the working notebook that seeded it, removed at freeze once its job was done (per Phase 3 → Method versioning path above).
+- `docs/archive/METHOD_V1.md` — frozen snapshot of v1's rules, for interpreting the 313 `method_version: "v1"` entries in `data/bets.json`.
+- `docs/decisions/` — now two entries: `2026-09-19-v1-checkpoint-150.md` (v1 verdict, operator decisions) and `2026-09-23-v2-freeze.md` (v2 freeze approval).
 
 The structure should grow only when a real need appears.

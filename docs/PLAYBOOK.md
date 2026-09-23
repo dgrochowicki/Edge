@@ -6,6 +6,15 @@ This playbook defines how Edge evaluates esports betting opportunities.
 
 It is an operating document. It should change only when new evidence justifies a change.
 
+## Method versions
+
+```text
+v1 = frozen, 2026-09-23. Archive: docs/archive/METHOD_V1.md. No new v1 predictions.
+v2 = active. Definition: docs/METHOD_V2.md.
+```
+
+Where this playbook (scope, staking, discipline, process) and `docs/METHOD_V2.md` (probability estimation) disagree on how to estimate probability, **`docs/METHOD_V2.md` wins.** This playbook keeps governing everything else: scope, stake rules, coupon rules, the pre-publication checklist, and daily discipline — none of that changed at the v1→v2 freeze.
+
 ## Core Objective
 
 Edge does not try to predict every result.
@@ -13,6 +22,8 @@ Edge does not try to predict every result.
 Edge tries to make the best possible betting decision using the information and price available before the match.
 
 ## Decision Framework
+
+*Steps 6–9 (estimate probability → fair odds → compare → account for uncertainty) describe the frozen v1 method (`docs/archive/METHOD_V1.md`); the active method computes `p_v2` mechanically per `docs/METHOD_V2.md` §4–13. Steps 1–5 and 10–12 (verification, recording, review) are unchanged.*
 
 Each reviewed market should follow this sequence:
 
@@ -90,6 +101,8 @@ Confidence must not replace probability or fair odds.
 
 ## Fair Odds
 
+*Historical (v1): the analyst's judgment call, described below. Active (v2): `p_v2` is computed mechanically from the market prior plus the fresh-form and roster adjustments — no discretionary judgment — per `docs/METHOD_V2.md` §5–13.*
+
 Fair odds should be derived from estimated probability:
 
 ```text
@@ -106,6 +119,8 @@ fair odds = 1.67
 A bookmaker price above fair odds may indicate value, but uncertainty must be included before recommending a bet.
 
 ## Market Review
+
+*Historical (v1): the qualitative checklist below. Active (v2): moneyline is the default market and the checklist is replaced by the deterministic fresh-form window and opponent-quality weights in `docs/METHOD_V2.md` §6–9.*
 
 ### Moneyline
 
@@ -144,6 +159,8 @@ Check:
 - difference between match win probability and map-margin probability.
 
 ## Stand-In and Roster Changes
+
+*Historical (v1): the discretionary evaluation below. Active (v2): replaced by mechanical window-reset rules and a single objective penalty (stand-in or confirmed starter absence: −2 pp, nothing else) per `docs/METHOD_V2.md` §10.*
 
 Do not automatically fade a team using a stand-in.
 
@@ -229,6 +246,11 @@ For every important PASS:
 
 - **Observed signal beats predicted signal.** Betting against an "overvalued favourite with a rebuilt roster" is only justified when the new lineup has *already shown* weakness at this level — not on the assumption that a roster change will cause it. Liquid (25 Jul) had a hard, fresh result behind it (a 2:0 over Vitality on debut) and would have won; Wildcard vs a rebuilt MongolZ (26 Jul) rested only on the hypothesis that the new players would underperform, and the bet lost — MongolZ went on to the final. A roster change is uncertainty, not direction.
 - **Good calibration can still lose a single bet.** On the day the Wildcard bet lost, Edge's Brier over the four matches still beat the de-vigged market baseline. A well-priced bet on a ~0.60 favourite's opponent loses ~40% of the time by construction. One settled BET is variance, not a verdict — the sample-size discipline applies to bets too.
+
+### From the v1 checkpoint 150 (2026-09-19)
+
+- **The two agents' biases are different, not mirror images.** claude's Brier losses against the market came from moves **below** the market's price on the favourite (n=40, the single largest contribution to the gap) — not from raising favourites above the market, which is the opposite of what an earlier read of the data suggested. The systematic "+2 pp toward the pick" anchoring bias belongs to **gpt** (mean +2.17 pp), not claude (mean +0.28 pp overall, −0.03 pp on favourites specifically). Do not apply one agent's diagnosed bias to the other.
+- **Neither verdict is distinguishable from zero at n=150.** claude not validated (+0.00020), gpt validated (−0.00034), but both sit inside a 95% CI of roughly ±0.0045–0.006, and each verdict flips if a single match is removed. A pre-registered checkpoint gives a clean stop/go rule; it does not by itself mean the difference is real. This is why v2 (`docs/METHOD_V2.md` §20) adds a stop rule and a closing-line metric independent of match outcome, instead of relying on Brier-at-150 alone.
 
 ### From EWC 2026 (post-tournament review)
 
@@ -332,6 +354,14 @@ After the match, set `result` to `won` / `lost` / `void` — meaning: did the **
 ### Historical backfill
 
 Entries reconstructed from already-published reports carry `"recording_mode": "historical_backfill"` and a `data_quality` array naming what is missing (e.g. `missing_opponent_odds`, `unknown_exact_timestamp`, `missing_market_odds`, `fair_odds_not_recorded`). The required-fields rule applies in full to new entries only; backfilled entries are exempt but must declare their gaps explicitly. Missing information is never reconstructed from memory or assumption — a missing value stays null, and entries lacking a probability estimate are excluded from calibration metrics.
+
+### Checkpoint population and counting rule
+
+**"Checkpoint N" means the first N settled predictions for that `agent × method_version`, ordered by `date`, then `id`, evaluated on the day the counter crosses N — and never recomputed at a later n.** (Clarified 2026-09-19, at the v1 150 checkpoint.)
+
+**The eligible population is every settled prediction (`won`/`lost`) that has an `estimated_probability` and both market prices (`market_odds_at_analysis`, `market_odds_opponent`) — regardless of small rounding drift between `estimated_probability` and `1 / fair_odds`.** A drift of ≤ 0.005 is a `legacy_rounding` data-quality flag, not a reason to exclude the entry from the sample; only drift above that tolerance, or a genuinely missing field, excludes an entry. (Clarified 2026-09-23, resolving a dashboard/report discrepancy found in the v2-freeze audit — the same population definition applies to v2.)
+
+v2's own validation stages, promotion, rejection and stop conditions are specified separately in `docs/METHOD_V2.md` §19–20; they are not the v1 conditions below applied to a new version, they are a revised set the operator approved at freeze.
 
 ### Verdict staging
 
