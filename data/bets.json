@@ -6419,8 +6419,8 @@
           "odds": 1.08,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Stake Pulse Beat. Placed live, 2nd break, series 1:1 at time of bet. Coupon cashed out before either leg was settled."
+          "result": "lost",
+          "notes": "Out of Edge scope -- Stake Pulse Beat. Placed live, 2nd break, series 1:1 at time of bet. Coupon cashed out before either leg was settled. Settled: EA Copenhagen beat Fnatic (confirmed lost by Dominik)."
         },
         {
           "match": "Phantom vs 100 Thieves",
@@ -6429,8 +6429,8 @@
           "odds": 2.10,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Stake Pulse Beat. Coupon cashed out before either leg was settled."
+          "result": "lost",
+          "notes": "Out of Edge scope -- Stake Pulse Beat. Coupon cashed out before either leg was settled. Settled: did not reach 3 maps (confirmed lost by Dominik)."
         }
       ]
     },
@@ -6443,8 +6443,8 @@
       "combined_odds": 1.70,
       "potential_return_pln": 4.49,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.00,
       "selections": [
         {
           "match": "Just Players vs Bushido Wildcats",
@@ -6453,8 +6453,8 @@
           "odds": 1.70,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 for Just Players at time of bet -- betting on Bushido Wildcats comeback."
+          "result": "lost",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 for Just Players at time of bet -- betting on Bushido Wildcats comeback. Settled: Just Players swept Bushido Wildcats 2:0."
         }
       ]
     }
