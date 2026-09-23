@@ -6433,19 +6433,43 @@
           "notes": "Out of Edge scope -- Stake Pulse Beat. Coupon cashed out before either leg was settled."
         }
       ]
+    },
+    {
+      "id": "EDGE-175",
+      "date": "2026-09-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 3.00,
+      "combined_odds": 1.70,
+      "potential_return_pln": 4.49,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Just Players vs Bushido Wildcats",
+          "market": "moneyline",
+          "pick": "Bushido Wildcats",
+          "odds": 1.70,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 for Just Players at time of bet -- betting on Bushido Wildcats comeback."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 174,
+    "coupons": 175,
     "won": 58,
     "lost": 116,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 384.32,
+    "pending": 1,
+    "total_staked_pln": 387.32,
     "gross_return_pln": 261.65,
-    "net_result_pln": -122.67,
-    "roi": -0.3192
+    "net_result_pln": -125.67,
+    "roi": -0.3245
   },
   "archived_predictions": [
     {
