@@ -232,6 +232,40 @@ Corrections recorded in the report: the "+2pp toward the pick" bias belongs to g
 
 Consequences per PLAYBOOK / v2 spec §23: claude × v1 ends real-money use (paper baseline continues); gpt × v1 formally may continue; v2 is not auto-promoted. Operator decisions (real money for gpt, direction, v2 primary metric) are open in `docs/decisions/2026-09-19-v1-checkpoint-150.md`. Full analysis: `reports/summaries/v1-checkpoint-150.md`.
 
+### v2 frozen, v1 archived and not continued — 2026-09-23
+
+**Freeze record:** date 2026-09-23, commit `22fc9211409aff8c89ea8bae23466a6753c67f16` (the PLAYBOOK/ROADMAP/REPORT_TEMPLATE commit, per operator instruction to date the freeze on that commit — filled into `docs/METHOD_V2.md`'s header in the next commit, `4835af9`, since the SHA could not be known before that commit existed). First eligible event resolved **by the tier-1 scope rule, not by name**: **PGL Fall 2026** (S-Tier / Valve Tier 1, 2026-10-01–10-11) — it starts before ESL Pro League S24 (10-03), which had been the initial name-based guess in the 09-19 decision note. Full method: `docs/METHOD_V2.md`. Approval record: `docs/decisions/2026-09-23-v2-freeze.md`.
+
+**Why v1 is not continued alongside v2 (reversing the 09-19 recommendation).** The operator's original lean (`docs/decisions/2026-09-19-v1-checkpoint-150.md`, option b) was v2 running as a live shadow next to v1. claude proposed this, then withdrew it during the freeze negotiation: since v1's Brier proved indistinguishable from the de-vigged market at its own 150-checkpoint, a live v1 baseline gives no statistical information beyond what the contemporaneous market already gives for free — "v2 vs v1" and "v2 vs market" would carry the same information, at roughly double the daily analysis cost. **v1 is archived (`docs/archive/METHOD_V1.md`), no new `method_version: "v1"` predictions are logged, and v2 is scored only against the de-vigged market.** v1's 313 entries stay in `data/bets.json` permanently, untouched.
+
+**What changes in v2 vs v1 (mechanism, not just parameters):**
+- **Mechanical instead of discretionary.** v1's `p_est` was an analyst's judgment call anchored to the market; v2's `p_v2` is computed by a fixed deterministic formula (de-vigged market prior → round-differential fresh-form window, recency- and opponent-weighted → one objective roster penalty, stand-in only, −2pp → capped adjustment) — no discretionary step anywhere in the chain. `docs/METHOD_V2.md` §4–13.
+- **One canonical prediction per match, not two.** Because the formula is deterministic, two agents computing it would not be two independent observations — the sample would grow by one match, not two, while looking like it grew by two. **gpt executes daily** (schedule, snapshot, form window, calculation, report, ledger entry); **claude audits periodically** (per tournament or every 20–30 predictions), recomputing from the stored `data/form/` window rather than producing a parallel estimate. §21.
+- **A new metric independent of match outcome.** v1's only formal verdict mechanism was Brier-at-150, and it proved unable to resolve the question at that sample size (both agents' CIs spanned zero). v2 adds closing-line movement in the direction of the adjustment as a second pre-registered metric, active once n≥100 valid two-sided snapshots exist. §18.2, §19.
+- **An explicit stop rule.** If at the 150-checkpoint the Brier-advantage CI both contains zero and is already narrow (half-width ≤ 0.003), v2 is recorded as "no detectable edge" and collection stops — added specifically so an inconclusive method cannot absorb years of collection the way an open-ended "collect more" instinct would. §20.
+
+**The four gaps claude's review raised in the gpt draft, and how each was resolved** (full negotiation: `docs/METHOD_V2.md` §25 decision log):
+1. *Promotion criteria without statistical power* → revised promotion criteria (§20: requires the bootstrap CI to exclude zero or the closing-line metric to be significant at n≥100 — not just "Brier is numerically lower").
+2. *BET arithmetically near-impossible under the ±5pp cap and +8% threshold* → accepted as a known, documented consequence rather than loosened (§13): a BET is only reachable when the pick's de-vig is ≤ ~0.41, so v2.0 will produce few BETs, nearly all on underdogs — and BET count/ROI/CLV were explicitly demoted to descriptive-only, dropped from the promotion gate (freeze-note point 4).
+3. *Determinism collapses the claude-vs-gpt A/B design* → resolved by the one-canonical-sample model above (freeze-note points 1–2): there is no parallel v2 estimate to compare, by design.
+4. *Roster penalties too subjective* → simplified to the single objective rule in §10 (stand-in or confirmed starter absence: −2pp; everything else: 0pp) — freeze-note point 5.
+
+**Checkpoint population, clarified during the freeze audit (also now in `docs/PLAYBOOK.md` → Calibration & CLV Protocol).** The eligible population for any checkpoint (v1 or v2) is **every settled prediction with an `estimated_probability` and both market prices**, regardless of small rounding drift between `estimated_probability` and `1/fair_odds` — a drift ≤ 0.005 is a `legacy_rounding` data-quality flag, not grounds for exclusion. This resolved a real discrepancy: the dashboard's stricter 0.001 tolerance had been silently dropping 3 of claude's v1 entries (`P-2026-08-27-C1`, `P-2026-08-28-C4`, `P-2026-08-29-C1`) from the paired sample the checkpoint report used, so the two were computing on different populations (report: 0.21523/0.21503; dashboard pre-fix: 0.21117/0.21106 — same sign and verdict, different numbers). Fixed in `dashboard/shared-metrics.js` (commit `fa4eba1`): tolerance widened to 0.005, dropped entries now counted with an `isLegacyRounding()` flag instead of excluded. Verified count of flagged v1 entries: **23** (all agent claude, all 2026-07-21–2026-08-30, max drift 0.0028) — corrects the freeze-task audit's initial count of 26 (25 claude + 1 gpt), confirmed by the operator and by `scripts/validate_bets.py`.
+
+**Files removed at freeze** (content fully absorbed elsewhere; git history retains them):
+| File | Reason |
+|---|---|
+| `docs/METHOD_V2_GPT_DRAFT.md` | absorbed into `docs/METHOD_V2.md` |
+| `docs/METHOD_V2_CLAUDE_REVIEW.md` | absorbed; findings live in the decision log (`METHOD_V2.md` §25) |
+| `docs/METHOD_V2_GPT_RESPONSE_TO_CLAUDE.md` | absorbed |
+| `docs/Edge — V2 Research & Rollout Specification.md` | described the "v1 active + v2 shadow" model, rejected at freeze |
+| `docs/PRE-V2.md` | working notebook; its job (seed a v2 definition) ended at freeze |
+| `docs/V2_FREEZE_TASKS.md` | this task list itself, removed once executed (per its own instruction) — this PROJECT_MEMORY entry and the decision logs are the durable record |
+
+**New paths introduced:** `docs/archive/METHOD_V1.md` (frozen v1 rules snapshot), `docs/METHOD_V2.md` (active method), `docs/decisions/2026-09-23-v2-freeze.md` (approval record), `scripts/validate_bets.py` (schema validator — 313 predictions, 23 `legacy_rounding` flags, 0 hard errors as of freeze), `data/form/README.md` (v2 fresh-form window cache format, no files written yet — collection starts with the first PGL Fall 2026 prediction).
+
+**Operator's own-bet coupons are unaffected.** "Real money paused" applies to agent-driven BETs (`method_version` v1 and v2); Dominik's `source: "user_bet"` coupons remain independent and continue as before — confirmed explicitly at freeze, consistent with the 09-19 decision.
+
 ## Current Running Result
 
 Snapshot as of 2026-08-16 (EDGE-001 through EDGE-043):
