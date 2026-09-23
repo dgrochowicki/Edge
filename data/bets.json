@@ -6463,9 +6463,9 @@
   "summary": {
     "coupons": 175,
     "won": 58,
-    "lost": 116,
+    "lost": 117,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 387.32,
     "gross_return_pln": 261.65,
     "net_result_pln": -125.67,
