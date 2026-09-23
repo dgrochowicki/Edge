@@ -6457,19 +6457,43 @@
           "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 for Just Players at time of bet -- betting on Bushido Wildcats comeback. Settled: Just Players swept Bushido Wildcats 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-176",
+      "date": "2026-09-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.95,
+      "potential_return_pln": 3.43,
+      "gross_return_pln": 3.43,
+      "status": "won",
+      "net_result_pln": 1.43,
+      "selections": [
+        {
+          "match": "Leo Team vs Spirit Academy",
+          "market": "map_winner",
+          "pick": "Leo Team (map 2, incl. OT)",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Settled: Leo Team beat Spirit Academy 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 175,
-    "won": 58,
+    "coupons": 176,
+    "won": 59,
     "lost": 117,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 387.32,
-    "gross_return_pln": 261.65,
-    "net_result_pln": -125.67,
-    "roi": -0.3245
+    "total_staked_pln": 389.32,
+    "gross_return_pln": 265.08,
+    "net_result_pln": -124.24,
+    "roi": -0.3191
   },
   "archived_predictions": [
     {
