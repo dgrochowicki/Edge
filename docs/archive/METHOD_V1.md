@@ -87,7 +87,7 @@ Pól v2 (`p_market`, `fresh_*`, `roster_penalty_*`, `closing_odds_opponent`, `da
 
 ## 7. Znane odstępstwa i usterki danych
 
-- **Zaokrąglenie `estimated_probability` vs `1/fair_odds`:** 23 wpisy (audyt 23.09 zliczył 26, rozjazd nie wyjaśniony — do weryfikacji), wszystkie w oknie 2026-07-21 – 2026-08-30, wszystkie agenta **claude** (nie 25 claude + 1 gpt jak wstępnie raportowano). Rozjazd maks. 0.0028, mediana ~0.0006 — pozostałość po wcześniejszej konwencji (najpierw zaokrąglone `p`, potem zaokrąglony `fair`). Wpisy pozostają niezmienione; wpływ na Brier claude'a przy checkpoincie: ok. -0.00003, czyli bez znaczenia dla werdyktu.
+- **Zaokrąglenie `estimated_probability` vs `1/fair_odds`:** **23 wpisy** (próg 0.0001; potwierdzone przez operatora 2026-09-23, koryguje wstępny audyt z tego samego dnia, który zliczył 26 — 25 claude + 1 gpt), wszystkie w oknie 2026-07-21 – 2026-08-30, wszystkie agenta **claude**. Rozjazd maks. 0.0028, mediana ~0.0006 — pozostałość po wcześniejszej konwencji (najpierw zaokrąglone `p`, potem zaokrąglony `fair`). Wpisy pozostają niezmienione; wpływ na Brier claude'a przy checkpoincie: ok. -0.00003, czyli bez znaczenia dla werdyktu.
 - **Kursy zamknięcia:** wypełnione w 116 z 313 wpisów (37%). Pole `closing_odds_opponent` nie istnieje w żadnym wpisie v1 — dotyczy tylko v2.
 - **Brak wyników rundowych per mapa** — v1 nie zbierał `data/form/`, więc żadna analiza post-hoc na poziomie mapy nie jest możliwa dla tej próbki.
 - Wcześniej ustalona populacja checkpointu (patrz `docs/decisions/2026-09-19-v1-checkpoint-150.md` i notatka z 23.09): **każda rozliczona predykcja z szacunkiem i obiema cenami**, niezależnie od rozjazdu zaokrągleń poniżej 0.005 — taki rozjazd jest flagą jakości danych, nie powodem wykluczenia z próbki.
