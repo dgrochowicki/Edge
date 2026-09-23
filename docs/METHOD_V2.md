@@ -1,17 +1,21 @@
-# Edge — METHOD_V2 (freeze candidate)
+# Edge — METHOD_V2 (frozen)
 
-**Status:** FREEZE CANDIDATE — not yet frozen, not yet active
+**Status:** FROZEN AND ACTIVE — approved by operator 2026-09-23
 **Authors:** gpt (draft), claude (review), consolidated by claude
-**Supersedes:** `METHOD_V2_GPT_DRAFT.md`, `METHOD_V2_CLAUDE_REVIEW.md`, `METHOD_V2_GPT_RESPONSE_TO_CLAUDE.md`, `Edge — V2 Research & Rollout Specification.md`, `PRE-V2.md`
-**Binding document for the active method once frozen.** `PLAYBOOK.md` keeps scope, staking and general discipline; where the two disagree on probability estimation, this document wins.
+**Supersedes:** `METHOD_V2_GPT_DRAFT.md`, `METHOD_V2_CLAUDE_REVIEW.md`, `METHOD_V2_GPT_RESPONSE_TO_CLAUDE.md`, the prior rollout-specification draft, and the pre-v2 working notebook — all removed post-freeze, folded in here; history in git.
+**Binding document for the active method.** `PLAYBOOK.md` keeps scope, staking and general discipline; where the two disagree on probability estimation, this document wins.
 
-**Freeze record — to be filled by the operator at freeze:**
+**Freeze record:**
 
 ```text
-freeze_date:        ____
-freeze_commit_sha:  ____
-first_eligible_event: ____
-first_v2_prediction_id: ____
+freeze_date:           2026-09-23
+freeze_commit_sha:     22fc9211409aff8c89ea8bae23466a6753c67f16
+first_eligible_event:  PGL Fall 2026 (S-Tier / Valve Tier 1, 2026-10-01 to 2026-10-11) --
+                        resolved by the scope rule (PLAYBOOK.md -> Scope), not by name:
+                        starts before ESL Pro League S24 (2026-10-03), which was the
+                        initial name-based guess. Its NA/EU qualifiers stay out of scope
+                        like any qualifier. See docs/decisions/2026-09-23-v2-freeze.md.
+first_v2_prediction_id: (none yet -- filled in when the first v2 entry is logged)
 ```
 
 No v2 prediction may predate the freeze commit. No historical v1 match is ever rescored as v2.
