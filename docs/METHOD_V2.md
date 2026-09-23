@@ -10,11 +10,18 @@
 ```text
 freeze_date:           2026-09-23
 freeze_commit_sha:     22fc9211409aff8c89ea8bae23466a6753c67f16
-first_eligible_event:  PGL Fall 2026 (S-Tier / Valve Tier 1, 2026-10-01 to 2026-10-11) --
-                        resolved by the scope rule (PLAYBOOK.md -> Scope), not by name:
-                        starts before ESL Pro League S24 (2026-10-03), which was the
-                        initial name-based guess. Its NA/EU qualifiers stay out of scope
-                        like any qualifier. See docs/decisions/2026-09-23-v2-freeze.md.
+first_eligible_event:  UNVERIFIED as of 2026-09-24 -- "PGL Fall 2026" (2026-10-01 to
+                        2026-10-11) was the initial candidate from web search, but a
+                        second pass found it absent from PGL's own event listing
+                        (pglesports.com shows Bucharest, Cluj-Napoca, Astana, PGL
+                        Masters Bucharest 22-31.10, Major Singapore -- no "Fall") while
+                        Liquipedia search results keep surfacing it -- contradictory,
+                        and direct fetch to both Liquipedia and HLTV is blocked in this
+                        session. Operator must confirm the real first tier-1 event
+                        before 2026-10-01 (candidates to check: whatever PGL's Oct 1-11
+                        page actually is under its real name, or ESL Pro League S24 if
+                        that turns out to start first). See
+                        docs/decisions/2026-09-23-v2-freeze.md for the full trail.
 first_v2_prediction_id: (none yet -- filled in when the first v2 entry is logged)
 ```
 
