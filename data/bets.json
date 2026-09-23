@@ -6399,19 +6399,53 @@
           "notes": "Out of Edge scope. Settled: UPGRADE beat Just Players 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-174",
+      "date": "2026-09-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.67,
+      "potential_return_pln": 2.93,
+      "gross_return_pln": 2.93,
+      "status": "won",
+      "net_result_pln": 0.93,
+      "selections": [
+        {
+          "match": "Fnatic vs EA Copenhagen",
+          "market": "moneyline",
+          "pick": "Fnatic",
+          "odds": 1.08,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- Stake Pulse Beat. Placed live, 2nd break, series 1:1 at time of bet. Coupon cashed out before either leg was settled."
+        },
+        {
+          "match": "Phantom vs 100 Thieves",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 2.10,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- Stake Pulse Beat. Coupon cashed out before either leg was settled."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 173,
-    "won": 57,
+    "coupons": 174,
+    "won": 58,
     "lost": 116,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 382.32,
-    "gross_return_pln": 258.72,
-    "net_result_pln": -123.60,
-    "roi": -0.3233
+    "total_staked_pln": 384.32,
+    "gross_return_pln": 261.65,
+    "net_result_pln": -122.67,
+    "roi": -0.3192
   },
   "archived_predictions": [
     {
