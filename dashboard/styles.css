@@ -656,7 +656,7 @@ tr:hover .view-link{color:var(--edge);}
 .calib-sub.click:hover{color:var(--ink-dim);}
 .calib-table td.pos{color:var(--pos);} .calib-table td.neg{color:var(--neg);}
 
-.dq-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.dq-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(100px,1fr));gap:14px;}
 @media (max-width:640px){.dq-grid{grid-template-columns:repeat(2,1fr);}}
 .dq-value{font-family:var(--font-mono);font-size:15px;font-weight:500;color:var(--ink-dim);font-variant-numeric:tabular-nums;line-height:1;}
 .dq-label{font-family:var(--font-mono);font-size:10.5px;color:var(--ink-faint);margin-top:4px;}

@@ -242,6 +242,13 @@ function devig(oddsPick, oddsOpp) {
     return a / (a + b);
 }
 
+// Tolerance widened 0.001 -> 0.005 at the v2 freeze (2026-09-23), per
+// docs/decisions/2026-09-23-v2-freeze.md and docs/PLAYBOOK.md -> Calibration
+// & CLV Protocol -> Checkpoint population and counting rule. 23 legacy v1
+// entries (Jul-Aug 2026, all agent claude) carry rounding drift up to 0.0028
+// from an earlier convention (round p first, then fair_odds); a drift in
+// (0.0001, 0.005] is a data-quality flag (isLegacyRounding below), not a
+// validation failure -- only drift above 0.005 is a hard error.
 function validatePredictions(preds) {
     const seen = {}, invalid = [];
     preds.forEach(p => {
@@ -255,10 +262,19 @@ function validatePredictions(preds) {
             if (p[k] != null && p[k] <= 1) issues.push(k + ' <= 1');
         });
         if (p.estimated_probability != null && p.fair_odds != null &&
-            Math.abs(p.estimated_probability - 1 / p.fair_odds) > 0.001) issues.push('probability != 1/fair_odds');
+            Math.abs(p.estimated_probability - 1 / p.fair_odds) > 0.005) issues.push('probability != 1/fair_odds');
         if (issues.length) invalid.push({ id: p.id || '(no id)', issues });
     });
     return invalid;
+}
+
+// Soft flag, never exclusion -- see the tolerance note above. Kept separate
+// from validatePredictions' hard issues so a legacy-rounding entry still
+// counts toward the settled sample and only shows up as a data-quality count.
+function isLegacyRounding(p) {
+    if (p.estimated_probability == null || !p.fair_odds) return false;
+    const diff = Math.abs(p.estimated_probability - 1 / p.fair_odds);
+    return diff > 0.0001 && diff <= 0.005;
 }
 
 function calibStage(n) {
@@ -272,8 +288,11 @@ function calibStage(n) {
 // against: valid (per validatePredictions), settled won/lost, with a logged
 // probability estimate. Shared so Research's per-agent progress counters
 // can't drift from what actually unlocks each calibration stage -- pass
-// `agent` to scope it to one agent, omit for the overall count.
-function settledEstPredictions(preds, agent) {
+// `agent` to scope it to one agent, `version` to scope it to one
+// method_version (e.g. "v1", "v2"; omit for all versions pooled -- callers
+// computing a checkpoint should always pass it, since v1 and v2 are
+// separate experiments per PLAYBOOK.md -> Method versioning).
+function settledEstPredictions(preds, agent, version) {
     const invalid = validatePredictions(preds);
     const invalidIds = {};
     invalid.forEach(x => invalidIds[x.id] = 1);
@@ -281,7 +300,38 @@ function settledEstPredictions(preds, agent) {
         .filter(p => !invalidIds[p.id])
         .filter(p => p.result === 'won' || p.result === 'lost')
         .filter(p => typeof p.estimated_probability === 'number')
-        .filter(p => agent == null || p.agent === agent);
+        .filter(p => agent == null || p.agent === agent)
+        .filter(p => version == null || p.method_version === version);
+}
+
+// Bootstrap 95% CI for (market_brier - edge_brier) on a paired sample, so a
+// Brier "advantage" is never shown as a bare sign -- per the v1 checkpoint
+// lesson (docs/PLAYBOOK.md -> Current Lessons): at n=150 neither agent's
+// difference from the market was distinguishable from zero, and reporting
+// only the sign would have hidden that. Paired-bootstrap: each resample
+// draws the same random match indices for both series, preserving the
+// pairing. nBoot=2000 is plenty for a 95% CI at n<=~300 and cheap enough to
+// run per render.
+function bootstrapBrierAdvantageCI(paired, nBoot = 2000) {
+    const n = paired.length;
+    if (n === 0) return null;
+    const out = p => p.result === 'won' ? 1 : 0;
+    const edgeSq = paired.map(p => Math.pow(p.estimated_probability - out(p), 2));
+    const mktSq = paired.map(p => Math.pow(devig(p.market_odds_at_analysis, p.market_odds_opponent) - out(p), 2));
+    const advantages = new Array(nBoot);
+    for (let b = 0; b < nBoot; b++) {
+        let sumE = 0, sumM = 0;
+        for (let i = 0; i < n; i++) {
+            const j = Math.floor(Math.random() * n);
+            sumE += edgeSq[j];
+            sumM += mktSq[j];
+        }
+        advantages[b] = sumM / n - sumE / n;
+    }
+    advantages.sort((a, b) => a - b);
+    const lo = advantages[Math.floor(0.025 * nBoot)];
+    const hi = advantages[Math.min(nBoot - 1, Math.floor(0.975 * nBoot))];
+    return { lo, hi, containsZero: lo <= 0 && hi >= 0, halfWidth: (hi - lo) / 2 };
 }
 
 const CALIB_INFO = {
@@ -404,10 +454,11 @@ function clvHtml(snapsBet) {
 // to the old pooled renderCalibration body, just scoped to one agent via
 // settledEstPredictions(preds, agent). Returns the section's logged/settled
 // counts (for the header) alongside its HTML.
-function renderCalibrationAgentSection(preds, agent, invalidIds) {
-    const valid = preds.filter(p => !invalidIds[p.id] && p.agent === agent);
-    const logged = preds.filter(p => p.agent === agent).length;
-    const settledEst = settledEstPredictions(preds, agent);
+function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
+    const scoped = p => p.agent === agent && p.method_version === version;
+    const valid = preds.filter(p => !invalidIds[p.id] && scoped(p));
+    const logged = preds.filter(scoped).length;
+    const settledEst = settledEstPredictions(preds, agent, version);
     const paired = settledEst.filter(p => p.market_odds_at_analysis && p.market_odds_opponent);
     const snapsBet = valid.filter(p => p.decision === 'BET' && p.closing_odds && p.market_odds_at_analysis);
     const stage = calibStage(settledEst.length);
@@ -416,10 +467,15 @@ function renderCalibrationAgentSection(preds, agent, invalidIds) {
         opp: valid.filter(p => p.market_odds_opponent == null).length,
         ts: valid.filter(p => p.odds_timestamp == null).length,
         close: valid.filter(p => p.closing_odds == null).length,
-        inv: preds.filter(p => p.agent === agent && invalidIds[p.id]).length
+        inv: preds.filter(p => scoped(p) && invalidIds[p.id]).length,
+        legacy: valid.filter(isLegacyRounding).length
     };
 
-    const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()}</div>`;
+    // v1 is the frozen archive after the 2026-09-23 freeze; every other
+    // version (v2, and any future bump) is the active method. Label reflects
+    // that distinction directly in the section header per V2_FREEZE_TASKS #9.6.
+    const versionLabel = version === 'v1' ? 'v1 · archived' : (version || 'unknown version').toUpperCase();
+    const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()} × ${versionLabel}</div>`;
 
     const frame = `
         <div class="calib-grid">
@@ -447,6 +503,7 @@ function renderCalibrationAgentSection(preds, agent, invalidIds) {
                 <div class="dq-cell"><div class="dq-value">${dq.ts}</div><div class="dq-label">unknown timestamps</div></div>
                 <div class="dq-cell"><div class="dq-value">${dq.close}</div><div class="dq-label">missing closing</div></div>
                 <div class="dq-cell"><div class="dq-value">${dq.inv}</div><div class="dq-label">invalid records</div></div>
+                <div class="dq-cell"><div class="dq-value">${dq.legacy}</div><div class="dq-label">legacy rounding (flagged, not excluded)</div></div>
             </div>
         </div>`;
 
@@ -463,14 +520,27 @@ function renderCalibrationAgentSection(preds, agent, invalidIds) {
     if (paired.length > 0) {
         const be = paired.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / paired.length;
         const bm = paired.reduce((s, p) => s + Math.pow(devig(p.market_odds_at_analysis, p.market_odds_opponent) - out(p), 2), 0) / paired.length;
+        const adv = bm - be; // positive = edge beats market
+        const ci = bootstrapBrierAdvantageCI(paired);
+        // Never show the advantage as a bare sign (v1 checkpoint lesson,
+        // docs/PLAYBOOK.md -> Current Lessons): distinguishable from zero
+        // only when the 95% CI excludes zero, regardless of settled count.
+        const distinguishable = ci && !ci.containsZero;
+        const advText = ci
+            ? `Brier advantage (market − edge): ${adv >= 0 ? '+' : ''}${adv.toFixed(4)} · 95% CI [${ci.lo >= 0 ? '+' : ''}${ci.lo.toFixed(4)}, ${ci.hi >= 0 ? '+' : ''}${ci.hi.toFixed(4)}]`
+            : '';
         let verdict;
         if (paired.length >= CAL_T.VALID) {
-            const better = be < bm;
-            verdict = `<div class="calib-verdict ${better ? 'pos' : 'neg'}">${better
-                ? 'Validation checkpoint: Edge estimates beat the de-vigged market baseline on the paired sample.'
-                : 'Validation checkpoint failed: Edge estimates do not beat the market baseline — per pre-registered condition, fair odds should be anchored to the de-vigged market price.'}</div>`;
+            verdict = `<div class="calib-verdict ${distinguishable ? (adv > 0 ? 'pos' : 'neg') : ''}">
+                <div>${advText}</div>
+                <div>${!distinguishable
+                    ? 'Difference is not distinguishable from zero — the 95% CI contains zero. A validated verdict requires the CI to exclude zero, not just crossing the settled-count threshold.'
+                    : (adv > 0
+                        ? 'Validation checkpoint: Edge estimates beat the de-vigged market baseline on the paired sample (CI excludes zero).'
+                        : 'Validation checkpoint failed: Edge estimates do not beat the market baseline (CI excludes zero) — per pre-registered condition, fair odds should be anchored to the de-vigged market price.')}</div>
+            </div>`;
         } else {
-            verdict = `<div class="calib-note">Paired comparison is ${stage.label.toLowerCase()} (n=${paired.length}). Verdict is rendered only at the validation checkpoint (${CAL_T.VALID} paired settled).</div>`;
+            verdict = `<div class="calib-note">${advText}<br>Paired comparison is ${stage.label.toLowerCase()} (n=${paired.length}). Verdict is rendered only at the validation checkpoint (${CAL_T.VALID} paired settled).</div>`;
         }
         pairBlock = `
         <div class="calib-grid" style="margin-top:14px;">
@@ -538,14 +608,41 @@ function renderCalibration() {
     const invalidIds = {};
     invalid.forEach(x => invalidIds[x.id] = 1);
 
-    const sections = agents.map((agent, i) => {
-        const s = renderCalibrationAgentSection(preds, agent, invalidIds);
+    // Per method-versioning rule (PLAYBOOK.md -> Method versioning, and the
+    // 2026-09-23 v2 freeze): a version bump starts a fresh, independent
+    // sample. One agent's v1 and v2 rows must never share a section -- that
+    // would silently blend two different methods into what reads as a
+    // single result. So every (agent, method_version) pair actually present
+    // in the data gets its own section, ordered by version then agent.
+    const versions = [...new Set(preds.map(p => p.method_version).filter(Boolean))].sort();
+    const pairs = [];
+    versions.forEach(version => agents.forEach(agent => {
+        if (preds.some(p => p.agent === agent && p.method_version === version)) pairs.push({ agent, version });
+    }));
+
+    const sections = pairs.map(({ agent, version }, i) => {
+        const s = renderCalibrationAgentSection(preds, agent, version, invalidIds);
         const border = i === 0 ? '' : 'margin-top:28px;padding-top:20px;border-top:1px solid var(--line);';
-        return { ...s, wrapped: `<div style="${border}">${s.html}</div>` };
+        return { ...s, agent, version, wrapped: `<div style="${border}">${s.html}</div>` };
     });
 
+    // v2 is the active method (frozen 2026-09-23, docs/METHOD_V2.md) but may
+    // have zero entries yet -- show it as an explicit empty section rather
+    // than silently omitting it, so "collection hasn't started" reads
+    // differently from "the dashboard doesn't know v2 exists".
+    if (!versions.includes('v2')) {
+        const border = sections.length === 0 ? '' : 'margin-top:28px;padding-top:20px;border-top:1px solid var(--line);';
+        sections.push({
+            logged: 0, settledCount: 0, agent: null, version: 'v2',
+            wrapped: `<div style="${border}">
+                <div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">V2</div>
+                <div class="calib-note">Frozen 2026-09-23 (<span class="mono">docs/METHOD_V2.md</span>) — collection not started yet: 0 logged, 0 settled.</div>
+            </div>`
+        });
+    }
+
     if (countEl) {
-        countEl.textContent = sections.map((s, i) => `${agents[i]}: ${s.logged} logged · ${s.settledCount} settled`).join(' · ');
+        countEl.textContent = sections.map(s => `${s.agent ? s.agent + ' × ' : ''}${s.version}: ${s.logged} logged · ${s.settledCount} settled`).join(' · ');
     }
 
     el.innerHTML = sections.map(s => s.wrapped).join('');
