@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-23",
+  "updated_at": "2026-09-24",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -6481,19 +6481,53 @@
           "notes": "Out of Edge scope -- CCT EU. Settled: Leo Team beat Spirit Academy 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-177",
+      "date": "2026-09-24",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.06,
+      "potential_return_pln": 3.62,
+      "gross_return_pln": 3.62,
+      "status": "won",
+      "net_result_pln": 1.62,
+      "selections": [
+        {
+          "match": "Nemiga vs Just Players",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.40,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Settled: Nemiga beat Just Players 2:0."
+        },
+        {
+          "match": "The Last Resort vs Nexus",
+          "market": "handicap_maps",
+          "pick": "The Last Resort +0.5",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Settled: The Last Resort won a map."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 176,
-    "won": 59,
+    "coupons": 177,
+    "won": 60,
     "lost": 117,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 389.32,
-    "gross_return_pln": 265.08,
-    "net_result_pln": -124.24,
-    "roi": -0.3191
+    "total_staked_pln": 391.32,
+    "gross_return_pln": 268.70,
+    "net_result_pln": -122.62,
+    "roi": -0.3133
   },
   "archived_predictions": [
     {
