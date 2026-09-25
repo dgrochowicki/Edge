@@ -6631,19 +6631,43 @@
           "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for sAw at time of bet. Cash-out of 3.72 PLN was offered against a 4.42 PLN potential return; Dominik held and the coupon won in full. Settled: sAw beat Infinite 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-182",
+      "date": "2026-09-25",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.90,
+      "potential_return_pln": 3.34,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Sashi vs 9INE",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 1.90,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 181,
+    "coupons": 182,
     "won": 62,
     "lost": 119,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 399.77,
+    "pending": 1,
+    "total_staked_pln": 401.77,
     "gross_return_pln": 276.69,
-    "net_result_pln": -123.08,
-    "roi": -0.3079
+    "net_result_pln": -125.08,
+    "roi": -0.3113
   },
   "archived_predictions": [
     {
