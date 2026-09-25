@@ -6617,8 +6617,8 @@
           "odds": 1.60,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- CCT EU. Status of this leg not given when the coupon was logged."
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Leg confirmed won by Dominik (before the cash-out decision on the other leg)."
         },
         {
           "match": "Infinite vs sAw",
