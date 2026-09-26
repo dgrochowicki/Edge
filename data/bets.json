@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-25",
+  "updated_at": "2026-09-26",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -6641,8 +6641,8 @@
       "combined_odds": 1.90,
       "potential_return_pln": 3.34,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
       "selections": [
         {
           "match": "Sashi vs 9INE",
@@ -6651,8 +6651,8 @@
           "odds": 1.90,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 1:0 at time of bet. Settled: Sashi swept 9INE 2:0, only 2 maps played."
         }
       ]
     }
@@ -6661,9 +6661,9 @@
   "summary": {
     "coupons": 182,
     "won": 62,
-    "lost": 119,
+    "lost": 120,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 401.77,
     "gross_return_pln": 276.69,
     "net_result_pln": -125.08,
