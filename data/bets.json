@@ -6777,8 +6777,8 @@
           "odds": 1.55,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series 1:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series 1:1 at time of bet. Settled: Eternal Fire beat Nuclear TigeRES 2:1."
         }
       ]
     },
@@ -6801,8 +6801,8 @@
           "odds": 1.22,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- StarLadder Ranked CQ. Placed live, 3rd (decider) map, series 1:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope -- StarLadder Ranked CQ. Placed live, 3rd (decider) map, series 1:1 at time of bet. Settled: Eternal Fire beat Nuclear TigeRES 2:1."
         },
         {
           "match": "Wildcard vs NRG",
