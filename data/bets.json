@@ -6883,19 +6883,53 @@
           "notes": "Out of Edge scope. Settled: Sinners beat K27 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-190",
+      "date": "2026-09-27",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.34,
+      "potential_return_pln": 4.12,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Fnatic vs Nemesis",
+          "market": "moneyline",
+          "pick": "Fnatic",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- StarLadder Ranked CQ. Placed live, 3rd (decider) map, series 1:1 at time of bet."
+        },
+        {
+          "match": "3DMAX vs GamerLegion",
+          "market": "map_winner",
+          "pick": "3DMAX (map 2, incl. OT)",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for GamerLegion at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 189,
+    "coupons": 190,
     "won": 66,
     "lost": 123,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 417.10,
+    "pending": 1,
+    "total_staked_pln": 419.10,
     "gross_return_pln": 293.60,
-    "net_result_pln": -123.50,
-    "roi": -0.2961
+    "net_result_pln": -125.50,
+    "roi": -0.2995
   },
   "archived_predictions": [
     {
