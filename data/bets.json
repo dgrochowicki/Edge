@@ -6913,8 +6913,8 @@
           "odds": 1.72,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for GamerLegion at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope. Placed live, 2nd map, series 0:1 for GamerLegion at time of bet. Settled: 3DMAX won map 2, series tied 1:1."
         }
       ]
     }
