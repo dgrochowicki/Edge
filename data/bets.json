@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-27",
+  "updated_at": "2026-09-30",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -6965,19 +6965,43 @@
           "notes": "Out of Edge scope. Settled: Black Phoenix swept ex-RUSTEC 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-193",
+      "date": "2026-09-30",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 3.00,
+      "combined_odds": 2.20,
+      "potential_return_pln": 5.81,
+      "gross_return_pln": 5.81,
+      "status": "won",
+      "net_result_pln": 2.81,
+      "selections": [
+        {
+          "match": "Rune Eaters vs Bushido Wildcats",
+          "market": "map_winner",
+          "pick": "Bushido Wildcats (map 2, incl. OT)",
+          "odds": 2.20,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Settled: Bushido Wildcats won map 2."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 192,
-    "won": 66,
+    "coupons": 193,
+    "won": 67,
     "lost": 126,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 423.10,
-    "gross_return_pln": 293.60,
-    "net_result_pln": -129.50,
-    "roi": -0.3061
+    "total_staked_pln": 426.10,
+    "gross_return_pln": 299.41,
+    "net_result_pln": -126.69,
+    "roi": -0.2973
   },
   "archived_predictions": [
     {
