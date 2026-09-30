@@ -6989,19 +6989,53 @@
           "notes": "Out of Edge scope. Settled: Bushido Wildcats won map 2."
         }
       ]
+    },
+    {
+      "id": "EDGE-194",
+      "date": "2026-09-30",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 3.20,
+      "potential_return_pln": 5.62,
+      "gross_return_pln": 5.62,
+      "status": "won",
+      "net_result_pln": 3.62,
+      "selections": [
+        {
+          "match": "Leo Team vs Phantom Academy",
+          "market": "moneyline",
+          "pick": "Leo Team",
+          "odds": 1.36,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Placed live, 3rd (decider) map, series 1:1 at time of bet. Settled: Leo Team beat Phantom Academy 2:1."
+        },
+        {
+          "match": "K27 vs BAKS",
+          "market": "map_winner",
+          "pick": "K27 (map 1, incl. OT)",
+          "odds": 2.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Settled: K27 won map 1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 193,
-    "won": 67,
+    "coupons": 194,
+    "won": 68,
     "lost": 126,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 426.10,
-    "gross_return_pln": 299.41,
-    "net_result_pln": -126.69,
-    "roi": -0.2973
+    "total_staked_pln": 428.10,
+    "gross_return_pln": 305.03,
+    "net_result_pln": -123.07,
+    "roi": -0.2875
   },
   "archived_predictions": [
     {
