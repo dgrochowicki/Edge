@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-09-30",
+  "updated_at": "2026-10-01",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -7047,19 +7047,53 @@
           "notes": "Out of Edge scope -- CIS LAN Championship. Placed live at 20:27, 3rd (decider) map, series 1:1 at time of bet. Cashed out at 13:15 in overtime (K27 leading) for a guaranteed 3.76 PLN instead of riding the full 4.03. Final: K27 beat CYBERSHOKE 2:1, decider 16:14 -- would have won straight anyway."
         }
       ]
+    },
+    {
+      "id": "EDGE-196",
+      "date": "2026-10-01",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 5.76,
+      "potential_return_pln": 10.14,
+      "gross_return_pln": 10.14,
+      "status": "won",
+      "net_result_pln": 8.14,
+      "selections": [
+        {
+          "match": "BIG vs Fnatic",
+          "market": "moneyline",
+          "pick": "BIG",
+          "odds": 4.00,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- StarLadder Ranked. Settled: BIG beat Fnatic 2:1."
+        },
+        {
+          "match": "PRIVATE vs K27",
+          "market": "moneyline",
+          "pick": "K27",
+          "odds": 1.44,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope. Settled: K27 beat PRIVATE 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 195,
-    "won": 69,
+    "coupons": 196,
+    "won": 70,
     "lost": 126,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 430.10,
-    "gross_return_pln": 308.79,
-    "net_result_pln": -121.31,
-    "roi": -0.2821
+    "total_staked_pln": 432.10,
+    "gross_return_pln": 318.93,
+    "net_result_pln": -113.17,
+    "roi": -0.2619
   },
   "archived_predictions": [
     {
