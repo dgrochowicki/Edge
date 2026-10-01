@@ -7105,19 +7105,43 @@
           "notes": "Out of Edge scope. Placed live, 1st map, 0:0 rounds at time of bet. Map 1 was tied 14:14 and cash-outable at 3 PLN (not taken), then lost -- Alliance leads the series 1:0, busting the 2:0 pick."
         }
       ]
+    },
+    {
+      "id": "EDGE-198",
+      "date": "2026-10-01",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.25,
+      "potential_return_pln": 3.96,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Astralis vs Alliance",
+          "market": "moneyline",
+          "pick": "Astralis",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope. Placed live, Alliance leads the series 1:0 -- betting on Astralis comeback."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 197,
+    "coupons": 198,
     "won": 70,
     "lost": 127,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 434.10,
+    "pending": 1,
+    "total_staked_pln": 436.10,
     "gross_return_pln": 318.93,
-    "net_result_pln": -115.17,
-    "roi": -0.2653
+    "net_result_pln": -117.17,
+    "roi": -0.2687
   },
   "archived_predictions": [
     {
