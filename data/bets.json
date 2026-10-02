@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-01",
+  "updated_at": "2026-10-02",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -7129,19 +7129,53 @@
           "notes": "Out of Edge scope. Placed live, Alliance leads the series 1:0 -- betting on Astralis comeback. Settled: Alliance beat Astralis 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-199",
+      "date": "2026-10-02",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.27,
+      "potential_return_pln": 3.99,
+      "gross_return_pln": 3.99,
+      "status": "won",
+      "net_result_pln": 1.99,
+      "selections": [
+        {
+          "match": "Astralis vs FaZe",
+          "market": "handicap_maps",
+          "pick": "FaZe +0.5",
+          "odds": 1.62,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- StarLadder Ranked. Settled: won (FaZe took at least one map)."
+        },
+        {
+          "match": "Sinners vs Eternal Fire",
+          "market": "moneyline",
+          "pick": "Eternal Fire",
+          "odds": 1.40,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- JOURNEY. Settled: Eternal Fire won."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 198,
-    "won": 70,
+    "coupons": 199,
+    "won": 71,
     "lost": 128,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 436.10,
-    "gross_return_pln": 318.93,
-    "net_result_pln": -117.17,
-    "roi": -0.2687
+    "total_staked_pln": 438.10,
+    "gross_return_pln": 322.92,
+    "net_result_pln": -115.18,
+    "roi": -0.2629
   },
   "archived_predictions": [
     {
