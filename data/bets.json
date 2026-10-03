@@ -14985,7 +14985,8 @@
       "result": "pending",
       "data_quality": ["opponent_window_reset_igl_change", "insufficient_current_core_form_opponent"],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: brak odczytu (start meczu przeoczony) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku)."
     },
     {
       "id": "P-2026-10-03-G3",
