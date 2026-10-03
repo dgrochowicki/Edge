@@ -15151,12 +15151,13 @@
       "value_pct": -4.1,
       "decision": "PASS",
       "confidence": 6,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 2.75,
+      "closing_odds_opponent": 1.40,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: 19:24, 6 min przed meczem (start opozniony z 18:30 na 19:30; STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Rynek odszedl od BETBOOM (2.60 -> 2.75), przeciwnie do korekty fresh +1.2pp."
     },
     {
       "id": "P-2026-10-03-G8",
