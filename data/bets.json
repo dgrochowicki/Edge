@@ -14949,11 +14949,11 @@
       "confidence": 4,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": ["weak_fresh_sample_pick"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: brak odczytu (operator poza komputerem w momencie startu) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku)."
+      "notes": "Closing: brak odczytu (operator poza komputerem w momencie startu) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku). Settled: Falcons beat TYLOO 2:0."
     },
     {
       "id": "P-2026-10-03-G2",
@@ -14983,11 +14983,11 @@
       "confidence": 3,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": ["opponent_window_reset_igl_change", "insufficient_current_core_form_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: brak odczytu (start meczu przeoczony) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku)."
+      "notes": "Closing: brak odczytu (start meczu przeoczony) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku). Settled: PARIVISION beat Legacy 2:1."
     },
     {
       "id": "P-2026-10-03-G3",
@@ -15017,11 +15017,11 @@
       "confidence": 3,
       "closing_odds": 1.01,
       "closing_odds_opponent": 11.60,
-      "result": "pending",
+      "result": "won",
       "data_quality": ["weak_fresh_sample_pick", "no_in_scope_fresh_form_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 13:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik)."
+      "notes": "Closing: 13:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Settled: Spirit beat ShindeN 2:1."
     },
     {
       "id": "P-2026-10-03-G4",
@@ -15051,11 +15051,11 @@
       "confidence": 3,
       "closing_odds": 1.03,
       "closing_odds_opponent": 9.50,
-      "result": "pending",
+      "result": "won",
       "data_quality": ["no_in_scope_fresh_form_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 13:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik)."
+      "notes": "Closing: 13:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Settled: Vitality beat 1win 2:0."
     },
     {
       "id": "P-2026-10-03-G5",
@@ -15085,11 +15085,11 @@
       "confidence": 5,
       "closing_odds": 1.32,
       "closing_odds_opponent": 3.10,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 15:54, 6 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik)."
+      "notes": "Closing: 15:54, 6 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Settled: Aurora beat 9z 2:0."
     },
     {
       "id": "P-2026-10-03-G6",
@@ -15119,11 +15119,11 @@
       "confidence": 3,
       "closing_odds": 1.13,
       "closing_odds_opponent": 4.90,
-      "result": "pending",
+      "result": "won",
       "data_quality": ["no_in_scope_fresh_form_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 15:54, 6 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik)."
+      "notes": "Closing: 15:54, 6 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Settled: MOUZ beat M80 2:0."
     },
     {
       "id": "P-2026-10-03-G7",
@@ -15186,11 +15186,11 @@
       "confidence": 4,
       "closing_odds": 1.67,
       "closing_odds_opponent": 2.08,
-      "result": "pending",
+      "result": "lost",
       "data_quality": ["weak_fresh_sample_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 18:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik)."
+      "notes": "Closing: 18:20, 10 min przed meczem (STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Settled: Natus Vincere beat G2 Esports 2:0."
     }
   ]
 }
