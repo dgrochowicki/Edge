@@ -15153,11 +15153,11 @@
       "confidence": 6,
       "closing_odds": 2.75,
       "closing_odds_opponent": 1.40,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 19:24, 6 min przed meczem (start opozniony z 18:30 na 19:30; STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Rynek odszedl od BETBOOM (2.60 -> 2.75), przeciwnie do korekty fresh +1.2pp."
+      "notes": "Closing: 19:24, 6 min przed meczem (start opozniony z 18:30 na 19:30; STS, kurs przedmeczowy, oba kursy w kolejnosci pick / przeciwnik). Rynek odszedl od BETBOOM (2.60 -> 2.75), przeciwnie do korekty fresh +1.2pp. Settled: FURIA beat BETBOOM 2:0."
     },
     {
       "id": "P-2026-10-03-G8",
