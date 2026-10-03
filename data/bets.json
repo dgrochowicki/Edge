@@ -14952,7 +14952,8 @@
       "result": "pending",
       "data_quality": ["weak_fresh_sample_pick"],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: brak odczytu (operator poza komputerem w momencie startu) -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku)."
     },
     {
       "id": "P-2026-10-03-G2",
