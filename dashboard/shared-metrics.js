@@ -581,6 +581,17 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
 
 // `onlyVersion` (e.g. "v1") scopes the render to one method_version -- used
 // by Research's version tabs. Omit it to render every version present.
+const V1_ARCHIVE_NOTE = `
+<div class="panel" style="margin-bottom:20px;">
+    <div class="calib-sub" style="margin-top:0;">Archiwum v1 — dlaczego to już nie jest aktywna metoda</div>
+    <div class="calib-note" style="line-height:1.6;">
+        <p><b>Co wyszło.</b> Checkpoint 150 (19.09, StarLadder StarSeries Fall 2026): claude × v1 Brier 0.21523 wobec rynku 0.21503, różnica +0.00020 — <i>niezwalidowana</i>. gpt × v1 Brier 0.20759 wobec rynku 0.20793, różnica −0.00034 — <i>zwalidowana</i>. Żadnej z tych różnic nie da się odróżnić od zera: 95% przedziały ufności to około ±0.0045 (claude) i ±0.006 (gpt).</p>
+        <p><b>Dlaczego archiwum.</b> v1 nie dało się odróżnić od de-vigowanego rynku, więc nie ma sensu utrzymywać go obok v2 — porównanie „v2 vs v1" niesie tę samą informację co „v2 vs rynek", tylko drożej. Decyzja operatora z 23.09: v2 zastępuje v1 (nie działa obok niego), predykcje v1 zostają w księdze jako archiwum i nigdy nie są przeliczane.</p>
+        <p><b>Zakres.</b> 313 rozliczonych predykcji v1 (claude 158, gpt 155), okno 21.07–20.09.2026. Zamrożony opis metody: <span class="mono">docs/archive/METHOD_V1.md</span>. Pełna analiza: <span class="mono">reports/summaries/v1-checkpoint-150.md</span>.</p>
+        <p><b>Pieniądze.</b> Realne zakłady oparte na agentach wstrzymane dla obu wersji (decyzja z 23.09). Twoje kupony „for fun" są niezależne od tej decyzji.</p>
+    </div>
+</div>`;
+
 function renderCalibration(onlyVersion) {
     const el = document.getElementById('calibBody');
     if (!el) return;
@@ -647,7 +658,7 @@ function renderCalibration(onlyVersion) {
         countEl.textContent = sections.map(s => `${s.agent ? s.agent + ' × ' : ''}${s.version}: ${s.logged} logged · ${s.settledCount} settled`).join(' · ');
     }
 
-    el.innerHTML = sections.map(s => s.wrapped).join('');
+    el.innerHTML = (onlyVersion === 'v1' ? V1_ARCHIVE_NOTE : '') + sections.map(s => s.wrapped).join('');
 
     // Compact/expand teaser reflects whichever agent is furthest along --
     // once any agent clears the preliminary threshold there's real content
