@@ -62,6 +62,7 @@ Object.assign(CALIB_INFO, {
     v2brier: ['Brier v2 vs rynek', 'Kara za pomyłki (prognoza − wynik)² dla p_v2 i dla de-vigowanego rynku, na tych samych meczach. advantage = Brier rynku − Brier v2; dodatni = v2 lepsze od rynku. Zawsze z 95% przedziałem ufności z bootstrapu. Pokazujemy od 50 rozliczonych; werdykt tylko na checkpoincie 150 (pierwsze 150 wg daty, potem id — nigdy nieprzeliczany później).'],
     v2buckets: ['Kalibracja vs wyniki i vs rynek', 'Mecze pogrupowane wg p_v2 co 10 pp. Dla każdej grupy: średnie p_v2, średnie p_market i faktyczny odsetek wygranych. Jeśli „Actual" jest bliżej rynku niż v2, korekty szkodzą.'],
     v2bets: ['BET-y v2 (paper)', 'Wszystkie BET-y v2 są papierowe w czasie walidacji. Liczba, paper ROI przy 1u i paper CLV są czysto opisowe — przy progu +8% i marży STS BET-ów będzie mało i prawie same underdogi (§13), więc nie są bramką promocji.'],
+    v2hits: ['Pick outcomes', 'Czy strona wskazana jako pick wygrała serię. Hit / Miss zamiast won / lost, bo PASS to nie zakład — to tylko kierunek, w który metoda przesunęła cenę. Pick to zwykle faworyt, więc sama trafność wygląda lepiej niż jest: porównuj ją z „Expected hits" (suma p_v2 po rozliczonych). Hit wyraźnie powyżej expected = metoda była zbyt ostrożna, poniżej = zbyt pewna. Przy małej próbce różnica kilku trafień to szum.'],
     v2checkpoint: ['Checkpoint 150', 'Liczony raz, na pierwszych 150 rozliczonych predykcjach v2 posortowanych po dacie, potem id. Bezpiecznik: Brier rynku − Brier v2 < 0 → brak promocji niezależnie od ruchu linii. Reguła stopu: przedział ufności zawiera zero i jego połowa ≤ 0.003 → „brak wykrywalnej przewagi", zbieranie v2 się kończy (§20).']
 });
 
@@ -125,6 +126,31 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
     const dqFlagged = valid.filter(p => Array.isArray(p.data_quality) && p.data_quality.length > 0).length;
     const covPct = valid.length ? withClose.length / valid.length * 100 : 0;
 
+    // Pick hit / miss: did the pick side win the series. Named hit/miss, not
+    // won/lost, because a PASS entry is not a bet. Shown next to the hits the
+    // method itself expected (sum of p_v2), since picks are mostly favourites
+    // and a raw hit rate alone reads better than it is.
+    const hits = settled.filter(p => p.result === 'won').length;
+    const misses = settled.length - hits;
+    const pending = preds.filter(p => p.result === 'pending').length;
+    const expHits = settled.reduce((s, p) => s + v2PV2(p), 0);
+    const pct = n => preds.length ? n / preds.length * 100 : 0;
+    const hitPanel = `
+        <div class="panel">
+            <div class="calib-sub click" style="margin-top:0;" onclick="calibInfo('v2hits')">Pick outcomes</div>
+            <div class="outcome-bar">
+                ${hits ? `<div class="outcome-seg" style="width:${pct(hits)}%;background:var(--pos);" title="Hit: ${hits}"></div>` : ''}
+                ${misses ? `<div class="outcome-seg" style="width:${pct(misses)}%;background:var(--neg);" title="Miss: ${misses}"></div>` : ''}
+                ${pending ? `<div class="outcome-seg" style="width:${pct(pending)}%;background:var(--line-soft);" title="Pending: ${pending}"></div>` : ''}
+            </div>
+            <div class="outcome-legend">
+                <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--pos);"></span><span class="ol-label">Hit</span><span class="ol-count">${hits}</span><span class="ol-pct">${settled.length ? (hits / settled.length * 100).toFixed(0) + '% of settled' : ''}</span></div>
+                <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--neg);"></span><span class="ol-label">Miss</span><span class="ol-count">${misses}</span></div>
+                <div class="outcome-legend-item"><span class="outcome-dot" style="background:var(--ink-faint);"></span><span class="ol-label">Pending</span><span class="ol-count">${pending}</span></div>
+                <div class="outcome-legend-item"><span class="ol-label">Expected hits</span><span class="ol-count">${expHits.toFixed(1)}</span><span class="ol-pct">sum of p_v2 · ${settled.length ? (expHits / settled.length * 100).toFixed(0) + '%' : ''}</span></div>
+            </div>
+        </div>`;
+
     const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()} × V2 · ${stage.label}</div>`;
 
     let html = `${header}<div class="charts">
@@ -142,6 +168,7 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
                 <span class="ol-count">${settled.length}</span><span class="ol-pct">/ ${CAL_T.PRELIM} prelim · / ${CAL_T.EMERG} emerging · / ${CAL_T.VALID} checkpoint</span>
             </div></div>
         </div>
+        ${hitPanel}
         <div class="panel">
             <div class="calib-sub click" style="margin-top:0;" onclick="calibInfo('quality')">Data quality</div>
             <div class="dq-grid">
