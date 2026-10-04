@@ -7163,19 +7163,87 @@
           "notes": "Out of Edge scope -- JOURNEY. Settled: Eternal Fire won."
         }
       ]
+    },
+    {
+      "id": "EDGE-200",
+      "date": "2026-10-03",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.27,
+      "potential_return_pln": 4.00,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "Legacy vs PARIVISION",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-10-03-G2 (gpt picked PARIVISION, PASS). Pick is Legacy 2:0. Settled: PARIVISION beat Legacy 2:1."
+        },
+        {
+          "match": "Falcons vs TYLOO",
+          "market": "moneyline",
+          "pick": "Falcons",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-10-03-G1 (gpt picked Falcons, PASS). Settled: Falcons beat TYLOO 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-201",
+      "date": "2026-10-04",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 2.95,
+      "potential_return_pln": 5.20,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
+      "selections": [
+        {
+          "match": "Spirit vs PARIVISION",
+          "market": "moneyline",
+          "pick": "Spirit",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-10-04-G2 (gpt picked Spirit, PASS). Odds 1.53 vs pre-match 1.12/closing 1.12. Settled: Spirit beat PARIVISION 2:1."
+        },
+        {
+          "match": "ShindeN vs Legacy",
+          "market": "handicap_maps",
+          "pick": "ShindeN +0.5",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-10-04-G1 (gpt picked ShindeN ML, PASS). Settled: Legacy beat ShindeN 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 199,
+    "coupons": 201,
     "won": 71,
-    "lost": 128,
+    "lost": 130,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 438.10,
+    "total_staked_pln": 442.10,
     "gross_return_pln": 322.92,
-    "net_result_pln": -115.18,
-    "roi": -0.2629
+    "net_result_pln": -119.18,
+    "roi": -0.2696
   },
   "archived_predictions": [
     {
