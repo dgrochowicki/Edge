@@ -7275,8 +7275,8 @@
           "odds": 2.50,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-10-04-G6 (gpt picked G2 Esports, PASS) -- opposite side. Odds 2.50 vs pre-match 3.35 / closing 3.25. At 17:12: 1win leads the series 0:1. Coupon cashed out for 4.97 PLN (of 7.50 potential) after the MOUZ leg won, before this match ended -- leg result stays pending until the final score is known."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-10-04-G6 (gpt picked G2 Esports, PASS) -- opposite side. Odds 2.50 vs pre-match 3.35 / closing 3.25. At 17:12: 1win leads the series 0:1. Coupon cashed out for 4.97 PLN (of 7.50 potential) after the MOUZ leg won, before this match ended -- leg result stays pending until the final score is known. Settled: 1win beat G2 Esports 2:1 -- coupon would have paid the full 7.50 PLN without the cash-out."
         },
         {
           "match": "FURIA vs MOUZ",
@@ -15517,11 +15517,11 @@
       "confidence": 3,
       "closing_odds": 1.30,
       "closing_odds_opponent": 3.25,
-      "result": "pending",
+      "result": "lost",
       "data_quality": ["insufficient_fresh_sample_opponent"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 15:50, 10 min przed meczem (STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od G2 (1.28 -> 1.30)."
+      "notes": "Closing: 15:50, 10 min przed meczem (STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od G2 (1.28 -> 1.30). Settled: 1win beat G2 Esports 2:1."
     },
     {
       "id": "P-2026-10-04-G7",
