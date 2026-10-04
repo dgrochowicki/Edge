@@ -7309,8 +7309,8 @@
           "odds": 1.05,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-10-04-G8 (gpt picked Vitality, PASS). Placed live (match started 18:30; at 19:12 still map 1, series 0:0) at 1.05 vs pre-match 1.20 / closing 1.26."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-10-04-G8 (gpt picked Vitality, PASS). Placed live (match started 18:30; at 19:12 still map 1, series 0:0) at 1.05 vs pre-match 1.20 / closing 1.26. Settled: Vitality beat NAVI 2:1 (confirmed by Dominik)."
         },
         {
           "match": "BETBOOM vs M80",
@@ -15619,11 +15619,11 @@
       "confidence": 6,
       "closing_odds": 1.26,
       "closing_odds_opponent": 3.50,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 18:25, 5 min przed meczem (potwierdzone bez zmian wzgledem odczytu 18:23; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek od Vitality (1.20 -> 1.26), przeciwnie do korekty fresh +1.1pp. Wczesniejszy odczyt 18:12: 1.30 / 3.25."
+      "notes": "Closing: 18:25, 5 min przed meczem (potwierdzone bez zmian wzgledem odczytu 18:23; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek od Vitality (1.20 -> 1.26), przeciwnie do korekty fresh +1.1pp. Wczesniejszy odczyt 18:12: 1.30 / 3.25. Settled: Vitality beat NAVI 2:1 (confirmed by Dominik)."
     }
   ]
 }
