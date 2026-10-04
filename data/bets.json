@@ -7231,19 +7231,77 @@
           "notes": "Same match as Edge prediction P-2026-10-04-G1 (gpt picked ShindeN ML, PASS). Settled: Legacy beat ShindeN 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-202",
+      "date": "2026-10-04",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.00,
+      "combined_odds": 1.88,
+      "potential_return_pln": 3.31,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "sAw vs Nice Try",
+          "market": "moneyline",
+          "pick": "sAw",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- FOX Legacy Cup. Placed 2026-10-04 16:56. At 17:12: map 2 live, Nice Try leads the series 0:1, cash-out offered 1.13 PLN."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-203",
+      "date": "2026-10-04",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.32,
+      "combined_odds": 3.67,
+      "potential_return_pln": 7.50,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "G2 Esports vs 1win",
+          "market": "moneyline",
+          "pick": "1win",
+          "odds": 2.50,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-10-04-G6 (gpt picked G2 Esports, PASS) -- opposite side. Odds 2.50 vs pre-match 3.35 / closing 3.25. At 17:12: 1win leads the series 0:1."
+        },
+        {
+          "match": "FURIA vs MOUZ",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-10-04-G5 (gpt picked MOUZ, PASS). Odds 1.47 vs pre-match 1.70 / closing 1.72. At 17:12: MOUZ leads the series 0:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 201,
+    "coupons": 203,
     "won": 71,
     "lost": 130,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 442.10,
+    "pending": 2,
+    "total_staked_pln": 446.42,
     "gross_return_pln": 322.92,
-    "net_result_pln": -119.18,
-    "roi": -0.2696
+    "net_result_pln": -123.50,
+    "roi": -0.2766
   },
   "archived_predictions": [
     {
