@@ -15555,7 +15555,7 @@
       "data_quality": ["insufficient_fresh_sample_pick"],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 19:05, 10 min przed meczem (start przesuniety z 18:30 na 19:15; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od M80 (2.95 -> 3.05). Wczesniejsze odczyty: 18:12 i ~18:50 -- 3.10 / 1.32."
+      "notes": "Closing: 19:05, 5 min przed meczem (start przesuniety z 18:30; zapowiadany na 19:15, faktyczny start 19:10; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od M80 (2.95 -> 3.05). Wczesniejsze odczyty: 18:12 i ~18:50 -- 3.10 / 1.32."
     },
     {
       "id": "P-2026-10-04-G8",
