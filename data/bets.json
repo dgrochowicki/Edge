@@ -7241,8 +7241,8 @@
       "combined_odds": 1.88,
       "potential_return_pln": 3.31,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.00,
       "selections": [
         {
           "match": "sAw vs Nice Try",
@@ -7251,8 +7251,8 @@
           "odds": 1.88,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- FOX Legacy Cup. Placed 2026-10-04 16:56. At 17:12: map 2 live, Nice Try leads the series 0:1, cash-out offered 1.13 PLN."
+          "result": "lost",
+          "notes": "Out of Edge scope -- FOX Legacy Cup. Placed 2026-10-04 16:56. At 17:12: map 2 live, Nice Try leads the series 0:1, cash-out offered 1.13 PLN (not taken). Settled: Nice Try beat sAw 2:0."
         }
       ]
     },
@@ -7295,9 +7295,9 @@
   "summary": {
     "coupons": 203,
     "won": 71,
-    "lost": 130,
+    "lost": 131,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 446.42,
     "gross_return_pln": 322.92,
     "net_result_pln": -123.50,
