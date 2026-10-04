@@ -7285,8 +7285,8 @@
           "odds": 1.47,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-10-04-G5 (gpt picked MOUZ, PASS). Odds 1.47 vs pre-match 1.70 / closing 1.72. At 17:12: MOUZ leads the series 0:1."
+          "result": "won",
+          "notes": "Same match as Edge prediction P-2026-10-04-G5 (gpt picked MOUZ, PASS). Odds 1.47 vs pre-match 1.70 / closing 1.72. At 17:12: MOUZ leads the series 0:1. Settled: MOUZ beat FURIA 2:0."
         }
       ]
     }
@@ -15483,11 +15483,11 @@
       "confidence": 5,
       "closing_odds": 1.72,
       "closing_odds_opponent": 2.00,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: 16:15, 10 min przed meczem (start opozniony z 16:00 na 16:25; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od MOUZ (1.70 -> 1.72)."
+      "notes": "Closing: 16:15, 10 min przed meczem (start opozniony z 16:00 na 16:25; STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od MOUZ (1.70 -> 1.72). Settled: MOUZ beat FURIA 2:0."
     },
     {
       "id": "P-2026-10-04-G6",
