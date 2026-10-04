@@ -579,10 +579,12 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
     return { logged, settledCount: settledEst.length, html };
 }
 
-function renderCalibration() {
+// `onlyVersion` (e.g. "v1") scopes the render to one method_version -- used
+// by Research's version tabs. Omit it to render every version present.
+function renderCalibration(onlyVersion) {
     const el = document.getElementById('calibBody');
     if (!el) return;
-    const preds = betsData.predictions || [];
+    const preds = (betsData.predictions || []).filter(p => onlyVersion == null || p.method_version === onlyVersion);
     const countEl = document.getElementById('calibCount');
 
     if (preds.length === 0) {
@@ -630,7 +632,7 @@ function renderCalibration() {
     // have zero entries yet -- show it as an explicit empty section rather
     // than silently omitting it, so "collection hasn't started" reads
     // differently from "the dashboard doesn't know v2 exists".
-    if (!versions.includes('v2')) {
+    if (!versions.includes('v2') && (onlyVersion == null || onlyVersion === 'v2')) {
         const border = sections.length === 0 ? '' : 'margin-top:28px;padding-top:20px;border-top:1px solid var(--line);';
         sections.push({
             logged: 0, settledCount: 0, agent: null, version: 'v2',
