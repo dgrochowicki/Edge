@@ -15355,12 +15355,13 @@
       "value_pct": -7.1,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.72,
+      "closing_odds_opponent": 2.00,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: 15:50, 10 min przed meczem (STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od MOUZ (1.70 -> 1.72)."
     },
     {
       "id": "P-2026-10-04-G6",
@@ -15388,12 +15389,13 @@
       "value_pct": -7.2,
       "decision": "PASS",
       "confidence": 3,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.30,
+      "closing_odds_opponent": 3.25,
       "result": "pending",
       "data_quality": ["insufficient_fresh_sample_opponent"],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: 15:50, 10 min przed meczem (STS, kurs przedmeczowy, pick / przeciwnik) -- rynek lekko od G2 (1.28 -> 1.30)."
     },
     {
       "id": "P-2026-10-04-G7",
