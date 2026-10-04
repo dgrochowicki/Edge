@@ -7264,9 +7264,9 @@
       "stake_pln": 2.32,
       "combined_odds": 3.67,
       "potential_return_pln": 7.50,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.97,
+      "status": "won",
+      "net_result_pln": 2.65,
       "selections": [
         {
           "match": "G2 Esports vs 1win",
@@ -7276,7 +7276,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Same match as Edge prediction P-2026-10-04-G6 (gpt picked G2 Esports, PASS) -- opposite side. Odds 2.50 vs pre-match 3.35 / closing 3.25. At 17:12: 1win leads the series 0:1."
+          "notes": "Same match as Edge prediction P-2026-10-04-G6 (gpt picked G2 Esports, PASS) -- opposite side. Odds 2.50 vs pre-match 3.35 / closing 3.25. At 17:12: 1win leads the series 0:1. Coupon cashed out for 4.97 PLN (of 7.50 potential) after the MOUZ leg won, before this match ended -- leg result stays pending until the final score is known."
         },
         {
           "match": "FURIA vs MOUZ",
@@ -7294,14 +7294,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 203,
-    "won": 71,
+    "won": 72,
     "lost": 131,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 446.42,
-    "gross_return_pln": 322.92,
-    "net_result_pln": -123.50,
-    "roi": -0.2766
+    "gross_return_pln": 327.89,
+    "net_result_pln": -118.53,
+    "roi": -0.2655
   },
   "archived_predictions": [
     {
