@@ -15289,10 +15289,11 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: brak odczytu -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku). Settled: 9z beat TYLOO 2:0."
     },
     {
       "id": "P-2026-10-04-G4",
@@ -15322,10 +15323,11 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: brak odczytu -- closing_odds i closing_odds_opponent zostaja null na stale (METHOD_V2 s.17, bez uzupelniania po wyniku). Settled: Falcons beat Aurora 2:0."
     },
     {
       "id": "P-2026-10-04-G5",
