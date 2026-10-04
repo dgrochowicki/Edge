@@ -15582,12 +15582,13 @@
       "value_pct": -6.2,
       "decision": "PASS",
       "confidence": 6,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.26,
+      "closing_odds_opponent": 3.50,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: 18:23, 7 min przed meczem (STS, kurs przedmeczowy, pick / przeciwnik) -- rynek od Vitality (1.20 -> 1.26), przeciwnie do korekty fresh +1.1pp. Wczesniejszy odczyt 18:12: 1.30 / 3.25."
     }
   ]
 }
