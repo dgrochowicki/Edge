@@ -24,7 +24,8 @@ Once per calendar day that has at least one v2 prediction, before the determinis
           "rounds_lost": 9,
           "result": "win",
           "weight_recency": 0.71,
-          "weight_opponent": 1.10
+          "weight_opponent": 1.10,
+          "weight_roster": 1.0
         },
         {
           "date": "2026-09-21",
@@ -35,7 +36,8 @@ Once per calendar day that has at least one v2 prediction, before the determinis
           "rounds_lost": null,
           "result": "loss",
           "weight_recency": 0.35,
-          "weight_opponent": 0.90
+          "weight_opponent": 0.90,
+          "weight_roster": 0.5
         }
       ],
       "fresh_input": "round_diff",
@@ -54,8 +56,16 @@ Once per calendar day that has at least one v2 prediction, before the determinis
   - `rounds_won` / `rounds_lost` — `null` together when the round score wasn't available for that map; `result` (`"win"`/`"loss"`) is still recorded either way, since the map-result fallback (§9.2) needs it even without a round score.
   - `weight_recency` — `0.5 ** (days_ago / 14)`, precomputed for that map relative to `date` (§7).
   - `weight_opponent` — the table in §8, looked up from `opponent_rank_band`.
+  - `weight_roster` — the partial-weight rule in §10: `1.0` for a map counted normally, `0.5` for a map played before **one ordinary player change** (neither IGL nor primary AWP). There is no `0` value: after a window reset (two or more starters, IGL or primary AWP changed) the pre-change maps are **not written to `window` at all**, so every map present in the list carries `1.0` or `0.5`. A coach change alone leaves it at `1.0`.
 - **`fresh_input`** — `"round_diff"` if round-score coverage was ≥ 80% of this team's window maps (§9.2), else `"map_result_fallback"`. Matches the `fresh_input_pick` / `fresh_input_opponent` fields in the prediction's ledger entry (`docs/METHOD_V2.md` §16).
-- **`fresh_map_score`** — the derived `FreshMapScore` for this team on this match day, per §9.1 (or the `+1`/`-1` fallback average if `fresh_input` is `map_result_fallback`). This is what gets differenced into `FreshDiff` in §11 — stored here too so a re-run of §11 doesn't need to recompute it from the raw window, only look it up.
+- **`fresh_map_score`** — the derived `FreshMapScore` for this team on this match day, per §9.1 with each map weighted by `weight_recency × weight_opponent × weight_roster`:
+
+  ```text
+  FreshMapScore = sum(RD_capped × weight_recency × weight_opponent × weight_roster)
+                / sum(weight_recency × weight_opponent × weight_roster)
+  ```
+
+  (or the `+1`/`-1` fallback average, same weights, if `fresh_input` is `map_result_fallback`). This is what gets differenced into `FreshDiff` in §11 — stored here too so a re-run of §11 doesn't need to recompute it from the raw window, only look it up.
 
 ## What this file is not
 
