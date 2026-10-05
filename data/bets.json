@@ -7425,8 +7425,8 @@
       "combined_odds": 3.99,
       "potential_return_pln": 7.02,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "M80 vs TYLOO",
@@ -7436,7 +7436,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS). Placed live at 1st map 0:0."
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS). Placed live at 1st map 0:0. Moot -- coupon already lost on the Spirit/MOUZ leg; result not given, to be backfilled."
         },
         {
           "match": "Spirit vs MOUZ",
@@ -7445,8 +7445,8 @@
           "odds": 1.9,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G6 (gpt picked Spirit, PASS). Placed live at 1st map 0:0."
+          "result": "lost",
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G6 (gpt picked Spirit, PASS). Placed live at 1st map 0:0. Settled: MOUZ beat Spirit 2:0, only 2 maps played."
         }
       ]
     }
@@ -7455,9 +7455,9 @@
   "summary": {
     "coupons": 208,
     "won": 73,
-    "lost": 134,
+    "lost": 135,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 457.39,
     "gross_return_pln": 332.27,
     "net_result_pln": -125.12,
@@ -15979,11 +15979,11 @@
       "confidence": 5,
       "closing_odds": 1.47,
       "closing_odds_opponent": 2.50,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: Spirit 1.47 / MOUZ 2.50 (15:50, 10 min before start, STS)."
+      "notes": "Closing: Spirit 1.47 / MOUZ 2.50 (15:50, 10 min before start, STS). Settled: MOUZ beat Spirit 2:0."
     },
     {
       "id": "P-2026-10-05-G7",
