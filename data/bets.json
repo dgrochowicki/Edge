@@ -7435,8 +7435,8 @@
           "odds": 2.1,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS). Placed live at 1st map 0:0. Moot -- coupon already lost on the Spirit/MOUZ leg; result not given, to be backfilled."
+          "result": "lost",
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS). Placed live at 1st map 0:0. Moot -- coupon already lost on the Spirit/MOUZ leg; result not given, to be backfilled. Settled: M80 beat TYLOO 2:1 (coupon already lost on the Spirit/MOUZ leg)."
         },
         {
           "match": "Spirit vs MOUZ",
@@ -7479,8 +7479,8 @@
           "odds": 1.36,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Placed live, 3rd (decider) map, series 1:1 at time of bet. Opposite side to Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS) -- and EDGE-208 holds TYLOO."
+          "result": "won",
+          "notes": "Out of Edge scope -- ESL Pro League. Placed live, 3rd (decider) map, series 1:1 at time of bet. Opposite side to Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS) -- and EDGE-208 holds TYLOO. Settled: M80 beat TYLOO 2:1."
         }
       ]
     }
@@ -15977,13 +15977,13 @@
       "confidence": 4,
       "closing_odds": 1.85,
       "closing_odds_opponent": 1.85,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [
         "weak_fresh_sample_opponent"
       ],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: TYLOO 1.85 / M80 1.85 (15:50, 10 min before start, STS)."
+      "notes": "Closing: TYLOO 1.85 / M80 1.85 (15:50, 10 min before start, STS). Settled: M80 beat TYLOO 2:1."
     },
     {
       "id": "P-2026-10-05-G6",
