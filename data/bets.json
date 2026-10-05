@@ -7459,8 +7459,8 @@
       "combined_odds": 2.04,
       "potential_return_pln": 4.26,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.38,
       "selections": [
         {
           "match": "Leo Team vs ex-Zero Tenacity",
@@ -7469,8 +7469,8 @@
           "odds": 1.5,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- CCT EU. Placed live, 3rd (decider) map, series 1:1 at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope -- CCT EU. Placed live, 3rd (decider) map, series 1:1 at time of bet. Settled: Leo Team beat ex-Zero Tenacity 2:1."
         },
         {
           "match": "M80 vs TYLOO",
@@ -7489,9 +7489,9 @@
   "summary": {
     "coupons": 209,
     "won": 73,
-    "lost": 135,
+    "lost": 136,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 459.77,
     "gross_return_pln": 332.27,
     "net_result_pln": -127.50,
