@@ -16044,12 +16044,13 @@
       "value_pct": -7.1,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 2.40,
+      "closing_odds_opponent": 1.50,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: Falcons 2.40 / Vitality 1.50 (18:20, 10 min before the 18:30 start, STS)."
     }
   ]
 }
