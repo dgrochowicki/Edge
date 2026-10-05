@@ -16045,13 +16045,13 @@
       "value_pct": -7.2,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": 1.44,
-      "closing_odds_opponent": 2.60,
+      "closing_odds": 1.42,
+      "closing_odds_opponent": 2.65,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: Aurora 1.44 / BETBOOM 2.60 (19:00, 15 min before the postponed 19:15 start, STS). Match moved from its original time to 19:15."
+      "notes": "Closing: Aurora 1.42 / BETBOOM 2.65 (19:10, 5 min before the postponed 19:15 start, STS). Match moved from its original time to 19:15. Earlier reading 19:00: Aurora 1.44 / BETBOOM 2.60, replaced by the later one."
     },
     {
       "id": "P-2026-10-05-G8",
