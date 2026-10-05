@@ -15675,10 +15675,11 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Result: FURIA beat PARIVISION 2:1. Closing reading 10:55 (not entered, result already known): PARIVISION 2.80 / FURIA 1.38."
     },
     {
       "id": "P-2026-10-05-G2",
@@ -15708,12 +15709,13 @@
       "confidence": 4,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "weak_fresh_sample_opponent"
       ],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Result: G2 beat ShindeN 2:0. Closing reading 10:55 (not entered, result already known): ShindeN 6.50 / G2 1.08."
     },
     {
       "id": "P-2026-10-05-G3",
@@ -15743,10 +15745,11 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Result: Natus Vincere beat 9z 2:0. Match moved to 14:10. Closing reading 13:58 (not entered, result already known): NAVI 1.30 / 9z 3.25."
     },
     {
       "id": "P-2026-10-05-G4",
@@ -15776,14 +15779,15 @@
       "confidence": 4,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "weak_fresh_sample_pick",
         "opponent_window_reset_igl_change",
         "weak_current_core_form_opponent"
       ],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Result: 1win beat Legacy 2:0. Closing reading 13:20 (not entered, result already known): Legacy 1.65 / 1win 2.10."
     },
     {
       "id": "P-2026-10-05-G5",
@@ -15811,14 +15815,15 @@
       "value_pct": -7.3,
       "decision": "PASS",
       "confidence": 4,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.85,
+      "closing_odds_opponent": 1.85,
       "result": "pending",
       "data_quality": [
         "weak_fresh_sample_opponent"
       ],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: TYLOO 1.85 / M80 1.85 (15:50, 10 min before start, STS)."
     },
     {
       "id": "P-2026-10-05-G6",
@@ -15846,12 +15851,13 @@
       "value_pct": -6.2,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.47,
+      "closing_odds_opponent": 2.50,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: Spirit 1.47 / MOUZ 2.50 (15:50, 10 min before start, STS)."
     },
     {
       "id": "P-2026-10-05-G7",
