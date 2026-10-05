@@ -1,7 +1,11 @@
 #!/usr/bin/env python3
 """Validate data/bets.json against the schema rules in docs/V2_FREEZE_TASKS.md #7.
 
-Usage: python3 scripts/validate_bets.py [path-to-bets.json]
+Usage: python3 scripts/validate_bets.py [path-to-bets.json] [--all]
+
+By default only method_version == "v2" predictions are checked (v1 is a frozen
+archive, see docs/archive/METHOD_V1.md). Pass --all for a full-ledger integrity
+check, e.g. after a schema or validator change.
 
 Exit code 0 if there are zero hard errors (legacy_rounding flags are not
 errors -- see docs/PLAYBOOK.md -> Calibration & CLV Protocol -> Checkpoint
@@ -121,9 +125,13 @@ def validate(preds):
 
 
 def main():
-    path = Path(sys.argv[1]) if len(sys.argv) > 1 else Path(__file__).resolve().parent.parent / "data" / "bets.json"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    check_all = "--all" in sys.argv[1:]
+    path = Path(args[0]) if args else Path(__file__).resolve().parent.parent / "data" / "bets.json"
     data = json.loads(path.read_text(encoding="utf-8"))
     preds = data.get("predictions", [])
+    if not check_all:
+        preds = [p for p in preds if p.get("method_version") == "v2"]
 
     errors, flags = validate(preds)
 
