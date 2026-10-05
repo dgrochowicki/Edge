@@ -7493,8 +7493,8 @@
       "combined_odds": 2.77,
       "potential_return_pln": 7.31,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.0,
       "selections": [
         {
           "match": "Vitality vs Falcons",
@@ -7503,8 +7503,8 @@
           "odds": 1.95,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G8 (gpt picked Falcons, PASS). Placed live, 1st map, 0:0 at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G8 (gpt picked Falcons, PASS). Placed live, 1st map, 0:0 at time of bet. Settled: Vitality beat Falcons 2:1."
         },
         {
           "match": "Aurora vs BETBOOM",
@@ -7523,9 +7523,9 @@
   "summary": {
     "coupons": 210,
     "won": 73,
-    "lost": 136,
+    "lost": 137,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 462.77,
     "gross_return_pln": 332.27,
     "net_result_pln": -130.50,
@@ -16115,11 +16115,11 @@
       "confidence": 5,
       "closing_odds": 2.29,
       "closing_odds_opponent": 1.65,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: Falcons 2.29 / Vitality 1.65 (3 min before start, STS). Earlier reading 18:20: Falcons 2.40 / Vitality 1.50, replaced by the later one."
+      "notes": "Closing: Falcons 2.29 / Vitality 1.65 (3 min before start, STS). Earlier reading 18:20: Falcons 2.40 / Vitality 1.50, replaced by the later one. Settled: Vitality beat Falcons 2:1."
     }
   ]
 }
