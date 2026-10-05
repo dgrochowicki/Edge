@@ -7483,19 +7483,53 @@
           "notes": "Out of Edge scope -- ESL Pro League. Placed live, 3rd (decider) map, series 1:1 at time of bet. Opposite side to Edge prediction P-2026-10-05-G5 (gpt picked TYLOO, PASS) -- and EDGE-208 holds TYLOO. Settled: M80 beat TYLOO 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-210",
+      "date": "2026-10-05",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 2.77,
+      "potential_return_pln": 7.31,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Vitality vs Falcons",
+          "market": "moneyline",
+          "pick": "Falcons",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G8 (gpt picked Falcons, PASS). Placed live, 1st map, 0:0 at time of bet."
+        },
+        {
+          "match": "Aurora vs BETBOOM",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- ESL Pro League. Same match as Edge prediction P-2026-10-05-G7 (gpt picked Aurora, PASS). Placed live at 19:15, 0:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 209,
+    "coupons": 210,
     "won": 73,
     "lost": 136,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 459.77,
+    "pending": 1,
+    "total_staked_pln": 462.77,
     "gross_return_pln": 332.27,
-    "net_result_pln": -127.50,
-    "roi": -0.2773
+    "net_result_pln": -130.50,
+    "roi": -0.282
   },
   "archived_predictions": [
     {
