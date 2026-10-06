@@ -16149,10 +16149,11 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Settled: G2 beat PARIVISION 2:1. No closing reading."
     },
     {
       "id": "P-2026-10-06-G2",
@@ -16182,10 +16183,11 @@
       "confidence": 6,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Settled: 1win beat Spirit 2:0. No closing reading."
     },
     {
       "id": "P-2026-10-06-G3",
@@ -16213,12 +16215,13 @@
       "value_pct": -6.8,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 1.62,
+      "closing_odds_opponent": 2.15,
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: BETBOOM 1.62 / 9z 2.15 (16:26, 4 min before start, STS). Settled: 9z beat BETBOOM 2:0."
     },
     {
       "id": "P-2026-10-06-G4",
@@ -16246,12 +16249,13 @@
       "value_pct": -6.7,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 2.04,
+      "closing_odds_opponent": 1.7,
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: Aurora 2.04 / FURIA 1.70 (17:36, 9 min before start, STS). Settled: Aurora beat FURIA 2:1."
     },
     {
       "id": "P-2026-10-06-G5",
@@ -16279,12 +16283,13 @@
       "value_pct": -7.3,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 2.35,
+      "closing_odds_opponent": 1.53,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: NAVI 2.35 / Falcons 1.53 (20:48, 12 min before 21:00 start, STS). Match in progress."
     },
     {
       "id": "P-2026-10-06-G6",
@@ -16312,12 +16317,13 @@
       "value_pct": -3.5,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 2.0,
+      "closing_odds_opponent": 1.72,
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: M80 2.00 / Legacy 1.72 (18:57, 3 min before 19:00 start, STS). Settled: M80 beat Legacy 2:1."
     }
   ]
 }
