@@ -7813,19 +7813,53 @@
           "notes": "Same match as Edge prediction P-2026-10-07-G2 (gpt picked Natus Vincere, PASS, lost). Settled: PARIVISION beat Natus Vincere 2:1, NAVI did not sweep."
         }
       ]
+    },
+    {
+      "id": "EDGE-220",
+      "date": "2026-10-07",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.15,
+      "potential_return_pln": 5.54,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "PARIVISION vs Natus Vincere",
+          "market": "moneyline",
+          "pick": "Natus Vincere",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-10-07-G2 (gpt picked Natus Vincere, PASS). Settled: PARIVISION beat Natus Vincere 2:1."
+        },
+        {
+          "match": "Phantom vs Fnatic",
+          "market": "moneyline",
+          "pick": "Fnatic",
+          "odds": 2.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- ESL Pro League. Moot -- coupon already lost on the PARIVISION/NAVI leg. Settled: Fnatic beat Phantom 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 219,
+    "coupons": 220,
     "won": 76,
-    "lost": 143,
+    "lost": 144,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 480.88,
+    "total_staked_pln": 482.88,
     "gross_return_pln": 347.38,
-    "net_result_pln": -133.5,
-    "roi": -0.2776
+    "net_result_pln": -135.5,
+    "roi": -0.2806
   },
   "archived_predictions": [
     {
