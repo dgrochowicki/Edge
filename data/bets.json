@@ -7635,8 +7635,8 @@
           "odds": 2.25,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- ESL Pro League. Placed live, 2nd map, 1:0 at time of bet. Still in progress."
+          "result": "lost",
+          "notes": "Out of Edge scope -- ESL Pro League. Placed live, 2nd map, 1:0 at time of bet. Still in progress. Settled: Falcons beat Natus Vincere 2:1."
         }
       ]
     },
@@ -16509,11 +16509,11 @@
       "confidence": 5,
       "closing_odds": 2.35,
       "closing_odds_opponent": 1.53,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2",
-      "notes": "Closing: NAVI 2.35 / Falcons 1.53 (20:48, 12 min before 21:00 start, STS). Match in progress."
+      "notes": "Closing: NAVI 2.35 / Falcons 1.53 (20:48, 12 min before 21:00 start, STS). Match in progress. Settled: Falcons beat Natus Vincere 2:1."
     },
     {
       "id": "P-2026-10-06-G6",
