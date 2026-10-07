@@ -7847,19 +7847,43 @@
           "notes": "Out of Edge scope -- ESL Pro League. Moot -- coupon already lost on the PARIVISION/NAVI leg. Settled: Fnatic beat Phantom 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-221",
+      "date": "2026-10-07",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 8.15,
+      "potential_return_pln": 14.34,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Spirit vs M80",
+          "market": "moneyline",
+          "pick": "M80",
+          "odds": 8.15,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as Edge prediction P-2026-10-07-G3 (gpt picked M80, PASS). Placed live, 2nd map, series 1:0 for Spirit at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 220,
+    "coupons": 221,
     "won": 76,
     "lost": 144,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 482.88,
+    "pending": 1,
+    "total_staked_pln": 484.88,
     "gross_return_pln": 347.38,
-    "net_result_pln": -135.5,
-    "roi": -0.2806
+    "net_result_pln": -137.5,
+    "roi": -0.2836
   },
   "archived_predictions": [
     {
