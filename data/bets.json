@@ -7789,19 +7789,43 @@
           "notes": "Out of Edge scope. Settled: MOUZ NXT beat ENCE 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-219",
+      "date": "2026-10-07",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.1,
+      "combined_odds": 2.0,
+      "potential_return_pln": 3.7,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.1,
+      "selections": [
+        {
+          "match": "PARIVISION vs Natus Vincere",
+          "market": "handicap_maps",
+          "pick": "Natus Vincere -1.5",
+          "odds": 2.0,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as Edge prediction P-2026-10-07-G2 (gpt picked Natus Vincere, PASS, lost). Settled: PARIVISION beat Natus Vincere 2:1, NAVI did not sweep."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 218,
+    "coupons": 219,
     "won": 76,
-    "lost": 142,
+    "lost": 143,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 478.78,
+    "total_staked_pln": 480.88,
     "gross_return_pln": 347.38,
-    "net_result_pln": -131.4,
-    "roi": -0.2744
+    "net_result_pln": -133.5,
+    "roi": -0.2776
   },
   "archived_predictions": [
     {
