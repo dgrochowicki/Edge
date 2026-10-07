@@ -16575,12 +16575,13 @@
       "value_pct": -7.4,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 1.3,
+      "closing_odds_opponent": 3.25,
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: FURIA 1.30 / 9z 3.25 (13:56, 4 min before start, STS). Settled: FURIA beat 9z 2:0."
     },
     {
       "id": "P-2026-10-07-G2",
@@ -16608,12 +16609,13 @@
       "value_pct": -6.6,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 1.38,
+      "closing_odds_opponent": 2.8,
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: Natus Vincere 1.38 / PARIVISION 2.80 (16:25, 5 min before start, STS). Settled: PARIVISION beat Natus Vincere 2:1."
     },
     {
       "id": "P-2026-10-07-G3",
@@ -16641,12 +16643,13 @@
       "value_pct": -5.1,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 7.1,
+      "closing_odds_opponent": 1.07,
       "result": "pending",
       "data_quality": [],
       "agent": "gpt",
-      "method_version": "v2"
+      "method_version": "v2",
+      "notes": "Closing: M80 7.10 / Spirit 1.07 (19:25, 20 min before the postponed 19:45 start, STS). Match moved from 19:00 to 19:45."
     }
   ]
 }
