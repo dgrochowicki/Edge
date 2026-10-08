@@ -7871,19 +7871,121 @@
           "notes": "Same match as Edge prediction P-2026-10-07-G3 (gpt picked M80, PASS). Placed live, 2nd map, series 1:0 for Spirit at time of bet. Settled: Spirit beat M80 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-222",
+      "date": "2026-10-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.3,
+      "combined_odds": 2.88,
+      "potential_return_pln": 5.82,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.3,
+      "selections": [
+        {
+          "match": "EA Copenhagen vs Pure",
+          "market": "moneyline",
+          "pick": "EA Copenhagen",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- Roman Imperium Cup. Settled: Pure beat EA Copenhagen 2:0."
+        },
+        {
+          "match": "WBT vs Natus Vincere Junior",
+          "market": "moneyline",
+          "pick": "WBT",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- Roman Imperium Cup. Settled: Natus Vincere Junior beat WBT 2:0."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-223",
+      "date": "2026-10-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.05,
+      "combined_odds": 2.84,
+      "potential_return_pln": 5.11,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.05,
+      "selections": [
+        {
+          "match": "Nemesis vs Sinners",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.65,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- 1win Private Club Closed Qualifier. Settled: Sinners beat Nemesis 2:1."
+        },
+        {
+          "match": "EA Copenhagen vs Pure",
+          "market": "map_winner",
+          "pick": "Pure (map 1, incl. OT)",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- Roman Imperium Cup. Moot -- coupon already lost on the Nemesis/Sinners leg. Settled: Pure won map 1."
+        }
+      ]
+    },
+    {
+      "id": "EDGE-224",
+      "date": "2026-10-08",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 5.0,
+      "combined_odds": 1.9,
+      "gross_return_pln": 8.35,
+      "status": "won",
+      "net_result_pln": 3.35,
+      "selections": [
+        {
+          "match": "GamerLegion vs 33",
+          "market": "moneyline",
+          "pick": "GamerLegion",
+          "odds": 1.05,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- 1win Private Club Closed Qualifier. Settled: GamerLegion beat 33 2:0."
+        },
+        {
+          "match": "OG vs Sangal",
+          "market": "moneyline",
+          "pick": "Sangal",
+          "odds": 1.9,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- 1win Private Club Closed Qualifier. Settled: Sangal beat OG 2:0. Cashed out for 8.35 PLN before full resolution -- both legs would have won anyway; combined_odds as given by the slip (1.05 x 1.90 = 1.995, not 1.90 -- recorded as shown, not corrected). potential_return_pln set equal to the cash-out amount since the slip only showed the cash-out value, no separate max payout."
+        }
+      ],
+      "potential_return_pln": 8.35
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 221,
-    "won": 76,
-    "lost": 145,
+    "coupons": 224,
+    "won": 77,
+    "lost": 147,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 484.88,
-    "gross_return_pln": 347.38,
-    "net_result_pln": -137.5,
-    "roi": -0.2836
+    "total_staked_pln": 494.23,
+    "gross_return_pln": 355.73,
+    "net_result_pln": -138.5,
+    "roi": -0.2802
   },
   "archived_predictions": [
     {
