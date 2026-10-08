@@ -13,7 +13,10 @@ freeze_commit_sha:     22fc9211409aff8c89ea8bae23466a6753c67f16
 first_eligible_event:  ESL Pro League Season 24 (Katowice), start 2026-10-03 --
                         CONFIRMED by operator 2026-10-03. Was UNVERIFIED 2026-09-24
                         ("PGL Fall 2026" candidate could not be confirmed); trail in
-                        docs/decisions/2026-09-23-v2-freeze.md.
+                        docs/decisions/2026-09-23-v2-freeze.md. Resolved 2026-10-08:
+                        PGL Fall 2026 (1-11.10) was cancelled -- it conflicted with
+                        EPL S24's own 3-11.10 slot, which is why it never appeared on
+                        PGL's own event listing.
 first_v2_prediction_id: P-2026-10-03-G1 (report reports/2026-10-03-gpt.md)
 ```
 
