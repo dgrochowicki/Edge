@@ -7993,8 +7993,8 @@
           "odds": 1.65,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not included in pasted slip text (cut off before this leg). Placed live, 3rd map, series 1:1 at time of bet. Live round score 11:8 (not final -- CS2 maps go to 13), match ongoing."
+          "result": "won",
+          "notes": "Tournament tag not included in pasted slip text (cut off before this leg). Placed live, 3rd map, series 1:1 at time of bet. Settled: FaZe won series 2:1."
         },
         {
           "match": "Sinners vs Black Phoenix",
