@@ -7983,8 +7983,8 @@
       "combined_odds": 4.42,
       "potential_return_pln": 7.78,
       "gross_return_pln": 0.0,
-      "status": "lost",
-      "net_result_pln": -2.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
       "selections": [
         {
           "match": "FaZe vs Sangal",
@@ -7993,8 +7993,8 @@
           "odds": 1.65,
           "confidence": null,
           "closing_odds": null,
-          "result": "won",
-          "notes": "Tournament tag not included in pasted slip text (cut off before this leg). Placed live, 3rd map, series 1:1 at time of bet. Settled: FaZe won map 3 11:8, took series 2:1."
+          "result": "pending",
+          "notes": "Tournament tag not included in pasted slip text (cut off before this leg). Placed live, 3rd map, series 1:1 at time of bet. Live round score 11:8 (not final -- CS2 maps go to 13), match ongoing."
         },
         {
           "match": "Sinners vs Black Phoenix",
@@ -8013,8 +8013,8 @@
           "odds": 1.14,
           "confidence": null,
           "closing_odds": null,
-          "result": "lost",
-          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 0:1 (Ares leading) at time of bet. Settled: Infinite lost map 2 7:11, swept 0:2 -- handicap +0.5 lost."
+          "result": "pending",
+          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 0:1 (Ares leading) at time of bet. Live round score 7:11 (not final -- CS2 maps go to 13), match ongoing."
         }
       ]
     }
@@ -8023,13 +8023,13 @@
   "summary": {
     "coupons": 225,
     "won": 77,
-    "lost": 148,
+    "lost": 147,
     "voided": 0,
-    "pending": 0,
+    "pending": 1,
     "total_staked_pln": 496.23,
     "gross_return_pln": 355.73,
-    "net_result_pln": -140.5,
-    "roi": -0.2831
+    "net_result_pln": -138.5,
+    "roi": -0.2791
   },
   "archived_predictions": [
     {
