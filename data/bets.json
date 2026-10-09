@@ -8143,19 +8143,53 @@
           "notes": "Slip tags this as Roman Imperium Cup, not ESL Pro League S24 -- logged as given, but note this may be the same MOUZ-FURIA match as P-2026-10-09-G3 (EPL S24 QF) mislabeled by the bookmaker; flag for review if results conflict. Placed live, 1st half break, map 1 round score 1:0 at time of bet."
         }
       ]
+    },
+    {
+      "id": "EDGE-230",
+      "date": "2026-10-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.2,
+      "combined_odds": 2.26,
+      "potential_return_pln": 4.38,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Natus Vincere Junior vs G2 Ares",
+          "market": "moneyline",
+          "pick": "Natus Vincere Junior",
+          "odds": 1.93,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Same match as EDGE-229's NAVI Junior handicap leg (series was 1:1 at that point)."
+        },
+        {
+          "match": "MOUZ vs FURIA",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 1.17,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Slip tags this as Roman Imperium Cup -- logged as given, but likely the same MOUZ-FURIA match as P-2026-10-09-G3 (EPL S24 QF) and EDGE-229's total-maps leg, progressing live (now map 2, series 1:0, vs. map 1 HT 1:0 earlier). Flag for review if results conflict."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 229,
+    "coupons": 230,
     "won": 78,
     "lost": 149,
     "voided": 0,
-    "pending": 2,
-    "total_staked_pln": 504.68,
+    "pending": 3,
+    "total_staked_pln": 506.88,
     "gross_return_pln": 360.38,
     "net_result_pln": -139.9,
-    "roi": -0.2772
+    "roi": -0.276
   },
   "archived_predictions": [
     {
