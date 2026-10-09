@@ -8075,19 +8075,53 @@
           "notes": "Settled: GamerLegion beat Sinners 2:0 -- Sinners swept, handicap +0.5 lost."
         }
       ]
+    },
+    {
+      "id": "EDGE-228",
+      "date": "2026-10-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.67,
+      "potential_return_pln": 6.45,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Saint Sinners vs mouz NXT",
+          "market": "moneyline",
+          "pick": "mouz NXT",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 3rd map, series 1:1 at time of bet."
+        },
+        {
+          "match": "Leo Team vs Just Players",
+          "market": "map_winner",
+          "pick": "Just Players (map 1, incl. OT)",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- ESL Challenger EU. Settled: Just Players won map 1 (series now 1:1)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 227,
+    "coupons": 228,
     "won": 78,
     "lost": 149,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 500.28,
+    "pending": 1,
+    "total_staked_pln": 502.28,
     "gross_return_pln": 360.38,
     "net_result_pln": -139.9,
-    "roi": -0.2796
+    "roi": -0.2785
   },
   "archived_predictions": [
     {
