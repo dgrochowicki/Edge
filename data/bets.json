@@ -17214,7 +17214,7 @@
       "confidence": 5,
       "closing_odds": 2.04,
       "closing_odds_opponent": 1.7,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2"
