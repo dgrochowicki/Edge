@@ -8130,7 +8130,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "won",
-          "notes": "Tournament tag not given. Settled: series tied 1:1 at time of bet -- NAVI Junior already secured at least one map, handicap +0.5 won."
+          "notes": "Out of Edge scope -- Roman Imperium Cup. Settled: series tied 1:1 at time of bet -- NAVI Junior already secured at least one map, handicap +0.5 won."
         },
         {
           "match": "MOUZ vs FURIA",
@@ -8140,7 +8140,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "lost",
-          "notes": "Confirmed same match as P-2026-10-09-G3 (EPL S24 QF) and EDGE-230's MOUZ leg -- the Roman Imperium Cup tag was a bookmaker mislabel, resolved. Settled: MOUZ beat FURIA 2:0 -- only 2 maps played, Over 2.5 total maps lost."
+          "notes": "Same match as P-2026-10-09-G3 (EPL S24 QF) -- tournament tag was misattributed by me to this leg instead of the NAVI Junior leg above it, now corrected. Settled: MOUZ beat FURIA 2:0 -- only 2 maps played, Over 2.5 total maps lost."
         }
       ]
     },
@@ -8164,7 +8164,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "won",
-          "notes": "Tournament tag not given. Same match as EDGE-229's NAVI Junior handicap leg. Settled: NAVI Junior beat G2 Ares 2:1."
+          "notes": "Out of Edge scope -- Roman Imperium Cup. Same match as EDGE-229's NAVI Junior handicap leg. Settled: NAVI Junior beat G2 Ares 2:1."
         },
         {
           "match": "MOUZ vs FURIA",
@@ -8174,7 +8174,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "won",
-          "notes": "Confirmed same match as P-2026-10-09-G3 (EPL S24 QF) and EDGE-229's total-maps leg -- the Roman Imperium Cup tag was a bookmaker mislabel, resolved. Settled: MOUZ beat FURIA 2:0."
+          "notes": "Same match as P-2026-10-09-G3 (EPL S24 QF) -- tournament tag was misattributed by me to this leg instead of the NAVI Junior leg above it, now corrected. Settled: MOUZ beat FURIA 2:0."
         }
       ]
     },
