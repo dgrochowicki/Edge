@@ -8017,19 +8017,53 @@
           "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 0:1 (Ares leading) at time of bet. Infinite came back from 8:12 to force overtime, but lost the OT -- swept 0:2, handicap +0.5 lost."
         }
       ]
+    },
+    {
+      "id": "EDGE-226",
+      "date": "2026-10-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.64,
+      "potential_return_pln": 4.65,
+      "gross_return_pln": 4.65,
+      "status": "won",
+      "net_result_pln": 2.65,
+      "selections": [
+        {
+          "match": "EA Copenhagen vs Sangal",
+          "market": "moneyline",
+          "pick": "Sangal",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Settled: Sangal beat EA Copenhagen 2:0."
+        },
+        {
+          "match": "WBT vs Infinite",
+          "market": "moneyline",
+          "pick": "WBT",
+          "odds": 2.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Settled: WBT beat Infinite 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 225,
-    "won": 77,
+    "coupons": 226,
+    "won": 78,
     "lost": 148,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 496.23,
-    "gross_return_pln": 355.73,
-    "net_result_pln": -140.5,
-    "roi": -0.2831
+    "total_staked_pln": 498.23,
+    "gross_return_pln": 360.38,
+    "net_result_pln": -137.85,
+    "roi": -0.2767
   },
   "archived_predictions": [
     {
