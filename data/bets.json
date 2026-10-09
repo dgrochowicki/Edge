@@ -16955,7 +16955,7 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2"
@@ -16988,7 +16988,7 @@
       "confidence": 6,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [],
       "agent": "gpt",
       "method_version": "v2"
