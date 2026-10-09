@@ -8177,19 +8177,53 @@
           "notes": "Confirmed same match as P-2026-10-09-G3 (EPL S24 QF) and EDGE-229's total-maps leg -- the Roman Imperium Cup tag was a bookmaker mislabel, resolved. Settled: MOUZ beat FURIA 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-231",
+      "date": "2026-10-09",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.08,
+      "combined_odds": 2.77,
+      "potential_return_pln": 5.08,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.08,
+      "selections": [
+        {
+          "match": "Falcons vs Spirit",
+          "market": "moneyline",
+          "pick": "Falcons",
+          "odds": 1.85,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as P-2026-10-09-G4 (EPL S24 QF). Settled: Spirit beat Falcons 2:0."
+        },
+        {
+          "match": "mouz NXT vs Leo Team",
+          "market": "moneyline",
+          "pick": "Leo Team",
+          "odds": 1.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Tagged ESL Pro League (academy bracket). Settled: mouz NXT beat Leo Team."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 230,
+    "coupons": 231,
     "won": 79,
-    "lost": 151,
+    "lost": 152,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 506.88,
+    "total_staked_pln": 508.96,
     "gross_return_pln": 364.76,
-    "net_result_pln": -142.12,
-    "roi": -0.2804
+    "net_result_pln": -144.2,
+    "roi": -0.2833
   },
   "archived_predictions": [
     {
