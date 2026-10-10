@@ -8323,19 +8323,43 @@
           "notes": "Same match as P-2026-10-10-G2 (EPL S24 semifinal). Settled: MOUZ beat Spirit 2:1 -- handicap +0.5 won on its own, but moot -- coupon already lost on the Sangal leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-235",
+      "date": "2026-10-10",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 5.0,
+      "combined_odds": 2.15,
+      "potential_return_pln": 9.46,
+      "gross_return_pln": 9.46,
+      "status": "won",
+      "net_result_pln": 4.46,
+      "selections": [
+        {
+          "match": "MOUZ vs Spirit",
+          "market": "moneyline",
+          "pick": "MOUZ",
+          "odds": 2.15,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as P-2026-10-10-G2 (EPL S24 semifinal). Settled: MOUZ beat Spirit 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 234,
-    "won": 80,
+    "coupons": 235,
+    "won": 81,
     "lost": 154,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 515.46,
-    "gross_return_pln": 369.96,
-    "net_result_pln": -145.5,
-    "roi": -0.2823
+    "total_staked_pln": 520.46,
+    "gross_return_pln": 379.42,
+    "net_result_pln": -141.04,
+    "roi": -0.271
   },
   "archived_predictions": [
     {
