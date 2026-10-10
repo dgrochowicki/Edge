@@ -17316,7 +17316,7 @@
       "confidence": 4,
       "closing_odds": 2.25,
       "closing_odds_opponent": 1.57,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "roster_confirmation_pending"
       ],
