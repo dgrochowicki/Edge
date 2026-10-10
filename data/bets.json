@@ -17279,9 +17279,9 @@
       "value_pct": -14.5,
       "decision": "PASS",
       "confidence": 4,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 4.0,
+      "closing_odds_opponent": 1.2,
+      "result": "lost",
       "data_quality": [
         "roster_confirmation_pending"
       ],
