@@ -8211,19 +8211,63 @@
           "notes": "Tagged ESL Pro League (academy bracket). Settled: mouz NXT beat Leo Team."
         }
       ]
+    },
+    {
+      "id": "EDGE-232",
+      "date": "2026-10-10",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.01,
+      "combined_odds": 2.94,
+      "potential_return_pln": 5.2,
+      "gross_return_pln": 5.2,
+      "status": "won",
+      "net_result_pln": 3.19,
+      "selections": [
+        {
+          "match": "FaZe vs Natus Vincere Junior",
+          "market": "moneyline",
+          "pick": "FaZe",
+          "odds": 1.18,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: FaZe beat NAVI Junior 2:0."
+        },
+        {
+          "match": "Sangal vs Pure",
+          "market": "moneyline",
+          "pick": "Sangal",
+          "odds": 1.95,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Sangal beat Pure 2:1."
+        },
+        {
+          "match": "HOTU vs Fnatic",
+          "market": "handicap_maps",
+          "pick": "Fnatic +0.5",
+          "odds": 1.53,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Fnatic beat HOTU 2:1 -- handicap +0.5 won comfortably."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 231,
-    "won": 79,
+    "coupons": 232,
+    "won": 80,
     "lost": 152,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 508.96,
-    "gross_return_pln": 364.76,
-    "net_result_pln": -144.2,
-    "roi": -0.2833
+    "total_staked_pln": 510.97,
+    "gross_return_pln": 369.96,
+    "net_result_pln": -141.01,
+    "roi": -0.276
   },
   "archived_predictions": [
     {
