@@ -268,6 +268,7 @@ Each day:
 - Settle results after matches (`won` / `lost` / `void`).
 - Record closing odds only when it can be done without disrupting the process; a missing snapshot stays null (see Closing snapshot).
 - New ideas and observations are logged as notes or hypotheses — they do not change the active method's rules mid-flight.
+- **Report delivery.** Once the daily v2 analysis is done, gpt generates `reports/YYYY-MM-DD-gpt.md` and `data/form/YYYY-MM-DD.json` and hands both to the operator directly in the chat. That's gpt's whole job here — nothing further about the repo.
 
 A day is correctly closed when every prediction is logged with correct `agent` and `method_version`, reports remain immutable after publication, and played matches are settled. What a day is explicitly *not* for: switching method version, changing BET/PASS thresholds, fitting probabilities to earlier results, editing published predictions, or declaring the method works or fails on that day's evidence.
 
