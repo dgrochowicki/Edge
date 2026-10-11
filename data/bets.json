@@ -17672,7 +17672,7 @@
       "confidence": 4,
       "closing_odds": 1.44,
       "closing_odds_opponent": 2.6,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "roster_status_not_independently_verified"
       ],
