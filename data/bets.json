@@ -8449,8 +8449,8 @@
           "odds": 1.65,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- CCT EU. Placed live, 2nd map, series 0:1 at time of bet (tag applied to this leg per the preceding-match convention established on 2026-10-09)."
+          "result": "void",
+          "notes": "Out of Edge scope -- CCT EU. Settled: Mellren swept Bebop 2:0 -- map 3 never played, so the map-3-winner market was voided by the bookmaker. Leg removed from the acca; effective odds now just the remaining leg (2.00)."
         },
         {
           "match": "Vitality vs MOUZ",
