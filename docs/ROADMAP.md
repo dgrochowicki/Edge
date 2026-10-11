@@ -1,6 +1,6 @@
 # Edge Roadmap
 
-Last updated: 2026-09-23 — v1 closed at its 150 checkpoint, v2 frozen and active. See `docs/archive/METHOD_V1.md`, `docs/METHOD_V2.md`, `docs/decisions/2026-09-23-v2-freeze.md`.
+Last updated: 2026-10-11 — first v2 tournament (EPL S24, 41 predictions) audited; v2 evaluation switched to protocol E2 (closing-line slope β as primary, valuation unchanged). See `docs/METHOD_V2.md`, `docs/decisions/2026-10-11-v2-ocena-e2.md`, `reports/summaries/ESL-Pro-League-S24-2026-summary.md`.
 
 ## Purpose
 
@@ -25,6 +25,8 @@ Already in place:
 - prediction logging for every fully analysed market,
 - Calibration & CLV Protocol,
 - dashboard views for results, reports, logs, and calibration progress.
+
+**Since 2026-10-11 (E2):** the question is decided by whether the market moves toward v2's adjustment before the match (slope β, K1 at 100 / K2 at 200 valid observations), not by Brier at 150 — at v2's adjustment sizes Brier has no power. After EPL S24: 41 settled, 28 valid β observations, so K1 is roughly four tier-1 tournaments away. **The binding constraint is closing-odds coverage**, not the prediction count.
 
 The immediate priority is not adding more features. It is collecting clean, comparable data.
 
@@ -51,7 +53,7 @@ A report can be traced to its predictions, every placed bet can be traced to a p
 
 ## Phase 2 — calibration and edge validation
 
-Collect enough settled predictions to evaluate whether Edge is better than a de-vigged market baseline. **v1 completed this phase and reached its verdict on 2026-09-19/20** (see Current stage). v2 restarts the same milestone ladder from zero, per `docs/METHOD_V2.md` §19, plus one metric v1 did not have: **at n ≥ 100 valid two-sided closing snapshots, the closing-line movement metric gets its first read** (§18.2) — a bootstrap-tested mean movement of `p_market` toward v2's adjustment, independent of match outcome, reported alongside Brier rather than replacing it.
+Collect enough settled predictions to evaluate whether Edge is better than a de-vigged market baseline. **v1 completed this phase and reached its verdict on 2026-09-19/20** (see Current stage). v2 keeps the settled-count ladder from `docs/METHOD_V2.md` §19 (150 settled is the promotion floor), but since E2 (2026-10-11) its verdict comes from a metric v1 did not have: **the closing-line slope β, with checkpoints K1 at 100 and K2 at 200 valid observations** (§18.1, §20) — how far the market moves toward v2's adjustment before the match, independent of outcome. Brier is reported but descriptive, plus one safety condition.
 
 Milestones (v1, historical — v2 uses the same ladder, see above):
 
@@ -111,7 +113,7 @@ Edge ran `v1` from 2026-07-21 to its 150-checkpoint verdict on 2026-09-19/20 (se
 
 **Sample counting.** v2 needs its own 150 settled predictions to reach a checkpoint — it does not inherit anything from v1's sample. v1 entries are never deleted, rescored, or mixed into v2 metrics; they remain the archive of what the method looked like before the freeze.
 
-**What's new relative to v1.** v2 adds a metric independent of match outcome (closing-line movement in the direction of the adjustment, `docs/METHOD_V2.md` §18.2) precisely because the v1 checkpoint showed that Brier-at-150 alone can leave the question unresolved. It also adds an explicit stop rule (§20): if at 150 the confidence interval both contains zero and is already narrow (half-width ≤ 0.003), the result is recorded as "no detectable edge" and collection stops, rather than continuing indefinitely on an inconclusive method.
+**What's new relative to v1.** v2 adds a metric independent of match outcome (closing-line movement in the direction of the adjustment, `docs/METHOD_V2.md` §18.2) precisely because the v1 checkpoint showed that Brier-at-150 alone can leave the question unresolved. It also adds an explicit stop rule (§20), so an inconclusive method cannot absorb work indefinitely. The original form (Brier CI contains zero with half-width ≤ 0.003 at 150) was retired on 2026-10-11 after the first audit showed it would fire regardless of the truth at v2's adjustment sizes; under E2 collection stops at K1 if β's CI upper bound is < 0.5, and at K2 unless β's lower bound is > 0.
 
 ## Phase 4 — dashboard as an audit tool
 
@@ -183,6 +185,6 @@ Already created:
 
 - `docs/METHOD_V2.md` — the active method (frozen 2026-09-23). Superseded the working notebook that seeded it, removed at freeze once its job was done (per Phase 3 → Method versioning path above).
 - `docs/archive/METHOD_V1.md` — frozen snapshot of v1's rules, for interpreting the 313 `method_version: "v1"` entries in `data/bets.json`.
-- `docs/decisions/` — now two entries: `2026-09-19-v1-checkpoint-150.md` (v1 verdict, operator decisions) and `2026-09-23-v2-freeze.md` (v2 freeze approval).
+- `docs/decisions/` — three entries: `2026-09-19-v1-checkpoint-150.md` (v1 verdict, operator decisions), `2026-09-23-v2-freeze.md` (v2 freeze approval) and `2026-10-11-v2-ocena-e2.md` (evaluation protocol E2, `p_v2` field, pick rule).
 
 The structure should grow only when a real need appears.

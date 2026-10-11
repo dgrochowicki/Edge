@@ -56,14 +56,14 @@ function renderResearch() {
 // only. Nothing here feeds back into the method; it only reads the ledger.
 
 Object.assign(CALIB_INFO, {
-    v2move: ['Ruch linii (główna metryka wczesna)', 'Czy rynek do zamknięcia idzie w stronę naszej korekty? move = (p_market na zamknięciu − p_market przy analizie) × znak(p_v2 − p_market). Dodatni = rynek poszedł za korektą. Liczone tylko dla wpisów z closingiem po obu stronach i korektą ≥ 1 pp (osobno ≥ 3 pp). Poniżej n = 100 wyłącznie opisowo (METHOD_V2 §18) — przy mniejszej próbce test nie ma mocy.'],
+    v2move: ['Ruch linii — metryka pomocnicza (E1)', 'Od 11.10 metryka pomocnicza; główną jest nachylenie β (panel wyżej). Czy rynek do zamknięcia idzie w stronę naszej korekty? move = (p_market na zamknięciu − p_market przy analizie) × znak(p_v2 − p_market). Dodatni = rynek poszedł za korektą. Liczone tylko dla wpisów z closingiem po obu stronach i korektą ≥ 1 pp (osobno ≥ 3 pp). Poniżej n = 100 wyłącznie opisowo (METHOD_V2 §18) — przy mniejszej próbce test nie ma mocy.'],
     v2mad: ['Średnie odchylenie od rynku', 'Średnia |p_v2 − p_market| w punktach procentowych. Mówi, jak mocno metoda w ogóle odchodzi od ceny rynkowej. Nie zależy od wyników meczów, więc liczy się od pierwszego wpisu. Limit metody to ±5 pp.'],
     v2coverage: ['Pokrycie closingiem', 'Ile predykcji ma closing po obu stronach (valid_closing_snapshots / all_predictions). Zawsze raportowane jawnie (§18): niskie pokrycie osłabia metrykę ruchu linii, ale jej nie unieważnia. Brak odczytu zostaje null na zawsze.'],
-    v2brier: ['Brier v2 vs rynek', 'Kara za pomyłki (prognoza − wynik)² dla p_v2 i dla de-vigowanego rynku, na tych samych meczach. advantage = Brier rynku − Brier v2; dodatni = v2 lepsze od rynku. Zawsze z 95% przedziałem ufności z bootstrapu. Pokazujemy od 50 rozliczonych; werdykt tylko na checkpoincie 150 (pierwsze 150 wg daty, potem id — nigdy nieprzeliczany później).'],
+    v2brier: ['Brier v2 vs rynek', 'Kara za pomyłki (prognoza − wynik)² dla p_v2 i dla de-vigowanego rynku, na tych samych meczach. advantage = Brier rynku − Brier v2; dodatni = v2 lepsze od rynku. Zawsze z 95% przedziałem ufności z bootstrapu. Od protokołu E2 (11.10) tylko opisowy: przy korektach rzędu 0.5 pp nawet idealnie trafna metoda poprawia Brier o ~0.0001, a CI przy n=150 ma ±0.0012 — ta metryka nie może niczego rozstrzygnąć.'],
     v2buckets: ['Kalibracja vs wyniki i vs rynek', 'Mecze pogrupowane wg p_v2 co 10 pp. Dla każdej grupy: średnie p_v2, średnie p_market i faktyczny odsetek wygranych. Jeśli „Actual" jest bliżej rynku niż v2, korekty szkodzą.'],
     v2bets: ['BET-y v2 (paper)', 'Wszystkie BET-y v2 są papierowe w czasie walidacji. Liczba, paper ROI przy 1u i paper CLV są czysto opisowe — przy progu +8% i marży STS BET-ów będzie mało i prawie same underdogi (§13), więc nie są bramką promocji.'],
     v2hits: ['Pick outcomes', 'Czy strona wskazana jako pick wygrała serię. Hit / Miss zamiast won / lost, bo PASS to nie zakład — to tylko kierunek, w który metoda przesunęła cenę. Pick to zwykle faworyt, więc sama trafność wygląda lepiej niż jest: porównuj ją z „Expected hits" (suma p_v2 po rozliczonych). Hit wyraźnie powyżej expected = metoda była zbyt ostrożna, poniżej = zbyt pewna. Przy małej próbce różnica kilku trafień to szum.'],
-    v2checkpoint: ['Checkpoint 150', 'Liczony raz, na pierwszych 150 rozliczonych predykcjach v2 posortowanych po dacie, potem id. Bezpiecznik: Brier rynku − Brier v2 < 0 → brak promocji niezależnie od ruchu linii. Reguła stopu: przedział ufności zawiera zero i jego połowa ≤ 0.003 → „brak wykrywalnej przewagi", zbieranie v2 się kończy (§20).']
+    v2checkpoint: ['Bezpiecznik Brier (E2)', 'Jedyna rola Briera w decyzjach od 11.10: jeśli cały 95% przedział ufności dla (Brier rynku − Brier v2) leży poniżej zera, v2 jest wyraźnie gorsze od rynku i nie może być promowane (§20 pkt 3). Rozstrzyga nachylenie ruchu linii β (punkty kontrolne K1 przy 100 i K2 przy 200 obserwacjach). Dawna reguła stopu na szerokości CI Briera (E1) została wycofana — zadziałałaby niezależnie od prawdy.']
 });
 
 // p_v2 from the ledger's own fields rather than estimated_probability:
@@ -71,7 +71,10 @@ Object.assign(CALIB_INFO, {
 // to 2 decimals, which can flip the sign of a zero adjustment (e.g.
 // P-2026-10-03-G3: adjustment 0, p_market 0.9199, estimated 0.9174). The
 // direction the method moved is the sign of total_adjustment_pp.
+// Since E2 (2026-10-11) the ledger records p_v2 itself (METHOD_V2 §13); the
+// formula is only a fallback for an entry that somehow lacks it.
 function v2PV2(p) {
+    if (typeof p.p_v2 === 'number') return p.p_v2;
     const adj = Math.max(-5, Math.min(5, p.total_adjustment_pp || 0));
     return p.p_market + adj / 100;
 }
@@ -165,7 +168,7 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
             <div class="progress-scaled">${renderScaledProgressBar(settled.length, [CAL_T.PRELIM, CAL_T.EMERG, CAL_T.VALID])}</div>
             <div class="outcome-legend"><div class="outcome-legend-item">
                 <span class="outcome-dot" style="background:var(--edge);"></span><span class="ol-label">Settled</span>
-                <span class="ol-count">${settled.length}</span><span class="ol-pct">/ ${CAL_T.PRELIM} prelim · / ${CAL_T.EMERG} emerging · / ${CAL_T.VALID} checkpoint</span>
+                <span class="ol-count">${settled.length}</span><span class="ol-pct">/ ${CAL_T.PRELIM} prelim · / ${CAL_T.EMERG} emerging · / ${CAL_T.VALID} promotion floor</span>
             </div></div>
         </div>
         ${hitPanel}
@@ -179,8 +182,11 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
         </div>
     </div>`;
 
-    // Closing-line movement: not outcome-based, so shown from the first entry.
-    html += `<div class="calib-sub click" onclick="calibInfo('v2move')">Closing-line movement</div>`;
+    // E2 primary: closing-line slope beta with K1/K2 (shared-metrics.js
+    // slopeHtml). Not outcome-based, so shown from the first entry.
+    html += `<div class="panel">${slopeHtml(valid, valid.length)}</div>`;
+    // The E1 mean-move metric stays as a descriptive secondary (§18.2 item 2).
+    html += `<div class="calib-sub click" onclick="calibInfo('v2move')">Closing-line movement (secondary)</div>`;
     html += v2MoveBlock(valid, 1) + v2MoveBlock(valid, 3);
 
     // Outcome-based metrics stay locked below the preliminary threshold,
@@ -192,7 +198,7 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
     } else {
         const brier = (xs, f) => xs.reduce((s, p) => s + Math.pow(f(p) - out(p), 2), 0) / xs.length;
         const mkt = p => devig(p.market_odds_at_analysis, p.market_odds_opponent);
-        const be = brier(paired, p => p.estimated_probability), bm = brier(paired, mkt);
+        const be = brier(paired, v2PV2), bm = brier(paired, mkt);
         const ci = bootstrapBrierAdvantageCI(paired);
         html += `<div class="calib-sub click" onclick="calibInfo('v2brier')">Brier v2 vs market</div>
             <div class="calib-grid">
@@ -203,22 +209,12 @@ function renderCalibrationV2Agent(all, agent, invalidIds) {
             </div>
             ${ci ? `<div class="calib-note">95% CI [${sgn(ci.lo, 4)}, ${sgn(ci.hi, 4)}]${ci.containsZero ? ' — contains zero' : ''}</div>` : ''}`;
 
-        if (paired.length >= CAL_T.VALID) {
-            const cp = paired.slice(0, CAL_T.VALID);
-            const cbe = brier(cp, p => p.estimated_probability), cbm = brier(cp, mkt);
-            const cci = bootstrapBrierAdvantageCI(cp);
-            const adv = cbm - cbe;
-            let verdict;
-            if (adv < 0) verdict = 'Negative safety rule: market Brier beats v2 at the checkpoint — v2 is not promoted, regardless of line movement.';
-            else if (cci.containsZero && cci.halfWidth <= 0.003) verdict = 'Stop rule: CI contains zero with half-width ≤ 0.003 — recorded as "no detectable edge"; v2 collection stops.';
-            else if (cci.containsZero) verdict = 'Advantage positive but CI contains zero — Brier condition met, strong-evidence condition not met by Brier.';
-            else verdict = 'Advantage positive and CI excludes zero — strong-evidence condition met by Brier. Promotion still needs the other §20 conditions and operator approval.';
-            html += `<div class="calib-verdict ${adv < 0 ? 'neg' : (!cci.containsZero ? 'pos' : '')}">
-                <div class="click" onclick="calibInfo('v2checkpoint')">Checkpoint (first ${CAL_T.VALID} by date, id): advantage ${sgn(adv, 4)} · 95% CI [${sgn(cci.lo, 4)}, ${sgn(cci.hi, 4)}]</div>
-                <div>${verdict}</div></div>`;
-        } else {
-            html += `<div class="calib-note">Verdict only at the checkpoint (${CAL_T.VALID} settled, computed once on the first ${CAL_T.VALID} by date, id).</div>`;
-        }
+        // E2 (METHOD_V2 §20): Brier no longer decides anything; its only role
+        // is the safety condition -- a CI entirely below zero blocks promotion.
+        // The E1 checkpoint verdict and stop rule were retired 2026-10-11.
+        html += ci && ci.hi < 0
+            ? `<div class="calib-verdict neg"><div class="click" onclick="calibInfo('v2checkpoint')">Safety condition failed: v2 is demonstrably worse than the market (Brier CI entirely below zero) — blocks promotion (§20 pt 3).</div></div>`
+            : `<div class="calib-note click" onclick="calibInfo('v2checkpoint')">Descriptive under E2 — at v2's adjustment sizes Brier cannot detect a signal. Safety condition (CI not entirely below zero): ok.</div>`;
 
         const buckets = {};
         paired.forEach(p => {

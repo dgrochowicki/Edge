@@ -266,6 +266,18 @@ Consequences per PLAYBOOK / v2 spec §23: claude × v1 ends real-money use (pape
 
 **Operator's own-bet coupons are unaffected.** "Real money paused" applies to agent-driven BETs (`method_version` v1 and v2); Dominik's `source: "user_bet"` coupons remain independent and continue as before — confirmed explicitly at freeze, consistent with the 09-19 decision.
 
+### EPL S24 — first v2 tournament, first audit, evaluation protocol E2 — 2026-10-11
+
+**Sample.** ESL Pro League Season 24 (Katowice, 3–11.10): 41 matches, 41 v2 predictions (`P-2026-10-03-G1` … `P-2026-10-11-G2`), all PASS, all settled. Champion Vitality (3:0 vs MOUZ). Closing coverage 33/41.
+
+**Audit (claude, METHOD_V2 §21).** Execution recomputed from `data/form/` reproduced 41/41 (one fair off by 0.01, one wrong map score in `data/form/2026-10-11.json` with no effect on fair — QA notes in `docs/audit/2026-10-04-epl-s24-obserwacje.md`). Brier advantage +0.00056 (on `p_v2`: +0.00048), 95% CI ≈ [−0.0018, +0.0028]. The whole positive advantage came from the four Legacy stand-in penalties; the fresh-form signal alone was slightly negative (−0.0005 on 32). Descriptive only at n=41. Full report: `reports/summaries/ESL-Pro-League-S24-2026-summary.md`.
+
+**Structural finding → protocol E2.** v2.0 produces small adjustments (median 0.5 pp). At that size the Brier gate has no power (best case gain ≈ 0.00008 vs CI half-width ≈ 0.0012 at n=150) and the E1 stop rule — claude's own addition at freeze — would fire regardless of the truth. Operator approved the fix the same day ("zrobiłbym wszystko co warto przed następnym turniejem"). **E2:** primary metric is the closing-line slope β (regression of the market's pre-match move on v2's adjustment), checkpoints K1 at 100 and K2 at 200 valid observations; Brier is descriptive plus one safety condition. Also: `p_v2` recorded in the ledger (41 entries backfilled), pick = higher-value side, fixed 4-dp precision. **Valuation unchanged, `method_version` stays "v2".** Decision: `docs/decisions/2026-10-11-v2-ocena-e2.md`. Tools: `scripts/v2_metrics.py` (reference numbers), `scripts/backfill_p_v2.py` (one-off), validator and dashboard updated.
+
+**Operator routine:** closing on both sides as before; when short of time, largest |`total_adjustment_pp`| first.
+
+**State after EPL S24:** gpt × v2 = 41 settled; valid β observations = 28 (K1 at 100 — at ~28 per tournament, roughly four tournaments).
+
 ## Current Running Result
 
 Snapshot as of 2026-08-16 (EDGE-001 through EDGE-043):

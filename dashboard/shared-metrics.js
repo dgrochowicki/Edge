@@ -236,6 +236,89 @@ function couponsForSource(coupons, src) {
 
 const CAL_T = { PRELIM: 50, EMERG: 100, VALID: 150, CLV_VALID: 50 };
 
+// v2 evaluation protocol E2 (docs/METHOD_V2.md §18-§20, decision
+// docs/decisions/2026-10-11-v2-ocena-e2.md): the primary metric is the
+// closing-line slope beta, with checkpoints K1/K2 on the count of valid
+// beta observations; Brier is descriptive plus one safety condition.
+const E2_T = { K1: 100, K2: 200, K1_UPPER: 0.5 };
+
+// The method's probability. v2 entries carry `p_v2` (E2); `estimated_probability`
+// = round(1/fair_odds, 4) differs from it by fair-odds rounding (up to ~0.3 pp),
+// so every v2 metric uses p_v2. v1 entries have no p_v2 and fall back.
+function probOf(p) {
+    return typeof p.p_v2 === 'number' ? p.p_v2 : p.estimated_probability;
+}
+
+// beta = sum(a*m) / sum(a^2): a = (p_v2 - p_market) in pp, m = de-vigged closing
+// minus de-vigged analysis price in pp, both on the pick side. Only entries with
+// both closing prices and a non-zero adjustment count. Order (date, id) matters
+// for checkpoints: each is computed on the first n observations only.
+function slopeObservations(preds) {
+    return preds
+        .filter(p => p.method_version !== 'v1' && typeof p.p_v2 === 'number' && typeof p.p_market === 'number')
+        .filter(p => p.closing_odds && p.closing_odds_opponent && p.market_odds_at_analysis && p.market_odds_opponent)
+        .map(p => ({
+            id: p.id, date: p.date,
+            a: Math.round((p.p_v2 - p.p_market) * 1e6) / 1e4,
+            m: (devig(p.closing_odds, p.closing_odds_opponent) - devig(p.market_odds_at_analysis, p.market_odds_opponent)) * 100
+        }))
+        .filter(o => o.a !== 0)
+        .sort((x, y) => (x.date < y.date ? -1 : x.date > y.date ? 1 : (x.id < y.id ? -1 : x.id > y.id ? 1 : 0)));
+}
+
+function slopeOf(obs) {
+    let num = 0, den = 0;
+    obs.forEach(o => { num += o.a * o.m; den += o.a * o.a; });
+    return den ? num / den : null;
+}
+
+function bootstrapSlopeCI(obs, nBoot = 2000) {
+    const n = obs.length;
+    if (n < 2) return null;
+    const vals = [];
+    for (let b = 0; b < nBoot; b++) {
+        let num = 0, den = 0;
+        for (let i = 0; i < n; i++) {
+            const o = obs[Math.floor(Math.random() * n)];
+            num += o.a * o.m; den += o.a * o.a;
+        }
+        if (den) vals.push(num / den);
+    }
+    vals.sort((a, b) => a - b);
+    return { lo: vals[Math.floor(0.025 * vals.length)], hi: vals[Math.min(vals.length - 1, Math.floor(0.975 * vals.length))] };
+}
+
+function slopeHtml(valid, total) {
+    const obs = slopeObservations(valid);
+    const withClose = valid.filter(p => p.closing_odds && p.closing_odds_opponent).length;
+    const fmt = x => `${x >= 0 ? '+' : ''}${x.toFixed(2)}`;
+    let block = `<div class="calib-sub click" onclick="calibInfo('slope')">Closing-line slope β (E2 primary)</div>`;
+    block += `<div class="calib-grid">
+        <div class="calib-cell click" onclick="calibInfo('slope')"><div class="cl">Valid β obs</div><div class="cv">${obs.length}<span class="cs">/ ${E2_T.K1} · / ${E2_T.K2}</span></div></div>
+        <div class="calib-cell"><div class="cl">Closing coverage</div><div class="cv">${withClose}<span class="cs">/ ${total}</span></div></div>
+    </div>`;
+    const b = slopeOf(obs), ci = bootstrapSlopeCI(obs);
+    if (b == null || !ci) {
+        block += '<div class="calib-note">No valid observations yet — needs both closing prices and a non-zero adjustment.</div>';
+        return block;
+    }
+    block += `<div class="calib-note">β = ${fmt(b)} · 95% CI [${fmt(ci.lo)}, ${fmt(ci.hi)}] · n=${obs.length}. β = 1: the market moves all the way to p_v2 before the match; 0: ignores the adjustment.</div>`;
+    [['K1', E2_T.K1], ['K2', E2_T.K2]].forEach(([label, k]) => {
+        if (obs.length < k) {
+            block += `<div class="calib-note">${label} at ${k} valid observations (${obs.length}/${k}).</div>`;
+            return;
+        }
+        const sub = obs.slice(0, k), sb = slopeOf(sub), sci = bootstrapSlopeCI(sub);
+        let cls = '', txt;
+        if (sci.lo > 0) { cls = 'pos'; txt = 'signal detected — the market moves toward v2\'s adjustment.'; }
+        else if (label === 'K1' && sci.hi < E2_T.K1_UPPER) { cls = 'neg'; txt = 'no useful signal — v2 collection stops.'; }
+        else if (label === 'K1') { txt = 'inconclusive — continue to K2.'; }
+        else { cls = 'neg'; txt = 'no detectable edge — v2 collection stops.'; }
+        block += `<div class="calib-verdict ${cls}">${label} (first ${k}): β ${fmt(sb)} · CI [${fmt(sci.lo)}, ${fmt(sci.hi)}] — ${txt} Authoritative numbers: scripts/v2_metrics.py (fixed seed).</div>`;
+    });
+    return block;
+}
+
 function devig(oddsPick, oddsOpp) {
     if (!oddsPick || !oddsOpp) return null;
     const a = 1 / oddsPick, b = 1 / oddsOpp;
@@ -316,7 +399,7 @@ function bootstrapBrierAdvantageCI(paired, nBoot = 2000) {
     const n = paired.length;
     if (n === 0) return null;
     const out = p => p.result === 'won' ? 1 : 0;
-    const edgeSq = paired.map(p => Math.pow(p.estimated_probability - out(p), 2));
+    const edgeSq = paired.map(p => Math.pow(probOf(p) - out(p), 2));
     const mktSq = paired.map(p => Math.pow(devig(p.market_odds_at_analysis, p.market_odds_opponent) - out(p), 2));
     const advantages = new Array(nBoot);
     for (let b = 0; b < nBoot; b++) {
@@ -343,6 +426,7 @@ const CALIB_INFO = {
     brier: ['Brier score', 'Kara za pomyłki ważona pewnością siebie: (prognoza − wynik)². Dał 80% i wygrali → kara 0.04. Dał 80% i przegrali → kara 0.64. Średnia z kar = Brier; im niżej, tym lepiej. Punkt odniesienia: ktoś, kto zawsze mówi 50/50, ma równo 0.25. Porównanie z rynkiem liczone jest wyłącznie na próbie paired, a werdykt zapada dopiero przy 150 rozliczonych.'],
     buckets: ['Kalibracja', 'Czy „70%" znaczy 70%? Bierzemy wszystkie mecze z szacunkiem 70–80% i sprawdzamy, ile faktycznie wygrało. Kolumna gap pokazuje rozjazd: systematycznie ujemny = agent jest zbyt pewny siebie, co produkuje fałszywe „value" — kurs wygląda na okazję tylko dlatego, że szacunek jest napompowany.'],
     clv: ['CLV — Closing Line Value', 'Porównanie kursu wziętego rano z kursem tuż przed meczem: (kurs rano / kurs zamknięcia − 1). Linia zamknięcia to najlepiej poinformowana cena na rynku. Systematycznie dodatnie CLV = widzisz wartość, zanim rynek się skoryguje — najsilniejszy wczesny dowód przewagi, widoczny po ~50 zakładach. Ujemne CLV przy wygranych = wygrywasz szczęściem, nie metodą.'],
+    slope: ['Nachylenie ruchu linii β (E2)', 'Główna metryka v2 od 11.10. Dla każdego meczu z kursem zamknięcia po obu stronach i niezerową korektą: a = o ile v2 przesunęło cenę względem rynku (pp), m = o ile rynek sam przesunął się do zamknięcia (pp). β = Σ a·m / Σ a². β = 1: rynek przed meczem idzie dokładnie tam, gdzie v2; β = 0: ignoruje korektę; β < 0: idzie przeciw. Nie zależy od wyniku meczu. Punkty kontrolne: K1 przy 100 obserwacjach (sygnał, jeśli dolna granica CI > 0; koniec, jeśli górna < 0.5), K2 przy 200 (ostatecznie). Brier zostaje opisowy, bo przy korektach rzędu 0.5 pp nie ma mocy.'],
     stage: ['Etapy', 'Collection (0–49 rozliczonych): tylko zbieranie. Preliminary (50–99): wstępne sygnały, zero wniosków. Emerging (100–149): wzorce warte rozmowy. Validation checkpoint (150+): działa zapisany z góry warunek porażki dla Brier. Osobno: checkpoint CLV przy 50 closing snapshotach na BET-ach. Progi zapisano zanim znamy wyniki — żeby nie przesuwać bramek.'],
     selHitRate: ['Selection Hit Rate', 'Jaki procent pojedynczych typów (nóg) trafiasz. Liczone po nogach, nie po całych kuponach: kupon z 3 zdarzeń to 3 osobne nogi. Void nie liczy się do mianownika. To surowa trafność — mówi, jak często masz rację, ale NIE czy zarabiasz (do tego trzeba value i kursów).'],
     avgOdds: ['Avg Leg Odds', 'Średni kurs Twoich pojedynczych typów. Niski (bliżej 1.00) = grasz głównie faworytów. Wysoki = częściej sięgasz po niepewniaki. Sam w sobie nic nie ocenia — służy do czytania tabeli „wg zakresu kursu" obok: gdzie faktycznie masz wyczucie.'],
@@ -507,18 +591,21 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
             </div>
         </div>`;
 
+    // E2: the slope panel is the primary v2 read and does not wait for 50 settled.
+    const slopeBlock = version !== 'v1' ? `<div class="panel">${slopeHtml(valid, logged)}</div>` : '';
+
     if (settledEst.length < CAL_T.PRELIM) {
-        return { logged, settledCount: settledEst.length, html: `${header}<div class="charts">${frame}</div>` };
+        return { logged, settledCount: settledEst.length, html: `${header}<div class="charts">${frame}${slopeBlock}</div>` };
     }
 
-    let html = `${header}<div class="charts">${frame}</div>`;
+    let html = `${header}<div class="charts">${frame}${slopeBlock}</div>`;
 
     const out = p => p.result === 'won' ? 1 : 0;
-    const brierEdge = settledEst.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / settledEst.length;
+    const brierEdge = settledEst.reduce((s, p) => s + Math.pow(probOf(p) - out(p), 2), 0) / settledEst.length;
 
     let pairBlock = '';
     if (paired.length > 0) {
-        const be = paired.reduce((s, p) => s + Math.pow(p.estimated_probability - out(p), 2), 0) / paired.length;
+        const be = paired.reduce((s, p) => s + Math.pow(probOf(p) - out(p), 2), 0) / paired.length;
         const bm = paired.reduce((s, p) => s + Math.pow(devig(p.market_odds_at_analysis, p.market_odds_opponent) - out(p), 2), 0) / paired.length;
         const adv = bm - be; // positive = edge beats market
         const ci = bootstrapBrierAdvantageCI(paired);
@@ -530,7 +617,13 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
             ? `Brier advantage (market − edge): ${adv >= 0 ? '+' : ''}${adv.toFixed(4)} · 95% CI [${ci.lo >= 0 ? '+' : ''}${ci.lo.toFixed(4)}, ${ci.hi >= 0 ? '+' : ''}${ci.hi.toFixed(4)}]`
             : '';
         let verdict;
-        if (paired.length >= CAL_T.VALID) {
+        if (version !== 'v1') {
+            // E2: Brier is descriptive; its only role is the safety condition in §20.
+            const safety = ci && ci.hi < 0
+                ? '<div>Safety condition failed: v2 is demonstrably worse than the market (Brier CI entirely below zero) — blocks promotion.</div>'
+                : '<div>Descriptive under E2 — at v2\'s adjustment sizes Brier cannot detect a signal; the decision comes from the closing-line slope β below. Safety condition (CI not entirely below zero): ok.</div>';
+            verdict = `<div class="calib-note">${advText}${safety}</div>`;
+        } else if (paired.length >= CAL_T.VALID) {
             verdict = `<div class="calib-verdict ${distinguishable ? (adv > 0 ? 'pos' : 'neg') : ''}">
                 <div>${advText}</div>
                 <div>${!distinguishable
@@ -559,9 +652,9 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
 
     const buckets = {};
     settledEst.forEach(p => {
-        const lo = Math.min(90, Math.floor(p.estimated_probability * 10) * 10);
+        const lo = Math.min(90, Math.floor(probOf(p) * 10) * 10);
         const b = buckets[lo] = buckets[lo] || { n: 0, w: 0, sum: 0 };
-        b.n++; b.w += out(p); b.sum += p.estimated_probability;
+        b.n++; b.w += out(p); b.sum += probOf(p);
     });
     const rows = Object.keys(buckets).sort((a, b) => a - b).map(lo => {
         const b = buckets[lo];

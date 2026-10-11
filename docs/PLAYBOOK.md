@@ -252,6 +252,11 @@ For every important PASS:
 - **The two agents' biases are different, not mirror images.** claude's Brier losses against the market came from moves **below** the market's price on the favourite (n=40, the single largest contribution to the gap) — not from raising favourites above the market, which is the opposite of what an earlier read of the data suggested. The systematic "+2 pp toward the pick" anchoring bias belongs to **gpt** (mean +2.17 pp), not claude (mean +0.28 pp overall, −0.03 pp on favourites specifically). Do not apply one agent's diagnosed bias to the other.
 - **Neither verdict is distinguishable from zero at n=150.** claude not validated (+0.00020), gpt validated (−0.00034), but both sit inside a 95% CI of roughly ±0.0045–0.006, and each verdict flips if a single match is removed. A pre-registered checkpoint gives a clean stop/go rule; it does not by itself mean the difference is real. This is why v2 (`docs/METHOD_V2.md` §20) adds a stop rule and a closing-line metric independent of match outcome, instead of relying on Brier-at-150 alone.
 
+### From ESL Pro League S24 (first v2 audit, 2026-10-11)
+
+- **Size a metric's power on the adjustments the method actually produces, not on its caps.** v2.0 was frozen with ±4/±5 pp caps in mind; the realised median adjustment was 0.5 pp. At that size a Brier comparison cannot detect even a perfectly correct method (expected gain ≈ 0.00008 vs a CI half-width ≈ 0.0012 at n=150), and a stop rule keyed to the Brier CI width fires regardless of the truth. Check this on the first real sample of any new method, before anyone reads its outcome numbers as evidence.
+- **One team can carry a tournament's whole result.** The entire positive Brier advantage of EPL S24 came from four predictions on Legacy (stand-in penalty); the fresh-form signal itself was slightly negative. Decompose a summary's headline number by adjustment source before describing it.
+
 ### From EWC 2026 (post-tournament review)
 
 - **The benchmark is the de-vigged market, never 0.25.** Beating 0.25 (always-50%) only proves an agent picks favourites; on tier-1 the market does that for free. Every calibration claim must be scored against the de-vigged market baseline on the paired sample. This is now a pre-publication check for summaries.
@@ -289,6 +294,7 @@ For every match analysed:
 For summary / phase reports, additionally:
 
 - **Benchmark is de-vigged market, not 0.25.** Any calibration claim compares Brier against the de-vigged market baseline on the paired sample, not against the 0.25 coin-flip line. 0.25 may be mentioned but is never the headline benchmark.
+- **v2 numbers come from `p_v2` and `scripts/v2_metrics.py`.** Not from `estimated_probability`, which is blurred by fair-odds rounding, and not from figures in daily reports.
 - **Checkpoint counted per agent × method_version.** Sample-size and validation-stage claims are per (agent × version), never pooled. A pooled total crossing 150 validates nobody.
 
 ## Change Policy
@@ -362,7 +368,7 @@ Entries reconstructed from already-published reports carry `"recording_mode": "h
 
 **The eligible population is every settled prediction (`won`/`lost`) that has an `estimated_probability` and both market prices (`market_odds_at_analysis`, `market_odds_opponent`) — regardless of small rounding drift between `estimated_probability` and `1 / fair_odds`.** A drift of ≤ 0.005 is a `legacy_rounding` data-quality flag, not a reason to exclude the entry from the sample; only drift above that tolerance, or a genuinely missing field, excludes an entry. (Clarified 2026-09-23, resolving a dashboard/report discrepancy found in the v2-freeze audit — the same population definition applies to v2.)
 
-v2's own validation stages, promotion, rejection and stop conditions are specified separately in `docs/METHOD_V2.md` §19–20; they are not the v1 conditions below applied to a new version, they are a revised set the operator approved at freeze.
+v2's own validation stages, promotion, rejection and stop conditions are specified separately in `docs/METHOD_V2.md` §19–20; they are not the v1 conditions below applied to a new version. Since 2026-10-11 (evaluation protocol E2, `docs/decisions/2026-10-11-v2-ocena-e2.md`) v2 is judged primarily by the closing-line slope β with checkpoints counted in **valid β observations** (K1 = 100, K2 = 200, first n by `date`, then `id`, never recomputed), and every v2 probability metric uses the ledger's `p_v2` field, not `estimated_probability`. Reference numbers come from `scripts/v2_metrics.py`.
 
 ### Verdict staging
 

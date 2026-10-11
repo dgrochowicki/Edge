@@ -1,6 +1,6 @@
 # Obserwacje do audytu v2 — ESL Pro League S24, 2026-10-03/04
 
-**Status:** OTWARTE — hipotezy do sprawdzenia w okresowym audycie claude (METHOD_V2 §21–22), **nie** zmiana metody.
+**Status:** OTWARTE (dopisek z danymi po turnieju: 2026-10-11, na końcu) — hipotezy do sprawdzenia w okresowym audycie claude (METHOD_V2 §21–22), **nie** zmiana metody.
 **Zgłosił:** operator (Dom) 2026-10-04, spisał opiekun księgi.
 **Dotyczy:** `P-2026-10-03-G1…G8`, `P-2026-10-04-G1…G8`, `data/form/2026-10-03.json`, `data/form/2026-10-04.json`.
 
@@ -54,3 +54,43 @@ Skutek widoczny dzień do dnia: BETBOOM 1.755 → −1.3186, Falcons 0.6933 → 
 - Nie zmienia parametrów v2.0 ani nie wyklucza żadnej predykcji.
 - Nie wyciąga wniosków z 16 wyników — to próbka, na której każdy wzór wyglądałby przypadkowo.
 - Nie jest wynikiem audytu; jest listą pytań, które audyt ma rozstrzygnąć na danych.
+
+---
+
+## Dopisek po turnieju — 2026-10-11 (audyt claude, §21)
+
+Pełny audyt: `reports/summaries/ESL-Pro-League-S24-2026-summary.md`. Tu tylko to, co dotyczy pytań z tej notatki, i notatki QA w rozumieniu §22. Status O1 i O2: **nadal OTWARTE**.
+
+### O1 po 41 predykcjach
+
+Kara −2 pp wystąpiła 4 razy, zawsze dla Legacy (arT nieobecny przez cały turniej, bobz jako stand-in — potwierdzone w źródłach):
+
+| Predykcja | Kara idzie w stronę | Wynik | Ruch linii do zamknięcia |
+|---|---|---|---|
+| `P-2026-10-03-G2` | PARIVISION | trafiony | brak closingu |
+| `P-2026-10-04-G1` | ShindeN | nietrafiony | 0.0 pp |
+| `P-2026-10-05-G4` | 1win | trafiony | +1.0 pp w stronę kary |
+| `P-2026-10-06-G6` | M80 | trafiony | +4.1 pp w stronę kary |
+
+Przewaga Brier na tej podpróbie +0.010; rynek 2 razy z 3 poszedł w stronę kary. Kierunek przeciwny do hipotezy, ale to jedna drużyna w jednym turnieju — jeden przypadek, nie cztery. **Uwaga interpretacyjna** (bez zmiany metody): nieobecny IGL ze stand-inem uruchamia jednocześnie reset okna i karę; dosłowny tekst §10 wymaga obu, ale zdanie o „podwójnym liczeniu" sugeruje, że ten przypadek nie był przewidziany. Kandydat do doprecyzowania w wycenie v2.1, jeśli do niej dojdzie.
+
+### O2 po 41 predykcjach
+
+Predykcje z korektą fresh, wg maksymalnego udziału jednej serii w wadze okna (pick lub przeciwnik):
+
+| Grupa | n | Przewaga Brier | Średni ruch linii w stronę korekty (n) |
+|---|---:|---:|---|
+| udział > 50% | 11 | +0.0012 | +0.68 pp (8) |
+| udział ≤ 50% | 23 | +0.0002 | −0.30 pp (19) |
+
+Kierunek przeciwny do hipotezy, n za małe na wniosek. Od 7.10 żadne okno nie było już zdominowane przez jedną serię (przybywało map z samego EPL), więc ta hipoteza dotyczy głównie pierwszych dni turnieju — dane do niej będą przybywać wolno.
+
+### Notatki QA (§22 — pliki i predykcje bez zmian)
+
+- **QA-1, `data/form/2026-10-11.json`:** MOUZ, FURIA–MOUZ 2026-10-09, Nuke zapisany 13:11; poprawnie 13:10 (tak jest w `2026-10-10.json` i w źródle zewnętrznym). Po poprawce FreshMapScore MOUZ 2.7978 zamiast 2.716, `p_v2` Vitality w `P-2026-10-11-G2` 0.6846 zamiast 0.6850, fair bez zmian (1.46). Bez wpływu na decyzję.
+- **QA-2, konwencje sprzed E2:** `P-2026-10-04-G7` (fair 3.19 vs 3.18) i `P-2026-10-05-G3` (1.45 vs 1.46) liczone z niezaokrąglonych wartości pośrednich; `P-2026-10-03-G3`, `-G4`, `P-2026-10-10-G1` z pickiem po stronie z niższym value. Walidator oznacza je flagą `pre_e2`. Żaden nie zmienia decyzji.
+- **QA-3, playoff:** wpisy z 10.10 i 11.10 liczone z pasm rankingowych odziedziczonych z cache i bez niezależnego potwierdzenia składów — oznaczone `data_quality` poprawnie. Pasma spójne z resztą cache (0 rozbieżności w 188 mapach).
+
+### Kiedy wrócić do O1/O2
+
+Przy następnym audycie (po kolejnym turnieju tier-1 albo przy n ≈ 60–70). Pod E2 obie hipotezy sprawdzamy przede wszystkim na β w podpróbach (kara rosterowa ≠ 0; udział jednej serii > 50%), Brier tylko pomocniczo.

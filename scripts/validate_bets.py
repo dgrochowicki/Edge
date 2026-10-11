@@ -34,6 +34,14 @@ Additional rules for method_version == "v2":
     - roster_penalty_pick, roster_penalty_opponent in {0, -2}
     - fresh_input_pick, fresh_input_opponent in {round_diff, map_result_fallback}
     - closing_odds and closing_odds_opponent both set or both null
+    - p_v2 present and == round(clamp(p_market + total_adjustment_pp/100,
+      p_market -/+ 0.05), 4)                                   (E2, 2026-10-11)
+    - fair_odds == round(1/p_v2, 2) and pick is the higher-value side
+      (METHOD_V2 §13). Entries dated before E2_EFFECTIVE were computed under
+      E1 conventions: a mismatch there is a `pre_e2` flag, not an error
+      (EPL S24: 5 flags -- fair computed from unrounded intermediates in
+      P-2026-10-04-G7 / P-2026-10-05-G3, pick on the lower-value side in
+      P-2026-10-03-G3 / -G4 / P-2026-10-10-G1; entries immutable).
 """
 import json
 import sys
@@ -48,6 +56,12 @@ V2_REQUIRED_FIELDS = [
 ]
 FRESH_INPUT_VALUES = {"round_diff", "map_result_fallback"}
 ROSTER_PENALTY_VALUES = {0, -2}
+E2_EFFECTIVE = "2026-10-12"  # first match day after the E2 decision (docs/decisions/2026-10-11-v2-ocena-e2.md)
+
+
+def expected_p_v2(p):
+    pm = p["p_market"]
+    return round(min(pm + 0.05, max(pm - 0.05, pm + p["total_adjustment_pp"] / 100)), 4)
 
 
 def validate(preds):
@@ -121,6 +135,29 @@ def validate(preds):
             if (co is None) != (coo is None):
                 errors.append((pid, f"closing_odds/closing_odds_opponent must both be set or both null (got {co!r}, {coo!r})"))
 
+            pv2 = p.get("p_v2")
+            if pv2 is None:
+                errors.append((pid, "v2 entry missing p_v2 (run scripts/backfill_p_v2.py for pre-E2 entries)"))
+            elif p_market is not None and p.get("total_adjustment_pp") is not None:
+                exp = expected_p_v2(p)
+                if abs(pv2 - exp) > 0.00005:
+                    errors.append((pid, f"p_v2 {pv2} != round(clamp(p_market + total_adjustment_pp/100), 4) = {exp}"))
+                post_e2 = p.get("date", "") >= E2_EFFECTIVE
+                problems = []
+                if fair and abs(fair - round(1 / pv2, 2)) > 0.005:
+                    problems.append(f"fair_odds {fair} != round(1/p_v2, 2) = {round(1 / pv2, 2)}")
+                odds, odds_o = p.get("market_odds_at_analysis"), p.get("market_odds_opponent")
+                if odds and odds_o and 0 < pv2 < 1:
+                    v_pick = odds / round(1 / pv2, 2) - 1
+                    v_opp = odds_o / round(1 / (1 - pv2), 2) - 1
+                    if v_opp > v_pick + 0.001:
+                        problems.append(f"pick has lower value ({100*v_pick:+.1f}%) than the other side ({100*v_opp:+.1f}%)")
+                for msg in problems:
+                    if post_e2:
+                        errors.append((pid, msg))
+                    else:
+                        flags.append((pid, "pre_e2", msg))
+
     return errors, flags
 
 
@@ -136,13 +173,18 @@ def main():
     errors, flags = validate(preds)
 
     print(f"Validated {len(preds)} predictions.")
-    print(f"  legacy_rounding flags: {len(flags)}")
+    legacy = [f for f in flags if f[1] == "legacy_rounding"]
+    pre_e2 = [f for f in flags if f[1] == "pre_e2"]
+    print(f"  legacy_rounding flags: {len(legacy)}")
     by_agent = {}
-    for pid, _, _ in flags:
+    for pid, _, _ in legacy:
         p = next(x for x in preds if x["id"] == pid)
         by_agent[p.get("agent")] = by_agent.get(p.get("agent"), 0) + 1
     if by_agent:
         print(f"    by agent: {by_agent}")
+    print(f"  pre_e2 flags (E1-era conventions, informational): {len(pre_e2)}")
+    for pid, _, msg in pre_e2:
+        print(f"    {pid}: {msg}")
     print(f"  hard errors: {len(errors)}")
     for pid, msg in errors:
         print(f"    {pid}: {msg}")
