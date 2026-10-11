@@ -8473,8 +8473,8 @@
       "combined_odds": 2.4,
       "potential_return_pln": 4.22,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "Vitality vs MOUZ",
@@ -8483,8 +8483,8 @@
           "odds": 1.5,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-11-G2 (EPL S24 grand final, BO5) and EDGE-239's map-2 leg. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "lost",
+          "notes": "Same match as P-2026-10-11-G2 and EDGE-239. Moot -- coupon already lost on the Imperial-NRG leg."
         },
         {
           "match": "Imperial vs NRG",
@@ -8493,8 +8493,8 @@
           "odds": 1.6,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 0:1 (NRG leading) at time of bet."
+          "result": "lost",
+          "notes": "Tournament tag not given. Settled: series now 1:1 -- exact score 0:2 impossible, leg lost."
         }
       ]
     }
@@ -8503,13 +8503,13 @@
   "summary": {
     "coupons": 240,
     "won": 83,
-    "lost": 156,
+    "lost": 157,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 531.49,
     "gross_return_pln": 386.99,
-    "net_result_pln": -142.5,
-    "roi": -0.2681
+    "net_result_pln": -144.5,
+    "roi": -0.2719
   },
   "archived_predictions": [
     {
