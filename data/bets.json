@@ -17602,8 +17602,8 @@
       "value_pct": -6.8,
       "decision": "PASS",
       "confidence": 4,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.44,
+      "closing_odds_opponent": 2.6,
       "result": "pending",
       "data_quality": [
         "roster_status_not_independently_verified"
