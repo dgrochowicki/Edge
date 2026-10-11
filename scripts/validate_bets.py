@@ -1,5 +1,7 @@
 #!/usr/bin/env python3
-"""Validate data/bets.json against the schema rules in docs/V2_FREEZE_TASKS.md #7.
+"""Validate data/bets.json against the ledger schema (docs/METHOD_V2.md §13, §16;
+docs/REPORT_TEMPLATE.md section 4). Originally written for the v2 freeze task list,
+since removed (history in git).
 
 Usage: python3 scripts/validate_bets.py [path-to-bets.json] [--all]
 

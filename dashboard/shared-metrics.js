@@ -557,7 +557,7 @@ function renderCalibrationAgentSection(preds, agent, version, invalidIds) {
 
     // v1 is the frozen archive after the 2026-09-23 freeze; every other
     // version (v2, and any future bump) is the active method. Label reflects
-    // that distinction directly in the section header per V2_FREEZE_TASKS #9.6.
+    // that distinction directly in the section header (v2 freeze, docs/decisions/2026-09-23-v2-freeze.md).
     const versionLabel = version === 'v1' ? 'v1 · archived' : (version || 'unknown version').toUpperCase();
     const header = `<div class="calib-sub" style="margin-top:0;font-size:12px;color:var(--ink);">${agent.toUpperCase()} × ${versionLabel}</div>`;
 

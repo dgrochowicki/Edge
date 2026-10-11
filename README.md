@@ -52,7 +52,8 @@ Edge/
 ├── README.md
 ├── index.html
 ├── data/
-│   └── bets.json
+│   ├── bets.json             -- the ledger (single maintainer)
+│   └── form/                 -- v2 fresh-form windows, one file per match day
 ├── dashboard/
 │   ├── research.html
 │   ├── reports.html
@@ -67,10 +68,19 @@ Edge/
 │   ├── styles.css
 │   └── favicon.svg
 ├── docs/
+│   ├── METHOD_V2.md          -- active method (v2.0 valuation + evaluation protocol E2)
+│   ├── METODA.md             -- de-vig / value explainer (Polish)
 │   ├── PLAYBOOK.md
 │   ├── PROJECT_MEMORY.md
 │   ├── REPORT_TEMPLATE.md
-│   └── ROADMAP.md
+│   ├── ROADMAP.md
+│   ├── archive/METHOD_V1.md  -- frozen v1 rules
+│   ├── audit/                -- audit notes and QA notes
+│   └── decisions/            -- dated decision records
+├── scripts/
+│   ├── validate_bets.py      -- ledger schema validator
+│   ├── v2_metrics.py         -- reference v2 metrics (beta, Brier, coverage)
+│   └── backfill_p_v2.py      -- one-off p_v2 backfill (E2)
 └── reports/
 ```
 
@@ -78,9 +88,9 @@ The structure will grow only when a real need appears.
 
 ## Current status
 
-Edge is in its initial validation phase.
+v1 is closed (archived after its 150-prediction checkpoint, 2026-09-19/20). v2 is the active method: gpt produces one canonical prediction per match, claude audits once per tournament. Since 2026-10-11 v2 is judged by how far the market moves toward its adjustment before each match (closing-line slope β, checkpoints at 100 and 200 valid observations), not by Brier at 150. Details: `docs/METHOD_V2.md`, `docs/ROADMAP.md`.
 
-The sample is far too small to draw conclusions. Early results are treated as data points, not proof that the method works or fails.
+After the first v2 tournament (ESL Pro League S24) the sample is far too small to draw conclusions. Early results are treated as data points, not proof that the method works or fails.
 
 ## Disclaimer
 

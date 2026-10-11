@@ -3,9 +3,13 @@
 ## Repository Status
 
 Current version: v0.1
-Last updated: 2026-08-16
+Last updated: 2026-10-11
 
 Recent changes:
+- 2026-10-11: first v2 tournament (ESL Pro League S24, 41 predictions) audited; evaluation protocol E2 adopted — see Calibration & Method Decisions below
+- 2026-09-23: v2 frozen, v1 archived; gpt daily analyst, claude periodic auditor
+
+Earlier (to 2026-08-16):
 - Built the `dashboard/` static site (Dashboard, Research/Calibration Lab, Reports archive, Logs) reading `data/bets.json` client-side
 - Edge is now CS2-only, tier-1 only (see Calibration & Method Decisions below); pre-protocol and out-of-scope entries archived to `archived_predictions`
 - Both agents (claude, gpt) now report daily; `predictions` carries `agent` and `method_version` per entry
@@ -342,7 +346,8 @@ Edge/
 ├── README.md
 ├── index.html
 ├── data/
-│   └── bets.json
+│   ├── bets.json             -- the ledger (single maintainer)
+│   └── form/                 -- v2 fresh-form windows, one file per match day
 ├── dashboard/
 │   ├── research.html
 │   ├── reports.html
@@ -357,12 +362,22 @@ Edge/
 │   ├── styles.css
 │   └── favicon.svg
 ├── docs/
+│   ├── METHOD_V2.md          -- active method (v2.0 valuation + evaluation protocol E2)
+│   ├── METODA.md             -- de-vig / value explainer (Polish)
 │   ├── PLAYBOOK.md
 │   ├── PROJECT_MEMORY.md
 │   ├── REPORT_TEMPLATE.md
-│   └── ROADMAP.md
+│   ├── ROADMAP.md
+│   ├── archive/METHOD_V1.md  -- frozen v1 rules
+│   ├── audit/                -- audit notes and QA notes
+│   └── decisions/            -- dated decision records
+├── scripts/
+│   ├── validate_bets.py      -- ledger schema validator
+│   ├── v2_metrics.py         -- reference v2 metrics (beta, Brier, coverage)
+│   └── backfill_p_v2.py      -- one-off p_v2 backfill (E2)
 └── reports/
-    └── YYYY-MM-DD-{claude,gpt}.md  -- one pair per day
+    ├── YYYY-MM-DD-gpt.md     -- v2 daily report (claude + gpt pairs for v1 days)
+    └── summaries/            -- tournament summaries and audits
 ```
 
 Kept in sync with `README.md`'s own structure section — update both together.
