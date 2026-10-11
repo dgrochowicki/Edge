@@ -8371,19 +8371,43 @@
           "notes": "Tournament tag not given. Settled: Chinggis Warriors beat 5stars 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-237",
+      "date": "2026-10-11",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.4,
+      "potential_return_pln": 4.22,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Aurora vs Spirit",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 2.4,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as P-2026-10-11-G1 (EPL S24 3rd place, v2 picked Spirit). Placed live, 1st half break, map 1 round score 1:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 236,
+    "coupons": 237,
     "won": 81,
     "lost": 155,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 522.52,
+    "pending": 1,
+    "total_staked_pln": 524.52,
     "gross_return_pln": 379.42,
     "net_result_pln": -143.1,
-    "roi": -0.2739
+    "roi": -0.2728
   },
   "archived_predictions": [
     {
