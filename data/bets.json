@@ -8439,8 +8439,8 @@
       "combined_odds": 3.3,
       "potential_return_pln": 7.46,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.57,
       "selections": [
         {
           "match": "Bebop vs Mellren",
@@ -8459,8 +8459,8 @@
           "odds": 2.0,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-11-G2 (EPL S24 grand final, BO5)."
+          "result": "lost",
+          "notes": "Same match as P-2026-10-11-G2 (EPL S24 grand final, BO5). Settled: Vitality won map 2 (series now 2:0) -- MOUZ did not win map 2, leg lost."
         }
       ]
     },
@@ -8503,13 +8503,13 @@
   "summary": {
     "coupons": 240,
     "won": 83,
-    "lost": 155,
+    "lost": 156,
     "voided": 0,
-    "pending": 2,
+    "pending": 1,
     "total_staked_pln": 531.49,
     "gross_return_pln": 386.99,
-    "net_result_pln": -139.93,
-    "roi": -0.2633
+    "net_result_pln": -142.5,
+    "roi": -0.2681
   },
   "archived_predictions": [
     {
