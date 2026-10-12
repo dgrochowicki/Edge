@@ -8622,9 +8622,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.28,
       "potential_return_pln": 4.0,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.0,
+      "status": "won",
+      "net_result_pln": 2.0,
       "selections": [
         {
           "match": "Inner Circle vs Sangal",
@@ -8643,8 +8643,8 @@
           "odds": 1.23,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: Nuclear TigeRES beat Johnny Speeds 2:0."
         }
       ]
     }
@@ -8652,14 +8652,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 245,
-    "won": 85,
+    "won": 86,
     "lost": 159,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 541.94,
-    "gross_return_pln": 394.86,
-    "net_result_pln": -145.08,
-    "roi": -0.2677
+    "gross_return_pln": 398.86,
+    "net_result_pln": -143.08,
+    "roi": -0.264
   },
   "archived_predictions": [
     {
