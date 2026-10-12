@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-11",
+  "updated_at": "2026-10-12",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -8497,19 +8497,43 @@
           "notes": "Tournament tag not given. Settled: series now 1:1 -- exact score 0:2 impossible, leg lost."
         }
       ]
+    },
+    {
+      "id": "EDGE-241",
+      "date": "2026-10-12",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.54,
+      "potential_return_pln": 4.47,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Inner Circle vs Sangal",
+          "market": "moneyline",
+          "pick": "Sangal",
+          "odds": 2.54,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Tournament tag not given. Settled: Inner Circle beat Sangal 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 240,
+    "coupons": 241,
     "won": 83,
-    "lost": 157,
+    "lost": 158,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 531.49,
+    "total_staked_pln": 533.49,
     "gross_return_pln": 386.99,
-    "net_result_pln": -144.5,
-    "roi": -0.2719
+    "net_result_pln": -146.5,
+    "roi": -0.2746
   },
   "archived_predictions": [
     {
