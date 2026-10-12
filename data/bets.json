@@ -8565,8 +8565,8 @@
       "combined_odds": 2.71,
       "potential_return_pln": 4.88,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.05,
       "selections": [
         {
           "match": "Nuclear TigeRES vs XI",
@@ -8585,8 +8585,8 @@
           "odds": 2.4,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed at start of map 1, 0:0 at time of bet."
+          "result": "lost",
+          "notes": "Tournament tag not given. Settled: ex-RUSTEC swept Nordic Partners 2:0 -- Nordic Partners didn't win map 2, leg lost."
         }
       ]
     }
@@ -8595,13 +8595,13 @@
   "summary": {
     "coupons": 243,
     "won": 84,
-    "lost": 158,
+    "lost": 159,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 537.54,
     "gross_return_pln": 391.44,
-    "net_result_pln": -144.05,
-    "roi": -0.268
+    "net_result_pln": -146.1,
+    "roi": -0.2718
   },
   "archived_predictions": [
     {
