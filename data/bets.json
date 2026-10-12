@@ -8575,8 +8575,8 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "void",
+          "notes": "Tournament tag not given. Settled: Nuclear TigeRES swept XI 2:0 -- map 3 never played, map-3-winner market voided. Leg removed from the acca; effective odds now just the remaining leg (2.40)."
         },
         {
           "match": "Nordic Partners vs ex-RUSTEC",
