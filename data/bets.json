@@ -8711,8 +8711,8 @@
           "odds": 1.32,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 3rd map, series 1:1 at time of bet. Moot -- coupon already lost on the 100 Thieves-Liquid leg."
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: JiJieHao beat BBL 2:1. Moot -- coupon already lost on the 100 Thieves-Liquid leg."
         }
       ]
     }
