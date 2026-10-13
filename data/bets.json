@@ -8691,8 +8691,8 @@
       "combined_odds": 3.7,
       "potential_return_pln": 6.69,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.06,
       "selections": [
         {
           "match": "100 Thieves vs Liquid",
@@ -8701,8 +8701,8 @@
           "odds": 2.8,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Pulse Beat. Placed live, 3rd map, series 1:1 at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope -- Pulse Beat. Placed live, 3rd map, series 1:1 at time of bet. Settled: 100 Thieves beat Liquid 2:1."
         },
         {
           "match": "JiJieHao vs BBL",
@@ -8712,7 +8712,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 3rd map, series 1:1 at time of bet."
+          "notes": "Tournament tag not given. Placed live, 3rd map, series 1:1 at time of bet. Moot -- coupon already lost on the 100 Thieves-Liquid leg."
         }
       ]
     }
@@ -8721,13 +8721,13 @@
   "summary": {
     "coupons": 247,
     "won": 87,
-    "lost": 159,
+    "lost": 160,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 546.02,
     "gross_return_pln": 403.02,
-    "net_result_pln": -140.94,
-    "roi": -0.2581
+    "net_result_pln": -143.0,
+    "roi": -0.2619
   },
   "archived_predictions": [
     {
