@@ -8715,19 +8715,43 @@
           "notes": "Tournament tag not given. Settled: JiJieHao beat BBL 2:1. Moot -- coupon already lost on the 100 Thieves-Liquid leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-248",
+      "date": "2026-10-13",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.05,
+      "potential_return_pln": 5.37,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Liquid vs JiJieHao",
+          "market": "correct_score",
+          "pick": "2:1",
+          "odds": 3.05,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- Pulse Beat."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 247,
+    "coupons": 248,
     "won": 87,
-    "lost": 160,
+    "lost": 161,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 546.02,
+    "total_staked_pln": 548.02,
     "gross_return_pln": 403.02,
-    "net_result_pln": -143.0,
-    "roi": -0.2619
+    "net_result_pln": -145.0,
+    "roi": -0.2646
   },
   "archived_predictions": [
     {
