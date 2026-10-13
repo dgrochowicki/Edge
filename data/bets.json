@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-12",
+  "updated_at": "2026-10-13",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -8647,19 +8647,53 @@
           "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: Nuclear TigeRES beat Johnny Speeds 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-246",
+      "date": "2026-10-13",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.02,
+      "combined_odds": 2.34,
+      "potential_return_pln": 4.16,
+      "gross_return_pln": 4.16,
+      "status": "won",
+      "net_result_pln": 2.14,
+      "selections": [
+        {
+          "match": "100 Thieves vs JiJieHao",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: 100 Thieves beat JiJieHao 2:0."
+        },
+        {
+          "match": "Liquid vs BBL",
+          "market": "moneyline",
+          "pick": "Liquid",
+          "odds": 1.77,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Liquid beat BBL 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 245,
-    "won": 86,
+    "coupons": 246,
+    "won": 87,
     "lost": 159,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 541.94,
-    "gross_return_pln": 398.86,
-    "net_result_pln": -143.08,
-    "roi": -0.264
+    "total_staked_pln": 543.96,
+    "gross_return_pln": 403.02,
+    "net_result_pln": -140.94,
+    "roi": -0.2591
   },
   "archived_predictions": [
     {
