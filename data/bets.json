@@ -17989,9 +17989,9 @@
       "value_pct": -5.2,
       "decision": "PASS",
       "confidence": 4,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
-      "result": "pending",
+      "closing_odds": 1.26,
+      "closing_odds_opponent": 3.5,
+      "result": "lost",
       "data_quality": [
         "historical_ranking_bands_from_edge_cache"
       ],
@@ -18027,7 +18027,7 @@
       "confidence": 4,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "insufficient_tier1_fresh_form_window_ninjas_in_pyjamas",
         "historical_ranking_bands_from_edge_cache"
