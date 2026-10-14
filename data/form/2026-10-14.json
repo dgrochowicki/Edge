@@ -1,0 +1,1251 @@
+{
+  "date": "2026-10-14",
+  "event": "Thunderpick World Championship 2026",
+  "event_scope": "operator_explicit_approval_2026-10-14",
+  "odds_source": "STS user snapshot 2026-10-14 08:06 CEST",
+  "method_version": "v2",
+  "method_parameters": "frozen",
+  "cache_basis": "Reconstructed from historic Edge source cache + HLTV match maps, no subsequent results",
+  "teams": {
+    "Aurora": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "woxic",
+        "XANTARES",
+        "Wicadia",
+        "Jimpphat",
+        "kyxsan"
+      ],
+      "window": [
+        {
+          "date": "2026-10-11",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.861972821247,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-11",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 6,
+          "result": "win",
+          "weight_recency": 0.861972821247,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.820335356008,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Cache",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.820335356008,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-10",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.820335356008,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "1win",
+          "opponent_rank_band": "31+",
+          "map": "Dust2",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "1win",
+          "opponent_rank_band": "31+",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Dust2",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Nuke",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 4,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Nuke",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Falcons",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 4,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Falcons",
+          "opponent_rank_band": "top5",
+          "map": "Dust2",
+          "rounds_won": 10,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Dust2",
+          "rounds_won": 13,
+          "rounds_lost": 3,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Cache",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.304753413551,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 4,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.304753413551,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.304753413551,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": 0.8615,
+      "series_count": 8,
+      "map_count": 20,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Current lineup; last cache 2026-10-11 augmented with 2026-10-11 3rd place match vs Spirit; oldest maps dropped to 8 series / 20 maps.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-11.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398756/aurora-vs-spirit-esl-pro-league-season-24"
+        ],
+        "roster": []
+      }
+    },
+    "9z": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "dgt",
+        "max",
+        "meyern",
+        "luchov",
+        "HUASOPEEK"
+      ],
+      "window": [
+        {
+          "date": "2026-10-07",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Nuke",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Inferno",
+          "rounds_won": 3,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Dust2",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Nuke",
+          "rounds_won": 6,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Cache",
+          "rounds_won": 6,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "TYLOO",
+          "opponent_rank_band": "31+",
+          "map": "Nuke",
+          "rounds_won": 13,
+          "rounds_lost": 10,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "TYLOO",
+          "opponent_rank_band": "31+",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 2,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Dust2",
+          "rounds_won": 3,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 11,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": -2.4917,
+      "series_count": 5,
+      "map_count": 10,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Oct 7 loss vs FURIA added; pre-Sep-14 maps removed.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-07.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398747/furia-vs-9z-esl-pro-league-season-24"
+        ],
+        "roster": []
+      }
+    },
+    "Falcons": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "karrigan",
+        "NiKo",
+        "m0NESY",
+        "TeSeS",
+        "kyousuke"
+      ],
+      "window": [
+        {
+          "date": "2026-10-09",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 10,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 6,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Anubis",
+          "rounds_won": 15,
+          "rounds_lost": 19,
+          "result": "loss",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 9,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Dust2",
+          "rounds_won": 4,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 4,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Dust2",
+          "rounds_won": 13,
+          "rounds_lost": 10,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "TYLOO",
+          "opponent_rank_band": "31+",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "TYLOO",
+          "opponent_rank_band": "31+",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 0.8,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": 0.33,
+      "series_count": 5,
+      "map_count": 12,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Oct 9 loss vs Spirit added; Oct 7 Natus Vincere match corrected from cache date 2026-10-06 (HLTV lists Oct 7).",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-09.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398753/falcons-vs-spirit-esl-pro-league-season-24",
+          "https://www.hltv.org/results?team=11283"
+        ],
+        "roster": []
+      }
+    },
+    "PARIVISION": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "Jame",
+        "FL1T",
+        "xiELO",
+        "zweih",
+        "HObbit"
+      ],
+      "window": [
+        {
+          "date": "2026-10-09",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Inferno",
+          "rounds_won": 2,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Dust2",
+          "rounds_won": 10,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Inferno",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Cache",
+          "rounds_won": 13,
+          "rounds_lost": 10,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "Natus Vincere",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "G2 Esports",
+          "opponent_rank_band": "6-10",
+          "map": "Ancient",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "G2 Esports",
+          "opponent_rank_band": "6-10",
+          "map": "Anubis",
+          "rounds_won": 9,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "G2 Esports",
+          "opponent_rank_band": "6-10",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Ancient",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 5,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Inferno",
+          "rounds_won": 10,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Ancient",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Dust2",
+          "rounds_won": 6,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "Spirit",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 5,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "Legacy",
+          "opponent_rank_band": "6-10",
+          "map": "Dust2",
+          "rounds_won": 5,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "Legacy",
+          "opponent_rank_band": "6-10",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 2,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "Legacy",
+          "opponent_rank_band": "6-10",
+          "map": "Ancient",
+          "rounds_won": 16,
+          "rounds_lost": 12,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": -1.4128,
+      "series_count": 6,
+      "map_count": 17,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Oct 9 defeat vs Vitality added; Sep series excluded by 30-day rule.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-09.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398751/vitality-vs-parivision-esl-pro-league-season-24"
+        ],
+        "roster": []
+      }
+    },
+    "FURIA": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "FalleN",
+        "KSCERATO",
+        "yuurih",
+        "YEKINDAR",
+        "molodoy"
+      ],
+      "window": [
+        {
+          "date": "2026-10-09",
+          "opponent": "MOUZ",
+          "opponent_rank_band": "top5",
+          "map": "Nuke",
+          "rounds_won": 11,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-09",
+          "opponent": "MOUZ",
+          "opponent_rank_band": "top5",
+          "map": "Inferno",
+          "rounds_won": 6,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.780709182156,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Nuke",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-07",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 3,
+          "result": "win",
+          "weight_recency": 0.707106781187,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Dust2",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 9,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Nuke",
+          "rounds_won": 9,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "PARIVISION",
+          "opponent_rank_band": "11-20",
+          "map": "Ancient",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "PARIVISION",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 5,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "PARIVISION",
+          "opponent_rank_band": "11-20",
+          "map": "Inferno",
+          "rounds_won": 13,
+          "rounds_lost": 10,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "MOUZ",
+          "opponent_rank_band": "top5",
+          "map": "Cache",
+          "rounds_won": 4,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "MOUZ",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 7,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 5,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "BETBOOM",
+          "opponent_rank_band": "11-20",
+          "map": "Cache",
+          "rounds_won": 16,
+          "rounds_lost": 14,
+          "result": "win",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Anubis",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.304753413551,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-20",
+          "opponent": "Vitality",
+          "opponent_rank_band": "top5",
+          "map": "Cache",
+          "rounds_won": 5,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.304753413551,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "MIBR",
+          "opponent_rank_band": "11-20",
+          "map": "Nuke",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.29003234654,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-09-19",
+          "opponent": "MIBR",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 13,
+          "rounds_lost": 8,
+          "result": "win",
+          "weight_recency": 0.29003234654,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": -0.4148,
+      "series_count": 8,
+      "map_count": 18,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Oct 9 defeat vs MOUZ added; ninth oldest series Sept 19 MOUZ excluded by eight-series cap.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-09.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398752/furia-vs-mouz-esl-pro-league-season-24"
+        ],
+        "roster": []
+      }
+    },
+    "BETBOOM": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "Boombl4",
+        "zorte",
+        "S1ren",
+        "d1Ledez",
+        "Magnojez"
+      ],
+      "window": [
+        {
+          "date": "2026-10-06",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Dust2",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-06",
+          "opponent": "9z",
+          "opponent_rank_band": "11-20",
+          "map": "Mirage",
+          "rounds_won": 9,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.672950096316,
+          "weight_opponent": 1.0,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Mirage",
+          "rounds_won": 4,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Nuke",
+          "rounds_won": 13,
+          "rounds_lost": 7,
+          "result": "win",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-05",
+          "opponent": "Aurora",
+          "opponent_rank_band": "6-10",
+          "map": "Anubis",
+          "rounds_won": 8,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.640443344882,
+          "weight_opponent": 1.1,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "M80",
+          "opponent_rank_band": "21-30",
+          "map": "Cache",
+          "rounds_won": 16,
+          "rounds_lost": 14,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 0.9,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-04",
+          "opponent": "M80",
+          "opponent_rank_band": "21-30",
+          "map": "Anubis",
+          "rounds_won": 13,
+          "rounds_lost": 11,
+          "result": "win",
+          "weight_recency": 0.609506827102,
+          "weight_opponent": 0.9,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Mirage",
+          "rounds_won": 5,
+          "rounds_lost": 13,
+          "result": "loss",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        },
+        {
+          "date": "2026-10-03",
+          "opponent": "FURIA",
+          "opponent_rank_band": "top5",
+          "map": "Cache",
+          "rounds_won": 14,
+          "rounds_lost": 16,
+          "result": "loss",
+          "weight_recency": 0.58006469308,
+          "weight_opponent": 1.2,
+          "weight_roster": 1.0
+        }
+      ],
+      "fresh_input": "round_diff",
+      "fresh_map_score": -2.6484,
+      "series_count": 4,
+      "map_count": 9,
+      "round_score_coverage": 1.0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "Oct 6 defeat vs 9z added; matches before Sep 14 excluded.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-06.json",
+        "hltv_update": [
+          "https://www.hltv.org/matches/2398744/9z-vs-betboom-esl-pro-league-season-24"
+        ],
+        "roster": []
+      }
+    },
+    "Legacy": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "arT",
+        "dumau",
+        "latto",
+        "n1ssim",
+        "try"
+      ],
+      "window": [],
+      "fresh_input": "map_result_fallback",
+      "fresh_map_score": null,
+      "series_count": 0,
+      "map_count": 0,
+      "round_score_coverage": 0,
+      "roster_status": "expected_arT_unconfirmed_matchpage_shows_bobz",
+      "roster_note": "arT expected to return as IGL (HLTV 2026-10-07 announcement) yet HLTV match listing still shows substitute bobz. Under IGL change reset, Oct 3–6 maps with bobz excluded. Most recent arT series Sep 13, 31 days ago, out of 30-day window.",
+      "sources": {
+        "prior_edge_cache": "data/form/2026-10-06.json",
+        "hltv_update": [],
+        "roster": [
+          "https://www.hltv.org/news/45669/art-to-return-for-thunderpick-world-championship",
+          "https://www.hltv.org/matches/2399386/legacy-vs-parivision-thunderpick-world-championship-2026"
+        ]
+      }
+    },
+    "Ninjas in Pyjamas": {
+      "core_roster_asof": "2026-10-14",
+      "expected_roster": [
+        "stavn",
+        "sjuush",
+        "Krimbo",
+        "adamb",
+        "xKacpersky"
+      ],
+      "window": [],
+      "fresh_input": "map_result_fallback",
+      "fresh_map_score": null,
+      "series_count": 0,
+      "map_count": 0,
+      "round_score_coverage": 0,
+      "roster_status": "match_lineup_hltv_verified",
+      "roster_note": "No eligible tier-1 matches since Sep 14; Stake Pulse Beat III, ROG Journey and 1win Private Club are out of scope for METHOD_V2 window.",
+      "sources": {
+        "prior_edge_cache": null,
+        "hltv_update": [],
+        "roster": [
+          "https://www.hltv.org/team/4411/ninjas-in-pyjamas"
+        ]
+      }
+    }
+  }
+}
