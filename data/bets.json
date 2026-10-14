@@ -8821,19 +8821,63 @@
           "notes": "Tournament tag not given. Settled: HOTU beat Fnatic 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-252",
+      "date": "2026-10-14",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.3,
+      "combined_odds": 2.65,
+      "potential_return_pln": 5.34,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.3,
+      "selections": [
+        {
+          "match": "HOTU vs Astralis",
+          "market": "moneyline",
+          "pick": "HOTU",
+          "odds": 1.75,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- Pulse Beat. Settled: Astralis beat HOTU."
+        },
+        {
+          "match": "Just Players vs FOKUS",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.26,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Moot -- coupon already lost on the HOTU-Astralis leg. Placed live, 2nd map, series 0:1 at time of bet."
+        },
+        {
+          "match": "Nuclear TigeRES vs Phantom",
+          "market": "moneyline",
+          "pick": "Nuclear TigeRES",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Moot -- coupon already lost on the HOTU-Astralis leg. Placed live, 3rd map, series 1:1 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 251,
+    "coupons": 252,
     "won": 87,
-    "lost": 164,
+    "lost": 165,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 555.52,
+    "total_staked_pln": 557.82,
     "gross_return_pln": 403.02,
-    "net_result_pln": -152.5,
-    "roi": -0.2745
+    "net_result_pln": -154.8,
+    "roi": -0.2775
   },
   "archived_predictions": [
     {
