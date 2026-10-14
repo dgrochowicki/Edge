@@ -8739,19 +8739,43 @@
           "notes": "Out of Edge scope -- Pulse Beat."
         }
       ]
+    },
+    {
+      "id": "EDGE-249",
+      "date": "2026-10-14",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.5,
+      "combined_odds": 1.9,
+      "potential_return_pln": 4.18,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.5,
+      "selections": [
+        {
+          "match": "9z vs Aurora",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.9,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as P-2026-10-14-G1 (Thunderpick World Championship 2026). Settled: 9z beat Aurora 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 248,
+    "coupons": 249,
     "won": 87,
-    "lost": 161,
+    "lost": 162,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 548.02,
+    "total_staked_pln": 550.52,
     "gross_return_pln": 403.02,
-    "net_result_pln": -145.0,
-    "roi": -0.2646
+    "net_result_pln": -147.5,
+    "roi": -0.2679
   },
   "archived_predictions": [
     {
