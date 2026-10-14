@@ -8865,19 +8865,53 @@
           "notes": "Tournament tag not given. Moot -- coupon already lost on the HOTU-Astralis leg. Placed live, 3rd map, series 1:1 at time of bet."
         }
       ]
+    },
+    {
+      "id": "EDGE-253",
+      "date": "2026-10-14",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 5.0,
+      "combined_odds": 2.75,
+      "potential_return_pln": 12.11,
+      "gross_return_pln": 12.11,
+      "status": "won",
+      "net_result_pln": 7.11,
+      "selections": [
+        {
+          "match": "Bushido Wildcats vs BAKS",
+          "market": "map_winner",
+          "pick": "Bushido Wildcats (map 2, incl. OT)",
+          "odds": 2.15,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Bushido Wildcats won map 2 (series ended 1:2)."
+        },
+        {
+          "match": "Falcons vs Ninjas in Pyjamas",
+          "market": "map_winner",
+          "pick": "Falcons (map 2, incl. OT)",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as P-2026-10-14-G2. Settled: Falcons won map 2 (series 2:0)."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 252,
-    "won": 87,
+    "coupons": 253,
+    "won": 88,
     "lost": 165,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 557.82,
-    "gross_return_pln": 403.02,
-    "net_result_pln": -154.8,
-    "roi": -0.2775
+    "total_staked_pln": 562.82,
+    "gross_return_pln": 415.13,
+    "net_result_pln": -147.69,
+    "roi": -0.2624
   },
   "archived_predictions": [
     {
