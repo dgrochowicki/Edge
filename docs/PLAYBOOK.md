@@ -337,6 +337,8 @@ Scope is defined by the *series/organiser at tier-1 (S-Tier, Valve Tier 1)* — 
 
 **Explicitly out of scope**, regardless of which teams play: any qualifier (closed or open) including qualifiers *to* a tier-1 event (the qualifier itself is lower-tier — e.g. StarLadder StarSeries qualifiers are out even though the September main event is in); tier-2/3 circuits (CCT, Thunderpick World Championship, NODWIN, Urban Riga, United21, ESL Challenger, ESEA Premier, regional IEM); academy / B-teams (e.g. paiN Academy); and any event not at S-Tier. When unsure whether an event is tier-1, check its Liquipedia tier — "S-Tier" / "Valve Tier 1" is in scope, anything below is not.
 
+**One-time dated exception: Thunderpick World Championship 2026.** The operator explicitly approved this specific 2026 edition as in-scope on 2026-10-14, before pricing (`P-2026-10-14-G1`…`G4`). This does not reclassify the Thunderpick series — it stays out of scope by default per the rule above; only this named 2026 edition is exempted. See `docs/decisions/2026-10-14-blind-pilot.md` §2.1 for the approval record.
+
 ### Logging
 
 Every **in-scope** market that receives a full analysis in a daily report is appended to the `predictions` array in `data/bets.json` — **both BET and PASS**. Logging only BETs creates selection bias. A logged entry means Edge produced an estimated probability for it. Out-of-scope matches are excluded entirely (see Scope above).
