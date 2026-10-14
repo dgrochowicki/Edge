@@ -8933,19 +8933,53 @@
           "notes": "Tournament tag not given. Settled: Fnatic beat Sashi 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-255",
+      "date": "2026-10-14",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 3.88,
+      "potential_return_pln": 10.23,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Nuclear TigeRES vs Phantom",
+          "market": "moneyline",
+          "pick": "Phantom",
+          "odds": 2.5,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 3rd map, series 1:1 at time of bet."
+        },
+        {
+          "match": "Legacy vs PARIVISION",
+          "market": "moneyline",
+          "pick": "Legacy",
+          "odds": 1.55,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as P-2026-10-14-G3 (Thunderpick World Championship). Placed at start of map 1, 0:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 254,
+    "coupons": 255,
     "won": 89,
     "lost": 165,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 567.82,
+    "pending": 1,
+    "total_staked_pln": 570.82,
     "gross_return_pln": 428.32,
     "net_result_pln": -139.5,
-    "roi": -0.2457
+    "roi": -0.2444
   },
   "archived_predictions": [
     {
