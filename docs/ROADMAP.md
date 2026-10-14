@@ -1,6 +1,6 @@
 # Edge Roadmap
 
-Last updated: 2026-10-11 — first v2 tournament (EPL S24, 41 predictions) audited; v2 evaluation switched to protocol E2 (closing-line slope β as primary, valuation unchanged). See `docs/METHOD_V2.md`, `docs/decisions/2026-10-11-v2-ocena-e2.md`, `reports/summaries/ESL-Pro-League-S24-2026-summary.md`.
+Last updated: 2026-10-14 — added priority research proposal: independent **blind-first** match pricing before bookmaker odds are revealed. The existing frozen v2 valuation and E2 evaluation protocol remain unchanged. Previous update: 2026-10-11 — first v2 tournament (EPL S24, 41 predictions) audited; v2 evaluation switched to protocol E2 (closing-line slope β as primary, valuation unchanged). See `docs/METHOD_V2.md`, `docs/decisions/2026-10-11-v2-ocena-e2.md`, `reports/summaries/ESL-Pro-League-S24-2026-summary.md`.
 
 ## Purpose
 
@@ -29,6 +29,55 @@ Already in place:
 **Since 2026-10-11 (E2):** the question is decided by whether the market moves toward v2's adjustment before the match (slope β, K1 at 100 / K2 at 200 valid observations), not by Brier at 150 — at v2's adjustment sizes Brier has no power. After EPL S24: 41 settled, 28 valid β observations, so K1 is roughly four tier-1 tournaments away. **The binding constraint is closing-odds coverage**, not the prediction count.
 
 The immediate priority is not adding more features. It is collecting clean, comparable data.
+
+## Priority research proposal — independent blind-first pricing (2026-10-14)
+
+**Status: direction agreed by the operator for exploration; a prospective experiment to design and launch, NOT an active betting method or an amendment to frozen V2.** This section records the agreed objective and the proposed safeguards. Before the first counted prediction, the operator and auditor should approve a short, separate protocol/decision record fixing the experimental estimator, evidence requirements, sample, metrics, and paper-only decision policy. Until then, `docs/METHOD_V2.md`, E2, existing reporting and active reminders remain unchanged. Do not change any existing v1/v2 prediction, threshold or checkpoint to accommodate this idea.
+
+### Why test this?
+
+Edge's original practical aim was to detect **prices where the bookmaker may be wrong**. Yet frozen V2 starts with STS de-vig probabilities and can move only ±5 percentage points, typically much less. That is a valid, narrowly defined research experiment, but it is structurally unlikely to yield many +8% BETs after STS margin. Knowing the odds before a discretionary assessment also risks **anchoring**: the analyst may explain the bookmaker's favourite instead of estimating the match independently.
+
+This is a **hypothesis**, not evidence that blind estimates will be more accurate or more profitable. The bookmaker may have the better estimate. The test asks whether a truly pre-price forecast adds information beyond the contemporaneous market, without using that market as its prior.
+
+### Proposed workflow — no odds until the independent forecast is locked
+
+1. **Scope and match list.** Select all eligible upcoming tier-1 CS2 moneyline matches prospectively, according to a predeclared schedule; do not cherry-pick only attractive pairings. Verify competition, exact match date/time, BO format, rosters, stand-ins and known changes. Keep a record of any match not assessed and why.
+2. **Blind research.** The estimating analyst receives only fixtures and factual match information. Do **not** show STS odds, prices from HLTV/other bookmakers, de-vig probabilities, community betting forecasts or line-movement information. Avoid odds-bearing search snippets and pages. If a source mixes team news with odds, use an odds-free source instead. Record sources and uncertainties; never invent missing map/roster facts.
+3. **Independent match estimate.** Using an agreed, repeatable pre-registered framework, assess recent tier-1 form and opponent quality, current roster, relevant map pool, likely veto when genuinely known, LAN/context and data reliability. Record *both sides* as one coherent probability estimate (`p_A + p_B = 1`), fair odds for each side, a defensible uncertainty range, confidence and specific factual reasons. The estimate must **not** be V2's market prior with a different label; its detailed estimator must be specified before use, not improvised after seeing prices or outcomes.
+4. **Lock before reveal.** Save the prediction with fixture ID, event, date, BO, analyst, data cutoff, timestamp in Europe/Warsaw, supporting sources, roster status, uncertainty, `p_A`, `p_B`, fair odds and `odds_seen_before_lock: false`. Deliver an immutable file to the operator or commit it **before** any odds are revealed. Record a content hash or repository commit/time so later comparison can verify the original forecast. No retroactive editing or replacing the locked estimate.
+5. **Reveal the price.** Only after the operator has the locked file does the user supply a contemporaneous pair of STS ML odds with an exact timestamp. Store both odds and calculate market de-vig, overround, fair/value on both sides. Pick the larger calculated value for descriptive comparison; do not change the underlying blind probabilities. If STS prices are unavailable, keep the blind prediction and mark price metrics missing — never substitute guessed prices.
+6. **Information check and post-lock handling.** If the gap suggests an overlooked roster change or another verifiable fact, record the finding separately. Do **not** silently revise the initial forecast; a corrected new view, if useful, must be separately dated and excluded from the primary blind-forecast score. Collect both closing odds before match start where possible, then settle the result.
+7. **Evaluate prospectively.** Score **every eligible locked forecast**, not just candidate bets. Record Brier and log loss against outcomes, compare the blind probabilities against same-match de-vigged STS market probabilities, inspect calibration, missing-data rates and prediction dispersion; examine CLV for any pre-specified paper selections when valid two-sided opening/closing snapshots exist. Report paired uncertainty intervals and sample counts. Do not reuse V2's β checkpoints as if they validate a different method.
+
+### Blindness and sample integrity
+
+- **A match whose STS/other bookmaker odds were already exposed to the estimating analyst is not blind.** This includes the four Thunderpick matches analysed on 2026-10-14; never relabel their predictions as independent or use them in the blind sample. A clean estimating context is required for future games. Switching chats alone is not a guarantee if the estimating context still contains price information.
+- **Separate the contexts/roles.** An odds-free analyst prepares and locks the forecast; only then does the operator (or a separate price-handling workflow) reveal and calculate STS value. The currently scheduled V2 morning routine may continue independently, but its published odds and analyses must not reach the blind estimator before lock. If strict separation cannot be guaranteed, label the observation `blindness_compromised` and exclude it from the primary sample.
+- **No outcome-informed selection.** Register the fixture pool, exclusions and missing observations ahead of time. All timestamps, evidence versions and original probabilities remain available for audit. Do not reconstruct a pre-match forecast after seeing the result.
+- **No leaked model baseline.** Public power rankings and factual performance records may be used if allowed by the protocol, but any data derived from current betting prices or another market-implied forecast must be treated as exposure. The protocol must distinguish permitted objective match data from price proxies.
+
+### Trial size, evidence and decision gates
+
+- Start with an operational **pilot of 30–50 consecutive eligible, truly blind matches** to learn whether we can generate consistent, auditable independent estimates and whether gaps from STS are systematic. This is **not enough to claim profitability or a statistically established edge**. Log all PASS-equivalent and candidate selections without real-money staking.
+- Before pilot launch, pre-register a baseline, a minimum acceptable data completeness level, candidate-value definition, thresholds used *only for paper selection*, primary performance metric(s), uncertainty calculation, and clear stop/continue rules. Do not import the V2 +8% BET gate, ±5 pp cap or E2 promotion policy by default; any new policy needs independent justification and operator approval.
+- At the pilot review, distinguish three outcomes: (a) independent estimates appear promising but require a larger, fresh validation sample; (b) no demonstrated advantage over the paired STS market; (c) quality/blindness too weak for a conclusion. Even outcome (a) **does not authorize real-money BETs or promotion**.
+- If the analyst simply produces bigger deviations from the market with worse Brier/log loss or no credible closing-line signal, do not interpret the extra BET candidates as success. The goal is **useful mispricing detection**, not bet volume.
+
+### Storage and compatibility (proposal, not a schema migration)
+
+- Keep the pilot outside the canonical V2 ledger and immutable daily V2 reports; propose separate paths such as `research/blind/YYYY-MM-DD-blind.md` (locked forecast) and `data/blind/YYYY-MM-DD.json` (post-reveal prices, validation metadata, outcomes), subject to the launch protocol.
+- Use a separate experiment identity (e.g. `blind_pilot_v0`) and a separate scoring population. **Do not write these predictions into `data/bets.json` as `method_version: "v2"`**, do not mix them into v2 K1/K2, and do not change `docs/REPORT_TEMPLATE.md` v2.1 simply to accommodate the pilot.
+- Suggested fields: `experiment_id`, `fixture_id`, `match`, `event`, `scheduled_start`, `bo`, `analyst`, `forecast_timestamp`, `data_cutoff`, `p_A`, `p_B`, `fair_A`, `fair_B`, `uncertainty`, `source_refs`, `roster_notes`, `data_quality`, `odds_seen_before_lock`, `lock_hash_or_commit`; the separate post-lock record holds `sts_odds_A`, `sts_odds_B`, `odds_timestamp`, `p_market_A`, both sides' value, `closing_odds_A/B`, `result`, `excluded_from_primary_sample` and its reason. The actual schema requires approval before use.
+
+### Next implementation tasks
+
+- [ ] Agree and document an odds-free estimation procedure, including data sources, probability calibration strategy and what to do when roster/veto details are unknown.
+- [ ] Agree the clean separation between an odds-free forecaster and V2's odds-handling workflow; establish a verifiable pre-reveal lock.
+- [ ] Approve the prospective pilot protocol, exact data schema, scoring, selection rule and 30–50-match review plan in `docs/decisions/`; only then launch.
+- [ ] Run the first uncontaminated eligible fixtures as **paper research** while keeping V2 frozen and independent.
+- [ ] Audit the first 5–10 locks for accidental odds exposure, traceability and timestamp correctness; fix only the process prospectively, without rewriting forecasts.
+- [ ] Review the full pilot, including blind Brier/log loss versus the **paired STS market**, candidate CLV coverage and uncertainty; decide whether a larger out-of-sample validation is justified.
 
 ## Phase 1 — data integrity
 
