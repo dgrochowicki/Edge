@@ -100,3 +100,19 @@ Skład pola pokazuje skalę problemu: w `data/form/2026-10-14.json` Legacy i NiP
 3. B4: mapy z Thunderpick w oknie formy — tak (rekomendacja) czy nie?
 
 Po naniesieniu B1–B5 jako nowej wersji dokumentu (status → ZATWIERDZONY, z datą) z mojej strony checklista „Claude (audyt)” jest odhaczona.
+
+---
+
+## Follow-up: przegląd rewizji po B1–B5 (2026-10-14, przed pierwszym lockiem)
+
+**Werdykt: odhaczone.** Przeszedłem rewizję `docs/decisions/2026-10-14-blind-pilot.md` punkt po punkcie przeciw oryginalnym B1–B5:
+
+- **B1** — `insufficient_comparable_form` teraz wprost blokuje `PAPER_CANDIDATE` (§4.2); dodana ablacja rank-only (§3.5) liczona z tych samych pól locku; warstwy faworyt/underdog i forma-porównywalna/rank-only zarejestrowane z góry (§6); oczekiwanie ujemnego paired Brier zapisane jawnie (§3, przed wynikami). Zamknięte.
+- **B2** — rola doprecyzowana: GPT = Faza A w Temporary Chat bez pamięci poza Projektem (`analyst_context: “temporary_chat_no_memory_outside_project”`), claude = niezależny audytor (nie ten sam agent co analityk). Allowlista repo wyklucza `docs/audit/`, `reports/`, `data/bets.json`, `data/blind/reveals/` i strony HLTV nadchodzącego meczu. Zamknięte.
+- **B3** — reguła rosterowa poprawiona na dokładne odwzorowanie `METHOD_V2` §10 (reset → waga 0, jedna zmiana zwykłego zawodnika → waga 0.5); progi `series < 2 OR maps < 4` i `series < 3 OR maps < 6` zapisane jednoznacznie; świadome odejście od §9.2 fallback nazwane wprost. Zamknięte.
+- **B4** — mapy z Thunderpick main event wchodzą do okna formy blind jako jawny, datowany wyjątek operatora. Zamknięte.
+- **B5** — baseline rynku = pierwszy reveal po locku (nie closing, który jest tylko sensitivity); orientacja A/B i `fixture_id` zdefiniowane przez listę Liquipedii; `overround` dodany; wykluczenia (walkover/forfeit/przesunięcie >24h/nieprawidłowe timestampy) zapisane; lock deadline (`forecast_timestamp < scheduled_start`, `odds_timestamp < faktyczny start`) poprawnie odporny na przesunięcia meczu — zgodnie z lekcją z samego dnia 14.10 (Falcons–NiP i Legacy–PARIVISION wystartowały później niż w terminarzu, a to nadal są poprawne pre-match closingi, bo liczy się faktyczny start, nie plan). Zamknięte.
+
+Sprawdziłem też większość N1–N9 (lista flag, SHA obu plików, wzór `roster_delta`, warunek promocji wymagający Brier>0 I log loss>0 I braku jednowarstwowej przewagi, kontynuacja pilotu na kolejne turnieje) — wszystkie naniesione. **N8 (PLAYBOOK)** jest już zrobione — dopisałem dziś do `docs/PLAYBOOK.md` jednorazowy, datowany wyjątek dla Thunderpick World Championship 2026 oraz sekcję „Blind-first pilot — operational handoff” z pełną sekwencją lock → push → reveal → V2.
+
+Nowych błędów blokujących nie znalazłem. Formuła, clamp, separacja plików i zgodność z `METHOD_V2` §6–10 są poprawne przy niezależnym przeliczeniu. **Gotowe do startu 2026-10-15** pod warunkiem spełnienia pozostałych punktów operacyjnych z checklisty (commit tego dokumentu, przygotowanie Temporary Chat, faktyczny push locków przed reveal).

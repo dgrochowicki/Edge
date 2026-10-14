@@ -209,9 +209,9 @@ data_quality
 - [x] **B4 — operator:** mapy z Thunderpick 2026 main event liczą się do świeżej formy blind.
 - [x] **B5 — poprawiono:** baseline reveal, closing sensitivity, orientacja A/B, fixture ID, timestampy, overround i wykluczenia.
 - [x] **Oddzielenie od V2:** bez zmiany frozen METHOD_V2, E2, standardowych raportów i ledgera, bez V2 `shadow`.
-- [ ] **Operator — działanie techniczne:** umieścić *ten* dokument w repo przed startem i przygotować czat tymczasowy.
+- [x] **Operator — działanie techniczne:** dokument umieszczony w repo (`b3d8c7b`+).
 - [ ] **Operator/repo agent:** utworzyć i zablokować oba pliki locku push przed reveal, zapisać oba SHA-256 oraz commit.
-- [ ] **Claude:** opcjonalny kontrolny review naniesienia B1–B5 przed startem; obowiązkowy audyt 5–10 locków już po rozpoczęciu.
-- [ ] **Repo agent:** ujednolicić później wyjątek Thunderpick w `PLAYBOOK.md` bez naruszania frozen V2.
+- [x] **Claude:** kontrolny review naniesienia B1–B5 wykonany 2026-10-14, przed startem — odhaczone, brak nowych blokujących błędów. Zob. follow-up w `docs/audit/2026-10-14-blind-pilot-audyt.md`. Obowiązkowy audyt 5–10 locków zostaje po rozpoczęciu.
+- [x] **Repo agent:** wyjątek Thunderpick ujednolicony w `PLAYBOOK.md` (sekcja Scope + nowa sekcja „Blind-first pilot — operational handoff"), bez naruszania frozen V2.
 
 **Rozstrzygnięcie:** decyzje operatora z 2026-10-14 przyjęte; po wgraniu dokumentu i spełnieniu warunków izolacji/locku można rozpocząć `blind_pilot_v0` od kolejnych kwalifikujących się, nierozpoczętych spotkań. To nadal **papierowy eksperyment**, nie nowa oficjalna metoda obstawiania.
