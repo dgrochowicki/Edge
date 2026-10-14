@@ -277,6 +277,23 @@ Each day:
 
 A day is correctly closed when every prediction is logged with correct `agent` and `method_version`, reports remain immutable after publication, and played matches are settled. What a day is explicitly *not* for: switching method version, changing BET/PASS thresholds, fitting probabilities to earlier results, editing published predictions, or declaring the method works or fails on that day's evidence.
 
+## Blind-first pilot — operational handoff (effective 2026-10-15)
+
+**Status:** authorised *paper-only research*, separate from active frozen V2/E2. The binding experimental specification is `docs/decisions/2026-10-14-blind-pilot.md` (including Claude's audit B1–B5); the roadmap describes the motivation, not the execution rules. The estimator, data schema, candidate gate, exclusions, SHA requirements and metrics must be read from that decision document, not reconstructed from memory or improvised here.
+
+**Non-negotiable sequence for every eligible future match:**
+
+1. **Before any odds reveal:** the operator opens a **ChatGPT Temporary Chat, with no memory, outside the Edge Project**, for GPT to act as the blind Phase-A analyst. The operator provides only the approved protocol or its GitHub URL and the match date; **no STS or other bookmaker prices**, no V2 reports. The analyst reads only the protocol-approved, odds-free repo files and match sources. Do not read `reports/`, `data/bets.json`, `data/blind/reveals/`, `docs/audit/`, or upcoming HLTV match pages with odds. Check all eligible fixtures, formats and roster data; do not cherry-pick. Record factual sources as URLs. If the analyst encounters any price for the match before lock, mark `blindness_compromised` and exclude it from the primary blind sample.
+2. **Produce and lock:** the blind analyst generates `research/blind/YYYY-MM-DD-blind.md` and `data/blind/locks/YYYY-MM-DD.json`, with both teams' probabilities/fair prices, form inputs, flags, and SHA-256 of **both final files**. **The operator/repo agent, not GPT, pushes both files to GitHub** before the reveal *and* before the match starts. The confirmed GitHub push and file hashes provide the lock evidence. Without a timely, verifiable push there is no valid primary-sample lock; never backfill.
+3. **Reveal only after confirmed push:** in the normal price-handling conversation, the operator provides **both** STS ML prices with the actual reading time. Produce `data/blind/reveals/YYYY-MM-DD.json`, using the immutable blind probabilities and the first valid pre-match STS reveal snapshot; never revise locked forecasts. Classify `PAPER_CANDIDATE` / `WATCH` / `NO_SIGNAL` strictly under the decision protocol. All blind selections remain paper-only.
+4. **Only then run standard Edge V2:** generate the normal `reports/YYYY-MM-DD-gpt.md` and `data/form/YYYY-MM-DD.json` according to frozen `docs/METHOD_V2.md`, E2 and `docs/REPORT_TEMPLATE.md`. Collect two-sided closing odds and settle through the usual workflow. Blind predictions are **not** V2 `shadow` entries, do not enter `data/bets.json`, and never count toward V2 checkpoints.
+
+**Handoff to an independent Temporary Chat** (replace the date):
+
+> Edge blind-first, YYYY-MM-DD. Read `https://github.com/dgrochowicki/Edge/blob/main/docs/decisions/2026-10-14-blind-pilot.md` and only its allowlisted, price-free sources. You are the independent GPT Phase-A analyst. Verify all eligible fixtures, calculate the pre-registered v0 estimator without market inputs, generate `research/blind/YYYY-MM-DD-blind.md` and `data/blind/locks/YYYY-MM-DD.json`, and provide SHA-256 hashes. Do not read or report odds, do not run reveal or V2, and do not commit/push to GitHub. Stop for operator lock confirmation.
+
+**If the lock is not yet confirmed, the scheduled 08:00 Edge scan may verify and report the odds-free calendar only; it must not reveal odds, request STS or publish the V2 valuation first.** This is a sequencing rule, not a change to the schedule. The dated approval of Thunderpick World Championship **2026** under Scope remains in force, including that event's main-event maps as eligible blind-pilot form data as specified in the decision record. No general relaxation of the Thunderpick series exclusion is implied.
+
 ## Pre-Publication Checklist
 
 Before any daily report or summary is published (delivered as a file), the author runs this checklist. Every item has caused a real, named error in the project; the checklist is the memory of those errors, not a formality. A report that fails any item is not published until fixed — because reports are immutable once out, a caught error here is cheap and a missed one costs a whole append.
