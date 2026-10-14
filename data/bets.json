@@ -8963,8 +8963,8 @@
           "odds": 1.55,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-14-G3 (Thunderpick World Championship). Placed at start of map 1, 0:0 at time of bet. Moot -- coupon already lost on the Nuclear TigeRES-Phantom leg."
+          "result": "won",
+          "notes": "Same match as P-2026-10-14-G3 (Thunderpick World Championship). Settled: Legacy beat PARIVISION 2:0. Moot -- coupon already lost on the Nuclear TigeRES-Phantom leg."
         }
       ]
     }
@@ -18292,7 +18292,7 @@
       "confidence": 4,
       "closing_odds": 1.55,
       "closing_odds_opponent": 2.29,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "insufficient_tier1_fresh_form_window_legacy",
         "legacy_roster_conflict_art_return_vs_hltv_bobz_listing",
