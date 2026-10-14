@@ -8976,9 +8976,9 @@
       "stake_pln": 5.0,
       "combined_odds": 2.37,
       "potential_return_pln": 10.42,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 10.42,
+      "status": "won",
+      "net_result_pln": 5.42,
       "selections": [
         {
           "match": "Legacy vs PARIVISION",
@@ -8997,8 +8997,8 @@
           "odds": 1.26,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-14-G4 (Thunderpick World Championship). Scheduled 2026-10-14 20:30."
+          "result": "won",
+          "notes": "Same match as P-2026-10-14-G4 (Thunderpick World Championship). Scheduled 2026-10-14 20:30. Settled: FURIA beat BETBOOM 2:0."
         }
       ]
     }
@@ -9006,14 +9006,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 256,
-    "won": 89,
+    "won": 90,
     "lost": 166,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 575.82,
-    "gross_return_pln": 428.32,
-    "net_result_pln": -142.5,
-    "roi": -0.2475
+    "gross_return_pln": 438.74,
+    "net_result_pln": -137.08,
+    "roi": -0.2381
   },
   "archived_predictions": [
     {
@@ -18364,7 +18364,7 @@
       "confidence": 4,
       "closing_odds": 1.26,
       "closing_odds_opponent": 3.5,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "historical_ranking_bands_from_edge_cache"
       ],
