@@ -277,9 +277,11 @@ Each day:
 
 A day is correctly closed when every prediction is logged with correct `agent` and `method_version`, reports remain immutable after publication, and played matches are settled. What a day is explicitly *not* for: switching method version, changing BET/PASS thresholds, fitting probabilities to earlier results, editing published predictions, or declaring the method works or fails on that day's evidence.
 
-## Blind-first pilot — operational handoff (effective 2026-10-15)
+## Blind-first pilot — discontinued (ran 2026-10-15 only)
 
-**Status:** authorised *paper-only research*, separate from active frozen V2/E2. The binding experimental specification is `docs/decisions/2026-10-14-blind-pilot.md` (including Claude's audit B1–B5); the roadmap describes the motivation, not the execution rules. The estimator, data schema, candidate gate, exclusions, SHA requirements and metrics must be read from that decision document, not reconstructed from memory or improvised here.
+**Status: DISCONTINUED 2026-10-15, after one day.** Ran under the sequence below on 2026-10-15; closed the same day after 2 of 4 fixtures were contaminated by incidental search-result exposure to community consensus/vote data (not prices, but a prohibited source under the protocol) — a structural problem with open web search in Phase A, not a one-off. At that contamination rate the ≥90%-valid-lock quality bar from the decision record is unreachable. Closure record: `docs/decisions/2026-10-14-blind-pilot.md` §9. The full historical specification remains there; it is not an active instruction. `research/blind/`, `data/blind/locks/`, `data/blind/reveals/` stay in the repo as the complete record of the one day it ran.
+
+The sequence that was followed while active, kept here for reference only:
 
 **Non-negotiable sequence for every eligible future match:**
 

@@ -1,7 +1,7 @@
 # Edge — decyzja i protokół: Blind-first Pilot v0
 
 **Data opracowania i decyzji operatora:** 2026-10-14  
-**Status:** **ZATWIERDZONY DO STARTU PO ZAPISANIU TEJ WERSJI W REPO, PRZED PIERWSZYM LOCKIEM** — uwzględnia B1–B5 z audytu Claude. Audyt z 2026-10-14 wydał werdykt „zatwierdzić z poprawkami”; **nie twierdzimy, że Claude wykonał już ponowny audyt niniejszej rewizji**.  
+**Status:** **ZAKOŃCZONY 2026-10-15, po dniu 1 — patrz sekcja 9.** Był zatwierdzony i uruchomiony 2026-10-14 (B1–B5 z audytu Claude), ale zamknięty następnego dnia po stwierdzeniu strukturalnej kontaminacji źródeł (50% par skażonych przez wyniki wyszukiwania). Treść sekcji 1–8 poniżej to historyczny zapis protokołu, nie aktywna instrukcja.  
 **Planowany start:** 2026-10-15, kolejne nierozpoczęte spotkania Thunderpick World Championship 2026, tylko po spełnieniu warunków locku.  
 **Identyfikator eksperymentu:** `blind_pilot_v0`  
 **Zmiana względem DRAFT:** B1–B5 oraz pomocnicze N1–N9; bez zmian współczynników estymatora.  
@@ -215,3 +215,15 @@ data_quality
 - [x] **Repo agent:** wyjątek Thunderpick ujednolicony w `PLAYBOOK.md` (sekcja Scope + nowa sekcja „Blind-first pilot — operational handoff"), bez naruszania frozen V2.
 
 **Rozstrzygnięcie:** decyzje operatora z 2026-10-14 przyjęte; po wgraniu dokumentu i spełnieniu warunków izolacji/locku można rozpocząć `blind_pilot_v0` od kolejnych kwalifikujących się, nierozpoczętych spotkań. To nadal **papierowy eksperyment**, nie nowa oficjalna metoda obstawiania.
+
+## 9. Zamknięcie pilotażu — 2026-10-15
+
+**Status: ZAKOŃCZONY po dniu 1, bez kontynuacji.** Decyzja operatora po przeglądzie wyniku pierwszego dnia: "Pewnie tak zróbmy" (akceptacja rekomendacji zamknięcia).
+
+**Co wyszło z dnia 1 (`data/blind/reveals/2026-10-15.json`):** z 4 par kwalifikujących się 15.10, tylko **1 miała ważny, nieskażony lock** (Aurora–Ninjas in Pyjamas). Pozostałe 3: jedna wykluczona z powodu realnej ekspozycji na kurs (`blindness_compromised`, dynamiczny nagłówek strony rankingu HLTV), dwie oznaczone `invalid_lock` z powodu przypadkowej ekspozycji na procentowe głosowanie/konsensus społeczności w **wynikach ogólnego wyszukiwania** (nie na stronie konkretnego meczu) podczas dozwolonego researchu rankingu/formy.
+
+**Dlaczego to kończy pilotaż, a nie tylko dzień 1.** Kontaminacja przez wyniki wyszukiwania (2 z 4 par, 50%) nie jest incydentem jednej strony czy jednego URL-a do zbanowania — to efekt ogólnego wyszukiwania w ogóle, które nieprzewidywalnie podciąga fragmenty z cen/prognoz z całego indeksu. Przy takim tempie kontaminacji próg jakości z sekcji 6 (**≥90% poprawnych locków** na przeglądzie 40 meczów) jest nieosiągalny w rozsądnym czasie — próba byłaby strukturalnie skazana na "proces niekonkluzywny" zanim jeszcze dotrze do 40 obserwacji. Do tego doszedł osobny, operacyjny problem z dnia 1: push locka wymaga obecności opiekuna księgi, a opiekun księgi nie jest dostępny rano, co samo w sobie ryzykowało naruszenie kolejności "push przed startem meczu" (w tym konkretnym dniu push zdążył — 07:52 przed 10:30 — ale to był przypadek, nie gwarancja).
+
+**Co zostaje.** `research/blind/`, `data/blind/locks/`, `data/blind/reveals/` pozostają w repo jako kompletny, niezmieniony zapis — zgodnie z zasadą projektu, że nic się nie usuwa ani nie przepisuje wstecz. Pojedyncza ważna obserwacja (Aurora-NiP) jest opisowa, nie jest podstawą do żadnego wniosku o `blind_pilot_v0` jako metodzie (n=1). `method_version` V2 i E2 pozostają całkowicie niezmienione — ten eksperyment nigdy nie dotykał `data/bets.json`.
+
+**Gdyby ktoś chciał to wznowić w przyszłości:** najpierw naprawić kanał kontaminacji (zakaz ogólnego wyszukiwania w Fazie A, tylko zamknięta lista zatwierdzonych URL-i — Liquipedia terminarz/składy, konkretne strony HLTV rankingu i zakończonych meczów, nic poza tym) **i** rozwiązać problem dostępności opiekuna księgi rano, zanim ruszy kolejna próba. To nowa decyzja, nie automatyczne wznowienie tej.

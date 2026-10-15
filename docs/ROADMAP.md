@@ -32,7 +32,7 @@ The immediate priority is not adding more features. It is collecting clean, comp
 
 ## Priority research proposal — independent blind-first pricing (2026-10-14)
 
-**Status: direction agreed by the operator for exploration; a prospective experiment to design and launch, NOT an active betting method or an amendment to frozen V2.** This section records the agreed objective and the proposed safeguards. Before the first counted prediction, the operator and auditor should approve a short, separate protocol/decision record fixing the experimental estimator, evidence requirements, sample, metrics, and paper-only decision policy. Until then, `docs/METHOD_V2.md`, E2, existing reporting and active reminders remain unchanged. Do not change any existing v1/v2 prediction, threshold or checkpoint to accommodate this idea.
+**Status: DISCONTINUED 2026-10-15, after one day of `blind_pilot_v0`.** The protocol (`docs/decisions/2026-10-14-blind-pilot.md`) was approved and launched 2026-10-14/15, then closed after 2 of 4 fixtures were contaminated by incidental exposure to community consensus data in general web search results during Phase A — a structural, recurring risk, not a one-off, that made the pilot's own ≥90%-valid-lock quality bar unreachable. See the decision record §9 for the full closure note and what would need fixing before anyone restarts this line of work. This section is kept as the historical record of the motivation; `docs/METHOD_V2.md`, E2 and the existing reporting were never changed by this experiment.
 
 ### Why test this?
 

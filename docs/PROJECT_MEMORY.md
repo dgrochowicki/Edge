@@ -282,6 +282,20 @@ Consequences per PLAYBOOK / v2 spec §23: claude × v1 ends real-money use (pape
 
 **State after EPL S24:** gpt × v2 = 41 settled; valid β observations = 28 (K1 at 100 — at ~28 per tournament, roughly four tournaments).
 
+### Blind-first pilot v0 — approved, ran one day, discontinued — 2026-10-14/15
+
+A separate, paper-only experiment (`blind_pilot_v0`): price-free pre-match estimation, locked and pushed to GitHub before any STS odds were revealed, scored against the market afterward. Motivated by the audit finding that v2.0's small adjustments (median 0.5 pp) leave the Brier criterion with no real power — see the E2 entry above. Never touched `data/bets.json`, `method_version`, or any v1/v2 prediction.
+
+Claude's audit (`docs/audit/2026-10-14-blind-pilot-audyt.md`) found the original DRAFT's scale would structurally flag underdogs as paper candidates; the operator-approved revision (B1–B5) fixed this by blocking `PAPER_CANDIDATE` on `insufficient_comparable_form`, adding a rank-only ablation, and pre-registering favourite/underdog strata. Claude's follow-up review cleared the revision before the first lock.
+
+**Day 1 (2026-10-15, Thunderpick World Championship):** of 4 qualifying fixtures, only 1 (Aurora–Ninjas in Pyjamas) produced a valid, uncontaminated lock. The other 3: one excluded for real price exposure (`blindness_compromised`, a dynamic odds widget on an allowed HLTV ranking page), two flagged `invalid_lock` because general web search during Phase A incidentally surfaced community consensus/vote percentages for those specific pairs (not prices, but a prohibited source under the protocol). Full registry: `data/blind/reveals/2026-10-15.json`.
+
+**Why this closed the pilot, not just the day.** The contamination came from open web search itself, not a specific bad URL — unpredictable and structurally recurring. At a 50% contamination rate the protocol's own quality bar (≥90% valid locks by the 40-match review) is unreachable in any reasonable time. Operator decision after reviewing the day-1 result: discontinue rather than continue into a sample that was already going to fail its own pre-registered bar. Closure record: `docs/decisions/2026-10-14-blind-pilot.md` §9.
+
+**On the single valid observation** (descriptive only, n=1 proves nothing): blind gave Aurora 60%, the market (STS, de-vigged) gave ~72.4%; Aurora won 2:0. Market Brier (0.076) beat blind Brier (0.16) — consistent with, not contradicting, the audit's own prediction that this scale of estimator would likely underperform.
+
+**What's left in the repo:** `research/blind/`, `data/blind/locks/`, `data/blind/reveals/` — the complete, unedited record of the one day. Not deleted; kept per the project's no-backfill, no-retroactive-editing norm. A future restart would need a closed-URL allowlist in Phase A (no open search) and a fix for the repo agent's own-availability gap before trying again — a new decision, not an automatic resumption.
+
 ## Current Running Result
 
 Snapshot as of 2026-08-16 (EDGE-001 through EDGE-043):
