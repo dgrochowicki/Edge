@@ -18437,7 +18437,7 @@
       "confidence": 4,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache"
       ],
