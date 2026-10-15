@@ -9078,9 +9078,9 @@
       "stake_pln": 2.13,
       "combined_odds": 2.27,
       "potential_return_pln": 4.24,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.24,
+      "status": "won",
+      "net_result_pln": 2.11,
       "selections": [
         {
           "match": "ENVY vs MiBR",
@@ -9089,8 +9089,8 @@
           "odds": 1.4,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: MiBR beat ENVY 2:0."
         },
         {
           "match": "Heroic vs BC.Game",
@@ -9099,8 +9099,8 @@
           "odds": 1.62,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st half break, map 1 round score 1:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st half break, map 1 round score 1:0 at time of bet. Settled: Heroic beat BC.Game 2:0."
         }
       ]
     }
@@ -9108,14 +9108,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 259,
-    "won": 91,
+    "won": 92,
     "lost": 167,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 582.37,
-    "gross_return_pln": 444.87,
-    "net_result_pln": -135.37,
-    "roi": -0.2324
+    "gross_return_pln": 449.11,
+    "net_result_pln": -133.26,
+    "roi": -0.2288
   },
   "archived_predictions": [
     {
