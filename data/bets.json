@@ -9001,19 +9001,53 @@
           "notes": "Same match as P-2026-10-14-G4 (Thunderpick World Championship). Scheduled 2026-10-14 20:30. Settled: FURIA beat BETBOOM 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-257",
+      "date": "2026-10-15",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.42,
+      "combined_odds": 2.88,
+      "potential_return_pln": 6.13,
+      "gross_return_pln": 6.13,
+      "status": "won",
+      "net_result_pln": 3.71,
+      "selections": [
+        {
+          "match": "BRUTE vs Mellren",
+          "market": "moneyline",
+          "pick": "Mellren",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- NODWIN Clutch Series. Settled: Mellren beat BRUTE."
+        },
+        {
+          "match": "Aurora vs Ninjas in Pyjamas",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 1.28,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Same match as P-2026-10-15-G1 (Thunderpick World Championship). Settled: Aurora beat NiP 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 256,
-    "won": 90,
+    "coupons": 257,
+    "won": 91,
     "lost": 166,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 575.82,
-    "gross_return_pln": 438.74,
-    "net_result_pln": -137.08,
-    "roi": -0.2381
+    "total_staked_pln": 578.24,
+    "gross_return_pln": 444.87,
+    "net_result_pln": -133.37,
+    "roi": -0.2306
   },
   "archived_predictions": [
     {
