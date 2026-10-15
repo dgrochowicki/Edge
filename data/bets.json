@@ -9123,8 +9123,8 @@
           "odds": 1.77,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-15-G3 (Thunderpick World Championship). Placed live, 1st half break, map 1 round score 1:0 at time of bet."
+          "result": "won",
+          "notes": "Same match as P-2026-10-15-G3 (Thunderpick World Championship). Placed live, 1st half break, map 1 round score 1:0 at time of bet. Settled: series 1:1, map 3 guaranteed -- Over 2.5 total maps mathematically won regardless of map 3 outcome."
         },
         {
           "match": "Legacy vs FURIA",
