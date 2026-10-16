@@ -9283,8 +9283,8 @@
           "odds": 1.28,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Pulse Beat (same match as EDGE-264's Over 2.5 leg). Placed live, 3rd map, series 1:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope -- Pulse Beat (same match as EDGE-264's Over 2.5 leg). Placed live, 3rd map, series 1:1 at time of bet. Settled: MiBR beat Astralis 2:1."
         },
         {
           "match": "BETBOOM vs Legacy",
