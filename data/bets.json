@@ -9195,19 +9195,53 @@
           "notes": "Same match as EDGE-261. Settled: Betclic Apogee beat Eternal Fire."
         }
       ]
+    },
+    {
+      "id": "EDGE-263",
+      "date": "2026-10-16",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 2.17,
+      "potential_return_pln": 5.72,
+      "gross_return_pln": 5.72,
+      "status": "won",
+      "net_result_pln": 2.72,
+      "selections": [
+        {
+          "match": "Fnatic vs Heroic",
+          "market": "correct_score",
+          "pick": "0:2",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- Pulse Beat. Settled: Heroic beat Fnatic 2:0."
+        },
+        {
+          "match": "Nemesis vs Nuclear TigeRES",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.57,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Nemesis beat Nuclear TigeRES."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 262,
-    "won": 92,
+    "coupons": 263,
+    "won": 93,
     "lost": 170,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 590.61,
-    "gross_return_pln": 449.11,
-    "net_result_pln": -141.5,
-    "roi": -0.2396
+    "total_staked_pln": 593.61,
+    "gross_return_pln": 454.83,
+    "net_result_pln": -138.78,
+    "roi": -0.2338
   },
   "archived_predictions": [
     {
