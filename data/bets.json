@@ -9171,19 +9171,43 @@
           "notes": "Tournament tag not given. Settled: Betclic Apogee beat Eternal Fire."
         }
       ]
+    },
+    {
+      "id": "EDGE-262",
+      "date": "2026-10-16",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.65,
+      "potential_return_pln": 4.66,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Eternal Fire vs Betclic Apogee",
+          "market": "moneyline",
+          "pick": "Eternal Fire",
+          "odds": 2.65,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Same match as EDGE-261. Settled: Betclic Apogee beat Eternal Fire."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 261,
+    "coupons": 262,
     "won": 92,
-    "lost": 169,
+    "lost": 170,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 588.61,
+    "total_staked_pln": 590.61,
     "gross_return_pln": 449.11,
-    "net_result_pln": -139.5,
-    "roi": -0.237
+    "net_result_pln": -141.5,
+    "roi": -0.2396
   },
   "archived_predictions": [
     {
