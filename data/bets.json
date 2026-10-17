@@ -9399,8 +9399,8 @@
       "combined_odds": 2.48,
       "potential_return_pln": 4.36,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "FURIA vs Aurora",
@@ -9409,8 +9409,8 @@
           "odds": 1.62,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-17-G1 (Thunderpick World Championship). Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "lost",
+          "notes": "Same match as P-2026-10-17-G1 (Thunderpick World Championship). Placed live, 2nd map, series 1:0 at time of bet. Settled: FURIA beat Aurora 2:0."
         },
         {
           "match": "Heroic vs 100 Thieves",
@@ -9420,7 +9420,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 0:1 (100 Thieves leading) at time of bet."
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 0:1 (100 Thieves leading) at time of bet. Moot -- coupon already lost on the FURIA-Aurora leg."
         }
       ]
     },
@@ -9433,8 +9433,8 @@
       "combined_odds": 1.58,
       "potential_return_pln": 13.94,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -10.0,
       "selections": [
         {
           "match": "Heroic vs 100 Thieves",
@@ -9444,7 +9444,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Out of Edge scope -- Pulse Beat. Same match as EDGE-269's moneyline leg. Placed live, 2nd map, series 0:1 at time of bet."
+          "notes": "Out of Edge scope -- Pulse Beat. Same match as EDGE-269's moneyline leg. Placed live, 2nd map, series 0:1 at time of bet. Moot -- coupon already lost on the FURIA-Aurora leg."
         },
         {
           "match": "FURIA vs Aurora",
@@ -9453,8 +9453,8 @@
           "odds": 1.32,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-17-G1 and EDGE-269. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "lost",
+          "notes": "Same match as P-2026-10-17-G1 and EDGE-269. Placed live, 2nd map, series 1:0 at time of bet. Settled: FURIA swept Aurora 2:0 -- handicap +0.5 lost."
         }
       ]
     }
@@ -9463,13 +9463,13 @@
   "summary": {
     "coupons": 270,
     "won": 95,
-    "lost": 174,
+    "lost": 176,
     "voided": 0,
-    "pending": 2,
+    "pending": 0,
     "total_staked_pln": 620.25,
     "gross_return_pln": 465.75,
-    "net_result_pln": -142.5,
-    "roi": -0.2297
+    "net_result_pln": -154.5,
+    "roi": -0.2491
   },
   "archived_predictions": [
     {
@@ -19077,7 +19077,7 @@
       "confidence": 5,
       "closing_odds": null,
       "closing_odds_opponent": null,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache"
       ],
