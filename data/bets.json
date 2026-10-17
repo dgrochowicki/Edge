@@ -9510,9 +9510,9 @@
       "stake_pln": 2.0,
       "combined_odds": 3.01,
       "potential_return_pln": 5.29,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 4.23,
+      "status": "won",
+      "net_result_pln": 2.23,
       "selections": [
         {
           "match": "NiP vs MiBR",
@@ -9521,8 +9521,8 @@
           "odds": 1.67,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Pulse Beat. Placed live, start of match, 0:0 at time of bet."
+          "result": "void",
+          "notes": "Out of Edge scope -- Pulse Beat. Placed live, start of match, 0:0 at time of bet. Cashed out before this leg resolved -- actual result unknown."
         },
         {
           "match": "Falcons vs BETBOOM",
@@ -9540,14 +9540,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 272,
-    "won": 95,
+    "won": 96,
     "lost": 177,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 624.25,
-    "gross_return_pln": 465.75,
-    "net_result_pln": -156.5,
-    "roi": -0.2507
+    "gross_return_pln": 469.98,
+    "net_result_pln": -154.27,
+    "roi": -0.2471
   },
   "archived_predictions": [
     {
