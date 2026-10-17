@@ -9487,8 +9487,8 @@
           "odds": 1.2,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st half break, map 1 round score 0:1 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st half break, map 1 round score 0:1 at time of bet. Settled: Phantom beat HAVU 1:0."
         },
         {
           "match": "OMEGA vs Bushido Wildcats",
