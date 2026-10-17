@@ -19075,8 +19075,8 @@
       "value_pct": -6.9,
       "decision": "PASS",
       "confidence": 5,
-      "closing_odds": null,
-      "closing_odds_opponent": null,
+      "closing_odds": 1.95,
+      "closing_odds_opponent": 1.75,
       "result": "lost",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache"
