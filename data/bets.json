@@ -9423,19 +9423,53 @@
           "notes": "Tournament tag not given. Placed live, 2nd map, series 0:1 (100 Thieves leading) at time of bet."
         }
       ]
+    },
+    {
+      "id": "EDGE-270",
+      "date": "2026-10-17",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 10.0,
+      "combined_odds": 1.58,
+      "potential_return_pln": 13.94,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Heroic vs 100 Thieves",
+          "market": "handicap_maps",
+          "pick": "Heroic +0.5",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- Pulse Beat. Same match as EDGE-269's moneyline leg. Placed live, 2nd map, series 0:1 at time of bet."
+        },
+        {
+          "match": "FURIA vs Aurora",
+          "market": "handicap_maps",
+          "pick": "Aurora +0.5",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as P-2026-10-17-G1 and EDGE-269. Placed live, 2nd map, series 1:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 269,
+    "coupons": 270,
     "won": 95,
     "lost": 174,
     "voided": 0,
-    "pending": 1,
-    "total_staked_pln": 610.25,
+    "pending": 2,
+    "total_staked_pln": 620.25,
     "gross_return_pln": 465.75,
     "net_result_pln": -142.5,
-    "roi": -0.2335
+    "roi": -0.2297
   },
   "archived_predictions": [
     {
