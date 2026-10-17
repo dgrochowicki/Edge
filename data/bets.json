@@ -9531,8 +9531,8 @@
           "odds": 1.8,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-17-G2 (v2 picked Falcons). Placed live, 1st map, 0:0 at time of bet."
+          "result": "won",
+          "notes": "Same match as P-2026-10-17-G2 (v2 picked Falcons). Placed live, 1st map, 0:0 at time of bet. Settled: series 1:1 -- BETBOOM won at least one map, handicap +0.5 won regardless of map 3."
         }
       ]
     }
