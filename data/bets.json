@@ -9545,8 +9545,8 @@
       "combined_odds": 2.48,
       "potential_return_pln": 4.37,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "NiP vs MiBR",
@@ -9556,7 +9556,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Out of Edge scope -- Pulse Beat. Same match as EDGE-272's cashed-out leg. Placed live, 3rd map, series 1:1 at time of bet."
+          "notes": "Out of Edge scope -- Pulse Beat. Same match as EDGE-272's cashed-out leg. Placed live, 3rd map, series 1:1 at time of bet. Moot -- coupon already lost on the Falcons-BETBOOM leg."
         },
         {
           "match": "Falcons vs BETBOOM",
@@ -9565,8 +9565,8 @@
           "odds": 1.32,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-17-G2 and EDGE-272. Placed live, 3rd map, series 1:1 at time of bet."
+          "result": "lost",
+          "notes": "Same match as P-2026-10-17-G2 and EDGE-272. Placed live, 3rd map, series 1:1 at time of bet. Settled: BETBOOM beat Falcons 2:1."
         }
       ]
     }
@@ -9575,13 +9575,13 @@
   "summary": {
     "coupons": 273,
     "won": 96,
-    "lost": 177,
+    "lost": 178,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 626.25,
     "gross_return_pln": 469.98,
-    "net_result_pln": -154.27,
-    "roi": -0.2463
+    "net_result_pln": -156.27,
+    "roi": -0.2495
   },
   "archived_predictions": [
     {
@@ -19225,7 +19225,7 @@
       "confidence": 5,
       "closing_odds": 1.23,
       "closing_odds_opponent": 3.7,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache"
       ],
