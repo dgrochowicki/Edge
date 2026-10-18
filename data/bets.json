@@ -9617,19 +9617,53 @@
           "notes": "Same match as P-2026-10-18-G1 (v2 picked Falcons). Thunderpick World Championship, 3rd place match. Settled: Aurora beat Falcons 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-276",
+      "date": "2026-10-18",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.36,
+      "combined_odds": 3.26,
+      "potential_return_pln": 6.79,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "UPGRADE vs Lavked",
+          "market": "map_winner",
+          "pick": "UPGRADE (map 2, incl. OT)",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- CyberClash Closed Qualifier. Placed live, 2nd map, series 0:1 at time of bet."
+        },
+        {
+          "match": "EYEBALLERS vs Nemesis",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 275,
+    "coupons": 276,
     "won": 98,
     "lost": 178,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 630.25,
+    "pending": 1,
+    "total_staked_pln": 632.61,
     "gross_return_pln": 478.11,
     "net_result_pln": -152.14,
-    "roi": -0.2414
+    "roi": -0.2405
   },
   "archived_predictions": [
     {
