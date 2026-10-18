@@ -9602,9 +9602,9 @@
       "stake_pln": 2.0,
       "combined_odds": 2.9,
       "potential_return_pln": 5.1,
-      "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "gross_return_pln": 5.1,
+      "status": "won",
+      "net_result_pln": 3.1,
       "selections": [
         {
           "match": "Aurora vs Falcons",
@@ -9613,8 +9613,8 @@
           "odds": 2.9,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Same match as P-2026-10-18-G1 (v2 picked Falcons). Thunderpick World Championship, 3rd place match."
+          "result": "won",
+          "notes": "Same match as P-2026-10-18-G1 (v2 picked Falcons). Thunderpick World Championship, 3rd place match. Settled: Aurora beat Falcons 2:1."
         }
       ]
     }
@@ -9622,14 +9622,14 @@
   "observed_passes": [],
   "summary": {
     "coupons": 275,
-    "won": 97,
+    "won": 98,
     "lost": 178,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 630.25,
-    "gross_return_pln": 473.01,
-    "net_result_pln": -155.24,
-    "roi": -0.2463
+    "gross_return_pln": 478.11,
+    "net_result_pln": -152.14,
+    "roi": -0.2414
   },
   "archived_predictions": [
     {
@@ -19309,7 +19309,7 @@
       "confidence": 5,
       "closing_odds": 1.55,
       "closing_odds_opponent": 2.29,
-      "result": "pending",
+      "result": "lost",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache"
       ],
