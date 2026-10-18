@@ -9647,8 +9647,8 @@
           "odds": 2.25,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet. Moot -- coupon already lost on the UPGRADE-Lavked leg."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet. Settled: Nemesis beat EYEBALLERS 2:1. Moot -- coupon already lost on the UPGRADE-Lavked leg."
         }
       ]
     }
