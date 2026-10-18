@@ -9569,19 +9569,43 @@
           "notes": "Same match as P-2026-10-17-G2 and EDGE-272. Placed live, 3rd map, series 1:1 at time of bet. Settled: BETBOOM beat Falcons 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-274",
+      "date": "2026-10-18",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 1.72,
+      "potential_return_pln": 3.03,
+      "gross_return_pln": 3.03,
+      "status": "won",
+      "net_result_pln": 1.03,
+      "selections": [
+        {
+          "match": "Fire Flux vs Bushido Wildcats",
+          "market": "map_winner",
+          "pick": "Fire Flux (map 2, incl. OT)",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Fire Flux beat Bushido Wildcats 2:0."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 273,
-    "won": 96,
+    "coupons": 274,
+    "won": 97,
     "lost": 178,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 626.25,
-    "gross_return_pln": 469.98,
-    "net_result_pln": -156.27,
-    "roi": -0.2495
+    "total_staked_pln": 628.25,
+    "gross_return_pln": 473.01,
+    "net_result_pln": -155.24,
+    "roi": -0.2471
   },
   "archived_predictions": [
     {
