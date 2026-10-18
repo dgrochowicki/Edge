@@ -9593,19 +9593,43 @@
           "notes": "Tournament tag not given. Settled: Fire Flux beat Bushido Wildcats 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-275",
+      "date": "2026-10-18",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.9,
+      "potential_return_pln": 5.1,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Aurora vs Falcons",
+          "market": "moneyline",
+          "pick": "Aurora",
+          "odds": 2.9,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Same match as P-2026-10-18-G1 (v2 picked Falcons). Thunderpick World Championship, 3rd place match."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 274,
+    "coupons": 275,
     "won": 97,
     "lost": 178,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 628.25,
+    "pending": 1,
+    "total_staked_pln": 630.25,
     "gross_return_pln": 473.01,
     "net_result_pln": -155.24,
-    "roi": -0.2471
+    "roi": -0.2463
   },
   "archived_predictions": [
     {
