@@ -9715,8 +9715,8 @@
           "odds": 1.13,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Moot -- coupon already lost on the FURIA-BETBOOM leg. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Moot -- coupon already lost on the FURIA-BETBOOM leg. Placed live, 2nd map, series 1:0 at time of bet. Settled: Nuclear TigeRES beat ex-RUSTEC 2:0."
         }
       ]
     }
