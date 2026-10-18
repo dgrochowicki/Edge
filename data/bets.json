@@ -9627,8 +9627,8 @@
       "combined_odds": 3.26,
       "potential_return_pln": 6.79,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.36,
       "selections": [
         {
           "match": "UPGRADE vs Lavked",
@@ -9637,8 +9637,8 @@
           "odds": 1.45,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- CyberClash Closed Qualifier. Placed live, 2nd map, series 0:1 at time of bet."
+          "result": "lost",
+          "notes": "Out of Edge scope -- CyberClash Closed Qualifier. Placed live, 2nd map, series 0:1 at time of bet. Settled: Lavked swept UPGRADE 2:0 -- UPGRADE didn't win map 2, leg lost."
         },
         {
           "match": "EYEBALLERS vs Nemesis",
@@ -9648,7 +9648,7 @@
           "confidence": null,
           "closing_odds": null,
           "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet."
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet. Moot -- coupon already lost on the UPGRADE-Lavked leg."
         }
       ]
     }
@@ -9657,13 +9657,13 @@
   "summary": {
     "coupons": 276,
     "won": 98,
-    "lost": 178,
+    "lost": 179,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 632.61,
     "gross_return_pln": 478.11,
-    "net_result_pln": -152.14,
-    "roi": -0.2405
+    "net_result_pln": -154.5,
+    "roi": -0.2442
   },
   "archived_predictions": [
     {
