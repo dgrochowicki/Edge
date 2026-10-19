@@ -9899,8 +9899,8 @@
           "odds": 1.45,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 at time of bet. Settled: PARIVISION beat Magic 2:0 -- exact score hit."
         },
         {
           "match": "Sashi vs HyperSpirit",
