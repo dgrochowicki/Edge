@@ -63,6 +63,14 @@ const TOURNAMENT_META = {
         name: 'StarLadder StarSeries Fall 2026',
         hltv: 'https://www.hltv.org/events/8057/starladder-starseries-fall-2026',
         end: '2026-09-20'
+    },
+    'ESL-Pro-League-S24-2026': {
+        name: 'ESL Pro League Season 24',
+        end: '2026-10-11'
+    },
+    'Thunderpick-World-Championship-2026': {
+        name: 'Thunderpick World Championship 2026',
+        end: '2026-10-18'
     }
 };
 
