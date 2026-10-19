@@ -5,9 +5,9 @@ since removed (history in git).
 
 Usage: python3 scripts/validate_bets.py [path-to-bets.json] [--all]
 
-By default only method_version == "v2" predictions are checked (v1 is a frozen
-archive, see docs/archive/METHOD_V1.md). Pass --all for a full-ledger integrity
-check, e.g. after a schema or validator change.
+By default only method_version in {"v2", "v3"} predictions are checked (v1 is a
+frozen archive, see docs/archive/METHOD_V1.md). Pass --all for a full-ledger
+integrity check, e.g. after a schema or validator change.
 
 Exit code 0 if there are zero hard errors (legacy_rounding flags are not
 errors -- see docs/PLAYBOOK.md -> Calibration & CLV Protocol -> Checkpoint
@@ -44,6 +44,27 @@ Additional rules for method_version == "v2":
       (EPL S24: 5 flags -- fair computed from unrounded intermediates in
       P-2026-10-04-G7 / P-2026-10-05-G3, pick on the lower-value side in
       P-2026-10-03-G3 / -G4 / P-2026-10-10-G1; entries immutable).
+
+Additional rules for method_version == "v3" (docs/decisions/2026-10-19-v3-trzy-zrodla.md):
+    - full v3 field set present: p_own, p_own_opponent, own_timestamp,
+      p_cons, p_cons_opponent, cons_books, cons_spread_pp, cons_timestamp,
+      p_sts, value_cons_pct, value_own_pct, gap_own_pp, label, stake_u
+    - p_own, p_own_opponent in [0.10, 0.90] and sum to 1.0 (+/- 0.0001)
+    - p_cons, p_cons_opponent both set or both null (null pair requires
+      data_quality to include "consensus_missing"); when set, sum to 1.0
+    - cons_books: a list with >= 3 entries when p_cons is not null
+    - label in {BET, PASS, STS_OFF, OWN_DISAGREES}; decision == "BET" iff
+      label == "BET" (a v3 BET is always the gpt recommendation -- whether the
+      operator actually staked it lives in `coupons`, not here)
+    - gap_own_pp == round((p_own - p_cons) * 100, 1) when p_cons is not null
+    - value_cons_pct == round((market_odds_at_analysis * p_cons - 1) * 100, 1)
+      and value_own_pct == round((market_odds_at_analysis * p_own - 1) * 100, 1)
+      when the inputs are present (pick's own odds/probabilities)
+    - label == "BET" requires: value_cons_pct >= 5.0, p_own >= p_cons (pick
+      side), cons_spread computed from >= 3 books, and none of the blocking
+      flags (odds_seen_before_own, consensus_missing, stale_consensus,
+      uncertain_roster) in data_quality
+    - stake_u > 0 when decision == "BET", stake_u in {0, None} when "PASS"
 """
 import json
 import sys
@@ -59,6 +80,15 @@ V2_REQUIRED_FIELDS = [
 FRESH_INPUT_VALUES = {"round_diff", "map_result_fallback"}
 ROSTER_PENALTY_VALUES = {0, -2}
 E2_EFFECTIVE = "2026-10-12"  # first match day after the E2 decision (docs/decisions/2026-10-11-v2-ocena-e2.md)
+
+V3_REQUIRED_FIELDS = [
+    "p_own", "p_own_opponent", "own_timestamp",
+    "p_cons", "p_cons_opponent", "cons_books", "cons_spread_pp", "cons_timestamp",
+    "p_sts", "value_cons_pct", "value_own_pct", "gap_own_pp", "label", "stake_u",
+]
+V3_LABEL_VALUES = {"BET", "PASS", "STS_OFF", "OWN_DISAGREES"}
+V3_BET_BLOCKING_FLAGS = {"odds_seen_before_own", "consensus_missing", "stale_consensus", "uncertain_roster"}
+V3_BET_THRESHOLD_PCT = 5.0
 
 
 def expected_p_v2(p):
@@ -160,6 +190,76 @@ def validate(preds):
                     else:
                         flags.append((pid, "pre_e2", msg))
 
+        elif p.get("method_version") == "v3":
+            missing = [f for f in V3_REQUIRED_FIELDS if f not in p]
+            if missing:
+                errors.append((pid, f"v3 entry missing fields: {', '.join(missing)}"))
+
+            dq = p.get("data_quality") or []
+            p_own, p_own_opp = p.get("p_own"), p.get("p_own_opponent")
+            if p_own is not None and p_own_opp is not None:
+                if not (0.10 <= p_own <= 0.90) or not (0.10 <= p_own_opp <= 0.90):
+                    errors.append((pid, f"p_own/p_own_opponent out of [0.10,0.90]: {p_own}, {p_own_opp}"))
+                if abs(p_own + p_own_opp - 1.0) > 0.0001:
+                    errors.append((pid, f"p_own + p_own_opponent != 1.0: {p_own} + {p_own_opp}"))
+
+            p_cons, p_cons_opp = p.get("p_cons"), p.get("p_cons_opponent")
+            if (p_cons is None) != (p_cons_opp is None):
+                errors.append((pid, f"p_cons/p_cons_opponent must both be set or both null (got {p_cons!r}, {p_cons_opp!r})"))
+            elif p_cons is None:
+                if "consensus_missing" not in dq:
+                    errors.append((pid, "p_cons null but data_quality missing 'consensus_missing'"))
+            else:
+                if abs(p_cons + p_cons_opp - 1.0) > 0.0001:
+                    errors.append((pid, f"p_cons + p_cons_opponent != 1.0: {p_cons} + {p_cons_opp}"))
+                books = p.get("cons_books")
+                if not isinstance(books, list) or len(books) < 3:
+                    errors.append((pid, f"cons_books has fewer than 3 entries: {books!r}"))
+
+            label = p.get("label")
+            if label not in V3_LABEL_VALUES:
+                errors.append((pid, f"bad label: {label!r}"))
+            decision = p.get("decision")
+            if label is not None and decision in ("BET", "PASS"):
+                if (decision == "BET") != (label == "BET"):
+                    errors.append((pid, f"decision {decision!r} inconsistent with label {label!r}"))
+
+            if p_cons is not None and p_own is not None:
+                gap = p.get("gap_own_pp")
+                exp_gap = round((p_own - p_cons) * 100, 1)
+                if gap is not None and abs(gap - exp_gap) > 0.1:
+                    errors.append((pid, f"gap_own_pp {gap} != round((p_own-p_cons)*100,1) = {exp_gap}"))
+
+            odds = p.get("market_odds_at_analysis")
+            value_cons, value_own = p.get("value_cons_pct"), p.get("value_own_pct")
+            if odds is not None and p_cons is not None and value_cons is not None:
+                exp_vc = round((odds * p_cons - 1) * 100, 1)
+                if abs(value_cons - exp_vc) > 0.1:
+                    errors.append((pid, f"value_cons_pct {value_cons} != round((odds*p_cons-1)*100,1) = {exp_vc}"))
+            if odds is not None and p_own is not None and value_own is not None:
+                exp_vo = round((odds * p_own - 1) * 100, 1)
+                if abs(value_own - exp_vo) > 0.1:
+                    errors.append((pid, f"value_own_pct {value_own} != round((odds*p_own-1)*100,1) = {exp_vo}"))
+
+            if label == "BET":
+                blocking = V3_BET_BLOCKING_FLAGS & set(dq)
+                if blocking:
+                    errors.append((pid, f"label BET but blocking data_quality flags present: {sorted(blocking)}"))
+                if value_cons is not None and value_cons < V3_BET_THRESHOLD_PCT:
+                    errors.append((pid, f"label BET but value_cons_pct {value_cons} < {V3_BET_THRESHOLD_PCT}"))
+                if p_own is not None and p_cons is not None and p_own < p_cons:
+                    errors.append((pid, f"label BET but p_own {p_own} < p_cons {p_cons}"))
+                books = p.get("cons_books")
+                if not isinstance(books, list) or len(books) < 3:
+                    errors.append((pid, "label BET but cons_books has fewer than 3 entries"))
+
+            stake_u = p.get("stake_u")
+            if decision == "BET":
+                if not (isinstance(stake_u, (int, float)) and stake_u > 0):
+                    errors.append((pid, f"decision BET requires stake_u > 0, got {stake_u!r}"))
+            elif decision == "PASS" and stake_u not in (0, None):
+                errors.append((pid, f"decision PASS expects stake_u 0 or null, got {stake_u!r}"))
+
     return errors, flags
 
 
@@ -170,7 +270,7 @@ def main():
     data = json.loads(path.read_text(encoding="utf-8"))
     preds = data.get("predictions", [])
     if not check_all:
-        preds = [p for p in preds if p.get("method_version") == "v2"]
+        preds = [p for p in preds if p.get("method_version") in ("v2", "v3")]
 
     errors, flags = validate(preds)
 

@@ -1,6 +1,6 @@
 # Decyzja: v3 — ocena z trzech źródeł (własna analiza → konsensus rynku → STS)
 
-**Data:** 2026-10-19 · **Status:** PROJEKT — do akceptacji operatora (commit = akceptacja)
+**Data:** 2026-10-19 · **Status:** ZATWIERDZONY — oba punkty z sekcji 9 rozstrzygnięte przez operatora 2026-10-19
 **Start:** pierwszy raport kolejnego turnieju w zakresie
 **Autor projektu:** claude (audytor) · **Wykonawca dzienny:** gpt · **Operator:** Dom
 **Kontekst:** `reports/summaries/Thunderpick-World-Championship-2026-summary.md`; rozmowa operatora z audytorem 2026-10-19
