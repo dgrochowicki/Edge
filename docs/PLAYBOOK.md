@@ -10,10 +10,13 @@ It is an operating document. It should change only when new evidence justifies a
 
 ```text
 v1 = frozen, 2026-09-23. Archive: docs/archive/METHOD_V1.md. No new v1 predictions.
-v2 = active. Definition: docs/METHOD_V2.md.
+v2 = active. Definition: docs/METHOD_V2.md. Mechanical STS-only de-vig + fresh-form/roster correction.
+v3 = active, started alongside v2 from the first report of the tournament after Thunderpick WC 2026.
+     Definition: docs/decisions/2026-10-19-v3-trzy-zrodla.md. Three-source evaluation (own assessment
+     before odds -> market consensus -> STS); only source that can produce a real BET recommendation.
 ```
 
-Where this playbook (scope, staking, discipline, process) and `docs/METHOD_V2.md` (probability estimation) disagree on how to estimate probability, **`docs/METHOD_V2.md` wins.** This playbook keeps governing everything else: scope, stake rules, coupon rules, the pre-publication checklist, and daily discipline — none of that changed at the v1→v2 freeze.
+Where this playbook (scope, staking, discipline, process) and `docs/METHOD_V2.md` / the v3 decision record (probability estimation) disagree on how to estimate probability, **the method-specific document wins.** This playbook keeps governing everything else: scope, stake rules, coupon rules, the pre-publication checklist, and daily discipline — none of that changed at the v1→v2 freeze or at v3's introduction. v2 and v3 run in parallel on the same matches, independently, each as its own ledger entry (`method_version: "v2"` / `"v3"`); v3 does not replace v2, and v2's β/K1/K2 checkpoint keeps counting on its own schedule regardless of v3.
 
 ## Core Objective
 
