@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-18",
+  "updated_at": "2026-10-19",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -19447,7 +19447,7 @@
       "confidence": 5,
       "closing_odds": 1.28,
       "closing_odds_opponent": 3.35,
-      "result": "pending",
+      "result": "won",
       "data_quality": [
         "historical_opponent_rank_bands_from_prior_edge_cache",
         "bo5_format_no_specific_model_adjustment"
