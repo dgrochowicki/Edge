@@ -1,6 +1,6 @@
 # Decyzja: v3 — ocena z trzech źródeł (własna analiza → konsensus rynku → STS)
 
-**Data:** 2026-10-19 · **Status:** ZATWIERDZONY — oba punkty z sekcji 9 rozstrzygnięte przez operatora 2026-10-19
+**Data:** 2026-10-19 · **Status:** PROJEKT — do akceptacji operatora (commit = akceptacja)
 **Start:** pierwszy raport kolejnego turnieju w zakresie
 **Autor projektu:** claude (audytor) · **Wykonawca dzienny:** gpt · **Operator:** Dom
 **Kontekst:** `reports/summaries/Thunderpick-World-Championship-2026-summary.md`; rozmowa operatora z audytorem 2026-10-19
@@ -64,7 +64,7 @@ Inaczej **PASS**. Dodatkowe etykiety do analizy (to nie są zakłady):
 - `OWN_DISAGREES` — `|gap_own| ≥ 8 pp` przy braku warunku 1 (mocno różnimy się od rynku).
 
 **Stawka:** płaska **1u** na BET, bez skalowania pewnością. Maksymalnie 3 BET na dzień.
-**Real czy papier** — decyzja operatora przy akceptacji (pkt 9).
+**Real czy papier — decyzja operatora na żywo, przy każdym BET osobno.** BET v3 jest rekomendacją. Operator decyduje, czy go faktycznie postawić. Postawiony zakład idzie do `coupons` jak dotąd (`source: "user_bet"`), z notatką z `id` predykcji v3. Ocena metody (pkt 7) zawsze liczy **wszystkie** BET v3, postawione i niepostawione, po kursie z analizy. Dzięki temu wybór operatora nie zmienia wyniku metody, a gra operatora jest raportowana osobno.
 
 ## 5. Zapis w księdze
 
@@ -97,21 +97,21 @@ Raportowane co turniej (audytor):
 - **Główne — CLV zakładów:** średnia `kurs_STS_przy_analizie / kurs_STS_zamknięcia − 1` dla BET. Dodatnie = bierzemy lepsze kursy niż rynek na końcu.
 - Brier `p_own`, `p_cons`, `p_sts` na tych samych meczach — który z trzech najlepiej ocenia mecze.
 - Wyniki osobno dla BET, `STS_OFF` i `OWN_DISAGREES` — czy nasza ocena dodaje coś ponad sam rozjazd kursów.
-- Wynik finansowy BET (u i PLN) — opisowo.
+- Wynik finansowy wszystkich BET v3 (w u, po kursie z analizy) — opisowo; osobno wynik zakładów faktycznie postawionych przez operatora.
 
-**Przegląd po 30 BET lub 100 predykcjach v3** (co pierwsze): jeśli średnie CLV BET ≤ 0, a ROI < 0, wstrzymujemy stawki realne i wracamy do decyzji. Wcześniej żadnych zmian progów ani reguł na podstawie wyników.
+**Przegląd po 30 BET lub 100 predykcjach v3** (co pierwsze): jeśli średnie CLV BET ≤ 0, a ROI < 0, rekomendacja v3 przestaje być podstawą do realnych stawek i wracamy do decyzji. Wcześniej żadnych zmian progów ani reguł na podstawie wyników.
 
 ## 8. Wdrożenie — kto i co przed startem
 
 | Kto | Co |
 |---|---|
-| operator | akceptacja tego dokumentu (commit) + decyzja z pkt 9 |
+| operator | akceptacja tego dokumentu (commit); decyzje z pkt 9 podjęte |
 | repo agent / operator | `REPORT_TEMPLATE.md` (sekcje z pkt 6), pola v3 w schemacie, reguły walidatora |
 | gpt | od pierwszego raportu: krok 1 przed prośbą o kursy STS i przed otwarciem jakiejkolwiek tabeli kursów |
 | operator | bez zmian: STS z godziną rano, zamknięcia STS przed meczami |
 | claude | audyt po pierwszym turnieju v3 (kolejność, źródła, arytmetyka, CLV) |
 
-## 9. Do decyzji operatora przy akceptacji
+## 9. Decyzje operatora (2026-10-19)
 
-- [x] **BET v3 — real czy papier:** decyzja na żywo przy każdym BET (nie reguła blankietowa dla wszystkich sygnałów). Ocena metody (pkt 7) liczy **wszystkie** BET v3 niezależnie od tego, czy zostały faktycznie postawione realnie — więc CLV/Brier/ROI z pkt 7 to ocena sygnału, nie tylko tego, co Dom faktycznie zagrał. **Decyzja Doma (2026-10-19).**
-- [x] **Próg `value_cons ≥ +5%`** — przyjęty bez zmian. **Decyzja Doma (2026-10-19).**
+- [x] Real czy papier: **decyzja na żywo przy każdym BET** (pkt 4). Ocena metody liczy wszystkie BET v3 niezależnie od tego, czy zostały postawione.
+- [x] Próg `value_cons ≥ +5%` przyjęty bez zmian.
