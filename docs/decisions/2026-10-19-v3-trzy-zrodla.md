@@ -1,6 +1,6 @@
 # Decyzja: v3 — ocena z trzech źródeł (własna analiza → konsensus rynku → STS)
 
-**Data:** 2026-10-19 · **Status:** PROJEKT — do akceptacji operatora (commit = akceptacja)
+**Data:** 2026-10-19 · **Status:** ZATWIERDZONY — oba punkty z sekcji 9 rozstrzygnięte przez operatora 2026-10-19
 **Start:** pierwszy raport kolejnego turnieju w zakresie
 **Autor projektu:** claude (audytor) · **Wykonawca dzienny:** gpt · **Operator:** Dom
 **Kontekst:** `reports/summaries/Thunderpick-World-Championship-2026-summary.md`; rozmowa operatora z audytorem 2026-10-19
@@ -113,5 +113,5 @@ Raportowane co turniej (audytor):
 
 ## 9. Do decyzji operatora przy akceptacji
 
-- [ ] BET v3 grane **realnie po 1u** czy **papierowo** do przeglądu z pkt 7?
-- [ ] Próg `value_cons ≥ +5%` — akceptacja bez zmian (rekomendacja) czy inna wartość, ustalona **teraz**, przed pierwszym meczem?
+- [x] **BET v3 — real czy papier:** decyzja na żywo przy każdym BET (nie reguła blankietowa dla wszystkich sygnałów). Ocena metody (pkt 7) liczy **wszystkie** BET v3 niezależnie od tego, czy zostały faktycznie postawione realnie — więc CLV/Brier/ROI z pkt 7 to ocena sygnału, nie tylko tego, co Dom faktycznie zagrał. **Decyzja Doma (2026-10-19).**
+- [x] **Próg `value_cons ≥ +5%`** — przyjęty bez zmian. **Decyzja Doma (2026-10-19).**
