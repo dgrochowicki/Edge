@@ -10015,19 +10015,53 @@
           "notes": "Tournament tag not given. Settled: exact score 2:0 for FaZe did not hit."
         }
       ]
+    },
+    {
+      "id": "EDGE-288",
+      "date": "2026-10-20",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 1.82,
+      "potential_return_pln": 4.81,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.0,
+      "selections": [
+        {
+          "match": "Infinite vs Eternal Fire",
+          "market": "moneyline",
+          "pick": "Eternal Fire",
+          "odds": 1.09,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- DraculaN. Settled: Eternal Fire beat Infinite."
+        },
+        {
+          "match": "Magic vs Liquid",
+          "market": "moneyline",
+          "pick": "Liquid",
+          "odds": 1.67,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Tournament tag not given. Settled: Magic beat Liquid."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 287,
+    "coupons": 288,
     "won": 100,
-    "lost": 188,
+    "lost": 189,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 670.25,
+    "total_staked_pln": 673.25,
     "gross_return_pln": 505.59,
-    "net_result_pln": -164.66,
-    "roi": -0.2457
+    "net_result_pln": -167.66,
+    "roi": -0.249
   },
   "archived_predictions": [
     {
