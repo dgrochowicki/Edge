@@ -10073,19 +10073,53 @@
           "notes": "Out of Edge scope -- DraculaN. Placed live, 2nd map, series 1:0 (Luminosity leading) at time of bet. Needs a 2:0 sweep to cover. Settled: Nexus won map 2, series now 1:1 -- 2:0 sweep impossible, handicap -1.5 lost."
         }
       ]
+    },
+    {
+      "id": "EDGE-290",
+      "date": "2026-10-20",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 2.64,
+      "potential_return_pln": 6.97,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Luminosity vs Nexus",
+          "market": "moneyline",
+          "pick": "Luminosity",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- DraculaN (per earlier leg on this match, EDGE-289). Placed live, break, series 1:1 at time of bet."
+        },
+        {
+          "match": "JiJieHao vs Iberian Soul",
+          "market": "moneyline",
+          "pick": "JiJieHao",
+          "odds": 2.0,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 0:1 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 289,
+    "coupons": 290,
     "won": 100,
     "lost": 190,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 675.25,
+    "pending": 1,
+    "total_staked_pln": 678.25,
     "gross_return_pln": 505.59,
     "net_result_pln": -169.66,
-    "roi": -0.2513
+    "roi": -0.2501
   },
   "archived_predictions": [
     {
