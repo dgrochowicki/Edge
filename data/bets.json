@@ -10253,19 +10253,63 @@
           "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: paiN beat LargadosyPelados."
         }
       ]
+    },
+    {
+      "id": "EDGE-295",
+      "date": "2026-10-21",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.19,
+      "potential_return_pln": 5.61,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "The MongolZ vs PRIVATE",
+          "market": "moneyline",
+          "pick": "The MongolZ",
+          "odds": 1.11,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- 1w Private Club. Settled: The MongolZ beat PRIVATE."
+        },
+        {
+          "match": "paiN vs Fluxo W7M",
+          "market": "handicap_maps",
+          "pick": "paiN +0.5",
+          "odds": 1.67,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- Circuit X Curitiba. Placed live, 2nd map, series 0:1 at time of bet."
+        },
+        {
+          "match": "Sinners vs JiJieHao",
+          "market": "moneyline",
+          "pick": "Sinners",
+          "odds": 1.72,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 294,
+    "coupons": 295,
     "won": 102,
     "lost": 193,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 702.25,
+    "pending": 1,
+    "total_staked_pln": 704.25,
     "gross_return_pln": 536.74,
     "net_result_pln": -165.51,
-    "roi": -0.2357
+    "roi": -0.235
   },
   "archived_predictions": [
     {
