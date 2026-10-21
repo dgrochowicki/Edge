@@ -10219,19 +10219,53 @@
           "notes": "Tournament tag not given. Moot -- coupon already lost on the FaZe-JiJieHao leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-294",
+      "date": "2026-10-21",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 10.0,
+      "combined_odds": 2.45,
+      "potential_return_pln": 21.6,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Lavked vs Spirit Academy",
+          "market": "moneyline",
+          "pick": "Spirit Academy",
+          "odds": 1.47,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- CCT EU. Placed live, 1st map, 0:0 at time of bet."
+        },
+        {
+          "match": "paiN vs LargadosyPelados",
+          "market": "moneyline",
+          "pick": "paiN",
+          "odds": 1.67,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 293,
+    "coupons": 294,
     "won": 101,
     "lost": 193,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 692.25,
+    "pending": 1,
+    "total_staked_pln": 702.25,
     "gross_return_pln": 515.14,
     "net_result_pln": -177.11,
-    "roi": -0.2558
+    "roi": -0.2522
   },
   "archived_predictions": [
     {
