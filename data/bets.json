@@ -10283,8 +10283,8 @@
           "odds": 1.67,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- Circuit X Curitiba. Placed live, 2nd map, series 0:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope -- Circuit X Curitiba. Placed live, 2nd map, series 0:1 at time of bet. Settled: paiN won at least one map -- handicap +0.5 won."
         },
         {
           "match": "Sinners vs JiJieHao",
