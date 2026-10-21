@@ -10249,8 +10249,8 @@
           "odds": 1.67,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: paiN beat LargadosyPelados."
         }
       ]
     }
