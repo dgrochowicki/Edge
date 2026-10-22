@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-21",
+  "updated_at": "2026-10-22",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -10297,19 +10297,53 @@
           "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Settled: Sinners beat JiJieHao 2:0."
         }
       ]
+    },
+    {
+      "id": "EDGE-296",
+      "date": "2026-10-21",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.09,
+      "combined_odds": 4.67,
+      "potential_return_pln": 8.6,
+      "gross_return_pln": 8.6,
+      "status": "won",
+      "net_result_pln": 6.51,
+      "selections": [
+        {
+          "match": "Eternal Fire vs BC.Game",
+          "market": "moneyline",
+          "pick": "Eternal Fire",
+          "odds": 2.29,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- DraculaN. Settled: Eternal Fire beat BC.Game 2:1."
+        },
+        {
+          "match": "Heroic vs FaZe",
+          "market": "moneyline",
+          "pick": "FaZe",
+          "odds": 2.04,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: FaZe beat Heroic 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 295,
-    "won": 103,
+    "coupons": 296,
+    "won": 104,
     "lost": 193,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 704.25,
-    "gross_return_pln": 542.35,
-    "net_result_pln": -161.9,
-    "roi": -0.2299
+    "total_staked_pln": 706.34,
+    "gross_return_pln": 550.95,
+    "net_result_pln": -155.39,
+    "roi": -0.22
   },
   "archived_predictions": [
     {
