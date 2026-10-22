@@ -10439,8 +10439,8 @@
           "odds": 2.2,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Moot -- coupon already lost on the FaZe-BC.Game leg."
+          "result": "won",
+          "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Moot -- coupon already lost on the FaZe-BC.Game leg. Settled: series 1:1, map 3 guaranteed -- Over 2.5 total maps won."
         }
       ]
     }
