@@ -10443,19 +10443,53 @@
           "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Moot -- coupon already lost on the FaZe-BC.Game leg. Settled: series 1:1, map 3 guaranteed -- Over 2.5 total maps won."
         }
       ]
+    },
+    {
+      "id": "EDGE-300",
+      "date": "2026-10-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 3.9,
+      "combined_odds": 2.32,
+      "potential_return_pln": 7.96,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -3.9,
+      "selections": [
+        {
+          "match": "UNiTY vs Betclic Apogee",
+          "market": "moneyline",
+          "pick": "Betclic Apogee",
+          "odds": 1.6,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- StarLadder Ranked CQ. Settled: UNiTY beat Betclic Apogee 2:0."
+        },
+        {
+          "match": "PARIVISION vs The MongolZ",
+          "market": "moneyline",
+          "pick": "The MongolZ",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Moot -- coupon already lost on the UNiTY-Betclic Apogee leg. Placed live, 2nd map, series 0:1 at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 299,
+    "coupons": 300,
     "won": 104,
-    "lost": 196,
+    "lost": 197,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 712.34,
+    "total_staked_pln": 716.24,
     "gross_return_pln": 550.95,
-    "net_result_pln": -161.39,
-    "roi": -0.2266
+    "net_result_pln": -165.29,
+    "roi": -0.2308
   },
   "archived_predictions": [
     {
