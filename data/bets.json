@@ -10331,19 +10331,53 @@
           "notes": "Tournament tag not given. Settled: FaZe beat Heroic 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-297",
+      "date": "2026-10-22",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.6,
+      "potential_return_pln": 6.34,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Bushido Wildcats vs ex-6666",
+          "market": "map_winner",
+          "pick": "Bushido Wildcats (map 2, incl. OT)",
+          "odds": 2.25,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- NODWIN Clutch Series. Settled: ex-6666 swept Bushido Wildcats 2:0 -- didn't win map 2, leg lost."
+        },
+        {
+          "match": "GenOne vs Spirit Academy",
+          "market": "moneyline",
+          "pick": "Spirit Academy",
+          "odds": 1.6,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Spirit Academy beat GenOne 2:1."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 296,
+    "coupons": 297,
     "won": 104,
-    "lost": 193,
+    "lost": 194,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 706.34,
+    "total_staked_pln": 708.34,
     "gross_return_pln": 550.95,
-    "net_result_pln": -155.39,
-    "roi": -0.22
+    "net_result_pln": -157.39,
+    "roi": -0.2222
   },
   "archived_predictions": [
     {
