@@ -10551,8 +10551,8 @@
           "odds": 1.72,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Out of Edge scope -- StarLadder Ranked CQ (per EDGE-301). Same match as EDGE-301's Over 2.5 leg. Placed live, 3rd map, series 1:1 at time of bet."
+          "result": "won",
+          "notes": "Out of Edge scope -- StarLadder Ranked CQ (per EDGE-301). Same match as EDGE-301's Over 2.5 leg. Placed live, 3rd map, series 1:1 at time of bet. Settled: Sangal beat Metizport."
         }
       ]
     }
