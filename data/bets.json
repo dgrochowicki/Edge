@@ -10643,8 +10643,8 @@
       "combined_odds": 3.3,
       "potential_return_pln": 5.8,
       "gross_return_pln": 0.0,
-      "status": "pending",
-      "net_result_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
       "selections": [
         {
           "match": "WBT Academy vs LPH",
@@ -10673,8 +10673,8 @@
           "odds": 1.38,
           "confidence": null,
           "closing_odds": null,
-          "result": "pending",
-          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Eternal Fire leading) at time of bet."
+          "result": "lost",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Eternal Fire leading) at time of bet. Settled: Eternal Fire beat JiJieHao 2:1."
         }
       ]
     }
@@ -10683,13 +10683,13 @@
   "summary": {
     "coupons": 305,
     "won": 105,
-    "lost": 200,
+    "lost": 201,
     "voided": 0,
-    "pending": 1,
+    "pending": 0,
     "total_staked_pln": 726.47,
     "gross_return_pln": 556.05,
-    "net_result_pln": -168.42,
-    "roi": -0.2318
+    "net_result_pln": -170.42,
+    "roi": -0.2346
   },
   "archived_predictions": [
     {
