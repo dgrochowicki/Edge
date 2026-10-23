@@ -3,7 +3,7 @@
   "currency": "PLN",
   "unit_value_pln": 2.0,
   "bookmaker": "STS",
-  "updated_at": "2026-10-22",
+  "updated_at": "2026-10-23",
   "coupons": [
     {
       "id": "EDGE-001",
@@ -10555,19 +10555,63 @@
           "notes": "Out of Edge scope -- StarLadder Ranked CQ (per EDGE-301). Same match as EDGE-301's Over 2.5 leg. Placed live, 3rd map, series 1:1 at time of bet. Settled: Sangal beat Metizport."
         }
       ]
+    },
+    {
+      "id": "EDGE-303",
+      "date": "2026-10-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 2.9,
+      "potential_return_pln": 5.1,
+      "gross_return_pln": 5.1,
+      "status": "won",
+      "net_result_pln": 3.1,
+      "selections": [
+        {
+          "match": "Nemesis vs Black Phenix",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.7,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CIS LAN Championship. Settled: Nemesis beat Black Phenix 2:1."
+        },
+        {
+          "match": "Inner Circle Academy vs Spirit Academy",
+          "market": "total_maps",
+          "pick": "Over 2.5",
+          "odds": 1.42,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- CCT EU. Settled: series went the distance, Inner Circle Academy beat Spirit Academy 2:1 -- Over 2.5 total maps won."
+        },
+        {
+          "match": "Nuclear TigeRES vs ILLYRIANS",
+          "market": "map_winner",
+          "pick": "Nuclear TigeRES (map 2, incl. OT)",
+          "odds": 1.2,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Nuclear TigeRES swept ILLYRIANS 2:0 -- won map 2."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 302,
-    "won": 104,
+    "coupons": 303,
+    "won": 105,
     "lost": 199,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 720.24,
-    "gross_return_pln": 550.95,
-    "net_result_pln": -169.29,
-    "roi": -0.235
+    "total_staked_pln": 722.24,
+    "gross_return_pln": 556.05,
+    "net_result_pln": -166.19,
+    "roi": -0.2301
   },
   "archived_predictions": [
     {
