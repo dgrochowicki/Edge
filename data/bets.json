@@ -10633,19 +10633,63 @@
           "notes": "Tournament tag not given. Placed live, 1st map, 0:0 at time of bet. Moot -- coupon already lost on the K27-Virtus.pro leg."
         }
       ]
+    },
+    {
+      "id": "EDGE-305",
+      "date": "2026-10-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 3.3,
+      "potential_return_pln": 5.8,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "WBT Academy vs LPH",
+          "market": "moneyline",
+          "pick": "WBT Academy",
+          "odds": 1.35,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: WBT Academy beat LPH 2:1."
+        },
+        {
+          "match": "MAYBE vs Sokerorg",
+          "market": "moneyline",
+          "pick": "Sokerorg",
+          "odds": 1.77,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: Sokerorg beat MAYBE 2:1."
+        },
+        {
+          "match": "Eternal Fire vs JiJieHao",
+          "market": "moneyline",
+          "pick": "JiJieHao",
+          "odds": 1.38,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Eternal Fire leading) at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 304,
+    "coupons": 305,
     "won": 105,
     "lost": 200,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 724.47,
+    "pending": 1,
+    "total_staked_pln": 726.47,
     "gross_return_pln": 556.05,
     "net_result_pln": -168.42,
-    "roi": -0.2325
+    "roi": -0.2318
   },
   "archived_predictions": [
     {
