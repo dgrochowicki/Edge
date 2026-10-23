@@ -10677,19 +10677,43 @@
           "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Eternal Fire leading) at time of bet. Settled: Eternal Fire beat JiJieHao 2:1."
         }
       ]
+    },
+    {
+      "id": "EDGE-306",
+      "date": "2026-10-23",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 3.0,
+      "combined_odds": 2.08,
+      "potential_return_pln": 5.49,
+      "gross_return_pln": 5.49,
+      "status": "won",
+      "net_result_pln": 2.49,
+      "selections": [
+        {
+          "match": "BESTIA vs Galorys",
+          "market": "correct_score",
+          "pick": "2:0",
+          "odds": 2.08,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Tournament tag not given. Settled: BESTIA swept Galorys 2:0 -- exact score hit."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 305,
-    "won": 105,
+    "coupons": 306,
+    "won": 106,
     "lost": 201,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 726.47,
-    "gross_return_pln": 556.05,
-    "net_result_pln": -170.42,
-    "roi": -0.2346
+    "total_staked_pln": 729.47,
+    "gross_return_pln": 561.54,
+    "net_result_pln": -167.93,
+    "roi": -0.2302
   },
   "archived_predictions": [
     {
