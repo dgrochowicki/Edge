@@ -10701,19 +10701,63 @@
           "notes": "Tournament tag not given. Settled: BESTIA swept Galorys 2:0 -- exact score hit."
         }
       ]
+    },
+    {
+      "id": "EDGE-307",
+      "date": "2026-10-23",
+      "type": "acca",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 6.51,
+      "potential_return_pln": 11.45,
+      "gross_return_pln": 0.0,
+      "status": "pending",
+      "net_result_pln": 0.0,
+      "selections": [
+        {
+          "match": "Nemesis vs Virtus.pro",
+          "market": "moneyline",
+          "pick": "Nemesis",
+          "odds": 1.32,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Out of Edge scope -- CIS LAN Championship. Placed at start of map 4, series 2:1 (Nemesis leading) at time of bet."
+        },
+        {
+          "match": "BESTIA vs Galorys",
+          "market": "moneyline",
+          "pick": "BESTIA",
+          "odds": 1.45,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- Circuit X Curitiba. Same match as EDGE-306. Settled: BESTIA swept Galorys 2:0."
+        },
+        {
+          "match": "Sinners vs Eternal Fire",
+          "market": "correct_score",
+          "pick": "2:1",
+          "odds": 3.4,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "pending",
+          "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Sinners leading) at time of bet."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 306,
+    "coupons": 307,
     "won": 106,
     "lost": 201,
     "voided": 0,
-    "pending": 0,
-    "total_staked_pln": 729.47,
+    "pending": 1,
+    "total_staked_pln": 731.47,
     "gross_return_pln": 561.54,
     "net_result_pln": -167.93,
-    "roi": -0.2302
+    "roi": -0.2296
   },
   "archived_predictions": [
     {
