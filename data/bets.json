@@ -10793,19 +10793,43 @@
           "notes": "Same match as reports/2026-10-24-gpt.md's v3 own-assessment (Aurora – The MongolZ, p_own 0.69) -- PGL Masters Bucharest. Exact score 2:0 for Aurora did not hit."
         }
       ]
+    },
+    {
+      "id": "EDGE-310",
+      "date": "2026-10-24",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 4.0,
+      "combined_odds": 2.04,
+      "potential_return_pln": 7.17,
+      "gross_return_pln": 7.17,
+      "status": "won",
+      "net_result_pln": 3.17,
+      "selections": [
+        {
+          "match": "Aurora vs The MongolZ",
+          "market": "moneyline",
+          "pick": "The MongolZ",
+          "odds": 2.29,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "won",
+          "notes": "Out of Edge scope -- PGL Masters Bucharest. Same match as EDGE-309 (opposite pick). Cashed out for 7.17 PLN before full resolution."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 309,
-    "won": 106,
+    "coupons": 310,
+    "won": 107,
     "lost": 204,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 739.08,
-    "gross_return_pln": 561.54,
-    "net_result_pln": -177.54,
-    "roi": -0.2402
+    "total_staked_pln": 743.08,
+    "gross_return_pln": 568.71,
+    "net_result_pln": -174.37,
+    "roi": -0.2347
   },
   "archived_predictions": [
     {
