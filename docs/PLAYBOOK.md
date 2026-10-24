@@ -8,7 +8,7 @@ It is an operating document. It should change only when new evidence justifies a
 
 ## Method versions
 
-**SUSPENDED 2026-10-24 — see `docs/decisions/2026-10-24-simplify-to-opinions.md`.** v1, v2, v3, E1/E2 and all checkpoint/consensus machinery below are kept as historical record, not active instructions. The daily routine is now a short per-match opinion (bet/pass, one-line reason) — read the suspension decision before anything else in this file.
+**EDGE STOPPED 2026-10-24 — see `docs/decisions/2026-10-24-simplify-to-opinions.md`.** No daily routine of any kind (no reports, no odds requests, no closings) unless the operator explicitly restarts it. v1, v2, v3, E1/E2 and everything below are historical record only. The only thing still active is settling the operator's own personal bet coupons in `data/bets.json` -> `coupons`, when and if he logs them himself.
 
 ```text
 v1 = frozen, 2026-09-23. Archive: docs/archive/METHOD_V1.md. No new v1 predictions.

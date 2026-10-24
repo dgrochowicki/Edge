@@ -1,26 +1,27 @@
-# Decyzja: zawieszenie aparatu metodologicznego, powrót do prostych opinii
+# Decyzja: Edge zatrzymany — zostaje tylko księga własnych kuponów
 
-**Data:** 2026-10-24 · **Status:** ZATWIERDZONY, efektywny natychmiast
+**Data:** 2026-10-24 · **Status:** ZATWIERDZONY wprost przez operatora, efektywny natychmiast
 **Operator:** Dom
 
-## Co się zmienia
+## Decyzja
 
-**v2, v3, E1/E2, checkpointy (K1/K2, β), konsensus rynku, własna ocena przed kursami — wszystko zawieszone.** Nie liczymy już `p_market`, `p_v2`, `p_own`, `p_cons`, nie zbieramy closingów pod metrykę, nie czekamy na 100 czy 200 obserwacji. Żaden z tych dokumentów (`docs/METHOD_V2.md`, `docs/decisions/2026-10-11-v2-ocena-e2.md`, `docs/decisions/2026-10-19-v3-trzy-zrodla.md`) nie jest już aktywną instrukcją — zostają jako historyczny zapis, nieusunięte.
+**Dom: "stopuje na razie edge, zostaną tylko ew. kupony. Nie mam siły już na codzienne sprawdzanie i podawanie kursów + pilnowanie closingów."**
 
-**Powód.** Operator: "to było zawsze twoje pytanie [czy da się wykryć przewagę statystycznie], ja chcę na koniec analizy czy warto grać na kogoś czy nie, to jest mój cel, a nie prowadzenie statystyk." Po miesiącach pomiaru (v1, potem v2) żadna metoda nie wyprodukowała ani jednego realnego BET-a; aparat (checkpointy, protokoły oceny, wielostopniowe sekwencje jak w v3) narósł do punktu, w którym sam flow stał się ciężarem dla operatora, zamiast go odciążać.
+Codzienna rutyna Edge (raporty gpt, kursy STS, v2, v3, E1/E2, checkpointy, konsensus, cokolwiek wymagające od operatora codziennego podawania kursów i pilnowania closingów) **zatrzymana całkowicie, bez daty powrotu.** To nie jest uproszczenie formatu raportu — to zatrzymanie samej rutyny. Nikt nie ma obowiązku robić raportu dziennego, dopóki operator sam nie zdecyduje inaczej.
 
-## Co jest teraz
+## Co zostaje
 
-Codzienny raport (jeśli gpt go robi) to **krótka opinia per mecz**: "gram na X, bo [jedno zdanie]" albo "PASS, bo [jedno zdanie]". Bez wymogu liczenia prawdopodobieństw do czterech miejsc, bez listy czynników, bez flag jakości, bez protokołu. Luźna, subiektywna ocena — ma być użyteczna od razu, nie naukowo policzalna.
+**Tylko księga własnych kuponów operatora** (`EDGE-XXX` w `data/bets.json` → `coupons`), jeśli i kiedy operator sam z siebie zechce coś zalogować — bez żadnej presji regularności. Repo agent nadal: scala, waliduje, rozlicza, commituje i pushuje te wpisy na żądanie, jak dotąd. To jedyna aktywna funkcja.
 
-**Brak obowiązku logowania do `data/bets.json`** jako próbki metody. Jeśli operator chce zapisać swój własny zakład (`EDGE-XXX`, `coupons`), robimy to jak dotąd — to pozostaje, bo to zwykła księga jego własnych zakładów, niezależna od tego czy jakakolwiek metoda "działa".
+## Tło decyzji (dla przyszłego kontekstu)
+
+Doszło do tego po serii zdarzeń 2026-10-24: pierwsza próba raportu V3 (PGL Masters Bucharest) wyszła niekompletna z winy wykonania gpt (nie dokończył V2 mimo kompletu kursów), co ujawniło szerszy problem — cały aparat metodologiczny (V1 → V2 → E1/E2 → blind-pilot → V3) narósł do punktu, w którym codzienna obsługa stała się ciężarem dla operatora, bez odpowiadającej wartości (0 realnych BET przez całą historię projektu, v1 i v2 nieodróżnialne statystycznie od rynku). Operator był jasny, że jego celem zawsze był prosty typ/opinia per mecz, nie program badawczy — ale po dalszej rozmowie zdecydował się na pełny stop, nie na uproszczony format dziennych typów.
+
+**Wcześniejsza wersja tego dokumentu** (ta sama ścieżka pliku) proponowała zamiast stopu — uproszczony format "typ gram/pass, jedno zdanie" bez progu wartości. Operator tego wprost nie potwierdził; ten plik odzwierciedla jego faktyczną, wyraźnie potwierdzoną decyzję: pełny stop, nie uproszczenie.
 
 ## Czego nie robimy
 
 - Nie usuwamy historycznych plików ani wpisów `predictions` (v1, v2, v3) — zostają jako zapis.
-- Nie podejmujemy teraz decyzji "czy wracamy do v2/v3 kiedyś" — to osobna sprawa na przyszłość, jeśli operator będzie chciał.
-- Nie każemy gpt dalej budować `data/form/`, konsensusu ani liczyć checkpointów.
-
-## Dla gpt (następny raport)
-
-Nie czytaj `docs/METHOD_V2.md` ani decyzji v3 jako instrukcji wykonania. Napisz krótko: mecze dnia, kursy STS (jeśli operator je poda), i Twoją opinię gram/pass z jednym zdaniem powodu. Nic więcej nie jest wymagane.
+- Nie każemy gpt robić jakichkolwiek raportów, dopóki operator o to nie poprosi.
+- Nie pingujemy operatora o kursy, closingi, decyzje metodologiczne ani nic związane z Edge-jako-metodą.
+- Jeśli operator kiedyś zechce wrócić — to nowa decyzja w nowym dokumencie, nie automatyczne wznowienie tego.
