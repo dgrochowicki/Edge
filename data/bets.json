@@ -10745,19 +10745,43 @@
           "notes": "Tournament tag not given. Placed live, 2nd map, series 1:0 (Sinners leading) at time of bet. Settled: exact score 2:1 for Sinners did not hit."
         }
       ]
+    },
+    {
+      "id": "EDGE-308",
+      "date": "2026-10-24",
+      "type": "single",
+      "source": "user_bet",
+      "stake_pln": 2.0,
+      "combined_odds": 1.88,
+      "potential_return_pln": 3.31,
+      "gross_return_pln": 0.0,
+      "status": "lost",
+      "net_result_pln": -2.0,
+      "selections": [
+        {
+          "match": "Chinggis Warriors vs Rare Atom",
+          "market": "moneyline",
+          "pick": "Rare Atom",
+          "odds": 1.88,
+          "confidence": null,
+          "closing_odds": null,
+          "result": "lost",
+          "notes": "Out of Edge scope -- VOID Autumn Cup. Settled: Chinggis Warriors beat Rare Atom."
+        }
+      ]
     }
   ],
   "observed_passes": [],
   "summary": {
-    "coupons": 307,
+    "coupons": 308,
     "won": 106,
-    "lost": 202,
+    "lost": 203,
     "voided": 0,
     "pending": 0,
-    "total_staked_pln": 731.47,
+    "total_staked_pln": 733.47,
     "gross_return_pln": 561.54,
-    "net_result_pln": -169.93,
-    "roi": -0.2323
+    "net_result_pln": -171.93,
+    "roi": -0.2344
   },
   "archived_predictions": [
     {
