@@ -1,0 +1,508 @@
+{
+  "date": "2026-10-24",
+  "event": "PGL Masters Bucharest 2026",
+  "status": "PARTIAL_NOT_FINAL",
+  "file_type": "single_consolidated_evidence_snapshot_NOT_data_form_or_ledger",
+  "methodology": "V3 + frozen V2/E2 unchanged",
+  "own_lock_time": "2026-10-24T08:09:16+02:00",
+  "sts_time_caveat": "08:51–08:52 CEST is screenshot display time, not independently verified quote time",
+  "matches": [
+    {
+      "match": "Aurora – The MongolZ",
+      "start_CEST": "09:00",
+      "own": {
+        "time": "09:00",
+        "a": "Aurora",
+        "b": "The MongolZ",
+        "base": 65,
+        "map": 1,
+        "form": 2,
+        "roster": 1,
+        "context": 0,
+        "base_why": "HLTV #5 wobec #20; przewaga poziomu i doświadczenia na LAN.",
+        "map_why": "Aurora w ostatnim miesiącu: Anubis 4–1 i częsty pick; brak wiarygodnego potwierdzenia veto, więc tylko +1 pp.",
+        "form_why": "Aurora trzecia na Thunderpick, w repo 18.10 FreshMapScore 0.7885 (historyczny, nie przeliczony na 24.10).",
+        "roster_why": "MongolZ z nin9 w zgłoszonym składzie; większa niepewność zgrania niż w piątce Aurora.",
+        "context_why": "Obie strony LAN BO3 w pierwszej rundzie; brak korekty.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://www.hltv.org/stats/teams/maps/11861/aurora?endDate=2026-10-22&startDate=2026-09-22",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-18.json"
+        ],
+        "contaminated": false,
+        "p_own": 0.69,
+        "p_own_opponent": 0.31,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [],
+        "source_of_contamination": null,
+        "own_lock_status": "own_recorded_before_match_specific_odds"
+      },
+      "sts": {
+        "odds_a": 1.32,
+        "odds_b": 3.1,
+        "screenshot_timestamp": "2026-10-24T08:51:00+02:00",
+        "p_market_a": 0.7014,
+        "p_market_b": 0.2986
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing",
+        "value_cons_pct": null,
+        "value_own_a_pct": -8.9,
+        "value_own_b_pct": -3.9
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": false,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "FUT – TYLOO",
+      "start_CEST": "09:00",
+      "own": {
+        "time": "09:00",
+        "a": "FUT",
+        "b": "TYLOO",
+        "base": 71,
+        "map": 0,
+        "form": 1,
+        "roster": -2,
+        "context": 0,
+        "base_why": "HLTV #10 wobec #35; FUT ma silniejszy dorobek międzynarodowy.",
+        "map_why": "Brak aktualnego, porównywalnego map pool obu nowych piątek; veto nieznane.",
+        "form_why": "TYLOO w starszym cache Edge miało ujemny FreshMapScore; dane nie są aktualnym wynikiem na 24.10, więc minimalna korekta.",
+        "roster_why": "SunPayus dołącza do FUT jako AWP; zmiana roli i zgrania ogranicza pewność.",
+        "context_why": "Pierwsza runda LAN BO3; bez korekty.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-05.json",
+          "https://www.hltv.org/team/13286/fut"
+        ],
+        "contaminated": true,
+        "p_own": 0.7,
+        "p_own_opponent": 0.3,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [
+          "odds_seen_before_own"
+        ],
+        "source_of_contamination": "Publiczny wynik wyszukiwania ujawnił procenty głosowania HLTV dla tej pary przed zapisem p_own; BET V3 zablokowany.",
+        "own_lock_status": "contaminated_nonblind"
+      },
+      "sts": {
+        "odds_a": 1.17,
+        "odds_b": 4.5,
+        "screenshot_timestamp": "2026-10-24T08:51:00+02:00",
+        "p_market_a": 0.7937,
+        "p_market_b": 0.2063
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing; odds_seen_before_own",
+        "value_cons_pct": null,
+        "value_own_a_pct": -18.1,
+        "value_own_b_pct": 35.0
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": true,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "Spirit – BETBOOM",
+      "start_CEST": "12:00",
+      "own": {
+        "time": "12:00",
+        "a": "Spirit",
+        "b": "BETBOOM",
+        "base": 67,
+        "map": 0,
+        "form": -2,
+        "roster": 0,
+        "context": 0,
+        "base_why": "HLTV #1 wobec #9, większy potencjał indywidualny Spirit.",
+        "map_why": "Nie potwierdzono wiarygodnego veto ani aktualnej przewagi na konkretnych mapach.",
+        "form_why": "BetBoom dotarł do finału Thunderpick 18.10, a forma Spirit była nierówna; repo BetBoom FMS -0.4634 z 18.10 jest jedynie punktem odniesienia.",
+        "roster_why": "Zgłoszone podstawowe piątki, bez potwierdzonego stand-ina.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-18.json",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-11.json"
+        ],
+        "contaminated": true,
+        "p_own": 0.65,
+        "p_own_opponent": 0.35,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [
+          "odds_seen_before_own"
+        ],
+        "source_of_contamination": "Publiczny wynik wyszukiwania ujawnił procenty głosowania HLTV dla tej pary przed zapisem p_own; BET V3 zablokowany.",
+        "own_lock_status": "contaminated_nonblind"
+      },
+      "sts": {
+        "odds_a": 1.14,
+        "odds_b": 4.75,
+        "screenshot_timestamp": "2026-10-24T08:51:00+02:00",
+        "p_market_a": 0.8065,
+        "p_market_b": 0.1935
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing; odds_seen_before_own",
+        "value_cons_pct": null,
+        "value_own_a_pct": -25.9,
+        "value_own_b_pct": 66.2
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": true,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "MOUZ – Liquid",
+      "start_CEST": "12:00",
+      "own": {
+        "time": "12:00",
+        "a": "MOUZ",
+        "b": "Liquid",
+        "base": 73,
+        "map": 0,
+        "form": 1,
+        "roster": -3,
+        "context": 0,
+        "base_why": "HLTV #4 wobec #27; wyższy poziom rywali i dorobek MOUZ.",
+        "map_why": "Zmiany składu MOUZ czynią starsze mapowe próbki nieporównywalnymi; bez korekty.",
+        "form_why": "MOUZ było finalistą EPL S24, ale cache FMS 2.7160 z 11.10 dotyczy starszego core, więc ma ograniczoną wartość.",
+        "roster_why": "MOUZ gra z xelex i PR zamiast starszej piątki; istotna niepewność nowego core mimo zmian także w Liquid.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-11.json"
+        ],
+        "contaminated": true,
+        "p_own": 0.71,
+        "p_own_opponent": 0.29,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [
+          "odds_seen_before_own"
+        ],
+        "source_of_contamination": "Publiczny wynik wyszukiwania ujawnił procenty głosowania HLTV dla tej pary przed zapisem p_own; BET V3 zablokowany.",
+        "own_lock_status": "contaminated_nonblind"
+      },
+      "sts": {
+        "odds_a": 1.12,
+        "odds_b": 5.3,
+        "screenshot_timestamp": "2026-10-24T08:51:00+02:00",
+        "p_market_a": 0.8255,
+        "p_market_b": 0.1745
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing; odds_seen_before_own",
+        "value_cons_pct": null,
+        "value_own_a_pct": -20.5,
+        "value_own_b_pct": 53.7
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": true,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "Vitality – 9z",
+      "start_CEST": "15:00",
+      "own": {
+        "time": "15:00",
+        "a": "Vitality",
+        "b": "9z",
+        "base": 77,
+        "map": 0,
+        "form": 2,
+        "roster": -7,
+        "context": 0,
+        "base_why": "HLTV #2 wobec #15; wyraźna przewaga klasy i doświadczenia.",
+        "map_why": "Bez aktualnego veto nie przypisuję przewagi mapowej.",
+        "form_why": "Vitality wygrało EPL S24; cache FMS 3.5586 z 11.10 dotyczy pełnej piątki, więc nie jest świeżą miarą dla zastępstwa.",
+        "roster_why": "Potwierdzony jL jako stand-in za apEX (IGL) — duża niepewność komunikacji i prowadzenia gry.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-11.json",
+          "https://www.hltv.org/news/45782/jl-on-every-other-team-in-pgl-masters-bucharest-groups-fantasy"
+        ],
+        "contaminated": true,
+        "p_own": 0.72,
+        "p_own_opponent": 0.28,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [
+          "odds_seen_before_own"
+        ],
+        "source_of_contamination": "Publiczny wynik wyszukiwania ujawnił procenty głosowania HLTV dla tej pary przed zapisem p_own; BET V3 zablokowany.",
+        "own_lock_status": "contaminated_nonblind"
+      },
+      "sts": {
+        "odds_a": 1.09,
+        "odds_b": 6.1,
+        "screenshot_timestamp": "2026-10-24T08:52:00+02:00",
+        "p_market_a": 0.8484,
+        "p_market_b": 0.1516
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing; odds_seen_before_own",
+        "value_cons_pct": null,
+        "value_own_a_pct": -21.5,
+        "value_own_b_pct": 70.8
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": true,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "Legacy – Nemiga",
+      "start_CEST": "15:00",
+      "own": {
+        "time": "15:00",
+        "a": "Legacy",
+        "b": "Nemiga",
+        "base": 66,
+        "map": 0,
+        "form": -3,
+        "roster": -1,
+        "context": 0,
+        "base_why": "HLTV #7 wobec #24; Legacy ma silniejszy wynik rankingowy.",
+        "map_why": "Brak aktualnego veto i porównywalnego map pool, korekta zerowa.",
+        "form_why": "Legacy wypadło słabo na Thunderpick, cache FMS -1.4888 z 16.10 na krótkim oknie pięciu map.",
+        "roster_why": "Powrót arT jako IGL wymagał resetu historycznego okna; skład zgłoszony, ale ma krótką próbkę.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-16.json"
+        ],
+        "contaminated": true,
+        "p_own": 0.62,
+        "p_own_opponent": 0.38,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [
+          "odds_seen_before_own"
+        ],
+        "source_of_contamination": "Publiczny wynik wyszukiwania ujawnił procenty głosowania HLTV dla tej pary przed zapisem p_own; BET V3 zablokowany.",
+        "own_lock_status": "contaminated_nonblind"
+      },
+      "sts": {
+        "odds_a": 1.33,
+        "odds_b": 3.05,
+        "screenshot_timestamp": "2026-10-24T08:51:00+02:00",
+        "p_market_a": 0.6963,
+        "p_market_b": 0.3037
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing; odds_seen_before_own",
+        "value_cons_pct": null,
+        "value_own_a_pct": -17.5,
+        "value_own_b_pct": 15.9
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": true,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "G2 – Natus Vincere",
+      "start_CEST": "18:00",
+      "own": {
+        "time": "18:00",
+        "a": "G2",
+        "b": "Natus Vincere",
+        "base": 55,
+        "map": 0,
+        "form": 2,
+        "roster": 0,
+        "context": 0,
+        "base_why": "HLTV #8 wobec #11, przy znacznie większej różnicy VRS (#9 wobec #33).",
+        "map_why": "NAVI ma słaby Mirage w próbce 3-miesięcznej, ale bez aktualnego veto brak rzetelnej korekty.",
+        "form_why": "NAVI ma słabsze ostatnie wyniki; starszy cache FMS G2 -0.0795 (06.10) i NAVI +0.0861 (07.10) nie daje jednoznacznego sygnału, dlatego korekta jest niewielka.",
+        "roster_why": "Obie zgłoszone piątki bez potwierdzonego zastępstwa.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-06.json",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-07.json",
+          "https://www.hltv.org/stats/teams/maps/4608/natus-vincere?endDate=2026-10-22&startDate=2026-07-22"
+        ],
+        "contaminated": false,
+        "p_own": 0.57,
+        "p_own_opponent": 0.43,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [],
+        "source_of_contamination": null,
+        "own_lock_status": "own_recorded_before_match_specific_odds"
+      },
+      "sts": {
+        "odds_a": 2.08,
+        "odds_b": 1.67,
+        "screenshot_timestamp": "2026-10-24T08:52:00+02:00",
+        "p_market_a": 0.4453,
+        "p_market_b": 0.5547
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing",
+        "value_cons_pct": null,
+        "value_own_a_pct": 18.6,
+        "value_own_b_pct": -28.2
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": false,
+        "consensus_missing": true
+      }
+    },
+    {
+      "match": "FURIA – DENDELE",
+      "start_CEST": "18:00",
+      "own": {
+        "time": "18:00",
+        "a": "FURIA",
+        "b": "DENDELE",
+        "base": 83,
+        "map": 0,
+        "form": 3,
+        "roster": 0,
+        "context": 0,
+        "base_why": "HLTV #3 wobec #41; ogromna różnica doświadczenia w Tier 1.",
+        "map_why": "Statystyki DENDELE głównie z niższych rozgrywek i małej próbki; nie dają pewnej przewagi veto.",
+        "form_why": "FURIA wygrała Thunderpick 18.10; w repo FMS 1.2403 z 18.10, a DENDELE nie ma porównywalnego cache Tier 1.",
+        "roster_why": "Zgłoszone podstawowe piątki, brak potwierdzonego stand-ina.",
+        "context_why": "LAN BO3, neutralnie.",
+        "sources": [
+          "https://www.hltv.org/events/8050/pgl-masters-bucharest-2026",
+          "https://www.hltv.org/events/8050/matches",
+          "https://news.pglesports.com/news/1792407992422-pgl-masters-bucharest-2026-all-16-team-rosters-revealed",
+          "https://github.com/dgrochowicki/Edge/blob/main/data/form/2026-10-18.json",
+          "https://www.hltv.org/team/13926/dendele"
+        ],
+        "contaminated": false,
+        "p_own": 0.86,
+        "p_own_opponent": 0.14,
+        "own_timestamp": "2026-10-24T08:09:16+02:00",
+        "data_quality": [],
+        "source_of_contamination": null,
+        "own_lock_status": "own_recorded_before_match_specific_odds"
+      },
+      "sts": {
+        "odds_a": 1.14,
+        "odds_b": 4.75,
+        "screenshot_timestamp": "2026-10-24T08:52:00+02:00",
+        "p_market_a": 0.8065,
+        "p_market_b": 0.1935
+      },
+      "v3": {
+        "p_cons": null,
+        "cons_books": [],
+        "cons_timestamp": null,
+        "decision": "PASS",
+        "reason": "consensus_missing",
+        "value_cons_pct": null,
+        "value_own_a_pct": -2.0,
+        "value_own_b_pct": -33.5
+      },
+      "v2": {
+        "status": "NOT_CALCULATED",
+        "p_v2": null,
+        "fair_odds": null,
+        "value_pct": null,
+        "reason": "missing verified match-day data/form window"
+      },
+      "qa": {
+        "odds_seen_before_own": false,
+        "consensus_missing": true
+      }
+    }
+  ]
+}
