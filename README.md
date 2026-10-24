@@ -1,3 +1,5 @@
+> **Archiwum (v1–v3, lipiec–październik 2026). Aktywny projekt i księga kuponów: [dgrochowicki/Edge_2.0](https://github.com/dgrochowicki/Edge_2.0).**
+
 Current version: v0.1
 Last updated: 2026-07-16
 
